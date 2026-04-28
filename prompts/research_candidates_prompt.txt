@@ -20,11 +20,11 @@ Rules:
 
 Return ONLY a valid JSON array with no extra text:
 [
-  {
+  {{
     "topic": "...",
     "category": "credit cards | investing | debt | mortgage | taxes | insurance | banking | budgeting | retirement",
     "angle_type": "a short natural phrase describing the angle e.g. common mistake, surprising stat, counterintuitive truth",
     "hook_seed": "one-line hook idea, max 15 words",
     "core_claim": "the single most surprising or concerning thing about this topic"
-  }
+  }}
 ]

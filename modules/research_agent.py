@@ -144,7 +144,7 @@ def _harvest_youtube() -> list[str]:
             client_id=client_id,
             client_secret=client_secret,
             token_uri="https://oauth2.googleapis.com/token",
-            scopes=["https://www.googleapis.com/auth/youtube.readonly"],
+            scopes=["https://www.googleapis.com/auth/youtube"],
         )
         creds.refresh(_YTRequest())
         youtube = _yt_build("youtube", "v3", credentials=creds)

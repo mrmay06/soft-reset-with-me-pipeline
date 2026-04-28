@@ -38,7 +38,7 @@ TASK 2 — FIND one real US statistic (2023–2026) to anchor this topic.
 - If no valid source exists, set reliability_score to 1 and total_score to 0
 
 Return ONLY valid JSON with no extra text:
-{
+{{
   "topic": "...",
   "category": "...",
   "angle_type": "...",
@@ -54,4 +54,4 @@ Return ONLY valid JSON with no extra text:
   "source_url": "https://...",
   "fact_year": 2024,
   "reasoning": "one sentence on why this topic is strong for YouTube Shorts"
-}
+}}
