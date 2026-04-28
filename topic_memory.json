@@ -76,5 +76,18 @@
     "youtube_url": "https://youtube.com/shorts/Txs8PJH2YiQ",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260428_191745",
+    "published_date": "2026-04-28",
+    "topic": "Is Your Savings Account Earning 10x LESS Than It Should Be?",
+    "category": "banking",
+    "total_score": 18,
+    "source_name": "Bankrate",
+    "title": "Is Your Savings Account Earning 10x LESS Than It Should Be?",
+    "youtube_video_id": "pmrlsdtM2cI",
+    "youtube_url": "https://youtube.com/shorts/pmrlsdtM2cI",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
