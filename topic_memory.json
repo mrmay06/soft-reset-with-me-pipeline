@@ -89,5 +89,20 @@
     "youtube_url": "https://youtube.com/shorts/pmrlsdtM2cI",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260428_203838",
+    "published_date": "2026-04-28",
+    "topic": "Is Your Home Insurance a HUGE Risk? Up to 60% of Homes are Underinsured!",
+    "category": "insurance",
+    "total_score": 18,
+    "source_name": "Bankrate (citing CoreLogic)",
+    "title": "Home insurance shock \u26a0\ufe0f #shorts #personalfinance #homeinsura",
+    "youtube_video_id": "SpF-Ern02dc",
+    "youtube_url": "https://youtube.com/shorts/SpF-Ern02dc",
+    "fallback_count": 0,
+    "validation_warnings": [
+      "title_truncated"
+    ]
   }
 ]
