@@ -139,10 +139,11 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     prompt_template = open("prompts/script_prompt.txt").read()
     prompt = prompt_template.format(
         topic=research["topic"],
-        category=research["category"],
-        angle=research["angle"],
-        source_fact=research["source_fact"],
-        source_name=research["source_name"],
+        category=research.get("category", ""),
+        angle_type=research.get("angle_type", research.get("angle", "")),
+        hook_seed=research.get("hook_seed", ""),
+        source_fact=research.get("source_fact", ""),
+        source_name=research.get("source_name", ""),
         video_id=video_id,
         generated_at=now_iso(),
     )

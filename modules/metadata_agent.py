@@ -68,7 +68,7 @@ def run_metadata(video_id: str, run_dir: str, config: dict) -> dict:
         hook=script["hook"],
         topic=research["topic"],
         category=research["category"],
-        angle=research["angle"],
+        angle=research.get("angle_type", research.get("angle", "")),
         source_fact=research["source_fact"],
     )
 

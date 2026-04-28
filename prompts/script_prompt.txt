@@ -2,7 +2,8 @@ You are a YouTube Shorts scriptwriter for a US personal finance channel. Write a
 
 TOPIC: {topic}
 CATEGORY: {category}
-ANGLE: {angle}
+ANGLE TYPE: {angle_type}
+HOOK SEED: {hook_seed}
 SOURCE FACT: {source_fact}
 SOURCE NAME: {source_name}
 

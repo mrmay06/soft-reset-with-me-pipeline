@@ -1,0 +1,30 @@
+You are a research assistant for a US personal finance YouTube Shorts channel.
+
+Below are trending finance signals from the US this week:
+{signals}
+
+Recent published topics (last 90 days) — do NOT repeat or closely paraphrase these:
+{recent_topics}
+
+Recent categories used (last 4 videos) — do NOT use these categories:
+{recent_categories}
+
+Generate 5–7 distinct topic candidates for a YouTube Short.
+
+Rules:
+- Each topic must be specific and surprising — generic topics like "save more money" or "invest early" are rejected
+- Each must be built around ONE clear, verifiable US statistic
+- Do not repeat or closely paraphrase any topic in the recent list
+- Do not use any category from the recent_categories list
+- For angle_type, write a short phrase that naturally describes this topic's angle — do not force it into a fixed set
+
+Return ONLY a valid JSON array with no extra text:
+[
+  {
+    "topic": "...",
+    "category": "credit cards | investing | debt | mortgage | taxes | insurance | banking | budgeting | retirement",
+    "angle_type": "a short natural phrase describing the angle e.g. common mistake, surprising stat, counterintuitive truth",
+    "hook_seed": "one-line hook idea, max 15 words",
+    "core_claim": "the single most surprising or concerning thing about this topic"
+  }
+]
