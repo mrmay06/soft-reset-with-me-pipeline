@@ -52,39 +52,28 @@ def _get_word_timestamps(audio_path: str, transcript: str) -> list:
         beam_size=5,
     )
 
-    # Collect all word-level timestamps from faster-whisper
+    # Collect word-level timestamps from faster-whisper
+    # Use whisper's own words for both timing AND display — no index replacement.
+    # Index-based replacement was causing drift whenever whisper tokenized
+    # differently to the script (e.g. "Homeownership" vs "Home Ownership").
     raw_words = []
     for seg in segments_gen:
         for w in (seg.words or []):
+            word = w.word.strip()
+            # Skip pure punctuation tokens (em-dash, ellipsis, etc.)
+            if not re.sub(r'[^a-zA-Z0-9\']', '', word):
+                continue
             raw_words.append({
-                "word":  w.word.strip(),
+                "word":  word,
                 "start": w.start,
                 "end":   w.end,
             })
 
     if not raw_words:
-        # Hard fallback: evenly-spaced using known transcript
         print("[captions] faster-whisper returned 0 words — using evenly-spaced fallback")
         return _evenly_spaced(transcript, _audio_duration(audio_path))
 
-    # Replace recognised words with our reference transcript to prevent drift
-    ref_words = [w for w in transcript.split() if w]
-    aligned = []
-    for i, rw in enumerate(raw_words):
-        word = ref_words[i] if i < len(ref_words) else rw["word"]
-        aligned.append({"word": word, "start": rw["start"], "end": rw["end"]})
-
-    # If faster-whisper found fewer words than the script, pad with evenly-spaced remainder
-    if len(raw_words) < len(ref_words):
-        last_end = aligned[-1]["end"] if aligned else 0.0
-        total_dur = _audio_duration(audio_path)
-        remaining = ref_words[len(raw_words):]
-        dur_each = max(0.15, (total_dur - last_end) / len(remaining)) if remaining else 0
-        for j, word in enumerate(remaining):
-            start = last_end + j * dur_each
-            aligned.append({"word": word, "start": round(start, 3), "end": round(start + dur_each * 0.85, 3)})
-
-    return aligned
+    return raw_words
 
 
 def _audio_duration(audio_path: str) -> float:
