@@ -50,5 +50,18 @@
     "youtube_url": "https://youtube.com/shorts/2layfIt-Mhg",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260428_171049",
+    "published_date": "2026-04-28",
+    "topic": "The True Cost of Homeownership: You're Paying $18,118 *Beyond* Your Mortgage Each Year!",
+    "category": "Rent vs Buy Decisions",
+    "total_score": 19,
+    "source_name": "Bankrate (citing U.S. Census Bureau data)",
+    "title": "Your Home Costs $18,118 MORE Than Your Mortgage!",
+    "youtube_video_id": "KA5oVuu0ytw",
+    "youtube_url": "https://youtube.com/shorts/KA5oVuu0ytw",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
