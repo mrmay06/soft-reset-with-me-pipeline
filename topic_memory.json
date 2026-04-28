@@ -63,5 +63,18 @@
     "youtube_url": "https://youtube.com/shorts/KA5oVuu0ytw",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260428_174802",
+    "published_date": "2026-04-28",
+    "topic": "The Surprising Truth: One Third of Americans Can't Afford a $400 Emergency",
+    "category": "Emergency Savings",
+    "total_score": 18,
+    "source_name": "Federal Reserve (Report on the Economic Well-Being of U.S. Households in 2023)",
+    "title": "The $400 Emergency Test Most Americans Fail",
+    "youtube_video_id": "Txs8PJH2YiQ",
+    "youtube_url": "https://youtube.com/shorts/Txs8PJH2YiQ",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
