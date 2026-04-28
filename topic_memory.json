@@ -1,0 +1,41 @@
+[
+  {
+    "video_id": "20260428_094245",
+    "published_date": "2026-04-28",
+    "topic": "Record-High Credit Card Interest Rates",
+    "category": "Credit Cards",
+    "total_score": 4.0,
+    "source_name": "Consumer Financial Protection Bureau (CFPB)",
+    "title": "22.77% APR: The Credit Card Emergency Is Here",
+    "youtube_video_id": "XWDIqpsCBGo",
+    "youtube_url": "https://youtube.com/shorts/XWDIqpsCBGo",
+    "fallback_count": 0,
+    "validation_warnings": []
+  },
+  {
+    "video_id": "20260428_122549",
+    "published_date": "2026-04-28",
+    "topic": "New Airline Automatic Cash Refund Rule",
+    "category": "Travel",
+    "total_score": 3.6,
+    "source_name": "The Associated Press",
+    "title": "Your Flight Refund Is Now AUTOMATIC Cash!",
+    "youtube_video_id": "VZkVs2DvcC0",
+    "youtube_url": "https://youtube.com/shorts/VZkVs2DvcC0",
+    "fallback_count": 0,
+    "validation_warnings": []
+  },
+  {
+    "video_id": "20260428_161356",
+    "published_date": "2026-04-28",
+    "topic": "The Hidden Fees Silently Eating Your Mutual Fund Returns",
+    "category": "Mutual Funds Investment",
+    "total_score": 18,
+    "source_name": "U.S. Securities and Exchange Commission (SEC) - Investor.gov",
+    "title": "Mutual Fund Fees Are Quietly Stealing Your Retirement",
+    "youtube_video_id": "c6-Onx5pxGw",
+    "youtube_url": "https://youtube.com/shorts/c6-Onx5pxGw",
+    "fallback_count": 0,
+    "validation_warnings": []
+  }
+]

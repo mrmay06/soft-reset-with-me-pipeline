@@ -1,0 +1,41 @@
+You are a YouTube Shorts metadata expert targeting US audiences.
+Generate metadata for this personal finance Short.
+
+SCRIPT HOOK: {hook}
+TOPIC: {topic}
+CATEGORY: {category}
+ANGLE: {angle}
+SOURCE FACT: {source_fact}
+
+OUTPUT RULES:
+
+TITLE:
+- Max 60 characters
+- Must create curiosity or urgency
+- No clickbait lies — must reflect actual content
+- No emojis in title
+- Do not start with "How to"
+- Pattern options: shocking stat | question | bold claim
+
+DESCRIPTION:
+- 3-4 lines max
+- Line 1: expand the hook — what will they learn?
+- Line 2: one key insight teaser (do not fully reveal)
+- Line 3: soft CTA — "Save this." or "Share with someone who needs this."
+- Line 4: "This is educational content. Not financial advice."
+- Line 5: leave blank (reserved for future use)
+- Add 5 hashtags after Line 3: mix of #personalfinance #moneytips + 3 niche ones
+- Add #Shorts at the very end
+
+TAGS:
+- Return exactly 27 tags as a JSON array
+- Mix: broad (5) + category-specific (10) + long-tail (8) + trending variations (4)
+- Each tag: 2-5 words, lowercase, no special characters
+- No duplicate meaning across tags
+
+Return ONLY valid JSON, no extra text:
+{{
+  "title": "...",
+  "description": "...",
+  "tags": ["...", "..."]
+}}

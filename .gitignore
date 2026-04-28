@@ -1,0 +1,16 @@
+workspace/
+.env
+*.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.DS_Store
+Thumbs.db
+venv/
+*.mp4
+*.mp3
+*.wav
+!assets/music/*.mp3
+!assets/disclaimer.png
+!assets/fonts/*.ttf

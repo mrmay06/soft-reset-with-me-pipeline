@@ -1,0 +1,33 @@
+# Gemini AI
+google-generativeai>=0.8.0
+
+# Anthropic Claude
+anthropic>=0.40.0
+google-genai>=1.0.0
+google-auth>=2.29.0
+google-auth-oauthlib>=1.2.0
+
+# YouTube upload
+google-api-python-client>=2.120.0
+
+# Audio processing
+pydub>=0.25.1
+
+# Caption alignment
+whisperx==3.1.5
+
+# Image processing
+Pillow>=10.3.0
+
+# HTTP requests
+requests>=2.31.0
+
+# Google Trends research
+pytrends>=4.9.2
+
+# Fuzzy string matching (duplicate detection)
+thefuzz>=0.22.1
+python-Levenshtein>=0.25.1
+
+# Utilities
+python-dotenv>=1.0.0
