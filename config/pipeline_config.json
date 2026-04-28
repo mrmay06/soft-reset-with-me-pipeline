@@ -26,7 +26,7 @@
   "metadata_model": "gemini-2.5-flash",
   "script_model": "claude-sonnet-4-6",
   "research_model": "gemini-2.5-flash",
-  "tags_count": 27,
+  "tags_count": 5,
   "max_title_chars": 60,
   "youtube_category_id": "27",
   "privacy_status": "private"
