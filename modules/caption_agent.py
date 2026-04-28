@@ -1,6 +1,23 @@
 import os
+import re
 
 from utils.helpers import load_json, now_iso
+
+
+def _clean_transcript(text: str) -> str:
+    """
+    Remove non-spoken tokens that break whisper alignment.
+    Em-dashes, ellipses, standalone punctuation become spaces.
+    """
+    # Replace em-dash and double-dash with a space (pause, not spoken)
+    text = text.replace("—", " ").replace("--", " ")
+    # Replace ellipsis with space
+    text = text.replace("…", " ").replace("...", " ")
+    # Remove any remaining standalone punctuation tokens
+    text = re.sub(r'\s([^a-zA-Z0-9\'\"]+)\s', ' ', text)
+    # Collapse multiple spaces
+    text = re.sub(r' +', ' ', text).strip()
+    return text
 
 
 def _build_transcript(script: dict) -> str:
@@ -11,7 +28,8 @@ def _build_transcript(script: dict) -> str:
         script["loopback"],
         script.get("cta", ""),
     ]
-    return " ".join(p for p in parts if p)
+    raw = " ".join(p for p in parts if p)
+    return _clean_transcript(raw)
 
 
 def _get_word_timestamps(audio_path: str, transcript: str) -> list:
@@ -116,6 +134,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     lines = []
     # 1 word at a time — each word is its own dialogue line
     for w in words:
+        # Skip pure punctuation tokens (em-dash, ellipsis, etc.)
+        clean = re.sub(r'[^a-zA-Z0-9\']', '', w["word"])
+        if not clean:
+            continue
         start_ts = _format_ass_time(w["start"])
         end_ts   = _format_ass_time(w["end"])
         display  = w["word"].capitalize()

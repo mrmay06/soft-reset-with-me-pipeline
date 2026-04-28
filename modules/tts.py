@@ -35,6 +35,8 @@ def _build_tts_input(script: dict) -> str:
         f"{script['loopback']} "
         f"{script.get('cta', '')}"
     ).strip()
+    # Replace em-dashes with comma-pause so TTS reads naturally
+    script_text = script_text.replace("—", ",").replace("--", ",")
     return style + script_text
 
 
