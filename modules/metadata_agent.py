@@ -53,6 +53,20 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
     if "united states" not in tags_lower:
         metadata["tags"].append("United States")
 
+    # Enforce 480 char total tag limit (YouTube hard limit)
+    total_chars = sum(len(t) for t in metadata["tags"])
+    if total_chars > 480:
+        trimmed = []
+        running = 0
+        for tag in metadata["tags"]:
+            if running + len(tag) <= 480:
+                trimmed.append(tag)
+                running += len(tag)
+            else:
+                break
+        metadata["tags"] = trimmed
+        errors.append(f"tags_char_limit_trimmed: was {total_chars} chars")
+
     if "not financial advice" not in metadata["description"].lower():
         metadata["description"] += "\nThis is educational content. Not financial advice."
         errors.append("disclaimer_added")

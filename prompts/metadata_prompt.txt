@@ -31,6 +31,7 @@ TAGS:
 - Mix: broad (5) + category-specific (10) + long-tail (8) + trending variations (2) + "US" + "United States"
 - Each tag: 1-5 words, lowercase, no special characters
 - No duplicate meaning across tags
+- Total combined character length of all tags must not exceed 480 characters
 
 Return ONLY valid JSON, no extra text:
 {{
