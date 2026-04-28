@@ -11,13 +11,13 @@ OUTPUT RULES:
 
 TITLE:
 - Formula: [Hook-reinforcing short phrase] + [1 emoji] + [3 hashtags]
-- Full title including emoji and hashtags must be under 60 characters
+- Full title including emoji and hashtags must be under 99 characters
 - Front-load the psychological trigger — the first 3 words must hook
 - End with exactly 1 relevant emoji (no more)
 - After the emoji, add exactly: #shorts #personalfinance #[one niche tag matching the category]
 - No clickbait lies — must reflect actual content
 - Do not start with "How to", "In this video", "Today we"
-- Example: "Your bank is shrinking your money 📉 #shorts #personalfinance #hysa"
+- Example: "Your bank is quietly shrinking your savings every month 📉 #shorts #personalfinance #hysa"
 
 DESCRIPTION:
 - Line 1: expand the hook — what will they learn?
@@ -26,9 +26,11 @@ DESCRIPTION:
 - Line 4: "Educational content only. Not financial advice."
 
 TAGS:
-- Return exactly 5 tags as a JSON array (backend tags have minimal impact on Shorts)
-- Use only the most directly relevant keywords for the topic
-- Each tag: 2-4 words, lowercase, no special characters
+- Return exactly 27 tags as a JSON array
+- Always include "US" and "United States" as two of the tags
+- Mix: broad (5) + category-specific (10) + long-tail (8) + trending variations (2) + "US" + "United States"
+- Each tag: 1-5 words, lowercase, no special characters
+- No duplicate meaning across tags
 
 Return ONLY valid JSON, no extra text:
 {{

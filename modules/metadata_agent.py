@@ -37,16 +37,21 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
         errors.append("title_too_short")
 
     tag_count = len(metadata["tags"])
-    expected = config.get("tags_count", 5)
-    if tag_count < 3:
+    expected = config.get("tags_count", 27)
+    if tag_count < 10:
         errors.append(f"tags_too_few: {tag_count}")
-        if tag_count == 0:
-            raise ValueError(f"No tags returned — metadata needs regeneration")
+        if tag_count < 3:
+            raise ValueError(f"Too few tags ({tag_count}) — metadata needs regeneration")
     if tag_count > expected + 2:
         metadata["tags"] = metadata["tags"][:expected]
         errors.append("tags_truncated")
 
-    # Hashtags are now embedded in the title — no need to append to description
+    # Ensure "US" and "United States" are always present
+    tags_lower = [t.lower() for t in metadata["tags"]]
+    if "us" not in tags_lower:
+        metadata["tags"].append("US")
+    if "united states" not in tags_lower:
+        metadata["tags"].append("United States")
 
     if "not financial advice" not in metadata["description"].lower():
         metadata["description"] += "\nThis is educational content. Not financial advice."
