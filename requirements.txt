@@ -14,7 +14,7 @@ google-api-python-client>=2.120.0
 pydub>=0.25.1
 
 # Caption alignment
-whisperx==3.1.5
+faster-whisper>=1.0.0
 
 # Image processing
 Pillow>=10.3.0
