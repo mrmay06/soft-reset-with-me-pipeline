@@ -156,5 +156,18 @@
     "youtube_url": "https://youtube.com/shorts/H6on0vdHuL4",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260429_214627",
+    "published_date": "2026-04-29",
+    "topic": "26 Million Americans Are Risking Financial Ruin With NO Health Insurance",
+    "category": "insurance",
+    "total_score": 19,
+    "source_name": "U.S. Census Bureau",
+    "title": "Millions risk financial ruin \ud83d\udea8 #shorts #personalfinance #healthinsurance",
+    "youtube_video_id": "bG2J1yD_PLE",
+    "youtube_url": "https://youtube.com/shorts/bG2J1yD_PLE",
+    "fallback_count": 5,
+    "validation_warnings": []
   }
 ]
