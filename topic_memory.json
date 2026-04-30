@@ -208,5 +208,18 @@
     "youtube_url": "https://youtube.com/shorts/tWSKlr_wg_c",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260430_214226",
+    "published_date": "2026-04-30",
+    "topic": "The Shocking Cost of Being Insured: Medical Debt's Hidden Trap",
+    "category": "insurance",
+    "total_score": 20,
+    "source_name": "Federal Reserve",
+    "title": "Your insurance is quietly drowning you \ud83d\udcc9 #shorts #personalfinance #healthinsurance",
+    "youtube_video_id": "x0qpmoBn5R4",
+    "youtube_url": "https://youtube.com/shorts/x0qpmoBn5R4",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
