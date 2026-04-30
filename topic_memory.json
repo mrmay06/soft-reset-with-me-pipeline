@@ -195,5 +195,18 @@
     "youtube_url": "https://youtube.com/shorts/-VyuCb_bRrQ",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260430_170530",
+    "published_date": "2026-04-30",
+    "topic": "Are You Ignoring $20 Trillion in Untapped Home Equity?",
+    "category": "mortgage",
+    "total_score": 19,
+    "source_name": "Federal Reserve Economic Data (FRED)",
+    "title": "Unlock your home equity secret \ud83d\udcb0 #shorts #personalfinance #mortgage",
+    "youtube_video_id": "tWSKlr_wg_c",
+    "youtube_url": "https://youtube.com/shorts/tWSKlr_wg_c",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
