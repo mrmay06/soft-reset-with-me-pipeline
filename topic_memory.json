@@ -169,5 +169,18 @@
     "youtube_url": "https://youtube.com/shorts/bG2J1yD_PLE",
     "fallback_count": 5,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260430_042503",
+    "published_date": "2026-04-30",
+    "topic": "Is Your Bank Secretly Stealing Billions? The Hidden Cost of Overdraft Fees",
+    "category": "banking",
+    "total_score": 18,
+    "source_name": "Consumer Financial Protection Bureau (CFPB)",
+    "title": "This small bank fee is stealing billions \ud83e\udd2f #shorts #personalfinance #overdraft",
+    "youtube_video_id": "jLE-QEV1jaI",
+    "youtube_url": "https://youtube.com/shorts/jLE-QEV1jaI",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
