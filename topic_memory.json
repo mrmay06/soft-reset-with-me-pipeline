@@ -247,5 +247,18 @@
     "youtube_url": "https://youtube.com/shorts/xV9BICz_PNw",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260501_164007",
+    "published_date": "2026-05-01",
+    "topic": "Homeowner Regret? Nearly 1 in 3 Americans Wish They Hadn't Bought!",
+    "category": "mortgage",
+    "total_score": 19,
+    "source_name": "Bankrate",
+    "title": "Homeownership regret is real for many \ud83d\udcc9 #shorts #personalfinance #mortgage",
+    "youtube_video_id": "jY4dMNwCgnY",
+    "youtube_url": "https://youtube.com/shorts/jY4dMNwCgnY",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
