@@ -312,5 +312,18 @@
     "youtube_url": "https://youtube.com/shorts/u3YEtsJIU2U",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260502_212643",
+    "published_date": "2026-05-02",
+    "topic": "Nearly half of all US renters are 'rent-burdened,' spending over 30% of income on housing.",
+    "category": "budgeting",
+    "total_score": 18,
+    "source_name": "Pew Research Center",
+    "title": "Housing trap silently steals \ud83d\udcb8 #shorts #personalfinance #rentburden",
+    "youtube_video_id": "tk2onONgpec",
+    "youtube_url": "https://youtube.com/shorts/tk2onONgpec",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
