@@ -364,5 +364,18 @@
     "youtube_url": "https://youtube.com/shorts/ZICvbiVKgKk",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260503_212842",
+    "published_date": "2026-05-03",
+    "topic": "The $10 Billion Scam Epidemic You Could Fall For",
+    "category": "banking",
+    "total_score": 18,
+    "source_name": "Federal Trade Commission (FTC)",
+    "title": "Americans Losing Billions \ud83d\udea8 #shorts #personalfinance #bankfraud",
+    "youtube_video_id": "SNA1bxoIMHc",
+    "youtube_url": "https://youtube.com/shorts/SNA1bxoIMHc",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
