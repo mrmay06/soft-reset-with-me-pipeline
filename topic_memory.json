@@ -351,5 +351,18 @@
     "youtube_url": "https://youtube.com/shorts/_VIg1JWDnf0",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260503_163116",
+    "published_date": "2026-05-03",
+    "topic": "You're missing out on billions in free credit card rewards.",
+    "category": "credit cards",
+    "total_score": 18,
+    "source_name": "Bankrate (citing Rewards Network study)",
+    "title": "You're missing out on free credit card rewards \ud83d\udcb8 #shorts #personalfinance #creditcards",
+    "youtube_video_id": "ZICvbiVKgKk",
+    "youtube_url": "https://youtube.com/shorts/ZICvbiVKgKk",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
