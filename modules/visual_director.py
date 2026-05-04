@@ -21,45 +21,77 @@ except ImportError:
 
 # ── Prompt ───────────────────────────────────────────────────────────────────
 
-DIRECTOR_PROMPT = """You are a visual director for a 30-60 second vertical finance YouTube Short (1080x1920).
+DIRECTOR_PROMPT = """You are the visual director for Raccoon Economy — a US personal finance YouTube Shorts channel with a unique branded character universe.
 
-Read this script as plain spoken dialogue — no section labels, just the words the narrator says:
+SCRIPT (plain spoken dialogue, one scene per sentence):
 "{raw_dialogue}"
 
-CORE RULE — one scene per sentence:
-Split the dialogue into individual sentences. Assign exactly ONE unique scene to each sentence.
-Do NOT group multiple sentences under one visual. Fast cuts = high energy.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VISUAL UNIVERSE — THE RACCOON ECONOMY WORLD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Scene 1 (hook sentence) — PATTERN INTERRUPT:
-  Must be jarring, bold, high contrast, urgent energy. This is the scroll-stopper.
-  If image: dramatic close-up, dark background, bold numbers, high contrast lighting.
-  Maximum 2 seconds — cut immediately after to keep pace.
+MAIN CHARACTER — Regular Raccoon:
+  Gray furry chibi raccoon, black mask around eyes, round ears.
+  Always wears: gold chain necklace + white t-shirt.
+  Expression range: deadpan → confused → alarmed → resigned → quietly determined.
+  Lives in: cardboard box den with wooden table, warm lamp, small square window showing dark alley + glowing 7-Eleven sign.
 
-For each scene choose visual_type:
-  "image" → AI-generated photo (statistics, hook reveals, concepts, close-up details, key facts)
-  "video" → stock footage (human emotion, real-world action, relatable everyday scenes)
+SUPPORTING CHARACTERS (call these when the dialogue needs them):
+  Animal Control Raccoon — gray chibi raccoon in beige enforcement uniform, black aviator sunglasses, silver badge, clipboard, rubber stamp on belt. Represents: IRS, banks, debt collectors, any authority figure. Expression: always expressionless.
+  Smart Raccoon — gray chibi raccoon in sage green hoodie, round glasses, dark chinos, white sneakers. Represents: financial advisor, the voice of reason.
+  Suit Raccoon — gray chibi raccoon in navy business suit, gold badge reading CAP VAULT, pocket square. Represents: corporate, investment world, wealth.
 
-For IMAGE scenes write a detailed image_prompt (30+ words):
-  - Specific subject + action + setting
-  - Camera angle (overhead, eye-level, close-up, wide, dramatic low-angle, etc.)
-  - Lighting (golden hour, dramatic spotlight, cold blue backlight, neon accent, etc.)
-  - Depth of field (shallow bokeh, tack-sharp, cinematic)
-  - Mood and colour grade
-  - Include a small stylized raccoon character in a business suit subtly visible in the scene
-    (e.g. peeking from corner, sitting on a desk, holding a tiny sign) — brand mascot element
-  - MUST end with: "photorealistic, professional photography, HD, no text overlays"
-  - NEVER: illustrations, cartoons, 3D renders, digital art (raccoon is the only stylized element)
+CURRENCY DISPLAY:
+  NEVER show dollar signs or $ amounts in illustrated scenes.
+  ALWAYS show money as CAPS — small round silver bottle caps stacked in piles.
+  Translation: "$800 lost" → "800 CAPS rolling off a pile" | "$1,200 refund" → "1200 CAPS in a neat stack"
+  Exception: Text on official-looking documents (pay stubs, tax forms) may show CAPS amounts.
 
-For VIDEO scenes write pexels_query: 3-5 word search term only.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCENE ASSIGNMENT RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Also generate:
-  thumbnail.image_prompt — Bold dramatic scroll-stopping visual for the video's core message.
-  High contrast, cinematic, close-up. 30+ words. Raccoon mascot visible. Photorealistic. No text in frame.
+CORE RULE: One scene per sentence. Split dialogue into individual sentences. One unique scene each.
 
-Constraints:
-  - One scene per sentence — if 10 sentences, produce 10 scenes. Minimum 6, maximum 20.
-  - covers_dialogue must use the EXACT words from the script (no paraphrasing).
-  - Every word in the script must be covered by exactly one scene.
+Scene 1 (hook) — HIGH ENERGY PATTERN INTERRUPT:
+  Regular Raccoon in dramatic alarmed or deadpan-shocked pose. Bold close-up. This must stop the scroll.
+
+For each scene pick a SCENE TYPE:
+  • "reaction" — Regular Raccoon close-up or medium shot reacting to what was just said
+  • "infographic" — flat graphic panel: CAPS pile, pay stub, chart, form, calculation breakdown (no character needed or just a paw visible)
+  • "interaction" — two raccoon characters at table or doorway
+  • "establishing" — wide shot of den or alley, sets the world
+  • "object" — tight close-up of document, envelope, CAPS pile, form — maybe just a raccoon paw
+
+Then set visual_type:
+  "image" → generate via AI (use for reaction, infographic, interaction, establishing, object)
+  "video" → Pexels stock (use ONLY if the dialogue is clearly about real-world human action that can't be illustrated — e.g. "driving to work", "paying at a store")
+  Prefer "image" for this illustrated universe. Use "video" sparingly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IMAGE PROMPT RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For IMAGE scenes write a detailed image_prompt (40+ words):
+  1. Scene type label (e.g. "Reaction shot:" or "Infographic panel:")
+  2. Character present (or none for pure infographic)
+  3. Specific action/pose/expression matching the dialogue
+  4. What's on the table/in hands/visible in frame
+  5. Setting detail
+  6. MUST end with this exact string: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+  NEVER include: photorealistic, photography, gradients, shadows, 3D, digital art
+
+For VIDEO scenes: pexels_query with 3-5 word search term.
+
+THUMBNAIL: Dramatic hook moment. Regular Raccoon in most alarmed/shocked pose of the video.
+  End with: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONSTRAINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  - One scene per sentence. 6 minimum, 20 maximum.
+  - covers_dialogue = EXACT words from the script (no paraphrasing).
+  - Every word in the script covered by exactly one scene.
 
 Return valid JSON only — no explanation, no markdown:
 {{
@@ -69,15 +101,17 @@ Return valid JSON only — no explanation, no markdown:
       "id": 1,
       "covers_dialogue": "exact words from script",
       "visual_type": "image",
-      "image_prompt": "detailed prompt...",
+      "scene_type": "reaction",
+      "image_prompt": "Reaction shot: Regular Raccoon [description]... flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical",
       "pexels_query": null
     }},
     {{
       "id": 2,
       "covers_dialogue": "next sentence",
-      "visual_type": "video",
-      "image_prompt": null,
-      "pexels_query": "search terms"
+      "visual_type": "image",
+      "scene_type": "infographic",
+      "image_prompt": "Infographic panel: [CAPS pile description]... flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical",
+      "pexels_query": null
     }}
   ]
 }}"""
@@ -106,51 +140,64 @@ def _validate_manifest(manifest: dict) -> tuple[bool, str]:
             return False, f"Scene {i+1} is 'image' but missing image_prompt"
         if s["visual_type"] == "video" and not s.get("pexels_query"):
             return False, f"Scene {i+1} is 'video' but missing pexels_query"
+        # Validate that image prompts end with the brand style string
+        if s["visual_type"] == "image" and s.get("image_prompt"):
+            if "chibi art style" not in s["image_prompt"].lower():
+                # Append brand style if missing
+                s["image_prompt"] += ", flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+    # Validate thumbnail has brand style
+    thumb_prompt = manifest["thumbnail"]["image_prompt"]
+    if "chibi art style" not in thumb_prompt.lower():
+        manifest["thumbnail"]["image_prompt"] += ", flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
     return True, ""
 
 
 # ── Fallback: reconstruct from existing script beat data ─────────────────────
 
 def _build_fallback_manifest(script: dict) -> dict:
-    """Fallback: split full dialogue into sentences, one scene per sentence."""
+    """Fallback: split full dialogue into sentences, one chibi scene per sentence."""
     import re
-    print("[visual_director] Building fallback manifest — splitting by sentences")
+    print("[visual_director] Building fallback manifest — sentence-split chibi style")
+
+    BRAND_STYLE = "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
 
     parts = [script.get(k, "") for k in ("hook", "tension", "insight", "loopback", "engagement_question", "cta")]
     full_text = " ".join(p for p in parts if p).strip()
 
-    # Split into sentences on . ! ? — keep the punctuation attached
     sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', full_text) if s.strip()]
     if not sentences:
         sentences = [full_text]
 
-    # Alternate image/video; first sentence always image (hook = pattern interrupt)
-    vtype_cycle = ["image", "video", "image", "image", "video", "image", "image", "video"]
+    # All images in fallback — chibi style
     scenes = []
+    scene_types = ["reaction", "infographic", "reaction", "infographic", "reaction", "infographic"]
     for i, sentence in enumerate(sentences):
-        vtype = vtype_cycle[i % len(vtype_cycle)]
+        stype = scene_types[i % len(scene_types)]
         if i == 0:
-            vtype = "image"  # hook always image
-        pexels_q = " ".join(sentence.split()[:4]) if vtype == "video" else None
-        raccoon_note = (
-            "small stylized raccoon mascot in business suit subtly in scene, "
-            "photorealistic, professional photography, HD, no text overlays"
+            stype = "reaction"
+        img_prompt = (
+            f"Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — "
+            f"{'alarmed wide-eyed shocked expression' if i == 0 else 'deadpan confused expression'}, "
+            f"sitting at wooden table in cardboard den, warm lamp in background. "
+            f"Scene captures: {sentence[:60]}. {BRAND_STYLE}"
         )
-        img_prompt = f"Finance scene: {sentence[:80]}. {raccoon_note}" if vtype == "image" else None
         scenes.append({
             "id": i + 1,
             "covers_dialogue": sentence,
-            "visual_type": vtype,
+            "visual_type": "image",
+            "scene_type": stype,
             "image_prompt": img_prompt,
-            "pexels_query": pexels_q,
+            "pexels_query": None,
         })
 
     return {
         "thumbnail": {"image_prompt":
-            "Close-up of credit card on dark surface, dramatic side lighting, small raccoon mascot in business suit "
-            "sitting in corner, cinematic, photorealistic, HD, no text overlays"},
+            f"Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — "
+            f"dramatic alarmed wide-eyed expression, holding a document, sitting at wooden table. "
+            f"{BRAND_STYLE}"},
         "disclaimer": {"image_prompt":
-            "Minimalist clean desk with notebook and pen, soft natural window light, no text, photorealistic, HD"},
+            f"Regular Raccoon — gray chibi raccoon, gold chain, white tee — sits at den table, "
+            f"calm deadpan expression, small disclaimer card on table. {BRAND_STYLE}"},
         "scenes": scenes,
         "fallback": True,
     }

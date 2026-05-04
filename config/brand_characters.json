@@ -1,0 +1,32 @@
+{
+  "image_style": "flat cartoon style, thick black outlines, solid flat colors, no gradients, no shadows, solid bright yellow background, chibi art style, bold simple shapes, 9:16 vertical portrait",
+
+  "characters": {
+    "regular_raccoon": "Regular Raccoon — gray furry chibi raccoon, black mask marking around eyes, round ears, gold chain necklace, white t-shirt, deadpan-to-calm expression",
+    "animal_control_raccoon": "Animal Control Raccoon — gray chibi raccoon, black aviator sunglasses, beige enforcement uniform, silver badge, clipboard in one hand, rubber stamp on belt, completely expressionless",
+    "smart_raccoon": "Smart Raccoon — gray chibi raccoon, sage green hoodie, small round glasses, dark chinos, white sneakers, serious concerned expression",
+    "suit_raccoon": "Suit Raccoon — gray chibi raccoon, navy business suit, gold chest badge reading CAP VAULT, pocket square, focused calm expression",
+    "freelance_friend": "Freelance Friend Raccoon — gray chibi raccoon, bandana around neck, delivery bag on shoulder, carefree happy expression"
+  },
+
+  "currency": {
+    "unit": "CAPS",
+    "description": "bottle caps as currency — small round silver bottle caps stacked in piles",
+    "visual_note": "When showing money amounts, display as CAPS (bottle cap piles). '$800 lost' = 800 CAPS rolling away from a pile. '$1,200 saved' = 1200 CAPS stacked neatly."
+  },
+
+  "settings": {
+    "den": "Regular Raccoon's cardboard box den — cardboard walls, simple wooden table, warm single lamp, small square window showing dark alley and glowing 7-Eleven sign outside",
+    "alley": "dark urban alley at night, glowing 7-Eleven sign in background, crates and dumpsters",
+    "hr_office": "bright sterile HR office, desk with forms and clipboard, small plant in corner, cold procedural mood, fluorescent lighting",
+    "fancy_office": "large corporate office, big desk, computer monitor, documents spread out, ceiling-to-floor windows"
+  },
+
+  "scene_type_guidance": {
+    "regular_raccoon_reaction": "Close-up or medium shot of Regular Raccoon reacting — confused, deadpan, alarmed, resigned, or quietly determined",
+    "infographic_panel": "Clean flat infographic: CAPS pile with label, pay stub rows highlighted, comparison chart, calculation breakdown — no character needed",
+    "character_interaction": "Two raccoon characters at a table or doorway — Regular Raccoon + supporting character",
+    "establishing_shot": "Wide shot of the den interior or alley — sets the world, small raccoon visible",
+    "close_up_object": "Tight shot of a document, envelope, form, or CAPS pile — no full character, maybe just a raccoon paw"
+  }
+}

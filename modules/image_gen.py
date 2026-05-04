@@ -39,8 +39,22 @@ def _extract_pexels_query(prompt: str, config: dict) -> str:
     return response.text.strip().lower()
 
 
+BRAND_STYLE_SUFFIX = (
+    "flat cartoon style, thick black outlines, solid flat colors, "
+    "bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+)
+
+
+def _ensure_brand_style(prompt: str) -> str:
+    """Append brand style suffix if not already present."""
+    if "chibi art style" not in prompt.lower():
+        return prompt.rstrip(" ,") + ", " + BRAND_STYLE_SUFFIX
+    return prompt
+
+
 @retry(max_attempts=3, wait_seconds=8, exceptions=(Exception,))
 def _generate_via_pollinations(prompt: str, config: dict) -> bytes:
+    prompt = _ensure_brand_style(prompt)
     encoded = urllib.parse.quote(prompt)
     seed = random.randint(1, 99999)
     api_key = os.environ.get("POLLINATIONS_API_KEY", "")
@@ -151,7 +165,11 @@ def _generate_asset(
         except Exception as e:
             print(f"[image_gen] {label}: Pexels video failed ({e}) — falling back to image")
             # Fall through to image generation
-            image_prompt = image_prompt or f"Cinematic scene: {query}, photorealistic, HD"
+            image_prompt = image_prompt or (
+                f"Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — "
+                f"watching scene: {query}. flat cartoon style, thick black outlines, solid flat colors, "
+                f"bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+            )
             output_path = output_path.replace(".mp4", ".png")
             rel_path = rel_path.replace(".mp4", ".png")
             visual_type = "image"
