@@ -10,7 +10,7 @@ import traceback
 warnings.filterwarnings("ignore", category=FutureWarning, module="google")
 
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 from utils.helpers import make_video_id, create_run_dir, load_config, load_json
 from utils.notify import send_failure_alert, send_success_alert

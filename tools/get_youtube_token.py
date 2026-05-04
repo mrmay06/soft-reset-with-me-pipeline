@@ -20,7 +20,8 @@ CLIENT_ID     = os.environ["YOUTUBE_CLIENT_ID"]
 CLIENT_SECRET = os.environ["YOUTUBE_CLIENT_SECRET"]
 REDIRECT_URI  = "urn:ietf:wg:oauth:2.0:oob"
 SCOPES        = ["https://www.googleapis.com/auth/youtube.upload",
-                 "https://www.googleapis.com/auth/youtube"]
+                 "https://www.googleapis.com/auth/youtube",
+                 "https://www.googleapis.com/auth/youtube.force-ssl"]  # required for commentThreads.insert
 
 try:
     from google_auth_oauthlib.flow import InstalledAppFlow
