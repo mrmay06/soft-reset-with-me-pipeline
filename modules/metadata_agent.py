@@ -39,6 +39,7 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
     metadata["tags"] = sanitize_youtube_tags(
         ensure_required_tags(metadata["tags"]),
         config.get("youtube_tags_total_chars", 450),
+        config.get("youtube_tags_max_count", 15),
     )
     if metadata["tags"] != before_sanitize:
         errors.append("tags_sanitized")

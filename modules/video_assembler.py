@@ -194,6 +194,22 @@ def _xfaded_duration(segments: list, xfade_duration: float) -> float:
     return max(0.1, sum(duration for _, duration in segments) - overlap)
 
 
+def _compensate_scene_durations_for_xfade(
+    scenes: list[dict],
+    static_segment_count: int,
+    xfade_duration: float,
+) -> list[float]:
+    if not scenes:
+        return []
+    total_segments = len(scenes) + static_segment_count
+    total_overlap = max(0, total_segments - 1) * xfade_duration
+    extra_per_scene = total_overlap / len(scenes)
+    return [
+        max(0.1, scene.get("duration_sec", 3.0) + extra_per_scene)
+        for scene in scenes
+    ]
+
+
 def _filter_path(path: str) -> str:
     return os.path.abspath(path).replace("'", "\\'").replace("\\", "/")
 
@@ -364,10 +380,12 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
     scenes = manifest["scenes"]
     print(f"[assembler] Creating {len(scenes)} scene segments")
     scene_segs = []
+    static_segment_count = 1 + (1 if config.get("end_hold_sec", 2) > 0 else 0) + 1
+    scene_durations = _compensate_scene_durations_for_xfade(scenes, static_segment_count, xfade)
 
     for i, scene in enumerate(scenes):
         sid      = scene["id"]
-        duration = max(0.1, scene.get("duration_sec", 3.0))
+        duration = scene_durations[i]
         key      = f"scene_{sid}"
         asset    = asset_meta["assets"].get(key)
         seg_path = os.path.join(segments_dir, f"seg_scene_{sid}.mp4")

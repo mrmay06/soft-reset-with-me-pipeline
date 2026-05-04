@@ -3,21 +3,29 @@ from __future__ import annotations
 import re
 
 
-DEFAULT_TAG_CHAR_LIMIT = 450
+DEFAULT_TAG_CHAR_LIMIT = 300
+DEFAULT_TAG_COUNT_LIMIT = 15
 MAX_TAG_LENGTH = 30
 REQUIRED_TAGS = ("US", "United States")
 
 
-def sanitize_youtube_tags(tags: list, total_char_limit: int = DEFAULT_TAG_CHAR_LIMIT) -> list[str]:
+def sanitize_youtube_tags(
+    tags: list,
+    total_char_limit: int = DEFAULT_TAG_CHAR_LIMIT,
+    max_count: int = DEFAULT_TAG_COUNT_LIMIT,
+) -> list[str]:
     clean = []
     total = 0
     seen = set()
 
     for tag in tags:
-        value = re.sub(r'[<>&"\']', "", str(tag)).strip()[:MAX_TAG_LENGTH]
+        value = re.sub(r"[^A-Za-z0-9 ]+", "", str(tag)).strip()
+        value = re.sub(r"\s+", " ", value)[:MAX_TAG_LENGTH].strip()
         key = value.lower()
         if not value or key in seen:
             continue
+        if len(clean) >= max_count:
+            break
         if total + len(value) > total_char_limit:
             break
         clean.append(value)

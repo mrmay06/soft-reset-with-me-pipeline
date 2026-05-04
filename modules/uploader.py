@@ -62,7 +62,11 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
 
     youtube = _get_youtube_client()
 
-    tags = sanitize_youtube_tags(metadata["tags"], config.get("youtube_tags_total_chars", 450))
+    tags = sanitize_youtube_tags(
+        metadata["tags"],
+        config.get("youtube_tags_total_chars", 300),
+        config.get("youtube_tags_max_count", 15),
+    )
     print(f"[uploader] Sending {len(tags)} tags, {sum(len(t) for t in tags)} total chars")
 
     body = {

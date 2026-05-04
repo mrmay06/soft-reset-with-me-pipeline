@@ -450,5 +450,20 @@
     "validation_warnings": [
       "tags_char_limit_trimmed: was 493 chars"
     ]
+  },
+  {
+    "video_id": "20260504_112115",
+    "published_date": "2026-05-04",
+    "topic": "Your Credit Score Is Costing You Tens of Thousands on Your Mortgage",
+    "category": "credit score/repair",
+    "total_score": 19,
+    "source_name": "MyFICO",
+    "title": "Your lender is hiding $145,000 from you \ud83d\udcb8 #wealthbuilding #creditrepair #raccooneconomy",
+    "youtube_video_id": "yl1E1JvU_Zo",
+    "youtube_url": "https://youtube.com/shorts/yl1E1JvU_Zo",
+    "fallback_count": 4,
+    "validation_warnings": [
+      "tags_sanitized"
+    ]
   }
 ]

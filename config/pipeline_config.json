@@ -31,6 +31,8 @@
   "script_model": "claude-sonnet-4-6",
   "research_model": "gemini-2.5-flash",
   "tags_count": 27,
+  "youtube_tags_max_count": 15,
+  "youtube_tags_total_chars": 300,
   "max_title_chars": 99,
   "youtube_category_id": "27",
   "privacy_status": "public"
