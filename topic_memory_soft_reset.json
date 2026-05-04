@@ -98,5 +98,25 @@
     "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260504_224908",
+    "published_date": "2026-05-04",
+    "status": "generated_not_uploaded",
+    "topic": "The unspoken pressure to be \"perfect\" when dating, and losing yourself trying.",
+    "category": "identity and growth",
+    "total_score": 19,
+    "source_name": "Social Psychology",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Feeling exhausted or inauthentic after a date; internal pressure to perform or change oneself for a partner.",
+    "psych_concept": "Authenticity, Self-Presentation, Impression Management",
+    "hook": "If you come home from a date exhausted, that's worth paying attention to.",
+    "thumbnail_text": "That date exhausted you for a reason.",
+    "content_fingerprint": "the unspoken pressure to be perfect when dating and losing yourself trying if you come home from a date exhausted that s worth paying attention to feeling exhausted or inauthentic after a date internal pressure to perform or change oneself for a partner authenticity self presentation impression management",
+    "title": "Being yourself on a date shouldn't drain you",
+    "youtube_video_id": "MOCK_NOT_UPLOADED",
+    "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
+    "fallback_count": 0,
+    "validation_warnings": []
   }
 ]
