@@ -18,6 +18,31 @@ except ImportError:
     AudioSegment = None
 
 
+def _remove_duplicate_sentences(text: str) -> str:
+    """
+    Remove duplicate or near-duplicate consecutive sentences from joined script text.
+    Catches cases where the LLM repeats a closing sentence at the start of the next section.
+    """
+    import re
+    # Split into sentences
+    raw = re.split(r'(?<=[.!?,—])\s+', text.strip())
+    sentences = [s.strip() for s in raw if s.strip()]
+
+    seen = []
+    for s in sentences:
+        # Normalise for comparison: lowercase, strip punctuation
+        norm = re.sub(r'[^a-z0-9 ]', '', s.lower()).strip()
+        # Skip if this sentence is identical or near-identical to the previous one
+        if seen and norm == re.sub(r'[^a-z0-9 ]', '', seen[-1].lower()).strip():
+            continue
+        # Skip if this sentence is a substring of the previous (trailing fragment)
+        if seen and len(norm) > 10 and norm in re.sub(r'[^a-z0-9 ]', '', seen[-1].lower()):
+            continue
+        seen.append(s)
+
+    return " ".join(seen)
+
+
 def _build_tts_input(script: dict) -> str:
     """
     Gemini TTS style instruction prepended to drive pace + energy.
@@ -38,6 +63,8 @@ def _build_tts_input(script: dict) -> str:
     ).strip()
     # Replace em-dashes with comma-pause so TTS reads naturally
     script_text = script_text.replace("—", ",").replace("--", ",")
+    # Remove duplicate trailing sentences from section joins
+    script_text = _remove_duplicate_sentences(script_text)
     return style + script_text
 
 

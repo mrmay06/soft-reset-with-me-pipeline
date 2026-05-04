@@ -39,7 +39,25 @@ CTA (42–45s) — write both lines, both go in the video:
     "Tap the heart if this just saved you money." OR "Like if your bank is guilty of this."
 
 STYLE: Fast-talking street-smart insider. You're handing someone a tip they're not supposed to know.
-Urgent. Slightly intense. Short punchy sentences. No pauses between ideas. Zero warmup.
+Urgent. Slightly intense. Zero warmup.
+
+SENTENCE RULES (TTS formatting — follow exactly):
+- Every sentence must be under 12 words. Hard limit.
+- Use periods, commas, and em-dashes aggressively to create natural breathing pauses.
+- No run-on sentences. Break any idea longer than 12 words into two sentences.
+- Good: "Your employer matches 6%. Most people leave it on the table."
+- Bad: "Your employer is actually matching 6% of your contributions every single pay period."
+
+NUMBER CONSISTENCY:
+- All dollar amounts and percentages must be internally consistent within the script.
+- If you cite a stat (e.g. "the average American loses $800/year"), any specific number you derive must be mathematically correct from that base stat.
+- Do not invent hyper-specific dollar amounts that have no grounding in the source fact.
+- One specific number. Used once. Repeated in the loopback.
+
+TEMPORAL CONTEXT — CURRENT YEAR IS 2026:
+- All statistics, deadlines, tax years, and program cutoffs must apply to 2023–2026.
+- Do not reference filing deadlines or program rules from before 2023 unless explicitly calling it historical context.
+- If a stat is from 2022 or earlier, flag it as "as of [year]" in the script.
 
 WORD COUNT: 90–140 words total across ALL sections combined. Hard limit: 140. Count every word.
 

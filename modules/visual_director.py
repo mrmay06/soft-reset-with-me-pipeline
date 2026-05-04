@@ -36,10 +36,11 @@ MAIN CHARACTER — Regular Raccoon:
   Expression range: deadpan → confused → alarmed → resigned → quietly determined.
   Lives in: cardboard box den with wooden table, warm lamp, small square window showing dark alley + glowing 7-Eleven sign.
 
-SUPPORTING CHARACTERS (call these when the dialogue needs them):
-  Animal Control Raccoon — gray chibi raccoon in beige enforcement uniform, black aviator sunglasses, silver badge, clipboard, rubber stamp on belt. Represents: IRS, banks, debt collectors, any authority figure. Expression: always expressionless.
-  Smart Raccoon — gray chibi raccoon in sage green hoodie, round glasses, dark chinos, white sneakers. Represents: financial advisor, the voice of reason.
-  Suit Raccoon — gray chibi raccoon in navy business suit, gold badge reading CAP VAULT, pocket square. Represents: corporate, investment world, wealth.
+SUPPORTING CHARACTERS (use when the dialogue calls for them):
+  Animal Control Raccoon — gray chibi raccoon, full navy enforcement uniform, black aviator sunglasses, silver badge, clipboard, red OVERDUE stamp on belt. Always expressionless. Represents: IRS, government, any system that arrives whether you're ready or not.
+  Smart Raccoon — gray chibi raccoon, sage green hoodie, round glasses, dark chinos, white sneakers, neat hair, upright posture. Always holds a document with a red circle. Quiet concern. Represents: financial advisor, the voice of reason Regular Raccoon ignores.
+  Suit Raccoon (Bank Raccoon) — gray chibi raccoon, navy business suit, white shirt, gold pocket square, gold CAP VAULT chest badge, neat dark hair. Smiles with closed eyes and blush circles — serene and unsettling. Holds a pink credit card. Represents: financial institutions. Not your enemy. Not your friend.
+  Crypto Raccoon — gray chibi raccoon, all-black hoodie with neon green accents, HODL belt buckle, WAGMI wristband, wild spiked dark hair. Stars in eyes when bullish, panic-wide eyes when bearish. Holds phone showing a chart. Represents: speculative finance, hype.
 
 CURRENCY DISPLAY:
   NEVER show dollar signs or $ amounts in illustrated scenes.
@@ -69,6 +70,23 @@ Then set visual_type:
   Prefer "image" for this illustrated universe. Use "video" sparingly.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VISUAL STYLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Style: flat cartoon, thick black outlines, solid fills, zero gradients, zero shadows, zero photorealism.
+Think: Saturday morning cartoon meets financial nightmare. Roughness is intentional.
+Background default: solid bright yellow #FFD700
+Background exception: night/alley scenes use dark navy #1B2A4A; yellow always as accent
+Color language: Yellow=world | Black=outlines | White=documents/tees | Red=danger/IRS/loss | Green=money/gains
+NEVER: photorealistic, photography, 3D, gradients, shadows, complex textures
+
+WORLD LOCATIONS (use these settings):
+  The Alley — brick walls, single overhead lamp, dumpster labeled FIRST RACCOON BANK, 7-Eleven sign glowing. Dark charcoal + navy + yellow accents. The emotional anchor.
+  The Den — cardboard box inside alley, wooden table, warm lamp, small square window.
+  Cap Vault — Suit Raccoon's bank. Bold flat signage. Institutional.
+  Pizza Hospital / Pizza Hotel / Pizza Palace — bold flat signage, no realistic detail.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 IMAGE PROMPT RULES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -77,7 +95,7 @@ For IMAGE scenes write a detailed image_prompt (40+ words):
   2. Character present (or none for pure infographic)
   3. Specific action/pose/expression matching the dialogue
   4. What's on the table/in hands/visible in frame
-  5. Setting detail
+  5. Setting detail (The Alley, The Den, Cap Vault, etc.)
   6. MUST end with this exact string: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
   NEVER include: photorealistic, photography, gradients, shadows, 3D, digital art
 
