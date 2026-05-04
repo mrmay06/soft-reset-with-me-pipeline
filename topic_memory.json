@@ -465,5 +465,20 @@
     "validation_warnings": [
       "tags_sanitized"
     ]
+  },
+  {
+    "video_id": "20260504_120728",
+    "published_date": "2026-05-04",
+    "topic": "Credit Card Late Fees Are a SCAM! Stop Paying Billions for This!",
+    "category": "credit cards",
+    "total_score": 19,
+    "source_name": "Consumer Financial Protection Bureau (CFPB)",
+    "title": "Your bank is stealing $27 billion from you right now \ud83d\udcb8 #moneyadvice #creditcard #raccooneconomy",
+    "youtube_video_id": "2kV9eQ2NG4I",
+    "youtube_url": "https://youtube.com/shorts/2kV9eQ2NG4I",
+    "fallback_count": 0,
+    "validation_warnings": [
+      "tags_sanitized"
+    ]
   }
 ]
