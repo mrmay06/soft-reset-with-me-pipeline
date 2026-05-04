@@ -64,10 +64,26 @@ For each scene pick a SCENE TYPE:
   • "establishing" — wide shot of den or alley, sets the world
   • "object" — tight close-up of document, envelope, CAPS pile, form — maybe just a raccoon paw
 
-Then set visual_type:
-  "image" → generate via AI (use for reaction, infographic, interaction, establishing, object)
-  "video" → Pexels stock (use ONLY if the dialogue is clearly about real-world human action that can't be illustrated — e.g. "driving to work", "paying at a store")
-  Prefer "image" for this illustrated universe. Use "video" sparingly.
+Assign visual_type AND image_style for each scene. Target roughly equal thirds:
+
+  visual_type "image", image_style "brand"  (~40% of scenes)
+    → AI-generated Raccoon Economy chibi illustration
+    → USE FOR: hook sentence, CTA, key emotional beats, raccoon character moments,
+      infographic panels with CAPS piles, den/alley establishing shots
+    → image_prompt must include raccoon character + end with chibi style string
+
+  visual_type "image", image_style "context"  (~30% of scenes)
+    → AI-generated contextual image — photorealistic OR clean flat infographic, NO raccoon
+    → USE FOR: stat/fact moments, real-world financial concepts, US settings (bank branch,
+      paycheck, tax form close-up, stock market board, apartment building)
+    → image_prompt style: "photorealistic, professional photography, HD" OR "clean flat infographic"
+    → Do NOT include chibi/cartoon/raccoon in context prompts
+
+  visual_type "video"  (~30% of scenes)
+    → Pexels stock footage — real human action and relatable scenes
+    → USE FOR: "checking phone", "paying bills", "at work", "stressed person", "signing documents",
+      anything with human movement and emotion
+    → pexels_query: 3-5 word search term
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 VISUAL STYLE
@@ -90,19 +106,25 @@ WORLD LOCATIONS (use these settings):
 IMAGE PROMPT RULES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-For IMAGE scenes write a detailed image_prompt (40+ words):
+For IMAGE scenes (image_style "brand") write a detailed image_prompt (40+ words):
   1. Scene type label (e.g. "Reaction shot:" or "Infographic panel:")
   2. Character present (or none for pure infographic)
   3. Specific action/pose/expression matching the dialogue
   4. What's on the table/in hands/visible in frame
   5. Setting detail (The Alley, The Den, Cap Vault, etc.)
-  6. MUST end with this exact string: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+  6. MUST end with: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
   NEVER include: photorealistic, photography, gradients, shadows, 3D, digital art
+
+For IMAGE scenes (image_style "context") write a detailed image_prompt (20+ words):
+  Describe the real-world financial concept visually. No raccoon. No cartoon.
+  End with: "photorealistic, professional photography, HD" OR "clean flat infographic, minimal design"
+  Examples: "Close-up of a US bank statement with overdraft fees highlighted in red, photorealistic, professional photography, HD"
+  NEVER include: raccoon, chibi, cartoon, flat cartoon, bright yellow, character
 
 For VIDEO scenes: pexels_query with 3-5 word search term.
 
 THUMBNAIL: Dramatic hook moment. Regular Raccoon in most alarmed/shocked pose of the video.
-  End with: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+  image_style: "brand". End with: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CONSTRAINTS
@@ -113,12 +135,13 @@ CONSTRAINTS
 
 Return valid JSON only — no explanation, no markdown:
 {{
-  "thumbnail": {{"image_prompt": "..."}},
+  "thumbnail": {{"image_prompt": "Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — dramatic alarmed wide-eyed expression, cardboard den background. flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"}},
   "scenes": [
     {{
       "id": 1,
       "covers_dialogue": "exact words from script",
       "visual_type": "image",
+      "image_style": "brand",
       "scene_type": "reaction",
       "image_prompt": "Reaction shot: Regular Raccoon [description]... flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical",
       "pexels_query": null
@@ -127,9 +150,19 @@ Return valid JSON only — no explanation, no markdown:
       "id": 2,
       "covers_dialogue": "next sentence",
       "visual_type": "image",
+      "image_style": "context",
       "scene_type": "infographic",
-      "image_prompt": "Infographic panel: [CAPS pile description]... flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical",
+      "image_prompt": "Close-up of a US bank statement with overdraft fees highlighted in red, photorealistic, professional photography, HD",
       "pexels_query": null
+    }},
+    {{
+      "id": 3,
+      "covers_dialogue": "another sentence",
+      "visual_type": "video",
+      "image_style": null,
+      "scene_type": "reaction",
+      "image_prompt": null,
+      "pexels_query": "person checking bank account"
     }}
   ]
 }}"""
@@ -158,12 +191,14 @@ def _validate_manifest(manifest: dict) -> tuple[bool, str]:
             return False, f"Scene {i+1} is 'image' but missing image_prompt"
         if s["visual_type"] == "video" and not s.get("pexels_query"):
             return False, f"Scene {i+1} is 'video' but missing pexels_query"
-        # Validate that image prompts end with the brand style string
-        if s["visual_type"] == "image" and s.get("image_prompt"):
+        # Default image_style to "brand" if not set
+        if s["visual_type"] == "image" and not s.get("image_style"):
+            s["image_style"] = "brand"
+        # For brand images only: ensure chibi style suffix is present
+        if s["visual_type"] == "image" and s.get("image_style") == "brand" and s.get("image_prompt"):
             if "chibi art style" not in s["image_prompt"].lower():
-                # Append brand style if missing
                 s["image_prompt"] += ", flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
-    # Validate thumbnail has brand style
+    # Thumbnail always brand — ensure chibi style
     thumb_prompt = manifest["thumbnail"]["image_prompt"]
     if "chibi art style" not in thumb_prompt.lower():
         manifest["thumbnail"]["image_prompt"] += ", flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"

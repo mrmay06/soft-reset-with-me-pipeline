@@ -54,7 +54,7 @@ def _ensure_brand_style(prompt: str) -> str:
 
 @retry(max_attempts=3, wait_seconds=8, exceptions=(Exception,))
 def _generate_via_pollinations(prompt: str, config: dict) -> bytes:
-    prompt = _ensure_brand_style(prompt)
+    # Prompt is passed as-is — apply _ensure_brand_style before calling if needed
     encoded = urllib.parse.quote(prompt)
     seed = random.randint(1, 99999)
     api_key = os.environ.get("POLLINATIONS_API_KEY", "")
@@ -147,6 +147,7 @@ def _generate_asset(
     output_path: str,
     idx: int,
     config: dict,
+    image_style: str = "brand",
 ) -> dict:
     """
     Generate one asset (image or video).
@@ -176,10 +177,12 @@ def _generate_asset(
 
     # Image path
     try:
-        img_bytes = _generate_via_pollinations(image_prompt, config)
+        # Apply brand style suffix only for brand images; context images use their own style
+        final_prompt = _ensure_brand_style(image_prompt) if image_style == "brand" else image_prompt
+        img_bytes = _generate_via_pollinations(final_prompt, config)
         _save_image(img_bytes, output_path)
         _validate_image(output_path)
-        print(f"[image_gen] {label}: image from Pollinations")
+        print(f"[image_gen] {label}: image from Pollinations [{image_style}]")
         return {"type": "image", "source": "pollinations", "path": rel_path}
     except Exception as e:
         print(f"[image_gen] {label}: Pollinations failed ({e}) — falling back to Pexels image")
@@ -206,7 +209,7 @@ def run_image_gen(video_id: str, run_dir: str, config: dict) -> dict:
     gap = config.get("image_request_gap_sec", 2)
 
     # ── Thumbnail image ───────────────────────────────────────────────────────
-    thumb_prompt = manifest["thumbnail"]["image_prompt"]
+    thumb_prompt = _ensure_brand_style(manifest["thumbnail"]["image_prompt"])  # always brand
     thumb_path = os.path.join(images_dir, "thumbnail.png")
     try:
         img_bytes = _generate_via_pollinations(thumb_prompt, config)
@@ -243,9 +246,11 @@ def run_image_gen(video_id: str, run_dir: str, config: dict) -> dict:
             output_path=out_path,
             idx=i,
             config=config,
+            image_style=scene.get("image_style", "brand"),
         )
 
         # Update path in case fallback changed extension
+        asset["image_style"] = scene.get("image_style") or ("brand" if vtype == "image" else None)
         results[f"scene_{sid}"] = asset
         if asset["source"] == "pexels_fallback" or (vtype == "video" and asset["type"] == "image"):
             fallback_count += 1
