@@ -26,33 +26,38 @@ DIRECTOR_PROMPT = """You are a visual director for a 30-60 second vertical finan
 Read this script as plain spoken dialogue — no section labels, just the words the narrator says:
 "{raw_dialogue}"
 
-Your job — decide where visual CUTS should happen based purely on what is being SAID:
-- A single visual can hold across multiple sentences if the topic doesn't shift.
-- Cut when the subject, emotion, location, or tone meaningfully changes.
-- Do NOT cut on every sentence. Group related sentences together.
+CORE RULE — one scene per sentence:
+Split the dialogue into individual sentences. Assign exactly ONE unique scene to each sentence.
+Do NOT group multiple sentences under one visual. Fast cuts = high energy.
+
+Scene 1 (hook sentence) — PATTERN INTERRUPT:
+  Must be jarring, bold, high contrast, urgent energy. This is the scroll-stopper.
+  If image: dramatic close-up, dark background, bold numbers, high contrast lighting.
+  Maximum 2 seconds — cut immediately after to keep pace.
 
 For each scene choose visual_type:
-  "image" → AI-generated photo (specific objects described, data/numbers, reveals,
-             concepts, close-up details, key moments that need a clear still)
-  "video" → stock footage (human emotion, action, movement, scale, relatable scenes)
+  "image" → AI-generated photo (statistics, hook reveals, concepts, close-up details, key facts)
+  "video" → stock footage (human emotion, real-world action, relatable everyday scenes)
 
 For IMAGE scenes write a detailed image_prompt (30+ words):
   - Specific subject + action + setting
-  - Camera angle (overhead, eye-level, close-up, wide, etc.)
-  - Lighting (golden hour, soft window light, dramatic spotlight, etc.)
-  - Depth of field (shallow bokeh, sharp, cinematic)
+  - Camera angle (overhead, eye-level, close-up, wide, dramatic low-angle, etc.)
+  - Lighting (golden hour, dramatic spotlight, cold blue backlight, neon accent, etc.)
+  - Depth of field (shallow bokeh, tack-sharp, cinematic)
   - Mood and colour grade
+  - Include a small stylized raccoon character in a business suit subtly visible in the scene
+    (e.g. peeking from corner, sitting on a desk, holding a tiny sign) — brand mascot element
   - MUST end with: "photorealistic, professional photography, HD, no text overlays"
-  - NEVER: illustrations, cartoons, 3D renders, digital art
+  - NEVER: illustrations, cartoons, 3D renders, digital art (raccoon is the only stylized element)
 
 For VIDEO scenes write pexels_query: 3-5 word search term only.
 
 Also generate:
   thumbnail.image_prompt — Bold dramatic scroll-stopping visual for the video's core message.
-  High contrast, cinematic, close-up. 30+ words. Photorealistic. No text in frame.
+  High contrast, cinematic, close-up. 30+ words. Raccoon mascot visible. Photorealistic. No text in frame.
 
 Constraints:
-  - Minimum 5 scenes, maximum 15 scenes.
+  - One scene per sentence — if 10 sentences, produce 10 scenes. Minimum 6, maximum 20.
   - covers_dialogue must use the EXACT words from the script (no paraphrasing).
   - Every word in the script must be covered by exactly one scene.
 
@@ -69,7 +74,7 @@ Return valid JSON only — no explanation, no markdown:
     }},
     {{
       "id": 2,
-      "covers_dialogue": "next dialogue span",
+      "covers_dialogue": "next sentence",
       "visual_type": "video",
       "image_prompt": null,
       "pexels_query": "search terms"
@@ -88,10 +93,10 @@ def _validate_manifest(manifest: dict) -> tuple[bool, str]:
     scenes = manifest.get("scenes", [])
     if not isinstance(scenes, list):
         return False, "scenes is not a list"
-    if len(scenes) < 5:
-        return False, f"Too few scenes: {len(scenes)} (min 5)"
-    if len(scenes) > 15:
-        return False, f"Too many scenes: {len(scenes)} (max 15)"
+    if len(scenes) < 6:
+        return False, f"Too few scenes: {len(scenes)} (min 6)"
+    if len(scenes) > 20:
+        return False, f"Too many scenes: {len(scenes)} (max 20)"
     for i, s in enumerate(scenes):
         if not s.get("covers_dialogue", "").strip():
             return False, f"Scene {i+1} missing covers_dialogue"
@@ -107,38 +112,43 @@ def _validate_manifest(manifest: dict) -> tuple[bool, str]:
 # ── Fallback: reconstruct from existing script beat data ─────────────────────
 
 def _build_fallback_manifest(script: dict) -> dict:
-    print("[visual_director] Building fallback manifest from script beat data")
-    beat_visuals = script.get("beat_visuals", {})
-    image_prompts = script.get("image_prompts", [""] * 5)
+    """Fallback: split full dialogue into sentences, one scene per sentence."""
+    import re
+    print("[visual_director] Building fallback manifest — splitting by sentences")
 
-    insight = script.get("insight", "")
-    half = len(insight) // 2
+    parts = [script.get(k, "") for k in ("hook", "tension", "insight", "loopback", "engagement_question", "cta")]
+    full_text = " ".join(p for p in parts if p).strip()
 
-    sections = [
-        (script.get("hook", ""),                  beat_visuals.get("beat_1", "image"), image_prompts[0] if len(image_prompts) > 0 else ""),
-        (script.get("tension", ""),               beat_visuals.get("beat_2", "video"), image_prompts[1] if len(image_prompts) > 1 else ""),
-        (insight[:half],                           beat_visuals.get("beat_3", "image"), image_prompts[2] if len(image_prompts) > 2 else ""),
-        (insight[half:],                           beat_visuals.get("beat_4", "image"), image_prompts[3] if len(image_prompts) > 3 else ""),
-        ((script.get("loopback", "") + " " + script.get("cta", "")).strip(),
-                                                   beat_visuals.get("beat_5", "image"), image_prompts[4] if len(image_prompts) > 4 else ""),
-    ]
+    # Split into sentences on . ! ? — keep the punctuation attached
+    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', full_text) if s.strip()]
+    if not sentences:
+        sentences = [full_text]
 
+    # Alternate image/video; first sentence always image (hook = pattern interrupt)
+    vtype_cycle = ["image", "video", "image", "image", "video", "image", "image", "video"]
     scenes = []
-    for i, (dialogue, vtype, prompt) in enumerate(sections):
-        if not dialogue.strip():
-            continue
-        pexels_q = " ".join(dialogue.split()[:4]) if vtype == "video" else None
+    for i, sentence in enumerate(sentences):
+        vtype = vtype_cycle[i % len(vtype_cycle)]
+        if i == 0:
+            vtype = "image"  # hook always image
+        pexels_q = " ".join(sentence.split()[:4]) if vtype == "video" else None
+        raccoon_note = (
+            "small stylized raccoon mascot in business suit subtly in scene, "
+            "photorealistic, professional photography, HD, no text overlays"
+        )
+        img_prompt = f"Finance scene: {sentence[:80]}. {raccoon_note}" if vtype == "image" else None
         scenes.append({
             "id": i + 1,
-            "covers_dialogue": dialogue.strip(),
+            "covers_dialogue": sentence,
             "visual_type": vtype,
-            "image_prompt": prompt if vtype == "image" else None,
+            "image_prompt": img_prompt,
             "pexels_query": pexels_q,
         })
 
     return {
-        "thumbnail": {"image_prompt": script.get("thumbnail_prompt",
-            "Close-up of credit card on dark surface, dramatic side lighting, cinematic, photorealistic, HD")},
+        "thumbnail": {"image_prompt":
+            "Close-up of credit card on dark surface, dramatic side lighting, small raccoon mascot in business suit "
+            "sitting in corner, cinematic, photorealistic, HD, no text overlays"},
         "disclaimer": {"image_prompt":
             "Minimalist clean desk with notebook and pen, soft natural window light, no text, photorealistic, HD"},
         "scenes": scenes,
@@ -211,7 +221,7 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
     voice_meta = load_json(os.path.join(run_dir, "03_voice_meta.json"))
     voice_duration = voice_meta["duration_sec"]
 
-    parts = [script.get(k, "") for k in ("hook", "tension", "insight", "loopback", "cta")]
+    parts = [script.get(k, "") for k in ("hook", "tension", "insight", "loopback", "engagement_question", "cta")]
     raw_dialogue = " ".join(p for p in parts if p).strip()
 
     prompt = DIRECTOR_PROMPT.format(raw_dialogue=raw_dialogue)
@@ -231,10 +241,10 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
         print(f"[visual_director] Gemini failed ({e}) — falling back to beat structure")
         manifest = _build_fallback_manifest(script)
 
-    # Clamp to 5-15
-    if len(manifest["scenes"]) > 15:
-        manifest["scenes"] = manifest["scenes"][:15]
-    if len(manifest["scenes"]) < 5:
+    # Clamp to 6-20
+    if len(manifest["scenes"]) > 20:
+        manifest["scenes"] = manifest["scenes"][:20]
+    if len(manifest["scenes"]) < 6:
         manifest = _build_fallback_manifest(script)
 
     # Re-number

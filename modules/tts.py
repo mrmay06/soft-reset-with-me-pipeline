@@ -20,19 +20,20 @@ except ImportError:
 
 def _build_tts_input(script: dict) -> str:
     """
-    Gemini TTS style instruction prepended to drive pace + confidence.
-    Speak mid-fast, direct, confident — no pauses, no filler — US finance Shorts energy.
+    Gemini TTS style instruction prepended to drive pace + energy.
+    Fast-talking street-smart insider — urgent, intense, zero warmup.
     """
     style = (
-        "Speak at a medium-fast pace. Confident, direct, no pauses between sentences. "
-        "Authoritative US finance tone — like a sharp money expert, not a newscaster. "
-        "Keep energy high throughout.\n\n"
+        "Fast-talking, street-smart financial insider. You are handing someone a tip they are not "
+        "supposed to know. Urgent, slightly intense, zero warmup. First word at full energy. "
+        "No pauses between sentences. Short punchy delivery throughout.\n\n"
     )
     script_text = (
         f"{script['hook']} "
         f"{script['tension']} "
         f"{script['insight']} "
         f"{script['loopback']} "
+        f"{script.get('engagement_question', '')} "
         f"{script.get('cta', '')}"
     ).strip()
     # Replace em-dashes with comma-pause so TTS reads naturally

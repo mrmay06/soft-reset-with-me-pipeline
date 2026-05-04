@@ -18,6 +18,14 @@ Rules:
 - Do not use any category from the recent_categories list
 - For angle_type, write a short phrase that naturally describes this topic's angle — do not force it into a fixed set
 
+PRIORITY categories (high CPM, proven performance) — bias towards these:
+  debt traps, retirement (401k, IRA, employer match), hidden fees (banking, credit cards),
+  "found money" (benefits, tax credits, unclaimed funds), credit score/repair
+
+FRAMING THAT WORKS: "bank vs consumer" and "system is rigged against you" framings outperform
+educational framing — frame topics as something being done TO the viewer, not something they should learn.
+e.g. "Your bank profits from your autopay setting" beats "How to optimize your savings account"
+
 Return ONLY a valid JSON array with no extra text:
 [
   {{

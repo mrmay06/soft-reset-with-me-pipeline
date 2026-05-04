@@ -2,7 +2,7 @@
   "output_frequency_per_day": 4,
   "target_audience": "US",
   "niche": "personal finance",
-  "blocked_categories": [],
+  "blocked_categories": ["insurance"],
   "topic_memory_lookback_days": 90,
   "duplicate_similarity_threshold": 0.80,
   "tts_voice": "Puck",

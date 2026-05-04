@@ -86,6 +86,7 @@ def _validate_script(script: dict, config: dict) -> dict:
         script.get("tension", ""),
         script.get("insight", ""),
         script.get("loopback", ""),
+        script.get("engagement_question", ""),
         script.get("cta", ""),
     ])
     word_count = len(full_text.split())
@@ -109,25 +110,15 @@ def _validate_script(script: dict, config: dict) -> dict:
         script["hook_quality"] = "strong"
         print(f"[script] ✓ Hook quality: strong")
 
-    beat_visuals = script.get("beat_visuals", {})
-    video_count = sum(1 for v in beat_visuals.values() if v == "video")
-    image_count = sum(1 for v in beat_visuals.values() if v == "image")
-
-    if image_count < 2:
-        print("[script] Fixing beat_visuals: too few images, forcing beats 1+5 to image")
-        script["beat_visuals"]["beat_1"] = "image"
-        script["beat_visuals"]["beat_5"] = "image"
-    if video_count < 1:
-        print("[script] Fixing beat_visuals: no video beats, forcing beat_2 to video")
-        script["beat_visuals"]["beat_2"] = "video"
-    if video_count > 3:
-        print("[script] Fixing beat_visuals: too many video beats, trimming to 3")
-        count = 0
-        for beat in ["beat_1", "beat_2", "beat_3", "beat_4", "beat_5"]:
-            if script["beat_visuals"][beat] == "video":
-                count += 1
-                if count > 3:
-                    script["beat_visuals"][beat] = "image"
+    # Engagement question check
+    eq = script.get("engagement_question", "")
+    bad_generic = ["what do you think", "let me know", "comment your thoughts", "tell me below"]
+    if not eq or any(phrase in eq.lower() for phrase in bad_generic):
+        print(f"[script] ⚠ Generic engagement question: '{eq}' — flag for retry")
+        script["engagement_quality"] = "weak"
+    else:
+        script["engagement_quality"] = "strong"
+        print(f"[script] ✓ Engagement question: strong")
 
     return script
 
@@ -159,15 +150,15 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
             print("[script] Still outside range after retry — proceeding with forced validation")
 
     if script.get("hook_quality") == "weak":
-        print(f"[script] Retrying hook for stronger ego-bait...")
+        print(f"[script] Retrying hook for stronger pattern interrupt...")
         hook_prompt = (
             f"Rewrite ONLY the hook for this finance Short. Topic: {research['topic']}.\n"
             f"Current weak hook: '{script['hook']}'\n"
-            f"Write ONE new hook under 10 words using one of these patterns:\n"
-            f"- '99% of people don't know this...'\n"
-            f"- 'Nobody tells you [truth]...'\n"
-            f"- 'Most Americans get [topic] completely wrong...'\n"
-            f"- 'This [thing] is quietly costing you...'\n"
+            f"Write ONE new hook under 12 words using EXACTLY ONE of these patterns:\n"
+            f"- Direct accusation: 'Your [bank/employer/system] is [stealing/hiding] from you right now.'\n"
+            f"- Massive number: 'You're losing $[specific odd number] a year and don't know it.'\n"
+            f"- Contrarian: '[Popular belief] is the worst financial move you're making.'\n"
+            f"Name the enemy. No warmup. No questions.\n"
             f"Return ONLY the hook text, no quotes, no explanation."
         )
         try:
@@ -193,6 +184,40 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         except Exception as e:
             print(f"[script] Hook retry failed ({e}) — keeping original")
 
+    if script.get("engagement_quality") == "weak":
+        print(f"[script] Retrying engagement question for stronger polarizer...")
+        eq_prompt = (
+            f"Write ONE polarizing engagement question for a YouTube Short on: {research['topic']}.\n"
+            f"Rules: must force a pick-a-side response or personal confession. Be specific and opinionated.\n"
+            f"Examples: 'Are you team 401k or team real estate? Fight me in the comments.'\n"
+            f"         'Drop a 💰 if your employer matches and you're NOT maxing it.'\n"
+            f"         'What's the dumbest money mistake you made this year?'\n"
+            f"NOT acceptable: 'What do you think?' 'Let me know below.' 'Comment your thoughts.'\n"
+            f"Return ONLY the question text, no quotes, no explanation."
+        )
+        try:
+            if config["script_model"].startswith("claude-"):
+                if _anthropic is None:
+                    raise RuntimeError("anthropic not installed")
+                client = _anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
+                msg = client.messages.create(
+                    model=config["script_model"],
+                    max_tokens=80,
+                    messages=[{"role": "user", "content": eq_prompt}],
+                )
+                new_eq = msg.content[0].text.strip().strip('"').strip("'")
+            else:
+                import google.generativeai as _g
+                _g.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
+                resp = _g.GenerativeModel(config["script_model"]).generate_content(eq_prompt)
+                new_eq = resp.text.strip().strip('"').strip("'")
+            if new_eq and len(new_eq.split()) >= 5:
+                script["engagement_question"] = new_eq
+                script["engagement_quality"] = "strong_retry"
+                print(f"[script] ✓ Engagement question updated: '{new_eq}'")
+        except Exception as e:
+            print(f"[script] Engagement question retry failed ({e}) — keeping original")
+
     output_path = os.path.join(run_dir, "02_script.json")
     save_json(script, output_path)
     print(f"[script] Done. Words: {script['word_count']}, validation: {script['validation']}")
@@ -209,25 +234,11 @@ def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "tension": "The average cardholder overpays because they misunderstand their statement cycle. The CFPB says most Americans don't even know when their billing cycle closes.",
         "insight": "Pay once before the statement date and once before the due date. This lowers your average daily balance — the number banks actually use to calculate interest. You could drop your interest charges to near zero without paying anything extra.",
         "loopback": "Most people still pay more than they need to.",
-        "cta": "Save this.",
+        "cta": "Tap the heart if this just saved you money.",
+        "engagement_question": "Are you paying your credit card once a month? Drop a 💳 if you didn't know this trick.",
+        "like_cta": "Tap the heart if this just saved you money.",
         "word_count": 102,
         "estimated_duration_sec": 41,
-        "image_prompts": [
-            "Bold minimalist graphic: large text '95%' in red on dark background, credit card icon, US-specific financial urgency",
-            "Worried person sitting at desk with laptop and credit card statements, realistic photo style, warm indoor lighting",
-            "Split calendar showing two payment dates highlighted in green, clean infographic style, white background",
-            "Close-up of credit card interest calculation formula, numbers fading, clean flat design illustration",
-            "Person smiling looking at phone with green checkmark notification, US home background, relief expression",
-        ],
-        "beat_visuals": {
-            "beat_1": "image",
-            "beat_2": "video",
-            "beat_3": "image",
-            "beat_4": "image",
-            "beat_5": "video",
-        },
-        "thumbnail_prompt": "Dramatic close-up of credit card with large bold text overlay, dark background with red accent, high contrast",
-        "thumbnail_text": "STOP OVERPAYING",
         "validation": "passed",
         "generated_at": now_iso(),
     }
