@@ -47,9 +47,32 @@ Copy `.env.example` to `.env` for local runs, or add these as GitHub Actions sec
 
 `COVERR_API_KEY` is optional for now because Coverr is disabled in Shorts config.
 
+## YouTube OAuth
+
+Before enabling upload, generate a refresh token while signed into the Google/YouTube account that owns **Soft Reset With Me**:
+
+```bash
+python tools/get_youtube_token.py
+```
+
+Choose the `Soft Reset With Me` channel/account in the Google consent screen. Then update:
+
+- local `.env`: `YOUTUBE_REFRESH_TOKEN=...`
+- GitHub secret: `YOUTUBE_REFRESH_TOKEN`
+
+Verify the token points to the right channel:
+
+```bash
+python tools/check_youtube_channel.py
+```
+
+Do not run GitHub Actions with `upload=true` until this prints `Soft Reset With Me`.
+
 ## GitHub Actions
 
 The workflow at `.github/workflows/run_pipeline.yml` runs the pipeline on the configured posting schedule and can also be triggered manually from the Actions tab.
+
+Scheduled GitHub Actions runs upload to YouTube by default. Manual runs render with `--skip-upload` unless the `upload` input is set to `true`. Rendered videos are saved as workflow artifacts for 7 days.
 
 The workflow commits only `topic_memory_soft_reset.json` after successful runs so the channel avoids repeating recent topics.
 
