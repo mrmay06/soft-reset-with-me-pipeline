@@ -92,6 +92,7 @@ jobs:
           name: soft-reset-render-${{ github.run_id }}
           path: |
             workspace/run_*/06_final_video.mp4
+            workspace/run_*/00_performance_sync.json
             workspace/run_*/05_thumbnail.png
             workspace/run_*/07_metadata.json
             workspace/run_*/02_script.json
@@ -100,12 +101,12 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
-      - name: Commit topic memory
+      - name: Commit learning memory
         if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add topic_memory_soft_reset.json
+          git add topic_memory_soft_reset.json performance_memory_soft_reset.json
           git diff --staged --quiet || git commit -m "chore: log video $(date +%Y%m%d_%H%M%S)"
           git push
 

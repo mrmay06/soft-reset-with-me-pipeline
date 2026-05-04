@@ -16,6 +16,7 @@ load_dotenv(override=True)
 from utils.helpers import make_video_id, create_run_dir, load_config, load_json
 from utils.notify import send_failure_alert, send_success_alert
 
+from modules.performance_agent import run_performance_sync, run_performance_sync_mock
 from modules.research_agent import run_research, run_research_mock
 from modules.script_agent import run_script, run_script_mock
 from modules.tts import run_tts, run_tts_mock
@@ -78,6 +79,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
     print(f" Run dir:  {run_dir}")
     print(f"{'='*50}\n")
 
+    performance_fn = run_performance_sync_mock    if mock else run_performance_sync
     research_fn   = run_research_mock         if mock else run_research
     script_fn     = run_script_mock           if mock else run_script
     tts_fn        = run_tts_mock              if mock else run_tts
@@ -105,6 +107,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
         print(f"  {label:<30} OK  ({elapsed}s)\n")
 
     try:
+        _run("Module 0  — Performance",     performance_fn, video_id, run_dir, config, checkpoint_files=["00_performance_sync.json"])
         _run("Module 1  — Research",        research_fn,  video_id, run_dir, config, checkpoint_files=["01_research.json"])
         _run("Module 2  — Script",           script_fn,    video_id, run_dir, config, checkpoint_files=["02_script.json"])
         _run("Module 3A — TTS",              tts_fn,       video_id, run_dir, config, checkpoint_files=["03_voice.mp3", "03_voice_meta.json"])
@@ -175,7 +178,7 @@ if __name__ == "__main__":
     parser.add_argument("--mock",   action="store_true", help="Run with mock data (no API calls)")
     parser.add_argument("--resume", metavar="VIDEO_ID",  help="Resume a specific run by video ID (e.g. 20260428_094245). If omitted, auto-resumes latest incomplete run.")
     parser.add_argument("--fresh",  action="store_true", help="Force a brand new run even if an incomplete run exists")
-    parser.add_argument("--skip-upload", action="store_true", help="Generate all assets and metadata but do not upload or log to channel memory")
+    parser.add_argument("--skip-upload", action="store_true", help="Generate all assets and metadata but do not upload")
     args = parser.parse_args()
 
     main(mock=args.mock, resume_id=args.resume, fresh=args.fresh, skip_upload=args.skip_upload)

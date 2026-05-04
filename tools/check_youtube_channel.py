@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from datetime import datetime, timedelta
 
 from dotenv import load_dotenv
 
@@ -25,10 +26,14 @@ def main() -> None:
         client_id=os.environ["YOUTUBE_CLIENT_ID"],
         client_secret=os.environ["YOUTUBE_CLIENT_SECRET"],
         token_uri="https://oauth2.googleapis.com/token",
-        scopes=["https://www.googleapis.com/auth/youtube"],
+        scopes=[
+            "https://www.googleapis.com/auth/youtube",
+            "https://www.googleapis.com/auth/yt-analytics.readonly",
+        ],
     )
     creds.refresh(Request())
     youtube = build("youtube", "v3", credentials=creds)
+    analytics = build("youtubeAnalytics", "v2", credentials=creds)
 
     response = youtube.channels().list(part="snippet,statistics", mine=True).execute()
     channels = response.get("items", [])
@@ -40,6 +45,17 @@ def main() -> None:
         snippet = channel.get("snippet", {})
         stats = channel.get("statistics", {})
         print(f"- {snippet.get('title', '(untitled)')} | id={channel.get('id')} | videos={stats.get('videoCount', '0')}")
+
+    end = datetime.utcnow().date() - timedelta(days=1)
+    start = end - timedelta(days=7)
+    analytics.reports().query(
+        ids="channel==MINE",
+        startDate=start.isoformat(),
+        endDate=end.isoformat(),
+        metrics="views",
+        maxResults=1,
+    ).execute()
+    print("YouTube Analytics API: OK")
 
 
 if __name__ == "__main__":

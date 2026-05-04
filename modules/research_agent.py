@@ -10,6 +10,7 @@ import requests
 from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
 from utils.gemini_client import generate_json
+from utils.performance_insights import summarize_performance_for_prompt
 
 try:
     from pytrends.request import TrendReq
@@ -295,7 +296,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     _configure_gemini()
 
     # Format signals block
-    all_signals = signals.get("pytrends", []) + signals.get("youtube", [])
+    all_signals = signals.get("pytrends", []) + signals.get("youtube", []) + signals.get("reddit", [])
     if all_signals:
         signals_str = "\n".join(f"- {s}" for s in all_signals[:30])
     else:
@@ -304,6 +305,10 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     recent_str  = "\n".join(f"- {t}" for t in recent_topics)  if recent_topics  else "- None"
     cat_str     = "\n".join(f"- {c}" for c in recent_categories) if recent_categories else "- None"
     blocked_str = "\n".join(f"- {c}" for c in blocked_categories) if blocked_categories else "- None"
+    performance_insights = summarize_performance_for_prompt(
+        config.get("performance_memory_file", "performance_memory_soft_reset.json"),
+        min_videos=int(config.get("performance_min_videos_for_prompt", 8)),
+    )
 
     prompt_template = open("prompts/research_candidates_prompt.txt").read()
     prompt = prompt_template.format(
@@ -311,6 +316,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         recent_topics=recent_str,
         recent_categories=cat_str,
         blocked_categories=blocked_str,
+        performance_insights=performance_insights,
         target_audience=config.get("target_audience", "US"),
         niche=config.get("niche", "relationship self-improvement"),
     )

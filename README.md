@@ -68,13 +68,21 @@ python tools/check_youtube_channel.py
 
 Do not run GitHub Actions with `upload=true` until this prints `Soft Reset With Me`.
 
+The OAuth token must include YouTube upload and YouTube Analytics scopes. If Analytics sync reports an insufficient-scope error, rerun `tools/get_youtube_token.py` and update the `YOUTUBE_REFRESH_TOKEN` secret again.
+
+## Performance Feedback
+
+The pipeline syncs YouTube Analytics before research. It stores recent video metrics in `performance_memory_soft_reset.json`, including views, engaged views, average view duration, average view percentage, likes, comments, shares, and subscribers gained when available.
+
+Research and script prompts use this data only after a minimum sample size, so the channel does not overfit the first few Shorts.
+
 ## GitHub Actions
 
 The workflow at `.github/workflows/run_pipeline.yml` runs the pipeline on the configured posting schedule and can also be triggered manually from the Actions tab.
 
 Scheduled GitHub Actions runs upload to YouTube by default. Manual runs render with `--skip-upload` unless the `upload` input is set to `true`. Rendered videos are saved as workflow artifacts for 7 days.
 
-The workflow commits only `topic_memory_soft_reset.json` after successful runs so the channel avoids repeating recent topics.
+The workflow commits `topic_memory_soft_reset.json` and `performance_memory_soft_reset.json` after successful runs so the channel avoids repeating recent topics and can learn from uploaded video performance.
 
 ## Important Files
 

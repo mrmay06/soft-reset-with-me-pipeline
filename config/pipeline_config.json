@@ -36,6 +36,7 @@
   "reddit_signal_subreddits": ["relationship_advice", "dating_advice", "BreakUps", "ExNoContact", "self"],
   "performance_memory_file": "performance_memory_soft_reset.json",
   "performance_lookback_days": 45,
+  "performance_min_videos_for_prompt": 8,
   "tts_voice": "Puck",
   "tts_model": "gemini-2.5-flash-preview-tts",
   "image_model": "zimage",

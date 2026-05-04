@@ -16,6 +16,9 @@ Recent categories used (last 4 videos) — do NOT use these categories:
 Blocked categories — NEVER use these categories:
 {blocked_categories}
 
+Performance feedback from previous uploads:
+{performance_insights}
+
 Generate 5-7 distinct topic candidates for a YouTube Short.
 
 Research goal:
@@ -24,6 +27,7 @@ Research goal:
 - Each candidate must be meaningfully different from recent topics in premise, hook, emotional trigger, and psychology concept
 - Balance the board: do not cluster all candidates around breakup grief or situationships unless the signals strongly demand it
 - US 2026 framing matters: DMs, screen-time anxiety, dating app burnout, boundaries, ghosting, emotional availability, and self-worth
+- If performance feedback is available, use it directionally: lean toward winning hook shapes, emotional triggers, and formats, but do not repeat exact topics or hooks
 
 Content pillars:
 1. Relationship Patterns — attachment styles, red flags, situationships, love bombing

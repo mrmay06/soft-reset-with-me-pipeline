@@ -20,7 +20,8 @@ CLIENT_SECRET = os.environ["YOUTUBE_CLIENT_SECRET"]
 REDIRECT_URI  = "http://localhost:8080/"
 SCOPES        = ["https://www.googleapis.com/auth/youtube.upload",
                  "https://www.googleapis.com/auth/youtube",
-                 "https://www.googleapis.com/auth/youtube.force-ssl"]  # required for commentThreads.insert
+                 "https://www.googleapis.com/auth/youtube.force-ssl",
+                 "https://www.googleapis.com/auth/yt-analytics.readonly"]  # analytics feedback loop
 
 try:
     from google_auth_oauthlib.flow import InstalledAppFlow

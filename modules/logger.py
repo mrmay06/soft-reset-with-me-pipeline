@@ -64,6 +64,9 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "emotional_trigger": research.get("emotional_trigger", ""),
         "psych_concept": research.get("psych_concept", ""),
         "hook": script.get("hook", ""),
+        "hook_quality": script.get("hook_quality", ""),
+        "word_count": script.get("word_count", 0),
+        "estimated_duration_sec": script.get("estimated_duration_sec", 0),
         "thumbnail_text": script.get("thumbnail_text", ""),
         "content_fingerprint": _fingerprint(
             research.get("topic", ""),
@@ -75,6 +78,8 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "youtube_video_id": upload_result["youtube_video_id"],
         "youtube_url": upload_result["youtube_url"],
         "fallback_count": asset_meta["fallback_count"],
+        "video_count": asset_meta.get("video_count", 0),
+        "total_scenes": asset_meta.get("total_scenes", 0),
         "validation_warnings": metadata.get("validation_warnings", []),
     }
 

@@ -15,6 +15,9 @@ CONTENT FORMAT: {content_format}
 EMOTIONAL TRIGGER: {emotional_trigger}
 PSYCH CONCEPT: {psych_concept}
 
+PERFORMANCE FEEDBACK:
+{performance_insights}
+
 SCRIPT FRAMEWORK:
 
 HOOK (0-3s) — scroll-stopper.
@@ -39,6 +42,7 @@ Weak examples to avoid:
 "Healing starts when you listen to yourself."
 "Sometimes love teaches us the hardest lessons."
 Never start with "Today I want to talk about."
+If performance feedback shows a hook shape is working, adapt that shape. Never copy a previous hook exactly.
 
 TENSION (3-10s):
 Name the exact pain or situation.

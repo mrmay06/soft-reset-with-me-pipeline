@@ -5,6 +5,7 @@ from utils.helpers import load_json, save_json, now_iso
 from utils.gemini_client import generate_json, generate_text
 from utils.retry import retry
 from utils.script_contract import build_spoken_script_text, normalize_script_contract, word_count
+from utils.performance_insights import summarize_performance_for_prompt
 
 try:
     import anthropic as _anthropic
@@ -153,6 +154,10 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
 
     research = load_json(os.path.join(run_dir, "01_research.json"))
     prompt_template = open("prompts/script_prompt.txt").read()
+    performance_insights = summarize_performance_for_prompt(
+        config.get("performance_memory_file", "performance_memory_soft_reset.json"),
+        min_videos=int(config.get("performance_min_videos_for_prompt", 8)),
+    )
     prompt = prompt_template.format(
         topic=research["topic"],
         category=research.get("category", ""),
@@ -164,6 +169,7 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         content_format=research.get("content_format", "scenario"),
         emotional_trigger=research.get("emotional_trigger", ""),
         psych_concept=research.get("psych_concept", ""),
+        performance_insights=performance_insights,
         video_id=video_id,
         generated_at=now_iso(),
     )
