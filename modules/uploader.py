@@ -1,3 +1,4 @@
+from __future__ import annotations
 import os
 
 from utils.helpers import load_json, save_json, now_iso
