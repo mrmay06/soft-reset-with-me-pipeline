@@ -58,6 +58,7 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "status": upload_status,
         "topic": research["topic"],
         "category": research["category"],
+        "angle_type": research.get("angle_type", ""),
         "total_score": research["total_score"],
         "source_name": research["source_name"],
         "content_format": research.get("content_format", ""),

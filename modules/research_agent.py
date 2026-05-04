@@ -308,6 +308,8 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     performance_insights = summarize_performance_for_prompt(
         config.get("performance_memory_file", "performance_memory_soft_reset.json"),
         min_videos=int(config.get("performance_min_videos_for_prompt", 8)),
+        pattern_min_videos=int(config.get("performance_pattern_min_videos", 25)),
+        min_views=int(config.get("performance_min_views", 50)),
     )
 
     prompt_template = open("prompts/research_candidates_prompt.txt").read()

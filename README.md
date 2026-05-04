@@ -74,7 +74,13 @@ The OAuth token must include YouTube upload and YouTube Analytics scopes. If Ana
 
 The pipeline syncs YouTube Analytics before research. It stores recent video metrics in `performance_memory_soft_reset.json`, including views, engaged views, average view duration, average view percentage, likes, comments, shares, and subscribers gained when available.
 
-Research and script prompts use this data only after a minimum sample size, so the channel does not overfit the first few Shorts.
+Research and script prompts use staged learning so the channel does not overfit the first few Shorts:
+
+- 0-7 valid videos: collect data only; keep testing different pillars and formats.
+- 8-24 valid videos: use individual winning/weak examples directionally, not category conclusions.
+- 25+ valid videos: use pattern-level feedback by category, format, angle, hook quality, and research-score calibration.
+
+Videos younger than 2 days are skipped for analytics, cached analytics are reused for 7 days, and pattern-level analysis ignores videos below the configured minimum view threshold. The blended score weighs hook power, hold, emotional resonance, and reach rather than raw views alone.
 
 ## GitHub Actions
 

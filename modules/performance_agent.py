@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import math
 from datetime import datetime, timedelta
 
 from utils.helpers import load_json, save_json, now_iso
@@ -71,6 +72,46 @@ def _load_uploaded_topic_entries(memory_file: str, lookback_days: int) -> list[d
     return entries
 
 
+def _load_performance_memory(performance_file: str) -> dict:
+    if not os.path.exists(performance_file):
+        return {"videos": []}
+    data = load_json(performance_file)
+    return data if isinstance(data, dict) else {"videos": []}
+
+
+def _parse_date(value: str) -> datetime.date | None:
+    try:
+        return datetime.strptime(str(value or "")[:10], "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def _parse_iso(value: str) -> datetime | None:
+    try:
+        return datetime.strptime(str(value or ""), "%Y-%m-%dT%H:%M:%SZ")
+    except ValueError:
+        return None
+
+
+def _cache_by_video_id(performance_file: str) -> dict[str, dict]:
+    memory = _load_performance_memory(performance_file)
+    cached = {}
+    for record in memory.get("videos", []):
+        youtube_id = record.get("youtube_video_id")
+        if youtube_id:
+            cached[youtube_id] = record
+    return cached
+
+
+def _should_reuse_cached(record: dict | None, refresh_days: int) -> bool:
+    if not record:
+        return False
+    fetched_at = _parse_iso(record.get("analytics_fetched_at", ""))
+    if not fetched_at:
+        return False
+    return fetched_at >= datetime.utcnow() - timedelta(days=refresh_days)
+
+
 def _query_metrics(client, video_ids: list[str], start_date: str, end_date: str) -> tuple[list[str], list[list]]:
     last_error = None
     for metrics in METRIC_FALLBACKS:
@@ -99,7 +140,13 @@ def _as_float(value) -> float:
         return 0.0
 
 
-def _score(metrics: dict) -> float:
+def _rate(numerator: float, denominator: float) -> float:
+    if denominator <= 0:
+        return 0.0
+    return numerator / denominator
+
+
+def _score(metrics: dict) -> dict:
     views = _as_float(metrics.get("views"))
     engaged = _as_float(metrics.get("engagedViews"))
     avg_pct = _as_float(metrics.get("averageViewPercentage"))
@@ -107,8 +154,37 @@ def _score(metrics: dict) -> float:
     comments = _as_float(metrics.get("comments"))
     shares = _as_float(metrics.get("shares"))
     subs = _as_float(metrics.get("subscribersGained"))
-    retention_bonus = views * max(0.0, min(avg_pct, 200.0)) / 100.0
-    return round(views + engaged * 2 + retention_bonus + likes * 20 + comments * 35 + shares * 30 + subs * 100, 2)
+
+    hook_score = min(_rate(engaged, views), 1.5) * 100.0
+    hold_score = max(0.0, min(avg_pct, 200.0))
+    resonance_raw = _rate(likes + comments * 3 + shares * 4 + subs * 8, max(engaged, 1.0))
+    resonance_score = min(resonance_raw * 100.0, 200.0)
+    reach_score = min(math.log10(max(views, 0.0) + 1.0) * 25.0, 100.0)
+    performance_score = (
+        hook_score * 0.35
+        + hold_score * 0.35
+        + resonance_score * 0.20
+        + reach_score * 0.10
+    )
+    return {
+        "performance_score": round(performance_score, 2),
+        "hook_score": round(hook_score, 2),
+        "hold_score": round(hold_score, 2),
+        "resonance_score": round(resonance_score, 2),
+        "reach_score": round(reach_score, 2),
+    }
+
+
+def _build_record(entry: dict, metrics: dict, fetched_at: str, today: datetime.date) -> dict:
+    published = _parse_date(entry.get("published_date", "")) or today
+    score_parts = _score(metrics)
+    return {
+        **entry,
+        "metrics": metrics,
+        **score_parts,
+        "analytics_fetched_at": fetched_at,
+        "analytics_days_old": max(0, (today - published).days),
+    }
 
 
 def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
@@ -116,6 +192,8 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
     memory_file = config.get("topic_memory_file", "topic_memory_soft_reset.json")
     performance_file = config.get("performance_memory_file", "performance_memory_soft_reset.json")
     lookback_days = int(config.get("performance_lookback_days", 45))
+    min_age_days = int(config.get("performance_min_video_age_days", 2))
+    refresh_days = int(config.get("performance_refresh_interval_days", 7))
     output_path = os.path.join(run_dir, "00_performance_sync.json")
 
     result = {
@@ -123,6 +201,8 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
         "status": "skipped",
         "reason": "",
         "videos_synced": 0,
+        "videos_reused": 0,
+        "videos_too_new": 0,
         "generated_at": now_iso(),
     }
 
@@ -149,29 +229,53 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
         return result
 
     try:
-        client = _youtube_analytics_client()
-        ids = [entry["youtube_video_id"] for entry in entries][:500]
-        headers, rows = _query_metrics(client, ids, start.isoformat(), end.isoformat())
+        today_iso = now_iso()
+        cached = _cache_by_video_id(performance_file)
+        fresh_records = []
+        entries_to_fetch = []
+        too_new = 0
+
+        for entry in entries:
+            youtube_id = entry["youtube_video_id"]
+            published = _parse_date(entry.get("published_date", "")) or today
+            age_days = (today - published).days
+            cached_record = cached.get(youtube_id)
+
+            if age_days < min_age_days:
+                too_new += 1
+                if cached_record:
+                    fresh_records.append(cached_record)
+                continue
+
+            if _should_reuse_cached(cached_record, refresh_days):
+                fresh_records.append(cached_record)
+                continue
+
+            entries_to_fetch.append(entry)
+
         by_id = {}
-        for row in rows:
-            mapped = dict(zip(headers, row))
-            video_key = mapped.pop("video", "")
-            by_id[video_key] = mapped
+        headers = []
+        if entries_to_fetch:
+            client = _youtube_analytics_client()
+            ids = [entry["youtube_video_id"] for entry in entries_to_fetch][:500]
+            headers, rows = _query_metrics(client, ids, start.isoformat(), end.isoformat())
+            for row in rows:
+                mapped = dict(zip(headers, row))
+                video_key = mapped.pop("video", "")
+                by_id[video_key] = mapped
 
         videos = []
-        for entry in entries:
+        videos.extend(fresh_records)
+        for entry in entries_to_fetch:
             metrics = by_id.get(entry["youtube_video_id"], {})
-            record = {
-                **entry,
-                "metrics": metrics,
-                "performance_score": _score(metrics),
-            }
-            videos.append(record)
+            videos.append(_build_record(entry, metrics, today_iso, today))
 
         videos.sort(key=lambda item: item.get("performance_score", 0), reverse=True)
         memory = {
             "generated_at": now_iso(),
             "lookback_days": lookback_days,
+            "min_video_age_days": min_age_days,
+            "refresh_interval_days": refresh_days,
             "start_date": start.isoformat(),
             "end_date": end.isoformat(),
             "videos": videos,
@@ -182,6 +286,9 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
             "status": "ok",
             "reason": "",
             "videos_synced": len(videos),
+            "videos_reused": len(fresh_records),
+            "videos_fetched": len(entries_to_fetch),
+            "videos_too_new": too_new,
             "performance_memory_file": performance_file,
         })
         save_json(result, output_path)
