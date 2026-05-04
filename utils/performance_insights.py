@@ -44,6 +44,10 @@ def _avg_pct(video: dict) -> float:
     return _safe_num(_metrics(video).get("averageViewPercentage"))
 
 
+def _composite(video: dict) -> float:
+    return _safe_num(video.get("composite_score", video.get("performance_score")))
+
+
 def _valid_with_analytics(video: dict) -> bool:
     return bool(video.get("youtube_video_id") and _metrics(video))
 
@@ -72,11 +76,11 @@ def _score_calibration(videos: list[dict]) -> str:
     low = [v for v in videos if 0 < _safe_num(v.get("total_score")) < 14]
     parts = []
     if high:
-        parts.append(f"score >=18: {round(_avg([_avg_pct(v) for v in high]), 1)}% APV ({len(high)} videos)")
+        parts.append(f"score >=18: {round(_avg([_composite(v) for v in high]), 1)} composite ({len(high)} videos)")
     if mid:
-        parts.append(f"score 14-17: {round(_avg([_avg_pct(v) for v in mid]), 1)}% APV ({len(mid)} videos)")
+        parts.append(f"score 14-17: {round(_avg([_composite(v) for v in mid]), 1)} composite ({len(mid)} videos)")
     if low:
-        parts.append(f"score <14: {round(_avg([_avg_pct(v) for v in low]), 1)}% APV ({len(low)} videos)")
+        parts.append(f"score <14: {round(_avg([_composite(v) for v in low]), 1)} composite ({len(low)} videos)")
     return " | ".join(parts) if parts else "not enough scored videos yet"
 
 
@@ -87,11 +91,13 @@ def _line(video: dict) -> str:
     engaged = _engaged(video)
     if views > 0:
         hook_rate = min(engaged / views, 1.5) * 100
+    resonance = _safe_num(video.get("resonance_per_engaged")) * 100
     return (
         f"{video.get('content_format', 'unknown')} | {video.get('category', 'unknown')} | "
         f"hook: {str(video.get('hook', ''))[:80]} | "
+        f"composite {round(_composite(video), 1)}, "
         f"views {views}, engaged {engaged}, hook {round(hook_rate, 1)}%, "
-        f"APV {round(_avg_pct(video), 1)}%, "
+        f"APV {round(_avg_pct(video), 1)}%, resonance {round(resonance, 1)}%, "
         f"likes {_safe_int(m.get('likes'))}, comments {_safe_int(m.get('comments'))}, "
         f"shares {_safe_int(m.get('shares'))}, subs+ {_safe_int(m.get('subscribersGained'))}"
     )
@@ -121,8 +127,8 @@ def summarize_performance_for_prompt(
             "Prioritize brand rules, topic diversity, specific lived moments, and strong first-second hooks."
         )
 
-    top_examples = sorted(analytics_videos, key=lambda v: _safe_num(v.get("performance_score")), reverse=True)[:5]
-    weak_examples = sorted(analytics_videos, key=lambda v: _safe_num(v.get("performance_score")))[:3]
+    top_examples = sorted(analytics_videos, key=_composite, reverse=True)[:5]
+    weak_examples = sorted(analytics_videos, key=_composite)[:3]
 
     if len(pattern_videos) < min_videos:
         return "\n".join([

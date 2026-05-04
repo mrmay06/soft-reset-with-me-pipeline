@@ -154,23 +154,28 @@ def _score(metrics: dict) -> dict:
     comments = _as_float(metrics.get("comments"))
     shares = _as_float(metrics.get("shares"))
     subs = _as_float(metrics.get("subscribersGained"))
+    weighted_engagement = likes + comments * 3 + shares * 4 + subs * 8
 
     hook_score = min(_rate(engaged, views), 1.5) * 100.0
     hold_score = max(0.0, min(avg_pct, 200.0))
-    resonance_raw = _rate(likes + comments * 3 + shares * 4 + subs * 8, max(engaged, 1.0))
-    resonance_score = min(resonance_raw * 100.0, 200.0)
+    resonance_per_engaged = _rate(weighted_engagement, max(engaged, 1.0))
+    resonance_per_view = _rate(weighted_engagement, max(views, 1.0))
+    resonance_score = min(resonance_per_engaged * 100.0, 200.0)
     reach_score = min(math.log10(max(views, 0.0) + 1.0) * 25.0, 100.0)
-    performance_score = (
+    composite_score = (
         hook_score * 0.35
         + hold_score * 0.35
         + resonance_score * 0.20
         + reach_score * 0.10
     )
     return {
-        "performance_score": round(performance_score, 2),
+        "composite_score": round(composite_score, 2),
+        "performance_score": round(composite_score, 2),
         "hook_score": round(hook_score, 2),
         "hold_score": round(hold_score, 2),
         "resonance_score": round(resonance_score, 2),
+        "resonance_per_engaged": round(resonance_per_engaged, 4),
+        "resonance_per_view": round(resonance_per_view, 4),
         "reach_score": round(reach_score, 2),
     }
 
@@ -270,7 +275,7 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
             metrics = by_id.get(entry["youtube_video_id"], {})
             videos.append(_build_record(entry, metrics, today_iso, today))
 
-        videos.sort(key=lambda item: item.get("performance_score", 0), reverse=True)
+        videos.sort(key=lambda item: item.get("composite_score", item.get("performance_score", 0)), reverse=True)
         memory = {
             "generated_at": now_iso(),
             "lookback_days": lookback_days,

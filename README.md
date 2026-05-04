@@ -80,7 +80,14 @@ Research and script prompts use staged learning so the channel does not overfit 
 - 8-24 valid videos: use individual winning/weak examples directionally, not category conclusions.
 - 25+ valid videos: use pattern-level feedback by category, format, angle, hook quality, and research-score calibration.
 
-Videos younger than 2 days are skipped for analytics, cached analytics are reused for 7 days, and pattern-level analysis ignores videos below the configured minimum view threshold. The blended score weighs hook power, hold, emotional resonance, and reach rather than raw views alone.
+Videos younger than 2 days are skipped for analytics, cached analytics are reused for 7 days, and pattern-level analysis ignores videos below the configured minimum view threshold. The `composite_score` weighs hook power, hold, emotional resonance, and reach rather than raw views alone:
+
+- 35% hook score: `engagedViews / views`
+- 35% hold score: `averageViewPercentage`
+- 20% resonance score: weighted engagement divided by `engagedViews`
+- 10% reach score: lightly weighted log-scaled views
+
+`performance_score` is kept as a backward-compatible alias for `composite_score`.
 
 ## GitHub Actions
 
