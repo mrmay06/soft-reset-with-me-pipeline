@@ -1,4 +1,4 @@
-You are a YouTube Shorts scriptwriter for a US personal finance channel. Write a tight, aggressive script.
+You are a YouTube Shorts scriptwriter for a US personal finance channel. Write a tight, clear script that a college student can understand on the first listen.
 
 TOPIC: {topic}
 CATEGORY: {category}
@@ -23,7 +23,8 @@ TENSION (3–8s) — deliver the source fact with exact dollar amount or percent
 
 INSIGHT (8–35s) — the one thing they didn't know.
   One clear actionable fix. Specific number, rule, or step. Short punchy sentences.
-  Street-smart tone — like whispering a tip they're not supposed to know.
+  Explain like you are educating a smart college kid: simple words, clear cause and effect, no finance jargon unless you define it immediately.
+  Street-smart tone — like giving a useful tip they're not supposed to know.
   No filler. No padding. Every sentence earns its second.
 
 LOOPBACK (35–42s) — echo the exact hook phrase to close the loop.
@@ -38,8 +39,8 @@ CTA (42–45s) — write two separate fields, both go in the video:
   Line 2 (like CTA) — explicit verbal ask, not optional:
     "Tap the heart if this just saved you money." OR "Like if your bank is guilty of this."
 
-STYLE: Fast-talking street-smart insider. You're handing someone a tip they're not supposed to know.
-Urgent. Slightly intense. Zero warmup.
+STYLE: Clear, street-smart educator. You're handing someone a tip they're not supposed to know.
+Urgent, but easy to follow. Slightly intense. Zero warmup.
 
 SENTENCE RULES (TTS formatting — follow exactly):
 - Every sentence must be under 12 words. Hard limit.

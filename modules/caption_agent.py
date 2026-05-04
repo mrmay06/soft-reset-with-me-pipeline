@@ -101,7 +101,7 @@ def _format_ass_time(seconds: float) -> str:
 
 def _write_ass_file(words: list, output_path: str):
     # PrimaryColour = white, SecondaryColour = white (no karaoke colour change),
-    # Shadow = 2 for subtle depth, Outline = 0 (no border), FontSize = 95
+    # OutlineColour = #121212, Outline = 3px, FontSize = 95
     header = """[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
@@ -109,7 +109,7 @@ PlayResY: 1920
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Montserrat ExtraBold,95,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,2,0,1,0,2,2,60,60,620,1
+Style: Default,Montserrat ExtraBold,95,&H00FFFFFF,&H00FFFFFF,&H00121212,&H80000000,0,0,0,0,100,100,2,0,1,3,2,2,60,60,620,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

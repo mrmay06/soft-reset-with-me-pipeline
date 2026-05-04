@@ -2,6 +2,7 @@ from __future__ import annotations
 import os
 import time
 import random
+import re
 import urllib.parse
 
 import requests
@@ -21,15 +22,29 @@ except ImportError:
 
 def _extract_pexels_query(prompt: str, config: dict) -> str:
     """Distil a Pollinations prompt into a short Pexels search query via Gemini."""
-    fallback = " ".join(prompt.split()[:4])
+    fallback = _sanitize_stock_query(" ".join(prompt.split()[:4]))
     try:
-        return generate_text(
+        return _sanitize_stock_query(generate_text(
             f"Extract a 3-5 word Pexels stock search query from this image description. "
+            f"Never include raccoon, animal, wildlife, cartoon, mascot, chibi, or furry character terms. "
+            f"Use real human, document, phone, bank, home, bill, or money-object search terms only. "
             f"Return only the search terms, nothing else.\n\nDescription: {prompt}",
             config.get("research_model", "gemini-2.5-flash"),
-        ).lower()
+        ).lower())
     except Exception:
         return fallback
+
+
+def _sanitize_stock_query(query: str) -> str:
+    cleaned = re.sub(
+        r"\b(raccoons?|animals?|wildlife|cartoons?|mascots?|chibi|furry|fur|creature)\b",
+        "person",
+        query,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(r"[^A-Za-z0-9 ]+", " ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip().lower()
+    return cleaned or "personal finance"
 
 
 BRAND_STYLE_SUFFIX = (
@@ -72,6 +87,7 @@ def _fetch_pexels_image(query: str, idx: int) -> bytes:
     if not api_key:
         raise RuntimeError("PEXELS_API_KEY not set")
     headers = {"Authorization": api_key}
+    query = _sanitize_stock_query(query)
     params = {"query": query, "orientation": "portrait", "per_page": 5}
     resp = requests.get("https://api.pexels.com/v1/search", headers=headers, params=params, timeout=20)
     photos = resp.json().get("photos", [])
@@ -88,6 +104,7 @@ def _fetch_pexels_clip(query: str, idx: int, output_path: str) -> str:
     if not api_key:
         raise RuntimeError("PEXELS_API_KEY not set")
     headers = {"Authorization": api_key}
+    query = _sanitize_stock_query(query)
     params = {"query": query, "orientation": "portrait", "size": "medium", "per_page": 5}
     resp = requests.get("https://api.pexels.com/videos/search", headers=headers, params=params, timeout=20)
     videos = resp.json().get("videos", [])
@@ -130,6 +147,12 @@ def _validate_video(path: str):
         raise Exception(f"Video file too small: {os.path.getsize(path)} bytes")
 
 
+def _make_safe_brand_fallback(path: str, label: str):
+    if Image is None:
+        raise RuntimeError("Pillow not installed")
+    _make_placeholder(path, label[:28].upper() or "BRAND IMAGE", (18, 18, 18))
+
+
 # ── Single-asset generator (image or video) ───────────────────────────────────
 
 def _generate_asset(
@@ -167,6 +190,7 @@ def _generate_asset(
             output_path = output_path.replace(".mp4", ".png")
             rel_path = rel_path.replace(".mp4", ".png")
             visual_type = "image"
+            image_style = "brand"
 
     # Image path
     try:
@@ -178,6 +202,11 @@ def _generate_asset(
         print(f"[image_gen] {label}: image from Pollinations [{image_style}]")
         return {"type": "image", "source": "pollinations", "path": rel_path}
     except Exception as e:
+        if image_style == "brand":
+            print(f"[image_gen] {label}: Pollinations failed ({e}) — using safe brand fallback")
+            _make_safe_brand_fallback(output_path, label)
+            return {"type": "image", "source": "safe_brand_fallback", "path": rel_path}
+
         print(f"[image_gen] {label}: Pollinations failed ({e}) — falling back to Pexels image")
         query = pexels_query or _extract_pexels_query(image_prompt or "", config)
         img_bytes = _fetch_pexels_image(query, idx)
@@ -211,11 +240,9 @@ def run_image_gen(video_id: str, run_dir: str, config: dict) -> dict:
         results["thumbnail"] = {"type": "image", "source": "pollinations", "path": "03_images/thumbnail.png"}
         print(f"[image_gen] thumbnail: generated")
     except Exception as e:
-        print(f"[image_gen] thumbnail: Pollinations failed ({e}) — Pexels fallback")
-        query = _extract_pexels_query(thumb_prompt, config)
-        img_bytes = _fetch_pexels_image(query, 0)
-        _save_image(img_bytes, thumb_path)
-        results["thumbnail"] = {"type": "image", "source": "pexels_fallback", "path": "03_images/thumbnail.png"}
+        print(f"[image_gen] thumbnail: Pollinations failed ({e}) — using safe brand fallback")
+        _make_safe_brand_fallback(thumb_path, "THUMBNAIL")
+        results["thumbnail"] = {"type": "image", "source": "safe_brand_fallback", "path": "03_images/thumbnail.png"}
         fallback_count += 1
     time.sleep(gap)
 
@@ -245,7 +272,7 @@ def run_image_gen(video_id: str, run_dir: str, config: dict) -> dict:
         # Update path in case fallback changed extension
         asset["image_style"] = scene.get("image_style") or ("brand" if vtype == "image" else None)
         results[f"scene_{sid}"] = asset
-        if asset["source"] == "pexels_fallback" or (vtype == "video" and asset["type"] == "image"):
+        if asset["source"] in ("pexels_fallback", "safe_brand_fallback") or (vtype == "video" and asset["type"] == "image"):
             fallback_count += 1
         if asset["type"] == "video":
             video_count += 1

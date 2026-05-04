@@ -1,5 +1,6 @@
 {
   "image_style": "flat cartoon style, thick black outlines, solid flat colors, no gradients, no shadows, chibi art style, bold simple shapes, 9:16 vertical portrait",
+  "hard_rule": "Never use real raccoon photos, wildlife raccoons, realistic raccoon footage, or photorealistic raccoon imagery. Raccoon characters must only appear as stylized flat chibi brand illustrations.",
 
   "colors": {
     "background_primary": "#FFD700 (bright yellow) — dominant background, every scene defaults here",

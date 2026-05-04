@@ -37,6 +37,11 @@ MAIN CHARACTER — Regular Raccoon:
   Expression range: deadpan → confused → alarmed → resigned → quietly determined.
   Lives in: cardboard box den with wooden table, warm lamp, small square window showing dark alley + glowing 7-Eleven sign.
 
+HARD SAFETY RULE:
+  Never use real raccoon photos, realistic raccoon footage, wildlife raccoons, or photorealistic raccoon imagery.
+  Raccoon characters must only appear as the stylized flat chibi brand characters from the brand bible.
+  Pexels stock images/videos must show humans, objects, documents, homes, banks, phones, or money concepts — never animals.
+
 SUPPORTING CHARACTERS (use when the dialogue calls for them):
   Animal Control Raccoon — gray chibi raccoon, full navy enforcement uniform, black aviator sunglasses, silver badge, clipboard, red OVERDUE stamp on belt. Always expressionless. Represents: IRS, government, any system that arrives whether you're ready or not.
   Smart Raccoon — gray chibi raccoon, sage green hoodie, round glasses, dark chinos, white sneakers, neat hair, upright posture. Always holds a document with a red circle. Quiet concern. Represents: financial advisor, the voice of reason Regular Raccoon ignores.
@@ -89,6 +94,7 @@ Assign visual_type AND image_style for each scene. Target roughly equal thirds:
     → USE FOR: "checking phone", "paying bills", "at work", "stressed person", "signing documents",
       anything with human movement and emotion
     → pexels_query: 3-5 word search term
+    → NEVER query for raccoon, animal, wildlife, cartoon, mascot, or furry character footage
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 VISUAL STYLE
@@ -99,7 +105,7 @@ Think: Saturday morning cartoon meets financial nightmare. Roughness is intentio
 Background default: solid bright yellow #FFD700
 Background exception: night/alley scenes use dark navy #1B2A4A; yellow always as accent
 Color language: Yellow=world | Black=outlines | White=documents/tees | Red=danger/IRS/loss | Green=money/gains
-NEVER: photorealistic, photography, 3D, gradients, shadows, complex textures
+  NEVER: real raccoon photos, realistic raccoon footage, wildlife raccoons, photorealistic raccoon imagery, 3D, gradients, shadows, complex textures
 
 WORLD LOCATIONS (use these settings):
   The Alley — brick walls, single overhead lamp, dumpster labeled FIRST RACCOON BANK, 7-Eleven sign glowing. Dark charcoal + navy + yellow accents. The emotional anchor.
@@ -127,6 +133,8 @@ For IMAGE scenes (image_style "context") write a detailed image_prompt (20+ word
   NEVER include: raccoon, chibi, cartoon, flat cartoon, bright yellow, character
 
 For VIDEO scenes: pexels_query with 3-5 word search term.
+  Query must be about real people, documents, phone screens, banking, housing, work, or money objects.
+  Query must never mention raccoon, animal, wildlife, mascot, cartoon, or chibi.
 
 THUMBNAIL: Dramatic hook moment. Regular Raccoon in most alarmed/shocked pose of the video.
   image_style: "brand". End with: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
