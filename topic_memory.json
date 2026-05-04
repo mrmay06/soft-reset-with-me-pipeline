@@ -390,5 +390,65 @@
     "youtube_url": "https://youtube.com/shorts/mRG9ilXbC2E",
     "fallback_count": 0,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260504_065011",
+    "published_date": "2026-05-04",
+    "topic": "The Rent-to-Own Trap: Why You'll NEVER Own That House",
+    "category": "debt traps",
+    "total_score": 18,
+    "source_name": "NerdWallet",
+    "title": "You'll never own that house \ud83c\udfe0 #moneyadvice #renttoown #raccooneconomy",
+    "youtube_video_id": "t7u-1pUhikE",
+    "youtube_url": "https://youtube.com/shorts/t7u-1pUhikE",
+    "fallback_count": 1,
+    "validation_warnings": [
+      "tags_char_limit_trimmed: was 561 chars"
+    ]
+  },
+  {
+    "video_id": "20260504_073104",
+    "published_date": "2026-05-04",
+    "topic": "The IRS has Billions of YOUR tax money waiting... but you're missing out.",
+    "category": "taxes",
+    "total_score": 18,
+    "source_name": "Internal Revenue Service (IRS)",
+    "title": "Your government is hiding $1,457 from you \ud83d\udcb0 #moneyadvice #taxrefunds #raccooneconomy",
+    "youtube_video_id": "uMKgxNFQ7JU",
+    "youtube_url": "https://youtube.com/shorts/uMKgxNFQ7JU",
+    "fallback_count": 4,
+    "validation_warnings": [
+      "tags_char_limit_trimmed: was 570 chars"
+    ]
+  },
+  {
+    "video_id": "20260504_081903",
+    "published_date": "2026-05-04",
+    "topic": "Stop Overpaying for Car Insurance: You Could Save Hundreds!",
+    "category": "insurance",
+    "total_score": 19,
+    "source_name": "Bankrate",
+    "title": "You're losing $847 on car insurance \ud83d\udcb8 #moneyadvice #carinsurance #raccooneconomy",
+    "youtube_video_id": "bdg3-4UnkFs",
+    "youtube_url": "https://youtube.com/shorts/bdg3-4UnkFs",
+    "fallback_count": 0,
+    "validation_warnings": [
+      "tags_char_limit_trimmed: was 492 chars"
+    ]
+  },
+  {
+    "video_id": "20260504_084928",
+    "published_date": "2026-05-04",
+    "topic": "Your Savings Could Last Just 3 Months! Most Americans Are NOT Ready.",
+    "category": "budgeting",
+    "total_score": 18,
+    "source_name": "Bankrate",
+    "title": "Your savings account is destroying your future \ud83d\ude31 #moneyadvice #budgeting #raccooneconomy",
+    "youtube_video_id": "69qlZfTjoR8",
+    "youtube_url": "https://youtube.com/shorts/69qlZfTjoR8",
+    "fallback_count": 0,
+    "validation_warnings": [
+      "tags_char_limit_trimmed: was 493 chars"
+    ]
   }
 ]
