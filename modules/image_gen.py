@@ -7,6 +7,7 @@ import urllib.parse
 import requests
 
 from utils.helpers import load_json, save_json, now_iso
+from utils.gemini_client import generate_text
 from utils.retry import retry
 
 try:
@@ -16,28 +17,19 @@ except ImportError:
     Image = None
     io = None
 
-try:
-    import google.generativeai as genai
-except ImportError:
-    genai = None
-
-
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _extract_pexels_query(prompt: str, config: dict) -> str:
     """Distil a Pollinations prompt into a short Pexels search query via Gemini."""
-    if genai is None:
-        return " ".join(prompt.split()[:4])
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        return " ".join(prompt.split()[:4])
-    genai.configure(api_key=api_key)
-    client = genai.GenerativeModel("gemini-2.5-flash")
-    response = client.generate_content(
-        f"Extract a 3-5 word Pexels stock search query from this image description. "
-        f"Return only the search terms, nothing else.\n\nDescription: {prompt}"
-    )
-    return response.text.strip().lower()
+    fallback = " ".join(prompt.split()[:4])
+    try:
+        return generate_text(
+            f"Extract a 3-5 word Pexels stock search query from this image description. "
+            f"Return only the search terms, nothing else.\n\nDescription: {prompt}",
+            config.get("research_model", "gemini-2.5-flash"),
+        ).lower()
+    except Exception:
+        return fallback
 
 
 BRAND_STYLE_SUFFIX = (

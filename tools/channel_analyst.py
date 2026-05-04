@@ -24,7 +24,7 @@ load_dotenv()
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
-import google.generativeai as genai
+from utils.gemini_client import generate_text
 
 
 # ── YouTube client ────────────────────────────────────────────────────────────
@@ -71,8 +71,8 @@ def fetch_recent_videos(yt, days: int = 7) -> list[dict]:
             maxResults=50, pageToken=next_page,
         ).execute()
         for item in pl_resp.get("items", []):
-            pub = item["snippet"]["publishedAt"][:10]
-            pub_dt = datetime.strptime(pub, "%Y-%m-%d")
+            pub = item["snippet"]["publishedAt"]
+            pub_dt = datetime.strptime(pub[:10], "%Y-%m-%d")
             if pub_dt >= since:
                 video_ids.append(item["snippet"]["resourceId"]["videoId"])
             elif pub_dt < since - timedelta(days=1):
@@ -96,7 +96,7 @@ def fetch_recent_videos(yt, days: int = 7) -> list[dict]:
         videos.append({
             "youtube_id":   v["id"],
             "title":        v["snippet"]["title"],
-            "published_at": v["snippet"]["publishedAt"][:10],
+            "published_at": v["snippet"]["publishedAt"],
             "views":        int(s.get("viewCount", 0)),
             "likes":        int(s.get("likeCount", 0)),
             "comments":     int(s.get("commentCount", 0)),
@@ -233,9 +233,7 @@ ANALYSE and give:
 
 Be direct and specific. Reference actual video titles from the data. No fluff."""
 
-    model = genai.GenerativeModel("gemini-2.5-flash")
-    response = model.generate_content(prompt)
-    return response.text
+    return generate_text(prompt, "gemini-2.5-flash")
 
 
 # ── Report formatting ─────────────────────────────────────────────────────────

@@ -2,6 +2,7 @@ import os
 import re
 
 from utils.helpers import load_json, now_iso
+from utils.script_contract import build_spoken_script_text
 
 
 def _clean_transcript(text: str) -> str:
@@ -21,14 +22,7 @@ def _clean_transcript(text: str) -> str:
 
 
 def _build_transcript(script: dict) -> str:
-    parts = [
-        script["hook"],
-        script["tension"],
-        script["insight"],
-        script["loopback"],
-        script.get("cta", ""),
-    ]
-    raw = " ".join(p for p in parts if p)
+    raw = build_spoken_script_text(script)
     return _clean_transcript(raw)
 
 

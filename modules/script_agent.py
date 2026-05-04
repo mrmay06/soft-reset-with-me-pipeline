@@ -2,17 +2,14 @@ import os
 import json
 
 from utils.helpers import load_json, save_json, now_iso
+from utils.gemini_client import generate_json, generate_text
 from utils.retry import retry
+from utils.script_contract import build_spoken_script_text, normalize_script_contract, word_count
 
 try:
     import anthropic as _anthropic
 except ImportError:
     _anthropic = None
-
-try:
-    import google.generativeai as genai
-except ImportError:
-    genai = None
 
 
 @retry(max_attempts=2, wait_seconds=10, exceptions=(Exception,))
@@ -39,19 +36,10 @@ def _call_script_model(prompt: str, model: str) -> dict:
                 text = text[4:]
         return json.loads(text.strip())
 
-    # Gemini fallback
-    if genai is None:
-        raise RuntimeError("google-generativeai not installed")
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        raise RuntimeError("GEMINI_API_KEY not set")
-    genai.configure(api_key=api_key)
-    client = genai.GenerativeModel(model)
-    response = client.generate_content(
-        prompt,
-        generation_config={"response_mime_type": "application/json"}
-    )
-    return json.loads(response.text)
+    result = generate_json(prompt, model)
+    if not isinstance(result, dict):
+        raise ValueError("Script model returned non-object JSON")
+    return result
 
 
 _EGO_BAIT_SIGNALS = [
@@ -81,22 +69,16 @@ def _hook_has_ego_bait(hook: str) -> bool:
 
 
 def _validate_script(script: dict, config: dict) -> dict:
-    full_text = " ".join([
-        script.get("hook", ""),
-        script.get("tension", ""),
-        script.get("insight", ""),
-        script.get("loopback", ""),
-        script.get("engagement_question", ""),
-        script.get("cta", ""),
-    ])
-    word_count = len(full_text.split())
-    script["word_count"] = word_count
+    script = normalize_script_contract(script)
+    full_text = build_spoken_script_text(script)
+    words = word_count(full_text)
+    script["word_count"] = words
 
     min_w = config["script_min_words"]
     max_w = config["script_max_words"]
 
-    if word_count < min_w or word_count > max_w:
-        print(f"[script] Word count {word_count} outside {min_w}-{max_w} range — marking forced")
+    if words < min_w or words > max_w:
+        print(f"[script] Word count {words} outside {min_w}-{max_w} range — marking forced")
         script["validation"] = "forced"
     else:
         script["validation"] = "passed"
@@ -173,11 +155,8 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
                 )
                 new_hook = msg.content[0].text.strip().strip('"').strip("'")
             else:
-                import google.generativeai as _g
-                _g.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
-                resp = _g.GenerativeModel(config["script_model"]).generate_content(hook_prompt)
-                new_hook = resp.text.strip().strip('"').strip("'")
-            if new_hook and len(new_hook.split()) <= 15:
+                new_hook = generate_text(hook_prompt, config["script_model"]).strip('"').strip("'")
+            if new_hook and len(new_hook.split()) <= 12:
                 script["hook"] = new_hook
                 script["hook_quality"] = "strong_retry"
                 print(f"[script] ✓ Hook updated: '{new_hook}'")
@@ -207,16 +186,15 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
                 )
                 new_eq = msg.content[0].text.strip().strip('"').strip("'")
             else:
-                import google.generativeai as _g
-                _g.configure(api_key=os.environ.get("GEMINI_API_KEY", ""))
-                resp = _g.GenerativeModel(config["script_model"]).generate_content(eq_prompt)
-                new_eq = resp.text.strip().strip('"').strip("'")
+                new_eq = generate_text(eq_prompt, config["script_model"]).strip('"').strip("'")
             if new_eq and len(new_eq.split()) >= 5:
                 script["engagement_question"] = new_eq
                 script["engagement_quality"] = "strong_retry"
                 print(f"[script] ✓ Engagement question updated: '{new_eq}'")
         except Exception as e:
             print(f"[script] Engagement question retry failed ({e}) — keeping original")
+
+    script = _validate_script(script, config)
 
     output_path = os.path.join(run_dir, "02_script.json")
     save_json(script, output_path)
@@ -242,6 +220,7 @@ def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "validation": "passed",
         "generated_at": now_iso(),
     }
+    result = normalize_script_contract(result)
     output_path = os.path.join(run_dir, "02_script.json")
     save_json(result, output_path)
     print(f"[script][MOCK] Done.")

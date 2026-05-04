@@ -2,6 +2,7 @@ from __future__ import annotations
 import os
 
 from utils.helpers import load_json, save_json, now_iso
+from utils.youtube_tags import sanitize_youtube_tags
 
 try:
     from google.oauth2.credentials import Credentials
@@ -25,28 +26,6 @@ def _get_youtube_client():
     )
     creds.refresh(Request())
     return build("youtube", "v3", credentials=creds)
-
-
-def _sanitize_tags(tags: list) -> list:
-    """
-    YouTube tag rules:
-    - Each tag: max 30 chars (strip to fit)
-    - No special chars: < > & " '
-    - Combined total: max 450 chars (conservative, API limit is 500)
-    """
-    import re
-    clean = []
-    total = 0
-    for tag in tags:
-        t = re.sub(r'[<>&"\']', '', str(tag)).strip()
-        t = t[:30]  # hard cap per tag
-        if not t:
-            continue
-        if total + len(t) > 400:
-            break
-        clean.append(t)
-        total += len(t)
-    return clean
 
 
 def _post_engagement_comment(youtube, youtube_video_id: str, engagement_question: str) -> str | None:
@@ -83,7 +62,7 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
 
     youtube = _get_youtube_client()
 
-    tags = _sanitize_tags(metadata["tags"])
+    tags = sanitize_youtube_tags(metadata["tags"], config.get("youtube_tags_total_chars", 450))
     print(f"[uploader] Sending {len(tags)} tags, {sum(len(t) for t in tags)} total chars")
 
     body = {

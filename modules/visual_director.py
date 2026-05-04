@@ -1,9 +1,13 @@
+from __future__ import annotations
+
 import os
 import json
+import re
 import warnings
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
+from utils.script_contract import build_spoken_script_text
 
 warnings.filterwarnings("ignore", category=FutureWarning, module="google")
 
@@ -13,18 +17,15 @@ try:
 except ImportError:
     _genai = None
 
-try:
-    import google.generativeai as _genai_old
-except ImportError:
-    _genai_old = None
-
-
 # ── Prompt ───────────────────────────────────────────────────────────────────
 
 DIRECTOR_PROMPT = """You are the visual director for Raccoon Economy — a US personal finance YouTube Shorts channel with a unique branded character universe.
 
-SCRIPT (plain spoken dialogue, one scene per sentence):
+SCRIPT (plain spoken dialogue, grouped into synced asset beats):
 "{raw_dialogue}"
+
+CANONICAL BRAND BIBLE:
+{brand_context}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 VISUAL UNIVERSE — THE RACCOON ECONOMY WORLD
@@ -52,7 +53,11 @@ CURRENCY DISPLAY:
 SCENE ASSIGNMENT RULES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-CORE RULE: One scene per sentence. Split dialogue into individual sentences. One unique scene each.
+CORE RULE: One asset per 1-2 dialogue sentences.
+  Split dialogue into sentences first, then group them in order.
+  Each scene may cover one sentence or two adjacent sentences, never more.
+  The scene visual must directly represent the exact sentence(s) in covers_dialogue.
+  Do not assign generic or random visuals just to fill a slot.
 
 Scene 1 (hook) — HIGH ENERGY PATTERN INTERRUPT:
   Regular Raccoon in dramatic alarmed or deadpan-shocked pose. Bold close-up. This must stop the scroll.
@@ -129,9 +134,10 @@ THUMBNAIL: Dramatic hook moment. Regular Raccoon in most alarmed/shocked pose of
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CONSTRAINTS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  - One scene per sentence. 6 minimum, 20 maximum.
+  - One asset per 1-2 adjacent dialogue sentences. 20 maximum.
   - covers_dialogue = EXACT words from the script (no paraphrasing).
   - Every word in the script covered by exactly one scene.
+  - Each image_prompt or pexels_query must clearly match its own covers_dialogue.
 
 Return valid JSON only — no explanation, no markdown:
 {{
@@ -170,7 +176,16 @@ Return valid JSON only — no explanation, no markdown:
 
 # ── Validation ───────────────────────────────────────────────────────────────
 
-def _validate_manifest(manifest: dict) -> tuple[bool, str]:
+def _dialogue_words(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9'$%.-]+", text.lower())
+
+
+def _split_dialogue_sentences(text: str) -> list[str]:
+    sentences = re.findall(r"[^.!?]+[.!?]+(?:['\"])?|[^.!?]+$", text)
+    return [s.strip() for s in sentences if s.strip()]
+
+
+def _validate_manifest(manifest: dict, raw_dialogue: str | None = None) -> tuple[bool, str]:
     if not isinstance(manifest, dict):
         return False, "Not a dict"
     if not manifest.get("thumbnail", {}).get("image_prompt"):
@@ -178,13 +193,20 @@ def _validate_manifest(manifest: dict) -> tuple[bool, str]:
     scenes = manifest.get("scenes", [])
     if not isinstance(scenes, list):
         return False, "scenes is not a list"
-    if len(scenes) < 6:
-        return False, f"Too few scenes: {len(scenes)} (min 6)"
     if len(scenes) > 20:
         return False, f"Too many scenes: {len(scenes)} (max 20)"
+    expected_sentences = _split_dialogue_sentences(raw_dialogue) if raw_dialogue else []
+    if expected_sentences:
+        min_scenes = max(1, (len(expected_sentences) + 1) // 2)
+        if len(scenes) < min_scenes:
+            return False, f"Too few scenes: {len(scenes)} (need at least {min_scenes} for 1-2 sentences per scene)"
+        if len(scenes) > len(expected_sentences):
+            return False, f"Too many scenes: {len(scenes)} for {len(expected_sentences)} sentences"
     for i, s in enumerate(scenes):
         if not s.get("covers_dialogue", "").strip():
             return False, f"Scene {i+1} missing covers_dialogue"
+        if len(_split_dialogue_sentences(s["covers_dialogue"])) > 2:
+            return False, f"Scene {i+1} covers more than 2 dialogue sentences"
         if s.get("visual_type") not in ("image", "video"):
             return False, f"Scene {i+1} invalid visual_type"
         if s["visual_type"] == "image" and not s.get("image_prompt"):
@@ -198,6 +220,11 @@ def _validate_manifest(manifest: dict) -> tuple[bool, str]:
         if s["visual_type"] == "image" and s.get("image_style") == "brand" and s.get("image_prompt"):
             if "chibi art style" not in s["image_prompt"].lower():
                 s["image_prompt"] += ", flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+    if raw_dialogue:
+        expected = _dialogue_words(raw_dialogue)
+        covered = _dialogue_words(" ".join(s.get("covers_dialogue", "") for s in scenes))
+        if covered != expected:
+            return False, "Scene dialogue coverage does not match script exactly"
     # Thumbnail always brand — ensure chibi style
     thumb_prompt = manifest["thumbnail"]["image_prompt"]
     if "chibi art style" not in thumb_prompt.lower():
@@ -208,35 +235,41 @@ def _validate_manifest(manifest: dict) -> tuple[bool, str]:
 # ── Fallback: reconstruct from existing script beat data ─────────────────────
 
 def _build_fallback_manifest(script: dict) -> dict:
-    """Fallback: split full dialogue into sentences, one chibi scene per sentence."""
-    import re
-    print("[visual_director] Building fallback manifest — sentence-split chibi style")
+    """Fallback: group dialogue into synced 1-2 sentence chibi assets."""
+    print("[visual_director] Building fallback manifest — synced chibi style")
 
     BRAND_STYLE = "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
 
-    parts = [script.get(k, "") for k in ("hook", "tension", "insight", "loopback", "engagement_question", "cta")]
-    full_text = " ".join(p for p in parts if p).strip()
+    full_text = build_spoken_script_text(script)
 
-    sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', full_text) if s.strip()]
+    sentences = _split_dialogue_sentences(full_text)
     if not sentences:
         sentences = [full_text]
+
+    groups = []
+    i = 0
+    while i < len(sentences):
+        remaining = len(sentences) - i
+        take = 1 if remaining == 1 else 2
+        groups.append(" ".join(sentences[i:i + take]))
+        i += take
 
     # All images in fallback — chibi style
     scenes = []
     scene_types = ["reaction", "infographic", "reaction", "infographic", "reaction", "infographic"]
-    for i, sentence in enumerate(sentences):
-        stype = scene_types[i % len(scene_types)]
-        if i == 0:
+    for idx, dialogue in enumerate(groups):
+        stype = scene_types[idx % len(scene_types)]
+        if idx == 0:
             stype = "reaction"
         img_prompt = (
             f"Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — "
-            f"{'alarmed wide-eyed shocked expression' if i == 0 else 'deadpan confused expression'}, "
+            f"{'alarmed wide-eyed shocked expression' if idx == 0 else 'deadpan confused expression'}, "
             f"sitting at wooden table in cardboard den, warm lamp in background. "
-            f"Scene captures: {sentence[:60]}. {BRAND_STYLE}"
+            f"Scene captures: {dialogue[:80]}. {BRAND_STYLE}"
         )
         scenes.append({
-            "id": i + 1,
-            "covers_dialogue": sentence,
+            "id": idx + 1,
+            "covers_dialogue": dialogue,
             "visual_type": "image",
             "scene_type": stype,
             "image_prompt": img_prompt,
@@ -248,9 +281,6 @@ def _build_fallback_manifest(script: dict) -> dict:
             f"Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — "
             f"dramatic alarmed wide-eyed expression, holding a document, sitting at wooden table. "
             f"{BRAND_STYLE}"},
-        "disclaimer": {"image_prompt":
-            f"Regular Raccoon — gray chibi raccoon, gold chain, white tee — sits at den table, "
-            f"calm deadpan expression, small disclaimer card on table. {BRAND_STYLE}"},
         "scenes": scenes,
         "fallback": True,
     }
@@ -277,6 +307,11 @@ def _call_gemini(prompt: str, model: str) -> dict:
         return json.loads(response.text)
 
     # Old SDK fallback
+    try:
+        import google.generativeai as _genai_old
+    except ImportError:
+        _genai_old = None
+
     if _genai_old is not None:
         _genai_old.configure(api_key=api_key)
         client = _genai_old.GenerativeModel(model)
@@ -289,6 +324,16 @@ def _call_gemini(prompt: str, model: str) -> dict:
     raise RuntimeError("No Gemini SDK available — install google-genai")
 
 
+def _load_brand_context() -> str:
+    path = "config/brand_characters.json"
+    if not os.path.exists(path):
+        return "No brand character config found."
+    try:
+        return json.dumps(load_json(path), indent=2)
+    except Exception as e:
+        return f"Brand character config could not be loaded: {e}"
+
+
 # ── Duration mapping (word-count proportional) ────────────────────────────────
 
 def _assign_durations(manifest: dict, voice_duration: float) -> dict:
@@ -298,16 +343,30 @@ def _assign_durations(manifest: dict, voice_duration: float) -> dict:
     Simple and reliable — TTS speed is roughly constant.
     """
     scenes = manifest["scenes"]
+    min_scene_duration = 1.5
     word_counts = [max(1, len(s["covers_dialogue"].split())) for s in scenes]
     total_words = sum(word_counts)
 
     cursor = 0.0
+    if len(scenes) * min_scene_duration >= voice_duration:
+        durations = [voice_duration / len(scenes)] * len(scenes)
+    else:
+        remaining = voice_duration - (len(scenes) * min_scene_duration)
+        durations = [
+            min_scene_duration + ((wc / total_words) * remaining)
+            for wc in word_counts
+        ]
+
     for scene, wc in zip(scenes, word_counts):
-        duration = max(1.5, round((wc / total_words) * voice_duration, 3))
+        duration = round(durations.pop(0), 3)
         scene["start_sec"] = round(cursor, 3)
         scene["end_sec"] = round(cursor + duration, 3)
         scene["duration_sec"] = duration
         cursor += duration
+
+    if scenes:
+        scenes[-1]["end_sec"] = round(voice_duration, 3)
+        scenes[-1]["duration_sec"] = round(scenes[-1]["end_sec"] - scenes[-1]["start_sec"], 3)
 
     return manifest
 
@@ -321,30 +380,35 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
     voice_meta = load_json(os.path.join(run_dir, "03_voice_meta.json"))
     voice_duration = voice_meta["duration_sec"]
 
-    parts = [script.get(k, "") for k in ("hook", "tension", "insight", "loopback", "engagement_question", "cta")]
-    raw_dialogue = " ".join(p for p in parts if p).strip()
+    raw_dialogue = build_spoken_script_text(script)
 
-    prompt = DIRECTOR_PROMPT.format(raw_dialogue=raw_dialogue)
+    prompt = DIRECTOR_PROMPT.format(
+        raw_dialogue=raw_dialogue,
+        brand_context=_load_brand_context(),
+    )
     manifest = None
 
     try:
         manifest = _call_gemini(prompt, config.get("research_model", "gemini-2.5-flash"))
-        valid, err = _validate_manifest(manifest)
+        valid, err = _validate_manifest(manifest, raw_dialogue)
         if not valid:
             print(f"[visual_director] Validation failed: {err} — retrying")
             retry_prompt = prompt + f"\n\nFIX REQUIRED: {err}. Return corrected JSON only."
             manifest = _call_gemini(retry_prompt, config.get("research_model", "gemini-2.5-flash"))
-            valid, err = _validate_manifest(manifest)
+            valid, err = _validate_manifest(manifest, raw_dialogue)
             if not valid:
                 raise ValueError(f"Still invalid after retry: {err}")
     except Exception as e:
         print(f"[visual_director] Gemini failed ({e}) — falling back to beat structure")
         manifest = _build_fallback_manifest(script)
 
-    # Clamp to 6-20
+    # Clamp to max supported scene count. If clamping breaks dialogue coverage,
+    # validation below will force the deterministic fallback.
     if len(manifest["scenes"]) > 20:
         manifest["scenes"] = manifest["scenes"][:20]
-    if len(manifest["scenes"]) < 6:
+    valid, err = _validate_manifest(manifest, raw_dialogue)
+    if not valid:
+        print(f"[visual_director] Manifest post-check failed: {err} — using fallback")
         manifest = _build_fallback_manifest(script)
 
     # Re-number
@@ -377,35 +441,34 @@ def run_visual_director_mock(video_id: str, run_dir: str, config: dict) -> dict:
     voice_meta = load_json(os.path.join(run_dir, "03_voice_meta.json"))
     voice_duration = voice_meta["duration_sec"]
 
-    parts = [script.get(k, "") for k in ("hook", "tension", "insight", "loopback", "cta")]
-    raw_dialogue = " ".join(p for p in parts if p).strip()
-    words = raw_dialogue.split()
+    raw_dialogue = build_spoken_script_text(script)
+    sentences = _split_dialogue_sentences(raw_dialogue)
+    groups = []
+    i = 0
+    while i < len(sentences):
+        remaining = len(sentences) - i
+        take = 1 if remaining == 1 else 2
+        groups.append(" ".join(sentences[i:i + take]))
+        i += take
 
-    # 5 evenly-split scenes, types: image video image image video
     vtypes = ["image", "video", "image", "image", "video"]
-    labels = ["HOOK", "TENSION", "INSIGHT 1", "INSIGHT 2", "LOOPBACK"]
-    chunk = max(1, len(words) // 5)
     scenes = []
-    for i in range(5):
-        start = i * chunk
-        end = start + chunk if i < 4 else len(words)
-        dialogue = " ".join(words[start:end])
-        vtype = vtypes[i]
+    for i, dialogue in enumerate(groups):
+        vtype = vtypes[i % len(vtypes)]
         scenes.append({
             "id": i + 1,
             "covers_dialogue": dialogue,
             "visual_type": vtype,
             "image_prompt": f"Mock photorealistic scene: {dialogue[:60]}, professional photography, HD" if vtype == "image" else None,
-            "pexels_query": " ".join(words[start:start + 3]) if vtype == "video" else None,
-            "label": labels[i],
+            "pexels_query": " ".join(dialogue.split()[:3]) if vtype == "video" else None,
+            "label": f"SCENE {i + 1}",
         })
 
     manifest = {
         "video_id": video_id,
         "thumbnail": {"image_prompt": "Bold dramatic finance concept, high contrast, cinematic, photorealistic, HD"},
-        "disclaimer": {"image_prompt": "Clean minimal professional desk, soft natural light, no text, photorealistic"},
         "scenes": scenes,
-        "total_scenes": 5,
+        "total_scenes": len(scenes),
         "voice_duration": voice_duration,
         "generated_at": now_iso(),
     }
@@ -414,5 +477,5 @@ def run_visual_director_mock(video_id: str, run_dir: str, config: dict) -> dict:
 
     output_path = os.path.join(run_dir, "03b_scene_manifest.json")
     save_json(manifest, output_path)
-    print(f"[visual_director][MOCK] Done. 5 mock scenes.")
+    print(f"[visual_director][MOCK] Done. {len(scenes)} mock scenes.")
     return manifest

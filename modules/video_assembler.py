@@ -92,25 +92,6 @@ KB_PATTERNS = [
 ]
 
 
-def _calculate_beat_durations(script: dict, voice_duration: float) -> dict:
-    insight_words = script["insight"].split()
-    insight_half = len(insight_words) / 2
-
-    sections = {
-        "beat_1": len(script["hook"].split()),
-        "beat_2": len(script["tension"].split()),
-        "beat_3": insight_half,
-        "beat_4": insight_half,
-        "beat_5": len(script["loopback"].split()) + len(script.get("cta", "").split()),
-    }
-    total_words = sum(sections.values())
-    durations = {}
-    for beat, word_count in sections.items():
-        ratio = word_count / total_words
-        durations[beat] = max(2.0, round(voice_duration * ratio, 2))
-    return durations
-
-
 def _run_ffmpeg(cmd: list, label: str):
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
@@ -125,8 +106,8 @@ def _image_to_segment(image_path: str, duration: float, pattern_index: int, outp
     _run_ffmpeg([
         "ffmpeg", "-loop", "1", "-i", image_path,
         "-t", str(duration),
-        "-vf", f"scale=8000:-1,{zoompan},scale=1080:1920",
-        "-c:v", "libx264", "-pix_fmt", "yuv420p",
+        "-vf", f"scale=2160:-1,{zoompan},scale=1080:1920",
+        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
         "-r", str(fps), output_path, "-y"
     ], f"image_to_segment:{output_path}")
 
@@ -136,7 +117,7 @@ def _clip_to_segment(clip_path: str, duration: float, output_path: str, fps: int
         "ffmpeg", "-stream_loop", "-1", "-i", clip_path,
         "-t", str(duration),
         "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
-        "-c:v", "libx264", "-pix_fmt", "yuv420p",
+        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
         "-r", str(fps), "-an", output_path, "-y"
     ], f"clip_to_segment:{output_path}")
 
@@ -146,7 +127,7 @@ def _static_image_to_segment(image_path: str, duration: float, output_path: str,
         "ffmpeg", "-loop", "1", "-i", image_path,
         "-t", str(duration),
         "-vf", "scale=1080:1920",
-        "-c:v", "libx264", "-pix_fmt", "yuv420p",
+        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
         "-r", str(fps), output_path, "-y"
     ], f"static_to_segment:{output_path}")
 
@@ -180,7 +161,7 @@ def _concat_with_xfade(segments: list, output_path: str, fps: int = 30, xfade_du
         "ffmpeg", *inputs,
         "-filter_complex", filter_str,
         "-map", current,
-        "-c:v", "libx264", "-pix_fmt", "yuv420p",
+        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
         "-r", str(fps), output_path, "-y"
     ], "concat_xfade")
 
@@ -195,7 +176,7 @@ def _mix_audio(voice_path: str, music_path: str, total_duration: float, output_p
         "-t", str(total_duration),
         "-filter_complex",
         (
-            f"[0:a]volume={voice_vol}[voice];"
+            f"[0:a]volume={voice_vol},apad,atrim=0:{total_duration}[voice];"
             f"[1:a]volume={music_vol},atrim=0:{total_duration},"
             f"afade=t=out:st={fade_start:.3f}:d={fade_out_sec}[music];"
             f"[voice][music]amix=inputs=2:duration=first[aout]"
@@ -206,33 +187,128 @@ def _mix_audio(voice_path: str, music_path: str, total_duration: float, output_p
     ], "mix_audio")
 
 
-def _assemble_final(video_path: str, audio_path: str, captions_path: str, output_path: str, crf: int = 23):
+def _xfaded_duration(segments: list, xfade_duration: float) -> float:
+    if not segments:
+        return 0.0
+    overlap = max(0, len(segments) - 1) * xfade_duration
+    return max(0.1, sum(duration for _, duration in segments) - overlap)
+
+
+def _filter_path(path: str) -> str:
+    return os.path.abspath(path).replace("'", "\\'").replace("\\", "/")
+
+
+def _build_caption_filter(captions_path: str) -> tuple[str, str]:
+    if _has_libass():
+        safe_captions = _filter_path(captions_path)
+        fonts_dir = _filter_path("assets/fonts")
+        return f"ass='{safe_captions}':fontsdir='{fonts_dir}'", "ass (libass)"
+
+    return _build_drawtext_filter(captions_path), "drawtext (libass fallback)"
+
+
+def _film_overlay_settings(config: dict) -> tuple[str, bool, str, float]:
+    overlay_path = config.get("film_overlay_path", "assets/Old Film Overlay.mp4")
+    enabled = bool(config.get("film_overlay_enabled", False)) and os.path.exists(overlay_path)
+    blend_mode = config.get("film_overlay_blend_mode", "screen")
+    opacity = float(config.get("film_overlay_opacity", 0.18))
+    return overlay_path, enabled, blend_mode, opacity
+
+
+def _assemble_final(
+    video_path: str,
+    audio_path: str,
+    captions_path: str,
+    output_path: str,
+    config: dict,
+    total_duration: float,
+):
+    crf = config.get("video_crf", 23)
+    fps = config.get("video_fps", 30)
+    caption_filter, caption_method = _build_caption_filter(captions_path)
+    overlay_path, overlay_enabled, blend_mode, opacity = _film_overlay_settings(config)
+
     base_cmd = [
         "ffmpeg",
         "-i", video_path,
         "-i", audio_path,
-        "-map", "0:v", "-map", "1:a",
-        "-c:v", "libx264", "-crf", str(crf),
-        "-c:a", "aac", "-ar", "44100",
-        "-pix_fmt", "yuv420p",
-        "-r", "30",
-        "-movflags", "+faststart",
     ]
 
-    if _has_libass():
-        # Best path: full karaoke ASS burn-in
-        abs_captions = os.path.abspath(captions_path)
-        safe_captions = abs_captions.replace("'", "\\'").replace("\\", "/")
-        abs_fonts = os.path.abspath("assets/fonts").replace("\\", "/")
-        vf = f"ass='{safe_captions}':fontsdir='{abs_fonts}'"
-        caption_method = "ass (libass)"
+    if overlay_enabled:
+        filter_complex = (
+            "[0:v]format=gbrp[base];"
+            "[2:v]scale=1080:1920,format=gbrp[film];"
+            f"[base][film]blend=all_mode='{blend_mode}':all_opacity={opacity}[vfilm];"
+            f"[vfilm]{caption_filter}[vout]"
+        )
+        base_cmd += ["-stream_loop", "-1", "-i", overlay_path]
+        print(f"[assembler] Film overlay: {overlay_path} ({blend_mode}, opacity={opacity})")
     else:
-        # Fallback: drawtext chain parsed from ASS timing data
-        vf = _build_drawtext_filter(captions_path)
-        caption_method = "drawtext (libass fallback)"
+        if config.get("film_overlay_enabled", False):
+            print(f"[assembler] Film overlay missing, skipping: {overlay_path}")
+        filter_complex = f"[0:v]{caption_filter}[vout]"
 
     print(f"[assembler] Caption method: {caption_method}")
-    _run_ffmpeg(base_cmd + ["-vf", vf, output_path, "-y"], "assemble_final")
+    _run_ffmpeg([
+        *base_cmd,
+        "-filter_complex", filter_complex,
+        "-map", "[vout]", "-map", "1:a",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
+        "-c:a", "aac", "-ar", "44100",
+        "-pix_fmt", "yuv420p",
+        "-r", str(fps),
+        "-movflags", "+faststart",
+        "-t", str(total_duration),
+        output_path, "-y",
+    ], "assemble_final")
+    return overlay_enabled
+
+
+def _assemble_without_captions(
+    video_path: str,
+    audio_path: str,
+    output_path: str,
+    config: dict,
+    total_duration: float,
+) -> bool:
+    crf = config.get("video_crf", 23)
+    fps = config.get("video_fps", 30)
+    overlay_path, overlay_enabled, blend_mode, opacity = _film_overlay_settings(config)
+
+    cmd = [
+        "ffmpeg",
+        "-i", video_path,
+        "-i", audio_path,
+    ]
+
+    if overlay_enabled:
+        filter_complex = (
+            "[0:v]format=gbrp[base];"
+            "[2:v]scale=1080:1920,format=gbrp[film];"
+            f"[base][film]blend=all_mode='{blend_mode}':all_opacity={opacity}[vout]"
+        )
+        cmd += ["-stream_loop", "-1", "-i", overlay_path]
+        video_map = "[vout]"
+        print(f"[assembler] Film overlay without captions: {overlay_path} ({blend_mode}, opacity={opacity})")
+    else:
+        if config.get("film_overlay_enabled", False):
+            print(f"[assembler] Film overlay missing, skipping: {overlay_path}")
+        filter_complex = "[0:v]null[vout]"
+        video_map = "[vout]"
+
+    _run_ffmpeg([
+        *cmd,
+        "-filter_complex", filter_complex,
+        "-map", video_map, "-map", "1:a",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
+        "-c:a", "aac", "-ar", "44100",
+        "-pix_fmt", "yuv420p",
+        "-r", str(fps),
+        "-movflags", "+faststart",
+        "-t", str(total_duration),
+        output_path, "-y",
+    ], "assemble_no_captions")
+    return overlay_enabled
 
 
 def _validate_final_video(path: str):
@@ -291,8 +367,7 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
 
     for i, scene in enumerate(scenes):
         sid      = scene["id"]
-        duration = scene.get("duration_sec", 3.0)
-        duration = max(1.5, duration)
+        duration = max(0.1, scene.get("duration_sec", 3.0))
         key      = f"scene_{sid}"
         asset    = asset_meta["assets"].get(key)
         seg_path = os.path.join(segments_dir, f"seg_scene_{sid}.mp4")
@@ -357,8 +432,7 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
 
     # ── Audio mix ─────────────────────────────────────────────────────────────
     music_track = _pick_music_track()
-    total_video_duration = (voice_duration + config["thumbnail_duration_sec"]
-                            + config.get("end_hold_sec", 2) + config["disclaimer_duration_sec"])
+    total_video_duration = _xfaded_duration(all_segments, xfade)
 
     if music_track:
         print(f"[assembler] Mixing audio with {os.path.basename(music_track)}")
@@ -372,16 +446,18 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
 
     # ── Captions + final render ───────────────────────────────────────────────
     print(f"[assembler] Burning captions and merging audio")
+    film_overlay_applied = False
     try:
-        _assemble_final(concat_path, audio_source, captions_path, output_path, crf)
+        film_overlay_applied = _assemble_final(concat_path, audio_source, captions_path, output_path, config, total_video_duration)
     except Exception as e:
         print(f"[assembler] Caption burn-in failed ({e}) — rendering without captions")
-        _run_ffmpeg([
-            "ffmpeg", "-i", concat_path, "-i", audio_source,
-            "-map", "0:v", "-map", "1:a",
-            "-c:v", "libx264", "-crf", str(crf), "-c:a", "aac",
-            "-movflags", "+faststart", output_path, "-y"
-        ], "assemble_no_captions")
+        film_overlay_applied = _assemble_without_captions(
+            concat_path,
+            audio_source,
+            output_path,
+            config,
+            total_video_duration,
+        )
 
     final_duration = _validate_final_video(output_path)
 
@@ -391,10 +467,19 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
         "resolution": "1080x1920",
         "codec": "h264",
         "fps": fps,
+        "voice_duration_sec": voice_duration,
         "total_scenes": len(scenes),
-        "segments": ["thumbnail"] + [f"scene_{s['id']}" for s in scenes] + ["disclaimer"],
+        "segments": ["thumbnail"] + [f"scene_{s['id']}" for s in scenes] + (["hold"] if end_hold > 0 and scene_segs else []) + ["disclaimer"],
+        "planned_visual_duration_sec": round(total_video_duration, 3),
         "audio_mix": {"voice": config["voice_volume"], "music": config["bg_music_volume"]},
         "captions": "04_captions.ass",
+        "film_overlay": {
+            "requested": bool(config.get("film_overlay_enabled", False)),
+            "applied": film_overlay_applied,
+            "path": config.get("film_overlay_path", ""),
+            "blend_mode": config.get("film_overlay_blend_mode", ""),
+            "opacity": config.get("film_overlay_opacity", 0),
+        },
         "music_track": os.path.basename(music_track) if music_track else "none",
         "validation": "passed",
         "generated_at": now_iso(),

@@ -7,7 +7,7 @@ import warnings
 import argparse
 import traceback
 
-# Suppress deprecation warnings from google-generativeai (migrating to google-genai later)
+# Suppress third-party Google SDK deprecation noise in CLI output.
 warnings.filterwarnings("ignore", category=FutureWarning, module="google")
 
 from dotenv import load_dotenv
@@ -38,10 +38,11 @@ def _checkpoint(run_dir: str, *paths: str) -> bool:
 
 def _find_latest_run_dir() -> tuple[str, str] | None:
     """Find the most-recent incomplete run_dir. Returns (video_id, run_dir) or None."""
+    terminal_checkpoints = ["06_final_video.mp4", "07_metadata.json", "08_upload_meta.json"]
     dirs = sorted(glob.glob("workspace/run_*"))
     for d in reversed(dirs):
-        # Incomplete = no final video yet
-        if not os.path.exists(os.path.join(d, "06_final_video.mp4")):
+        # Incomplete means any terminal stage has not finished yet.
+        if not _checkpoint(d, *terminal_checkpoints):
             video_id = os.path.basename(d).replace("run_", "")
             return video_id, d
     return None

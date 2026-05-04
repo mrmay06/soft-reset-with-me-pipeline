@@ -11,14 +11,13 @@ Requires: pip install google-auth-oauthlib
 """
 
 import os
-import json
 from dotenv import load_dotenv
 
 load_dotenv()
 
 CLIENT_ID     = os.environ["YOUTUBE_CLIENT_ID"]
 CLIENT_SECRET = os.environ["YOUTUBE_CLIENT_SECRET"]
-REDIRECT_URI  = "urn:ietf:wg:oauth:2.0:oob"
+REDIRECT_URI  = "http://localhost:8080/"
 SCOPES        = ["https://www.googleapis.com/auth/youtube.upload",
                  "https://www.googleapis.com/auth/youtube",
                  "https://www.googleapis.com/auth/youtube.force-ssl"]  # required for commentThreads.insert

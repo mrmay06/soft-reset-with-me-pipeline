@@ -1,17 +1,12 @@
 from __future__ import annotations
 import os
-import json
 import time
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
-
-try:
-    import google.generativeai as genai
-except ImportError:
-    genai = None
+from utils.gemini_client import generate_json
 
 try:
     from pytrends.request import TrendReq
@@ -89,13 +84,14 @@ def _load_evergreen_topics() -> list[dict]:
     return load_json(path)
 
 
+def _normalise_categories(categories: list[str]) -> set[str]:
+    return {str(c).strip().lower() for c in categories if str(c).strip()}
+
+
 def _configure_gemini() -> str:
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY not set")
-    if genai is None:
-        raise RuntimeError("google-generativeai not installed")
-    genai.configure(api_key=api_key)
     return api_key
 
 
@@ -190,7 +186,8 @@ def _harvest_signals(timeframe: str = "now 7-d") -> dict:
 
 @retry(max_attempts=2, wait_seconds=10, exceptions=(Exception,))
 def _generate_candidates(signals: dict, recent_topics: list[str],
-                         recent_categories: list[str], model: str) -> list[dict]:
+                         recent_categories: list[str], blocked_categories: list[str],
+                         config: dict, model: str) -> list[dict]:
     _configure_gemini()
 
     # Format signals block
@@ -202,20 +199,19 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
 
     recent_str  = "\n".join(f"- {t}" for t in recent_topics)  if recent_topics  else "- None"
     cat_str     = "\n".join(f"- {c}" for c in recent_categories) if recent_categories else "- None"
+    blocked_str = "\n".join(f"- {c}" for c in blocked_categories) if blocked_categories else "- None"
 
     prompt_template = open("prompts/research_candidates_prompt.txt").read()
     prompt = prompt_template.format(
         signals=signals_str,
         recent_topics=recent_str,
         recent_categories=cat_str,
+        blocked_categories=blocked_str,
+        target_audience=config.get("target_audience", "US"),
+        niche=config.get("niche", "personal finance"),
     )
 
-    client = genai.GenerativeModel(model)
-    response = client.generate_content(
-        prompt,
-        generation_config={"response_mime_type": "application/json"},
-    )
-    candidates = json.loads(response.text)
+    candidates = generate_json(prompt, model)
     if not isinstance(candidates, list):
         raise ValueError("Candidate generation returned non-list response")
     print(f"[research] Generated {len(candidates)} candidates (target: 5–7)")
@@ -225,7 +221,9 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
 # ── Step 3: Filter ────────────────────────────────────────────────────────────
 
 def _filter_candidates(candidates: list[dict], recent_topics: list[str],
-                       recent_categories: list[str], threshold: float) -> list[dict]:
+                       recent_categories: list[str], blocked_categories: list[str],
+                       threshold: float) -> list[dict]:
+    blocked = _normalise_categories(blocked_categories)
     filtered = []
     for c in candidates:
         topic    = c.get("topic", "")
@@ -237,6 +235,10 @@ def _filter_candidates(candidates: list[dict], recent_topics: list[str],
 
         if any(category == rc.lower() for rc in recent_categories):
             print(f"[research] Dropped (category conflict — {category}): {topic}")
+            continue
+
+        if category in blocked:
+            print(f"[research] Dropped (blocked category — {category}): {topic}")
             continue
 
         filtered.append(c)
@@ -258,12 +260,7 @@ def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> d
         hook_seed = candidate.get("hook_seed", ""),
     )
 
-    client = genai.GenerativeModel(model)
-    response = client.generate_content(
-        prompt,
-        generation_config={"response_mime_type": "application/json"},
-    )
-    result = json.loads(response.text)
+    result = generate_json(prompt, model)
 
     # Enforce hard gate
     if result.get("reliability_score", 1) == 1:
@@ -320,6 +317,8 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
     memory_file       = "topic_memory.json"
     model             = config["research_model"]
     threshold         = config["duplicate_similarity_threshold"]
+    blocked_categories = config.get("blocked_categories", [])
+    blocked_set       = _normalise_categories(blocked_categories)
     recent_topics     = _load_recent_topics(memory_file, config["topic_memory_lookback_days"])
     recent_categories = _load_recent_categories(memory_file, last_n=4)
 
@@ -327,17 +326,17 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
     signals = _harvest_signals(timeframe="now 7-d")
 
     # ── Step 2: Generate candidates ──
-    candidates = _generate_candidates(signals, recent_topics, recent_categories, model)
+    candidates = _generate_candidates(signals, recent_topics, recent_categories, blocked_categories, config, model)
 
     # ── Step 3: Filter ──
-    candidates = _filter_candidates(candidates, recent_topics, recent_categories, threshold)
+    candidates = _filter_candidates(candidates, recent_topics, recent_categories, blocked_categories, threshold)
 
     # ── Step 4: Expand to 30-day if too few ──
     if len(candidates) < 3:
         print(f"[research] Only {len(candidates)} candidates after filter — expanding to 30-day signals")
         signals_30d = _harvest_signals(timeframe="now 30-d")
-        candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, model)
-        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_categories, threshold)
+        candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, blocked_categories, config, model)
+        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_categories, blocked_categories, threshold)
         # Merge, dedupe by topic string
         existing_topics = {c["topic"] for c in candidates}
         for c in candidates_30d:
@@ -353,6 +352,9 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         existing_topics = {c["topic"] for c in candidates}
         for e in evergreen:
             if e["topic"] not in existing_topics:
+                category = e.get("category", "").strip().lower()
+                if category in blocked_set:
+                    continue
                 if not _is_duplicate(e["topic"], recent_topics, threshold):
                     candidates.append(e)
                     existing_topics.add(e["topic"])
@@ -377,6 +379,7 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         evergreen_filtered = [
             e for e in evergreen
             if not _is_duplicate(e["topic"], recent_topics, threshold)
+            and e.get("category", "").strip().lower() not in blocked_set
         ]
         if evergreen_filtered:
             evergreen_scored = _score_candidates_parallel(evergreen_filtered[:6], model)

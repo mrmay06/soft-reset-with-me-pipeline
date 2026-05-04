@@ -1,4 +1,4 @@
-You are a US personal finance research assistant. Current year: 2026.
+You are a {target_audience} {niche} research assistant. Current year: 2026.
 All statistics, deadlines, and program rules must apply to 2023–2026.
 
 Below are trending finance signals from the US this week:
@@ -10,6 +10,9 @@ Recent published topics (last 90 days) — do NOT repeat or closely paraphrase t
 Recent categories used (last 4 videos) — do NOT use these categories:
 {recent_categories}
 
+Blocked categories — NEVER use these categories:
+{blocked_categories}
+
 Generate 5–7 distinct topic candidates for a YouTube Short.
 
 Rules:
@@ -17,6 +20,7 @@ Rules:
 - Each must be built around ONE clear, verifiable US statistic
 - Do not repeat or closely paraphrase any topic in the recent list
 - Do not use any category from the recent_categories list
+- Do not use any category from the blocked categories list
 - For angle_type, write a short phrase that naturally describes this topic's angle — do not force it into a fixed set
 
 PRIORITY categories (high CPM, proven performance) — bias towards these:

@@ -21,9 +21,9 @@ def _prepare_base_image(asset_meta: dict, run_dir: str) -> "Image.Image":
             base = base.resize((1080, 1920), Image.LANCZOS)
         return base
 
-    # Legacy fallback: use scene_1 or beat_1
+    # Fallback: use the first generated scene asset.
     assets = asset_meta.get("assets", {})
-    first_key = next((k for k in ("scene_1", "beat_1") if k in assets), None)
+    first_key = "scene_1" if "scene_1" in assets else None
     if first_key:
         asset = assets[first_key]
         if asset["type"] == "video":

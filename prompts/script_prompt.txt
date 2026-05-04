@@ -29,7 +29,7 @@ INSIGHT (8–35s) — the one thing they didn't know.
 LOOPBACK (35–42s) — echo the exact hook phrase to close the loop.
   One-sentence payoff that makes the viewer feel smart for watching.
 
-CTA (42–45s) — write both lines, both go in the video:
+CTA (42–45s) — write two separate fields, both go in the video:
   Line 1 (engagement question) — polarizing, specific, demands a pick-a-side response:
     ✓ "Are you team 401k or team real estate? Fight me in the comments."
     ✓ "Drop a 💰 if your employer matches and you're NOT maxing it."
@@ -60,6 +60,11 @@ TEMPORAL CONTEXT — CURRENT YEAR IS 2026:
 - If a stat is from 2022 or earlier, flag it as "as of [year]" in the script.
 
 WORD COUNT: 90–140 words total across ALL sections combined. Hard limit: 140. Count every word.
+
+Field contract:
+- `engagement_question` contains Line 1 only.
+- `like_cta` contains Line 2 only.
+- `cta` is a legacy alias and must exactly match `like_cta`.
 
 Return ONLY valid JSON, no extra text:
 {{

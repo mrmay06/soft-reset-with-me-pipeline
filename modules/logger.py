@@ -1,5 +1,4 @@
 import os
-import subprocess
 
 from utils.helpers import load_json, save_json, now_iso
 
@@ -14,28 +13,13 @@ def _load_memory() -> list:
 
 def _write_memory(entry: dict):
     memory = _load_memory()
+    memory = [
+        item for item in memory
+        if item.get("video_id") != entry.get("video_id")
+        and item.get("youtube_video_id") != entry.get("youtube_video_id")
+    ]
     memory.append(entry)
     save_json(memory, MEMORY_FILE)
-
-
-def _commit_memory():
-    try:
-        subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True, capture_output=True)
-        subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True, capture_output=True)
-        subprocess.run(["git", "add", MEMORY_FILE], check=True, capture_output=True)
-        diff = subprocess.run(["git", "diff", "--staged", "--quiet"], capture_output=True)
-        if diff.returncode != 0:
-            video_id = "unknown"
-            subprocess.run(
-                ["git", "commit", "-m", f"chore: log video {video_id}"],
-                check=True, capture_output=True
-            )
-            subprocess.run(["git", "push"], check=True, capture_output=True)
-            print(f"[logger] topic_memory.json committed and pushed")
-        else:
-            print(f"[logger] No changes to commit in topic_memory.json")
-    except Exception as e:
-        print(f"[logger] Git commit failed: {e} — skipping")
 
 
 def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
@@ -64,7 +48,7 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         _write_memory(entry)
         is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
         if is_github_actions:
-            _commit_memory()
+            print("[logger] Running in GitHub Actions — workflow will commit topic_memory.json")
         else:
             print(f"[logger] Running locally — skipping git commit")
     except Exception as e:

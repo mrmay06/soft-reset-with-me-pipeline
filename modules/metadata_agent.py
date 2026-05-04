@@ -1,29 +1,17 @@
 import os
-import json
 
 from utils.helpers import load_json, save_json, now_iso
+from utils.gemini_client import generate_json
 from utils.retry import retry
-
-try:
-    import google.generativeai as genai
-except ImportError:
-    genai = None
+from utils.youtube_tags import ensure_required_tags, sanitize_youtube_tags
 
 
 @retry(max_attempts=2, wait_seconds=10, exceptions=(Exception,))
 def _call_gemini_metadata(prompt: str, model: str) -> dict:
-    if genai is None:
-        raise RuntimeError("google-generativeai not installed")
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        raise RuntimeError("GEMINI_API_KEY not set")
-    genai.configure(api_key=api_key)
-    client = genai.GenerativeModel(model)
-    response = client.generate_content(
-        prompt,
-        generation_config={"response_mime_type": "application/json"}
-    )
-    return json.loads(response.text)
+    result = generate_json(prompt, model)
+    if not isinstance(result, dict):
+        raise ValueError("Metadata model returned non-object JSON")
+    return result
 
 
 def _validate_metadata(metadata: dict, config: dict) -> dict:
@@ -36,36 +24,24 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
     if len(metadata["title"]) < 20:
         errors.append("title_too_short")
 
-    tag_count = len(metadata["tags"])
+    original_tags = list(metadata["tags"])
+    tag_count = len(original_tags)
     expected = config.get("tags_count", 27)
     if tag_count < 10:
         errors.append(f"tags_too_few: {tag_count}")
         if tag_count < 3:
             raise ValueError(f"Too few tags ({tag_count}) — metadata needs regeneration")
     if tag_count > expected + 2:
-        metadata["tags"] = metadata["tags"][:expected]
+        metadata["tags"] = original_tags[:expected]
         errors.append("tags_truncated")
 
-    # Ensure "US" and "United States" are always present
-    tags_lower = [t.lower() for t in metadata["tags"]]
-    if "us" not in tags_lower:
-        metadata["tags"].append("US")
-    if "united states" not in tags_lower:
-        metadata["tags"].append("United States")
-
-    # Enforce 480 char total tag limit (YouTube hard limit)
-    total_chars = sum(len(t) for t in metadata["tags"])
-    if total_chars > 480:
-        trimmed = []
-        running = 0
-        for tag in metadata["tags"]:
-            if running + len(tag) <= 480:
-                trimmed.append(tag)
-                running += len(tag)
-            else:
-                break
-        metadata["tags"] = trimmed
-        errors.append(f"tags_char_limit_trimmed: was {total_chars} chars")
+    before_sanitize = metadata["tags"]
+    metadata["tags"] = sanitize_youtube_tags(
+        ensure_required_tags(metadata["tags"]),
+        config.get("youtube_tags_total_chars", 450),
+    )
+    if metadata["tags"] != before_sanitize:
+        errors.append("tags_sanitized")
 
     if "not financial advice" not in metadata["description"].lower():
         metadata["description"] += "\nThis is educational content. Not financial advice."

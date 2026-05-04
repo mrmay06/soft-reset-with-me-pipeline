@@ -4,6 +4,7 @@ import math
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
+from utils.script_contract import build_spoken_script_text
 
 try:
     from google import genai as _genai
@@ -53,14 +54,7 @@ def _build_tts_input(script: dict) -> str:
         "supposed to know. Urgent, slightly intense, zero warmup. First word at full energy. "
         "No pauses between sentences. Short punchy delivery throughout.\n\n"
     )
-    script_text = (
-        f"{script['hook']} "
-        f"{script['tension']} "
-        f"{script['insight']} "
-        f"{script['loopback']} "
-        f"{script.get('engagement_question', '')} "
-        f"{script.get('cta', '')}"
-    ).strip()
+    script_text = build_spoken_script_text(script)
     # Replace em-dashes with comma-pause so TTS reads naturally
     script_text = script_text.replace("—", ",").replace("--", ",")
     # Remove duplicate trailing sentences from section joins
