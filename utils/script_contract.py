@@ -8,8 +8,6 @@ SPOKEN_SECTION_KEYS = (
     "tension",
     "insight",
     "loopback",
-    "engagement_question",
-    "like_cta",
 )
 
 

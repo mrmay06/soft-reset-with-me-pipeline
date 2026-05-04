@@ -1,47 +1,54 @@
-You are a YouTube Shorts metadata expert targeting US audiences.
-Generate metadata for this personal finance Short.
+You are the metadata writer for Soft Reset With Me.
+Audience: US 18-35 relationship/self-growth Shorts viewers.
 
 SCRIPT HOOK: {hook}
 TOPIC: {topic}
 CATEGORY: {category}
 ANGLE: {angle}
-SOURCE FACT: {source_fact}
+SOURCE BASIS: {source_fact}
 
-OUTPUT RULES:
+SHORT TITLE RULES:
+- Keep title under 60 characters
+- No full stop at the end
+- Never start with "How to"
+- Title should feel like the first line of the script, not a label
+- Use numbers for list format
+- No hashtags in the title
+- No clickbait that the video does not deliver
 
-TITLE:
-- Formula: [You/Your + curiosity gap phrase] [1 emoji] #[niche] #[hyper-specific] #raccooneconomy
-- Full title including emoji and hashtags must be under 99 characters
-- Start with "You" or "Your" — creates personal relevance and ego threat
-- Front-load the hook — first 3 words must create information gap or accusation
-- End with exactly 1 relevant emoji (no more, placed before hashtags)
-- Hashtag rules — EXACTLY 3 hashtags in this order:
-    1. #[niche tag] — pick from: #wealthbuilding #moneytok #moneyadvice #taxloopholes
-    2. #[hyper-specific tag] — match the exact topic, e.g. #401k #rothira #creditrepair #hysa #debtpayoff #creditcard #investing #budgeting
-    3. #raccooneconomy — ALWAYS the final tag, builds owned search space
-- DROP #shorts (YouTube auto-detects; wastes character space)
-- DROP #personalfinance (10B+ views; you are invisible there)
-- No clickbait lies — must reflect actual content
-- Example: "Your employer is stealing 6% of your salary 💰 #wealthbuilding #401k #raccooneconomy"
-- Example: "Your savings account is losing you $800 a year 📉 #moneyadvice #hysa #raccooneconomy"
+HASHTAG RULES:
+- Hashtags go in description, not title
+- Use exactly 4-5 hashtags
+- Mandatory every upload: #Shorts and #SoftResetWithMe
+- Pick 2-3 relevant hashtags from:
+  #RelationshipAdvice #DatingAdvice #Situationship #RedFlags #AttachmentStyle #LoveBombing #Boundaries
+  #PsychologyFacts #MentalHealth #TraumaBonding #NervousSystem #SelfAwareness #EmotionalHealth
+  #HealingJourney #Breakup #MovingOn #BreakupAdvice #GlowUp #SelfHealing
+  #SelfWorth #SelfRespect #KnowYourWorth #SelfLove #StandardsUp
+  #RelationshipTips #CommunicationSkills #HonestTalk #WhatHeMeans
+  #PersonalGrowth #SelfImprovement #LevelUp #BetterMe #GrowthMindset
 
-DESCRIPTION:
-- Line 1: main keyword phrase naturally embedded — "Most Americans don't know that [topic insight]" — this line is indexed by YouTube search; must contain the topic keyword
-- Line 2: one key insight teaser (do not fully reveal — build curiosity)
-- Line 3: soft CTA — "Save this." or "Share with someone who needs this."
-- Line 4: 3 hashtags matching the title hashtags — e.g. "#wealthbuilding #401k #raccooneconomy"
-- Line 5: "Educational content only. Not financial advice."
+DESCRIPTION STRUCTURE:
+Line 1 — one-line hook that expands the title, max 120 characters
+Line 2 — value statement or what they'll get from the video
+Blank line
+Line 3 — soft CTA
+Blank line
+Line 4 — hashtags
 
-TAGS:
-- Return exactly 27 tags as a JSON array
-- Always include "US" and "United States" as two of the tags
-- Always include "raccoon economy" as one of the tags
-- 15–20 tags MUST be complete conversational search queries (full phrases people actually type):
-    e.g. "how to fix bad credit fast", "why is my credit score dropping", "best savings account 2026"
-- Remaining 7 tags: exact topic terms (1–2 words each) + channel brand
-- Each tag: 1–5 words, lowercase, no special characters
-- No duplicate meaning across tags
-- Total combined character length of all tags must not exceed 480 characters
+Description rules:
+- Never paste the entire script
+- Always include "Follow for more — @SoftResetWithMe"
+- Write for the human first, algorithm second
+
+YOUTUBE TAGS:
+- Return 8-12 tags as a JSON array
+- Mix broad, niche, long-tail, and branded
+- Include "soft reset with me"
+- Good broad tags: relationship advice, self improvement, personal growth, dating advice, mental health, emotional healing, self love, breakup advice
+- Good niche tags: attachment style, situationship advice, red flags in relationships, trauma bonding, nervous system healing, setting boundaries, know your worth
+- Good long-tail tags: how to get over someone you love, signs you re not over your ex, why do i keep attracting the wrong person, what anxious attachment looks like, how to stop overthinking in relationships
+- Each tag lowercase, no special characters
 
 Return ONLY valid JSON, no extra text:
 {{

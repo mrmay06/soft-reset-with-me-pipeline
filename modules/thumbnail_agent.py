@@ -50,7 +50,7 @@ def _prepare_base_image(asset_meta: dict, run_dir: str) -> "Image.Image":
 
 
 def _make_gradient_fallback() -> "Image.Image":
-    img = Image.new("RGB", (1080, 1920), (10, 10, 10))  # StackNote #0A0A0A
+    img = Image.new("RGB", (1080, 1920), (10, 10, 10))
     return img
 
 
@@ -82,16 +82,16 @@ def _wrap_text(text: str, font, max_width: int, draw) -> list[str]:
 
 def _draw_thumbnail_text(image: "Image.Image", thumbnail_text: str) -> "Image.Image":
     """
-    StackNote brand: white text, last word in green (#3DBE29), black stroke.
+    Soft Reset style: cream text, last word in terracotta, dark stroke.
     Rule: never more than one green word per frame.
     """
     draw = ImageDraw.Draw(image)
 
-    font_path = "assets/fonts/Anton-Regular.ttf"
+    font_path = "assets/fonts/DMSerifDisplay-Regular.ttf"
     try:
         font = ImageFont.truetype(font_path, size=110)
     except Exception:
-        print("[thumbnail] Anton-Regular.ttf not found — falling back to Inter-Bold")
+        print("[thumbnail] DMSerifDisplay-Regular.ttf not found — falling back to Inter")
         try:
             font = ImageFont.truetype("assets/fonts/Inter-Bold.ttf", size=110)
         except Exception:
@@ -99,9 +99,9 @@ def _draw_thumbnail_text(image: "Image.Image", thumbnail_text: str) -> "Image.Im
 
     lines = _wrap_text(thumbnail_text, font, max_width=900, draw=draw)
 
-    # StackNote accent: the last word of the last line gets green
-    GREEN = (57, 181, 74)   # #39B54A
-    WHITE = (255, 255, 255)
+    # Accent rule: the last word of the last line gets warm terracotta.
+    GREEN = (196, 120, 90)   # #C4785A
+    WHITE = (245, 240, 232)  # #F5F0E8
 
     line_height = 130
     total_height = len(lines) * line_height

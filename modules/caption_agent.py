@@ -100,8 +100,7 @@ def _format_ass_time(seconds: float) -> str:
 
 
 def _write_ass_file(words: list, output_path: str):
-    # PrimaryColour = white, SecondaryColour = white (no karaoke colour change),
-    # OutlineColour = #121212, Outline = 3px, FontSize = 95
+    # ASS colours are AABBGGRR. Font: #F5F0E8, border: #1C1C2B.
     header = """[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
@@ -109,13 +108,13 @@ PlayResY: 1920
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Montserrat ExtraBold,95,&H00FFFFFF,&H00FFFFFF,&H00121212,&H80000000,0,0,0,0,100,100,2,0,1,3,2,2,60,60,620,1
+Style: Default,Inter Bold,92,&H00E8F0F5,&H00E8F0F5,&H002B1C1C,&H80000000,0,0,0,0,100,100,1,0,1,4,2,5,90,90,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     lines = []
-    # 1 word at a time — each word is its own dialogue line
+    # 1 word at a time — each word is its own dialogue line, centered for kinetic text.
     for w in words:
         # Skip pure punctuation tokens (em-dash, ellipsis, etc.)
         clean = re.sub(r'[^a-zA-Z0-9\']', '', w["word"])

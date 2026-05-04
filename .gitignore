@@ -11,6 +11,7 @@ venv/
 *.mp4
 *.mp3
 *.wav
+!assets/Old Film Overlay.mp4
 !assets/music/*.mp3
 !assets/disclaimer.png
 !assets/fonts/*.ttf

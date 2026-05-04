@@ -17,8 +17,11 @@ def _call_gemini_metadata(prompt: str, model: str) -> dict:
 def _validate_metadata(metadata: dict, config: dict) -> dict:
     errors = []
 
+    metadata["title"] = metadata["title"].replace("#Shorts", "").replace("#SoftResetWithMe", "").strip()
+    metadata["title"] = metadata["title"].rstrip(".")
+
     if len(metadata["title"]) > config["max_title_chars"]:
-        metadata["title"] = metadata["title"][:config["max_title_chars"]]
+        metadata["title"] = metadata["title"][:config["max_title_chars"]].rstrip()
         errors.append("title_truncated")
 
     if len(metadata["title"]) < 20:
@@ -27,7 +30,7 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
     original_tags = list(metadata["tags"])
     tag_count = len(original_tags)
     expected = config.get("tags_count", 27)
-    if tag_count < 10:
+    if tag_count < 8:
         errors.append(f"tags_too_few: {tag_count}")
         if tag_count < 3:
             raise ValueError(f"Too few tags ({tag_count}) — metadata needs regeneration")
@@ -44,12 +47,60 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
     if metadata["tags"] != before_sanitize:
         errors.append("tags_sanitized")
 
-    if "not financial advice" not in metadata["description"].lower():
-        metadata["description"] += "\nThis is educational content. Not financial advice."
-        errors.append("disclaimer_added")
+    description = metadata["description"].strip()
+    if "@softresetwithme" not in description.lower():
+        description += "\n\nFollow for more — @SoftResetWithMe"
+        errors.append("handle_added")
+    if "#shorts" not in description.lower():
+        description += "\n\n#Shorts #SoftResetWithMe #RelationshipAdvice #SelfWorth"
+        errors.append("hashtags_added")
+    metadata["description"] = description
 
     metadata["validation_warnings"] = errors
     return metadata
+
+
+def _fallback_metadata(script: dict, research: dict) -> dict:
+    topic = research.get("topic", "")
+    category = research.get("category", "")
+    title = script.get("hook") or topic or "Waiting on a maybe is choosing to wait"
+    title = title.replace("#Shorts", "").replace("#SoftResetWithMe", "").strip().rstrip(".")
+    if len(title) > 58:
+        title = "Waiting on a 'maybe' is choosing to wait"
+
+    pillar_tags = {
+        "Self-Worth Shifts": ["#SelfWorth", "#Boundaries", "#MovingOn"],
+        "Healing Arcs": ["#HealingJourney", "#BreakupAdvice", "#MovingOn"],
+        "Relationship Patterns": ["#RelationshipAdvice", "#DatingAdvice", "#Situationship"],
+        "Psychology Drops": ["#PsychologyFacts", "#SelfAwareness", "#EmotionalHealth"],
+        "Conversation Truths": ["#RelationshipTips", "#CommunicationSkills", "#HonestTalk"],
+        "Identity and Growth": ["#PersonalGrowth", "#SelfImprovement", "#GrowthMindset"],
+    }
+    hashtags = ["#Shorts", "#SoftResetWithMe"] + pillar_tags.get(category, ["#RelationshipAdvice", "#SelfWorth", "#MovingOn"])
+    hashtags = hashtags[:5]
+
+    description = (
+        f"{script.get('hook', title)}\n"
+        "Save this for the moment uncertainty starts feeling like an answer.\n\n"
+        "Follow for more — @SoftResetWithMe\n\n"
+        + " ".join(hashtags)
+    )
+
+    tags = [
+        "soft reset with me",
+        "softreset",
+        "relationship advice",
+        "dating advice",
+        "self worth",
+        "setting boundaries",
+        "situationship advice",
+        "emotional healing",
+        "moving on",
+        "how to stop overthinking in relationships",
+        "know your worth",
+        "personal growth",
+    ]
+    return {"title": title, "description": description, "tags": tags, "validation_warnings": ["metadata_fallback"]}
 
 
 def run_metadata(video_id: str, run_dir: str, config: dict) -> dict:
@@ -67,7 +118,11 @@ def run_metadata(video_id: str, run_dir: str, config: dict) -> dict:
         source_fact=research["source_fact"],
     )
 
-    raw = _call_gemini_metadata(prompt, config["metadata_model"])
+    try:
+        raw = _call_gemini_metadata(prompt, config["metadata_model"])
+    except Exception as e:
+        print(f"[metadata] Gemini failed ({e}) — using deterministic fallback")
+        raw = _fallback_metadata(script, research)
     raw = _validate_metadata(raw, config)
 
     result = {
@@ -90,26 +145,25 @@ def run_metadata_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[metadata][MOCK] Generating mock metadata for {video_id}")
     result = {
         "video_id": video_id,
-        "title": "The Credit Card Trick Banks Hope You Never Find",
+        "title": "You lost who you imagined",
         "description": (
-            "Most people pay hundreds more in interest than they need to.\n"
-            "Pay your credit card twice a month — before and after the statement date.\n"
-            "Save this. Share it with someone still overpaying.\n"
-            "#personalfinance #moneytips #creditcardhacks #debtfree #savemoney\n\n"
-            "This is educational content. Not financial advice.\n\n"
-            "#Shorts"
+            "Some heartbreak is grief for the version you invented.\n"
+            "If this hit, share it with someone who needs to hear it.\n\n"
+            "Follow for more — @SoftResetWithMe\n\n"
+            "#Shorts #SoftResetWithMe #HealingJourney #RelationshipAdvice #MovingOn"
         ),
         "tags": [
-            "personal finance tips", "credit card hacks", "how to pay less interest",
-            "credit card debt", "money saving tips", "pay off debt faster",
-            "financial tips for beginners", "credit card statement date trick",
-            "reduce credit card interest", "debt free journey", "money tips us 2026",
-            "personal finance 2026", "credit score tips", "budgeting tips",
-            "financial freedom", "credit card billing cycle", "interest rate hacks",
-            "credit card payment strategy", "avoid credit card interest",
-            "money management tips", "finance shorts", "credit card tips",
-            "save money fast", "debt payoff strategy", "financial advice shorts",
-            "credit card tricks", "money hacks 2026",
+            "relationship advice",
+            "emotional healing",
+            "breakup advice",
+            "moving on after breakup",
+            "how to get over someone you love",
+            "self worth",
+            "personal growth",
+            "healing journey",
+            "soft reset with me",
+            "softreset",
+            "soft reset shorts",
         ],
         "category_id": config["youtube_category_id"],
         "privacy_status": config["privacy_status"],

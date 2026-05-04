@@ -1,59 +1,77 @@
-You are a US personal finance research assistant. Current year: 2026.
-All statistics, deadlines, tax years, and program rules must apply to 2023–2026.
-Do not use dates, deadlines, or cutoffs from before 2023 unless explicitly for historical context.
+You are scoring a Soft Reset With Me topic for a US 18-35 Shorts audience. Current year: 2026.
 
 TOPIC: {topic}
 CATEGORY: {category}
 ANGLE: {angle_type}
 HOOK IDEA: {hook_seed}
 
-TASK 1 — SCORE on 5 dimensions (1–4 scale each):
+TASK 1 — SCORE on 5 dimensions (1-4 scale each):
 
-1. CPM Value: Does this attract high-value US advertisers?
-   4 = credit cards / mortgage / insurance / investing
-   3 = banking / retirement / taxes
-   2 = debt / budgeting
-   1 = general / lifestyle
+Important: 4 is rare. Give a 4 only when the candidate is unusually specific, emotionally sharp, and easy to script. Most good candidates should score 15-18 total, not 20.
 
-2. Trending: Is this actively searched in the US right now?
-   4 = very hot this week, 3 = moderate, 2 = steady, 1 = flat/old
+1. Audience Fit:
+   4 = instantly relevant to a specific breakup, dating confusion, situationship, self-worth, or emotional-growth moment
+   3 = relevant but slightly broad
+   2 = general self-help
+   1 = outdated, vague, or off-brand
 
-3. Script-ability: Can this fit Hook→Tension→Insight→Loop in under 45 seconds with ONE clear insight?
-   4 = perfect fit, 3 = works, 2 = needs stretching, 1 = too complex or multi-part
+2. Emotional Tension:
+   4 = "how does this know me" specific, with a concrete scene such as a DM, song, silence, story view, date, or argument
+   3 = clear emotional pain
+   2 = somewhat abstract
+   1 = generic
 
-4. US-Specificity: Is this specific to the US financial system (IRS, Fed, US banks, US credit)?
-   4 = US-only topic, 3 = mostly US, 2 = global with US angle, 1 = not US relevant
+3. Script-ability:
+   4 = one idea fits 15-35 seconds with a clean loop
+   3 = works in under 45 seconds
+   2 = needs too much explanation
+   1 = too broad or multi-part
 
-5. Reliability: Does a credible, verifiable US source exist for the core claim?
-   4 = Federal Reserve / CFPB / IRS / BLS / FDIC / SEC / Census Bureau / Pew Research Center
-   3 = Bankrate / NerdWallet / WSJ / NYT / Bloomberg / CNBC / Fidelity / Vanguard / Experian / TransUnion / Equifax
-   2 = Reuters / AP / USA Today / Business Insider
-   1 = no valid source found
+4. Share/Save Potential:
+   4 = has an obvious reason to save/share/comment without needing a generic CTA
+   3 = solid engagement potential
+   2 = mild reaction
+   1 = low emotional pull
+
+5. Safety/Brand Fit:
+   4 = warm, truthful, gender-neutral, non-clinical, non-manipulative, and not blame-heavy
+   3 = safe if phrased carefully
+   2 = emotionally charged; needs guardrails
+   1 = diagnostic, manipulative, cruel, or likely harmful
+
+Scoring discipline:
+- Penalize broad advice that could appear on any self-help account
+- Reward exact emotional scenes, e.g. rereading a DM, waiting for a reply, muting a story, hearing a song at night
+- Reward topics with a clean one-line payoff and a natural save/share reason
+- Penalize topics that need disclaimers, diagnosis, blame, or gendered assumptions
+- Penalize generic source names. If source_name is only "psychological principles" and no source_url is available, reliability_score should usually be 3, not 4
+- Only give total_score 20 when every score truly deserves a rare 4
 
 HARD GATE: If reliability_score = 1, total_score must be 0 regardless of all other scores.
 
-TASK 2 — FIND one real US statistic (2023–2026) to anchor this topic.
-- Source must come from Tier 1, 2, or 3 above only
-- Must contain a specific number (dollar amount, percentage, or count)
-- Must be surprising or concerning to a general US audience
-- Do NOT invent or guess URLs — only provide a URL you are confident is real and accessible
-- If no valid source exists, set reliability_score to 1 and total_score to 0
+TASK 2 — FIND a credible source basis.
+- Prefer APA, Pew Research Center, CDC mental health data, peer-reviewed psychology research, university research, reputable mental health organizations, or widely accepted psychology concepts
+- If no source URL is needed, use a clear principle basis like anxious attachment, projection, nervous system threat response, rumination, emotional regulation, or boundary-setting
+- Do NOT invent URLs. Only provide a URL if you are confident it is real and accessible
 
 Return ONLY valid JSON with no extra text:
 {{
   "topic": "...",
   "category": "...",
   "angle_type": "...",
+  "content_format": "truth_drop | reframe | specific_scenario | list | hot_take | psychology_drop",
+  "emotional_trigger": "...",
+  "psych_concept": "...",
   "hook_seed": "...",
-  "cpm_score": 0,
-  "trending_score": 0,
+  "audience_fit_score": 0,
+  "emotional_tension_score": 0,
   "scriptability_score": 0,
-  "us_specificity_score": 0,
+  "share_save_score": 0,
   "reliability_score": 0,
   "total_score": 0,
-  "source_fact": "exact stat with specific number",
-  "source_name": "source organisation name",
+  "source_basis": "credible basis, study, or principle",
+  "source_name": "source organisation, author, or principle",
   "source_url": "https://...",
-  "fact_year": 2024,
-  "reasoning": "one sentence on why this topic is strong for YouTube Shorts"
+  "fact_year": 2026,
+  "reasoning": "one sentence on why this is strong for Soft Reset With Me"
 }}

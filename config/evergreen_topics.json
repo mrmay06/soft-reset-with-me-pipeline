@@ -1,72 +1,82 @@
 [
   {
-    "topic": "Most Americans are paying credit card interest they could legally avoid",
-    "category": "credit cards",
-    "angle_type": "mistake-reveal",
-    "hook_seed": "Your credit card company is charging you interest you don't have to pay",
-    "core_claim": "Paying only the minimum payment costs the average American over $1,000/year in avoidable interest"
+    "topic": "You did not lose them, you lost who you imagined they would be",
+    "category": "healing arcs",
+    "angle_type": "truth drop",
+    "content_format": "truth_drop",
+    "emotional_trigger": "grieving someone's potential",
+    "psych_concept": "idealization and grief",
+    "hook_seed": "You did not lose them. You lost who you imagined",
+    "core_claim": "Sometimes heartbreak is grief for the future you invented"
   },
   {
-    "topic": "The 401k employer match most workers are leaving on the table",
-    "category": "retirement",
-    "angle_type": "ego-threat",
-    "hook_seed": "Your employer is handing you free money and you're probably skipping it",
-    "core_claim": "The average unclaimed employer 401k match is over $1,300 per year"
+    "topic": "Moving on fast does not mean you did not care",
+    "category": "healing arcs",
+    "angle_type": "reframe",
+    "content_format": "reframe",
+    "emotional_trigger": "guilt after moving on",
+    "psych_concept": "self-protection after emotional exhaustion",
+    "hook_seed": "Moving on fast does not mean you did not care",
+    "core_claim": "It can mean you finally stopped abandoning yourself"
   },
   {
-    "topic": "Why your credit score drops when you pay off a loan",
-    "category": "credit cards",
-    "angle_type": "myth-bust",
-    "hook_seed": "Paying off debt can actually hurt your credit score",
-    "core_claim": "Closing an installment account reduces credit mix and average account age"
+    "topic": "That feeling when a song hits different at 2am",
+    "category": "healing arcs",
+    "angle_type": "specific scenario",
+    "content_format": "specific_scenario",
+    "emotional_trigger": "a song triggering breakup grief",
+    "psych_concept": "emotional memory cues",
+    "hook_seed": "If a song has ever ruined your night, this is for you",
+    "core_claim": "Some memories return through your body before your logic catches up"
   },
   {
-    "topic": "The HSA is the only triple-tax-free account the IRS allows",
-    "category": "taxes",
-    "angle_type": "little-known",
-    "hook_seed": "There is one account the IRS lets you triple-dip on taxes",
-    "core_claim": "HSA contributions, growth, and withdrawals are all tax-free — no other account does this"
+    "topic": "Talking every day does not make you close",
+    "category": "conversation truths",
+    "angle_type": "hot take",
+    "content_format": "hot_take",
+    "emotional_trigger": "confusing frequency with intimacy",
+    "psych_concept": "consistency versus access",
+    "hook_seed": "Talking every day does not make you close",
+    "core_claim": "Closeness is consistency, not constant access"
   },
   {
-    "topic": "Americans are missing free money in their checking accounts every month",
-    "category": "banking",
-    "angle_type": "stat-shock",
-    "hook_seed": "Your bank is quietly keeping money that should be in your account",
-    "core_claim": "High-yield savings accounts pay 10-15x more than the national average savings rate of 0.46%"
+    "topic": "Four signs you are not over them that have nothing to do with texting",
+    "category": "healing arcs",
+    "angle_type": "list",
+    "content_format": "list",
+    "emotional_trigger": "thinking you moved on but still reacting",
+    "psych_concept": "unfinished emotional attachment",
+    "hook_seed": "Four signs you are not over them",
+    "core_claim": "Your body can still be attached after your phone stops reaching"
   },
   {
-    "topic": "The minimum payment trap that keeps Americans in debt for decades",
-    "category": "debt",
-    "angle_type": "stat-shock",
-    "hook_seed": "A $5,000 balance paid at minimum becomes a 15-year debt",
-    "core_claim": "Making only minimum payments on $5,000 at 20% APR takes over 15 years to pay off"
+    "topic": "What anxious attachment actually looks like in real life",
+    "category": "psychology drops",
+    "angle_type": "psychology drop",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "overthinking small changes in tone",
+    "psych_concept": "anxious attachment",
+    "hook_seed": "Anxious attachment is not always loud",
+    "core_claim": "Sometimes it looks like rereading one sentence until it hurts"
   },
   {
-    "topic": "Why renting is sometimes smarter than buying a home in the US",
-    "category": "mortgage",
-    "angle_type": "myth-bust",
-    "hook_seed": "Homeownership is not always the financial win everyone says it is",
-    "core_claim": "In over 40 major US cities, renting and investing the difference outperforms buying"
+    "topic": "Soft does not mean weak",
+    "category": "self-worth shifts",
+    "angle_type": "truth drop",
+    "content_format": "truth_drop",
+    "emotional_trigger": "mistaking softness for low standards",
+    "psych_concept": "boundaried softness",
+    "hook_seed": "Soft does not mean weak",
+    "core_claim": "It can mean you stopped performing hardness for unsafe people"
   },
   {
-    "topic": "The IRS tax bracket myth that costs Americans thousands",
-    "category": "taxes",
-    "angle_type": "myth-bust",
-    "hook_seed": "Most Americans misunderstand tax brackets and it costs them money",
-    "core_claim": "Most Americans believe earning more can drop their take-home pay — it cannot under a marginal system"
-  },
-  {
-    "topic": "How credit utilization silently destroys credit scores",
-    "category": "credit cards",
-    "angle_type": "little-known",
-    "hook_seed": "Using 50% of your credit limit is costing you points every single month",
-    "core_claim": "Credit utilization above 30% is the second-biggest factor in your FICO score"
-  },
-  {
-    "topic": "The Roth IRA income limit workaround most people have never heard of",
-    "category": "investing",
-    "angle_type": "little-known",
-    "hook_seed": "High earners can still get a Roth IRA — the IRS just doesn't advertise how",
-    "core_claim": "The backdoor Roth conversion is legal for any income level but less than 10% of eligible Americans use it"
+    "topic": "You keep explaining because part of you still wants permission",
+    "category": "self-worth shifts",
+    "angle_type": "truth drop",
+    "content_format": "truth_drop",
+    "emotional_trigger": "overexplaining your boundary",
+    "psych_concept": "approval seeking",
+    "hook_seed": "You keep explaining because you still want permission",
+    "core_claim": "A boundary does not need to win a debate to be real"
   }
 ]

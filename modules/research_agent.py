@@ -1,8 +1,11 @@
 from __future__ import annotations
 import os
 import time
+from difflib import SequenceMatcher
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+import requests
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
@@ -29,6 +32,14 @@ except ImportError:
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 def _load_recent_topics(memory_file: str, lookback_days: int) -> list[str]:
+    return [
+        entry.get("topic", "")
+        for entry in _load_recent_entries(memory_file, lookback_days)
+        if entry.get("topic", "")
+    ]
+
+
+def _load_recent_entries(memory_file: str, lookback_days: int) -> list[dict]:
     if not os.path.exists(memory_file):
         return []
     memory = load_json(memory_file)
@@ -40,7 +51,7 @@ def _load_recent_topics(memory_file: str, lookback_days: int) -> list[str]:
         try:
             pub_date = datetime.strptime(entry["published_date"], "%Y-%m-%d")
             if pub_date >= cutoff:
-                recent.append(entry["topic"])
+                recent.append(entry)
         except (KeyError, ValueError):
             continue
     return recent
@@ -68,11 +79,55 @@ def _load_recent_categories(memory_file: str, last_n: int = 4) -> list[str]:
 
 
 def _is_duplicate(topic: str, recent_topics: list[str], threshold: float) -> bool:
-    if fuzz is None or not recent_topics:
+    if not recent_topics:
         return False
     for existing in recent_topics:
-        ratio = fuzz.token_sort_ratio(topic.lower(), existing.lower()) / 100.0
-        if ratio >= threshold:
+        if _fuzzy_match(topic, existing, threshold):
+            return True
+    return False
+
+
+def _normalise_text(value: str) -> str:
+    return " ".join(str(value or "").lower().split())
+
+
+def _fuzzy_match(a: str, b: str, threshold: float) -> bool:
+    if not a or not b:
+        return False
+    if fuzz is None:
+        a_tokens = set(a.split())
+        b_tokens = set(b.split())
+        overlap = len(a_tokens & b_tokens) / max(1, min(len(a_tokens), len(b_tokens)))
+        sequence = SequenceMatcher(None, a, b).ratio()
+        return max(overlap, sequence) >= threshold
+    token_sort = fuzz.token_sort_ratio(a, b) / 100.0
+    token_set = fuzz.token_set_ratio(a, b) / 100.0
+    return max(token_sort, token_set) >= threshold
+
+
+def _candidate_fingerprint(candidate: dict) -> str:
+    return _normalise_text(" ".join([
+        candidate.get("topic", ""),
+        candidate.get("hook_seed", ""),
+        candidate.get("emotional_trigger", ""),
+        candidate.get("psych_concept", ""),
+    ]))
+
+
+def _is_duplicate_candidate(candidate: dict, recent_entries: list[dict], threshold: float) -> bool:
+    if not recent_entries:
+        return False
+    fingerprint_threshold = max(0.62, threshold - 0.15)
+    topic = _normalise_text(candidate.get("topic", ""))
+    hook = _normalise_text(candidate.get("hook_seed", ""))
+    fingerprint = _candidate_fingerprint(candidate)
+
+    for entry in recent_entries:
+        if _fuzzy_match(topic, _normalise_text(entry.get("topic", "")), threshold):
+            return True
+        if _fuzzy_match(hook, _normalise_text(entry.get("hook", "")), threshold):
+            return True
+        if _fuzzy_match(fingerprint, _normalise_text(entry.get("content_fingerprint", "")), fingerprint_threshold):
             return True
     return False
 
@@ -95,6 +150,10 @@ def _configure_gemini() -> str:
     return api_key
 
 
+def _clean_signal(value: str) -> str:
+    return " ".join(str(value or "").replace("\n", " ").split()).strip()
+
+
 # ── Step 1: Signal Harvest ────────────────────────────────────────────────────
 
 def _harvest_pytrends(timeframe: str = "now 7-d") -> list[str]:
@@ -103,7 +162,7 @@ def _harvest_pytrends(timeframe: str = "now 7-d") -> list[str]:
     try:
         pytrends = TrendReq(hl="en-US", tz=300)
         pytrends.build_payload(
-            kw_list=["personal finance", "money tips", "credit card", "investing", "debt"],
+            kw_list=["relationship advice", "breakup advice", "situationship", "attachment style", "self worth"],
             cat=7,
             timeframe=timeframe,
             geo="US",
@@ -146,7 +205,13 @@ def _harvest_youtube() -> list[str]:
         creds.refresh(_YTRequest())
         youtube = _yt_build("youtube", "v3", credentials=creds)
 
-        queries = ["personal finance tips", "money saving tips", "credit score tips"]
+        queries = [
+            "relationship advice",
+            "dating advice",
+            "breakup advice",
+            "situationship advice",
+            "self worth relationships",
+        ]
         titles = []
         for query in queries:
             resp = youtube.search().list(
@@ -172,13 +237,52 @@ def _harvest_youtube() -> list[str]:
         return []
 
 
-def _harvest_signals(timeframe: str = "now 7-d") -> dict:
-    """Collect signals from pytrends and YouTube. Returns dict with both lists."""
-    pytrends_signals = _harvest_pytrends(timeframe)
-    youtube_titles   = _harvest_youtube()
+def _harvest_reddit(subreddits: list[str], timeframe: str = "week") -> list[str]:
+    titles = []
+    headers = {"User-Agent": "SoftResetWithMeResearch/1.0"}
+    for subreddit in subreddits:
+        safe_sub = str(subreddit).strip().strip("/")
+        if not safe_sub:
+            continue
+        url = f"https://www.reddit.com/r/{safe_sub}/top.json"
+        try:
+            resp = requests.get(
+                url,
+                headers=headers,
+                params={"t": timeframe, "limit": 15},
+                timeout=12,
+            )
+            if resp.status_code != 200:
+                continue
+            posts = resp.json().get("data", {}).get("children", [])
+            for post in posts:
+                title = _clean_signal(post.get("data", {}).get("title", ""))
+                if 15 <= len(title) <= 180:
+                    titles.append(title)
+        except Exception as e:
+            print(f"[research] Reddit r/{safe_sub} failed: {e}")
+    unique = list(dict.fromkeys(titles))
+    print(f"[research] Reddit: {len(unique)} title signals")
+    return unique[:30]
+
+
+def _harvest_signals(timeframe: str = "now 7-d", config: dict | None = None) -> dict:
+    """Collect research signals. Returns dict keyed by source."""
+    config = config or {}
+    sources = set(config.get("research_signal_sources", ["pytrends", "youtube", "reddit"]))
+    pytrends_signals = _harvest_pytrends(timeframe) if "pytrends" in sources else []
+    youtube_titles   = _harvest_youtube() if "youtube" in sources else []
+    reddit_titles    = (
+        _harvest_reddit(
+            config.get("reddit_signal_subreddits", ["relationship_advice", "dating_advice", "BreakUps", "ExNoContact", "self"]),
+            "month" if "30" in timeframe else "week",
+        )
+        if "reddit" in sources else []
+    )
     return {
         "pytrends": pytrends_signals,
         "youtube":  youtube_titles,
+        "reddit": reddit_titles,
     }
 
 
@@ -195,7 +299,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     if all_signals:
         signals_str = "\n".join(f"- {s}" for s in all_signals[:30])
     else:
-        signals_str = "- No trending data available — use your knowledge of current US personal finance topics"
+        signals_str = "- No trending data available — use your knowledge of current US relationship self-improvement topics"
 
     recent_str  = "\n".join(f"- {t}" for t in recent_topics)  if recent_topics  else "- None"
     cat_str     = "\n".join(f"- {c}" for c in recent_categories) if recent_categories else "- None"
@@ -208,19 +312,22 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         recent_categories=cat_str,
         blocked_categories=blocked_str,
         target_audience=config.get("target_audience", "US"),
-        niche=config.get("niche", "personal finance"),
+        niche=config.get("niche", "relationship self-improvement"),
     )
 
     candidates = generate_json(prompt, model)
     if not isinstance(candidates, list):
         raise ValueError("Candidate generation returned non-list response")
+    for rank, candidate in enumerate(candidates):
+        if isinstance(candidate, dict):
+            candidate["_candidate_rank"] = rank
     print(f"[research] Generated {len(candidates)} candidates (target: 5–7)")
     return candidates
 
 
 # ── Step 3: Filter ────────────────────────────────────────────────────────────
 
-def _filter_candidates(candidates: list[dict], recent_topics: list[str],
+def _filter_candidates(candidates: list[dict], recent_topics: list[str], recent_entries: list[dict],
                        recent_categories: list[str], blocked_categories: list[str],
                        threshold: float) -> list[dict]:
     blocked = _normalise_categories(blocked_categories)
@@ -229,7 +336,7 @@ def _filter_candidates(candidates: list[dict], recent_topics: list[str],
         topic    = c.get("topic", "")
         category = c.get("category", "").lower()
 
-        if _is_duplicate(topic, recent_topics, threshold):
+        if _is_duplicate_candidate(c, recent_entries, threshold) or _is_duplicate(topic, recent_topics, threshold):
             print(f"[research] Dropped (duplicate): {topic}")
             continue
 
@@ -261,21 +368,74 @@ def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> d
     )
 
     result = generate_json(prompt, model)
+    result = _apply_scoring_penalties(result)
 
     # Enforce hard gate
     if result.get("reliability_score", 1) == 1:
         result["total_score"] = 0
 
-    # Recalculate total_score from parts as a sanity check (only if reliability > 1)
+    # Recalculate total_score from parts as a sanity check (only if reliability > 1).
+    # Supports the relationship scoring schema, with legacy scoring keys as fallback.
     if result.get("reliability_score", 1) > 1:
-        computed = (
-            result.get("cpm_score", 0) +
-            result.get("trending_score", 0) +
-            result.get("scriptability_score", 0) +
-            result.get("us_specificity_score", 0) +
-            result.get("reliability_score", 0)
-        )
+        relationship_parts = [
+            "audience_fit_score",
+            "emotional_tension_score",
+            "scriptability_score",
+            "share_save_score",
+            "reliability_score",
+        ]
+        legacy_parts = [
+            "cpm_score",
+            "trending_score",
+            "scriptability_score",
+            "us_specificity_score",
+            "reliability_score",
+        ]
+        parts = relationship_parts if any(k in result for k in relationship_parts) else legacy_parts
+        computed = sum(result.get(k, 0) for k in parts)
         result["total_score"] = computed
+
+    result["_candidate_rank"] = candidate.get("_candidate_rank", 999)
+
+    return result
+
+
+def _apply_scoring_penalties(result: dict) -> dict:
+    """Make 20/20 genuinely rare by capping vague or weakly sourced candidates."""
+    topic = _normalise_text(result.get("topic", ""))
+    trigger = _normalise_text(result.get("emotional_trigger", ""))
+    source_name = _normalise_text(result.get("source_name", ""))
+    source_url = str(result.get("source_url", "") or "").strip()
+    content_format = _normalise_text(result.get("content_format", ""))
+
+    generic_source_names = (
+        "psychological principles",
+        "widely accepted psychology principles",
+        "relationship psychology principle",
+        "psychological concept",
+    )
+    if not source_url and any(name in source_name for name in generic_source_names):
+        result["reliability_score"] = min(int(result.get("reliability_score", 1)), 3)
+
+    scene_markers = (
+        "text", "dm", "message", "reply", "read", "story", "song", "2am", "phone",
+        "date", "app", "ghost", "muting", "unfollow", "argument", "waiting",
+        "rereading", "typing", "call", "bed", "night",
+    )
+    trigger_tokens = trigger.split()
+    if len(trigger_tokens) < 6 or not any(marker in trigger for marker in scene_markers):
+        result["emotional_tension_score"] = min(int(result.get("emotional_tension_score", 1)), 3)
+
+    broad_terms = (
+        "relationship advice", "dating advice", "self worth", "emotional growth",
+        "communication", "boundaries", "moving on",
+    )
+    if any(topic == term or topic.startswith(term + " ") for term in broad_terms):
+        result["audience_fit_score"] = min(int(result.get("audience_fit_score", 1)), 3)
+        result["share_save_score"] = min(int(result.get("share_save_score", 1)), 3)
+
+    if content_format in ("truth_drop", "reframe") and not any(marker in trigger for marker in scene_markers):
+        result["share_save_score"] = min(int(result.get("share_save_score", 1)), 3)
 
     return result
 
@@ -306,7 +466,18 @@ def _pick_winner(scored: list[dict]) -> dict | None:
     valid = [c for c in scored if c.get("total_score", 0) > 0]
     if not valid:
         return None
-    return sorted(valid, key=lambda x: x["total_score"], reverse=True)[0]
+    return sorted(
+        valid,
+        key=lambda x: (
+            x.get("total_score", 0),
+            x.get("emotional_tension_score", x.get("trending_score", 0)),
+            x.get("share_save_score", x.get("us_specificity_score", 0)),
+            x.get("scriptability_score", 0),
+            x.get("audience_fit_score", x.get("cpm_score", 0)),
+            -int(x.get("_candidate_rank", 999)),
+        ),
+        reverse=True,
+    )[0]
 
 
 # ── Main Entry Points ─────────────────────────────────────────────────────────
@@ -314,29 +485,33 @@ def _pick_winner(scored: list[dict]) -> dict | None:
 def run_research(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[research] Starting topic research for {video_id}")
 
-    memory_file       = "topic_memory.json"
+    memory_file       = config.get("topic_memory_file", "topic_memory.json")
     model             = config["research_model"]
     threshold         = config["duplicate_similarity_threshold"]
     blocked_categories = config.get("blocked_categories", [])
     blocked_set       = _normalise_categories(blocked_categories)
-    recent_topics     = _load_recent_topics(memory_file, config["topic_memory_lookback_days"])
-    recent_categories = _load_recent_categories(memory_file, last_n=4)
+    recent_entries    = _load_recent_entries(memory_file, config["topic_memory_lookback_days"])
+    recent_topics     = [entry.get("topic", "") for entry in recent_entries if entry.get("topic", "")]
+    recent_categories = _load_recent_categories(
+        memory_file,
+        last_n=int(config.get("recent_category_block_count", 6)),
+    )
 
     # ── Step 1: Harvest signals (7-day) ──
-    signals = _harvest_signals(timeframe="now 7-d")
+    signals = _harvest_signals(timeframe="now 7-d", config=config)
 
     # ── Step 2: Generate candidates ──
     candidates = _generate_candidates(signals, recent_topics, recent_categories, blocked_categories, config, model)
 
     # ── Step 3: Filter ──
-    candidates = _filter_candidates(candidates, recent_topics, recent_categories, blocked_categories, threshold)
+    candidates = _filter_candidates(candidates, recent_topics, recent_entries, recent_categories, blocked_categories, threshold)
 
     # ── Step 4: Expand to 30-day if too few ──
     if len(candidates) < 3:
         print(f"[research] Only {len(candidates)} candidates after filter — expanding to 30-day signals")
-        signals_30d = _harvest_signals(timeframe="now 30-d")
+        signals_30d = _harvest_signals(timeframe="now 30-d", config=config)
         candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, blocked_categories, config, model)
-        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_categories, blocked_categories, threshold)
+        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_entries, recent_categories, blocked_categories, threshold)
         # Merge, dedupe by topic string
         existing_topics = {c["topic"] for c in candidates}
         for c in candidates_30d:
@@ -355,7 +530,7 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
                 category = e.get("category", "").strip().lower()
                 if category in blocked_set:
                     continue
-                if not _is_duplicate(e["topic"], recent_topics, threshold):
+                if not _is_duplicate_candidate(e, recent_entries, threshold) and not _is_duplicate(e["topic"], recent_topics, threshold):
                     candidates.append(e)
                     existing_topics.add(e["topic"])
             if len(candidates) >= 6:
@@ -378,7 +553,8 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         # Filter evergreen against recent topics too
         evergreen_filtered = [
             e for e in evergreen
-            if not _is_duplicate(e["topic"], recent_topics, threshold)
+            if not _is_duplicate_candidate(e, recent_entries, threshold)
+            and not _is_duplicate(e["topic"], recent_topics, threshold)
             and e.get("category", "").strip().lower() not in blocked_set
         ]
         if evergreen_filtered:
@@ -395,15 +571,19 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         "category":            winner.get("category", ""),
         "angle_type":          winner.get("angle_type", ""),
         "hook_seed":           winner.get("hook_seed", ""),
-        "source_fact":         winner.get("source_fact", ""),
+        "source_fact":         winner.get("source_fact", winner.get("source_basis", "")),
+        "source_basis":        winner.get("source_basis", winner.get("source_fact", "")),
         "source_name":         winner.get("source_name", ""),
         "source_url":          winner.get("source_url", ""),
         "fact_year":           winner.get("fact_year", ""),
+        "content_format":      winner.get("content_format", ""),
+        "emotional_trigger":   winner.get("emotional_trigger", ""),
+        "psych_concept":       winner.get("psych_concept", ""),
         "scores": {
-            "cpm_value":           winner.get("cpm_score", 0),
-            "trending":            winner.get("trending_score", 0),
+            "audience_fit":        winner.get("audience_fit_score", winner.get("cpm_score", 0)),
+            "emotional_tension":   winner.get("emotional_tension_score", winner.get("trending_score", 0)),
             "scriptability":       winner.get("scriptability_score", 0),
-            "us_specificity":      winner.get("us_specificity_score", 0),
+            "share_save":          winner.get("share_save_score", winner.get("us_specificity_score", 0)),
             "reliability":         winner.get("reliability_score", 0),
         },
         "total_score":         winner.get("total_score", 0),
@@ -422,23 +602,27 @@ def run_research_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[research][MOCK] Generating mock research for {video_id}")
     result = {
         "video_id":    video_id,
-        "topic":       "Most Americans are paying credit card interest they could legally avoid",
-        "category":    "credit cards",
-        "angle_type":  "mistake-reveal",
-        "hook_seed":   "Your credit card company is charging you interest you don't have to pay",
-        "source_fact": "The CFPB reports that 45% of credit card holders carry a balance month to month, paying an average of $1,000/year in avoidable interest.",
-        "source_name": "CFPB",
-        "source_url":  "https://www.consumerfinance.gov/data-research/consumer-credit-trends/",
-        "fact_year":   2024,
+        "topic":       "You did not lose them, you lost who you imagined they would be",
+        "category":    "healing arcs",
+        "angle_type":  "truth drop",
+        "content_format": "truth_drop",
+        "emotional_trigger": "grieving someone's potential",
+        "psych_concept": "idealization and grief",
+        "hook_seed":   "You did not lose them. You lost who you imagined.",
+        "source_fact": "Emotional healing often requires grieving the imagined future, not only the person.",
+        "source_basis": "Idealization, rumination, and grief after relationship loss.",
+        "source_name": "relationship psychology principle",
+        "source_url":  "",
+        "fact_year":   2026,
         "scores": {
-            "cpm_value":      4,
-            "trending":       3,
+            "audience_fit":   4,
+            "emotional_tension": 4,
             "scriptability":  4,
-            "us_specificity": 4,
+            "share_save": 4,
             "reliability":    4,
         },
-        "total_score":          19,
-        "reasoning":            "High CPM, clear ego-threat angle, single verifiable stat from CFPB",
+        "total_score":          20,
+        "reasoning":            "A direct breakup healing truth with strong save/share potential and clean brand fit.",
         "candidates_evaluated": 10,
         "generated_at":         now_iso(),
     }

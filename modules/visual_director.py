@@ -19,7 +19,8 @@ except ImportError:
 
 # ── Prompt ───────────────────────────────────────────────────────────────────
 
-DIRECTOR_PROMPT = """You are the visual director for Raccoon Economy — a US personal finance YouTube Shorts channel with a unique branded character universe.
+DIRECTOR_PROMPT = """You are the visual director for Soft Reset With Me, a faceless US relationship/self-growth YouTube Shorts channel.
+The channel uses cinematic stock footage plus kinetic typography. It should feel like a short film, not a productivity reel.
 
 SCRIPT (plain spoken dialogue, grouped into synced asset beats):
 "{raw_dialogue}"
@@ -27,129 +28,119 @@ SCRIPT (plain spoken dialogue, grouped into synced asset beats):
 CANONICAL BRAND BIBLE:
 {brand_context}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-VISUAL UNIVERSE — THE RACCOON ECONOMY WORLD
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VISUAL UNIVERSE - MOODY EDITORIAL CINEMA
 
-MAIN CHARACTER — Regular Raccoon:
-  Gray furry chibi raccoon, black mask around eyes, round ears.
-  Always wears: gold chain necklace + white t-shirt.
-  Expression range: deadpan → confused → alarmed → resigned → quietly determined.
-  Lives in: cardboard box den with wooden table, warm lamp, small square window showing dark alley + glowing 7-Eleven sign.
+Core mood:
+- Cinematic stock footage and editorial stills
+- Slightly desaturated warm tones, golden-hour light, intimate close-ups
+- Faceless where possible: hands, silhouettes, back-of-head, reflections, empty chairs
+- Feels like a private emotional moment
+- Use candlelit rooms, rainy windows, hands writing, city nights, empty chairs, someone staring into distance, slow zoom shots
+- The visual should feel like a private moment the viewer recognizes
+- Favor real, cinematic stock-style footage over generated symbolic plates. This channel should feel like lived-in editorial B-roll, not AI poster art.
 
-HARD SAFETY RULE:
-  Never use real raccoon photos, realistic raccoon footage, wildlife raccoons, or photorealistic raccoon imagery.
-  Raccoon characters must only appear as the stylized flat chibi brand characters from the brand bible.
-  Pexels stock images/videos must show humans, objects, documents, homes, banks, phones, or money concepts — never animals.
+BRAND COLORS:
+- Deep Midnight #1C1C2B for dark backgrounds and grounding
+- Warm Terracotta #C4785A for hooks, CTA accents, and emotional emphasis
+- Soft Cream #F5F0E8 for captions and overlays added in video editing, never inside generated images
+- Sage Green #7BAE8A for healing and growth moments
+- Avoid neon colors, busy backgrounds, bright sunny clips, fitness shots, and stock smiling couple poses
 
-SUPPORTING CHARACTERS (use when the dialogue calls for them):
-  Animal Control Raccoon — gray chibi raccoon, full navy enforcement uniform, black aviator sunglasses, silver badge, clipboard, red OVERDUE stamp on belt. Always expressionless. Represents: IRS, government, any system that arrives whether you're ready or not.
-  Smart Raccoon — gray chibi raccoon, sage green hoodie, round glasses, dark chinos, white sneakers, neat hair, upright posture. Always holds a document with a red circle. Quiet concern. Represents: financial advisor, the voice of reason Regular Raccoon ignores.
-  Suit Raccoon (Bank Raccoon) — gray chibi raccoon, navy business suit, white shirt, gold pocket square, gold CAP VAULT chest badge, neat dark hair. Smiles with closed eyes and blush circles — serene and unsettling. Holds a pink credit card. Represents: financial institutions. Not your enemy. Not your friend.
-  Crypto Raccoon — gray chibi raccoon, all-black hoodie with neon green accents, HODL belt buckle, WAGMI wristband, wild spiked dark hair. Stars in eyes when bullish, panic-wide eyes when bearish. Holds phone showing a chart. Represents: speculative finance, hype.
+PALETTE FOR THIS VIDEO:
+Use Deep Midnight as the base, Warm Terracotta as the primary accent, Soft Cream for text, and Sage Green only for healing/growth beats.
 
-CURRENCY DISPLAY:
-  NEVER show dollar signs or $ amounts in illustrated scenes.
-  ALWAYS show money as CAPS — small round silver bottle caps stacked in piles.
-  Translation: "$800 lost" → "800 CAPS rolling off a pile" | "$1,200 refund" → "1200 CAPS in a neat stack"
-  Exception: Text on official-looking documents (pay stubs, tax forms) may show CAPS amounts.
+SCENE ASSIGNMENT RULES:
+- One asset per 1-2 dialogue sentences
+- Split dialogue into sentences first, then group them in order
+- Each scene may cover one sentence or two adjacent sentences, never more
+- The scene visual must directly represent the exact sentence(s) in covers_dialogue
+- Do not assign generic visuals just to fill a slot
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SCENE ASSIGNMENT RULES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Scene 1 (hook):
+- High-retention emotional close-up
+- A faceless or near-faceless emotional image: rainy window, hand on notebook, empty chair, city night
+- The hook image must stop the scroll without looking loud or cheap
 
-CORE RULE: One asset per 1-2 dialogue sentences.
-  Split dialogue into sentences first, then group them in order.
-  Each scene may cover one sentence or two adjacent sentences, never more.
-  The scene visual must directly represent the exact sentence(s) in covers_dialogue.
-  Do not assign generic or random visuals just to fill a slot.
+Scene types:
+- "reaction": faceless close-up of posture, hands, silhouette, reflection, or someone staring into distance
+- "interaction": emotionally distant conversation with no stock-couple posing
+- "object": empty chair, rain window, journal, candle, hand pausing over a closed notebook
+- "establishing": city night, bedroom, candlelit room, rainy window, walking city, quiet apartment
+- "infographic": minimal symbolic frame, such as an empty chair, candle, journal, doorway, or two cups left apart
 
-Scene 1 (hook) — HIGH ENERGY PATTERN INTERRUPT:
-  Regular Raccoon in dramatic alarmed or deadpan-shocked pose. Bold close-up. This must stop the scroll.
+Assign visual_type AND image_style for each scene:
 
-For each scene pick a SCENE TYPE:
-  • "reaction" — Regular Raccoon close-up or medium shot reacting to what was just said
-  • "infographic" — flat graphic panel: CAPS pile, pay stub, chart, form, calculation breakdown (no character needed or just a paw visible)
-  • "interaction" — two raccoon characters at table or doorway
-  • "establishing" — wide shot of den or alley, sets the world
-  • "object" — tight close-up of document, envelope, CAPS pile, form — maybe just a raccoon paw
+VISUAL MIX RULES:
+- Use video for 60-75% of scenes when possible
+- Use generated brand images only for the hook, thumbnail, and symbolic beats that stock footage cannot express well
+- Never place more than 2 generated still scenes back-to-back
+- Every Pexels query in one manifest must be unique in wording and subject
+- Avoid repeating the same subject composition twice in one short, especially person by window, journal close-up, and empty chair
+- Progress the emotional sequence visually: waiting -> uncertainty -> clarity -> boundary -> release
 
-Assign visual_type AND image_style for each scene. Target roughly equal thirds:
+visual_type "image", image_style "brand":
+- Editorial still or generated cinematic background that matches the stock-footage look
+- Use for hook frames, emotional background plates, and thumbnail background plates
+- image_prompt must end with the cinematic style suffix below
 
-  visual_type "image", image_style "brand"  (~40% of scenes)
-    → AI-generated Raccoon Economy chibi illustration
-    → USE FOR: hook sentence, CTA, key emotional beats, raccoon character moments,
-      infographic panels with CAPS piles, den/alley establishing shots
-    → image_prompt must include raccoon character + end with chibi style string
+visual_type "image", image_style "context":
+- Clean photorealistic or minimal background plate
+- Use sparingly for rooms, hands, journals, doors, or relatable modern details
+- End with "photorealistic, professional photography, HD" OR "clean minimal graphic design"
 
-  visual_type "image", image_style "context"  (~30% of scenes)
-    → AI-generated contextual image — photorealistic OR clean flat infographic, NO raccoon
-    → USE FOR: stat/fact moments, real-world financial concepts, US settings (bank branch,
-      paycheck, tax form close-up, stock market board, apartment building)
-    → image_prompt style: "photorealistic, professional photography, HD" OR "clean flat infographic"
-    → Do NOT include chibi/cartoon/raccoon in context prompts
+visual_type "video":
+- The asset generator randomly selects Pexels or Coverr by configured weights, then only falls back to generated imagery if that selected video provider fails
+- Query must be 2-5 words and use specific emotional stock terms like: phone face down, rainy apartment window, city night walking, candlelit bedroom, hands closing journal, empty chair room, hallway night, person leaving room, coffee cup alone, train window night
+- Never query for stock smiling couple poses, fitness, neon, bright sunny clips, mascots, cartoons, anime, or fantasy
 
-  visual_type "video"  (~30% of scenes)
-    → Pexels stock footage — real human action and relatable scenes
-    → USE FOR: "checking phone", "paying bills", "at work", "stressed person", "signing documents",
-      anything with human movement and emotion
-    → pexels_query: 3-5 word search term
-    → NEVER query for raccoon, animal, wildlife, cartoon, mascot, or furry character footage
+IMAGE PROMPT RULES:
+For brand image prompts, write 40+ words and include:
+1. Scene type label
+2. Faceless cinematic subject or object
+3. Specific mood matching the dialogue
+4. Journal/window/chair/candle/hand action visible. Avoid phones in generated image prompts; use phone scenes mostly as stock video queries.
+5. Modern intimate setting
+6. Brand color wording
+7. MUST end with:
+"moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, real-world photographic scene only, continuous natural background surfaces, window glass, candlelight, furniture, closed journal, hands, and shadows only, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-VISUAL STYLE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Do not put the spoken words from covers_dialogue into image_prompt. If the dialogue says "maybe", "yes", "no", "confusion", "save", or any other literal word, translate it into an object/action instead. Generated images are vibe plates only; all words are added later by captions.
+For generated images, avoid phones and screens by default. If the script needs a phone moment, prefer visual_type "video" with a stock query like "phone face down".
+For journal shots, pages must be blank, blurred, closed, or turned away. Never ask for written words, sparse words, handwriting lines, lists, or readable notes.
 
-Style: flat cartoon, thick black outlines, solid fills, zero gradients, zero shadows, zero photorealism.
-Think: Saturday morning cartoon meets financial nightmare. Roughness is intentional.
-Background default: solid bright yellow #FFD700
-Background exception: night/alley scenes use dark navy #1B2A4A; yellow always as accent
-Color language: Yellow=world | Black=outlines | White=documents/tees | Red=danger/IRS/loss | Green=money/gains
-  NEVER: real raccoon photos, realistic raccoon footage, wildlife raccoons, photorealistic raccoon imagery, 3D, gradients, shadows, complex textures
+For context images, no anime wording. Keep it real, moody, simple, and free of visible text.
 
-WORLD LOCATIONS (use these settings):
-  The Alley — brick walls, single overhead lamp, dumpster labeled FIRST RACCOON BANK, 7-Eleven sign glowing. Dark charcoal + navy + yellow accents. The emotional anchor.
-  The Den — cardboard box inside alley, wooden table, warm lamp, small square window.
-  Cap Vault — Suit Raccoon's bank. Bold flat signage. Institutional.
-  Pizza Hospital / Pizza Hotel / Pizza Palace — bold flat signage, no realistic detail.
+TEXT OVERLAY DIRECTION:
+- Hook text: large centered DM Serif Display style, Soft Cream, emotional and sparse
+- Body/list text: Inter Bold style, high contrast
+- Use dark semi-transparent scrim if the background is light
+- Each key phrase should get its own screen moment
+- Hook fades in. Key insight snaps in with a slight scale-up.
+- Text overlays are added by the video/caption system only. Generated images must not contain any words.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-IMAGE PROMPT RULES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THUMBNAIL:
+- Use the most emotionally specific hook moment
+- Compose naturally with darker edges or shadow areas that can support later typography
+- Faceless, moody, cinematic
+- Generated thumbnail background must contain no visible text, no words, no letters, no captions, and no signage
+- End with the same cinematic style suffix
+- Keep it as a real photographed environment, not a graphic composition.
 
-For IMAGE scenes (image_style "brand") write a detailed image_prompt (40+ words):
-  1. Scene type label (e.g. "Reaction shot:" or "Infographic panel:")
-  2. Character present (or none for pure infographic)
-  3. Specific action/pose/expression matching the dialogue
-  4. What's on the table/in hands/visible in frame
-  5. Setting detail (The Alley, The Den, Cap Vault, etc.)
-  6. MUST end with: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
-  NEVER include: photorealistic, photography, gradients, shadows, 3D, digital art
+CONSTRAINTS:
+- 20 scenes maximum
+- covers_dialogue = EXACT words from the script
+- Every word in the script must be covered by exactly one scene
+- Each image_prompt or pexels_query must clearly match its own covers_dialogue
 
-For IMAGE scenes (image_style "context") write a detailed image_prompt (20+ words):
-  Describe the real-world financial concept visually. No raccoon. No cartoon.
-  End with: "photorealistic, professional photography, HD" OR "clean flat infographic, minimal design"
-  Examples: "Close-up of a US bank statement with overdraft fees highlighted in red, photorealistic, professional photography, HD"
-  NEVER include: raccoon, chibi, cartoon, flat cartoon, bright yellow, character
-
-For VIDEO scenes: pexels_query with 3-5 word search term.
-  Query must be about real people, documents, phone screens, banking, housing, work, or money objects.
-  Query must never mention raccoon, animal, wildlife, mascot, cartoon, or chibi.
-
-THUMBNAIL: Dramatic hook moment. Regular Raccoon in most alarmed/shocked pose of the video.
-  image_style: "brand". End with: "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CONSTRAINTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  - One asset per 1-2 adjacent dialogue sentences. 20 maximum.
-  - covers_dialogue = EXACT words from the script (no paraphrasing).
-  - Every word in the script covered by exactly one scene.
-  - Each image_prompt or pexels_query must clearly match its own covers_dialogue.
-
-Return valid JSON only — no explanation, no markdown:
+Return valid JSON only - no explanation, no markdown:
 {{
-  "thumbnail": {{"image_prompt": "Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — dramatic alarmed wide-eyed expression, cardboard den background. flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"}},
+  "palette": {{
+    "base": "#1C1C2B",
+    "accent": "#C4785A",
+    "text": "#F5F0E8",
+    "healing": "#7BAE8A"
+  }},
+  "thumbnail": {{"image_prompt": "Editorial hook frame: faceless person sitting near a rainy window at night, closed journal on the table, empty chair in the background, warm candle glow, real-world photographic scene only, continuous natural background surfaces, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"}},
   "scenes": [
     {{
       "id": 1,
@@ -157,26 +148,17 @@ Return valid JSON only — no explanation, no markdown:
       "visual_type": "image",
       "image_style": "brand",
       "scene_type": "reaction",
-      "image_prompt": "Reaction shot: Regular Raccoon [description]... flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical",
+      "image_prompt": "Reaction shot: [description]... real-world photographic scene only, continuous natural background surfaces, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical",
       "pexels_query": null
     }},
     {{
       "id": 2,
       "covers_dialogue": "next sentence",
-      "visual_type": "image",
-      "image_style": "context",
-      "scene_type": "infographic",
-      "image_prompt": "Close-up of a US bank statement with overdraft fees highlighted in red, photorealistic, professional photography, HD",
-      "pexels_query": null
-    }},
-    {{
-      "id": 3,
-      "covers_dialogue": "another sentence",
       "visual_type": "video",
       "image_style": null,
-      "scene_type": "reaction",
+      "scene_type": "object",
       "image_prompt": null,
-      "pexels_query": "person checking bank account"
+      "pexels_query": "rainy apartment window"
     }}
   ]
 }}"""
@@ -210,6 +192,12 @@ def _validate_manifest(manifest: dict, raw_dialogue: str | None = None) -> tuple
             return False, f"Too few scenes: {len(scenes)} (need at least {min_scenes} for 1-2 sentences per scene)"
         if len(scenes) > len(expected_sentences):
             return False, f"Too many scenes: {len(scenes)} for {len(expected_sentences)} sentences"
+    if len(scenes) >= 6:
+        video_count = sum(1 for s in scenes if s.get("visual_type") == "video")
+        if video_count < len(scenes) // 2:
+            return False, f"Too few stock video scenes: {video_count}/{len(scenes)}"
+    seen_queries: set[str] = set()
+    consecutive_images = 0
     for i, s in enumerate(scenes):
         if not s.get("covers_dialogue", "").strip():
             return False, f"Scene {i+1} missing covers_dialogue"
@@ -217,36 +205,56 @@ def _validate_manifest(manifest: dict, raw_dialogue: str | None = None) -> tuple
             return False, f"Scene {i+1} covers more than 2 dialogue sentences"
         if s.get("visual_type") not in ("image", "video"):
             return False, f"Scene {i+1} invalid visual_type"
+        if s["visual_type"] == "image":
+            consecutive_images += 1
+            if consecutive_images > 2:
+                return False, f"Scene {i+1} creates more than 2 generated stills in a row"
+        else:
+            consecutive_images = 0
         if s["visual_type"] == "image" and not s.get("image_prompt"):
             return False, f"Scene {i+1} is 'image' but missing image_prompt"
         if s["visual_type"] == "video" and not s.get("pexels_query"):
             return False, f"Scene {i+1} is 'video' but missing pexels_query"
+        if s["visual_type"] == "video":
+            query = re.sub(r"\s+", " ", s.get("pexels_query", "").strip().lower())
+            if query in seen_queries:
+                return False, f"Scene {i+1} repeats Pexels query '{query}'"
+            seen_queries.add(query)
         # Default image_style to "brand" if not set
         if s["visual_type"] == "image" and not s.get("image_style"):
             s["image_style"] = "brand"
-        # For brand images only: ensure chibi style suffix is present
+        # For brand images only: ensure the cinematic style suffix is present
         if s["visual_type"] == "image" and s.get("image_style") == "brand" and s.get("image_prompt"):
-            if "chibi art style" not in s["image_prompt"].lower():
-                s["image_prompt"] += ", flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+            if re.search(r"\b(maybe|confusion|possibility)\b", s["image_prompt"], flags=re.IGNORECASE):
+                return False, f"Scene {i+1} image_prompt contains literal dialogue text"
+            if "moody editorial cinematic" not in s["image_prompt"].lower():
+                s["image_prompt"] += ", real-world photographic scene only, continuous natural background surfaces, window glass, candlelight, furniture, closed journal, hands, and shadows only, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"
     if raw_dialogue:
         expected = _dialogue_words(raw_dialogue)
         covered = _dialogue_words(" ".join(s.get("covers_dialogue", "") for s in scenes))
         if covered != expected:
             return False, "Scene dialogue coverage does not match script exactly"
-    # Thumbnail always brand — ensure chibi style
+    # Thumbnail always brand — ensure cinematic style
     thumb_prompt = manifest["thumbnail"]["image_prompt"]
-    if "chibi art style" not in thumb_prompt.lower():
-        manifest["thumbnail"]["image_prompt"] += ", flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+    if "moody editorial cinematic" not in thumb_prompt.lower():
+        manifest["thumbnail"]["image_prompt"] += ", real-world photographic scene only, continuous natural background surfaces, window glass, candlelight, furniture, closed journal, hands, and shadows only, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"
     return True, ""
 
 
 # ── Fallback: reconstruct from existing script beat data ─────────────────────
 
 def _build_fallback_manifest(script: dict) -> dict:
-    """Fallback: group dialogue into synced 1-2 sentence chibi assets."""
-    print("[visual_director] Building fallback manifest — synced chibi style")
+    """Fallback: group dialogue into synced 1-2 sentence cinematic assets."""
+    print("[visual_director] Building fallback manifest — synced cinematic style")
 
-    BRAND_STYLE = "flat cartoon style, thick black outlines, solid flat colors, bright yellow background, chibi art style, bold simple shapes, 9:16 vertical"
+    BRAND_STYLE = (
+        "moody editorial cinematic still, slightly desaturated warm tones, "
+        "Deep Midnight base, Warm Terracotta practical light accent, "
+        "real-world photographic scene only, continuous natural background surfaces, "
+        "window glass, candlelight, furniture, closed journal, hands, and shadows only, "
+        "unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, intimate close-up, "
+        "shallow depth of field, faceless composition, 9:16 vertical"
+    )
 
     full_text = build_spoken_script_text(script)
 
@@ -254,41 +262,81 @@ def _build_fallback_manifest(script: dict) -> dict:
     if not sentences:
         sentences = [full_text]
 
+    # Keep the fallback punchy: short beats get paired, but the hook and
+    # metaphor lines get their own visual moments.
+    pattern = [1, 1, 2, 2, 2, 2, 2, 1, 1, 2]
     groups = []
     i = 0
+    for take in pattern:
+        if i >= len(sentences):
+            break
+        groups.append(" ".join(sentences[i:i + take]))
+        i += take
     while i < len(sentences):
         remaining = len(sentences) - i
         take = 1 if remaining == 1 else 2
         groups.append(" ".join(sentences[i:i + take]))
         i += take
 
-    # All images in fallback — chibi style
+    def fallback_query_for(dialogue: str, idx: int) -> str:
+        text = dialogue.lower()
+        if "hallway" in text:
+            return "hallway night"
+        if "closing a door" in text or "not closing" in text:
+            return "hand on door handle"
+        if "saying no" in text or "honest" in text:
+            return "person leaving room"
+        if "wants you" in text or "answer" in text:
+            return "dark empty chair"
+        if "clear" in text or "confusion" in text:
+            return "candlelit room"
+        if "uncertainty" in text or "possibility" in text:
+            return "city night walking"
+        if "waiting" in text or "decoding" in text:
+            return "phone face down"
+        if "save this" in text or "cost you" in text:
+            return "phone at night"
+        return [
+            "rainy apartment window",
+            "hands closing journal",
+            "train window night",
+            "coffee cup alone",
+        ][idx % 4]
+
     scenes = []
-    scene_types = ["reaction", "infographic", "reaction", "infographic", "reaction", "infographic"]
     for idx, dialogue in enumerate(groups):
-        stype = scene_types[idx % len(scene_types)]
-        if idx == 0:
-            stype = "reaction"
-        img_prompt = (
-            f"Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — "
-            f"{'alarmed wide-eyed shocked expression' if idx == 0 else 'deadpan confused expression'}, "
-            f"sitting at wooden table in cardboard den, warm lamp in background. "
-            f"Scene captures: {dialogue[:80]}. {BRAND_STYLE}"
-        )
+        use_image = idx in (0, 4, len(groups) - 1)
+        stype = "reaction" if idx == 0 else ("object" if use_image else "establishing")
+        img_prompt = None
+        query = fallback_query_for(dialogue, idx)
+        if use_image:
+            img_prompt = (
+                f"Editorial shot: faceless person in a candlelit apartment, "
+                f"{'closed journal and hand resting beside it' if idx == 0 else 'closed journal, empty chair, and warm practical lamp in frame'}, "
+                f"quiet intimate room, real photographed environment, continuous walls and shadows, no graphic overlay. "
+                f"{BRAND_STYLE}"
+            )
         scenes.append({
             "id": idx + 1,
             "covers_dialogue": dialogue,
-            "visual_type": "image",
+            "visual_type": "image" if use_image else "video",
+            "image_style": "brand" if use_image else None,
             "scene_type": stype,
             "image_prompt": img_prompt,
-            "pexels_query": None,
+            "pexels_query": query,
         })
 
     return {
         "thumbnail": {"image_prompt":
-            f"Reaction shot: Regular Raccoon — gray chibi raccoon, gold chain, white tee — "
-            f"dramatic alarmed wide-eyed expression, holding a document, sitting at wooden table. "
+            f"Editorial hook frame: faceless person sitting beside a rainy window, closed journal on the table, "
+            f"empty chair in background, candlelit room, real photographed environment, continuous walls and shadows, no graphic overlay. "
             f"{BRAND_STYLE}"},
+        "palette": {
+            "base": "#1C1C2B",
+            "accent": "#C4785A",
+            "text": "#F5F0E8",
+            "healing": "#7BAE8A",
+        },
         "scenes": scenes,
         "fallback": True,
     }
@@ -459,22 +507,46 @@ def run_visual_director_mock(video_id: str, run_dir: str, config: dict) -> dict:
         groups.append(" ".join(sentences[i:i + take]))
         i += take
 
-    vtypes = ["image", "video", "image", "image", "video"]
+    vtypes = ["image", "video", "video", "image", "video", "video"]
+    mock_queries = [
+        "phone face down",
+        "rainy apartment window",
+        "city night walking",
+        "hands closing journal",
+        "hallway night",
+        "person leaving room",
+    ]
     scenes = []
     for i, dialogue in enumerate(groups):
         vtype = vtypes[i % len(vtypes)]
+        image_prompt = (
+            f"Mock cinematic stock-style relationship scene: faceless person near a rainy apartment window, "
+            f"closed journal, candlelit room, empty chair, real photographed environment, continuous walls and shadows, "
+            f"moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, "
+            f"Warm Terracotta practical light accent, unedited camera frame, no graphic overlay, "
+            f"no captions, no signage, no readable screens, "
+            f"intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"
+        )
         scenes.append({
             "id": i + 1,
             "covers_dialogue": dialogue,
             "visual_type": vtype,
-            "image_prompt": f"Mock photorealistic scene: {dialogue[:60]}, professional photography, HD" if vtype == "image" else None,
-            "pexels_query": " ".join(dialogue.split()[:3]) if vtype == "video" else None,
+            "image_style": "brand" if vtype == "image" else None,
+            "scene_type": "reaction" if i == 0 else "object",
+            "image_prompt": image_prompt if vtype == "image" else None,
+            "pexels_query": mock_queries[i % len(mock_queries)] if vtype == "video" else None,
             "label": f"SCENE {i + 1}",
         })
 
     manifest = {
         "video_id": video_id,
-        "thumbnail": {"image_prompt": "Bold dramatic finance concept, high contrast, cinematic, photorealistic, HD"},
+        "palette": {
+            "base": "#1C1C2B",
+            "accent": "#C4785A",
+            "text": "#F5F0E8",
+            "healing": "#7BAE8A",
+        },
+        "thumbnail": {"image_prompt": "Faceless person sitting beside rainy window, closed journal, candlelit room, empty chair, real photographed environment, continuous walls and shadows, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"},
         "scenes": scenes,
         "total_scenes": len(scenes),
         "voice_duration": voice_duration,

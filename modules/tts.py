@@ -47,12 +47,13 @@ def _remove_duplicate_sentences(text: str) -> str:
 def _build_tts_input(script: dict) -> str:
     """
     Gemini TTS style instruction prepended to drive pace + energy.
-    Fast-talking street-smart insider — urgent, intense, zero warmup.
+    Warm honest-friend narration — calm, hushed, direct, never preachy.
     """
     style = (
-        "Fast-talking, street-smart financial insider. You are handing someone a tip they are not "
-        "supposed to know. Urgent, slightly intense, zero warmup. First word at full energy. "
-        "No pauses between sentences. Short punchy delivery throughout.\n\n"
+        "Warm, calm, slightly hushed honest friend. Not a therapist, not a guru, not a hype coach. "
+        "Confident, conversational, direct, and gentle. Speak a little fast, with tight gaps between sentences. "
+        "Never sound robotic, preachy, overly energetic, or clinical. "
+        "Short sentences should feel like something the listener needed to hear.\n\n"
     )
     script_text = build_spoken_script_text(script)
     # Replace em-dashes with comma-pause so TTS reads naturally
@@ -130,6 +131,18 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
         check=True, capture_output=True
     )
     os.remove(trimmed_path)
+
+    speed = float(config.get("tts_speed", 1.0))
+    if speed and abs(speed - 1.0) > 0.01:
+        sped_path = output_path.replace(".mp3", "_speed.mp3")
+        subprocess.run(
+            ["ffmpeg", "-y", "-i", output_path,
+             "-filter:a", f"atempo={max(0.5, min(2.0, speed))}",
+             "-acodec", "libmp3lame", "-q:a", "2",
+             sped_path],
+            check=True, capture_output=True
+        )
+        os.replace(sped_path, output_path)
 
 
 def _validate_audio(path: str, config: dict) -> dict:
@@ -236,17 +249,18 @@ def run_tts_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[tts][MOCK] Generating mock audio for {video_id}")
 
     output_path = os.path.join(run_dir, "03_voice.mp3")
-    _generate_mock_mp3(output_path, duration_sec=41.0)
+    duration_sec = 26.0
+    _generate_mock_mp3(output_path, duration_sec=duration_sec)
 
     meta = {
         "video_id": video_id,
         "voice": config["tts_voice"],
         "model": config["tts_model"],
-        "duration_sec": 41.0,
+        "duration_sec": duration_sec,
         "validation": "passed",
         "tags_used": ["tension", "concern", "enthusiasm", "neutral"],
         "generated_at": now_iso(),
     }
     save_json(meta, os.path.join(run_dir, "03_voice_meta.json"))
-    print(f"[tts][MOCK] Done. Duration: 41.0s")
+    print(f"[tts][MOCK] Done. Duration: {duration_sec}s")
     return meta

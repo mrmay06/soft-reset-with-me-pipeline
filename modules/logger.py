@@ -1,42 +1,76 @@
 import os
+import re
 
 from utils.helpers import load_json, save_json, now_iso
 
-MEMORY_FILE = "topic_memory.json"
+DEFAULT_MEMORY_FILE = "topic_memory.json"
 
 
-def _load_memory() -> list:
-    if not os.path.exists(MEMORY_FILE):
+def _load_memory(memory_file: str) -> list:
+    if not os.path.exists(memory_file):
         return []
-    return load_json(MEMORY_FILE)
+    return load_json(memory_file)
 
 
-def _write_memory(entry: dict):
-    memory = _load_memory()
+def _fingerprint(*parts: str) -> str:
+    text = " ".join(str(part or "") for part in parts).lower()
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
+    return " ".join(text.split())
+
+
+def _write_memory(entry: dict, memory_file: str, max_entries: int = 30):
+    memory = _load_memory(memory_file)
+    youtube_video_id = entry.get("youtube_video_id")
     memory = [
         item for item in memory
         if item.get("video_id") != entry.get("video_id")
-        and item.get("youtube_video_id") != entry.get("youtube_video_id")
+        and (
+            not youtube_video_id
+            or youtube_video_id == "MOCK_NOT_UPLOADED"
+            or item.get("youtube_video_id") != youtube_video_id
+        )
     ]
     memory.append(entry)
-    save_json(memory, MEMORY_FILE)
+    if max_entries > 0:
+        memory = memory[-max_entries:]
+    save_json(memory, memory_file)
 
 
 def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[logger] Logging video {video_id}")
 
     research = load_json(os.path.join(run_dir, "01_research.json"))
+    script = load_json(os.path.join(run_dir, "02_script.json"))
     metadata = load_json(os.path.join(run_dir, "07_metadata.json"))
     asset_meta = load_json(os.path.join(run_dir, "03_asset_meta.json"))
     upload_result = load_json(os.path.join(run_dir, "08_upload_meta.json"))
+    memory_file = config.get("topic_memory_file", DEFAULT_MEMORY_FILE)
+    max_entries = int(config.get("topic_memory_max_entries", 30))
+    upload_status = (
+        "generated_not_uploaded"
+        if upload_result.get("youtube_video_id") == "MOCK_NOT_UPLOADED"
+        else "uploaded"
+    )
 
     entry = {
         "video_id": video_id,
         "published_date": now_iso()[:10],
+        "status": upload_status,
         "topic": research["topic"],
         "category": research["category"],
         "total_score": research["total_score"],
         "source_name": research["source_name"],
+        "content_format": research.get("content_format", ""),
+        "emotional_trigger": research.get("emotional_trigger", ""),
+        "psych_concept": research.get("psych_concept", ""),
+        "hook": script.get("hook", ""),
+        "thumbnail_text": script.get("thumbnail_text", ""),
+        "content_fingerprint": _fingerprint(
+            research.get("topic", ""),
+            script.get("hook", ""),
+            research.get("emotional_trigger", ""),
+            research.get("psych_concept", ""),
+        ),
         "title": metadata["title"],
         "youtube_video_id": upload_result["youtube_video_id"],
         "youtube_url": upload_result["youtube_url"],
@@ -45,10 +79,10 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
     }
 
     try:
-        _write_memory(entry)
+        _write_memory(entry, memory_file, max_entries)
         is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
         if is_github_actions:
-            print("[logger] Running in GitHub Actions — workflow will commit topic_memory.json")
+            print(f"[logger] Running in GitHub Actions — workflow will commit {memory_file}")
         else:
             print(f"[logger] Running locally — skipping git commit")
     except Exception as e:

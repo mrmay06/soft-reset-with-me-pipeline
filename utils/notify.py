@@ -4,6 +4,9 @@ from email.mime.text import MIMEText
 from datetime import datetime
 
 
+SUBJECT_PREFIX = "Soft Reset"
+
+
 def _send_email(subject: str, body: str):
     email_from = os.environ.get("ALERT_EMAIL_FROM")
     email_to   = os.environ.get("ALERT_EMAIL_TO")
@@ -38,7 +41,7 @@ Duration:  {total}s ({total/60:.1f} min)
 Timing breakdown:
 {timing_lines}
 """
-    _send_email(f"✅ Published: {title[:50]}", body)
+    _send_email(f"{SUBJECT_PREFIX} Published: {title[:50]}", body)
 
 
 def send_failure_alert(video_id: str, error_msg: str, traceback_str: str):
@@ -59,4 +62,4 @@ Traceback:
 {traceback_str}
 """
 
-    _send_email(f"❌ Pipeline FAILED — {video_id}", body)
+    _send_email(f"{SUBJECT_PREFIX} Pipeline failed - {video_id}", body)

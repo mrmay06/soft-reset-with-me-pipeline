@@ -60,11 +60,54 @@ _EGO_BAIT_SIGNALS = [
     "you're probably",
     "getting this wrong",
     "you didn't know",
+    "left you on read",
+    "watched your story",
+    "text again",
+    "double text",
+    "calmest reply",
+    "strongest boundary",
+    "overexplaining",
+    "not love",
+    "not communication",
+    "you did not lose",
+    "you didn't lose",
+    "moving on fast",
+    "soft does not mean weak",
+    "talking every day",
+    "if you've ever",
+    "if you",
+    "this is for you",
+    "most people think",
+    "you think",
+    "might be",
+    "might not be",
+    "not intuitive",
+    "not intuition",
+    "triggered",
+    "late reply",
+    "ruins your mood",
+    "silence makes you",
+    "red flag",
+    "old pain",
+    "old wound",
+    "gut feeling",
+]
+
+
+_WEAK_ABSTRACT_HOOK_PATTERNS = [
+    "nervous system remembers",
+    "mind calls intuition",
+    "healing starts",
+    "listen to yourself",
+    "hardest lessons",
+    "old pain wearing",
 ]
 
 
 def _hook_has_ego_bait(hook: str) -> bool:
     h = hook.lower()
+    if any(pattern in h for pattern in _WEAK_ABSTRACT_HOOK_PATTERNS):
+        return False
     return any(sig in h for sig in _EGO_BAIT_SIGNALS)
 
 
@@ -116,7 +159,11 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         angle_type=research.get("angle_type", research.get("angle", "")),
         hook_seed=research.get("hook_seed", ""),
         source_fact=research.get("source_fact", ""),
+        source_basis=research.get("source_basis", research.get("source_fact", "")),
         source_name=research.get("source_name", ""),
+        content_format=research.get("content_format", "scenario"),
+        emotional_trigger=research.get("emotional_trigger", ""),
+        psych_concept=research.get("psych_concept", ""),
         video_id=video_id,
         generated_at=now_iso(),
     )
@@ -126,7 +173,7 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
 
     if script["validation"] == "forced":
         print(f"[script] Retrying due to word count issue...")
-        script = _call_script_model(prompt + "\n\nIMPORTANT: Script MUST be exactly 90-120 words.", config["script_model"])
+        script = _call_script_model(prompt + "\n\nIMPORTANT: Script MUST be 45-75 words.", config["script_model"])
         script = _validate_script(script, config)
         if script["validation"] != "passed":
             print("[script] Still outside range after retry — proceeding with forced validation")
@@ -134,13 +181,17 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     if script.get("hook_quality") == "weak":
         print(f"[script] Retrying hook for stronger pattern interrupt...")
         hook_prompt = (
-            f"Rewrite ONLY the hook for this finance Short. Topic: {research['topic']}.\n"
+            f"Rewrite ONLY the hook for this relationship self-improvement Short. Topic: {research['topic']}.\n"
             f"Current weak hook: '{script['hook']}'\n"
-            f"Write ONE new hook under 12 words using EXACTLY ONE of these patterns:\n"
-            f"- Direct accusation: 'Your [bank/employer/system] is [stealing/hiding] from you right now.'\n"
-            f"- Massive number: 'You're losing $[specific odd number] a year and don't know it.'\n"
-            f"- Contrarian: '[Popular belief] is the worst financial move you're making.'\n"
-            f"Name the enemy. No warmup. No questions.\n"
+            f"Write ONE new scroll-stopping hook under 12 words in the Soft Reset With Me voice.\n"
+            f"Use plain words, not poetic phrasing. The viewer should instantly think, 'wait, is this about me?'\n"
+            f"Best patterns:\n"
+            f"- 'You think it is intuition. It might be trauma.'\n"
+            f"- 'If one late reply ruins your mood, this is for you.'\n"
+            f"- 'You might be triggered, not intuitive.'\n"
+            f"- 'That panic might not be a red flag.'\n"
+            f"- 'If silence makes you feel abandoned, listen to this.'\n"
+            f"No warmup. No diagnosis. No hype coach language.\n"
             f"Return ONLY the hook text, no quotes, no explanation."
         )
         try:
@@ -167,10 +218,10 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         print(f"[script] Retrying engagement question for stronger polarizer...")
         eq_prompt = (
             f"Write ONE polarizing engagement question for a YouTube Short on: {research['topic']}.\n"
-            f"Rules: must force a pick-a-side response or personal confession. Be specific and opinionated.\n"
-            f"Examples: 'Are you team 401k or team real estate? Fight me in the comments.'\n"
-            f"         'Drop a 💰 if your employer matches and you're NOT maxing it.'\n"
-            f"         'What's the dumbest money mistake you made this year?'\n"
+            f"Rules: must fit Soft Reset With Me. Ask for a save, share, comment, or honest confession.\n"
+            f"Examples: 'Which one hit hardest?'\n"
+            f"         'Save this for when you start missing their potential.'\n"
+            f"         'Agree or disagree?'\n"
             f"NOT acceptable: 'What do you think?' 'Let me know below.' 'Comment your thoughts.'\n"
             f"Return ONLY the question text, no quotes, no explanation."
         )
@@ -206,17 +257,21 @@ def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[script][MOCK] Generating mock script for {video_id}")
     result = {
         "video_id": video_id,
-        "topic": "Pay your credit card twice a month to avoid interest",
-        "category": "credit cards",
-        "hook": "Most people never hear this.",
-        "tension": "The average cardholder overpays because they misunderstand their statement cycle. The CFPB says most Americans don't even know when their billing cycle closes.",
-        "insight": "Pay once before the statement date and once before the due date. This lowers your average daily balance — the number banks actually use to calculate interest. You could drop your interest charges to near zero without paying anything extra.",
-        "loopback": "Most people still pay more than they need to.",
-        "cta": "Tap the heart if this just saved you money.",
-        "engagement_question": "Are you paying your credit card once a month? Drop a 💳 if you didn't know this trick.",
-        "like_cta": "Tap the heart if this just saved you money.",
-        "word_count": 102,
-        "estimated_duration_sec": 41,
+        "topic": "You did not lose them, you lost who you imagined they would be",
+        "category": "healing arcs",
+        "content_format": "truth_drop",
+        "emotional_trigger": "grieving someone's potential",
+        "psych_concept": "idealization and grief",
+        "hook": "You did not lose them. You lost who you imagined.",
+        "tension": "That is why it still hurts. You are grieving a version that never arrived.",
+        "insight": "You miss the apology they almost gave. The effort they almost made. That was not love. That was hope with someone else's face on it.",
+        "loopback": "Grieve the dream. Do not chase the person.",
+        "cta": "Save this for when you start missing their potential.",
+        "engagement_question": "Which hurts more: missing them, or missing who you imagined?",
+        "like_cta": "Save this for when you start missing their potential.",
+        "thumbnail_text": "YOU LOST THE DREAM",
+        "word_count": 67,
+        "estimated_duration_sec": 25,
         "validation": "passed",
         "generated_at": now_iso(),
     }

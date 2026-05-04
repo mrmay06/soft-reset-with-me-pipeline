@@ -50,7 +50,7 @@ def _find_latest_run_dir() -> tuple[str, str] | None:
 
 # ── Main ────────────────────────────────────────────────────────────────────
 
-def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False):
+def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, skip_upload: bool = False):
     config = load_config()
 
     # ── Determine run_dir and video_id ──
@@ -73,7 +73,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False):
         mode = "MOCK" if mock else "LIVE"
 
     print(f"\n{'='*50}")
-    print(f" Finance Shorts Pipeline [{mode}]")
+    print(f" Soft Reset With Me Pipeline [{mode}]")
     print(f" Video ID: {video_id}")
     print(f" Run dir:  {run_dir}")
     print(f"{'='*50}\n")
@@ -116,15 +116,27 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False):
 
         _run("Module 7  — Metadata",          metadata_fn,  video_id, run_dir, config, checkpoint_files=["07_metadata.json"])
 
-        if mock:
+        if skip_upload:
+            run_upload_mock(video_id, run_dir, config)
+            print(f"  {'Module 8  — Upload':<30} SKIPPED (--skip-upload)\n")
+        elif mock:
             upload_fn(video_id, run_dir, config)
             print(f"  {'Module 8  — Upload':<30} SKIPPED (mock)\n")
         else:
             _run("Module 8  — Upload",            upload_fn,    video_id, run_dir, config, checkpoint_files=["08_upload_meta.json"])
 
-        t0 = time.time()
-        logger_fn(video_id, run_dir, config)
-        timings["Module 9  — Logger"] = round(time.time() - t0, 1)
+        if skip_upload:
+            if config.get("log_skip_upload_to_memory", True):
+                t0 = time.time()
+                logger_fn(video_id, run_dir, config)
+                timings["Module 9  — Logger"] = round(time.time() - t0, 1)
+                print(f"  {'Module 9  — Logger':<30} OK  (generated memory)\n")
+            else:
+                print(f"  {'Module 9  — Logger':<30} SKIPPED (--skip-upload)\n")
+        else:
+            t0 = time.time()
+            logger_fn(video_id, run_dir, config)
+            timings["Module 9  — Logger"] = round(time.time() - t0, 1)
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'='*50}")
@@ -138,7 +150,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False):
         print()
 
         # Success notification
-        if not mock:
+        if not mock and not skip_upload:
             try:
                 upload_meta = load_json(os.path.join(run_dir, "08_upload_meta.json"))
                 send_success_alert(
@@ -159,10 +171,11 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Finance Shorts Pipeline")
+    parser = argparse.ArgumentParser(description="Soft Reset With Me Shorts Pipeline")
     parser.add_argument("--mock",   action="store_true", help="Run with mock data (no API calls)")
     parser.add_argument("--resume", metavar="VIDEO_ID",  help="Resume a specific run by video ID (e.g. 20260428_094245). If omitted, auto-resumes latest incomplete run.")
     parser.add_argument("--fresh",  action="store_true", help="Force a brand new run even if an incomplete run exists")
+    parser.add_argument("--skip-upload", action="store_true", help="Generate all assets and metadata but do not upload or log to channel memory")
     args = parser.parse_args()
 
-    main(mock=args.mock, resume_id=args.resume, fresh=args.fresh)
+    main(mock=args.mock, resume_id=args.resume, fresh=args.fresh, skip_upload=args.skip_upload)

@@ -1,79 +1,99 @@
 {
-  "image_style": "flat cartoon style, thick black outlines, solid flat colors, no gradients, no shadows, chibi art style, bold simple shapes, 9:16 vertical portrait",
-  "hard_rule": "Never use real raccoon photos, wildlife raccoons, realistic raccoon footage, or photorealistic raccoon imagery. Raccoon characters must only appear as stylized flat chibi brand illustrations.",
-
+  "channel_name": "Soft Reset With Me",
+  "handle": "@SoftResetWithMe",
+  "target_audience": "US-based 18-35 Gen Z and Millennials navigating breakups, dating confusion, situationships, self-worth, and emotional growth",
+  "voice_persona": "The honest friend who's been through it. Not a therapist, not a guru, not a hype coach.",
+  "tone_keywords": [
+    "calm",
+    "warm",
+    "slightly hushed",
+    "confident",
+    "conversational",
+    "intentional",
+    "never preachy"
+  ],
   "colors": {
-    "background_primary": "#FFD700 (bright yellow) — dominant background, every scene defaults here",
-    "background_night": "#1B2A4A (dark navy) — night/alley/indoor scenes only; yellow always returns as accent",
-    "outline": "#1A1A1A (near-black) — all outlines",
-    "raccoon_fur": "#C8C8C8 (light gray) — all raccoon body fur",
-    "raccoon_mask": "#1A1A1A (black) — eye mask on all raccoons",
-    "raccoon_muzzle": "#F0EDE4 (cream) — muzzle area all raccoons",
-    "danger_loss": "red — government, IRS, OVERDUE stamp, debt, loss",
-    "money_gains": "green — money, progress, positive outcomes",
-    "documents": "white — paper, pay stubs, forms, tees",
-    "note": "Saturday morning cartoon aesthetic. Roughness is intentional. The crudeness IS the brand."
+    "deep_midnight": "#1C1C2B",
+    "warm_terracotta": "#C4785A",
+    "soft_cream": "#F5F0E8",
+    "sage_green": "#7BAE8A"
   },
-
-  "characters": {
-    "regular_raccoon": {
-      "description": "Regular Raccoon — the main character, viewer surrogate",
-      "appearance": "gray chibi raccoon (#C8C8C8 fur, black mask, cream muzzle), chaotic dark messy hair spiking in every direction, white tee, dark joggers, gold chain necklace, black and white sneakers",
-      "expression_range": "flat neutral → quietly defeated → confused → alarmed → resigned → correct-but-too-late",
-      "personality": "street-smart from getting burned repeatedly. Always tired. Always slightly betrayed by a system he doesn't fully understand.",
-      "home": "The Alley — cardboard box den with wooden table, warm lamp, small square window showing dark alley and glowing 7-Eleven sign"
-    },
-    "smart_raccoon": {
-      "description": "Smart Raccoon — the Cassandra. Always correct. Always ignored.",
-      "appearance": "gray chibi raccoon, sage green hoodie, dark chinos, white sneakers, round glasses, neat hair, upright posture",
-      "props": "always holds a document with a red circle on it",
-      "expression": "quiet concern, rarely changes",
-      "role": "financial advisor, voice of reason — Regular Raccoon does not listen"
-    },
-    "suit_raccoon": {
-      "description": "Bank Raccoon / Suit Raccoon — institutional face",
-      "appearance": "gray chibi raccoon, navy business suit, white shirt, gold pocket square, gold CAP VAULT chest badge, neat dark hair",
-      "expression": "smiles with closed eyes and blush circles — serene and unsettling",
-      "props": "holds a pink credit card",
-      "role": "every financial institution. Technically not your enemy. Consistently not your friend."
-    },
-    "animal_control_raccoon": {
-      "description": "Animal Control Raccoon — procedural authority. Not evil. Just inevitable.",
-      "appearance": "gray chibi raccoon, full navy enforcement uniform, black aviator sunglasses, silver badge, clipboard, red OVERDUE rubber stamp on belt",
-      "expression": "expressionless behind aviators — no visible emotion ever",
-      "role": "IRS, government, debt collectors, any system that arrives whether you're ready or not"
-    },
-    "crypto_raccoon": {
-      "description": "Crypto Raccoon — the loudest raccoon. Learned nothing from multiple crashes.",
-      "appearance": "gray chibi raccoon, all-black hoodie with neon green accents, HODL belt buckle, WAGMI wristband, wild spiked dark hair",
-      "props": "holds phone showing a green chart (or red when crashing)",
-      "expression": "stars in eyes when bullish, panic-wide eyes when chart turns red",
-      "role": "speculative finance cautionary tale"
-    }
+  "fonts": {
+    "primary": "DM Serif Display for hooks, titles, and emotional statements",
+    "secondary": "Inter for body copy, labels, captions, and UI text"
   },
-
-  "currency": {
-    "unit": "CAPS",
-    "description": "silver bottle caps with gold center — the channel's currency",
-    "visual_note": "Show money as CAPS pile. '$800 lost' = 800 CAPS rolling away. '$1,200 refund' = 1200 CAPS stacked neatly. Never use dollar signs in illustrated scenes.",
-    "wealth_measure": "pizza",
-    "antagonist_system": "Animal Control"
+  "visual_style": {
+    "description": "Cinematic stock footage plus kinetic text overlays. Faceless to start. Moody editorial, slightly desaturated warm tones, golden-hour light, intimate close-ups.",
+    "use": [
+      "candlelit rooms",
+      "rainy windows",
+      "hands writing",
+      "people staring into distance",
+      "city nights",
+      "empty chairs",
+      "someone laughing alone",
+      "slow zoom shots"
+    ],
+    "avoid": [
+      "stock smiling couple poses",
+      "neon colors",
+      "busy backgrounds",
+      "fitness shots",
+      "overly bright sunny clips",
+      "generic productivity reel visuals"
+    ]
   },
-
-  "settings": {
-    "alley": "The Alley — primary location and emotional anchor. Brick walls, single overhead lamp, dumpster labeled FIRST RACCOON BANK, 7-Eleven sign glowing in background. Dark charcoal and navy, flat colors. Every video returns here for the closing beat.",
-    "den": "Regular Raccoon's cardboard box den inside the alley. Wooden table, warm lamp, small square window showing the alley outside.",
-    "cap_vault": "Cap Vault bank — institutional setting for Suit Raccoon scenes. Bold signage, flat illustration, no realistic detail.",
-    "pizza_hotel": "Pizza Hotel — recurring location. Bold flat signage.",
-    "pizza_hospital": "Pizza Memorial Hospital — medical scene location.",
-    "pizza_palace": "Pizza Palace restaurant."
+  "text_overlay_rules": {
+    "hook": "DM Serif Display style, large, Soft Cream or white, centered",
+    "body": "Inter Bold style, high contrast",
+    "scrim": "Always add a dark semi-transparent scrim behind text if background is light",
+    "motion": "Hook text fades in. Key insight snaps in with slight scale-up. Key phrases get their own screen moment."
   },
-
-  "scene_type_guidance": {
-    "reaction": "Close-up or medium shot of Regular Raccoon reacting to what was said — confused, deadpan, alarmed, resigned, quietly determined",
-    "infographic": "Clean flat graphic panel: CAPS pile with label, pay stub rows highlighted, comparison chart, calculation breakdown — no character needed or just a raccoon paw",
-    "interaction": "Two raccoon characters — Regular Raccoon + supporting character — at table or doorway",
-    "establishing": "Wide shot of The Alley or den interior — sets the world, small raccoon visible",
-    "object": "Tight close-up of document, envelope, CAPS pile, form — maybe just a raccoon paw in frame"
+  "stock_sources": {
+    "primary": "Pexels",
+    "backup": [
+      "Pixabay",
+      "Coverr"
+    ],
+    "search_terms": [
+      "rainy window",
+      "city night alone",
+      "journaling",
+      "walking city",
+      "candlelit room",
+      "hands writing",
+      "empty chair",
+      "phone at night"
+    ]
+  },
+  "content_pillars": {
+    "relationship_patterns": "Why we choose who we choose: attachment styles, red flags, situationships, love bombing.",
+    "psychology_drops": "Bite-sized psych concepts made digestible: trauma bonding, nervous system, projection.",
+    "healing_arcs": "Breakup recovery, moving on, reclaiming yourself.",
+    "self_worth_shifts": "Standards, self-respect, setting limits.",
+    "conversation_truths": "Communication, conflict, and the unsaid.",
+    "identity_and_growth": "Who you're becoming: reinvention and self-aware habits."
+  },
+  "content_formats": {
+    "truth_drop": "One uncomfortable truth, fully explored.",
+    "reframe": "A common belief dismantled, landing a more nuanced truth.",
+    "specific_scenario": "A painfully specific emotional scenario viewers feel called out by.",
+    "list": "3-5 signs or things, each point gets its own text moment.",
+    "hot_take": "Controversial opinion, once per week max.",
+    "psychology_drop": "A digestible psychology concept without clinical heaviness."
+  },
+  "copy_rules": {
+    "write_like": [
+      "You didn't lose him. You lost the version of him you made up.",
+      "That's not love. That's hope with someone else's face on it.",
+      "Your nervous system is still trying to protect you from them.",
+      "Soft does not mean weak. It just means you stopped performing for people."
+    ],
+    "never_say": [
+      "In today's video, we're going to talk about...",
+      "It's so important to validate your feelings.",
+      "Remember: you are enough! Love yourself first!",
+      "Hi guys, hope you're doing well, so basically..."
+    ]
   }
 }

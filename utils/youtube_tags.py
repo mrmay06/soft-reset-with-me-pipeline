@@ -5,8 +5,8 @@ import re
 
 DEFAULT_TAG_CHAR_LIMIT = 300
 DEFAULT_TAG_COUNT_LIMIT = 15
-MAX_TAG_LENGTH = 30
-REQUIRED_TAGS = ("US", "United States")
+MAX_TAG_LENGTH = 60
+REQUIRED_TAGS = ("soft reset with me",)
 
 
 def sanitize_youtube_tags(

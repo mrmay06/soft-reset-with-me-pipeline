@@ -1,12 +1,21 @@
-name: Finance Shorts Pipeline
+name: Relationship Shorts Pipeline
 
 on:
   schedule:
-    - cron: '45 11 * * *'  # 7:45 AM ET → post at 8:00 AM ET
-    - cron: '45 15 * * *'  # 11:45 AM ET → post at 12:00 PM ET
-    - cron: '45 20 * * *'  # 4:45 PM ET → post at 5:00 PM ET
-    - cron: '45 0 * * *'   # 8:45 PM ET → post at 9:00 PM ET
-    # Note: times use EDT (UTC-4). Shifts 1hr earlier in EST (Nov–Mar).
+    - cron: '0 16 * * 1'  # Monday 12:00 PM New York during EDT
+    - cron: '0 23 * * 1'  # Monday 7:00 PM New York during EDT
+    - cron: '0 16 * * 2'  # Tuesday 12:00 PM New York during EDT
+    - cron: '0 0 * * 3'   # Tuesday 8:00 PM New York during EDT
+    - cron: '0 15 * * 3'  # Wednesday 11:00 AM New York during EDT
+    - cron: '0 23 * * 3'  # Wednesday 7:00 PM New York during EDT
+    - cron: '0 16 * * 4'  # Thursday 12:00 PM New York during EDT
+    - cron: '0 0 * * 5'   # Thursday 8:00 PM New York during EDT
+    - cron: '0 19 * * 5'  # Friday 3:00 PM New York during EDT
+    - cron: '0 23 * * 5'  # Friday 7:00 PM New York during EDT
+    - cron: '0 14 * * 6'  # Saturday 10:00 AM New York during EDT
+    - cron: '0 22 * * 6'  # Saturday 6:00 PM New York during EDT
+    - cron: '0 15 * * 0'  # Sunday 11:00 AM New York during EDT
+    - cron: '0 23 * * 0'  # Sunday 7:00 PM New York during EDT
   workflow_dispatch:
 
 jobs:
@@ -71,7 +80,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add topic_memory.json
+          git add topic_memory_soft_reset.json
           git diff --staged --quiet || git commit -m "chore: log video $(date +%Y%m%d_%H%M%S)"
           git push
 

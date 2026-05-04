@@ -199,7 +199,7 @@ def generate_ai_report(channel: dict, videos: list[dict], patterns: dict) -> str
         for cat, d in patterns["category_performance"].items()
     ])
 
-    prompt = f"""You are a YouTube Shorts growth analyst specialising in US personal finance channels.
+    prompt = f"""You are a YouTube Shorts growth analyst specialising in US relationship self-improvement channels like Soft Reset With Me.
 
 CHANNEL: {channel['name']}
 Subscribers: {channel['subscribers']}
@@ -227,9 +227,9 @@ ANALYSE and give:
 1. What's working — 3 specific patterns from the top performers
 2. What's not working — 3 specific problems holding views back
 3. Hook quality — are the titles creating strong enough curiosity/ego threat?
-4. Category insight — which categories to double down on, which to avoid
+4. Category insight — which emotional triggers and formats to double down on, which to avoid
 5. Like rate is {patterns['like_rate']}% — why is engagement low and what to fix
-6. 5 concrete, actionable improvements for the automated pipeline (script, research, title, visual, or posting time)
+6. 5 concrete, actionable improvements for the automated pipeline (script, research, title, visual, caption, or posting time)
 
 Be direct and specific. Reference actual video titles from the data. No fluff."""
 
@@ -291,7 +291,7 @@ def send_email_report(report: str):
         return
 
     msg = MIMEText(report, "plain")
-    msg["Subject"] = f"📊 Raccoon Economy — Weekly Channel Analysis"
+    msg["Subject"] = "Soft Reset Weekly Channel Analysis"
     msg["From"]    = sender
     msg["To"]      = receiver
 
