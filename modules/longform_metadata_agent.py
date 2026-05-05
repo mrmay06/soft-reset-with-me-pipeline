@@ -17,26 +17,32 @@ def _generate_metadata(prompt: str, model: str) -> dict:
 
 
 def _fallback(script: dict, research: dict) -> dict:
+    title = research.get("working_title", "Soft Reset With Me")[:70].rstrip()
+    topic = research.get("topic", "")
+    core_claim = research.get("core_claim", "")
+    viewer_pain = research.get("viewer_pain", "")
+    pillar = str(research.get("content_pillar", "")).lower()
+    pillar_tags = {
+        "relationship patterns": ["relationship advice", "dating advice", "attachment style", "situationship"],
+        "psychology drops": ["relationship advice", "emotional health", "self awareness", "attachment style"],
+        "healing arcs": ["relationship advice", "breakup advice", "healing journey", "moving on"],
+        "self-worth shifts": ["relationship advice", "self worth", "self respect", "personal growth"],
+        "conversation truths": ["relationship advice", "communication skills", "dating advice", "self awareness"],
+        "identity and growth": ["relationship advice", "personal growth", "self worth", "emotional healing"],
+    }
+    tags = ["soft reset with me", *pillar_tags.get(pillar, ["relationship advice", "emotional healing", "personal growth"])]
+    thumbnail_words = [word.strip(".,!?;:()[]\"'") for word in title.upper().split()]
+    thumbnail_text = " ".join(thumbnail_words[:4]) or "SOFT RESET"
     return {
-        "title": research.get("working_title", "Why You Miss Their Potential More Than Them")[:70].rstrip(),
+        "title": title,
         "description": (
-            f"{research.get('core_claim', '')}\n\n"
-            "A quiet Soft Reset for anyone trying to understand why a nearly-relationship can hurt so much.\n\n"
+            f"{core_claim}\n\n"
+            f"A quiet Soft Reset for anyone who recognizes this: {viewer_pain or topic}.\n\n"
             "Subscribe for softer resets — @SoftResetWithMe\n\n"
-            "#SoftResetWithMe #RelationshipAdvice #HealingJourney #BreakupAdvice"
+            "#SoftResetWithMe #RelationshipAdvice #EmotionalHealing #PersonalGrowth"
         ),
-        "tags": [
-            "soft reset with me",
-            "relationship advice",
-            "breakup advice",
-            "emotional healing",
-            "situationship",
-            "moving on",
-            "self worth",
-            "attachment style",
-            "personal growth",
-        ],
-        "thumbnail_text": "YOU MISS THE DREAM",
+        "tags": [*tags, "softreset"],
+        "thumbnail_text": thumbnail_text,
     }
 
 
