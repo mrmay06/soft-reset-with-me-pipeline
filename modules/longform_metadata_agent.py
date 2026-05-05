@@ -183,7 +183,7 @@ def _validate_packaging(raw: dict, research: dict, max_title_chars: int) -> dict
                 "pattern": str(item.get("pattern", "")).strip() or fallback["thumbnail_variants"][ord(vid) - 65]["pattern"],
                 "thumbnail_text": text,
             }
-            # Preserve AI-generated visual prompt if present; thumbnail agent will build its own PIL text layer
+            # Preserve AI-generated visual prompt if present; thumbnail agent can use it directly.
             ai_prompt = str(item.get("prompt", "")).strip()
             if ai_prompt:
                 entry["visual_prompt"] = ai_prompt

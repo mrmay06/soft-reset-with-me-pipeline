@@ -27,7 +27,7 @@ def _resize_to_target(path_in: str, path_out: str, width: int, height: int):
 
 def _sanitize_thumb_text(text: str) -> str:
     """Normalize to ASCII-safe uppercase, max 5 words."""
-    replacements = {"≠": "!=", "→": ">", "—": "-", "–": "-", "’": "'", "‘": "'",
+    replacements = {"≠": "!=", "→": ">", "—": "-", "–": "-", "‘": "'", "’": "'",
                     "“": '"', "”": '"', "…": "...", "é": "e", "è": "e"}
     for src, dst in replacements.items():
         text = text.replace(src, dst)
@@ -211,7 +211,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
         if variant_id not in {"A", "B", "C"}:
             continue
         thumb_text = _sanitize_thumb_text(variant.get("thumbnail_text", ""))
-        prompt = _build_generation_prompt(research, variant)
+        # Use AI-authored visual prompt if present; otherwise build from pattern library
+        prompt = str(variant.get("visual_prompt", "")).strip() or _build_generation_prompt(research, variant)
         prompt_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_prompt.txt")
         generated_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_generated.png")
         output_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}.png")
@@ -251,6 +252,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
             "generated_file": os.path.basename(raw_generated) if raw_generated and os.path.exists(raw_generated) else "",
             "output_file": os.path.basename(output_path),
             "background_source": source,
+            "final_output_size": f"{width}x{height}",
+            "degraded_fallback": source == "video_frame_fallback",
         })
         print(f"[longform_thumbnail] Variant {variant_id} ready ({source})")
 
