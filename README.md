@@ -93,6 +93,8 @@ Videos younger than 2 days are skipped for analytics, cached analytics are reuse
 
 The pipeline is designed to avoid generic AI output. Topic research must now produce a `core_claim`, `editorial_seed`, and `only_soft_reset_line` before scripting. The script validator checks for an explicit point of view and a signature Soft Reset sentence, then retries weak scripts before rendering.
 
+The script agent also runs an argument-coherence review. It checks whether the hook promise matches the payoff, every spoken section supports the `core_claim`, and no section drifts into neutral explainer mode. Failed reviews trigger a script rewrite with the review notes.
+
 This keeps AI in the execution role while the channel direction remains opinionated, emotionally specific, and non-templated.
 
 ## GitHub Actions

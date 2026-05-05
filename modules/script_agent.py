@@ -178,6 +178,94 @@ def _validate_script(script: dict, config: dict) -> dict:
     return script
 
 
+def _argument_review_prompt(script: dict, research: dict) -> str:
+    sections = {
+        "hook": script.get("hook", ""),
+        "tension": script.get("tension", ""),
+        "insight": script.get("insight", ""),
+        "loopback": script.get("loopback", ""),
+        "editorial_pov": script.get("editorial_pov", ""),
+        "only_soft_reset_line": script.get("only_soft_reset_line", ""),
+    }
+    return f"""
+You are the human editorial review layer for Soft Reset With Me.
+Judge whether this YouTube Short has a real argument or slips into generic relationship advice.
+
+Core claim:
+{research.get("core_claim", "")}
+
+Editorial seed:
+{research.get("editorial_seed", "")}
+
+Research signature line:
+{research.get("only_soft_reset_line", "")}
+
+Script sections:
+{json.dumps(sections, indent=2)}
+
+Review rules:
+- The hook promise must match the payoff.
+- Every spoken section must actively support the core claim.
+- Flag any section that becomes neutral explainer mode, generic advice, or filler.
+- The signature line must feel specific to Soft Reset With Me, not a generic self-help phrase.
+- Be strict, but do not fail a script just because it is simple.
+
+Return ONLY valid JSON:
+{{
+  "passes": true,
+  "hook_promise_matches": true,
+  "sections_support_core_claim": true,
+  "generic_drift_sections": [],
+  "signature_line_distinctive": true,
+  "issue_summary": "",
+  "rewrite_instruction": ""
+}}
+""".strip()
+
+
+def _check_argument_coherence(script: dict, research: dict, config: dict) -> dict:
+    if not config.get("script_argument_review_enabled", True):
+        return {
+            "passes": True,
+            "status": "disabled",
+            "issue_summary": "",
+            "rewrite_instruction": "",
+        }
+    try:
+        review = _call_script_model(_argument_review_prompt(script, research), config["script_model"])
+        if not isinstance(review, dict):
+            raise ValueError("argument review returned non-object JSON")
+        passes = (
+            review.get("passes") is True
+            and review.get("hook_promise_matches") is True
+            and review.get("sections_support_core_claim") is True
+            and review.get("signature_line_distinctive") is True
+            and not review.get("generic_drift_sections")
+        )
+        review["passes"] = bool(passes)
+        review["status"] = "passed" if passes else "failed"
+        return review
+    except Exception as exc:
+        return {
+            "passes": True,
+            "status": "soft_failed",
+            "issue_summary": f"Argument review failed: {exc}",
+            "rewrite_instruction": "",
+        }
+
+
+def _attach_argument_review(script: dict, review: dict) -> dict:
+    script["argument_review"] = review
+    if review.get("passes"):
+        script["argument_quality"] = "strong" if review.get("status") != "soft_failed" else "unknown"
+        print(f"[script] ✓ Argument coherence: {review.get('status', 'passed')}")
+    else:
+        script["argument_quality"] = "weak"
+        script["validation"] = "forced"
+        print(f"[script] ⚠ Argument coherence failed: {review.get('issue_summary', '')}")
+    return script
+
+
 def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[script] Generating script for {video_id}")
 
@@ -223,6 +311,23 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         if script["validation"] != "passed":
             print("[script] Still outside range after retry — proceeding with forced validation")
 
+    review = _check_argument_coherence(script, research, config)
+    script = _attach_argument_review(script, review)
+    if not review.get("passes"):
+        print("[script] Retrying due to argument drift...")
+        retry_prompt = (
+            prompt
+            + "\n\nEDITORIAL REVIEW FAILED. Rewrite the full JSON script so every section supports the core claim.\n"
+            + f"Issue summary: {review.get('issue_summary', '')}\n"
+            + f"Rewrite instruction: {review.get('rewrite_instruction', '')}\n"
+            + "Keep 45-75 spoken words, preserve the Soft Reset voice, and do not drift into generic advice."
+        )
+        script = _call_script_model(retry_prompt, config["script_model"])
+        script = _validate_script(script, config)
+        review = _check_argument_coherence(script, research, config)
+        script = _attach_argument_review(script, review)
+
+    hook_changed = False
     if script.get("hook_quality") == "weak":
         print(f"[script] Retrying hook for stronger pattern interrupt...")
         hook_prompt = (
@@ -255,6 +360,7 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
             if new_hook and len(new_hook.split()) <= 12:
                 script["hook"] = new_hook
                 script["hook_quality"] = "strong_retry"
+                hook_changed = True
                 print(f"[script] ✓ Hook updated: '{new_hook}'")
         except Exception as e:
             print(f"[script] Hook retry failed ({e}) — keeping original")
@@ -291,6 +397,9 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
             print(f"[script] Engagement question retry failed ({e}) — keeping original")
 
     script = _validate_script(script, config)
+    if hook_changed:
+        final_review = _check_argument_coherence(script, research, config)
+        script = _attach_argument_review(script, final_review)
 
     output_path = os.path.join(run_dir, "02_script.json")
     save_json(script, output_path)

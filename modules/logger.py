@@ -68,6 +68,7 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "editorial_seed": research.get("editorial_seed", ""),
         "only_soft_reset_line": script.get("only_soft_reset_line", research.get("only_soft_reset_line", "")),
         "editorial_quality": script.get("editorial_quality", ""),
+        "argument_quality": script.get("argument_quality", ""),
         "hook": script.get("hook", ""),
         "hook_quality": script.get("hook_quality", ""),
         "word_count": script.get("word_count", 0),
