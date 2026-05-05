@@ -478,6 +478,49 @@ def _score_candidates_parallel(candidates: list[dict], model: str) -> list[dict]
     return results
 
 
+def _fallback_score_candidate(candidate: dict, rank: int = 1) -> dict:
+    emotional_trigger = candidate.get("emotional_trigger", "")
+    core_claim = candidate.get("core_claim", "")
+    topic = candidate.get("topic", "")
+    editorial_seed = candidate.get("editorial_seed") or (
+        f"This topic starts from a specific emotional moment: {emotional_trigger}. "
+        f"The point is not generic advice; it is the claim that {core_claim.lower() if core_claim else topic.lower()}. "
+        "Keep the voice gentle, direct, and emotionally precise."
+    )
+    only_line = candidate.get("only_soft_reset_line") or core_claim or candidate.get("hook_seed", topic)
+    result = {
+        **candidate,
+        "audience_fit_score": int(candidate.get("audience_fit_score", 4)),
+        "emotional_tension_score": int(candidate.get("emotional_tension_score", 4)),
+        "scriptability_score": int(candidate.get("scriptability_score", 4)),
+        "share_save_score": int(candidate.get("share_save_score", 4)),
+        "reliability_score": int(candidate.get("reliability_score", 3)),
+        "source_fact": candidate.get("source_fact", core_claim or topic),
+        "source_basis": candidate.get("source_basis", candidate.get("psych_concept", "")),
+        "source_name": candidate.get("source_name", "relationship psychology principle"),
+        "source_url": candidate.get("source_url", ""),
+        "fact_year": candidate.get("fact_year", 2026),
+        "editorial_seed": editorial_seed,
+        "only_soft_reset_line": only_line,
+        "_candidate_rank": candidate.get("_candidate_rank", rank),
+    }
+    result["total_score"] = sum(
+        result.get(key, 0)
+        for key in (
+            "audience_fit_score",
+            "emotional_tension_score",
+            "scriptability_score",
+            "share_save_score",
+            "reliability_score",
+        )
+    )
+    return _apply_scoring_penalties(result)
+
+
+def _score_candidates_fallback(candidates: list[dict]) -> list[dict]:
+    return [_fallback_score_candidate(candidate, idx + 1) for idx, candidate in enumerate(candidates)]
+
+
 # ── Step 6: Winner Selection ──────────────────────────────────────────────────
 
 def _pick_winner(scored: list[dict]) -> dict | None:
@@ -519,7 +562,11 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
     signals = _harvest_signals(timeframe="now 7-d", config=config)
 
     # ── Step 2: Generate candidates ──
-    candidates = _generate_candidates(signals, recent_topics, recent_categories, blocked_categories, config, model)
+    try:
+        candidates = _generate_candidates(signals, recent_topics, recent_categories, blocked_categories, config, model)
+    except Exception as exc:
+        print(f"[research] Candidate generation failed ({exc}) — using evergreen fallback")
+        candidates = _load_evergreen_topics()
 
     # ── Step 3: Filter ──
     candidates = _filter_candidates(candidates, recent_topics, recent_entries, recent_categories, blocked_categories, threshold)
@@ -528,7 +575,11 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
     if len(candidates) < 3:
         print(f"[research] Only {len(candidates)} candidates after filter — expanding to 30-day signals")
         signals_30d = _harvest_signals(timeframe="now 30-d", config=config)
-        candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, blocked_categories, config, model)
+        try:
+            candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, blocked_categories, config, model)
+        except Exception as exc:
+            print(f"[research] 30-day candidate generation failed ({exc}) — using evergreen fallback")
+            candidates_30d = _load_evergreen_topics()
         candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_entries, recent_categories, blocked_categories, threshold)
         # Merge, dedupe by topic string
         existing_topics = {c["topic"] for c in candidates}
@@ -561,6 +612,9 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
 
     # ── Step 6: Parallel scoring + fact grounding ──
     scored = _score_candidates_parallel(candidates, model)
+    if not scored:
+        print("[research] Model scoring unavailable — using deterministic fallback scoring")
+        scored = _score_candidates_fallback(candidates)
 
     # ── Step 7: Pick winner — fallback to scored evergreen if all rejected ──
     winner = _pick_winner(scored)
@@ -577,6 +631,8 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         ]
         if evergreen_filtered:
             evergreen_scored = _score_candidates_parallel(evergreen_filtered[:6], model)
+            if not evergreen_scored:
+                evergreen_scored = _score_candidates_fallback(evergreen_filtered[:6])
             winner = _pick_winner(evergreen_scored)
 
     if winner is None:
