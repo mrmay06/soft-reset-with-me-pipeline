@@ -4,42 +4,78 @@ Your job is to create a 3-variant A/B testing package for titles and thumbnails.
 
 Audience:
 US and Australia, age 18-35, relationship healing, attachment patterns, breakups, self-worth, emotional growth.
+They are scrolling at 11pm. They are not researchers. They are in pain or recently out of it.
+
+---
 
 TITLE RULES:
 - Create exactly 3 title variants: A = SEO, B = Emotional Hook, C = Counter-Intuitive.
 - Each title must be under {max_title_chars} characters.
 - Use personal pronouns when natural ("you", "your").
-- Avoid generic filler: amazing, incredible, life-changing, need to know, for a reason, you should know.
 - No ALL CAPS. No clickbait the video does not deliver. No full stop at the end.
-- Title A must front-load the core topic keyword for search. Use a specific scenario or number.
-- Title B must feel emotionally specific and clickable from browse. Must contain a personal pronoun AND a concrete emotional payoff. NEVER end with vague phrases like "for a reason", "you need to know", "that changed everything", or "it's complicated".
-- Title C must challenge a belief and create tension. Use a counter-intuitive claim that reframes the obvious take.
-- Do NOT repeat the word "ache" if it appears in the working title. Find a sharper emotional word.
-- Good Title B examples: "Why You Still Replay That Conversation at 2am", "The Real Reason You Miss Someone Who Wasn't Even Good For You", "You Don't Miss Them. You Miss Who You Were With Them."
-- Good Title C examples: "It's Not Oversharing. It's Asking If They Can Handle You.", "You're Not Healing Slowly. You're Healing in the Right Order."
+- BANNED FILLER WORDS: amazing, incredible, life-changing, need to know, for a reason, you should know, explained, breakdown, deep dive.
+- BANNED ENDINGS: "for a reason", "you need to know", "that changed everything", "it's complicated", "the truth", "what you need to hear".
 
-THUMBNAIL RULES:
+- Title A (SEO): Front-load the core topic keyword. Use a specific scenario, number, or named experience — not a theme. Good: "Why Peace Feels Boring After a Chaotic Relationship". Bad: "Understanding Your Nervous System in Love".
+- Title B (Emotional Hook): Must contain a personal pronoun AND a concrete emotional payoff. Must make the viewer feel the title was written about them specifically — as if you overheard their private thought. Good: "Why You Still Replay That Conversation at 2am", "You Don't Miss Them. You Miss Who You Were With Them." Bad: "Your Journey to Emotional Healing Starts Here".
+- Title C (Counter-Intuitive): Must challenge a belief the viewer currently holds and create productive tension. The viewer should read it and feel slightly uncomfortable because it might be true. Good: "That 'Spark' You Miss? It Was Just Anxiety", "You're Not Healing Slowly. You're Healing in the Right Order."
+
+PRIMARY VARIANT SELECTION:
+- Default primary to B (emotional hook) UNLESS Title C is a genuine, uncomfortable pattern-interrupt that would stop a scroll cold. If C challenges something the viewer believes right now and names it precisely, make C the primary.
+- Never make A (SEO) the primary — SEO titles earn search traffic, not browse clicks.
+
+---
+
+THUMBNAIL TEXT RULES — READ CAREFULLY:
+Thumbnail text is the most important packaging decision. It must pass the 2-second test: if someone at 11pm who just went through a situationship sees this text, do they immediately recognize themselves in those exact words? If not, the text fails.
+
+CORE RULE: Thumbnail text must come from the sharpest emotional line in the script — ideally the "only Soft Reset line" or the hook. It is NOT a label for the topic. It is the viewer's private internal monologue, made visible.
+
+BANNED WORDS IN THUMBNAIL TEXT (these are clinical labels, not feelings):
+withdrawal, reinforcement, regulation, dysregulation, intermittent, subconscious, pattern, attachment, nervous system, trauma, process, journey, healing, toxic, growth.
+
+If you find yourself using any of those words — stop and find the line from the script that says the feeling without naming the mechanism.
+
 - Create exactly 3 thumbnail variants: A = Clean Concept Close-Up or Highlighted Truth, B = Emotional Hook or Digital Anxiety Overlay, C = Dichotomy Split or Subject vs The Void.
-- Thumbnail text must be 3-5 words max, ALL CAPS in the final render.
+- Thumbnail text: 3-5 words max, ALL CAPS in the final render.
 - Thumbnail text must NOT repeat the title word-for-word.
-- Thumbnail text must feel like one half of a system, with the title completing the thought.
-- Thumbnail text should be derived from the most emotionally sharp line in the script — ideally the "only Soft Reset line" or the hook.
-- Thumbnail prompts are for AI image generation. Text will be baked on top with PIL post-generation — so in the prompt, describe the visual only, but still specify where the TEXT ZONE is (which side stays dark/clear) so the visual subject is on the correct side.
-- Each thumbnail prompt must explicitly include:
-  1. exact thumbnail text in quotation marks
-  2. text zone: which side (left or right) must stay dark and clear for text
-  3. text style: bold heavy uppercase serif
-  4. text color: Warm Terracotta #C4785A for last line, Soft Cream #F5F0E8 for other lines
-  5. heavy black outline
-  6. hero visual and emotional scenario (specific, not generic — avoid "person sitting")
-  7. which side the subject occupies
-  8. negative space instruction (the text zone must be at least 40% dark)
-  9. brand palette: Deep Midnight #1C1C2B background, Warm Terracotta #C4785A accent
-  10. high contrast and grayscale readability
-  11. no important elements in bottom-right 15%
-  12. 1280x720, 16:9, horizontal
-  13. no watermarks, no logos, no UI chrome
-  14. photorealistic cinematic editorial quality
+- Thumbnail text and title must feel like one system — the text names the feeling, the title explains it.
+- The strongest thumbnail text is usually the line the viewer would screenshot and send to a friend.
+
+THUMBNAIL TEXT EXAMPLES:
+Good: "THE SPARK WAS ANXIETY" / "PEACE ISN'T BORING" / "YOU MISS THE DREAM" / "IT WASN'T NOTHING" / "CALM FELT WRONG"
+Bad: "WITHDRAWAL FROM CHAOS" / "NERVOUS SYSTEM EXPLAINED" / "INTERMITTENT REINFORCEMENT" / "ATTACHMENT PATTERNS"
+
+VISUAL PROMPT RULES (for AI image generation — text is baked on by PIL post-generation):
+- Describe a specific emotional scenario, not a generic "person sitting" or "woman looking sad."
+- The visual must create instant parasocial recognition: "that's what I look like when I feel this."
+- Use tight framing: face, hands, or a specific object in context.
+- Specify exactly which side stays dark for text zone (text zone = at least 40% dark negative space).
+- Brand palette: Deep Midnight #1C1C2B background, Warm Terracotta #C4785A accent, Soft Cream #F5F0E8.
+- No watermarks, no logos, no UI chrome. No symbolic nature (trees, oceans, mountains).
+- 1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality.
+- High contrast, clearly readable in grayscale.
+
+---
+
+DESCRIPTION RULES:
+- 3-4 short paragraphs max.
+- Para 1: OPEN with the `only_soft_reset_line` or the sharpest line from the script — the one that would make someone stop and read it twice. NOT a summary. NOT "In this video." The first sentence must earn the watch before the viewer even clicks play.
+- Para 2: What the viewer will walk away feeling (not what they will "learn"). Write for the emotional experience, not the educational outcome. BANNED: "you'll learn", "you'll understand", "in this video we explore", "this video covers".
+- Para 3: Engagement question. Must be confessional or polarizing — the kind of question that makes someone type immediately. Use words the viewer would actually say at 2am, not therapy vocabulary. BANNED in the question: subconsciously, validate, dysregulate, process, attachment style (as a label). Good: "Have you ever pulled away from someone just because they were actually consistent? Drop it below." Bad: "Have you ever subconsciously avoided secure attachment? Share your thoughts."
+- Blank line, then: "Subscribe for softer resets — @SoftResetWithMe"
+- Blank line, then 4-6 hashtags. Always include #SoftResetWithMe. Pick 3-5 from: #RelationshipAdvice #DatingAdvice #EmotionalHealing #HealingJourney #Breakup #AttachmentStyle #SelfWorth #PersonalGrowth #MentalHealth #TraumaBonding #Situationship #MovingOn #BreakupAdvice #SelfHealing #EmotionalIntelligence
+
+---
+
+TAGS RULES:
+- Return 12-15 tags as a JSON array. No duplicates.
+- Mix: 3 broad, 4 niche, 4 long-tail phrases (what someone in pain at 2am would actually search), 1 branded.
+- Branded tag: always include "soft reset with me".
+- Long-tail must be exact search phrases — lowercase, no hashtags, conversational. Examples: "why do i push away good people", "why does calm feel wrong in relationships", "why don't i feel attracted to nice people", "am i addicted to chaos in relationships", "why does a good relationship feel boring", "how to stop chasing unavailable people", "signs you re used to chaos not love".
+- Avoid: tags that are too saturated to drive discovery ("self care", "mindfulness", "self love") unless paired with relationship context. Avoid therapy jargon as standalone tags ("nervous system regulation", "co-regulation").
+
+---
 
 Brand:
 - Deep Midnight #1C1C2B
@@ -57,41 +93,30 @@ Retention hook: {retention_hook}
 Only Soft Reset line: {only_soft_reset_line}
 Hook chapter: {hook}
 
-DESCRIPTION RULES:
-- 3-4 short paragraphs max.
-- Para 1: expand the hook — one sentence that earns the click.
-- Para 2: what the viewer will take away. Specific, not generic.
-- Para 3: a comment-driver question derived from the viewer pain. Make it polarizing or confessional — the kind that makes someone type. Example: "Have you ever regretted opening up to the wrong person? Drop it below." NOT "Let me know your thoughts."
-- Blank line, then soft subscribe CTA: "Subscribe for softer resets — @SoftResetWithMe"
-- Blank line, then 4-6 hashtags. Always include #SoftResetWithMe. Pick 3-5 relevant from: #RelationshipAdvice #DatingAdvice #EmotionalHealing #HealingJourney #Breakup #AttachmentStyle #SelfWorth #PersonalGrowth #MentalHealth #TraumaBonding #Situationship #MovingOn #BreakupAdvice #SelfHealing #EmotionalIntelligence
-
-TAGS:
-- Return 12-15 tags as a JSON array.
-- Mix: 3 broad, 4 niche, 4 long-tail, 1 branded ("soft reset with me").
-- Long-tail examples: "how to get over someone you love", "why does ghosting hurt so much", "signs of anxious attachment", "what to do when someone pulls away".
+---
 
 Return ONLY valid JSON:
 {{
-  "primary_variant_id": "A or B or C",
-  "description": "full description per rules above",
-  "tags": ["12-15 tags"],
+  "primary_variant_id": "B or C — never A",
+  "description": "full description per rules above — open with the sharpest script line",
+  "tags": ["12-15 tags, no duplicates, includes 4 long-tail 2am searches"],
   "title_variants": [
     {{
       "id": "A",
       "angle": "seo",
-      "formula": "specific number | curiosity gap | transformation | warning | personal pronoun | counter-intuitive | specific scenario",
+      "formula": "specific scenario | specific number | named experience",
       "title": "..."
     }},
     {{
       "id": "B",
       "angle": "emotional_hook",
-      "formula": "personal pronoun + concrete emotional payoff",
+      "formula": "personal pronoun + viewer's private thought made visible",
       "title": "..."
     }},
     {{
       "id": "C",
       "angle": "counter_intuitive",
-      "formula": "counter-intuitive reframe of obvious belief",
+      "formula": "challenges a belief the viewer holds right now — uncomfortable but true",
       "title": "..."
     }}
   ],
@@ -100,22 +125,22 @@ Return ONLY valid JSON:
       "id": "A",
       "angle": "seo",
       "pattern": "clean_concept_close_up | highlighted_truth",
-      "thumbnail_text": "3-5 WORD PHRASE",
-      "prompt": "full visual-only generation prompt — text overlay will be added by PIL post-generation"
+      "thumbnail_text": "3-5 WORDS — FROM THE SCRIPT, NOT A CLINICAL LABEL",
+      "prompt": "visual-only cinematic prompt — PIL adds text post-generation"
     }},
     {{
       "id": "B",
       "angle": "emotional_hook",
       "pattern": "digital_anxiety_overlay | emotional_hook",
-      "thumbnail_text": "3-5 WORD PHRASE",
-      "prompt": "full visual-only generation prompt — text overlay will be added by PIL post-generation"
+      "thumbnail_text": "3-5 WORDS — VIEWER'S INTERNAL MONOLOGUE MADE VISIBLE",
+      "prompt": "visual-only cinematic prompt — PIL adds text post-generation"
     }},
     {{
       "id": "C",
       "angle": "counter_intuitive",
       "pattern": "dichotomy_split | subject_vs_the_void",
-      "thumbnail_text": "3-5 WORD PHRASE",
-      "prompt": "full visual-only generation prompt — text overlay will be added by PIL post-generation"
+      "thumbnail_text": "3-5 WORDS — CHALLENGES THE OBVIOUS TAKE",
+      "prompt": "visual-only cinematic prompt — PIL adds text post-generation"
     }}
   ]
 }}

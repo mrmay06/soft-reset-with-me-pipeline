@@ -65,7 +65,12 @@ Make every sentence earn its place.
 
 LOOPBACK (18-30s):
 Land the emotional moment and connect back to the hook.
-Leave them sitting with something.
+The final line must feel like a quiet exhale — something true and specific.
+Do NOT end with: "you deserve better", "you are enough", "your feelings are valid", "healing takes time."
+Do end with: a precise observation that names the feeling without resolving it too neatly.
+Good: "That's not strength. That's just loneliness with good posture."
+Good: "You didn't lose them. You lost the version you made up."
+Bad: "Your exhaustion is valid and you deserve support."
 
 CTA FIELDS (not spoken by the voiceover):
 Line 1 engagement question or soft prompt, used for comments/metadata:
@@ -86,10 +91,11 @@ COPY RULES:
 - Direct address: "you"
 - No emojis in spoken script
 - No full therapy-script language like "validate your feelings"
-- Never say: "you are enough", "love yourself first", "hi guys", "so basically"
+- Never say: "you are enough", "love yourself first", "hi guys", "so basically", "your feelings are valid", "that's valid", "it's valid to feel", "healing journey", "healing takes time", "do the work", "show up for yourself"
 - Never diagnose anyone as narcissist, avoidant, toxic, crazy, broken, or abusive
 - Never teach manipulation, revenge, chasing, or how to make someone miss you
 - If danger or abuse is implied, point to trusted support
+- BANNED AFFIRMATIONS: never end on reassurance that the viewer "deserves better" or that their feelings are "valid" — these words create distance. End on recognition, not permission.
 
 WRITE LIKE THIS:
 "You didn't lose them. You lost the version you made up."

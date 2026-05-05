@@ -34,6 +34,29 @@ def _clean_thumb_text(text: str) -> str:
     return " ".join(words[:5]).strip()
 
 
+_CLINICAL_THUMB_WORDS = {
+    "withdrawal", "reinforcement", "regulation", "dysregulation", "intermittent",
+    "subconscious", "pattern", "attachment", "nervous", "system", "trauma",
+    "process", "journey", "healing", "toxic", "growth", "explained",
+}
+
+
+def _thumb_text_is_clinical(text: str) -> bool:
+    words = set(text.lower().split())
+    return bool(words & _CLINICAL_THUMB_WORDS)
+
+
+def _pick_primary_variant(variants: list[dict], thumb_variants: list[dict]) -> str:
+    """Pick B by default unless C is a genuine counter-intuitive and its thumb text is non-clinical.
+    Never pick A as primary."""
+    c_thumb = next((t for t in thumb_variants if t.get("id") == "C"), None)
+    c_title = next((t for t in variants if t.get("id") == "C"), None)
+    if c_thumb and c_title:
+        if not _thumb_text_is_clinical(c_thumb.get("thumbnail_text", "")):
+            return "C"
+    return "B"
+
+
 def _fallback_variants(research: dict, max_title_chars: int) -> dict:
     working_title = _safe_title(research.get("working_title", "Soft Reset With Me"), max_title_chars)
     topic = str(research.get("topic", "")).strip()
@@ -41,18 +64,19 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
     core_claim = str(research.get("core_claim", "")).strip()
     viewer_pain = str(research.get("viewer_pain", "")).strip()
     retention_hook = str(research.get("retention_hook", "")).strip()
+    only_soft_reset_line = str(research.get("only_soft_reset_line", "")).strip()
     pillar = str(research.get("content_pillar", "")).lower()
 
     if "ghost" in topic_lower:
         titles = [
             ("A", "seo", "specific scenario", "Why Ghosting Hurts Even When It Wasn't Serious"),
-            ("B", "emotional", "specific scenario", "The Silence After The Spark Hurts For A Reason"),
+            ("B", "emotional", "specific scenario", "The Silence After The Last Message Still Hits"),
             ("C", "counter", "counter-intuitive", "You're Not Missing Them. You're Missing Closure"),
         ]
         thumbs = [
-            ("A", "seo", "clean_concept_close_up", "GHOSTING HITS HARD"),
+            ("A", "seo", "clean_concept_close_up", "IT WASN'T NOTHING"),
             ("B", "emotional", "digital_anxiety_overlay", "LEFT ON READ"),
-            ("C", "counter", "subject_vs_the_void", "IT WASN'T NOTHING"),
+            ("C", "counter", "subject_vs_the_void", "YOU MISS THE ENDING"),
         ]
     elif "potential" in topic_lower or "imagined" in topic_lower:
         titles = [
@@ -67,89 +91,119 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
         ]
     elif "strong one" in topic_lower or "strong" in topic_lower:
         titles = [
-            ("A", "seo", "specific scenario", "When Being The Strong One Starts To Break You"),
+            ("A", "seo", "specific scenario", "When Being The Strong One Finally Breaks You"),
             ("B", "emotional", "specific scenario", "No One Notices When The Strong One Is Drowning"),
-            ("C", "counter", "counter-intuitive", "Strength Can Be A Form Of Self-Abandonment"),
+            ("C", "counter", "counter-intuitive", "That's Not Strength. That's Loneliness With Good Posture"),
         ]
         thumbs = [
             ("A", "seo", "clean_concept_close_up", "TIRED OF CARRYING"),
             ("B", "emotional", "clean_concept_close_up", "NO ONE ASKED"),
-            ("C", "counter", "subject_vs_the_void", "STRENGTH IS HIDING"),
+            ("C", "counter", "subject_vs_the_void", "ALONE IN THE CROWD"),
+        ]
+    elif "peace" in topic_lower or "boring" in topic_lower or "calm" in topic_lower or "chaos" in topic_lower:
+        titles = [
+            ("A", "seo", "specific scenario", "Why Healthy Love Feels Boring After a Chaotic Relationship"),
+            ("B", "emotional", "curiosity gap", "You Confuse Calm For Something Missing"),
+            ("C", "counter", "counter-intuitive", "That Spark You Miss? It Was Just Anxiety"),
+        ]
+        thumbs = [
+            ("A", "seo", "clean_concept_close_up", "PEACE ISN'T BORING"),
+            ("B", "emotional", "digital_anxiety_overlay", "CALM FELT WRONG"),
+            ("C", "counter", "dichotomy_split", "THE SPARK WAS ANXIETY"),
         ]
     else:
         titles = [
             ("A", "seo", "specific scenario", working_title),
-            ("B", "emotional", "curiosity gap", _safe_title(retention_hook or f"Why {topic} Still Hurts More Than It Should", max_title_chars)),
+            ("B", "emotional", "curiosity gap", _safe_title(retention_hook or f"Why {topic} Still Hits Harder Than It Should", max_title_chars)),
             ("C", "counter", "counter-intuitive", _safe_title(core_claim or "It's Not About Them. It's About The Pattern", max_title_chars)),
         ]
         thumbs = [
-            ("A", "seo", "clean_concept_close_up", _clean_thumb_text(topic) or "THE REAL REASON"),
-            ("B", "emotional", "digital_anxiety_overlay", "THIS PART HURTS"),
-            ("C", "counter", "dichotomy_split", "YOU ALREADY KNEW"),
+            ("A", "seo", "clean_concept_close_up", _clean_thumb_text(only_soft_reset_line) or "THE REAL REASON"),
+            ("B", "emotional", "digital_anxiety_overlay", "YOU ALREADY KNEW"),
+            ("C", "counter", "dichotomy_split", "IT WASN'T LOVE"),
         ]
 
     pillar_tags = {
         "relationship patterns": [
-            "relationship advice", "dating advice", "attachment style", "situationship",
-            "red flags in relationships", "love bombing", "emotional unavailability",
-            "anxious attachment", "avoidant attachment", "trauma bonding",
+            "relationship advice", "dating advice", "situationship advice", "anxious attachment",
+            "avoidant attachment", "trauma bonding", "love bombing signs", "emotional unavailability",
+            "why do i keep attracting the wrong person", "signs of anxious attachment in dating",
+            "why am i always the one who cares more", "how to stop chasing unavailable people",
         ],
         "psychology drops": [
             "relationship advice", "emotional health", "self awareness", "attachment style",
-            "psychology of relationships", "nervous system healing", "emotional intelligence",
-            "self awareness tips", "mental health relationships", "emotional regulation",
+            "psychology of love", "emotional intelligence", "why do i push away good people",
+            "why does a good person feel boring", "signs you re used to chaos not love",
+            "why don t i feel attracted to nice people", "am i addicted to chaos in relationships",
         ],
         "healing arcs": [
-            "relationship advice", "breakup advice", "healing journey", "moving on",
-            "how to get over someone you love", "breakup recovery", "emotional healing",
-            "self healing after breakup", "signs you re not over your ex", "moving on after breakup",
+            "relationship advice", "breakup advice", "moving on after breakup", "emotional healing",
+            "how to get over someone you love", "breakup recovery", "signs you re not over your ex",
+            "why does heartbreak feel like grief", "how to stop thinking about someone",
+            "why do i still miss someone who hurt me", "moving on from a situationship",
         ],
         "self-worth shifts": [
-            "relationship advice", "self worth", "self respect", "personal growth",
-            "know your worth", "setting boundaries in relationships", "self love",
-            "standards in relationships", "stop settling", "emotional boundaries",
+            "relationship advice", "self worth", "personal growth", "know your worth",
+            "setting boundaries in relationships", "stop settling in relationships",
+            "why do i accept less than i deserve", "signs you have low self worth in relationships",
+            "how to stop people pleasing in relationships", "why am i always the strong one",
+            "how to stop shrinking yourself for others",
         ],
         "conversation truths": [
-            "relationship advice", "communication skills", "dating advice", "self awareness",
-            "healthy communication in relationships", "conflict resolution", "emotional honesty",
-            "what to say in relationships", "hard conversations", "relationship communication tips",
+            "relationship advice", "communication in relationships", "dating advice",
+            "healthy communication in relationships", "emotional honesty", "hard conversations",
+            "what to do when someone pulls away", "how to stop overthinking in relationships",
+            "why do people go cold in relationships", "signs someone is losing interest",
         ],
         "identity and growth": [
             "relationship advice", "personal growth", "self worth", "emotional healing",
-            "self improvement", "emotional maturity", "growth mindset relationships",
-            "reinventing yourself", "self discovery", "becoming a better person",
+            "self improvement", "why do i lose myself in relationships",
+            "how to find yourself after a relationship", "signs you re emotionally unavailable",
+            "why do i attract emotionally unavailable people", "becoming a better version of yourself",
         ],
     }
-    base_tags = pillar_tags.get(pillar, ["relationship advice", "emotional healing", "personal growth",
-                                          "self worth", "healing journey", "dating advice",
-                                          "attachment style", "moving on", "personal growth tips"])
-    tags = ["soft reset with me", *base_tags, "softreset"]
+    base_tags = pillar_tags.get(pillar, [
+        "relationship advice", "emotional healing", "personal growth", "dating advice",
+        "why do i push away good people", "why does calm feel wrong in relationships",
+        "how to stop chasing unavailable people", "signs you re used to chaos not love",
+    ])
+    seen: set[str] = set()
+    tags: list[str] = []
+    for t in ["soft reset with me", *base_tags]:
+        if t not in seen:
+            seen.add(t)
+            tags.append(t)
 
-    only_soft_reset_line = str(research.get("only_soft_reset_line", "")).strip()
-    comment_driver = (
-        f"{only_soft_reset_line} Has this ever happened to you? Drop it in the comments."
-        if only_soft_reset_line
-        else "Has this ever happened to you? Drop your experience in the comments."
+    # Description: open with the sharpest line (only_soft_reset_line), not with core_claim
+    opening_line = only_soft_reset_line or core_claim or viewer_pain or topic
+    engagement_q = (
+        f"Have you ever felt that pull away from someone just because they were actually steady? Drop it below."
+        if not viewer_pain
+        else f"Has this hit you somewhere specific? {viewer_pain[:80].rstrip()} — drop it below."
     )
     description = (
-        f"{core_claim}\n\n"
-        f"A quiet Soft Reset for anyone who recognizes this: {viewer_pain or topic}\n\n"
-        f"{comment_driver}\n\n"
+        f"{opening_line}\n\n"
+        f"{viewer_pain or topic}\n\n"
+        f"{engagement_q}\n\n"
         "Subscribe for softer resets — @SoftResetWithMe\n\n"
         "#SoftResetWithMe #RelationshipAdvice #EmotionalHealing #PersonalGrowth #HealingJourney"
     )
+
+    title_list = [
+        {"id": item[0], "angle": item[1], "formula": item[2], "title": _safe_title(item[3], max_title_chars)}
+        for item in titles
+    ]
+    thumb_list = [
+        {"id": item[0], "angle": item[1], "pattern": item[2], "thumbnail_text": _clean_thumb_text(item[3])}
+        for item in thumbs
+    ]
+    primary = _pick_primary_variant(title_list, thumb_list)
     return {
-        "primary_variant_id": "B",
+        "primary_variant_id": primary,
         "description": description,
         "tags": tags,
-        "title_variants": [
-            {"id": item[0], "angle": item[1], "formula": item[2], "title": _safe_title(item[3], max_title_chars)}
-            for item in titles
-        ],
-        "thumbnail_variants": [
-            {"id": item[0], "angle": item[1], "pattern": item[2], "thumbnail_text": _clean_thumb_text(item[3])}
-            for item in thumbs
-        ],
+        "title_variants": title_list,
+        "thumbnail_variants": thumb_list,
     }
 
 
@@ -177,6 +231,12 @@ def _validate_packaging(raw: dict, research: dict, max_title_chars: int) -> dict
         vid = str(item.get("id", "")).upper()
         text = _clean_thumb_text(item.get("thumbnail_text", ""))
         if vid in {"A", "B", "C"} and text:
+            # Reject clinical thumbnail text — swap in fallback text for this variant
+            if _thumb_text_is_clinical(text):
+                fallback_thumb = next((t for t in fallback["thumbnail_variants"] if t["id"] == vid), None)
+                if fallback_thumb:
+                    print(f"[longform_metadata] Variant {vid} thumbnail text '{text}' is clinical — using fallback: '{fallback_thumb['thumbnail_text']}'")
+                    text = fallback_thumb["thumbnail_text"]
             entry = {
                 "id": vid,
                 "angle": str(item.get("angle", "")).lower() or {"A": "seo", "B": "emotional_hook", "C": "counter_intuitive"}[vid],
@@ -192,14 +252,30 @@ def _validate_packaging(raw: dict, research: dict, max_title_chars: int) -> dict
         fb_entry = {k: v for k, v in item.items() if k != "prompt"}
         thumb_by_id.setdefault(item["id"], fb_entry)
 
-    primary_variant_id = str(raw.get("primary_variant_id", fallback["primary_variant_id"])).upper()
-    if primary_variant_id not in {"A", "B", "C"}:
-        primary_variant_id = fallback["primary_variant_id"]
+    # Primary: never A; re-run smart picker using validated variants
+    raw_primary = str(raw.get("primary_variant_id", "")).upper()
+    if raw_primary == "A" or raw_primary not in {"A", "B", "C"}:
+        primary_variant_id = _pick_primary_variant(
+            [title_by_id[k] for k in ("A", "B", "C")],
+            [thumb_by_id[k] for k in ("A", "B", "C")],
+        )
+    else:
+        primary_variant_id = raw_primary
+
+    # Deduplicate tags while preserving order
+    raw_tags = raw.get("tags", fallback["tags"])
+    seen: set[str] = set()
+    deduped_tags: list[str] = []
+    for t in (raw_tags if isinstance(raw_tags, list) else fallback["tags"]):
+        tl = str(t).lower().strip()
+        if tl and tl not in seen:
+            seen.add(tl)
+            deduped_tags.append(tl)
 
     return {
         "primary_variant_id": primary_variant_id,
         "description": str(raw.get("description", fallback["description"])).strip() or fallback["description"],
-        "tags": raw.get("tags", fallback["tags"]),
+        "tags": deduped_tags or fallback["tags"],
         "title_variants": [title_by_id[key] for key in ("A", "B", "C")],
         "thumbnail_variants": [thumb_by_id[key] for key in ("A", "B", "C")],
     }

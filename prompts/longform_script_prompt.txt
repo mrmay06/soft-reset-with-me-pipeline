@@ -3,10 +3,11 @@ Write a {duration_label} faceless cinematic emotional essay.
 
 Audience:
 English-speaking 18-35 viewers in the US and Australia navigating breakups, dating confusion, situationships, self-worth, and emotional growth.
+They are watching at 11pm. They are not studying. They want to feel understood, then slightly cracked open, then exhale.
 
 Voice:
 The honest friend who's been through it. Calm, warm, direct, emotionally precise, never preachy.
-Not a therapist, not a guru, not a hype coach.
+Not a therapist. Not a guru. Not a hype coach. Someone who knows the specific feeling and names it without flinching.
 
 TOPIC: {topic}
 WORKING TITLE: {working_title}
@@ -24,20 +25,59 @@ VISUAL MOOD: {visual_mood}
 PERFORMANCE FEEDBACK:
 {performance_insights}
 
-Rules:
-- {target_words_min}-{target_words_max} spoken words.
-- Every chapter must support the core claim.
-- The first 20 seconds must make the viewer feel personally seen — name a specific behavior, moment, or feeling, not a broad theme.
-- Avoid generic self-help lines like "love yourself", "communication is key", or "healing takes time".
-- No diagnosis. No manipulation. No revenge. No gendered assumptions.
-- Use direct address: "you".
-- Use simple psychology without clinical heaviness. Never use: "pattern interrupt", "nervous system activation", "regulate", "dysregulate", "co-regulate", "validate your feelings".
-- RETENTION RE-HOOKS: At the opening of chapters 3 and 4, include a single short sentence (under 10 words) that reopens the emotional loop or pivots to a new angle. This prevents viewer drop-off at the 90-120s mark. Examples: "But here's what makes this harder." / "And then something shifts." / "Here's the part most people skip." / "This is where it gets specific."
-- Include 2-3 moments of precise emotional observation — a behavior, a thought, a physical sensation — that the viewer has never seen named exactly that way before.
-- End with a soft emotional reset, not a motivational speech. The final line should feel like a quiet exhale, not a pump-up.
-- Visual brief must use grounded relationship/self-reflection B-roll only: rainy windows, apartments, hands, journals, phones, city walking, quiet bedrooms, empty chairs, candlelit rooms.
-- Do not use symbolic nature clips like trees, forests, storms, oceans, animals, mountains, or abstract landscapes unless the topic literally requires them.
-- Stock queries must be 2-6 words and searchable on Pexels. Avoid: hotel, motel, crowd, gym, office, beach, forest, wedding, drone, baby.
+---
+
+WRITING RULES:
+
+WORD COUNT: {target_words_min}-{target_words_max} spoken words. Every chapter must support the core claim.
+
+HOOK (first 20 seconds):
+The first sentence must make the viewer think "wait, that's me" — not "interesting topic."
+Name a specific behavior, moment, or physical sensation — not a broad theme.
+Good: "You finally meet someone who texts back. Who doesn't disappear for three days. Who is just... steady. And somehow that steadiness makes you want to run."
+Bad: "Today we're talking about why healthy relationships can feel uncomfortable."
+
+BANNED LANGUAGE:
+- Generic self-help: "love yourself", "communication is key", "healing takes time", "you are enough", "set boundaries", "do the work"
+- Clinical: "pattern interrupt", "nervous system activation", "regulate", "dysregulate", "co-regulate", "validate your feelings", "trauma response", "window of tolerance"
+- Preachy closings: any sentence that sounds like a motivational poster
+
+RETENTION RE-HOOKS (mandatory):
+At the OPENING of chapter 3 AND chapter 4, write a single sentence (under 10 words) that reopens the emotional loop or pivots the angle. This arrests the viewer drop-off curve at the 90-120s mark.
+Good examples: "But here's what makes this harder." / "And then something shifts." / "Here's the part most people skip." / "This is where it gets specific." / "But there's something underneath that."
+Bad: Starting chapter 3 directly with explanation or information.
+
+MID-VIDEO DIRECT ADDRESS (mandatory — exactly once):
+Between chapters 2 and 3, insert ONE sentence of direct viewer address that arrests the drop. Format:
+"If that's familiar — stay with me. Because what comes next is the part that actually explains it."
+Or: "If you've felt that before, don't leave yet. This next part is for you specifically."
+This is NOT part of the chapter voiceover. It is a single line inserted between chapters.
+
+EMOTIONAL PRECISION:
+Include 2-3 moments of precise emotional observation — a specific behavior, a thought, a physical sensation — that the viewer has never seen named exactly that way before.
+Good: "You check your phone not because you want a message, but because you need to know the silence means nothing."
+Bad: "You feel anxious when they don't respond quickly."
+
+ONLY SOFT RESET LINE:
+This is the most important field in the output. It is the single sentence the viewer would screenshot and send to a friend. It must feel like something no one has ever said exactly that way before. If it sounds like it could be a generic quote on Pinterest, it fails. Rewrite it until it is specific, sharp, and slightly uncomfortable. It belongs inside the script — ideally in the final chapter or the reframe.
+
+ENDING:
+End with a soft emotional reset, not a motivational speech. The final line should feel like a quiet exhale — permission, not instruction. Not "you've got this." Not "you deserve better." Something true and small and specific.
+
+ENGAGEMENT QUESTION:
+Write one question the viewer would type in the comments at 2am. It must be confessional or polarizing — not a survey. BANNED WORDS in the question: subconsciously, validate, process, dysregulate, attachment style (as a label), journey, nervous system.
+Good: "Have you ever pulled away from someone just because they were actually there?"
+Bad: "Have you ever experienced hypervigilance in relationships due to your attachment style?"
+
+CTA:
+Short, 1 sentence. Must leverage the specific emotional state the viewer is in at the END of this video — not a generic "save this." If the video ends on grief, the CTA acknowledges grief. If it ends on a quiet realization, the CTA honors that. Example: "If you needed someone to name that — subscribe. There's more of this here."
+
+VISUAL BRIEF:
+Use grounded relationship/self-reflection B-roll only: rainy windows, apartments, hands, journals, phones, city walking, quiet bedrooms, empty chairs, candlelit rooms, coffee cups, unmade beds.
+Do NOT use: trees, forests, storms, oceans, animals, mountains, abstract landscapes, sunsets (unless the topic literally requires them).
+Stock queries must be 2-6 words and searchable on Pexels. Avoid: hotel, motel, crowd, gym, office, beach, forest, wedding, drone, baby, children, casino, bar, sports.
+
+---
 
 Return ONLY valid JSON:
 {{
@@ -46,8 +86,9 @@ Return ONLY valid JSON:
   "content_pillar": "{content_pillar}",
   "longform_format": "{longform_format}",
   "core_claim": "{core_claim}",
-  "editorial_pov": "...",
-  "only_soft_reset_line": "...",
+  "editorial_pov": "the specific angle this script argues — one sentence",
+  "only_soft_reset_line": "the single most screenshot-worthy line in the script — sharp, specific, not a Pinterest quote",
+  "engagement_question": "what the viewer would type in comments at 2am — confessional, no clinical words",
   "estimated_duration_sec": 0,
   "word_count": 0,
   "chapters": [
@@ -63,9 +104,9 @@ Return ONLY valid JSON:
       "chapter_id": 1,
       "scene_role": "hook | tension | pattern | reframe | reset",
       "stock_queries": ["rainy apartment window", "city night walking"],
-      "image_prompt": "no text, moody editorial cinematic still..."
+      "image_prompt": "no text, moody editorial cinematic still — tight framing, specific emotional scenario"
     }}
   ],
-  "cta": "soft subscribe/save CTA",
+  "cta": "short CTA tied to the emotional state at the end of this specific video",
   "generated_at": "{generated_at}"
 }}
