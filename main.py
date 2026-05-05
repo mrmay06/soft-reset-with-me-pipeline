@@ -40,7 +40,7 @@ def _checkpoint(run_dir: str, *paths: str) -> bool:
 def _find_latest_run_dir() -> tuple[str, str] | None:
     """Find the most-recent incomplete run_dir. Returns (video_id, run_dir) or None."""
     terminal_checkpoints = ["06_final_video.mp4", "07_metadata.json", "08_upload_meta.json"]
-    dirs = sorted(glob.glob("workspace/run_*"))
+    dirs = sorted(d for d in glob.glob("workspace/run_*") if not os.path.basename(d).startswith("run_long_"))
     for d in reversed(dirs):
         # Incomplete means any terminal stage has not finished yet.
         if not _checkpoint(d, *terminal_checkpoints):
