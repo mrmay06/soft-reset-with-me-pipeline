@@ -25,7 +25,7 @@ def run_longform_logger(video_id: str, run_dir: str, config: dict) -> dict:
     entry = {
         "video_id": video_id,
         "published_date": now_iso()[:10],
-        "status": "brief_generated",
+        "status": "rendered_not_uploaded" if render_meta else "brief_generated",
         "topic": research.get("topic", ""),
         "working_title": research.get("working_title", ""),
         "content_pillar": research.get("content_pillar", ""),

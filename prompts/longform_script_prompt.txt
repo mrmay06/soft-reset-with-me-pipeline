@@ -34,6 +34,9 @@ Rules:
 - Use simple psychology without clinical heaviness.
 - Include 2-3 quiet pattern interrupts across the body so the video does not flatten.
 - End with an emotional reset, not a motivational speech.
+- Visual brief must use grounded relationship/self-reflection B-roll only: rainy windows, apartments, hands, journals, phones, city walking, quiet bedrooms, empty chairs, candlelit rooms.
+- Do not use symbolic nature clips like trees, forests, storms, oceans, animals, mountains, or abstract landscapes unless the topic literally requires them.
+- Stock queries must be 2-6 words and searchable on Pexels.
 
 Return ONLY valid JSON:
 {{

@@ -255,7 +255,15 @@ def run_longform_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "editorial_pov": research["editorial_seed"],
         "only_soft_reset_line": research["only_soft_reset_line"],
         "chapters": chapters,
-        "visual_brief": [],
+        "visual_brief": [
+            {"chapter_id": 1, "scene_role": "hook", "stock_queries": ["rainy window night", "person alone window", "city night apartment"], "image_prompt": ""},
+            {"chapter_id": 2, "scene_role": "tension", "stock_queries": ["empty chair room", "person sitting alone", "quiet bedroom"], "image_prompt": ""},
+            {"chapter_id": 3, "scene_role": "pattern", "stock_queries": ["hands journal", "walking city night", "train window night"], "image_prompt": ""},
+            {"chapter_id": 4, "scene_role": "reframe", "stock_queries": ["candlelit room", "closing journal", "morning window"], "image_prompt": ""},
+            {"chapter_id": 5, "scene_role": "reset", "stock_queries": ["city walk evening", "open window curtains", "quiet sunrise room"], "image_prompt": ""},
+            {"chapter_id": 6, "scene_role": "practice", "stock_queries": ["hands writing journal", "person walking alone", "apartment window"], "image_prompt": ""},
+            {"chapter_id": 7, "scene_role": "closing", "stock_queries": ["quiet sunrise room", "city walk evening", "open window curtains"], "image_prompt": ""}
+        ],
         "cta": "Subscribe for softer resets.",
         "argument_review": {"passes": True, "status": "mock"},
         "argument_quality": "strong",

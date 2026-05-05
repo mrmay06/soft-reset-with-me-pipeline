@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import glob
+import hashlib
 import json
 import os
 import random
+import re
 import subprocess
 
+import requests
 from PIL import Image, ImageDraw, ImageFont
 
 from utils.helpers import load_json, save_json, now_iso
@@ -116,6 +119,117 @@ def _image_segment(image_path: str, duration: float, output_path: str, config: d
     ], f"image_segment:{output_path}")
 
 
+def _clip_segment(clip_path: str, duration: float, output_path: str, config: dict):
+    fps = int(config.get("longform_fps", 30))
+    width = int(config.get("longform_width", 1920))
+    height = int(config.get("longform_height", 1080))
+    _run_ffmpeg([
+        "ffmpeg", "-stream_loop", "-1", "-i", clip_path,
+        "-t", str(duration),
+        "-vf", f"scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},eq=saturation=0.86:contrast=1.04:brightness=-0.025",
+        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
+        "-r", str(fps), "-an", output_path, "-y"
+    ], f"clip_segment:{output_path}")
+
+
+def _sanitize_query(query: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9 ]+", " ", str(query or ""))
+    cleaned = re.sub(r"\s+", " ", cleaned).strip().lower()
+    symbolic_replacements = {
+        "tree": "person alone window",
+        "trees": "person alone window",
+        "forest": "quiet apartment",
+        "storm": "rainy window",
+        "stormy sky": "rainy window night",
+        "ocean": "city night walking",
+        "mountain": "quiet bedroom",
+        "roots": "hands journal",
+        "flower": "candlelit room",
+        "animal": "person alone",
+    }
+    for old, new in symbolic_replacements.items():
+        if old in cleaned:
+            cleaned = new
+            break
+    return cleaned or "rainy window"
+
+
+def _fallback_queries(chapter: dict, research: dict, idx: int) -> list[str]:
+    label = str(chapter.get("label", "")).lower()
+    mood = str(research.get("visual_mood", "")).lower()
+    base = []
+    if "hook" in label:
+        base = ["rainy window night", "person alone window", "city night apartment"]
+    elif "pain" in label:
+        base = ["empty chair room", "person sitting alone", "quiet bedroom"]
+    elif "pattern" in label:
+        base = ["hands journal", "walking city night", "train window night"]
+    elif "reframe" in label:
+        base = ["candlelit room", "closing journal", "morning window"]
+    elif "reset" in label or "closing" in label:
+        base = ["city walk evening", "open window curtains", "quiet sunrise room"]
+    else:
+        base = ["rainy apartment window", "city night walking", "candlelit room"]
+    if "journal" in mood:
+        base.append("hands writing journal")
+    if "city" in mood:
+        base.append("city night walking")
+    return [_sanitize_query(q) for q in base]
+
+
+def _queries_for_chapter(script: dict, chapter: dict, research: dict, idx: int) -> list[str]:
+    visual_brief = script.get("visual_brief", [])
+    for item in visual_brief:
+        if int(item.get("chapter_id", -1)) == int(chapter.get("id", idx + 1)):
+            queries = item.get("stock_queries") or []
+            if queries:
+                return [_sanitize_query(q) for q in queries[:4]]
+    return _fallback_queries(chapter, research, idx)
+
+
+def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: dict, used_hashes: set[str]) -> dict | None:
+    api_key = os.environ.get("PEXELS_API_KEY")
+    if not api_key:
+        print("[longform_video] PEXELS_API_KEY missing; using fallback card")
+        return None
+    headers = {"Authorization": api_key}
+    per_page = int(config.get("longform_stock_video_per_page", 10))
+    for query in queries:
+        try:
+            resp = requests.get(
+                "https://api.pexels.com/videos/search",
+                headers=headers,
+                params={"query": query, "orientation": "landscape", "size": "medium", "per_page": per_page},
+                timeout=20,
+            )
+            videos = resp.json().get("videos", [])
+            if not videos:
+                continue
+            ordered = videos[idx % len(videos):] + videos[:idx % len(videos)]
+            for video in ordered:
+                files = sorted(
+                    [f for f in video.get("video_files", []) if f.get("width") and f.get("link")],
+                    key=lambda f: abs(int(f.get("width", 0)) - 1920),
+                )
+                for file_info in files:
+                    clip = requests.get(file_info["link"], timeout=90).content
+                    clip_hash = hashlib.sha256(clip).hexdigest()
+                    if clip_hash in used_hashes:
+                        continue
+                    with open(output_path, "wb") as f:
+                        f.write(clip)
+                    used_hashes.add(clip_hash)
+                    return {
+                        "provider": "pexels",
+                        "query": query,
+                        "pexels_id": str(video.get("id", "")),
+                        "hash": clip_hash,
+                    }
+        except Exception as exc:
+            print(f"[longform_video] Pexels query failed '{query}': {exc}")
+    return None
+
+
 def _concat(segments: list[str], output_path: str):
     list_path = output_path.replace(".mp4", "_list.txt")
     with open(list_path, "w") as f:
@@ -169,15 +283,33 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     os.makedirs(render_dir, exist_ok=True)
 
     segments = []
+    visual_assets = []
+    used_stock_hashes: set[str] = set()
+    stock_enabled = bool(config.get("longform_stock_video_enabled", True))
     for idx, chapter in enumerate(chapters):
         chapter_words = max(1, word_count(chapter.get("voiceover", "")))
         duration = max(12.0, total_duration * chapter_words / total_words)
         card = os.path.join(render_dir, f"chapter_{idx + 1:02d}.png")
         seg = os.path.join(render_dir, f"chapter_{idx + 1:02d}.mp4")
-        _chapter_card(chapter, idx, len(chapters), metadata, research, card, config)
-        _image_segment(card, duration, seg, config)
+        asset_info = None
+        if stock_enabled:
+            clip_path = os.path.join(render_dir, f"chapter_{idx + 1:02d}_stock.mp4")
+            queries = _queries_for_chapter(script, chapter, research, idx)
+            asset_info = _fetch_pexels_clip(queries, idx, clip_path, config, used_stock_hashes)
+            if asset_info:
+                _clip_segment(clip_path, duration, seg, config)
+                asset_info["path"] = os.path.relpath(clip_path, run_dir)
+        if not asset_info:
+            _chapter_card(chapter, idx, len(chapters), metadata, research, card, config)
+            _image_segment(card, duration, seg, config)
+            asset_info = {
+                "provider": "fallback_card",
+                "query": "",
+                "path": os.path.relpath(card, run_dir),
+            }
+        visual_assets.append({"chapter_id": chapter.get("id", idx + 1), **asset_info})
         segments.append(seg)
-        print(f"[longform_video] chapter_{idx + 1:02d} segment {duration:.1f}s")
+        print(f"[longform_video] chapter_{idx + 1:02d} segment {duration:.1f}s ({asset_info['provider']})")
 
     concat_path = os.path.join(run_dir, "05_longform_concat.mp4")
     _concat(segments, concat_path)
@@ -221,6 +353,9 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         "output": "06_longform_video.mp4",
         "chapters": len(chapters),
         "music_track": os.path.basename(music) if music else "none",
+        "visual_assets": visual_assets,
+        "stock_video_count": sum(1 for item in visual_assets if item.get("provider") == "pexels"),
+        "fallback_card_count": sum(1 for item in visual_assets if item.get("provider") == "fallback_card"),
         "validation": "passed",
         "generated_at": now_iso(),
         **validation,
