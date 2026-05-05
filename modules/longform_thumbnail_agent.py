@@ -6,7 +6,7 @@ import subprocess
 import urllib.parse
 
 import requests
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont  # noqa: F401 — ImageDraw/ImageFont used in _draw_text_overlay
 
 from utils.helpers import load_json, save_json, now_iso
 
@@ -27,7 +27,7 @@ def _resize_to_target(path_in: str, path_out: str, width: int, height: int):
 
 def _sanitize_thumb_text(text: str) -> str:
     """Normalize to ASCII-safe uppercase, max 5 words."""
-    replacements = {"≠": "!=", "→": ">", "—": "-", "–": "-", "‘": "'", "’": "'",
+    replacements = {"≠": "!=", "→": ">", "—": "-", "–": "-", "'": "'", "'": "'",
                     "“": '"', "”": '"', "…": "...", "é": "e", "è": "e"}
     for src, dst in replacements.items():
         text = text.replace(src, dst)
@@ -41,22 +41,21 @@ def _draw_text_overlay(image_path: str, thumb_text: str, variant_id: str, width:
     if not thumb_text:
         return
     img = Image.open(image_path).convert("RGB")
-    draw = ImageDraw.Draw(img)
+    draw = ImageDraw.Draw(img)  # noqa: F821
 
     font_size = max(72, height // 8)
     try:
-        font = ImageFont.truetype("assets/fonts/DMSerifDisplay-Regular.ttf", size=font_size)
+        font = ImageFont.truetype("assets/fonts/DMSerifDisplay-Regular.ttf", size=font_size)  # noqa: F821
     except Exception:
         try:
-            font = ImageFont.truetype("assets/fonts/Inter-Bold.ttf", size=font_size)
+            font = ImageFont.truetype("assets/fonts/Inter-Bold.ttf", size=font_size)  # noqa: F821
         except Exception:
-            font = ImageFont.load_default()
+            font = ImageFont.load_default()  # noqa: F821
 
     TERRACOTTA = (196, 120, 90)
     CREAM = (245, 240, 232)
     BLACK = (0, 0, 0)
 
-    # A & C text on left zone; B on right (matches prompt side logic)
     text_on_left = variant_id in {"A", "C"}
     zone_cx = int(width * 0.25) if text_on_left else int(width * 0.75)
     max_line_w = int(width * 0.42)
@@ -86,7 +85,6 @@ def _draw_text_overlay(image_path: str, thumb_text: str, variant_id: str, width:
         tw = bbox[2] - bbox[0]
         x = int(zone_cx - tw / 2)
         color = TERRACOTTA if i == len(lines) - 1 else CREAM
-        # Heavy black stroke for legibility on any background
         for dx in range(-stroke, stroke + 1, stroke):
             for dy in range(-stroke, stroke + 1, stroke):
                 if dx == 0 and dy == 0:
@@ -211,7 +209,6 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
         if variant_id not in {"A", "B", "C"}:
             continue
         thumb_text = _sanitize_thumb_text(variant.get("thumbnail_text", ""))
-        # Use AI-authored visual prompt if present; otherwise build from pattern library
         prompt = str(variant.get("visual_prompt", "")).strip() or _build_generation_prompt(research, variant)
         prompt_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_prompt.txt")
         generated_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_generated.png")
