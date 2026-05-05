@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import difflib
 import os
 import random
 
@@ -7,6 +8,15 @@ from utils.gemini_client import generate_json
 from utils.helpers import load_json, save_json, now_iso
 from utils.performance_insights import summarize_performance_for_prompt
 from utils.retry import retry
+
+
+def _is_too_similar(topic: str, recent_topics: list[str], threshold: float) -> tuple[bool, str]:
+    topic_lower = topic.lower()
+    for recent in recent_topics:
+        ratio = difflib.SequenceMatcher(None, topic_lower, recent.lower()).ratio()
+        if ratio >= threshold:
+            return True, recent
+    return False, ""
 
 
 def _recent_topics(memory_file: str) -> str:
@@ -124,6 +134,19 @@ def run_longform_research(video_id: str, run_dir: str, config: dict) -> dict:
     except Exception as exc:
         print(f"[longform_research] Primary research failed ({exc}) — using deterministic fallback")
         result = _fallback_longform_topic(config.get("topic_memory_file", "topic_memory_soft_reset_long.json"))
+
+    # Reject topic if too similar to a recently used one
+    threshold = float(config.get("duplicate_similarity_threshold", 0.78))
+    memory_file = config.get("topic_memory_file", "topic_memory_soft_reset_long.json")
+    if os.path.exists(memory_file):
+        memory = load_json(memory_file)
+        if isinstance(memory, list):
+            recent_list = [item.get("topic", "") for item in memory[-24:] if item.get("topic")]
+            too_similar, matched = _is_too_similar(result.get("topic", ""), recent_list, threshold)
+            if too_similar:
+                print(f"[longform_research] Topic too similar to recent ('{matched}') — regenerating with fallback")
+                result = _fallback_longform_topic(memory_file)
+
     result["video_id"] = video_id
     result["generated_at"] = now_iso()
     save_json(result, os.path.join(run_dir, "01_longform_research.json"))
