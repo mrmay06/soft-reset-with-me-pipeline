@@ -22,6 +22,15 @@ def _run_ffmpeg(cmd: list[str], label: str):
         raise RuntimeError(f"[longform_video] FFmpeg failed ({label}):\n{result.stderr[-1200:]}")
 
 
+def _has_libass() -> bool:
+    result = subprocess.run(["ffmpeg", "-hide_banner", "-filters"], capture_output=True, text=True)
+    return result.returncode == 0 and (" ass " in result.stdout or "subtitles" in result.stdout)
+
+
+def _filter_path(path: str) -> str:
+    return os.path.abspath(path).replace("'", "\\'").replace("\\", "/")
+
+
 def _font(path: str, size: int):
     try:
         return ImageFont.truetype(path, size)
@@ -146,6 +155,9 @@ def _sanitize_query(query: str) -> str:
         "roots": "hands journal",
         "flower": "candlelit room",
         "animal": "person alone",
+        "journal open pen": "hands writing journal close up",
+        "open pen": "hands writing journal close up",
+        "notebook pen": "hands writing journal close up",
     }
     for old, new in symbolic_replacements.items():
         if old in cleaned:
@@ -177,6 +189,60 @@ def _fallback_queries(chapter: dict, research: dict, idx: int) -> list[str]:
     return [_sanitize_query(q) for q in base]
 
 
+def _split_sentences(text: str) -> list[str]:
+    parts = re.split(r"(?<=[.!?])\s+", str(text or "").strip())
+    return [part.strip() for part in parts if part.strip()]
+
+
+def _build_visual_beats(script: dict, config: dict) -> list[dict]:
+    target_words = max(12, int(config.get("longform_visual_target_words", 45)))
+    max_sentences = max(1, int(config.get("longform_visual_max_sentences", 3)))
+    beats = []
+    beat_id = 1
+    for chapter_idx, chapter in enumerate(script.get("chapters", [])):
+        sentences = _split_sentences(chapter.get("voiceover", ""))
+        current = []
+        for sentence in sentences:
+            current.append(sentence)
+            current_text = " ".join(current)
+            if len(current) >= max_sentences or word_count(current_text) >= target_words:
+                beats.append({
+                    "id": beat_id,
+                    "chapter_id": chapter.get("id", chapter_idx + 1),
+                    "label": chapter.get("label", "chapter"),
+                    "voiceover": current_text,
+                })
+                beat_id += 1
+                current = []
+        if current:
+            beats.append({
+                "id": beat_id,
+                "chapter_id": chapter.get("id", chapter_idx + 1),
+                "label": chapter.get("label", "chapter"),
+                "voiceover": " ".join(current),
+            })
+            beat_id += 1
+
+    max_beats = int(config.get("longform_visual_max_beats", 30))
+    while max_beats > 0 and len(beats) > max_beats:
+        merged = []
+        i = 0
+        while i < len(beats):
+            if i + 1 < len(beats):
+                first, second = beats[i], beats[i + 1]
+                first = {
+                    **first,
+                    "voiceover": f"{first.get('voiceover', '')} {second.get('voiceover', '')}".strip(),
+                }
+                merged.append(first)
+                i += 2
+            else:
+                merged.append(beats[i])
+                i += 1
+        beats = [{**beat, "id": idx + 1} for idx, beat in enumerate(merged)]
+    return beats
+
+
 def _queries_for_chapter(script: dict, chapter: dict, research: dict, idx: int) -> list[str]:
     visual_brief = script.get("visual_brief", [])
     for item in visual_brief:
@@ -185,6 +251,28 @@ def _queries_for_chapter(script: dict, chapter: dict, research: dict, idx: int) 
             if queries:
                 return [_sanitize_query(q) for q in queries[:4]]
     return _fallback_queries(chapter, research, idx)
+
+
+def _queries_for_beat(script: dict, beat: dict, research: dict, idx: int) -> list[str]:
+    text = str(beat.get("voiceover", "")).lower()
+    queries = []
+    if any(term in text for term in ["phone", "text", "screen", "dm", "message", "scroll"]):
+        queries.extend(["phone screen bed", "person looking at phone", "phone screen night"])
+    if any(term in text for term in ["chaos", "anxiety", "inconsistent", "withdrawal", "rush"]):
+        queries.extend(["person alone window night", "rainy window night", "city night alone"])
+    if any(term in text for term in ["peace", "calm", "steady", "safe", "quiet"]):
+        queries.extend(["quiet morning room", "person calm window", "slow city walk"])
+    if any(term in text for term in ["journal", "write", "question", "truth"]):
+        queries.extend(["hands journaling close up", "hands writing journal", "journal open pen"])
+    if any(term in text for term in ["relationship", "love", "person", "people"]):
+        queries.extend(["two people sitting couch calm", "person sitting alone room"])
+    queries.extend(_queries_for_chapter(script, beat, research, idx))
+    deduped = []
+    for query in queries:
+        sanitized = _sanitize_query(query)
+        if sanitized not in deduped:
+            deduped.append(sanitized)
+    return deduped[:5]
 
 
 def _top_result_order(items: list[dict], config: dict) -> list[dict]:
@@ -368,6 +456,142 @@ def _validate_video(path: str, config: dict) -> dict:
     }
 
 
+def _format_ass_time(seconds: float) -> str:
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    s = int(seconds % 60)
+    cs = int((seconds % 1) * 100)
+    return f"{h}:{m:02d}:{s:02d}.{cs:02d}"
+
+
+def _write_longform_captions(script: dict, total_duration: float, output_path: str):
+    chapters = script.get("chapters", [])
+    total_words = max(1, sum(word_count(ch.get("voiceover", "")) for ch in chapters))
+    cursor = 0.0
+    events = []
+    for chapter in chapters:
+        text = str(chapter.get("voiceover", "")).strip()
+        chapter_words = max(1, word_count(text))
+        chapter_duration = total_duration * chapter_words / total_words
+        sentences = _split_sentences(text)
+        sentence_words_total = max(1, sum(word_count(sentence) for sentence in sentences))
+        for sentence in sentences:
+            sentence_duration = chapter_duration * max(1, word_count(sentence)) / sentence_words_total
+            phrase_words = sentence.split()
+            phrase = []
+            phrase_start = cursor
+            per_word = sentence_duration / max(1, len(phrase_words))
+            for idx, word in enumerate(phrase_words):
+                phrase.append(word)
+                is_break = len(phrase) >= 5 or idx == len(phrase_words) - 1
+                if is_break:
+                    start = phrase_start
+                    end = cursor + per_word * (idx + 1)
+                    display = " ".join(phrase).replace("{", "").replace("}", "")
+                    events.append((start, min(end, total_duration), display))
+                    phrase = []
+                    phrase_start = end
+            cursor += sentence_duration
+
+    header = """[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Inter Bold,54,&H00E8F0F5,&H00E8F0F5,&H002B1C1C,&H96000000,0,0,0,0,100,100,0,0,1,3,1,2,250,250,92,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+    lines = [
+        f"Dialogue: 0,{_format_ass_time(start)},{_format_ass_time(max(start + 0.25, end))},Default,,0,0,0,,{text}"
+        for start, end, text in events
+        if text.strip()
+    ]
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(header + "\n".join(lines))
+
+
+def _caption_filter(captions_path: str) -> tuple[str, str]:
+    if _has_libass():
+        return f"ass='{_filter_path(captions_path)}':fontsdir='{_filter_path('assets/fonts')}'", "ass"
+    return "null", "disabled_no_libass"
+
+
+def _film_overlay_settings(config: dict) -> tuple[str, bool, str, float]:
+    overlay_path = config.get("film_overlay_path", "assets/Old Film Overlay.mp4")
+    enabled = bool(config.get("film_overlay_enabled", False)) and os.path.exists(overlay_path)
+    blend_mode = config.get("film_overlay_blend_mode", "screen")
+    opacity = float(config.get("film_overlay_opacity", 0.14))
+    return overlay_path, enabled, blend_mode, opacity
+
+
+def _finalize_longform(
+    concat_path: str,
+    audio_source: str,
+    captions_path: str | None,
+    output_path: str,
+    config: dict,
+    total_duration: float,
+) -> dict:
+    crf = int(config.get("longform_crf", 23))
+    fps = int(config.get("longform_fps", 30))
+    width = int(config.get("longform_width", 1920))
+    height = int(config.get("longform_height", 1080))
+    overlay_path, overlay_enabled, blend_mode, opacity = _film_overlay_settings(config)
+    captions_enabled = bool(captions_path and os.path.exists(captions_path))
+    caption_method = "none"
+
+    cmd = ["ffmpeg", "-i", concat_path, "-i", audio_source]
+    if overlay_enabled:
+        cmd += ["-stream_loop", "-1", "-i", overlay_path]
+        filter_complex = (
+            "[0:v]format=gbrp[base];"
+            f"[2:v]scale={width}:{height},format=gbrp[film];"
+            f"[base][film]blend=all_mode='{blend_mode}':all_opacity={opacity}[vfilm]"
+        )
+        video_label = "vfilm"
+        print(f"[longform_video] Film overlay: {overlay_path} ({blend_mode}, opacity={opacity})")
+    else:
+        filter_complex = "[0:v]null[vfilm]"
+        video_label = "vfilm"
+
+    if captions_enabled:
+        caption, caption_method = _caption_filter(captions_path)
+        if caption_method == "ass":
+            filter_complex += f";[{video_label}]{caption}[vout]"
+        else:
+            filter_complex += f";[{video_label}]null[vout]"
+    else:
+        filter_complex += f";[{video_label}]null[vout]"
+
+    print(f"[longform_video] Captions: {caption_method}")
+    _run_ffmpeg([
+        *cmd,
+        "-filter_complex", filter_complex,
+        "-map", "[vout]", "-map", "1:a",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
+        "-c:a", "aac", "-ar", "44100",
+        "-pix_fmt", "yuv420p", "-r", str(fps),
+        "-movflags", "+faststart",
+        "-t", str(total_duration),
+        output_path, "-y",
+    ], "finalize_longform")
+    return {
+        "captions": captions_enabled,
+        "caption_method": caption_method,
+        "film_overlay": {
+            "requested": bool(config.get("film_overlay_enabled", False)),
+            "applied": overlay_enabled,
+            "path": overlay_path,
+            "blend_mode": blend_mode,
+            "opacity": opacity,
+        },
+    }
+
+
 def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_video] Rendering long-form video for {video_id}")
     research = load_json(os.path.join(run_dir, "01_longform_research.json"))
@@ -377,7 +601,8 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     voice_path = os.path.join(run_dir, "04_longform_voice.mp3")
 
     chapters = script.get("chapters", [])
-    total_words = max(1, sum(word_count(ch.get("voiceover", "")) for ch in chapters))
+    beats = _build_visual_beats(script, config)
+    total_words = max(1, sum(word_count(beat.get("voiceover", "")) for beat in beats))
     total_duration = float(voice_meta["duration_sec"])
 
     render_dir = os.path.join(run_dir, "longform_render")
@@ -387,30 +612,34 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     visual_assets = []
     used_stock_hashes: set[str] = set()
     stock_enabled = bool(config.get("longform_stock_video_enabled", True))
-    for idx, chapter in enumerate(chapters):
-        chapter_words = max(1, word_count(chapter.get("voiceover", "")))
-        duration = max(12.0, total_duration * chapter_words / total_words)
-        card = os.path.join(render_dir, f"chapter_{idx + 1:02d}.png")
-        seg = os.path.join(render_dir, f"chapter_{idx + 1:02d}.mp4")
+    for idx, beat in enumerate(beats):
+        beat_words = max(1, word_count(beat.get("voiceover", "")))
+        duration = max(4.0, total_duration * beat_words / total_words)
+        card = os.path.join(render_dir, f"beat_{idx + 1:02d}.png")
+        seg = os.path.join(render_dir, f"beat_{idx + 1:02d}.mp4")
         asset_info = None
         if stock_enabled:
-            clip_path = os.path.join(render_dir, f"chapter_{idx + 1:02d}_stock.mp4")
-            queries = _queries_for_chapter(script, chapter, research, idx)
+            clip_path = os.path.join(render_dir, f"beat_{idx + 1:02d}_stock.mp4")
+            queries = _queries_for_beat(script, beat, research, idx)
             asset_info = _fetch_stock_clip(queries, idx, clip_path, config, used_stock_hashes)
             if asset_info:
                 _clip_segment(clip_path, duration, seg, config)
                 asset_info["path"] = os.path.relpath(clip_path, run_dir)
         if not asset_info:
-            _chapter_card(chapter, idx, len(chapters), metadata, research, card, config)
+            _chapter_card(beat, idx, len(beats), metadata, research, card, config)
             _image_segment(card, duration, seg, config)
             asset_info = {
                 "provider": "fallback_card",
                 "query": "",
                 "path": os.path.relpath(card, run_dir),
             }
-        visual_assets.append({"chapter_id": chapter.get("id", idx + 1), **asset_info})
+        visual_assets.append({
+            "beat_id": beat.get("id", idx + 1),
+            "chapter_id": beat.get("chapter_id"),
+            **asset_info,
+        })
         segments.append(seg)
-        print(f"[longform_video] chapter_{idx + 1:02d} segment {duration:.1f}s ({asset_info['provider']})")
+        print(f"[longform_video] beat_{idx + 1:02d} segment {duration:.1f}s ({asset_info['provider']})")
 
     concat_path = os.path.join(run_dir, "05_longform_concat.mp4")
     _concat(segments, concat_path)
@@ -435,30 +664,26 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         audio_source = mixed_audio
 
     output_path = os.path.join(run_dir, "06_longform_video.mp4")
-    crf = int(config.get("longform_crf", 23))
-    fps = int(config.get("longform_fps", 30))
-    _run_ffmpeg([
-        "ffmpeg", "-i", concat_path, "-i", audio_source,
-        "-map", "0:v", "-map", "1:a",
-        "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
-        "-c:a", "aac", "-ar", "44100",
-        "-pix_fmt", "yuv420p", "-r", str(fps),
-        "-movflags", "+faststart",
-        "-t", str(total_duration),
-        output_path, "-y"
-    ], "final_mux")
+    captions_path = None
+    final_features = {"captions": False, "caption_method": "none", "film_overlay": {"applied": False}}
+    if config.get("longform_captions_enabled", True):
+        captions_path = os.path.join(run_dir, "04_longform_captions.ass")
+        _write_longform_captions(script, total_duration, captions_path)
+    final_features = _finalize_longform(concat_path, audio_source, captions_path, output_path, config, total_duration)
 
     validation = _validate_video(output_path, config)
     meta = {
         "video_id": video_id,
         "output": "06_longform_video.mp4",
         "chapters": len(chapters),
+        "visual_beats": len(beats),
         "music_track": os.path.basename(music) if music else "none",
         "visual_assets": visual_assets,
         "stock_video_count": sum(1 for item in visual_assets if item.get("provider") in {"pexels", "coverr"}),
         "pexels_video_count": sum(1 for item in visual_assets if item.get("provider") == "pexels"),
         "coverr_video_count": sum(1 for item in visual_assets if item.get("provider") == "coverr"),
         "fallback_card_count": sum(1 for item in visual_assets if item.get("provider") == "fallback_card"),
+        **final_features,
         "validation": "passed",
         "generated_at": now_iso(),
         **validation,
