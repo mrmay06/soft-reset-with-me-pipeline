@@ -30,6 +30,20 @@ To run the full upload flow:
 python main.py --fresh
 ```
 
+To generate a separate long-form brief/script/metadata package without rendering or uploading:
+
+```bash
+python main_long.py --mock
+python main_long.py
+```
+
+Long-form uses separate memory and analytics files:
+
+- `topic_memory_soft_reset_long.json`
+- `performance_memory_soft_reset_long.json`
+
+This first long-form track intentionally stops at brief, script, visual brief, and metadata. Rendering/upload should be added only after the essay structure is approved, because long-form needs a different visual pacing system from Shorts.
+
 ## Required Secrets
 
 Copy `.env.example` to `.env` for local runs, or add these as GitHub Actions secrets:
@@ -73,6 +87,8 @@ The OAuth token must include YouTube upload and YouTube Analytics scopes. If Ana
 ## Performance Feedback
 
 The pipeline syncs YouTube Analytics before research. It stores recent video metrics in `performance_memory_soft_reset.json`, including views, engaged views, average view duration, average view percentage, likes, comments, shares, and subscribers gained when available.
+
+Shorts and long-form analytics are intentionally separate. Long-form uses higher minimum view thresholds, a longer lookback window, and different sample-size gates because 5-7 minute videos should be judged by watch time, retention curve behavior, and chapter coherence rather than Shorts completion dynamics.
 
 Research and script prompts use staged learning so the channel does not overfit the first few Shorts:
 
