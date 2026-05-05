@@ -456,64 +456,6 @@ def _validate_video(path: str, config: dict) -> dict:
     }
 
 
-def _format_ass_time(seconds: float) -> str:
-    h = int(seconds // 3600)
-    m = int((seconds % 3600) // 60)
-    s = int(seconds % 60)
-    cs = int((seconds % 1) * 100)
-    return f"{h}:{m:02d}:{s:02d}.{cs:02d}"
-
-
-def _write_longform_captions(script: dict, total_duration: float, output_path: str):
-    chapters = script.get("chapters", [])
-    total_words = max(1, sum(word_count(ch.get("voiceover", "")) for ch in chapters))
-    cursor = 0.0
-    events = []
-    for chapter in chapters:
-        text = str(chapter.get("voiceover", "")).strip()
-        chapter_words = max(1, word_count(text))
-        chapter_duration = total_duration * chapter_words / total_words
-        sentences = _split_sentences(text)
-        sentence_words_total = max(1, sum(word_count(sentence) for sentence in sentences))
-        for sentence in sentences:
-            sentence_duration = chapter_duration * max(1, word_count(sentence)) / sentence_words_total
-            phrase_words = sentence.split()
-            phrase = []
-            phrase_start = cursor
-            per_word = sentence_duration / max(1, len(phrase_words))
-            for idx, word in enumerate(phrase_words):
-                phrase.append(word)
-                is_break = len(phrase) >= 5 or idx == len(phrase_words) - 1
-                if is_break:
-                    start = phrase_start
-                    end = cursor + per_word * (idx + 1)
-                    display = " ".join(phrase).replace("{", "").replace("}", "")
-                    events.append((start, min(end, total_duration), display))
-                    phrase = []
-                    phrase_start = end
-            cursor += sentence_duration
-
-    header = """[Script Info]
-ScriptType: v4.00+
-PlayResX: 1920
-PlayResY: 1080
-
-[V4+ Styles]
-Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Inter Bold,54,&H00E8F0F5,&H00E8F0F5,&H002B1C1C,&H96000000,0,0,0,0,100,100,0,0,1,3,1,2,250,250,92,1
-
-[Events]
-Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-"""
-    lines = [
-        f"Dialogue: 0,{_format_ass_time(start)},{_format_ass_time(max(start + 0.25, end))},Default,,0,0,0,,{text}"
-        for start, end, text in events
-        if text.strip()
-    ]
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(header + "\n".join(lines))
-
-
 def _caption_filter(captions_path: str) -> tuple[str, str]:
     if _has_libass():
         return f"ass='{_filter_path(captions_path)}':fontsdir='{_filter_path('assets/fonts')}'", "ass"
@@ -664,11 +606,10 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         audio_source = mixed_audio
 
     output_path = os.path.join(run_dir, "06_longform_video.mp4")
-    captions_path = None
+    captions_path = os.path.join(run_dir, "04_longform_captions.ass")
     final_features = {"captions": False, "caption_method": "none", "film_overlay": {"applied": False}}
-    if config.get("longform_captions_enabled", True):
-        captions_path = os.path.join(run_dir, "04_longform_captions.ass")
-        _write_longform_captions(script, total_duration, captions_path)
+    if not config.get("longform_captions_enabled", True) or not os.path.exists(captions_path):
+        captions_path = None
     final_features = _finalize_longform(concat_path, audio_source, captions_path, output_path, config, total_duration)
 
     validation = _validate_video(output_path, config)

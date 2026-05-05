@@ -42,7 +42,7 @@ Long-form uses separate memory and analytics files:
 - `topic_memory_soft_reset_long.json`
 - `performance_memory_soft_reset_long.json`
 
-The long-form track renders a separate horizontal `06_longform_video.mp4` using chapter-based editorial visuals, long-form audio, and a music bed. It does not upload yet.
+The long-form track follows the same module shape as Shorts: research -> script -> metadata -> voiceover -> captions -> video assembly -> logger. It renders a separate horizontal `06_longform_video.mp4` using short visual beats, Pexels/Coverr footage, phrase captions, film overlay, long-form audio, and a music bed. It does not upload yet.
 
 ## Required Secrets
 
