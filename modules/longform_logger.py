@@ -39,6 +39,7 @@ def run_longform_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "final_duration_sec": render_meta.get("duration_sec", 0),
         "render_validation": render_meta.get("validation", ""),
         "title": metadata.get("title", ""),
+        "thumbnail": "07_longform_thumbnail.png" if os.path.exists(os.path.join(run_dir, "07_longform_thumbnail.png")) else "",
         "youtube_video_id": "",
         "youtube_url": "",
     }

@@ -194,18 +194,53 @@ def _split_sentences(text: str) -> list[str]:
     return [part.strip() for part in parts if part.strip()]
 
 
+def _split_dialogue_units(text: str) -> list[str]:
+    units = []
+    for sentence in _split_sentences(text):
+        if word_count(sentence) <= 18:
+            units.append(sentence)
+            continue
+        clauses = [part.strip() for part in re.split(r"(?<=[,;:])\s+", sentence) if part.strip()]
+        current = ""
+        for clause in clauses:
+            candidate = f"{current} {clause}".strip()
+            if current and word_count(candidate) > 18:
+                units.append(current)
+                current = clause
+            else:
+                current = candidate
+        if current:
+            if word_count(current) > 24:
+                words = current.split()
+                for i in range(0, len(words), 14):
+                    units.append(" ".join(words[i:i + 14]))
+            else:
+                units.append(current)
+    return units
+
+
 def _build_visual_beats(script: dict, config: dict) -> list[dict]:
     target_words = max(12, int(config.get("longform_visual_target_words", 45)))
-    max_sentences = max(1, int(config.get("longform_visual_max_sentences", 3)))
+    max_units = max(1, int(config.get("longform_visual_max_dialogue_units", config.get("longform_visual_max_sentences", 2))))
     beats = []
     beat_id = 1
     for chapter_idx, chapter in enumerate(script.get("chapters", [])):
-        sentences = _split_sentences(chapter.get("voiceover", ""))
+        dialogue_units = _split_dialogue_units(chapter.get("voiceover", ""))
         current = []
-        for sentence in sentences:
-            current.append(sentence)
+        for unit in dialogue_units:
+            candidate_text = " ".join([*current, unit])
+            if current and word_count(candidate_text) > target_words:
+                beats.append({
+                    "id": beat_id,
+                    "chapter_id": chapter.get("id", chapter_idx + 1),
+                    "label": chapter.get("label", "chapter"),
+                    "voiceover": " ".join(current),
+                })
+                beat_id += 1
+                current = []
+            current.append(unit)
             current_text = " ".join(current)
-            if len(current) >= max_sentences or word_count(current_text) >= target_words:
+            if len(current) >= max_units or word_count(current_text) >= target_words:
                 beats.append({
                     "id": beat_id,
                     "chapter_id": chapter.get("id", chapter_idx + 1),
@@ -301,7 +336,14 @@ def _is_brand_fit_candidate(video: dict, config: dict) -> bool:
     return not any(str(term).lower() in text for term in block_terms)
 
 
-def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: dict, used_hashes: set[str]) -> dict | None:
+def _fetch_pexels_clip(
+    queries: list[str],
+    idx: int,
+    output_path: str,
+    config: dict,
+    used_hashes: set[str],
+    used_source_ids: set[str],
+) -> dict | None:
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
         print("[longform_video] PEXELS_API_KEY missing; using fallback card")
@@ -320,6 +362,9 @@ def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: d
             if not videos:
                 continue
             for video in _top_result_order(videos, config):
+                source_id = f"pexels:{video.get('id', '')}"
+                if source_id in used_source_ids:
+                    continue
                 if not _is_brand_fit_candidate(video, config):
                     continue
                 files = sorted(
@@ -334,6 +379,7 @@ def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: d
                     with open(output_path, "wb") as f:
                         f.write(clip)
                     used_hashes.add(clip_hash)
+                    used_source_ids.add(source_id)
                     return {
                         "provider": "pexels",
                         "query": query,
@@ -345,7 +391,14 @@ def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: d
     return None
 
 
-def _fetch_coverr_clip(queries: list[str], idx: int, output_path: str, config: dict, used_hashes: set[str]) -> dict | None:
+def _fetch_coverr_clip(
+    queries: list[str],
+    idx: int,
+    output_path: str,
+    config: dict,
+    used_hashes: set[str],
+    used_source_ids: set[str],
+) -> dict | None:
     if not config.get("coverr_enabled", True):
         return None
     api_key = os.environ.get("COVERR_API_KEY")
@@ -369,6 +422,9 @@ def _fetch_coverr_clip(queries: list[str], idx: int, output_path: str, config: d
             if not videos:
                 continue
             for video in _top_result_order(videos, config):
+                source_id = f"coverr:{video.get('id', '')}"
+                if source_id in used_source_ids:
+                    continue
                 if not _is_brand_fit_candidate(video, config):
                     continue
                 urls = video.get("urls") or {}
@@ -382,6 +438,7 @@ def _fetch_coverr_clip(queries: list[str], idx: int, output_path: str, config: d
                 with open(output_path, "wb") as f:
                     f.write(clip)
                 used_hashes.add(clip_hash)
+                used_source_ids.add(source_id)
                 return {
                     "provider": "coverr",
                     "query": query,
@@ -406,13 +463,20 @@ def _provider_order(config: dict) -> list[str]:
     return [first] + [provider for provider in providers if provider != first]
 
 
-def _fetch_stock_clip(queries: list[str], idx: int, output_path: str, config: dict, used_hashes: set[str]) -> dict | None:
+def _fetch_stock_clip(
+    queries: list[str],
+    idx: int,
+    output_path: str,
+    config: dict,
+    used_hashes: set[str],
+    used_source_ids: set[str],
+) -> dict | None:
     for provider in _provider_order(config):
         provider_path = output_path.replace(".mp4", f"_{provider}.mp4")
         if provider == "pexels":
-            meta = _fetch_pexels_clip(queries, idx, provider_path, config, used_hashes)
+            meta = _fetch_pexels_clip(queries, idx, provider_path, config, used_hashes, used_source_ids)
         else:
-            meta = _fetch_coverr_clip(queries, idx, provider_path, config, used_hashes)
+            meta = _fetch_coverr_clip(queries, idx, provider_path, config, used_hashes, used_source_ids)
         if meta:
             os.replace(provider_path, output_path)
             return meta
@@ -548,22 +612,27 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     total_duration = float(voice_meta["duration_sec"])
 
     render_dir = os.path.join(run_dir, "longform_render")
-    os.makedirs(render_dir, exist_ok=True)
+    source_dir = os.path.join(render_dir, "source_clips")
+    segment_dir = os.path.join(render_dir, "segments")
+    card_dir = os.path.join(render_dir, "cards")
+    for path in (render_dir, source_dir, segment_dir, card_dir):
+        os.makedirs(path, exist_ok=True)
 
     segments = []
     visual_assets = []
     used_stock_hashes: set[str] = set()
+    used_source_ids: set[str] = set()
     stock_enabled = bool(config.get("longform_stock_video_enabled", True))
     for idx, beat in enumerate(beats):
         beat_words = max(1, word_count(beat.get("voiceover", "")))
-        duration = max(4.0, total_duration * beat_words / total_words)
-        card = os.path.join(render_dir, f"beat_{idx + 1:02d}.png")
-        seg = os.path.join(render_dir, f"beat_{idx + 1:02d}.mp4")
+        duration = max(3.2, total_duration * beat_words / total_words)
+        card = os.path.join(card_dir, f"beat_{idx + 1:02d}.png")
+        seg = os.path.join(segment_dir, f"beat_{idx + 1:02d}.mp4")
         asset_info = None
         if stock_enabled:
-            clip_path = os.path.join(render_dir, f"beat_{idx + 1:02d}_stock.mp4")
+            clip_path = os.path.join(source_dir, f"beat_{idx + 1:02d}_stock.mp4")
             queries = _queries_for_beat(script, beat, research, idx)
-            asset_info = _fetch_stock_clip(queries, idx, clip_path, config, used_stock_hashes)
+            asset_info = _fetch_stock_clip(queries, idx, clip_path, config, used_stock_hashes, used_source_ids)
             if asset_info:
                 _clip_segment(clip_path, duration, seg, config)
                 asset_info["path"] = os.path.relpath(clip_path, run_dir)

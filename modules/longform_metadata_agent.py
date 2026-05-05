@@ -31,8 +31,16 @@ def _fallback(script: dict, research: dict) -> dict:
         "identity and growth": ["relationship advice", "personal growth", "self worth", "emotional healing"],
     }
     tags = ["soft reset with me", *pillar_tags.get(pillar, ["relationship advice", "emotional healing", "personal growth"])]
-    thumbnail_words = [word.strip(".,!?;:()[]\"'") for word in title.upper().split()]
-    thumbnail_text = " ".join(thumbnail_words[:4]) or "SOFT RESET"
+    topic = str(research.get("topic", "")).lower()
+    if "potential" in topic or "imagined" in topic:
+        thumbnail_text = "YOU MISS THE DREAM"
+    elif "peace" in topic or "chaos" in topic:
+        thumbnail_text = "WHY CALM FEELS WRONG"
+    elif "strong one" in topic:
+        thumbnail_text = "TIRED OF BEING STRONG"
+    else:
+        thumbnail_words = [word.strip(".,!?;:()[]\"'") for word in title.upper().split()]
+        thumbnail_text = " ".join(thumbnail_words[:4]) or "SOFT RESET"
     return {
         "title": title,
         "description": (
