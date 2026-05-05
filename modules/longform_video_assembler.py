@@ -187,6 +187,32 @@ def _queries_for_chapter(script: dict, chapter: dict, research: dict, idx: int) 
     return _fallback_queries(chapter, research, idx)
 
 
+def _top_result_order(items: list[dict], config: dict) -> list[dict]:
+    sample_size = max(1, int(config.get("longform_stock_video_top_sample_size", 6)))
+    top_items = items[:sample_size]
+    rest = items[sample_size:]
+    random.shuffle(top_items)
+    return top_items + rest
+
+
+def _candidate_text(video: dict) -> str:
+    parts = [
+        str(video.get("description") or ""),
+        str(video.get("title") or ""),
+        str(video.get("url") or ""),
+    ]
+    tags = video.get("tags") or []
+    if isinstance(tags, list):
+        parts.extend(str(tag) for tag in tags)
+    return " ".join(parts).lower()
+
+
+def _is_brand_fit_candidate(video: dict, config: dict) -> bool:
+    block_terms = config.get("longform_stock_video_block_terms", [])
+    text = _candidate_text(video)
+    return not any(str(term).lower() in text for term in block_terms)
+
+
 def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: dict, used_hashes: set[str]) -> dict | None:
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
@@ -205,8 +231,9 @@ def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: d
             videos = resp.json().get("videos", [])
             if not videos:
                 continue
-            ordered = videos[idx % len(videos):] + videos[:idx % len(videos)]
-            for video in ordered:
+            for video in _top_result_order(videos, config):
+                if not _is_brand_fit_candidate(video, config):
+                    continue
                 files = sorted(
                     [f for f in video.get("video_files", []) if f.get("width") and f.get("link")],
                     key=lambda f: abs(int(f.get("width", 0)) - 1920),
@@ -227,6 +254,80 @@ def _fetch_pexels_clip(queries: list[str], idx: int, output_path: str, config: d
                     }
         except Exception as exc:
             print(f"[longform_video] Pexels query failed '{query}': {exc}")
+    return None
+
+
+def _fetch_coverr_clip(queries: list[str], idx: int, output_path: str, config: dict, used_hashes: set[str]) -> dict | None:
+    if not config.get("coverr_enabled", True):
+        return None
+    api_key = os.environ.get("COVERR_API_KEY")
+    if not api_key:
+        print("[longform_video] COVERR_API_KEY missing; trying next provider")
+        return None
+    headers = {"Authorization": f"Bearer {api_key}"}
+    page_size = int(config.get("coverr_page_size", 50))
+    for query in queries:
+        try:
+            resp = requests.get(
+                "https://api.coverr.co/videos",
+                headers=headers,
+                params={"query": query, "page_size": page_size, "sort": "popular", "urls": "true"},
+                timeout=20,
+            )
+            if resp.status_code != 200:
+                print(f"[longform_video] Coverr status {resp.status_code} for '{query}'")
+                continue
+            videos = resp.json().get("hits", [])
+            if not videos:
+                continue
+            for video in _top_result_order(videos, config):
+                if not _is_brand_fit_candidate(video, config):
+                    continue
+                urls = video.get("urls") or {}
+                clip_url = urls.get("mp4") or urls.get("mp4_download") or urls.get("mp4_preview")
+                if not clip_url:
+                    continue
+                clip = requests.get(clip_url, timeout=90).content
+                clip_hash = hashlib.sha256(clip).hexdigest()
+                if clip_hash in used_hashes:
+                    continue
+                with open(output_path, "wb") as f:
+                    f.write(clip)
+                used_hashes.add(clip_hash)
+                return {
+                    "provider": "coverr",
+                    "query": query,
+                    "coverr_id": str(video.get("id", "")),
+                    "hash": clip_hash,
+                    "description": video.get("description") or video.get("title") or "",
+                    "tags": video.get("tags", []),
+                }
+        except Exception as exc:
+            print(f"[longform_video] Coverr query failed '{query}': {exc}")
+    return None
+
+
+def _provider_order(config: dict) -> list[str]:
+    weights = config.get("longform_stock_video_provider_weights", {"pexels": 65, "coverr": 35})
+    providers = ["pexels", "coverr"]
+    pexels_weight = max(0, int(weights.get("pexels", 65)))
+    coverr_weight = max(0, int(weights.get("coverr", 35)))
+    if pexels_weight + coverr_weight <= 0:
+        return ["pexels", "coverr"]
+    first = random.choices(providers, weights=[pexels_weight, coverr_weight], k=1)[0]
+    return [first] + [provider for provider in providers if provider != first]
+
+
+def _fetch_stock_clip(queries: list[str], idx: int, output_path: str, config: dict, used_hashes: set[str]) -> dict | None:
+    for provider in _provider_order(config):
+        provider_path = output_path.replace(".mp4", f"_{provider}.mp4")
+        if provider == "pexels":
+            meta = _fetch_pexels_clip(queries, idx, provider_path, config, used_hashes)
+        else:
+            meta = _fetch_coverr_clip(queries, idx, provider_path, config, used_hashes)
+        if meta:
+            os.replace(provider_path, output_path)
+            return meta
     return None
 
 
@@ -295,7 +396,7 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         if stock_enabled:
             clip_path = os.path.join(render_dir, f"chapter_{idx + 1:02d}_stock.mp4")
             queries = _queries_for_chapter(script, chapter, research, idx)
-            asset_info = _fetch_pexels_clip(queries, idx, clip_path, config, used_stock_hashes)
+            asset_info = _fetch_stock_clip(queries, idx, clip_path, config, used_stock_hashes)
             if asset_info:
                 _clip_segment(clip_path, duration, seg, config)
                 asset_info["path"] = os.path.relpath(clip_path, run_dir)
@@ -354,7 +455,9 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         "chapters": len(chapters),
         "music_track": os.path.basename(music) if music else "none",
         "visual_assets": visual_assets,
-        "stock_video_count": sum(1 for item in visual_assets if item.get("provider") == "pexels"),
+        "stock_video_count": sum(1 for item in visual_assets if item.get("provider") in {"pexels", "coverr"}),
+        "pexels_video_count": sum(1 for item in visual_assets if item.get("provider") == "pexels"),
+        "coverr_video_count": sum(1 for item in visual_assets if item.get("provider") == "coverr"),
         "fallback_card_count": sum(1 for item in visual_assets if item.get("provider") == "fallback_card"),
         "validation": "passed",
         "generated_at": now_iso(),

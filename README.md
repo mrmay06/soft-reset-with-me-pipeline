@@ -52,6 +52,7 @@ Copy `.env.example` to `.env` for local runs, or add these as GitHub Actions sec
 - `ANTHROPIC_API_KEY`
 - `POLLINATIONS_API_KEY`
 - `PEXELS_API_KEY`
+- `COVERR_API_KEY`
 - `YOUTUBE_CLIENT_ID`
 - `YOUTUBE_CLIENT_SECRET`
 - `YOUTUBE_REFRESH_TOKEN`
@@ -59,7 +60,7 @@ Copy `.env.example` to `.env` for local runs, or add these as GitHub Actions sec
 - `ALERT_EMAIL_TO`
 - `ALERT_EMAIL_PASSWORD`
 
-`COVERR_API_KEY` is optional for now because Coverr is disabled in Shorts config.
+Coverr is used by the long-form stock-footage renderer. Shorts still keep Coverr disabled unless the Shorts config enables it.
 
 ## YouTube OAuth
 
