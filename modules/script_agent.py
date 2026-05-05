@@ -105,11 +105,32 @@ _WEAK_ABSTRACT_HOOK_PATTERNS = [
 ]
 
 
+_GENERIC_EDITORIAL_PATTERNS = [
+    "love yourself",
+    "you are enough",
+    "validate your feelings",
+    "healthy relationships are important",
+    "communication is key",
+    "set boundaries",
+    "move on",
+    "healing takes time",
+]
+
+
 def _hook_has_ego_bait(hook: str) -> bool:
     h = hook.lower()
     if any(pattern in h for pattern in _WEAK_ABSTRACT_HOOK_PATTERNS):
         return False
     return any(sig in h for sig in _EGO_BAIT_SIGNALS)
+
+
+def _validate_editorial_layer(script: dict) -> bool:
+    pov = str(script.get("editorial_pov", "") or "").strip()
+    signature = str(script.get("only_soft_reset_line", "") or "").strip()
+    if len(pov.split()) < 8 or len(signature.split()) < 6:
+        return False
+    combined = f"{pov} {signature}".lower()
+    return not any(pattern in combined for pattern in _GENERIC_EDITORIAL_PATTERNS)
 
 
 def _validate_script(script: dict, config: dict) -> dict:
@@ -126,6 +147,14 @@ def _validate_script(script: dict, config: dict) -> dict:
         script["validation"] = "forced"
     else:
         script["validation"] = "passed"
+
+    if not _validate_editorial_layer(script):
+        print("[script] ⚠ Weak editorial layer: missing POV or signature Soft Reset line")
+        script["editorial_quality"] = "weak"
+        script["validation"] = "forced"
+    else:
+        script["editorial_quality"] = "strong"
+        print("[script] ✓ Editorial layer: strong")
 
     # Hook quality check
     hook = script.get("hook", "")
@@ -171,6 +200,9 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         content_format=research.get("content_format", "scenario"),
         emotional_trigger=research.get("emotional_trigger", ""),
         psych_concept=research.get("psych_concept", ""),
+        core_claim=research.get("core_claim", ""),
+        editorial_seed=research.get("editorial_seed", ""),
+        only_soft_reset_line=research.get("only_soft_reset_line", ""),
         performance_insights=performance_insights,
         video_id=video_id,
         generated_at=now_iso(),
@@ -180,8 +212,13 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     script = _validate_script(script, config)
 
     if script["validation"] == "forced":
-        print(f"[script] Retrying due to word count issue...")
-        script = _call_script_model(prompt + "\n\nIMPORTANT: Script MUST be 45-75 words.", config["script_model"])
+        print(f"[script] Retrying due to validation issue...")
+        retry_prompt = (
+            prompt
+            + "\n\nIMPORTANT: Script MUST be 45-75 words and must include "
+            "`editorial_pov` plus `only_soft_reset_line` that are specific, non-generic, and on-brand."
+        )
+        script = _call_script_model(retry_prompt, config["script_model"])
         script = _validate_script(script, config)
         if script["validation"] != "passed":
             print("[script] Still outside range after retry — proceeding with forced validation")
@@ -270,6 +307,9 @@ def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "content_format": "truth_drop",
         "emotional_trigger": "grieving someone's potential",
         "psych_concept": "idealization and grief",
+        "core_claim": "You are grieving the imagined future more than the person.",
+        "editorial_pov": "Missing someone is not always proof they were right for you. Sometimes it proves how much hope you built around them.",
+        "only_soft_reset_line": "You are allowed to grieve the version they never became.",
         "hook": "You did not lose them. You lost who you imagined.",
         "tension": "That is why it still hurts. You are grieving a version that never arrived.",
         "insight": "You miss the apology they almost gave. The effort they almost made. That was not love. That was hope with someone else's face on it.",

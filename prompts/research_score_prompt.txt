@@ -4,6 +4,9 @@ TOPIC: {topic}
 CATEGORY: {category}
 ANGLE: {angle_type}
 HOOK IDEA: {hook_seed}
+CORE CLAIM: {core_claim}
+EDITORIAL SEED: {editorial_seed}
+ONLY SOFT RESET LINE: {only_soft_reset_line}
 
 TASK 1 — SCORE on 5 dimensions (1-4 scale each):
 
@@ -41,7 +44,9 @@ Important: 4 is rare. Give a 4 only when the candidate is unusually specific, em
 
 Scoring discipline:
 - Penalize broad advice that could appear on any self-help account
+- Penalize candidates with no editorial point of view, no argument, or no "why this matters now"
 - Reward exact emotional scenes, e.g. rereading a DM, waiting for a reply, muting a story, hearing a song at night
+- Reward topics with a defensible Soft Reset take, not just a neutral summary of a psychology concept
 - Reward topics with a clean one-line payoff and a natural save/share reason
 - Penalize topics that need disclaimers, diagnosis, blame, or gendered assumptions
 - Penalize generic source names. If source_name is only "psychological principles" and no source_url is available, reliability_score should usually be 3, not 4
@@ -63,6 +68,9 @@ Return ONLY valid JSON with no extra text:
   "emotional_trigger": "...",
   "psych_concept": "...",
   "hook_seed": "...",
+  "core_claim": "the one useful emotional truth or behavior change",
+  "editorial_seed": "2-3 plain sentences with the channel's point of view",
+  "only_soft_reset_line": "one emotionally precise sentence that makes this non-generic",
   "audience_fit_score": 0,
   "emotional_tension_score": 0,
   "scriptability_score": 0,

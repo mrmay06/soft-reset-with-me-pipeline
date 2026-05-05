@@ -25,6 +25,7 @@ Research goal:
 - Build a library of emotionally specific, saveable Shorts, not generic dating advice
 - Prefer one precise lived moment over broad advice, e.g. "checking if they watched your story" beats "how to move on"
 - Each candidate must be meaningfully different from recent topics in premise, hook, emotional trigger, and psychology concept
+- Every candidate must have a point of view. Do not pitch "5 facts about..." or neutral summaries; pitch an argument Soft Reset With Me would stand behind
 - Balance the board: do not cluster all candidates around breakup grief or situationships unless the signals strongly demand it
 - US 2026 framing matters: DMs, screen-time anxiety, dating app burnout, boundaries, ghosting, emotional availability, and self-worth
 - If performance feedback is available, use it directionally: lean toward winning hook shapes, emotional triggers, and formats, but do not repeat exact topics or hooks
@@ -48,6 +49,8 @@ Content formats:
 Rules:
 - Gender-neutral language. No "him/her" unless the topic itself requires it
 - Specific emotional moments beat generic advice
+- Include an editorial seed: 2-3 plain-language sentences stating the belief, tension, or take behind the topic
+- Include one "only Soft Reset" line: a sentence that feels emotionally precise enough that a generic self-help channel would not say it the same way
 - No therapy-speak bloat: avoid "validate your feelings" and clinical phrasing
 - No diagnosis, no manipulation tactics, no "make them chase you"
 - Never copy Reddit/comment wording. Extract only the emotional core
@@ -63,6 +66,8 @@ Return ONLY a valid JSON array with no extra text:
     "emotional_trigger": "the exact emotional trigger, e.g. rereading a text, hearing a song at 2am, seeing them move on",
     "psych_concept": "simple psychology or emotional-growth concept behind the topic",
     "hook_seed": "one-line hook idea, max 15 words",
-    "core_claim": "the one useful emotional truth or behavior change"
+    "core_claim": "the one useful emotional truth or behavior change",
+    "editorial_seed": "2-3 plain sentences with the channel's point of view",
+    "only_soft_reset_line": "one emotionally precise sentence that makes this non-generic"
   }}
 ]

@@ -14,9 +14,19 @@ SOURCE NAME: {source_name}
 CONTENT FORMAT: {content_format}
 EMOTIONAL TRIGGER: {emotional_trigger}
 PSYCH CONCEPT: {psych_concept}
+CORE CLAIM: {core_claim}
+EDITORIAL SEED: {editorial_seed}
+ONLY SOFT RESET LINE: {only_soft_reset_line}
 
 PERFORMANCE FEEDBACK:
 {performance_insights}
+
+ANTI-SLOP EDITORIAL LAYER:
+- The script must argue the editorial seed, not summarize relationship advice.
+- Every section must support one emotional thesis.
+- Include at least one line that feels specific to Soft Reset With Me: warm, sharp, and non-generic.
+- Remove filler that is true but useless.
+- Visuals and captions will be built around the argument, so write scenes with emotional intention.
 
 SCRIPT FRAMEWORK:
 
@@ -105,6 +115,9 @@ Return ONLY valid JSON, no extra text:
   "content_format": "{content_format}",
   "emotional_trigger": "{emotional_trigger}",
   "psych_concept": "{psych_concept}",
+  "core_claim": "{core_claim}",
+  "editorial_pov": "...",
+  "only_soft_reset_line": "...",
   "hook": "...",
   "tension": "...",
   "insight": "...",

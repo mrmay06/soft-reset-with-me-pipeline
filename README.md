@@ -89,6 +89,12 @@ Videos younger than 2 days are skipped for analytics, cached analytics are reuse
 
 `performance_score` is kept as a backward-compatible alias for `composite_score`.
 
+## Editorial Layer
+
+The pipeline is designed to avoid generic AI output. Topic research must now produce a `core_claim`, `editorial_seed`, and `only_soft_reset_line` before scripting. The script validator checks for an explicit point of view and a signature Soft Reset sentence, then retries weak scripts before rendering.
+
+This keeps AI in the execution role while the channel direction remains opinionated, emotionally specific, and non-templated.
+
 ## GitHub Actions
 
 The workflow at `.github/workflows/run_pipeline.yml` runs the pipeline on the configured posting schedule and can also be triggered manually from the Actions tab.

@@ -373,6 +373,9 @@ def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> d
         category  = candidate.get("category", ""),
         angle_type= candidate.get("angle_type", ""),
         hook_seed = candidate.get("hook_seed", ""),
+        core_claim= candidate.get("core_claim", ""),
+        editorial_seed= candidate.get("editorial_seed", ""),
+        only_soft_reset_line= candidate.get("only_soft_reset_line", ""),
     )
 
     result = generate_json(prompt, model)
@@ -415,6 +418,8 @@ def _apply_scoring_penalties(result: dict) -> dict:
     source_name = _normalise_text(result.get("source_name", ""))
     source_url = str(result.get("source_url", "") or "").strip()
     content_format = _normalise_text(result.get("content_format", ""))
+    editorial_seed = _normalise_text(result.get("editorial_seed", ""))
+    only_soft_reset_line = _normalise_text(result.get("only_soft_reset_line", ""))
 
     generic_source_names = (
         "psychological principles",
@@ -444,6 +449,11 @@ def _apply_scoring_penalties(result: dict) -> dict:
 
     if content_format in ("truth_drop", "reframe") and not any(marker in trigger for marker in scene_markers):
         result["share_save_score"] = min(int(result.get("share_save_score", 1)), 3)
+
+    if len(editorial_seed.split()) < 10 or len(only_soft_reset_line.split()) < 6:
+        result["audience_fit_score"] = min(int(result.get("audience_fit_score", 1)), 3)
+        result["share_save_score"] = min(int(result.get("share_save_score", 1)), 3)
+        result["scriptability_score"] = min(int(result.get("scriptability_score", 1)), 3)
 
     return result
 
@@ -587,6 +597,9 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         "content_format":      winner.get("content_format", ""),
         "emotional_trigger":   winner.get("emotional_trigger", ""),
         "psych_concept":       winner.get("psych_concept", ""),
+        "core_claim":          winner.get("core_claim", ""),
+        "editorial_seed":      winner.get("editorial_seed", ""),
+        "only_soft_reset_line": winner.get("only_soft_reset_line", ""),
         "scores": {
             "audience_fit":        winner.get("audience_fit_score", winner.get("cpm_score", 0)),
             "emotional_tension":   winner.get("emotional_tension_score", winner.get("trending_score", 0)),
@@ -617,6 +630,9 @@ def run_research_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "emotional_trigger": "grieving someone's potential",
         "psych_concept": "idealization and grief",
         "hook_seed":   "You did not lose them. You lost who you imagined.",
+        "core_claim": "You are grieving the imagined future more than the person.",
+        "editorial_seed": "Missing someone is not always proof they were right for you. Sometimes it proves how much hope you built around them.",
+        "only_soft_reset_line": "You are allowed to grieve the version they never became.",
         "source_fact": "Emotional healing often requires grieving the imagined future, not only the person.",
         "source_basis": "Idealization, rumination, and grief after relationship loss.",
         "source_name": "relationship psychology principle",
