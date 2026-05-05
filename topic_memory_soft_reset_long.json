@@ -79,5 +79,67 @@
     "thumbnail": "07_longform_thumbnail.png",
     "youtube_video_id": "",
     "youtube_url": ""
+  },
+  {
+    "video_id": "long_20260505_132001",
+    "published_date": "2026-05-05",
+    "status": "rendered_not_uploaded",
+    "topic": "When peace starts to feel boring after chaos",
+    "working_title": "When Peace Feels Boring After Chaos",
+    "content_pillar": "psychology drops",
+    "longform_format": "pattern_breakdown",
+    "core_claim": "Peace can feel boring when your nervous system has learned to mistake inconsistency for chemistry.",
+    "editorial_seed": "A calm relationship can feel strange after you have been trained by uncertainty. The absence of anxiety may feel like the absence of passion at first. This video reframes calm as unfamiliar, not empty.",
+    "only_soft_reset_line": "Sometimes the spark you miss was just your body waiting for the next problem.",
+    "word_count": 875,
+    "estimated_duration_sec": 338.7,
+    "argument_quality": "strong",
+    "final_duration_sec": 294.1,
+    "render_validation": "passed",
+    "title": "If healthy love feels boring, it might not be boredom. It",
+    "primary_variant_id": "B",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario",
+        "title": "When Peace Feels Boring After Chaos"
+      },
+      {
+        "id": "B",
+        "angle": "emotional",
+        "formula": "curiosity gap",
+        "title": "If healthy love feels boring, it might not be boredom. It"
+      },
+      {
+        "id": "C",
+        "angle": "counter",
+        "formula": "counter-intuitive",
+        "title": "Peace can feel boring when your nervous system has learned"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "clean_concept_close_up",
+        "thumbnail_text": "WHEN PEACE STARTS TO FEEL"
+      },
+      {
+        "id": "B",
+        "angle": "emotional",
+        "pattern": "digital_anxiety_overlay",
+        "thumbnail_text": "THIS PART HURTS"
+      },
+      {
+        "id": "C",
+        "angle": "counter",
+        "pattern": "dichotomy_split",
+        "thumbnail_text": "YOU ALREADY KNEW"
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "",
+    "youtube_url": ""
   }
 ]

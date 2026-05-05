@@ -1,56 +1,113 @@
 """
-Workspace cleanup — deletes run directories older than KEEP_DAYS.
-Run daily via cron. Keeps the last N days of runs, deletes everything else.
-"""
+Workspace Cleanup Tool
+=======================
+Removes old run directories from workspace/ to prevent disk exhaustion.
+Keeps the N most recent complete runs per track (Shorts / Longform).
+Incomplete runs (no final video) are kept unless --all is passed.
 
+Usage:
+    python tools/cleanup_workspace.py             # dry-run preview
+    python tools/cleanup_workspace.py --delete     # actually delete
+    python tools/cleanup_workspace.py --keep 5     # keep 5 most recent complete runs
+    python tools/cleanup_workspace.py --delete --all  # delete incomplete runs too
+"""
+from __future__ import annotations
+
+import argparse
 import os
 import shutil
-from datetime import datetime, timedelta
+import sys
 
-WORKSPACE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "workspace")
-KEEP_DAYS = 3
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+WORKSPACE = "workspace"
+DEFAULT_KEEP = 3
+
+SHORTS_TERMINAL = "06_final_video.mp4"
+LONGFORM_TERMINAL = "06_longform_video.mp4"
 
 
-def run_cleanup(keep_days: int = KEEP_DAYS):
-    if not os.path.exists(WORKSPACE_DIR):
-        print("[cleanup] No workspace directory found — nothing to do.")
+def _run_size_mb(run_dir: str) -> float:
+    total = 0
+    for dirpath, _, filenames in os.walk(run_dir):
+        for f in filenames:
+            try:
+                total += os.path.getsize(os.path.join(dirpath, f))
+            except OSError:
+                pass
+    return total / (1024 * 1024)
+
+
+def _is_complete(run_dir: str) -> bool:
+    return (
+        os.path.exists(os.path.join(run_dir, SHORTS_TERMINAL))
+        or os.path.exists(os.path.join(run_dir, LONGFORM_TERMINAL))
+    )
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Workspace Cleanup Tool")
+    parser.add_argument("--delete", action="store_true", help="Actually delete (default is dry-run)")
+    parser.add_argument("--keep", type=int, default=DEFAULT_KEEP, help=f"Keep N most recent complete runs per track (default {DEFAULT_KEEP})")
+    parser.add_argument("--all", dest="delete_all", action="store_true", help="Also delete incomplete runs")
+    args = parser.parse_args()
+
+    if not os.path.isdir(WORKSPACE):
+        print(f"[cleanup] No workspace/ directory found.")
         return
 
-    cutoff = datetime.utcnow() - timedelta(days=keep_days)
-    all_runs = sorted([
-        d for d in os.listdir(WORKSPACE_DIR)
-        if d.startswith("run_") and os.path.isdir(os.path.join(WORKSPACE_DIR, d))
-    ])
+    all_dirs = sorted(
+        [os.path.join(WORKSPACE, d) for d in os.listdir(WORKSPACE) if os.path.isdir(os.path.join(WORKSPACE, d))]
+    )
 
-    deleted = 0
-    kept = 0
-    freed_mb = 0.0
+    shorts_complete = [d for d in all_dirs if os.path.basename(d).startswith("run_2") and _is_complete(d)]
+    longform_complete = [d for d in all_dirs if os.path.basename(d).startswith("run_long_") and _is_complete(d)]
+    incomplete = [d for d in all_dirs if not _is_complete(d)]
 
-    for run_name in all_runs:
-        # Parse date from run_YYYYMMDD_HHMMSS
+    to_delete: list[str] = []
+    if len(shorts_complete) > args.keep:
+        to_delete.extend(shorts_complete[: len(shorts_complete) - args.keep])
+    if len(longform_complete) > args.keep:
+        to_delete.extend(longform_complete[: len(longform_complete) - args.keep])
+    if args.delete_all:
+        to_delete.extend(incomplete)
+
+    if not to_delete:
+        print(f"[cleanup] Nothing to delete. (shorts: {len(shorts_complete)}, longform: {len(longform_complete)}, incomplete: {len(incomplete)})")
+        return
+
+    total_mb = sum(_run_size_mb(d) for d in to_delete)
+    mode = "DELETE" if args.delete else "DRY RUN"
+
+    print(f"\n{'='*54}")
+    print(f" Workspace Cleanup [{mode}]")
+    print(f"{'='*54}")
+    print(f"  Complete Shorts:   {len(shorts_complete)} dirs  (keeping {args.keep})")
+    print(f"  Complete Longform: {len(longform_complete)} dirs  (keeping {args.keep})")
+    print(f"  Incomplete:        {len(incomplete)} dirs  {'(will delete)' if args.delete_all else '(keeping)'}")
+    print(f"\n  To remove: {len(to_delete)} dirs, ~{total_mb:.0f} MB")
+    for d in to_delete:
+        mb = _run_size_mb(d)
+        tag = "complete" if _is_complete(d) else "incomplete"
+        print(f"    {os.path.basename(d):<42} {mb:>6.0f} MB  [{tag}]")
+
+    if not args.delete:
+        print(f"\n  Run with --delete to remove these.\n")
+        return
+
+    deleted, freed_mb = 0, 0.0
+    for d in to_delete:
+        mb = _run_size_mb(d)
         try:
-            date_str = run_name.replace("run_", "").split("_")[0]
-            run_date = datetime.strptime(date_str, "%Y%m%d")
-        except ValueError:
-            continue
-
-        run_path = os.path.join(WORKSPACE_DIR, run_name)
-
-        if run_date < cutoff:
-            size_mb = sum(
-                os.path.getsize(os.path.join(dp, f))
-                for dp, _, files in os.walk(run_path)
-                for f in files
-            ) / (1024 * 1024)
-            shutil.rmtree(run_path)
-            freed_mb += size_mb
+            shutil.rmtree(d)
+            print(f"  Deleted: {os.path.basename(d)} ({mb:.0f} MB)")
             deleted += 1
-            print(f"[cleanup] Deleted {run_name} ({size_mb:.1f} MB)")
-        else:
-            kept += 1
+            freed_mb += mb
+        except Exception as exc:
+            print(f"  ERROR deleting {d}: {exc}")
 
-    print(f"[cleanup] Done. Deleted {deleted} runs, kept {kept}. Freed {freed_mb:.1f} MB.")
+    print(f"\n  Done. Removed {deleted} dirs, freed ~{freed_mb:.0f} MB.\n")
 
 
 if __name__ == "__main__":
-    run_cleanup()
+    main()

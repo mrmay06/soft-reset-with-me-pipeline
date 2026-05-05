@@ -44,6 +44,27 @@ Timing breakdown:
     _send_email(f"{SUBJECT_PREFIX} Published: {title[:50]}", body)
 
 
+def send_auth_expiry_alert(service: str):
+    """Alert when a YouTube OAuth refresh token has expired or been revoked."""
+    body = f"""
+YouTube OAuth Token Expired — {service}
+{'='*40}
+Service:   {service}
+Time:      {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}
+
+The refresh token for {service} has expired or been revoked.
+Videos generated after this point will NOT be uploaded until you re-authenticate.
+
+Steps to fix:
+1. Run:  python tools/get_youtube_token.py
+2. Update YOUTUBE_REFRESH_TOKEN in your .env / GitHub Secrets
+3. Re-run the pipeline
+
+This is a CRITICAL issue — the channel is effectively paused.
+"""
+    _send_email(f"{SUBJECT_PREFIX} ⚠️ AUTH EXPIRED — manual action needed", body)
+
+
 def send_failure_alert(video_id: str, error_msg: str, traceback_str: str):
     run_url = (
         f"https://github.com/{os.environ.get('GITHUB_REPOSITORY', 'unknown/repo')}"

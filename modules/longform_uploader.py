@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import os
+import time
 
 from utils.helpers import load_json, save_json, now_iso
+from utils.notify import send_auth_expiry_alert
 from utils.youtube_tags import sanitize_youtube_tags
 
 try:
@@ -10,8 +12,10 @@ try:
     from google.auth.transport.requests import Request
     from googleapiclient.discovery import build
     from googleapiclient.http import MediaFileUpload
+    from google.auth.exceptions import RefreshError
 except ImportError:
     Credentials = None
+    RefreshError = Exception
 
 
 def _get_youtube_client():
@@ -23,10 +27,36 @@ def _get_youtube_client():
         client_id=os.environ["YOUTUBE_CLIENT_ID"],
         client_secret=os.environ["YOUTUBE_CLIENT_SECRET"],
         token_uri="https://oauth2.googleapis.com/token",
-        scopes=["https://www.googleapis.com/auth/youtube"],
+        scopes=["https://www.googleapis.com/auth/youtube.force-ssl"],
     )
-    creds.refresh(Request())
+    try:
+        creds.refresh(Request())
+    except RefreshError as exc:
+        send_auth_expiry_alert("Longform uploader")
+        raise RuntimeError(
+            "YouTube refresh token expired or revoked. Run tools/get_youtube_token.py "
+            "and update YOUTUBE_REFRESH_TOKEN. Channel is paused until fixed."
+        ) from exc
     return build("youtube", "v3", credentials=creds)
+
+
+def _set_thumbnail_with_retry(youtube, youtube_video_id: str, thumbnail_path: str, max_attempts: int = 3) -> bool:
+    for attempt in range(1, max_attempts + 1):
+        try:
+            youtube.thumbnails().set(
+                videoId=youtube_video_id,
+                media_body=MediaFileUpload(thumbnail_path, mimetype="image/png"),
+            ).execute()
+            print(f"[longform_uploader] Thumbnail set ✅")
+            return True
+        except Exception as exc:
+            if attempt < max_attempts:
+                wait = attempt * 10
+                print(f"[longform_uploader] Thumbnail set failed (attempt {attempt}/{max_attempts}): {exc} — retrying in {wait}s")
+                time.sleep(wait)
+            else:
+                print(f"[longform_uploader] Thumbnail set failed after {max_attempts} attempts — channel may not be verified: {exc}")
+    return False
 
 
 def _post_engagement_comment(youtube, youtube_video_id: str, engagement_question: str) -> str | None:
@@ -96,15 +126,7 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
 
     thumbnail_set = False
     if os.path.exists(thumbnail_path):
-        try:
-            youtube.thumbnails().set(
-                videoId=youtube_video_id,
-                media_body=MediaFileUpload(thumbnail_path, mimetype="image/png"),
-            ).execute()
-            thumbnail_set = True
-            print(f"[longform_uploader] Thumbnail set (primary variant)")
-        except Exception as exc:
-            print(f"[longform_uploader] Thumbnail set failed (channel may not be verified): {exc}")
+        thumbnail_set = _set_thumbnail_with_retry(youtube, youtube_video_id, thumbnail_path)
     else:
         print(f"[longform_uploader] Thumbnail not found at {thumbnail_path} — skipping")
 
@@ -152,6 +174,7 @@ def run_longform_upload_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "thumbnail_set": False,
         "engagement_comment_id": None,
         "uploaded_at": now_iso(),
+        "mock": True,
     }
     save_json(result, os.path.join(run_dir, "09_longform_upload_meta.json"))
     return result

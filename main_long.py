@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import glob
 import os
 import sys
 import time
@@ -30,6 +31,17 @@ def _checkpoint(run_dir: str, *paths: str) -> bool:
     return all(os.path.exists(os.path.join(run_dir, p)) for p in paths)
 
 
+def _find_latest_longform_run() -> tuple[str, str] | None:
+    """Find the most recent incomplete longform run. Returns (video_id, run_dir) or None."""
+    terminal = ["06_longform_video.mp4", "09_longform_upload_meta.json"]
+    dirs = sorted(glob.glob("workspace/run_long_*"))
+    for d in reversed(dirs):
+        if not _checkpoint(d, *terminal):
+            video_id = os.path.basename(d).replace("run_", "")
+            return video_id, d
+    return None
+
+
 def _apply_test_2min_overrides(config: dict) -> dict:
     config.update({
         "longform_duration_label": "about 2-minute test",
@@ -45,13 +57,25 @@ def _apply_test_2min_overrides(config: dict) -> dict:
     return config
 
 
-def main(mock: bool = False, fresh: bool = False, test_2min: bool = False):
+def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resume_id: str | None = None):
     config = load_config("config/longform_config.json")
     if test_2min:
         config = _apply_test_2min_overrides(config)
-    video_id = "long_" + make_video_id()
-    run_dir = create_run_dir(video_id)
-    mode = "MOCK" if mock else "LIVE"
+
+    if resume_id:
+        run_dir = f"workspace/run_{resume_id}"
+        if not os.path.isdir(run_dir):
+            print(f"[main_long] ERROR: run dir not found: {run_dir}")
+            sys.exit(1)
+        video_id = resume_id
+        mode = "RESUME"
+    elif not fresh and not mock and _find_latest_longform_run():
+        video_id, run_dir = _find_latest_longform_run()
+        mode = "AUTO-RESUME"
+    else:
+        video_id = "long_" + make_video_id()
+        run_dir = create_run_dir(video_id)
+        mode = "MOCK" if mock else "LIVE"
 
     print(f"\n{'=' * 58}")
     print(f" Soft Reset With Me Long-Form Pipeline [{mode}]")
@@ -74,7 +98,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False):
     pipeline_start = time.time()
 
     def _run(label: str, fn, *args, checkpoint_files: list[str] | None = None):
-        if checkpoint_files and _checkpoint(run_dir, *checkpoint_files):
+        if not fresh and checkpoint_files and _checkpoint(run_dir, *checkpoint_files):
             print(f"  {label:<32} SKIPPED (cached)\n")
             return
         t0 = time.time()
@@ -128,8 +152,9 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Soft Reset With Me Long-Form Pipeline")
-    parser.add_argument("--mock", action="store_true", help="Run with mock data")
-    parser.add_argument("--fresh", action="store_true", help="Reserved for CLI symmetry with Shorts")
+    parser.add_argument("--mock", action="store_true", help="Run with mock data (skips all APIs)")
+    parser.add_argument("--fresh", action="store_true", help="Force a brand new run, skip auto-resume")
+    parser.add_argument("--resume", metavar="VIDEO_ID", default=None, help="Resume a specific run by video ID")
     parser.add_argument("--test-2min", action="store_true", help="Run a temporary 2-minute long-form test")
     args = parser.parse_args()
-    main(mock=args.mock, fresh=args.fresh, test_2min=args.test_2min)
+    main(mock=args.mock, fresh=args.fresh, test_2min=args.test_2min, resume_id=args.resume)

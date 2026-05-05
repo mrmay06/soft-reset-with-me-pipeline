@@ -54,6 +54,8 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
     if "#shorts" not in description.lower():
         description += "\n\n#Shorts #SoftResetWithMe #RelationshipAdvice #SelfWorth"
         errors.append("hashtags_added")
+    if "ai" not in description.lower() and "artificial intelligence" not in description.lower():
+        description += "\n\n✦ AI-assisted production."
     metadata["description"] = description
 
     metadata["validation_warnings"] = errors
