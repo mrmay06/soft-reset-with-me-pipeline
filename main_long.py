@@ -29,8 +29,25 @@ def _checkpoint(run_dir: str, *paths: str) -> bool:
     return all(os.path.exists(os.path.join(run_dir, p)) for p in paths)
 
 
-def main(mock: bool = False, fresh: bool = False):
+def _apply_test_2min_overrides(config: dict) -> dict:
+    config.update({
+        "longform_duration_label": "about 2-minute test",
+        "longform_target_min_sec": 95,
+        "longform_target_max_sec": 125,
+        "longform_validation_min_sec": 90,
+        "longform_target_words_min": 220,
+        "longform_target_words_max": 300,
+        "longform_visual_max_beats": 42,
+        "topic_memory_file": "topic_memory_soft_reset_long_test.json",
+        "performance_memory_file": "performance_memory_soft_reset_long_test.json",
+    })
+    return config
+
+
+def main(mock: bool = False, fresh: bool = False, test_2min: bool = False):
     config = load_config("config/longform_config.json")
+    if test_2min:
+        config = _apply_test_2min_overrides(config)
     video_id = "long_" + make_video_id()
     run_dir = create_run_dir(video_id)
     mode = "MOCK" if mock else "LIVE"
@@ -72,7 +89,20 @@ def main(mock: bool = False, fresh: bool = False):
         _run("Module 4 — Long Audio", audio_fn, video_id, run_dir, config, checkpoint_files=["04_longform_voice.mp3", "04_longform_voice_meta.json"])
         _run("Module 5 — Long Captions", captions_fn, video_id, run_dir, config, checkpoint_files=["04_longform_captions.ass"])
         _run("Module 6 — Long Video", video_fn, video_id, run_dir, config, checkpoint_files=["06_longform_video.mp4", "06_longform_render_meta.json"])
-        _run("Module 7 — Long Thumbnail", thumbnail_fn, video_id, run_dir, config, checkpoint_files=["07_longform_thumbnail.png"])
+        _run(
+            "Module 7 — Long Thumbnail",
+            thumbnail_fn,
+            video_id,
+            run_dir,
+            config,
+            checkpoint_files=[
+                "07_longform_thumbnail.png",
+                "07_longform_thumbnail_A.png",
+                "07_longform_thumbnail_B.png",
+                "07_longform_thumbnail_C.png",
+                "07_longform_thumbnail_meta.json",
+            ],
+        )
         _run("Module 8 — Long Logger", logger_fn, video_id, run_dir, config)
 
         total = round(time.time() - pipeline_start, 1)
@@ -97,5 +127,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Soft Reset With Me Long-Form Pipeline")
     parser.add_argument("--mock", action="store_true", help="Run with mock data")
     parser.add_argument("--fresh", action="store_true", help="Reserved for CLI symmetry with Shorts")
+    parser.add_argument("--test-2min", action="store_true", help="Run a temporary 2-minute long-form test")
     args = parser.parse_args()
-    main(mock=args.mock, fresh=args.fresh)
+    main(mock=args.mock, fresh=args.fresh, test_2min=args.test_2min)

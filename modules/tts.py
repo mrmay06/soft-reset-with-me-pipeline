@@ -146,6 +146,16 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
 
 
 def _validate_audio(path: str, config: dict) -> dict:
+    def _duration_result(duration_sec: float) -> dict:
+        result = {"duration_sec": round(duration_sec, 2), "validation": "passed"}
+        min_dur = config["audio_min_duration_sec"]
+        max_dur = config["audio_max_duration_sec"]
+        if duration_sec < min_dur or duration_sec > max_dur:
+            result["validation"] = "duration_warning"
+            result["warning"] = f"Audio is {round(duration_sec, 2)}s — outside expected {min_dur}-{max_dur}s range"
+            print(f"[tts] WARNING: {result['warning']}")
+        return result
+
     if AudioSegment is None:
         # Fallback: use ffprobe to get duration
         import subprocess, json as _json
@@ -156,23 +166,13 @@ def _validate_audio(path: str, config: dict) -> dict:
                 capture_output=True, text=True, check=True
             )
             dur = float(_json.loads(r.stdout)["format"]["duration"])
-            return {"duration_sec": round(dur, 2), "validation": "passed"}
+            return _duration_result(dur)
         except Exception:
             return {"duration_sec": 0.0, "validation": "skipped"}
 
     audio = AudioSegment.from_mp3(path)
     duration_sec = round(len(audio) / 1000, 2)
-
-    result = {"duration_sec": duration_sec, "validation": "passed"}
-
-    min_dur = config["audio_min_duration_sec"]
-    max_dur = config["audio_max_duration_sec"]
-    if duration_sec < min_dur or duration_sec > max_dur:
-        result["validation"] = "duration_warning"
-        result["warning"] = f"Audio is {duration_sec}s — outside expected {min_dur}-{max_dur}s range"
-        print(f"[tts] WARNING: {result['warning']}")
-
-    return result
+    return _duration_result(duration_sec)
 
 
 def run_tts(video_id: str, run_dir: str, config: dict) -> dict:

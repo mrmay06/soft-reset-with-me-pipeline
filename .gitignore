@@ -2,10 +2,12 @@ workspace/
 .env
 *.env
 __pycache__/
+.pycache_tmp/
 *.pyc
 *.pyo
 .pytest_cache/
 .DS_Store
+**/.DS_Store
 Thumbs.db
 venv/
 *.mp4

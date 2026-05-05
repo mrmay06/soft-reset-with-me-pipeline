@@ -103,6 +103,17 @@ def _fallback_metadata(script: dict, research: dict) -> dict:
     return {"title": title, "description": description, "tags": tags, "validation_warnings": ["metadata_fallback"]}
 
 
+def _inject_engagement_question(description: str, question: str) -> str:
+    """Insert the script's engagement_question before the hashtag block."""
+    if not question or question.lower() in description.lower():
+        return description
+    for marker in ("#Shorts", "#SoftResetWithMe", "#Relationship"):
+        pos = description.find(marker)
+        if pos > 0:
+            return description[:pos].rstrip() + f"\n\n{question}\n\n" + description[pos:]
+    return description + f"\n\n{question}"
+
+
 def run_metadata(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[metadata] Generating metadata for {video_id}")
 
@@ -124,6 +135,10 @@ def run_metadata(video_id: str, run_dir: str, config: dict) -> dict:
         print(f"[metadata] Gemini failed ({e}) — using deterministic fallback")
         raw = _fallback_metadata(script, research)
     raw = _validate_metadata(raw, config)
+
+    # Inject the script's engagement_question before hashtags — it's a free comment driver
+    eq = str(script.get("engagement_question", "")).strip()
+    raw["description"] = _inject_engagement_question(raw["description"], eq)
 
     result = {
         "video_id": video_id,

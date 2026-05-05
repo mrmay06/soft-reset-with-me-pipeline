@@ -48,7 +48,7 @@ def _call_model(prompt: str, model: str) -> dict:
 def _review_prompt(script: dict, research: dict) -> str:
     return f"""
 You are the long-form editorial reviewer for Soft Reset With Me.
-Check if this 5-7 minute script is a coherent emotional essay, not generic advice.
+Check if this long-form script is a coherent emotional essay, not generic advice.
 
 Core claim:
 {research.get("core_claim", "")}
@@ -117,6 +117,9 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
     prompt = template.format(
         topic=research.get("topic", ""),
         working_title=research.get("working_title", ""),
+        duration_label=config.get("longform_duration_label", "5-7 minute"),
+        target_words_min=int(config.get("longform_target_words_min", 750)),
+        target_words_max=int(config.get("longform_target_words_max", 1050)),
         longform_format=research.get("longform_format", ""),
         content_pillar=research.get("content_pillar", ""),
         core_claim=research.get("core_claim", ""),
@@ -138,12 +141,14 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
     script["argument_quality"] = "strong" if review.get("passes") else "weak"
 
     if script["validation"] != "passed" or not review.get("passes"):
+        min_words = int(config.get("longform_target_words_min", 750))
+        max_words = int(config.get("longform_target_words_max", 1050))
         retry_prompt = (
             prompt
             + "\n\nRewrite because validation/review failed.\n"
             + f"Validation warnings: {script.get('validation_warnings', [])}\n"
             + f"Review: {review}\n"
-            + "Keep 750-1050 spoken words and make every chapter support the core claim."
+            + f"Keep {min_words}-{max_words} spoken words and make every chapter support the core claim."
         )
         script = _call_model(retry_prompt, config["script_model"])
         script["video_id"] = video_id

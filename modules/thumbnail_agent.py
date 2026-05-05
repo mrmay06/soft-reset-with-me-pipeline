@@ -80,30 +80,41 @@ def _wrap_text(text: str, font, max_width: int, draw) -> list[str]:
     return lines[:2]  # max 2 lines
 
 
+def _sanitize_thumb_text(text: str) -> str:
+    """Replace non-ASCII chars likely to render as tofu on older devices."""
+    replacements = {"≠": "!=", "→": ">", "—": "-", "–": "-", "'": "'", "'": "'",
+                    """: '"', """: '"', "…": "...", "é": "e", "è": "e", "à": "a"}
+    for src, dst in replacements.items():
+        text = text.replace(src, dst)
+    return text.encode("ascii", errors="ignore").decode("ascii").strip()
+
+
 def _draw_thumbnail_text(image: "Image.Image", thumbnail_text: str) -> "Image.Image":
     """
-    Soft Reset style: cream text, last word in terracotta, dark stroke.
-    Rule: never more than one green word per frame.
+    Soft Reset style: cream text, last word in terracotta, black stroke shadow.
+    Font size increased for mobile readability. ASCII-safe text input.
     """
     draw = ImageDraw.Draw(image)
 
     font_path = "assets/fonts/DMSerifDisplay-Regular.ttf"
+    font_size = 150  # was 110 — larger for mobile browse readability
     try:
-        font = ImageFont.truetype(font_path, size=110)
+        font = ImageFont.truetype(font_path, size=font_size)
     except Exception:
         print("[thumbnail] DMSerifDisplay-Regular.ttf not found — falling back to Inter")
         try:
-            font = ImageFont.truetype("assets/fonts/Inter-Bold.ttf", size=110)
+            font = ImageFont.truetype("assets/fonts/Inter-Bold.ttf", size=font_size)
         except Exception:
             font = ImageFont.load_default()
 
     lines = _wrap_text(thumbnail_text, font, max_width=900, draw=draw)
 
-    # Accent rule: the last word of the last line gets warm terracotta.
-    GREEN = (196, 120, 90)   # #C4785A
-    WHITE = (245, 240, 232)  # #F5F0E8
+    TERRACOTTA = (196, 120, 90)   # #C4785A
+    CREAM = (245, 240, 232)       # #F5F0E8
+    BLACK = (0, 0, 0)
+    STROKE = 7
 
-    line_height = 130
+    line_height = 175
     total_height = len(lines) * line_height
     y = (1920 - total_height) // 2
 
@@ -111,31 +122,30 @@ def _draw_thumbnail_text(image: "Image.Image", thumbnail_text: str) -> "Image.Im
         words = line.split()
         is_last_line = (line_idx == len(lines) - 1)
 
-        # For non-last lines, render the whole line in white
+        def _draw_with_stroke(x: int, y: int, text: str, color: tuple):
+            for dx in range(-STROKE, STROKE + 1, STROKE):
+                for dy in range(-STROKE, STROKE + 1, STROKE):
+                    if dx == 0 and dy == 0:
+                        continue
+                    draw.text((x + dx, y + dy), text, font=font, fill=BLACK)
+            draw.text((x, y), text, font=font, fill=color)
+
         if not is_last_line or len(words) <= 1:
             bbox = draw.textbbox((0, 0), line, font=font)
             text_width = bbox[2] - bbox[0]
             x = (1080 - text_width) // 2
-            color = GREEN if (is_last_line and len(words) == 1) else WHITE
-            draw.text((x, y), line, font=font, fill=color)
+            color = TERRACOTTA if (is_last_line and len(words) == 1) else CREAM
+            _draw_with_stroke(x, y, line, color)
         else:
-            # Last line: white words except the last one which is green
             white_part = " ".join(words[:-1]) + " "
-            green_word = words[-1]
-
-            # Measure the full line to center it
+            terracotta_word = words[-1]
             full_bbox = draw.textbbox((0, 0), line, font=font)
             total_w = full_bbox[2] - full_bbox[0]
             x_start = (1080 - total_w) // 2
-
-            # White portion
             white_bbox = draw.textbbox((0, 0), white_part, font=font)
             white_w = white_bbox[2] - white_bbox[0]
-            draw.text((x_start, y), white_part, font=font, fill=WHITE)
-
-            # Green word
-            x_green = x_start + white_w
-            draw.text((x_green, y), green_word, font=font, fill=GREEN)
+            _draw_with_stroke(x_start, y, white_part, CREAM)
+            _draw_with_stroke(x_start + white_w, y, terracotta_word, TERRACOTTA)
 
         y += line_height
 
@@ -154,7 +164,7 @@ def run_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
 
     base = _prepare_base_image(asset_meta, run_dir)
     base = _apply_background_treatment(base)
-    thumbnail_text = script.get("thumbnail_text", script["hook"][:24])
+    thumbnail_text = _sanitize_thumb_text(script.get("thumbnail_text", script["hook"][:24]))
     base = _draw_thumbnail_text(base, thumbnail_text)
     base.save(output_path)
 

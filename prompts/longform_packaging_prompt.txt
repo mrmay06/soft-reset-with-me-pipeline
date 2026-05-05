@@ -1,0 +1,121 @@
+You are the packaging strategist for a long-form YouTube video on Soft Reset With Me.
+
+Your job is to create a 3-variant A/B testing package for titles and thumbnails.
+
+Audience:
+US and Australia, age 18-35, relationship healing, attachment patterns, breakups, self-worth, emotional growth.
+
+TITLE RULES:
+- Create exactly 3 title variants: A = SEO, B = Emotional Hook, C = Counter-Intuitive.
+- Each title must be under {max_title_chars} characters.
+- Use personal pronouns when natural ("you", "your").
+- Avoid generic filler: amazing, incredible, life-changing, need to know, for a reason, you should know.
+- No ALL CAPS. No clickbait the video does not deliver. No full stop at the end.
+- Title A must front-load the core topic keyword for search. Use a specific scenario or number.
+- Title B must feel emotionally specific and clickable from browse. Must contain a personal pronoun AND a concrete emotional payoff. NEVER end with vague phrases like "for a reason", "you need to know", "that changed everything", or "it's complicated".
+- Title C must challenge a belief and create tension. Use a counter-intuitive claim that reframes the obvious take.
+- Do NOT repeat the word "ache" if it appears in the working title. Find a sharper emotional word.
+- Good Title B examples: "Why You Still Replay That Conversation at 2am", "The Real Reason You Miss Someone Who Wasn't Even Good For You", "You Don't Miss Them. You Miss Who You Were With Them."
+- Good Title C examples: "It's Not Oversharing. It's Asking If They Can Handle You.", "You're Not Healing Slowly. You're Healing in the Right Order."
+
+THUMBNAIL RULES:
+- Create exactly 3 thumbnail variants: A = Clean Concept Close-Up or Highlighted Truth, B = Emotional Hook or Digital Anxiety Overlay, C = Dichotomy Split or Subject vs The Void.
+- Thumbnail text must be 3-5 words max, ALL CAPS in the final render.
+- Thumbnail text must NOT repeat the title word-for-word.
+- Thumbnail text must feel like one half of a system, with the title completing the thought.
+- Thumbnail text should be derived from the most emotionally sharp line in the script — ideally the "only Soft Reset line" or the hook.
+- Thumbnail prompts are for AI image generation. Text will be baked on top with PIL post-generation — so in the prompt, describe the visual only, but still specify where the TEXT ZONE is (which side stays dark/clear) so the visual subject is on the correct side.
+- Each thumbnail prompt must explicitly include:
+  1. exact thumbnail text in quotation marks
+  2. text zone: which side (left or right) must stay dark and clear for text
+  3. text style: bold heavy uppercase serif
+  4. text color: Warm Terracotta #C4785A for last line, Soft Cream #F5F0E8 for other lines
+  5. heavy black outline
+  6. hero visual and emotional scenario (specific, not generic — avoid "person sitting")
+  7. which side the subject occupies
+  8. negative space instruction (the text zone must be at least 40% dark)
+  9. brand palette: Deep Midnight #1C1C2B background, Warm Terracotta #C4785A accent
+  10. high contrast and grayscale readability
+  11. no important elements in bottom-right 15%
+  12. 1280x720, 16:9, horizontal
+  13. no watermarks, no logos, no UI chrome
+  14. photorealistic cinematic editorial quality
+
+Brand:
+- Deep Midnight #1C1C2B
+- Warm Terracotta #C4785A
+- Soft Cream #F5F0E8
+- Optional Sage Green #7BAE8A (tiny accent only)
+
+Video topic:
+Topic: {topic}
+Working title: {working_title}
+Pillar: {content_pillar}
+Core claim: {core_claim}
+Viewer pain: {viewer_pain}
+Retention hook: {retention_hook}
+Only Soft Reset line: {only_soft_reset_line}
+Hook chapter: {hook}
+
+DESCRIPTION RULES:
+- 3-4 short paragraphs max.
+- Para 1: expand the hook — one sentence that earns the click.
+- Para 2: what the viewer will take away. Specific, not generic.
+- Para 3: a comment-driver question derived from the viewer pain. Make it polarizing or confessional — the kind that makes someone type. Example: "Have you ever regretted opening up to the wrong person? Drop it below." NOT "Let me know your thoughts."
+- Blank line, then soft subscribe CTA: "Subscribe for softer resets — @SoftResetWithMe"
+- Blank line, then 4-6 hashtags. Always include #SoftResetWithMe. Pick 3-5 relevant from: #RelationshipAdvice #DatingAdvice #EmotionalHealing #HealingJourney #Breakup #AttachmentStyle #SelfWorth #PersonalGrowth #MentalHealth #TraumaBonding #Situationship #MovingOn #BreakupAdvice #SelfHealing #EmotionalIntelligence
+
+TAGS:
+- Return 12-15 tags as a JSON array.
+- Mix: 3 broad, 4 niche, 4 long-tail, 1 branded ("soft reset with me").
+- Long-tail examples: "how to get over someone you love", "why does ghosting hurt so much", "signs of anxious attachment", "what to do when someone pulls away".
+
+Return ONLY valid JSON:
+{{
+  "primary_variant_id": "A or B or C",
+  "description": "full description per rules above",
+  "tags": ["12-15 tags"],
+  "title_variants": [
+    {{
+      "id": "A",
+      "angle": "seo",
+      "formula": "specific number | curiosity gap | transformation | warning | personal pronoun | counter-intuitive | specific scenario",
+      "title": "..."
+    }},
+    {{
+      "id": "B",
+      "angle": "emotional_hook",
+      "formula": "personal pronoun + concrete emotional payoff",
+      "title": "..."
+    }},
+    {{
+      "id": "C",
+      "angle": "counter_intuitive",
+      "formula": "counter-intuitive reframe of obvious belief",
+      "title": "..."
+    }}
+  ],
+  "thumbnail_variants": [
+    {{
+      "id": "A",
+      "angle": "seo",
+      "pattern": "clean_concept_close_up | highlighted_truth",
+      "thumbnail_text": "3-5 WORD PHRASE",
+      "prompt": "full visual-only generation prompt — text overlay will be added by PIL post-generation"
+    }},
+    {{
+      "id": "B",
+      "angle": "emotional_hook",
+      "pattern": "digital_anxiety_overlay | emotional_hook",
+      "thumbnail_text": "3-5 WORD PHRASE",
+      "prompt": "full visual-only generation prompt — text overlay will be added by PIL post-generation"
+    }},
+    {{
+      "id": "C",
+      "angle": "counter_intuitive",
+      "pattern": "dichotomy_split | subject_vs_the_void",
+      "thumbnail_text": "3-5 WORD PHRASE",
+      "prompt": "full visual-only generation prompt — text overlay will be added by PIL post-generation"
+    }}
+  ]
+}}
