@@ -18,6 +18,8 @@ from modules.performance_agent import run_performance_sync, run_performance_sync
 from modules.longform_research_agent import run_longform_research, run_longform_research_mock
 from modules.longform_script_agent import run_longform_script, run_longform_script_mock
 from modules.longform_metadata_agent import run_longform_metadata, run_longform_metadata_mock
+from modules.longform_audio_agent import run_longform_audio, run_longform_audio_mock
+from modules.longform_video_assembler import run_longform_video, run_longform_video_mock
 from modules.longform_logger import run_longform_logger, run_longform_logger_mock
 
 
@@ -41,6 +43,8 @@ def main(mock: bool = False, fresh: bool = False):
     research_fn = run_longform_research_mock if mock else run_longform_research
     script_fn = run_longform_script_mock if mock else run_longform_script
     metadata_fn = run_longform_metadata_mock if mock else run_longform_metadata
+    audio_fn = run_longform_audio_mock if mock else run_longform_audio
+    video_fn = run_longform_video_mock if mock else run_longform_video
     logger_fn = run_longform_logger_mock if mock else run_longform_logger
 
     timings = {}
@@ -61,11 +65,13 @@ def main(mock: bool = False, fresh: bool = False):
         _run("Module 1 — Long Research", research_fn, video_id, run_dir, config, checkpoint_files=["01_longform_research.json"])
         _run("Module 2 — Long Script", script_fn, video_id, run_dir, config, checkpoint_files=["02_longform_script.json"])
         _run("Module 3 — Long Metadata", metadata_fn, video_id, run_dir, config, checkpoint_files=["03_longform_metadata.json"])
-        _run("Module 4 — Long Logger", logger_fn, video_id, run_dir, config)
+        _run("Module 4 — Long Audio", audio_fn, video_id, run_dir, config, checkpoint_files=["04_longform_voice.mp3", "04_longform_voice_meta.json"])
+        _run("Module 5 — Long Video", video_fn, video_id, run_dir, config, checkpoint_files=["06_longform_video.mp4", "06_longform_render_meta.json"])
+        _run("Module 6 — Long Logger", logger_fn, video_id, run_dir, config)
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'=' * 58}")
-        print(f" Long-form brief complete. Total: {total}s")
+        print(f" Long-form video pipeline complete. Total: {total}s")
         print(f" Output: {run_dir}")
         print(f"{'=' * 58}")
         if timings:

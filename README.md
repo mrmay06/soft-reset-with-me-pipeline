@@ -30,7 +30,7 @@ To run the full upload flow:
 python main.py --fresh
 ```
 
-To generate a separate long-form brief/script/metadata package without rendering or uploading:
+To generate a separate long-form video package without uploading:
 
 ```bash
 python main_long.py --mock
@@ -42,7 +42,7 @@ Long-form uses separate memory and analytics files:
 - `topic_memory_soft_reset_long.json`
 - `performance_memory_soft_reset_long.json`
 
-This first long-form track intentionally stops at brief, script, visual brief, and metadata. Rendering/upload should be added only after the essay structure is approved, because long-form needs a different visual pacing system from Shorts.
+The long-form track renders a separate horizontal `06_longform_video.mp4` using chapter-based editorial visuals, long-form audio, and a music bed. It does not upload yet.
 
 ## Required Secrets
 

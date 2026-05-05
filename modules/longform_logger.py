@@ -18,6 +18,10 @@ def run_longform_logger(video_id: str, run_dir: str, config: dict) -> dict:
     research = load_json(os.path.join(run_dir, "01_longform_research.json"))
     script = load_json(os.path.join(run_dir, "02_longform_script.json"))
     metadata = load_json(os.path.join(run_dir, "03_longform_metadata.json"))
+    render_meta = {}
+    render_path = os.path.join(run_dir, "06_longform_render_meta.json")
+    if os.path.exists(render_path):
+        render_meta = load_json(render_path)
     entry = {
         "video_id": video_id,
         "published_date": now_iso()[:10],
@@ -32,6 +36,8 @@ def run_longform_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "word_count": script.get("word_count", 0),
         "estimated_duration_sec": script.get("estimated_duration_sec", 0),
         "argument_quality": script.get("argument_quality", ""),
+        "final_duration_sec": render_meta.get("duration_sec", 0),
+        "render_validation": render_meta.get("validation", ""),
         "title": metadata.get("title", ""),
         "youtube_video_id": "",
         "youtube_url": "",
