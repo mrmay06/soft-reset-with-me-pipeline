@@ -244,5 +244,36 @@
     "validation_warnings": [
       "tags_sanitized"
     ]
+  },
+  {
+    "video_id": "20260506_162442",
+    "published_date": "2026-05-06",
+    "status": "uploaded",
+    "topic": "What anxious attachment actually looks like in real life",
+    "category": "psychology drops",
+    "angle_type": "psychology drop",
+    "total_score": 19,
+    "source_name": "Psychological principle: Anxious Attachment",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "dating anxiety, self-worth, rumination, relationship uncertainty",
+    "psych_concept": "Anxious Attachment, Rumination",
+    "core_claim": "Sometimes it looks like rereading one sentence until it hurts",
+    "editorial_seed": "This topic validates a common, often overlooked, internal manifestation of anxious attachment. It helps the audience recognize subtle signs within themselves, fostering self-awareness and emotional growth by reframing what anxious attachment truly means beyond overt behaviors.",
+    "only_soft_reset_line": "That quiet, obsessive loop over one phrase isn't just overthinking. It's your anxious attachment trying to build certainty out of someone else's ambiguity.",
+    "editorial_quality": "strong",
+    "argument_quality": "unknown",
+    "hook": "If you've ever reread one sentence until it felt like an accusation \u2014 this is for you.",
+    "hook_quality": "strong",
+    "word_count": 96,
+    "estimated_duration_sec": 27,
+    "thumbnail_text": "anxious attachment is quiet",
+    "content_fingerprint": "what anxious attachment actually looks like in real life if you ve ever reread one sentence until it felt like an accusation this is for you dating anxiety self worth rumination relationship uncertainty anxious attachment rumination sometimes it looks like rereading one sentence until it hurts that quiet obsessive loop over one phrase isn t just overthinking it s your anxious attachment trying to build certainty out of someone else s ambiguity",
+    "title": "Rereading every text until it hurts",
+    "youtube_video_id": "PDpL3lkf7Ik",
+    "youtube_url": "https://youtube.com/shorts/PDpL3lkf7Ik",
+    "fallback_count": 0,
+    "video_count": 3,
+    "total_scenes": 6,
+    "validation_warnings": []
   }
 ]
