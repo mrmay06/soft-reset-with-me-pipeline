@@ -211,5 +211,38 @@
     "video_count": 8,
     "total_scenes": 11,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260506_023743",
+    "published_date": "2026-05-06",
+    "status": "uploaded",
+    "topic": "The 'Future Faking' Trap",
+    "category": "Psychology Drops",
+    "angle_type": "truth_drop",
+    "total_score": 19,
+    "source_name": "Relationship Psychology Concepts",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "dating confusion, situationships, unfulfilled promises, emotional investment",
+    "psych_concept": "Future Faking (as a manipulation tactic)",
+    "core_claim": "Future faking is a manipulation tactic, designed to keep you emotionally invested without genuine commitment or effort.",
+    "editorial_seed": "It\u2019s easy to get swept up in grand visions of a shared future. But when someone consistently talks about 'us' in five years, yet can\u2019t commit to next Tuesday, that's a red flag. It\u2019s a psychological tactic to keep you hooked on potential, not present reality.",
+    "only_soft_reset_line": "That dream vacation they keep mentioning? It's emotional bait. It's there to distract you from how little is happening right now.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "They plan everything with you. But nothing ever happens.",
+    "hook_quality": "weak",
+    "word_count": 95,
+    "estimated_duration_sec": 27,
+    "thumbnail_text": "They Promise Everything. Except Today.",
+    "content_fingerprint": "the future faking trap they plan everything with you but nothing ever happens dating confusion situationships unfulfilled promises emotional investment future faking as a manipulation tactic future faking is a manipulation tactic designed to keep you emotionally invested without genuine commitment or effort that dream vacation they keep mentioning it s emotional bait it s there to distract you from how little is happening right now",
+    "title": "All those plans, nothing ever happens",
+    "youtube_video_id": "kG8ZskBISf4",
+    "youtube_url": "https://youtube.com/shorts/kG8ZskBISf4",
+    "fallback_count": 0,
+    "video_count": 13,
+    "total_scenes": 17,
+    "validation_warnings": [
+      "tags_sanitized"
+    ]
   }
 ]
