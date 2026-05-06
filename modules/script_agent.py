@@ -270,7 +270,8 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[script] Generating script for {video_id}")
 
     research = load_json(os.path.join(run_dir, "01_research.json"))
-    prompt_template = open("prompts/script_prompt.txt").read()
+    from utils.strategy import inject_strategy
+    prompt_template = inject_strategy(open("prompts/script_prompt.txt").read(), "script")
     performance_insights = summarize_performance_for_prompt(
         config.get("performance_memory_file", "performance_memory_soft_reset.json"),
         min_videos=int(config.get("performance_min_videos_for_prompt", 8)),

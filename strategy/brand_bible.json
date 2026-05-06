@@ -1,0 +1,85 @@
+{
+  "_note": "This file is immutable to the strategy cycle. The weekly analysis job reads it as a constraint only. It cannot propose changes here.",
+  "channel": "Soft Reset With Me",
+  "handle": "@SoftResetWithMe",
+  "format": "faceless emotional essay — no face, no talking head, no green screen",
+
+  "voice_and_tone": {
+    "is": [
+      "Precise and specific — names behaviors, not types of people",
+      "Emotionally intelligent without being clinical",
+      "Speaks to the reader's lived experience, not their diagnosis",
+      "Direct and honest — never softens a hard truth to feel kind",
+      "Grounded in psychology but never academic",
+      "Warm but never sentimental or saccharine"
+    ],
+    "is_not": [
+      "Inspirational poster voice",
+      "Life coach hustle content",
+      "Toxic positivity or affirmation culture",
+      "Clinical or academic — no jargon without grounding",
+      "Judgemental toward the viewer",
+      "Self-help clichés dressed up as insight"
+    ]
+  },
+
+  "content_rules": {
+    "always": [
+      "Name the specific behavior or mechanism, not a personality type",
+      "Ground insights in lived emotional experience before naming the concept",
+      "End on empowerment, not pity — the viewer is capable of change",
+      "Maintain the editorial POV — this is an essay, not a listicle",
+      "Every video must be something only Soft Reset With Me could say in this way"
+    ],
+    "never": [
+      "Tell the viewer they are broken or fundamentally flawed",
+      "Diagnose the viewer or their partner",
+      "Give relationship advice that implies the partner is always the villain",
+      "Use therapist-speak as a shortcut for actual insight",
+      "Create content that could damage someone in crisis",
+      "Produce content that is factually misleading about psychology"
+    ]
+  },
+
+  "banned_phrases_all_prompts": [
+    "your feelings are valid",
+    "that's valid",
+    "healing journey",
+    "healing takes time",
+    "you deserve better",
+    "you are enough",
+    "toxic person",
+    "narcissist",
+    "love bombing",
+    "gaslighting",
+    "you'll learn",
+    "in this video",
+    "this covers",
+    "today we're talking about",
+    "subconsciously",
+    "validate",
+    "dysregulate"
+  ],
+
+  "banned_thumbnail_words": [
+    "withdrawal", "reinforcement", "regulation", "dysregulation", "intermittent",
+    "subconscious", "pattern", "attachment", "nervous", "system", "trauma",
+    "process", "journey", "healing", "toxic", "growth", "explained"
+  ],
+
+  "primary_variant_rule": "Primary variant is never A. Default to B. Prefer C if thumbnail text passes non-clinical check.",
+
+  "content_safety_red_lines": [
+    "No content that could encourage self-harm or leaving an abusive situation without safety resources",
+    "No medical or clinical diagnosis presented as fact",
+    "No misleading statistics or fabricated research citations",
+    "No content that sexualises relationships or people",
+    "No real identifiable individuals presented as examples without consent"
+  ],
+
+  "brand_elements": {
+    "mascot": "Raccoon — curious, perceptive, emotionally aware. Not cute or goofy. Thoughtful observer.",
+    "visual_aesthetic": "Cinematic, muted tones, emotional texture. Not corporate, not stock-photo clean.",
+    "music_tone": "Ambient, understated piano or instrumental. Never energetic or motivational."
+  }
+}

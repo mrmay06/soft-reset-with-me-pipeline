@@ -122,7 +122,8 @@ def run_metadata(video_id: str, run_dir: str, config: dict) -> dict:
     research = load_json(os.path.join(run_dir, "01_research.json"))
     script = load_json(os.path.join(run_dir, "02_script.json"))
 
-    prompt_template = open("prompts/metadata_prompt.txt").read()
+    from utils.strategy import inject_strategy
+    prompt_template = inject_strategy(open("prompts/metadata_prompt.txt").read(), "metadata")
     prompt = prompt_template.format(
         hook=script["hook"],
         topic=research["topic"],

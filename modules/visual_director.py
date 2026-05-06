@@ -438,7 +438,8 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
 
     raw_dialogue = build_spoken_script_text(script)
 
-    prompt = DIRECTOR_PROMPT.format(
+    from utils.strategy import inject_strategy
+    prompt = inject_strategy(DIRECTOR_PROMPT, "visuals").format(
         raw_dialogue=raw_dialogue,
         brand_context=_load_brand_context(),
     )

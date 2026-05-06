@@ -107,7 +107,8 @@ def _validate_script(script: dict, config: dict) -> dict:
 def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_script] Writing script for {video_id}")
     research = load_json(os.path.join(run_dir, "01_longform_research.json"))
-    template = open("prompts/longform_script_prompt.txt").read()
+    from utils.strategy import inject_strategy
+    template = inject_strategy(open("prompts/longform_script_prompt.txt").read(), "script")
     performance_insights = summarize_performance_for_prompt(
         config.get("performance_memory_file", "performance_memory_soft_reset_long.json"),
         min_videos=int(config.get("performance_min_videos_for_prompt", 4)),

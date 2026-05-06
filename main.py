@@ -28,6 +28,7 @@ from modules.video_assembler import run_assembler, run_assembler_mock
 from modules.metadata_agent import run_metadata, run_metadata_mock
 from modules.uploader import run_upload, run_upload_mock
 from modules.logger import run_logger, run_logger_mock
+from modules.creative_judge import run_creative_judge, run_creative_judge_mock
 
 
 # ── Checkpoint helpers ──────────────────────────────────────────────────────
@@ -52,6 +53,7 @@ def _find_latest_run_dir() -> tuple[str, str] | None:
 # ── Main ────────────────────────────────────────────────────────────────────
 
 def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, skip_upload: bool = False):
+    from utils.strategy import get_strategy_version, get_experiment_slot, get_active_experiment_id
     config = load_config()
 
     # ── Determine run_dir and video_id ──
@@ -73,10 +75,18 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
         run_dir = create_run_dir(video_id)
         mode = "MOCK" if mock else "LIVE"
 
+    strategy_version = get_strategy_version()
+    experiment_label = get_experiment_slot(track="shorts") if not mock else "baseline"
+    experiment_id = get_active_experiment_id(experiment_label)
+    config["strategy_version"] = strategy_version
+    config["experiment_label"] = experiment_label
+    config["experiment_id"] = experiment_id
+
     print(f"\n{'='*50}")
     print(f" Soft Reset With Me Pipeline [{mode}]")
     print(f" Video ID: {video_id}")
     print(f" Run dir:  {run_dir}")
+    print(f" Strategy: {strategy_version}  |  Slot: {experiment_label}" + (f"  |  Exp: {experiment_id}" if experiment_id else ""))
     print(f"{'='*50}\n")
 
     performance_fn = run_performance_sync_mock    if mock else run_performance_sync
@@ -91,6 +101,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
     metadata_fn   = run_metadata_mock         if mock else run_metadata
     upload_fn     = run_upload_mock           if mock else run_upload
     logger_fn     = run_logger_mock           if mock else run_logger
+    judge_fn      = run_creative_judge_mock   if mock else run_creative_judge
 
     pipeline_start = time.time()
     timings = {}
@@ -140,6 +151,8 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
             t0 = time.time()
             logger_fn(video_id, run_dir, config)
             timings["Module 9  — Logger"] = round(time.time() - t0, 1)
+
+        _run("Module 10 — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'='*50}")

@@ -287,7 +287,8 @@ def run_longform_metadata(video_id: str, run_dir: str, config: dict) -> dict:
     script = load_json(os.path.join(run_dir, "02_longform_script.json"))
     hook = script.get("chapters", [{}])[0].get("voiceover", "") if script.get("chapters") else ""
     max_title_chars = int(config.get("max_title_chars", 70))
-    template = open("prompts/longform_packaging_prompt.txt").read()
+    from utils.strategy import inject_strategy
+    template = inject_strategy(open("prompts/longform_packaging_prompt.txt").read(), "metadata")
     prompt = template.format(
         max_title_chars=max_title_chars,
         topic=research.get("topic", ""),

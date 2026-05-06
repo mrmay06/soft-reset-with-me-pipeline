@@ -1,0 +1,56 @@
+{
+  "_note": "Active strategy. Consumed at runtime by prompt modules. Replace with strategy_memory_proposed.json after human review.",
+  "version": "untracked",
+  "generated_at": null,
+  "analysis_window": null,
+  "videos_analyzed": 0,
+  "videos_excluded": 0,
+  "previous_version_reference": null,
+
+  "research": {
+    "prioritize": [],
+    "reduce": [],
+    "cooldowns": [],
+    "strong_angle_types": [],
+    "notes": ""
+  },
+
+  "script": {
+    "prioritize": [],
+    "reduce": [],
+    "cta_patterns": [],
+    "word_count_signal": ""
+  },
+
+  "visuals": {
+    "prioritize": [],
+    "reduce": [],
+    "thumbnail_signal": ""
+  },
+
+  "metadata": {
+    "title_signal": "",
+    "description_signal": "",
+    "prioritize": [],
+    "reduce": []
+  },
+
+  "voice": {
+    "prioritize": [],
+    "notes": ""
+  },
+
+  "thumbnail": {
+    "prioritize": [],
+    "reduce": [],
+    "clinical_word_block": "maintained"
+  },
+
+  "experiment_slots": {
+    "this_week": [],
+    "wildcard_slots": []
+  },
+
+  "brand_bible_override_check": "no conflicts detected",
+  "channel_health_signal": "insufficient data — strategy layer not yet active"
+}

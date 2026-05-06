@@ -116,7 +116,8 @@ def _fallback_longform_topic(memory_file: str) -> dict:
 
 def run_longform_research(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_research] Selecting topic for {video_id}")
-    template = open("prompts/longform_research_prompt.txt").read()
+    from utils.strategy import inject_strategy
+    template = inject_strategy(open("prompts/longform_research_prompt.txt").read(), "research")
     performance_insights = summarize_performance_for_prompt(
         config.get("performance_memory_file", "performance_memory_soft_reset_long.json"),
         min_videos=int(config.get("performance_min_videos_for_prompt", 4)),

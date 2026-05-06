@@ -25,6 +25,7 @@ from modules.longform_video_assembler import run_longform_video, run_longform_vi
 from modules.longform_thumbnail_agent import run_longform_thumbnail, run_longform_thumbnail_mock
 from modules.longform_uploader import run_longform_upload, run_longform_upload_mock
 from modules.longform_logger import run_longform_logger, run_longform_logger_mock
+from modules.creative_judge import run_creative_judge, run_creative_judge_mock
 
 
 def _checkpoint(run_dir: str, *paths: str) -> bool:
@@ -58,6 +59,7 @@ def _apply_test_2min_overrides(config: dict) -> dict:
 
 
 def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resume_id: str | None = None):
+    from utils.strategy import get_strategy_version, get_experiment_slot, get_active_experiment_id
     config = load_config("config/longform_config.json")
     if test_2min:
         config = _apply_test_2min_overrides(config)
@@ -77,10 +79,18 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
         run_dir = create_run_dir(video_id)
         mode = "MOCK" if mock else "LIVE"
 
+    strategy_version = get_strategy_version()
+    experiment_label = get_experiment_slot(track="longform") if not mock else "baseline"
+    experiment_id = get_active_experiment_id(experiment_label)
+    config["strategy_version"] = strategy_version
+    config["experiment_label"] = experiment_label
+    config["experiment_id"] = experiment_id
+
     print(f"\n{'=' * 58}")
     print(f" Soft Reset With Me Long-Form Pipeline [{mode}]")
     print(f" Video ID: {video_id}")
     print(f" Run dir:  {run_dir}")
+    print(f" Strategy: {strategy_version}  |  Slot: {experiment_label}" + (f"  |  Exp: {experiment_id}" if experiment_id else ""))
     print(f"{'=' * 58}\n")
 
     performance_fn = run_performance_sync_mock if mock else run_performance_sync
@@ -93,6 +103,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
     thumbnail_fn = run_longform_thumbnail_mock if mock else run_longform_thumbnail
     upload_fn = run_longform_upload_mock if mock else run_longform_upload
     logger_fn = run_longform_logger_mock if mock else run_longform_logger
+    judge_fn  = run_creative_judge_mock  if mock else run_creative_judge
 
     timings = {}
     pipeline_start = time.time()
@@ -131,6 +142,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
         )
         _run("Module 8 — Long Upload", upload_fn, video_id, run_dir, config, checkpoint_files=["09_longform_upload_meta.json"])
         _run("Module 9 — Long Logger", logger_fn, video_id, run_dir, config)
+        _run("Module 10 — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'=' * 58}")

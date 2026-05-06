@@ -312,7 +312,8 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         min_views=int(config.get("performance_min_views", 50)),
     )
 
-    prompt_template = open("prompts/research_candidates_prompt.txt").read()
+    from utils.strategy import inject_strategy
+    prompt_template = inject_strategy(open("prompts/research_candidates_prompt.txt").read(), "research")
     prompt = prompt_template.format(
         signals=signals_str,
         recent_topics=recent_str,
