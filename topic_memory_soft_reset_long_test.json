@@ -1,0 +1,65 @@
+[
+  {
+    "video_id": "long_20260505_111757",
+    "published_date": "2026-05-05",
+    "status": "rendered_not_uploaded",
+    "topic": "The Lingering Ache of Ghosting: When Connection Vanishes",
+    "working_title": "The Silence After The Spark: Why Ghosting Hurts Even When It Wasn't 'Real'",
+    "content_pillar": "healing arcs",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "The pain of being ghosted after a few meaningful dates isn't an overreaction; it's an ambiguous loss that challenges our sense of self-worth and future, and understanding this allows us to reclaim our emotional space without needing closure.",
+    "editorial_seed": "We often dismiss the profound hurt of being ghosted after only a few dates, telling ourselves it wasn't 'real' enough to matter. But the confusion, the endless replaying, and the sudden deletion of a perceived future can leave a lasting emotional bruise. This video delves into why those nascent connections feel so significant and offers a compassionate path to heal from a loss without a proper goodbye.",
+    "only_soft_reset_line": "The silence isn't a verdict on your desirability. It's a refusal to communicate. And you deserve to process that specific, real loss and reset your own narrative, even when they won't give you closure.",
+    "word_count": 377,
+    "estimated_duration_sec": 145.9,
+    "argument_quality": "strong",
+    "final_duration_sec": 148.1,
+    "render_validation": "passed",
+    "title": "The Silence After The Spark: Why Ghosting Hurts Even When It Wasn't 'R",
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "",
+    "youtube_url": ""
+  },
+  {
+    "video_id": "long_20260505_115505",
+    "published_date": "2026-05-05",
+    "status": "rendered_not_uploaded",
+    "topic": "The Quiet Regret of Brave Vulnerability",
+    "working_title": "When You Show Too Much, Too Soon: The Ache of Unmet Vulnerability",
+    "content_pillar": "self-worth shifts | conversation truths | healing arcs",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "The pain of 'oversharing' isn't always about revealing too much, but about the *lack of reciprocity* that makes you feel exposed instead of connected. True vulnerability requires not just bravery, but also discernment.",
+    "editorial_seed": "We all have those moments: you lay a raw piece of your heart bare, only to be met with a blank stare, a quick topic change, or a dismissive 'oh.' That immediate internal flinch, the burning shame, the desperate wish to rewind time. This video explores why that specific moment hurts so much, and how to navigate the fine line between brave vulnerability that deepens connection, and the kind of unfiltered exposure that leaves us feeling utterly alone. It's about recognizing the *conditions* for connection, not just the act of opening up.",
+    "only_soft_reset_line": "Sometimes, the ache after opening up isn't shame for what you said, but grief for what wasn't received.",
+    "word_count": 301,
+    "estimated_duration_sec": 116.5,
+    "argument_quality": "strong",
+    "final_duration_sec": 126.93,
+    "render_validation": "passed",
+    "title": "The Ache: Why You Regret Opening Up So Deeply",
+    "primary_variant_id": "B",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "when | core topic | specific pain | unmet need",
+        "title": "When Vulnerability Hurts: The Ache of Unmet Reciprocity"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "emotional feeling | why | personal pronoun | specific scenario",
+        "title": "The Ache: Why You Regret Opening Up So Deeply"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "counter-intuitive claim | core topic | true explanation",
+        "title": "It's Not 'Oversharing': The Real Pain of Vulnerability"
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "",
+    "youtube_url": ""
+  }
+]

@@ -148,4 +148,12 @@ def run_longform_captions(video_id: str, run_dir: str, config: dict) -> str:
     return output_path
 
 
-run_longform_captions_mock = run_longform_captions
+def run_longform_captions_mock(video_id: str, run_dir: str, config: dict) -> str:
+    print(f"[longform_captions][MOCK] Generating script-timed captions for {video_id}")
+    script = load_json(os.path.join(run_dir, "02_longform_script.json"))
+    voice_meta = load_json(os.path.join(run_dir, "04_longform_voice_meta.json"))
+    output_path = os.path.join(run_dir, "04_longform_captions.ass")
+    events = _caption_events(script, float(voice_meta["duration_sec"]))
+    _write_ass(events, output_path)
+    print(f"[longform_captions][MOCK] Done. {len(events)} word captions.")
+    return output_path

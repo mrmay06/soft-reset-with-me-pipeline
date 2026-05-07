@@ -1,0 +1,90 @@
+name: Weekly Self-Improvement Strategy
+
+on:
+  schedule:
+    - cron: '0 10 * * 1'  # Monday 6:00 AM New York during EDT
+    - cron: '0 11 * * 1'  # Monday 6:00 AM New York during EST
+  workflow_dispatch:
+    inputs:
+      skip_video_watch:
+        description: 'Skip Gemini video watching and use analytics/judge traits only.'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+jobs:
+  weekly-strategy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check local strategy window
+        id: window
+        shell: python
+        run: |
+          import os
+          from datetime import datetime, timedelta
+          from zoneinfo import ZoneInfo
+
+          event = os.environ.get("GITHUB_EVENT_NAME", "")
+          should_run = event != "schedule"
+          if event == "schedule":
+              now = datetime.now(ZoneInfo("America/New_York"))
+              start = now.replace(hour=6, minute=0, second=0, microsecond=0)
+              should_run = now.weekday() == 0 and start <= now < start + timedelta(minutes=45)
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"should_run={str(should_run).lower()}\n")
+          print(f"should_run={should_run}")
+
+      - name: Set up Python
+        if: steps.window.outputs.should_run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        if: steps.window.outputs.should_run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install Python dependencies
+        if: steps.window.outputs.should_run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Run weekly self-improvement cycle
+        if: steps.window.outputs.should_run == 'true'
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.skip_video_watch }}" = "false" ]; then
+            python tools/weekly_strategy.py
+          else
+            python tools/weekly_strategy.py --skip-video-watch
+          fi
+        env:
+          GEMINI_API_KEY:            ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_CLIENT_ID:         ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET:     ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN:     ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+
+      - name: Commit strategy memory
+        if: success() && steps.window.outputs.should_run == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add strategy/strategy_memory.json strategy/strategy_memory_proposed.json strategy/analysis_history strategy/analytics_cache strategy/comparisons
+          git diff --staged --quiet || git commit -m "chore: weekly self-improvement strategy $(date +%Y%m%d)"
+          git push

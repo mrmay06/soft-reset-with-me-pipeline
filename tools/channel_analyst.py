@@ -109,11 +109,24 @@ def fetch_recent_videos(yt, days: int = 7) -> list[dict]:
 
 def load_topic_memory() -> dict:
     """Returns a dict keyed by youtube_video_id."""
-    path = "topic_memory.json"
-    if not os.path.exists(path):
-        return {}
-    with open(path) as f:
-        memory = json.load(f)
+    paths = []
+    for config_path, fallback in (
+        ("config/pipeline_config.json", "topic_memory_soft_reset.json"),
+        ("config/longform_config.json", "topic_memory_soft_reset_long.json"),
+    ):
+        path = fallback
+        if os.path.exists(config_path):
+            with open(config_path) as f:
+                path = json.load(f).get("topic_memory_file", fallback)
+        paths.append(path)
+    memory = []
+    for path in paths:
+        if not os.path.exists(path):
+            continue
+        with open(path) as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            memory.extend(data)
     return {entry["youtube_video_id"]: entry for entry in memory if "youtube_video_id" in entry}
 
 
@@ -186,8 +199,6 @@ def generate_ai_report(channel: dict, videos: list[dict], patterns: dict) -> str
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         return "GEMINI_API_KEY not set — skipping AI analysis"
-
-    genai.configure(api_key=api_key)
 
     video_summary = "\n".join([
         f"- [{v['views']} views | {v['likes']} likes] \"{v['title']}\" | category: {v['category']} | research score: {v['research_score']} | date: {v['published_at']}"

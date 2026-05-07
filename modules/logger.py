@@ -44,6 +44,10 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
     metadata = load_json(os.path.join(run_dir, "07_metadata.json"))
     asset_meta = load_json(os.path.join(run_dir, "03_asset_meta.json"))
     upload_result = load_json(os.path.join(run_dir, "08_upload_meta.json"))
+    judge = {}
+    judge_path = os.path.join(run_dir, "10_judge_report.json")
+    if os.path.exists(judge_path):
+        judge = load_json(judge_path)
     memory_file = config.get("topic_memory_file", DEFAULT_MEMORY_FILE)
     max_entries = int(config.get("topic_memory_max_entries", 30))
     upload_status = (
@@ -61,6 +65,9 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "angle_type": research.get("angle_type", ""),
         "total_score": research["total_score"],
         "source_name": research["source_name"],
+        "source_basis": research.get("source_basis", research.get("source_fact", "")),
+        "source_url": research.get("source_url", ""),
+        "confidence_level": research.get("confidence_level", ""),
         "content_format": research.get("content_format", ""),
         "emotional_trigger": research.get("emotional_trigger", ""),
         "psych_concept": research.get("psych_concept", ""),
@@ -89,6 +96,15 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "video_count": asset_meta.get("video_count", 0),
         "total_scenes": asset_meta.get("total_scenes", 0),
         "validation_warnings": metadata.get("validation_warnings", []),
+        "experiment_label": config.get("experiment_label", "baseline"),
+        "experiment_id": config.get("experiment_id"),
+        "strategy_version": config.get("strategy_version", ""),
+        "judge_traits": judge.get("traits", {}),
+        "judge_scores": judge.get("scores", {}),
+        "judge_composite_score": judge.get("composite_score", 0),
+        "strongest_element": judge.get("strongest_element", ""),
+        "weakest_element": judge.get("weakest_element", ""),
+        "only_soft_reset_score": judge.get("only_soft_reset_score", 0),
     }
 
     try:

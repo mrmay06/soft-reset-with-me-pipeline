@@ -118,11 +118,14 @@ def _compute_channel_trend(videos: list[dict]) -> dict:
     """Week-over-week trend signal on key metrics."""
     by_week: dict[str, list[dict]] = defaultdict(list)
     for v in videos:
-        pub = v.get("published_at", "")
+        pub = v.get("published_at") or v.get("published_date", "")
         if not pub:
             continue
         try:
-            dt = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+            if "T" in pub:
+                dt = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+            else:
+                dt = datetime.strptime(pub[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
             iso = dt.isocalendar()
             week_key = f"{iso[0]}-W{iso[1]:02d}"
             by_week[week_key].append(v)

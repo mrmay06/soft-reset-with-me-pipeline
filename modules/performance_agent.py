@@ -196,19 +196,21 @@ def _enrich_from_workspace(video_id: str) -> dict:
     extra = {}
 
     script_path = os.path.join(run_dir, "02_script.json")
-    if os.path.exists(script_path):
+    long_script_path = os.path.join(run_dir, "02_longform_script.json")
+    if os.path.exists(script_path) or os.path.exists(long_script_path):
         try:
-            script = load_json(script_path)
+            script = load_json(script_path if os.path.exists(script_path) else long_script_path)
             extra["hook_text"]      = script.get("hook", "")
-            extra["content_format"] = script.get("content_format", "")
+            extra["content_format"] = script.get("content_format", script.get("narrative_format", ""))
             extra["editorial_pov"]  = script.get("editorial_pov", "")
         except Exception:
             pass
 
     metadata_path = os.path.join(run_dir, "07_metadata.json")
-    if os.path.exists(metadata_path):
+    long_metadata_path = os.path.join(run_dir, "03_longform_metadata.json")
+    if os.path.exists(metadata_path) or os.path.exists(long_metadata_path):
         try:
-            meta = load_json(metadata_path)
+            meta = load_json(metadata_path if os.path.exists(metadata_path) else long_metadata_path)
             extra["title_text"] = meta.get("title", "")
             extra["title_type"] = ""   # future: auto-tagged in creative judge
         except Exception:

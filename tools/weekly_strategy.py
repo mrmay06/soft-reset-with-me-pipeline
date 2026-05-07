@@ -6,8 +6,9 @@ Runs the full weekly strategy cycle in order:
   2. Pre-process into grouped comparisons
   3. AI analysis → proposed verdict
 
-After this completes, review strategy/strategy_memory_proposed.json
-and copy it to strategy/strategy_memory.json to activate it.
+After this completes, strategy/strategy_memory_proposed.json is automatically
+promoted to strategy/strategy_memory.json. Archived history remains available
+for rollback.
 
 Usage:
     python tools/weekly_strategy.py
@@ -20,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import shutil
 import sys
 import time
 
@@ -89,17 +91,10 @@ def main():
     print(f"{'='*60}")
     print(f" Weekly cycle complete in {total}s")
     print(f"{'='*60}")
+    shutil.copy(PROPOSED_FILE, STRATEGY_FILE)
+    print(f"\n Auto-promoted weekly strategy: {PROPOSED_FILE} → {STRATEGY_FILE}")
     print(f"""
- NEXT STEPS:
- 1. Review the proposed strategy:
-    cat {PROPOSED_FILE}
-
- 2. If it looks good, activate it:
-    cp {PROPOSED_FILE} {STRATEGY_FILE}
-
- 3. The next pipeline run will automatically pick up the new strategy.
-
- To rollback at any time:
+ ROLLBACK:
     cp strategy/analysis_history/<previous-week>_verdict.json {STRATEGY_FILE}
 """)
 

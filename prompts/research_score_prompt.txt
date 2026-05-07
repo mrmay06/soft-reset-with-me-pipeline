@@ -50,6 +50,7 @@ Scoring discipline:
 - Reward topics with a clean one-line payoff and a natural save/share reason
 - Penalize topics that need disclaimers, diagnosis, blame, or gendered assumptions
 - Penalize generic source names. If source_name is only "psychological principles" and no source_url is available, reliability_score should usually be 3, not 4
+- If confidence_level is observational and there is no source_url, reliability_score and share_save_score should usually cap at 3
 - Only give total_score 20 when every score truly deserves a rare 4
 
 ONLY SOFT RESET LINE quality gate — before finalizing the score:

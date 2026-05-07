@@ -4,8 +4,10 @@
   "niche": "relationship self-improvement",
   "channel_brand": "Soft Reset With Me",
   "channel_handle": "@SoftResetWithMe",
-  "publish_mode": "manual_private",
+  "publish_mode": "public_now",
   "timezone": "America/New_York",
+  "action_start_offset_minutes": 25,
+  "dst_safe_dual_cron": true,
   "weekly_slots_et": {
     "monday": ["12:00", "19:00"],
     "tuesday": ["12:00", "20:00"],
@@ -14,6 +16,9 @@
     "friday": ["15:00", "19:00"],
     "saturday": ["10:00", "18:00"],
     "sunday": ["11:00", "19:00"]
+  },
+  "longform_weekly_slots_et": {
+    "sunday": ["21:00"]
   },
   "brand_colors": {
     "deep_midnight": "#1C1C2B",

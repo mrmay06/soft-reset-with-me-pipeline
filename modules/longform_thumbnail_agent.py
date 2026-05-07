@@ -274,4 +274,54 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
     return final_output
 
 
-run_longform_thumbnail_mock = run_longform_thumbnail
+def run_longform_thumbnail_mock(video_id: str, run_dir: str, config: dict) -> str:
+    print(f"[longform_thumbnail][MOCK] Creating lightweight thumbnail variants for {video_id}")
+    metadata = load_json(os.path.join(run_dir, "03_longform_metadata.json"))
+    width = int(config.get("longform_thumbnail_width", 1280))
+    height = int(config.get("longform_thumbnail_height", 720))
+    primary_id = str(metadata.get("primary_variant_id", "B")).upper()
+    variants = metadata.get("thumbnail_variants", []) or [
+        {"id": "A", "thumbnail_text": "MISS THE DREAM"},
+        {"id": "B", "thumbnail_text": "NOT THE PERSON"},
+        {"id": "C", "thumbnail_text": "LET THE MAYBE GO"},
+    ]
+    generated_variants = []
+    for variant in variants:
+        variant_id = str(variant.get("id", "")).upper()
+        if variant_id not in {"A", "B", "C"}:
+            continue
+        output_file = f"07_longform_thumbnail_{variant_id}.png"
+        output_path = os.path.join(run_dir, output_file)
+        image = Image.new("RGB", (width, height), (28, 28, 43))
+        draw = ImageDraw.Draw(image)
+        draw.rectangle((0, 0, width, 20), fill=(196, 120, 90))
+        draw.rectangle((0, height - 20, width, height), fill=(123, 174, 138))
+        image.save(output_path)
+        thumb_text = _sanitize_thumb_text(variant.get("thumbnail_text", "SOFT RESET"))
+        _draw_text_overlay(output_path, thumb_text, variant_id, width, height)
+        generated_variants.append({
+            "id": variant_id,
+            "angle": variant.get("angle", "mock"),
+            "pattern": variant.get("pattern", "mock"),
+            "thumbnail_text": thumb_text,
+            "prompt_file": "",
+            "generated_file": "",
+            "output_file": output_file,
+            "background_source": "mock",
+            "final_output_size": f"{width}x{height}",
+            "degraded_fallback": False,
+        })
+    primary = next((item for item in generated_variants if item["id"] == primary_id), generated_variants[0])
+    final_output = os.path.join(run_dir, "07_longform_thumbnail.png")
+    shutil.copyfile(os.path.join(run_dir, primary["output_file"]), final_output)
+    save_json({
+        "video_id": video_id,
+        "output": "07_longform_thumbnail.png",
+        "primary_variant_id": primary["id"],
+        "primary_output_file": primary["output_file"],
+        "thumbnail_strategy": "mock_longform_ab_packaging",
+        "variants": generated_variants,
+        "generated_at": now_iso(),
+    }, os.path.join(run_dir, "07_longform_thumbnail_meta.json"))
+    print(f"[longform_thumbnail][MOCK] Done. Primary variant [{primary['id']}]")
+    return final_output

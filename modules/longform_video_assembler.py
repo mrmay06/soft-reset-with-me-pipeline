@@ -704,4 +704,45 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     return meta
 
 
-run_longform_video_mock = run_longform_video
+def run_longform_video_mock(video_id: str, run_dir: str, config: dict) -> dict:
+    print(f"[longform_video][MOCK] Creating lightweight long-form placeholder for {video_id}")
+    output_path = os.path.join(run_dir, "06_longform_video.mp4")
+    duration = min(float(config.get("longform_target_max_sec", 120)), 12.0)
+    width = int(config.get("longform_width", 1920))
+    height = int(config.get("longform_height", 1080))
+    fps = int(config.get("longform_fps", 30))
+    _run_ffmpeg([
+        "ffmpeg",
+        "-f", "lavfi",
+        "-i", f"color=c=0x1C1C2B:s={width}x{height}:d={duration}:r={fps}",
+        "-f", "lavfi",
+        "-i", f"anullsrc=channel_layout=stereo:sample_rate=44100:d={duration}",
+        "-c:v", "libx264",
+        "-preset", "ultrafast",
+        "-pix_fmt", "yuv420p",
+        "-c:a", "aac",
+        "-shortest",
+        output_path,
+        "-y",
+    ], "mock_longform_video")
+    meta = {
+        "video_id": video_id,
+        "output": "06_longform_video.mp4",
+        "chapters": len(load_json(os.path.join(run_dir, "02_longform_script.json")).get("chapters", [])),
+        "visual_beats": 0,
+        "music_track": "mock",
+        "visual_assets": [],
+        "stock_video_count": 0,
+        "pexels_video_count": 0,
+        "coverr_video_count": 0,
+        "fallback_card_count": 0,
+        "captions": False,
+        "caption_method": "mock",
+        "film_overlay": {"applied": False},
+        "validation": "passed",
+        "duration_sec": duration,
+        "generated_at": now_iso(),
+    }
+    save_json(meta, os.path.join(run_dir, "06_longform_render_meta.json"))
+    print(f"[longform_video][MOCK] Done. Final video: {duration}s")
+    return meta

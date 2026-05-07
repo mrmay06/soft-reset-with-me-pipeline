@@ -438,6 +438,7 @@ def _apply_scoring_penalties(result: dict) -> dict:
     trigger = _normalise_text(result.get("emotional_trigger", ""))
     source_name = _normalise_text(result.get("source_name", ""))
     source_url = str(result.get("source_url", "") or "").strip()
+    confidence_level = _normalise_text(result.get("confidence_level", ""))
     content_format = _normalise_text(result.get("content_format", ""))
     editorial_seed = _normalise_text(result.get("editorial_seed", ""))
     only_soft_reset_line = _normalise_text(result.get("only_soft_reset_line", ""))
@@ -450,6 +451,9 @@ def _apply_scoring_penalties(result: dict) -> dict:
     )
     if not source_url and any(name in source_name for name in generic_source_names):
         result["reliability_score"] = min(int(result.get("reliability_score", 1)), 3)
+    if confidence_level == "observational" and not source_url:
+        result["reliability_score"] = min(int(result.get("reliability_score", 1)), 3)
+        result["share_save_score"] = min(int(result.get("share_save_score", 1)), 3)
 
     scene_markers = (
         "text", "dm", "message", "reply", "read", "story", "song", "2am", "phone",
@@ -521,6 +525,7 @@ def _fallback_score_candidate(candidate: dict, rank: int = 1) -> dict:
         "source_name": candidate.get("source_name", "relationship psychology principle"),
         "source_url": candidate.get("source_url", ""),
         "fact_year": candidate.get("fact_year", 2026),
+        "confidence_level": candidate.get("confidence_level", "observational"),
         "editorial_seed": editorial_seed,
         "only_soft_reset_line": only_line,
         "_candidate_rank": candidate.get("_candidate_rank", rank),
@@ -671,6 +676,7 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         "source_name":         winner.get("source_name", ""),
         "source_url":          winner.get("source_url", ""),
         "fact_year":           winner.get("fact_year", ""),
+        "confidence_level":    winner.get("confidence_level", ""),
         "content_format":      winner.get("content_format", ""),
         "emotional_trigger":   winner.get("emotional_trigger", ""),
         "psych_concept":       winner.get("psych_concept", ""),

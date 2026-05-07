@@ -1,36 +1,53 @@
-name: Relationship Shorts Pipeline
+name: Relationship Public-Now Pipeline
 
 on:
   schedule:
-    - cron: '0 16 * * 1'  # Monday 12:00 PM New York during EDT
-    - cron: '0 23 * * 1'  # Monday 7:00 PM New York during EDT
-    - cron: '0 16 * * 2'  # Tuesday 12:00 PM New York during EDT
-    - cron: '0 0 * * 3'   # Tuesday 8:00 PM New York during EDT
-    - cron: '0 15 * * 3'  # Wednesday 11:00 AM New York during EDT
-    - cron: '0 23 * * 3'  # Wednesday 7:00 PM New York during EDT
-    - cron: '0 16 * * 4'  # Thursday 12:00 PM New York during EDT
-    - cron: '0 0 * * 5'   # Thursday 8:00 PM New York during EDT
-    - cron: '0 19 * * 5'  # Friday 3:00 PM New York during EDT
-    - cron: '0 23 * * 5'  # Friday 7:00 PM New York during EDT
-    - cron: '0 14 * * 6'  # Saturday 10:00 AM New York during EDT
-    - cron: '0 22 * * 6'  # Saturday 6:00 PM New York during EDT
-    - cron: '0 15 * * 0'  # Sunday 11:00 AM New York during EDT
-    - cron: '0 23 * * 0'  # Sunday 7:00 PM New York during EDT
+    # DST-safe dual UTC crons. A gate step runs only the matching America/New_York slot.
+    - cron: '35 15 * * 1' # Mon 11:35 AM ET start during EDT -> ~12:00 PM upload
+    - cron: '35 16 * * 1' # Mon 11:35 AM ET start during EST -> ~12:00 PM upload
+    - cron: '35 22 * * 1' # Mon 6:35 PM ET start during EDT -> ~7:00 PM upload
+    - cron: '35 23 * * 1' # Mon 6:35 PM ET start during EST -> ~7:00 PM upload
+    - cron: '35 15 * * 2' # Tue 11:35 AM ET start during EDT -> ~12:00 PM upload
+    - cron: '35 16 * * 2' # Tue 11:35 AM ET start during EST -> ~12:00 PM upload
+    - cron: '35 23 * * 2' # Tue 7:35 PM ET start during EDT -> ~8:00 PM upload
+    - cron: '35 0 * * 3'  # Tue 7:35 PM ET start during EST -> ~8:00 PM upload
+    - cron: '35 14 * * 3' # Wed 10:35 AM ET start during EDT -> ~11:00 AM upload
+    - cron: '35 15 * * 3' # Wed 10:35 AM ET start during EST -> ~11:00 AM upload
+    - cron: '35 22 * * 3' # Wed 6:35 PM ET start during EDT -> ~7:00 PM upload
+    - cron: '35 23 * * 3' # Wed 6:35 PM ET start during EST -> ~7:00 PM upload
+    - cron: '35 15 * * 4' # Thu 11:35 AM ET start during EDT -> ~12:00 PM upload
+    - cron: '35 16 * * 4' # Thu 11:35 AM ET start during EST -> ~12:00 PM upload
+    - cron: '35 23 * * 4' # Thu 7:35 PM ET start during EDT -> ~8:00 PM upload
+    - cron: '35 0 * * 5'  # Thu 7:35 PM ET start during EST -> ~8:00 PM upload
+    - cron: '35 18 * * 5' # Fri 2:35 PM ET start during EDT -> ~3:00 PM upload
+    - cron: '35 19 * * 5' # Fri 2:35 PM ET start during EST -> ~3:00 PM upload
+    - cron: '35 22 * * 5' # Fri 6:35 PM ET start during EDT -> ~7:00 PM upload
+    - cron: '35 23 * * 5' # Fri 6:35 PM ET start during EST -> ~7:00 PM upload
+    - cron: '35 13 * * 6' # Sat 9:35 AM ET start during EDT -> ~10:00 AM upload
+    - cron: '35 14 * * 6' # Sat 9:35 AM ET start during EST -> ~10:00 AM upload
+    - cron: '35 21 * * 6' # Sat 5:35 PM ET start during EDT -> ~6:00 PM upload
+    - cron: '35 22 * * 6' # Sat 5:35 PM ET start during EST -> ~6:00 PM upload
+    - cron: '35 14 * * 0' # Sun 10:35 AM ET start during EDT -> ~11:00 AM upload
+    - cron: '35 15 * * 0' # Sun 10:35 AM ET start during EST -> ~11:00 AM upload
+    - cron: '35 22 * * 0' # Sun 6:35 PM ET start during EDT -> ~7:00 PM upload
+    - cron: '35 23 * * 0' # Sun 6:35 PM ET start during EST -> ~7:00 PM upload
+    - cron: '35 0 * * 1'  # Sun 8:35 PM ET start during EDT -> ~9:00 PM longform upload
+    - cron: '35 1 * * 1'  # Sun 8:35 PM ET start during EST -> ~9:00 PM longform upload
   workflow_dispatch:
     inputs:
-      upload:
-        description: 'Upload to YouTube. Keep false until OAuth is verified for Soft Reset With Me.'
+      track:
+        description: 'Pipeline track to run.'
         required: true
-        default: 'false'
+        default: 'shorts'
         type: choice
         options:
-          - 'false'
-          - 'true'
+          - 'shorts'
+          - 'longform'
 
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
 
     permissions:
       contents: write
@@ -41,15 +58,55 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Check local start window
+        id: window
+        shell: python
+        run: |
+          import os
+          from datetime import datetime, timedelta
+          from zoneinfo import ZoneInfo
+
+          event = os.environ.get("GITHUB_EVENT_NAME", "")
+          should_run = event != "schedule"
+          track = "shorts"
+
+          if event == "schedule":
+              now = datetime.now(ZoneInfo("America/New_York"))
+              windows = {
+                  0: [("11:35", "shorts"), ("18:35", "shorts")],
+                  1: [("11:35", "shorts"), ("19:35", "shorts")],
+                  2: [("10:35", "shorts"), ("18:35", "shorts")],
+                  3: [("11:35", "shorts"), ("19:35", "shorts")],
+                  4: [("14:35", "shorts"), ("18:35", "shorts")],
+                  5: [("09:35", "shorts"), ("17:35", "shorts")],
+                  6: [("10:35", "shorts"), ("18:35", "shorts"), ("20:35", "longform")],
+              }
+              should_run = False
+              for time_label, candidate_track in windows.get(now.weekday(), []):
+                  hour, minute = map(int, time_label.split(":"))
+                  start = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+                  if start <= now < start + timedelta(minutes=45):
+                      should_run = True
+                      track = candidate_track
+                      break
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"should_run={str(should_run).lower()}\n")
+              out.write(f"track={track}\n")
+          print(f"should_run={should_run} track={track}")
+
       - name: Set up Python
+        if: steps.window.outputs.should_run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Validate configured schedule
+        if: steps.window.outputs.should_run == 'true'
         run: python tools/validate_schedule.py
 
       - name: Cache pip dependencies
+        if: steps.window.outputs.should_run == 'true'
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
@@ -57,19 +114,24 @@ jobs:
           restore-keys: ${{ runner.os }}-pip-
 
       - name: Install system dependencies
+        if: steps.window.outputs.should_run == 'true'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg
 
       - name: Install Python dependencies
+        if: steps.window.outputs.should_run == 'true'
         run: pip install -r requirements.txt
 
       - name: Run pipeline
+        if: steps.window.outputs.should_run == 'true'
         id: pipeline
-        timeout-minutes: 35
+        timeout-minutes: 75
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.upload }}" != "true" ]; then
-            python main.py --fresh --skip-upload
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ steps.window.outputs.track }}" = "longform" ]; then
+            python main_long.py --fresh
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.track }}" = "longform" ]; then
+            python main_long.py --fresh
           else
             python main.py --fresh
           fi
@@ -87,30 +149,38 @@ jobs:
           ALERT_EMAIL_PASSWORD:      ${{ secrets.ALERT_EMAIL_PASSWORD }}
 
       - name: Upload rendered video artifact
-        if: always()
+        if: always() && steps.window.outputs.should_run == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: soft-reset-render-${{ github.run_id }}
           path: |
             workspace/run_*/06_final_video.mp4
+            workspace/run_long_*/06_longform_video.mp4
             workspace/run_*/00_performance_sync.json
+            workspace/run_long_*/00_performance_sync.json
             workspace/run_*/05_thumbnail.png
+            workspace/run_long_*/07_longform_thumbnail.png
             workspace/run_*/07_metadata.json
+            workspace/run_long_*/03_longform_metadata.json
             workspace/run_*/02_script.json
+            workspace/run_long_*/02_longform_script.json
             workspace/run_*/03_asset_meta.json
             workspace/run_*/06_render_meta.json
+            workspace/run_long_*/06_longform_render_meta.json
+            workspace/run_*/10_judge_report.json
+            workspace/run_long_*/10_judge_report.json
           if-no-files-found: warn
           retention-days: 7
 
       - name: Commit learning memory
-        if: success()
+        if: success() && steps.window.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add topic_memory_soft_reset.json performance_memory_soft_reset.json
+          git add topic_memory_soft_reset.json performance_memory_soft_reset.json topic_memory_soft_reset_long.json performance_memory_soft_reset_long.json strategy/strategy_memory.json
           git diff --staged --quiet || git commit -m "chore: log video $(date +%Y%m%d_%H%M%S)"
           git push
 
       - name: Cleanup workspace
-        if: always()
+        if: always() && steps.window.outputs.should_run == 'true'
         run: python -c "import shutil; shutil.rmtree('workspace/', ignore_errors=True)"

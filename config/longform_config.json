@@ -3,6 +3,7 @@
   "niche": "relationship self-improvement",
   "channel_brand": "Soft Reset With Me",
   "channel_handle": "@SoftResetWithMe",
+  "publish_mode": "public_now",
   "timezone": "America/New_York",
   "topic_memory_file": "topic_memory_soft_reset_long.json",
   "topic_memory_lookback_days": 180,

@@ -141,8 +141,8 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
             ],
         )
         _run("Module 8 — Long Upload", upload_fn, video_id, run_dir, config, checkpoint_files=["09_longform_upload_meta.json"])
-        _run("Module 9 — Long Logger", logger_fn, video_id, run_dir, config)
         _run("Module 10 — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
+        _run("Module 9 — Long Logger", logger_fn, video_id, run_dir, config)
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'=' * 58}")

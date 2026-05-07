@@ -2,7 +2,7 @@
 Weekly Analytics Fetch
 ======================
 Pulls YouTube Analytics data for all published videos.
-Respects a 7-day maturity gate and 200-view minimum threshold.
+Respects a 48-hour maturity gate and per-track minimum view thresholds.
 Writes strategy/analytics_cache/YYYY-WW.json.
 
 Usage:
@@ -23,8 +23,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 load_dotenv(override=True)
 
-MATURITY_DAYS = 7
-MIN_VIEWS = 200
+MATURITY_DAYS = 2
+DEFAULT_MIN_VIEWS = 200
 ANALYTICS_CACHE_DIR = "strategy/analytics_cache"
 
 METRICS = [
@@ -75,17 +75,32 @@ def _get_channel_id(data_client) -> str:
     return resp["items"][0]["id"]
 
 
+def _load_json(path: str, default):
+    if not os.path.exists(path):
+        return default
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+
+def _memory_sources() -> list[tuple[str, str, dict]]:
+    shorts_config = _load_json("config/pipeline_config.json", {})
+    longform_config = _load_json("config/longform_config.json", {})
+    return [
+        (shorts_config.get("topic_memory_file", "topic_memory_soft_reset.json"), "shorts", shorts_config),
+        (longform_config.get("topic_memory_file", "topic_memory_soft_reset_long.json"), "longform", longform_config),
+    ]
+
+
 def _collect_video_ids() -> list[dict]:
     """
     Collect all published YouTube video IDs from topic memory files.
     Returns list of dicts with video_id, youtube_video_id, published_at, track.
     """
     entries = []
-    memory_files = [
-        ("topic_memory_soft_reset.json", "shorts"),
-        ("topic_memory_soft_reset_long.json", "longform"),
-    ]
-    for fname, track in memory_files:
+    for fname, track, track_config in _memory_sources():
         if not os.path.exists(fname):
             continue
         try:
@@ -100,9 +115,15 @@ def _collect_video_ids() -> list[dict]:
                         "video_id": entry.get("video_id", ""),
                         "youtube_video_id": yt_id,
                         "youtube_url": entry.get("youtube_url", ""),
-                        "published_at": entry.get("published_at") or entry.get("uploaded_at", ""),
+                        "published_at": entry.get("published_at") or entry.get("uploaded_at") or entry.get("published_date", ""),
                         "track": track,
                         "title": entry.get("title", ""),
+                        "traits": entry.get("judge_traits", {}),
+                        "composite_score": entry.get("judge_composite_score"),
+                        "experiment_label": entry.get("experiment_label", "baseline"),
+                        "experiment_id": entry.get("experiment_id"),
+                        "strategy_version": entry.get("strategy_version", "untracked"),
+                        "min_views_for_strategy": int(track_config.get("performance_min_views", DEFAULT_MIN_VIEWS)),
                     })
         except Exception as e:
             print(f"[analytics_fetch] Warning: could not read {fname}: {e}")
@@ -113,7 +134,10 @@ def _is_mature(published_at: str) -> bool:
     if not published_at:
         return False
     try:
-        pub = datetime.fromisoformat(published_at.replace("Z", "+00:00"))
+        if "T" in published_at:
+            pub = datetime.fromisoformat(published_at.replace("Z", "+00:00"))
+        else:
+            pub = datetime.strptime(published_at[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
         return (datetime.now(timezone.utc) - pub).days >= MATURITY_DAYS
     except Exception:
         return False
@@ -199,7 +223,7 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
 
     print(f"\n[analytics_fetch] Week: {week_label}")
     print(f"[analytics_fetch] Total published videos found: {len(all_entries)}")
-    print(f"[analytics_fetch] Mature (7+ days old): {len(mature_entries)}")
+    print(f"[analytics_fetch] Mature ({MATURITY_DAYS}+ days old): {len(mature_entries)}")
 
     if dry_run:
         for e in mature_entries:
@@ -222,9 +246,10 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
             continue
 
         views = int(metrics.get("views", 0))
-        if views < MIN_VIEWS:
+        min_views = int(entry.get("min_views_for_strategy", DEFAULT_MIN_VIEWS))
+        if views < min_views:
             skipped_low_views += 1
-            print(f"  {yt_id}: {views} views — below threshold, excluded from strategy analysis")
+            print(f"  {yt_id}: {views} views — below {entry['track']} threshold ({min_views}), excluded from strategy analysis")
             metrics["excluded_from_strategy"] = True
         else:
             metrics["excluded_from_strategy"] = False
@@ -234,15 +259,16 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
         record = {
             **entry,
             "analytics": metrics,
-            "traits": judge.get("traits", {}),
-            "composite_score": judge.get("composite_score"),
-            "experiment_label": judge.get("experiment_label", "baseline"),
-            "experiment_id": judge.get("experiment_id"),
-            "strategy_version": judge.get("strategy_version", "untracked"),
+            "traits": judge.get("traits") or entry.get("traits", {}),
+            "composite_score": judge.get("composite_score", entry.get("composite_score")),
+            "experiment_label": judge.get("experiment_label", entry.get("experiment_label", "baseline")),
+            "experiment_id": judge.get("experiment_id", entry.get("experiment_id")),
+            "strategy_version": judge.get("strategy_version", entry.get("strategy_version", "untracked")),
             "fetched_at": datetime.now(timezone.utc).isoformat(),
         }
         results.append(record)
-        print(f"  {yt_id}: {views:,} views, {metrics.get('averageViewPercentage', 0):.1f}% retention")
+        avg_pct = float(metrics.get("averageViewPercentage", 0) or 0)
+        print(f"  {yt_id}: {views:,} views, {avg_pct:.1f}% retention")
 
     cache = {
         "week": week_label,

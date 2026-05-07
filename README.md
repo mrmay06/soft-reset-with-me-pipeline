@@ -2,16 +2,16 @@
 
 Automated YouTube Shorts pipeline for **Soft Reset With Me**.
 
-The channel direction is relationship psychology, healing arcs, self-worth, and emotional growth for a US 18-35 audience. The pipeline researches topics, writes a short script, generates voiceover, selects Pexels video footage, generates fallback brand stills, adds captions, renders the final Short, creates metadata, and uploads/schedules through YouTube.
+The channel direction is relationship psychology, healing arcs, self-worth, and emotional growth for a US 18-35 audience. The pipeline researches topics, writes a short script, generates voiceover, selects Pexels video footage, generates fallback brand stills, adds captions, renders the final Short, creates metadata, and uploads public-now through YouTube.
 
 ## Current Setup
 
 - Channel: `Soft Reset With Me`
 - Handle: `@SoftResetWithMe`
 - Video source priority for Shorts: Pexels video -> generated AI image -> Pexels stock image fallback
-- Coverr is disabled for Shorts and reserved for later long-form experiments
-- Publishing schedule: 2 Shorts per day, New York time
-- Upload mode: private/manual scheduling via pipeline config
+- Coverr is disabled for Shorts and enabled for long-form stock footage
+- Publishing schedule: 2 Shorts per day plus 1 long-form video per week, New York time
+- Upload mode: public-now via pipeline config (`privacy_status: public`)
 - Captions: centered kinetic captions with Soft Cream fill and Deep Midnight border
 - End screen: `assets/EndScreen.png`
 
@@ -30,7 +30,7 @@ To run the full upload flow:
 python main.py --fresh
 ```
 
-To generate a separate long-form video package without uploading:
+To generate and upload a separate long-form video:
 
 ```bash
 python main_long.py --mock
@@ -42,7 +42,7 @@ Long-form uses separate memory and analytics files:
 - `topic_memory_soft_reset_long.json`
 - `performance_memory_soft_reset_long.json`
 
-The long-form track follows the same module shape as Shorts: research -> script -> metadata -> voiceover -> captions -> video assembly -> thumbnail -> logger. It renders a separate horizontal `06_longform_video.mp4` using short visual beats, Pexels/Coverr footage, audio-synced phrase captions, film overlay, long-form audio, a music bed, and a 16:9 `07_longform_thumbnail.png`. It does not upload yet.
+The long-form track follows the same module shape as Shorts: research -> script -> metadata -> voiceover -> captions -> video assembly -> thumbnail -> upload -> creative judge -> logger. It renders a separate horizontal `06_longform_video.mp4` using short visual beats, Pexels/Coverr footage, audio-synced phrase captions, film overlay, long-form audio, a music bed, a 16:9 `07_longform_thumbnail.png`, and uploads directly as public.
 
 ## Required Secrets
 
@@ -81,7 +81,7 @@ Verify the token points to the right channel:
 python tools/check_youtube_channel.py
 ```
 
-Do not run GitHub Actions with `upload=true` until this prints `Soft Reset With Me`.
+Do not run live uploads until this prints `Soft Reset With Me`.
 
 The OAuth token must include YouTube upload and YouTube Analytics scopes. If Analytics sync reports an insufficient-scope error, rerun `tools/get_youtube_token.py` and update the `YOUTUBE_REFRESH_TOKEN` secret again.
 
@@ -90,6 +90,8 @@ The OAuth token must include YouTube upload and YouTube Analytics scopes. If Ana
 The pipeline syncs YouTube Analytics before research. It stores recent video metrics in `performance_memory_soft_reset.json`, including views, engaged views, average view duration, average view percentage, likes, comments, shares, and subscribers gained when available.
 
 Shorts and long-form analytics are intentionally separate. Long-form uses higher minimum view thresholds, a longer lookback window, and different sample-size gates because 5-7 minute videos should be judged by watch time, retention curve behavior, and chapter coherence rather than Shorts completion dynamics.
+
+The weekly self-improvement workflow runs `tools/weekly_strategy.py`, compares analytics and creative-judge traits, writes an archived verdict, and auto-promotes the proposed strategy into `strategy/strategy_memory.json`. Future research, script, and metadata prompts inject that active strategy automatically.
 
 Research and script prompts use staged learning so the channel does not overfit the first few Shorts:
 
@@ -116,11 +118,15 @@ This keeps AI in the execution role while the channel direction remains opiniona
 
 ## GitHub Actions
 
-The workflow at `.github/workflows/run_pipeline.yml` runs the pipeline on the configured posting schedule and can also be triggered manually from the Actions tab.
+The workflow at `.github/workflows/run_pipeline.yml` runs the public-now Shorts and long-form pipelines on the configured posting schedule and can also be triggered manually from the Actions tab.
 
-Scheduled GitHub Actions runs upload to YouTube by default. Manual runs render with `--skip-upload` unless the `upload` input is set to `true`. Rendered videos are saved as workflow artifacts for 7 days.
+The workflow at `.github/workflows/weekly_strategy.yml` runs the self-improvement loop every Monday and commits the active strategy memory.
 
-The workflow commits `topic_memory_soft_reset.json` and `performance_memory_soft_reset.json` after successful runs so the channel avoids repeating recent topics and can learn from uploaded video performance.
+Scheduled GitHub Actions runs upload to YouTube as public-now. Manual runs choose `shorts` or `longform` and also upload public-now. Rendered videos are saved as workflow artifacts for 7 days.
+
+Scheduled Actions start 25 minutes before the target public upload window. The workflow uses DST-safe dual UTC cron entries plus an `America/New_York` gate, so the intended ET slots stay stable across EDT and EST.
+
+The workflow commits Shorts and long-form topic/performance memory after successful runs so the channel avoids repeating recent topics and can learn from uploaded video performance.
 
 ## Important Files
 

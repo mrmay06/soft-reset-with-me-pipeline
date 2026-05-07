@@ -115,7 +115,7 @@ def run_creative_judge(video_id: str, run_dir: str, config: dict) -> dict:
     hook = script.get("hook", "")
     title = metadata.get("title", "")
     description = metadata.get("description", "")
-    duration = render_meta.get("duration_seconds", 0)
+    duration = render_meta.get("duration_seconds", render_meta.get("duration_sec", render_meta.get("final_duration_sec", 0)))
 
     prompt = f"""You are a creative quality judge for Soft Reset With Me, a faceless YouTube relationship/self-growth channel.
 Score this video on each dimension from 1–10. Be precise and direct.
@@ -191,7 +191,7 @@ Return ONLY valid JSON:
             "video_length_band": _length_band(duration),
             "narrative_format": script.get("narrative_format", "unknown"),
             "thumbnail_type": metadata.get("thumbnail_type", "text_only"),
-            "character_used": "raccoon" if brand_image_count > 0 else "none",
+            "character_used": "brand_still" if brand_image_count > 0 else "none",
             "total_scenes": len(scenes),
         },
         "scores": raw.get("scores", {}),
@@ -231,7 +231,7 @@ def run_creative_judge_mock(video_id: str, run_dir: str, config: dict) -> dict:
             "video_length_band": "under_30s",
             "narrative_format": "unknown",
             "thumbnail_type": "text_only",
-            "character_used": "raccoon",
+            "character_used": "brand_still",
             "total_scenes": 0,
         },
         "scores": {dim: {"score": 7, "reason": "mock"} for dim in JUDGE_DIMENSIONS},
