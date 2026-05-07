@@ -92,9 +92,10 @@ Line 2 like/save CTA, used for metadata/end-screen strategy:
 "Save this for when you need it." OR "Share this with someone who needs to hear it."
 
 WORD COUNT:
-- 75 words maximum across hook + tension + insight + loopback
+- 75 words maximum across hook + tension + insight + loopback combined
 - Ideal length is 20-35 seconds
 - Write for a slightly fast 160-170 words per minute pace
+- If the script reads well under 60 words, do not pad it — clean endings outperform extended ones
 
 COPY RULES:
 - Gender-neutral by default

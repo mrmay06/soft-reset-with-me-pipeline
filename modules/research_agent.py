@@ -79,6 +79,44 @@ def _load_recent_categories(memory_file: str, last_n: int = 4) -> list[str]:
     return seen
 
 
+def _load_todays_categories(memory_file: str) -> list[str]:
+    """Return all categories already published today (UTC). Hard-blocks same-day repeats."""
+    if not os.path.exists(memory_file):
+        return []
+    memory = load_json(memory_file)
+    if not isinstance(memory, list):
+        return []
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    cats = []
+    for entry in memory:
+        if entry.get("published_date", "") == today:
+            cat = entry.get("category", "").strip().lower()
+            if cat and cat not in cats:
+                cats.append(cat)
+    return cats
+
+
+def _load_recent_angles(memory_file: str, lookback_days: int = 3) -> list[str]:
+    """Return distinct angle_types used in the last N days — for angle diversity tracking."""
+    if not os.path.exists(memory_file):
+        return []
+    memory = load_json(memory_file)
+    if not isinstance(memory, list):
+        return []
+    cutoff = datetime.utcnow() - timedelta(days=lookback_days)
+    angles = []
+    for entry in memory:
+        try:
+            pub_date = datetime.strptime(entry["published_date"], "%Y-%m-%d")
+            if pub_date >= cutoff:
+                angle = entry.get("angle_type", "").strip().lower()
+                if angle and angle not in angles:
+                    angles.append(angle)
+        except (KeyError, ValueError):
+            continue
+    return angles
+
+
 def _is_duplicate(topic: str, recent_topics: list[str], threshold: float) -> bool:
     if not recent_topics:
         return False
@@ -292,7 +330,8 @@ def _harvest_signals(timeframe: str = "now 7-d", config: dict | None = None) -> 
 @retry(max_attempts=2, wait_seconds=10, exceptions=(Exception,))
 def _generate_candidates(signals: dict, recent_topics: list[str],
                          recent_categories: list[str], blocked_categories: list[str],
-                         config: dict, model: str) -> list[dict]:
+                         config: dict, model: str,
+                         recent_angles: list[str] | None = None) -> list[dict]:
     _configure_gemini()
 
     # Format signals block
@@ -305,6 +344,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     recent_str  = "\n".join(f"- {t}" for t in recent_topics)  if recent_topics  else "- None"
     cat_str     = "\n".join(f"- {c}" for c in recent_categories) if recent_categories else "- None"
     blocked_str = "\n".join(f"- {c}" for c in blocked_categories) if blocked_categories else "- None"
+    angle_str   = "\n".join(f"- {a}" for a in (recent_angles or [])) if recent_angles else "- None"
     performance_insights = summarize_performance_for_prompt(
         config.get("performance_memory_file", "performance_memory_soft_reset.json"),
         min_videos=int(config.get("performance_min_videos_for_prompt", 8)),
@@ -319,6 +359,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         recent_topics=recent_str,
         recent_categories=cat_str,
         blocked_categories=blocked_str,
+        recent_angles=angle_str,
         performance_insights=performance_insights,
         target_audience=config.get("target_audience", "US"),
         niche=config.get("niche", "relationship self-improvement"),
@@ -357,30 +398,104 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
 # ── Step 3: Filter ────────────────────────────────────────────────────────────
 
 def _filter_candidates(candidates: list[dict], recent_topics: list[str], recent_entries: list[dict],
-                       recent_categories: list[str], blocked_categories: list[str],
+                       recent_categories: list[str], todays_categories: list[str],
+                       blocked_categories: list[str], recent_angles: list[str],
                        threshold: float) -> list[dict]:
     blocked = _normalise_categories(blocked_categories)
+    todays  = _normalise_categories(todays_categories)
     filtered = []
     for c in candidates:
         topic    = c.get("topic", "")
         category = c.get("category", "").lower()
+        angle    = c.get("angle_type", "").strip().lower()
 
         if _is_duplicate_candidate(c, recent_entries, threshold) or _is_duplicate(topic, recent_topics, threshold):
             print(f"[research] Dropped (duplicate): {topic}")
             continue
 
-        if any(category == rc.lower() for rc in recent_categories):
-            print(f"[research] Dropped (category conflict — {category}): {topic}")
+        # Hard drop: same category already published TODAY
+        if category in todays:
+            print(f"[research] Dropped (same-day category — {category}): {topic[:60]}")
             continue
+
+        # Soft warn: category appeared in last N videos
+        if any(category == rc.lower() for rc in recent_categories):
+            print(f"[research] ⚠ Recent category ({category}) — keeping, scoring will penalise")
+            c["category_recent_warning"] = True
 
         if category in blocked:
             print(f"[research] Dropped (blocked category — {category}): {topic}")
             continue
 
+        # Angle diversity soft warn
+        if fuzz and angle and recent_angles:
+            angle_match = max(
+                (fuzz.partial_ratio(angle, ra) for ra in recent_angles), default=0
+            )
+            if angle_match > 80:
+                print(f"[research] ⚠ Repeated angle ({angle}, {angle_match}% match) — keeping, scoring will decide")
+                c["angle_warning"] = True
+
         filtered.append(c)
 
     print(f"[research] After filter: {len(filtered)} candidates remain")
     return filtered
+
+
+# ── Step 3b: Concept-level deduplication ─────────────────────────────────────
+
+def _check_concept_duplicates(candidates: list[dict], recent_topics: list[str],
+                               model: str) -> list[dict]:
+    """
+    Ask Gemini to identify conceptually duplicate candidates vs recent published topics.
+    Catches 'same story, different wording' that fuzzy text match misses.
+    E.g. 'grieving someone who is still alive' vs 'mourning the future you imagined' = same concept.
+    """
+    if not recent_topics or not candidates:
+        return candidates
+
+    recent_str     = "\n".join(f"- {t}" for t in recent_topics[:40])
+    candidates_str = "\n".join(f"{i+1}. {c['topic']}" for i, c in enumerate(candidates))
+
+    prompt = f"""You are a YouTube content deduplication filter for a relationship self-improvement channel.
+
+Recently published topics (last 30 days) — these are COVERED:
+{recent_str}
+
+New candidate topics to evaluate:
+{candidates_str}
+
+Task: Identify which candidates explore the SAME underlying emotional territory as any recent topic,
+even if phrased differently. "Same territory" = same emotional trigger + same psychological concept + same viewer experience.
+
+Examples of same concept:
+- "You're not missing them, you're missing who you were with them" = "Grief after a breakup isn't about the person" → DUPLICATE
+- "Why you keep checking their Instagram" = "You're not over them if you still need updates" → DUPLICATE
+- "The difference between intuition and anxiety" ≠ "Why you attract unavailable people" → DIFFERENT
+
+Return a JSON array of candidate NUMBERS to remove (1-based index). Return [] if none are duplicates.
+Return ONLY the JSON array, no explanation, no markdown.
+Example: [2, 4]"""
+
+    try:
+        result = generate_json(prompt, model)
+        if isinstance(result, list) and result:
+            to_remove = set()
+            for i in result:
+                try:
+                    to_remove.add(int(i) - 1)
+                except (ValueError, TypeError):
+                    pass
+            kept = [c for i, c in enumerate(candidates) if i not in to_remove]
+            removed = len(candidates) - len(kept)
+            if removed:
+                removed_topics = [candidates[i]["topic"][:50] for i in to_remove if i < len(candidates)]
+                for t in removed_topics:
+                    print(f"[research] Dropped (concept duplicate): {t}")
+            return kept
+    except Exception as e:
+        print(f"[research] Concept dedup failed ({e}) — skipping")
+    return candidates
 
 
 # ── Step 4 + 5: Parallel Scoring + Fact Grounding ────────────────────────────
@@ -428,6 +543,16 @@ def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> d
         result["total_score"] = computed
 
     result["_candidate_rank"] = candidate.get("_candidate_rank", 999)
+
+    # Penalise repeated angle (-1)
+    if candidate.get("angle_warning"):
+        result["total_score"] = max(0, result.get("total_score", 0) - 1)
+        result["angle_penalised"] = True
+
+    # Penalise recently-used category (-1)
+    if candidate.get("category_recent_warning"):
+        result["total_score"] = max(0, result.get("total_score", 0) - 1)
+        result["category_penalised"] = True
 
     return result
 
@@ -549,9 +674,12 @@ def _score_candidates_fallback(candidates: list[dict]) -> list[dict]:
 
 # ── Step 6: Winner Selection ──────────────────────────────────────────────────
 
-def _pick_winner(scored: list[dict]) -> dict | None:
-    valid = [c for c in scored if c.get("total_score", 0) > 0]
+def _pick_winner(scored: list[dict], min_score: int = 10) -> dict | None:
+    valid = [c for c in scored if c.get("total_score", 0) >= min_score]
     if not valid:
+        rejected = [(c.get("topic", "?")[:50], c.get("total_score", 0)) for c in scored if c.get("total_score", 0) > 0]
+        for t, s in rejected:
+            print(f"[research] Rejected (score {s} < {min_score}): {t}")
         return None
     return sorted(
         valid,
@@ -583,30 +711,38 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         memory_file,
         last_n=int(config.get("recent_category_block_count", 6)),
     )
+    todays_categories = _load_todays_categories(memory_file)
+    angle_lookback    = int(config.get("angle_diversity_lookback_days", 3))
+    recent_angles     = _load_recent_angles(memory_file, lookback_days=angle_lookback)
+
+    if todays_categories:
+        print(f"[research] Today's categories already used: {todays_categories}")
+    if recent_angles:
+        print(f"[research] Recent angles ({angle_lookback}d): {recent_angles[:5]}")
 
     # ── Step 1: Harvest signals (7-day) ──
     signals = _harvest_signals(timeframe="now 7-d", config=config)
 
     # ── Step 2: Generate candidates ──
     try:
-        candidates = _generate_candidates(signals, recent_topics, recent_categories, blocked_categories, config, model)
+        candidates = _generate_candidates(signals, recent_topics, recent_categories, blocked_categories, config, model, recent_angles)
     except Exception as exc:
         print(f"[research] Candidate generation failed ({exc}) — using evergreen fallback")
         candidates = _load_evergreen_topics()
 
     # ── Step 3: Filter ──
-    candidates = _filter_candidates(candidates, recent_topics, recent_entries, recent_categories, blocked_categories, threshold)
+    candidates = _filter_candidates(candidates, recent_topics, recent_entries, recent_categories, todays_categories, blocked_categories, recent_angles, threshold)
 
     # ── Step 4: Expand to 30-day if too few ──
     if len(candidates) < 3:
         print(f"[research] Only {len(candidates)} candidates after filter — expanding to 30-day signals")
         signals_30d = _harvest_signals(timeframe="now 30-d", config=config)
         try:
-            candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, blocked_categories, config, model)
+            candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, blocked_categories, config, model, recent_angles)
         except Exception as exc:
             print(f"[research] 30-day candidate generation failed ({exc}) — using evergreen fallback")
             candidates_30d = _load_evergreen_topics()
-        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_entries, recent_categories, blocked_categories, threshold)
+        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_entries, recent_categories, todays_categories, blocked_categories, recent_angles, threshold)
         # Merge, dedupe by topic string
         existing_topics = {c["topic"] for c in candidates}
         for c in candidates_30d:
@@ -614,6 +750,10 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
                 candidates.append(c)
                 existing_topics.add(c["topic"])
         print(f"[research] After 30-day expansion: {len(candidates)} candidates")
+
+    # ── Step 4b: Concept-level dedup ──
+    if len(candidates) > 1 and recent_topics:
+        candidates = _check_concept_duplicates(candidates, recent_topics[:25], model)
 
     # ── Step 5: Final fallback — top up from evergreen list ──
     if len(candidates) < 3:
@@ -642,13 +782,14 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         print("[research] Model scoring unavailable — using deterministic fallback scoring")
         scored = _score_candidates_fallback(candidates)
 
+    min_score = int(config.get("min_score_threshold", 10))
+
     # ── Step 7: Pick winner — fallback to scored evergreen if all rejected ──
-    winner = _pick_winner(scored)
+    winner = _pick_winner(scored, min_score)
 
     if winner is None:
         print("[research] All candidates rejected — scoring evergreen fallback topics")
         evergreen = _load_evergreen_topics()
-        # Filter evergreen against recent topics too
         evergreen_filtered = [
             e for e in evergreen
             if not _is_duplicate_candidate(e, recent_entries, threshold)
@@ -659,7 +800,7 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
             evergreen_scored = _score_candidates_parallel(evergreen_filtered[:6], model)
             if not evergreen_scored:
                 evergreen_scored = _score_candidates_fallback(evergreen_filtered[:6])
-            winner = _pick_winner(evergreen_scored)
+            winner = _pick_winner(evergreen_scored, min_score)
 
     if winner is None:
         raise RuntimeError("[research] No valid topic found after all fallbacks — check API connectivity")

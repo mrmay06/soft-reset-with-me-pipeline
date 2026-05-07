@@ -16,6 +16,9 @@ Recent categories used (last 4 videos) — do NOT use these categories:
 Blocked categories — NEVER use these categories:
 {blocked_categories}
 
+Recent angle types used (last 3 days) — AVOID repeating these angles:
+{recent_angles}
+
 Performance feedback from previous uploads:
 {performance_insights}
 
@@ -45,6 +48,13 @@ Content formats:
 - list: 3-5 signs/things, easy to batch
 - hot_take: controversial opinion, once per week max
 - psychology_drop: digestible psychology concept without clinical heaviness
+
+STRONG CANDIDATE checklist (each candidate should hit 4 of 5):
+  ✓ Names a specific emotional moment or behavior (not "boundaries" or "self-love" in general)
+  ✓ The emotional_trigger is a scene the viewer has personally lived — not abstract
+  ✓ The psych_concept is one clear idea, simply named (not a DSM term)
+  ✓ The only_soft_reset_line is something a generic account would NOT say
+  ✓ The topic has not appeared in the recent list in the same emotional territory
 
 Rules:
 - Gender-neutral language. No "him/her" unless the topic itself requires it

@@ -34,6 +34,8 @@
   "topic_memory_file": "topic_memory_soft_reset.json",
   "topic_memory_lookback_days": 90,
   "topic_memory_max_entries": 30,
+  "angle_diversity_lookback_days": 3,
+  "min_score_threshold": 10,
   "recent_category_block_count": 6,
   "log_skip_upload_to_memory": true,
   "duplicate_similarity_threshold": 0.80,

@@ -1,8 +1,8 @@
 {
   "_note": "Active strategy. Consumed at runtime by prompt modules. Replace with strategy_memory_proposed.json after human review.",
-  "version": "untracked",
-  "generated_at": null,
-  "analysis_window": null,
+  "version": "2026-W19",
+  "generated_at": "2026-05-07T00:00:00Z",
+  "analysis_window": "initial baseline",
   "videos_analyzed": 0,
   "videos_excluded": 0,
   "previous_version_reference": null,
@@ -12,32 +12,32 @@
     "reduce": [],
     "cooldowns": [],
     "strong_angle_types": [],
-    "notes": ""
+    "notes": "Initial strategy file. No approved performance-derived lessons yet."
   },
 
   "script": {
     "prioritize": [],
     "reduce": [],
     "cta_patterns": [],
-    "word_count_signal": ""
+    "word_count_signal": "Use existing 45-75 word contract until enough data supports a narrower range."
   },
 
   "visuals": {
     "prioritize": [],
     "reduce": [],
-    "thumbnail_signal": ""
+    "thumbnail_signal": "Use existing Soft Reset With Me brand rules until enough data supports a change."
   },
 
   "metadata": {
-    "title_signal": "",
-    "description_signal": "",
+    "title_signal": "Use existing title rules until enough data supports a change.",
+    "description_signal": "Keep descriptions emotionally accurate and searchable.",
     "prioritize": [],
     "reduce": []
   },
 
   "voice": {
     "prioritize": [],
-    "notes": ""
+    "notes": "Encode pacing through sentence length and punctuation unless the TTS provider supports direct direction."
   },
 
   "thumbnail": {
@@ -52,5 +52,5 @@
   },
 
   "brand_bible_override_check": "no conflicts detected",
-  "channel_health_signal": "insufficient data — strategy layer not yet active"
+  "channel_health_signal": "baseline strategy initialized"
 }

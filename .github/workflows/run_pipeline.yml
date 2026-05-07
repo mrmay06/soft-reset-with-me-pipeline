@@ -126,15 +126,19 @@ jobs:
       - name: Run pipeline
         if: steps.window.outputs.should_run == 'true'
         id: pipeline
-        timeout-minutes: 75
-        run: |
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ steps.window.outputs.track }}" = "longform" ]; then
-            python main_long.py --fresh
-          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.track }}" = "longform" ]; then
-            python main_long.py --fresh
-          else
-            python main.py --fresh
-          fi
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 75
+          max_attempts: 2
+          retry_wait_seconds: 300
+          command: |
+            if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ steps.window.outputs.track }}" = "longform" ]; then
+              python main_long.py --fresh
+            elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.track }}" = "longform" ]; then
+              python main_long.py --fresh
+            else
+              python main.py --fresh
+            fi
         env:
           GEMINI_API_KEY:            ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY:         ${{ secrets.ANTHROPIC_API_KEY }}
