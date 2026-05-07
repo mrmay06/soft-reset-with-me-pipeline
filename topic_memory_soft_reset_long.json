@@ -141,5 +141,70 @@
     "thumbnail": "07_longform_thumbnail.png",
     "youtube_video_id": "",
     "youtube_url": ""
+  },
+  {
+    "video_id": "long_20260505_185155",
+    "published_date": "2026-05-05",
+    "status": "rendered_not_uploaded",
+    "topic": "The quiet ache of receiving performative effort in a relationship.",
+    "working_title": "When 'getting what you want' feels worse than not getting it at all.",
+    "content_pillar": "conversation truths | self-worth shifts | healing arcs",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "Receiving effort that feels forced, resentful, or merely compliant can be more damaging to a relationship and your self-worth than a complete lack of effort, because it undermines genuine connection and erodes trust.",
+    "editorial_seed": "Many of us have fought hard to get our needs met in relationships, asking, explaining, and repeating ourselves. Sometimes, our partner finally 'does the thing.' But instead of relief, we're left with a hollow feeling, because the effort came with a heavy sigh, a visible resentment, or a lack of genuine desire. This video explores why this performative effort feels so unsatisfying, and how it reveals a deeper mismatch in emotional generosity and true connection.",
+    "only_soft_reset_line": "It's not about what they do \u2014 it's about the spirit in which it's offered. And you deserve effort that feels like a gift, not a weight they resent carrying to you.",
+    "word_count": 904,
+    "estimated_duration_sec": 349.9,
+    "argument_quality": "strong",
+    "final_duration_sec": 338.07,
+    "render_validation": "passed",
+    "title": "Their effort feels like a burden, not a gift",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why their forced effort leaves you feeling empty"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You got what you asked for. Why does it hurt more?"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "Their effort feels like a burden, not a gift"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "clean_concept_close_up | highlighted_truth",
+        "thumbnail_text": "FEELS LIKE A BURDEN",
+        "visual_prompt": "Close-up of a single hand, softly illuminated, holding a small, intricate paper bird that appears to be collapsing or heavy. The fingers gently grasp it, but the overall feeling is one of subtle weariness or disinterest. The background is a gradient of Deep Midnight (#1C1C2B), with the Soft Cream (#F5F0E8) light subtly illuminating the bird. Left side dark for text. Photorealistic cinematic editorial quality. 1280x720, 16:9."
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "digital_anxiety_overlay | emotional_hook",
+        "thumbnail_text": "GOT WHAT I WANTED WHY",
+        "visual_prompt": "Tight close-up on a young woman (age 18-35, diverse ethnicity) with a subtle, unreadable expression \u2013 a mix of confusion and quiet disappointment, despite a small, wrapped gift box resting gently on her lap or near her hands, slightly out of focus. Her eyes hold a distant, questioning gaze. Background is blurred Deep Midnight (#1C1C2B) with subtle Warm Terracotta (#C4785A) light flares around the edges. Right side dark for text. Photorealistic cinematic editorial quality. 1280x720, 16:9."
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "dichotomy_split | subject_vs_the_void",
+        "thumbnail_text": "EFFORT BUT NO LOVE",
+        "visual_prompt": "A conceptual split image. On the left, a man's hand (age 18-35, diverse ethnicity) is actively engaged in a mundane task (e.g., carefully folding laundry, closing a dry cleaning bag, picking up groceries), well-lit. On the right, his face, slightly out of focus, shows a distinct lack of engagement, mild resentment, or visible effort, looking into an empty Deep Midnight (#1C1C2B) space. A thin Warm Terracotta (#C4785A) line subtly separates the two, suggesting a disconnect. Top right quadrant dark for text. Photorealistic cinematic editorial quality. 1280x720, 16:9."
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "",
+    "youtube_url": ""
   }
 ]

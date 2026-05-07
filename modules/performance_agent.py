@@ -156,17 +156,21 @@ def _score(metrics: dict) -> dict:
     subs = _as_float(metrics.get("subscribersGained"))
     weighted_engagement = likes + comments * 3 + shares * 4 + subs * 8
 
-    hook_score = min(_rate(engaged, views), 1.5) * 100.0
     hold_score = max(0.0, min(avg_pct, 200.0))
+    hook_score = min(_rate(engaged, views), 1.5) * 100.0
     resonance_per_engaged = _rate(weighted_engagement, max(engaged, 1.0))
     resonance_per_view = _rate(weighted_engagement, max(views, 1.0))
     resonance_score = min(resonance_per_engaged * 100.0, 200.0)
+    # Subscriber conversion: subs per 1000 views, scaled so 2.0/1000 = 100 (industry avg for content Shorts)
+    conversion_rate = _rate(subs, max(views, 1.0)) * 1000.0
+    conversion_score = min(conversion_rate / 2.0 * 100.0, 100.0)
     reach_score = min(math.log10(max(views, 0.0) + 1.0) * 25.0, 100.0)
     composite_score = (
-        hook_score * 0.35
-        + hold_score * 0.35
+        hold_score        * 0.35
+        + hook_score      * 0.25
         + resonance_score * 0.20
-        + reach_score * 0.10
+        + conversion_score * 0.15
+        + reach_score     * 0.05
     )
     return {
         "composite_score": round(composite_score, 2),
@@ -176,19 +180,62 @@ def _score(metrics: dict) -> dict:
         "resonance_score": round(resonance_score, 2),
         "resonance_per_engaged": round(resonance_per_engaged, 4),
         "resonance_per_view": round(resonance_per_view, 4),
+        "conversion_score": round(conversion_score, 2),
+        "conversion_rate_per_1k": round(conversion_rate, 4),
         "reach_score": round(reach_score, 2),
     }
+
+
+def _enrich_from_workspace(video_id: str) -> dict:
+    """
+    Read hook_text, content_format, and title_text from run workspace outputs.
+    These fields power the self-improvement learning loop.
+    Returns empty dict if workspace outputs don't exist.
+    """
+    run_dir = os.path.join("workspace", f"run_{video_id}")
+    extra = {}
+
+    script_path = os.path.join(run_dir, "02_script.json")
+    if os.path.exists(script_path):
+        try:
+            script = load_json(script_path)
+            extra["hook_text"]      = script.get("hook", "")
+            extra["content_format"] = script.get("content_format", "")
+            extra["editorial_pov"]  = script.get("editorial_pov", "")
+        except Exception:
+            pass
+
+    metadata_path = os.path.join(run_dir, "07_metadata.json")
+    if os.path.exists(metadata_path):
+        try:
+            meta = load_json(metadata_path)
+            extra["title_text"] = meta.get("title", "")
+            extra["title_type"] = ""   # future: auto-tagged in creative judge
+        except Exception:
+            pass
+
+    judge_path = os.path.join(run_dir, "10_judge_report.json")
+    if os.path.exists(judge_path):
+        try:
+            judge = load_json(judge_path)
+            extra["tone_type"] = judge.get("tone_type", "")
+        except Exception:
+            pass
+
+    return extra
 
 
 def _build_record(entry: dict, metrics: dict, fetched_at: str, today: datetime.date) -> dict:
     published = _parse_date(entry.get("published_date", "")) or today
     score_parts = _score(metrics)
+    workspace_extras = _enrich_from_workspace(entry.get("video_id", ""))
     return {
         **entry,
         "metrics": metrics,
         **score_parts,
         "analytics_fetched_at": fetched_at,
         "analytics_days_old": max(0, (today - published).days),
+        **workspace_extras,
     }
 
 

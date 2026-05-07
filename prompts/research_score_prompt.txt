@@ -52,6 +52,12 @@ Scoring discipline:
 - Penalize generic source names. If source_name is only "psychological principles" and no source_url is available, reliability_score should usually be 3, not 4
 - Only give total_score 20 when every score truly deserves a rare 4
 
+ONLY SOFT RESET LINE quality gate — before finalizing the score:
+- If the only_soft_reset_line could appear on BetterHelp, TherapyJeff, or any generic self-help account unchanged, reduce share_save_score by 1.
+- If it sounds like a Pinterest quote ("You deserve peace", "Healing is not linear", "You are enough"), reduce share_save_score by 2.
+- A strong only_soft_reset_line has a specific image or unexpected word choice. "That's not love. That's hope with someone else's face on it" = strong. "You deserve someone who chooses you" = weak.
+- Rewrite the only_soft_reset_line if it fails the above test before returning your score.
+
 HARD GATE: If reliability_score = 1, total_score must be 0 regardless of all other scores.
 
 TASK 2 — FIND a credible source basis.
@@ -81,5 +87,6 @@ Return ONLY valid JSON with no extra text:
   "source_name": "source organisation, author, or principle",
   "source_url": "https://...",
   "fact_year": 2026,
+  "confidence_level": "peer_reviewed | therapist_consensus | observational",
   "reasoning": "one sentence on why this is strong for Soft Reset With Me"
 }}

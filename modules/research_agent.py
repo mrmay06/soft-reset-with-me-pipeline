@@ -312,7 +312,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         min_views=int(config.get("performance_min_views", 50)),
     )
 
-    from utils.strategy import inject_strategy
+    from utils.strategy import inject_strategy, get_strategy_context
     prompt_template = inject_strategy(open("prompts/research_candidates_prompt.txt").read(), "research")
     prompt = prompt_template.format(
         signals=signals_str,
@@ -323,6 +323,26 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         target_audience=config.get("target_audience", "US"),
         niche=config.get("niche", "relationship self-improvement"),
     )
+
+    # A/B experiment slot: inject one active hypothesis variation into research prompt.
+    # Baseline = no change. Experiment = vary content_format emphasis. Wildcard = vary angle_type.
+    experiment_label = config.get("experiment_label", "baseline")
+    if experiment_label == "experiment":
+        experiment_id = config.get("experiment_id", "")
+        from utils.strategy import load_strategy
+        strategy = load_strategy()
+        experiments = strategy.get("experiment_slots", {}).get("this_week", [])
+        active_exp = next((e for e in experiments if e.get("id") == experiment_id), None)
+        if active_exp and active_exp.get("prompt_injection"):
+            prompt += f"\n\n[EXPERIMENT SLOT — {experiment_id}]\n{active_exp['prompt_injection']}"
+            print(f"[research] A/B experiment slot active: {experiment_id}")
+    elif experiment_label == "wildcard":
+        prompt += (
+            "\n\n[WILDCARD SLOT] Generate at least 2 candidates in content_format='hot_take' — "
+            "controversial, polarizing, will generate comments and shares. "
+            "One candidate must be a topic you would not normally pitch for this channel."
+        )
+        print("[research] Wildcard slot active: hot_take emphasis")
 
     candidates = generate_json(prompt, model)
     if not isinstance(candidates, list):

@@ -28,6 +28,16 @@ ANTI-SLOP EDITORIAL LAYER:
 - Remove filler that is true but useless.
 - Visuals and captions will be built around the argument, so write scenes with emotional intention.
 
+ONLY_SOFT_RESET_LINE — write this line LAST, after the rest of the script is finished:
+- It must emerge from the specific emotional territory of THIS script — not be a general truth.
+- If a generic self-help account (BetterHelp, TherapyJeff, any relationship coach) could post this
+  line without changing a single word, it fails. Rewrite it until only Soft Reset With Me would say it.
+- It must be 6+ words. Not Pinterest. Not a poster quote. Screenshot-worthy because it is SPECIFIC.
+- Good: "You didn't lose them. You lost the version you made up." (specific, non-generic)
+- Good: "That's not strength. That's just loneliness with good posture." (unexpected image)
+- Bad: "You deserve someone who shows up." (any account would say this)
+- Bad: "It's okay to grieve what could have been." (Pinterest quote, non-specific)
+
 SCRIPT FRAMEWORK:
 
 HOOK (0-3s) — scroll-stopper.

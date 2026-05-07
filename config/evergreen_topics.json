@@ -7,7 +7,8 @@
     "emotional_trigger": "grieving someone's potential",
     "psych_concept": "idealization and grief",
     "hook_seed": "You did not lose them. You lost who you imagined",
-    "core_claim": "Sometimes heartbreak is grief for the future you invented"
+    "core_claim": "Sometimes heartbreak is grief for the future you invented",
+    "confidence_level": "therapist_consensus"
   },
   {
     "topic": "Moving on fast does not mean you did not care",
@@ -17,7 +18,8 @@
     "emotional_trigger": "guilt after moving on",
     "psych_concept": "self-protection after emotional exhaustion",
     "hook_seed": "Moving on fast does not mean you did not care",
-    "core_claim": "It can mean you finally stopped abandoning yourself"
+    "core_claim": "It can mean you finally stopped abandoning yourself",
+    "confidence_level": "therapist_consensus"
   },
   {
     "topic": "That feeling when a song hits different at 2am",
@@ -27,7 +29,8 @@
     "emotional_trigger": "a song triggering breakup grief",
     "psych_concept": "emotional memory cues",
     "hook_seed": "If a song has ever ruined your night, this is for you",
-    "core_claim": "Some memories return through your body before your logic catches up"
+    "core_claim": "Some memories return through your body before your logic catches up",
+    "confidence_level": "observational"
   },
   {
     "topic": "Talking every day does not make you close",
@@ -37,7 +40,8 @@
     "emotional_trigger": "confusing frequency with intimacy",
     "psych_concept": "consistency versus access",
     "hook_seed": "Talking every day does not make you close",
-    "core_claim": "Closeness is consistency, not constant access"
+    "core_claim": "Closeness is consistency, not constant access",
+    "confidence_level": "therapist_consensus"
   },
   {
     "topic": "Four signs you are not over them that have nothing to do with texting",
@@ -47,7 +51,8 @@
     "emotional_trigger": "thinking you moved on but still reacting",
     "psych_concept": "unfinished emotional attachment",
     "hook_seed": "Four signs you are not over them",
-    "core_claim": "Your body can still be attached after your phone stops reaching"
+    "core_claim": "Your body can still be attached after your phone stops reaching",
+    "confidence_level": "observational"
   },
   {
     "topic": "What anxious attachment actually looks like in real life",
@@ -57,7 +62,8 @@
     "emotional_trigger": "overthinking small changes in tone",
     "psych_concept": "anxious attachment",
     "hook_seed": "Anxious attachment is not always loud",
-    "core_claim": "Sometimes it looks like rereading one sentence until it hurts"
+    "core_claim": "Sometimes it looks like rereading one sentence until it hurts",
+    "confidence_level": "peer_reviewed"
   },
   {
     "topic": "Soft does not mean weak",
@@ -67,7 +73,8 @@
     "emotional_trigger": "mistaking softness for low standards",
     "psych_concept": "boundaried softness",
     "hook_seed": "Soft does not mean weak",
-    "core_claim": "It can mean you stopped performing hardness for unsafe people"
+    "core_claim": "It can mean you stopped performing hardness for unsafe people",
+    "confidence_level": "observational"
   },
   {
     "topic": "You keep explaining because part of you still wants permission",
@@ -77,6 +84,84 @@
     "emotional_trigger": "overexplaining your boundary",
     "psych_concept": "approval seeking",
     "hook_seed": "You keep explaining because you still want permission",
-    "core_claim": "A boundary does not need to win a debate to be real"
+    "core_claim": "A boundary does not need to win a debate to be real",
+    "confidence_level": "therapist_consensus"
+  },
+  {
+    "topic": "If calm feels boring it might be because you are used to anxiety not love",
+    "category": "psychology drops",
+    "angle_type": "reframe",
+    "content_format": "reframe",
+    "emotional_trigger": "feeling bored with a stable person",
+    "psych_concept": "trauma bonding and nervous system dysregulation",
+    "hook_seed": "If calm feels boring, this is for you",
+    "core_claim": "You learned to read anxiety as excitement — calm reads as indifference",
+    "confidence_level": "therapist_consensus"
+  },
+  {
+    "topic": "You are not too much — you were just around people with too little",
+    "category": "self-worth shifts",
+    "angle_type": "reframe",
+    "content_format": "reframe",
+    "emotional_trigger": "being told you are too intense or emotional",
+    "psych_concept": "emotional intensity misread as neediness",
+    "hook_seed": "You are not too much",
+    "core_claim": "Being called too much is often someone's limit, not your fault",
+    "confidence_level": "therapist_consensus"
+  },
+  {
+    "topic": "Why you miss them even when they were not even good for you",
+    "category": "healing arcs",
+    "angle_type": "psychology drop",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "missing someone you know hurt you",
+    "psych_concept": "intermittent reinforcement and attachment",
+    "hook_seed": "Missing someone who hurt you is not weakness",
+    "core_claim": "Intermittent reward creates stronger attachment than consistent care",
+    "confidence_level": "peer_reviewed"
+  },
+  {
+    "topic": "Silence in a relationship is not always neutral",
+    "category": "conversation truths",
+    "angle_type": "truth drop",
+    "content_format": "truth_drop",
+    "emotional_trigger": "feeling unseen without an argument to name it",
+    "psych_concept": "stonewalling and emotional withdrawal",
+    "hook_seed": "Silence can be the loudest thing someone does to you",
+    "core_claim": "Withdrawal without explanation is still a communication — it says you do not matter enough",
+    "confidence_level": "peer_reviewed"
+  },
+  {
+    "topic": "The difference between someone who is busy and someone who does not prioritize you",
+    "category": "conversation truths",
+    "angle_type": "specific scenario",
+    "content_format": "specific_scenario",
+    "emotional_trigger": "making excuses for someone's inconsistency",
+    "psych_concept": "prioritization versus capacity",
+    "hook_seed": "Busy people still find time for what matters to them",
+    "core_claim": "Everyone has the same 24 hours — what differs is who they choose to spend them on",
+    "confidence_level": "observational"
+  },
+  {
+    "topic": "You are not clingy — you just have not had consistent people",
+    "category": "psychology drops",
+    "angle_type": "reframe",
+    "content_format": "reframe",
+    "emotional_trigger": "being called clingy or too needy",
+    "psych_concept": "anxious attachment rooted in inconsistent caregiving",
+    "hook_seed": "You are not clingy. You just have not had consistent people",
+    "core_claim": "Needing reassurance is not weakness when the people around you have been inconsistent",
+    "confidence_level": "peer_reviewed"
+  },
+  {
+    "topic": "Some people leave because they were never ready to stay",
+    "category": "healing arcs",
+    "angle_type": "truth drop",
+    "content_format": "truth_drop",
+    "emotional_trigger": "questioning what you did wrong after someone left",
+    "psych_concept": "avoidant attachment and emotional unavailability",
+    "hook_seed": "Some people leave because they were never ready to stay",
+    "core_claim": "Their leaving says more about their readiness than your worth",
+    "confidence_level": "therapist_consensus"
   }
 ]

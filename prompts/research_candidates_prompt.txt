@@ -68,6 +68,7 @@ Return ONLY a valid JSON array with no extra text:
     "hook_seed": "one-line hook idea, max 15 words",
     "core_claim": "the one useful emotional truth or behavior change",
     "editorial_seed": "2-3 plain sentences with the channel's point of view",
-    "only_soft_reset_line": "one emotionally precise sentence that makes this non-generic"
+    "only_soft_reset_line": "one emotionally precise sentence that makes this non-generic",
+    "confidence_level": "peer_reviewed | therapist_consensus | observational — is the psych_concept grounded in peer-reviewed research, widely held therapist consensus, or an observational pattern with no formal citation?"
   }}
 ]

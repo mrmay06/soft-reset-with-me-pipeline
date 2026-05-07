@@ -42,12 +42,12 @@ Hashtag options: #RelationshipAdvice #DatingAdvice #Situationship #RedFlags #Att
 ---
 
 YOUTUBE TAGS:
-- Return 10-14 tags as a JSON array. No duplicates. Lowercase, no hashtags, no special characters.
-- Mix: 3 broad, 3-4 niche, 4-5 long-tail 2am searches, 1 branded.
+- Return 20-25 tags as a JSON array. No duplicates. Lowercase, no hashtags, no special characters.
+- Mix: 4 broad, 5-6 niche, 8-10 long-tail 2am searches, 1-2 branded, 2-3 trending topic-specific.
 - Branded: always include "soft reset with me".
-- Broad: relationship advice, dating advice, personal growth, emotional healing, breakup advice.
-- Niche: attachment style, situationship advice, anxious attachment, trauma bonding, setting boundaries in relationships.
-- Long-tail 2am searches (use exact phrasing someone in pain would type):
+- Broad (pick 4): relationship advice, dating advice, personal growth, emotional healing, breakup advice, self improvement, mental health, psychology.
+- Niche (pick 5-6): attachment style, situationship advice, anxious attachment, trauma bonding, setting boundaries in relationships, emotional immaturity, avoidant attachment, fearful avoidant, love bombing, codependency.
+- Long-tail 2am searches — pick 8-10 MOST RELEVANT to this specific topic (exact phrasing someone in pain types at 2am):
   - "why do i push away good people"
   - "why does a good person feel boring"
   - "why don't i feel attracted to nice people"
@@ -60,7 +60,20 @@ YOUTUBE TAGS:
   - "why am i always the one who cares more"
   - "how to stop overthinking in relationships"
   - "signs of anxious attachment in dating"
-  Pick the 4-5 most relevant to this specific topic.
+  - "why do i keep attracting emotionally unavailable people"
+  - "why do i always end up alone after dating someone nice"
+  - "signs you have anxious attachment without knowing"
+  - "why do i feel more when someone pulls away"
+  - "why do i only like people who don t like me back"
+  - "signs you re falling for someone emotionally unavailable"
+  - "how do i stop being so needy in relationships"
+  - "why does silence feel like abandonment"
+  - "signs you re confusing anxiety with attraction"
+  - "why do i feel calm with boring people but excited with toxic ones"
+  - "why is it hard to leave even when i know it s wrong"
+  - "what is fearful avoidant attachment"
+  - "signs you re the problem in your relationship"
+- Topic-specific tags: add 2-3 tags that directly match the exact topic, emotional trigger, or psych concept of this video (not from the list above — generate these specifically for this video).
 
 ---
 
