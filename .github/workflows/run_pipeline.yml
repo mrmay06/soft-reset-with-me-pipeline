@@ -47,7 +47,7 @@ on:
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 175
 
     permissions:
       contents: write
@@ -133,11 +133,11 @@ jobs:
           retry_wait_seconds: 300
           command: |
             if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ steps.window.outputs.track }}" = "longform" ]; then
-              python main_long.py --fresh
+              python main_long.py
             elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.track }}" = "longform" ]; then
-              python main_long.py --fresh
+              python main_long.py
             else
-              python main.py --fresh
+              python main.py
             fi
         env:
           GEMINI_API_KEY:            ${{ secrets.GEMINI_API_KEY }}
@@ -177,12 +177,14 @@ jobs:
           retention-days: 7
 
       - name: Commit learning memory
-        if: success() && steps.window.outputs.should_run == 'true'
+        if: always() && steps.window.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add topic_memory_soft_reset.json performance_memory_soft_reset.json topic_memory_soft_reset_long.json performance_memory_soft_reset_long.json strategy/strategy_memory.json
-          git diff --staged --quiet || git commit -m "chore: log video $(date +%Y%m%d_%H%M%S)"
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: log video $(date +%Y%m%d_%H%M%S)"
           git push
 
       - name: Cleanup workspace

@@ -57,8 +57,13 @@ def _extract_title_type(title: str) -> str:
 def _visual_style_mix(scenes: list[dict]) -> str:
     if not scenes:
         return "unknown"
-    brand = sum(1 for s in scenes if s.get("type") == "image" and s.get("style") == "brand")
-    stock = sum(1 for s in scenes if s.get("type") == "video")
+    brand = sum(
+        1
+        for s in scenes
+        if s.get("visual_type", s.get("type")) == "image"
+        and s.get("image_style", s.get("style")) == "brand"
+    )
+    stock = sum(1 for s in scenes if s.get("visual_type", s.get("type")) == "video")
     total = len(scenes)
     if brand / total >= 0.4:
         return "brand_heavy"
@@ -110,7 +115,13 @@ def run_creative_judge(video_id: str, run_dir: str, config: dict) -> dict:
     scene_manifest = _load(run_dir, "03b_scene_manifest.json")
 
     scenes = scene_manifest.get("scenes", [])
-    brand_image_count = sum(1 for s in scenes if s.get("type") == "image" and s.get("style") == "brand")
+    brand_image_count = sum(
+        1
+        for s in scenes
+        if s.get("visual_type", s.get("type")) == "image"
+        and s.get("image_style", s.get("style")) == "brand"
+    )
+    stock_video_count = sum(1 for s in scenes if s.get("visual_type", s.get("type")) == "video")
 
     hook = script.get("hook", "")
     title = metadata.get("title", "")
@@ -128,7 +139,7 @@ Description (first 150 chars): {description[:150]}
 Script word count: {script.get("word_count", "unknown")}
 Category: {research.get("category", "unknown")}
 Angle type: {research.get("angle_type", research.get("angle", "unknown"))}
-Total scenes: {len(scenes)}  |  Brand images: {brand_image_count}  |  Stock videos: {sum(1 for s in scenes if s.get("type") == "video")}
+Total scenes: {len(scenes)}  |  Brand images: {brand_image_count}  |  Stock videos: {stock_video_count}
 Video duration: {round(duration)}s
 
 SCORING RULES:
@@ -159,7 +170,7 @@ Return ONLY valid JSON:
   "only_soft_reset_reason": ""
 }}"""
 
-    model = config.get("metadata_model", "gemini-2.0-flash")
+    model = config.get("creative_judge_model", config.get("metadata_model", "gemini-2.0-flash"))
     try:
         raw = _call_judge(prompt, model)
     except Exception as e:

@@ -122,7 +122,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             continue
         start_ts = _format_ass_time(w["start"])
         end_ts   = _format_ass_time(w["end"])
-        display  = w["word"].capitalize()
+        word = str(w["word"])
+        display = word[:1].upper() + word[1:]
         lines.append(f"Dialogue: 0,{start_ts},{end_ts},Default,,0,0,0,,{display}")
 
     with open(output_path, "w", encoding="utf-8") as f:

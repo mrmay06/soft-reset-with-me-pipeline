@@ -92,6 +92,7 @@
   "audio_max_duration_sec": 35,
   "tts_speed": 1.14,
   "metadata_model": "gemini-2.5-flash",
+  "creative_judge_model": "gemini-2.5-flash-lite",
   "script_model": "claude-sonnet-4-6",
   "research_model": "gemini-2.5-flash",
   "tags_count": 12,

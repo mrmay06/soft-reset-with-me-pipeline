@@ -95,7 +95,7 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
         raise ValueError("TTS returned empty audio data")
 
     # Gemini TTS returns raw PCM (audio/L16) — wrap in WAV then convert to MP3
-    import wave, subprocess, tempfile
+    import wave, subprocess
 
     wav_path = output_path.replace(".mp3", "_tts_raw.wav")
     sample_rate = 24000
