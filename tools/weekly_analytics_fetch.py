@@ -87,10 +87,8 @@ def _load_json(path: str, default):
 
 def _memory_sources() -> list[tuple[str, str, dict]]:
     shorts_config = _load_json("config/pipeline_config.json", {})
-    longform_config = _load_json("config/longform_config.json", {})
     return [
         (shorts_config.get("topic_memory_file", "topic_memory_soft_reset.json"), "shorts", shorts_config),
-        (longform_config.get("topic_memory_file", "topic_memory_soft_reset_long.json"), "longform", longform_config),
     ]
 
 
