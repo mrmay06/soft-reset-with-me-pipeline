@@ -306,5 +306,113 @@
     "video_count": 9,
     "total_scenes": 14,
     "validation_warnings": []
+  },
+  {
+    "video_id": "20260507_164008",
+    "published_date": "2026-05-07",
+    "status": "uploaded",
+    "topic": "The subtle micro-betrayals that quietly erode trust over time.",
+    "category": "Relationship Patterns",
+    "angle_type": "list",
+    "total_score": 19,
+    "source_name": "Relationship Science (e.g., John Gottman's research on relational bids, Bren\u00e9 Brown's BRAVING framework for trust)",
+    "source_basis": "The cumulative effect of small, inconsistent actions and interactions on relationship trust and psychological safety, a cornerstone of relationship science.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "list",
+    "emotional_trigger": "Feeling confused, unheard, or questioning your own perception in a relationship due to consistent subtle actions.",
+    "psych_concept": "Cumulative Erosion of Relational Trust",
+    "core_claim": "Trust often erodes through a series of small, seemingly insignificant actions\u2014like consistent 'forgetting,' subtle blame-shifting, or downplaying your feelings\u2014rather than one big betrayal.",
+    "editorial_seed": "It's easy to dismiss small inconsistencies as 'not a big deal,' but these micro-betrayals compound. They make you question your memory, your worth, and ultimately, the safety of the relationship. Recognizing these patterns is key to protecting your peace.",
+    "only_soft_reset_line": "You didn't stop trusting them. You stopped trusting what you remembered.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You did not get lied to. You got slowly let down.",
+    "hook_quality": "weak",
+    "word_count": 78,
+    "estimated_duration_sec": 27,
+    "thumbnail_text": "It wasn't one big thing.",
+    "content_fingerprint": "the subtle micro betrayals that quietly erode trust over time you did not get lied to you got slowly let down feeling confused unheard or questioning your own perception in a relationship due to consistent subtle actions cumulative erosion of relational trust trust often erodes through a series of small seemingly insignificant actions like consistent forgetting subtle blame shifting or downplaying your feelings rather than one big betrayal you didn t stop trusting them you stopped trusting what you remembered",
+    "title": "You weren't lied to. You were just slowly let down",
+    "youtube_video_id": "BDAa-n3KV8s",
+    "youtube_url": "https://youtube.com/shorts/BDAa-n3KV8s",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 12,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W19",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "list",
+      "category": "Relationship Patterns",
+      "topic_cluster": "The subtle micro-betrayals that quietly erode trust over tim",
+      "visual_style_mix": "balanced",
+      "video_length_band": "under_30s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 12
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook is intriguing and sets up a relatable scenario, but could be more impactful."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script is concise and clearly conveys the core message within the word count."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "The POV is present, offering a specific take on relationship dynamics, but could be more distinct."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "The concept of 'slowly let down' is specific and offers a nuanced understanding of relationship issues."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no clear call to action in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title perfectly reflects the hook and the core message of the video."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description expands slightly on the hook, providing a good initial summary and hinting at the content."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming visuals complement the script, the sync is likely adequate but could be more dynamic."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The mix of brand images and stock videos suggests a standard approach; strength depends on execution."
+      },
+      "thumbnail_concept": {
+        "score": 6,
+        "reason": "No thumbnail concept provided, making this impossible to score accurately based on provided data."
+      },
+      "voice_pacing_readiness": {
+        "score": 7,
+        "reason": "The short duration suggests a potentially faster pace; readiness depends on the voiceover delivery."
+      },
+      "brand_consistency": {
+        "score": 7,
+        "reason": "The number of brand images suggests an attempt at consistency, but overall consistency depends on the overall aesthetic."
+      },
+      "policy_factual_risk": {
+        "score": 9,
+        "reason": "The content is opinion-based and psychological, posing minimal factual risk."
+      }
+    },
+    "judge_composite_score": 6.5,
+    "strongest_element": "title_accuracy",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 6
   }
 ]
