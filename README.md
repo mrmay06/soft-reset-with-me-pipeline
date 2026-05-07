@@ -1,79 +1,172 @@
 # Soft Reset With Me Pipeline
 
-Automated YouTube Shorts pipeline for **Soft Reset With Me**.
+Automated YouTube pipeline for **Soft Reset With Me**, a relationship self-improvement channel focused on emotional growth, healing arcs, self-worth, attachment patterns, and intimate-but-direct advice for an English-speaking 18-35 audience.
 
-The channel direction is relationship psychology, healing arcs, self-worth, and emotional growth for a US 18-35 audience. The pipeline researches topics, writes a short script, generates voiceover, selects Pexels video footage, generates fallback brand stills, adds captions, renders the final Short, creates metadata, and uploads public-now through YouTube.
+The repo runs two tracks:
+
+- **Shorts:** 2 public Shorts per day.
+- **Longform:** 1 public longform video per week.
+
+All active publishing is **public-now**. The pipeline does not schedule future YouTube publish times.
 
 ## Current Setup
 
 - Channel: `Soft Reset With Me`
 - Handle: `@SoftResetWithMe`
-- Video source priority for Shorts: Pexels video -> generated AI image -> Pexels stock image fallback
-- Coverr is disabled for Shorts and enabled for long-form stock footage
-- Publishing schedule: 2 Shorts per day plus 1 long-form video per week, New York time
-- Upload mode: public-now via pipeline config (`privacy_status: public`)
-- Captions: centered kinetic captions with Soft Cream fill and Deep Midnight border
-- End screen: `assets/EndScreen.png`
+- Shorts cadence: 14 Shorts/week
+- Longform cadence: 1 video/week
+- Upload mode: `publish_mode: public_now`, `privacy_status: public`
+- Action timing: GitHub Actions starts 25 minutes before the intended ET publish window
+- Timezone logic: DST-safe dual UTC cron entries plus an `America/New_York` gate
+- Shorts visual priority: Pexels video -> generated AI image -> Pexels image fallback
+- Shorts Coverr setting: disabled by default
+- Longform stock footage: Pexels + Coverr
+- TTS: Gemini `gemini-2.5-flash-preview-tts`, `Puck` voice
+- Script model: Claude Sonnet
+- Creative judge model: `gemini-2.5-flash-lite`
+- Weekly learning: Shorts-only analytics + creative judge traits -> Gemini draft -> Sonnet review -> auto-promoted strategy
 
-## Run Locally
+## Publishing Schedule
+
+Target public upload windows in New York time:
+
+| Day | Shorts upload windows ET | Longform upload window ET |
+| --- | --- | --- |
+| Monday | 12:00 PM, 7:00 PM | - |
+| Tuesday | 12:00 PM, 8:00 PM | - |
+| Wednesday | 11:00 AM, 7:00 PM | - |
+| Thursday | 12:00 PM, 8:00 PM | - |
+| Friday | 3:00 PM, 7:00 PM | - |
+| Saturday | 10:00 AM, 6:00 PM | - |
+| Sunday | 11:00 AM, 7:00 PM | 9:00 PM |
+
+The workflow starts each run at `:35` in the matching local hour, roughly 25 minutes before the target public upload window. Longform starts Sunday at 8:35 PM ET for the intended 9:00 PM ET public upload window.
+
+## Shorts Flow
+
+`main.py` runs the Shorts track:
+
+1. **Performance Sync** - Fetches recent YouTube Analytics into `performance_memory_soft_reset.json`.
+2. **Research** - Uses pytrends, YouTube, and Reddit signals, then asks Gemini for topic candidates.
+3. **Script** - Uses Claude Sonnet to write a 45-75 word script with the Soft Reset editorial layer.
+4. **TTS** - Uses Gemini TTS with the `Puck` voice.
+5. **Visual Director** - Builds a scene manifest with `visual_type` and `image_style`.
+6. **Image/Video Assets** - Uses Pexels video, generated images, and Pexels image fallback.
+7. **Captions** - Generates centered kinetic ASS captions.
+8. **Thumbnail** - Builds `05_thumbnail.png`.
+9. **Video Assembly** - Renders `06_final_video.mp4` with captions, music, film overlay, and CTA card.
+10. **Metadata** - Generates title, description, and tags.
+11. **Upload** - Uploads directly to YouTube as public.
+12. **Creative Judge** - Scores the uploaded run and extracts learning traits into `10_judge_report.json`.
+13. **Logger** - Appends topic, metadata, judge traits, experiment slot, and upload info to `topic_memory_soft_reset.json`.
+
+Shorts can run with `--skip-upload` for local generation without publishing. If `log_skip_upload_to_memory` is true, skip-upload runs can still write memory for testing.
+
+## Longform Flow
+
+`main_long.py` runs the longform track:
+
+1. **Long Performance Sync** - Uses longform memory and analytics thresholds.
+2. **Long Research** - Generates the longform topic and angle.
+3. **Long Script** - Uses Claude Sonnet to write a 750-1050 word essay script.
+4. **Long Metadata** - Creates packaging for the longform upload.
+5. **Long Audio** - Generates the full Gemini TTS voiceover.
+6. **Long Captions** - Generates phrase-level captions.
+7. **Long Video** - Renders `06_longform_video.mp4` from short visual beats, Pexels/Coverr footage, fallback cards, music, and film overlay.
+8. **Long Thumbnail** - Creates `07_longform_thumbnail.png` and A/B/C thumbnail variants.
+9. **Long Upload** - Uploads directly to YouTube as public.
+10. **Creative Judge** - Scores the longform run with the shared judge module.
+11. **Long Logger** - Writes upload status, YouTube URL, thumbnail variant, judge traits, experiment metadata, and topic data to `topic_memory_soft_reset_long.json`.
+
+Longform uses separate memory files:
+
+- `topic_memory_soft_reset_long.json`
+- `performance_memory_soft_reset_long.json`
+
+The temporary 2-minute test mode uses:
+
+- `topic_memory_soft_reset_long_test.json`
+- `performance_memory_soft_reset_long_test.json`
+
+## Editorial Layer
+
+The Shorts track is designed to avoid generic relationship advice. Topic research must produce:
+
+- `core_claim`
+- `editorial_seed`
+- `only_soft_reset_line`
+- `source_basis`
+- `confidence_level`
+
+The script agent checks argument coherence so the hook promise, emotional mechanism, and final insight all support the same core claim. Weak or drifting scripts are retried before rendering.
+
+The prompt layer favors emotionally precise, plain-language insight over therapy-speak, hype-coach phrasing, or generic inspirational advice.
+
+## Models And Providers
+
+Shorts defaults in `config/pipeline_config.json`:
+
+| Purpose | Setting | Current value |
+| --- | --- | --- |
+| Research | `research_model` | `gemini-2.5-flash` |
+| Script | `script_model` | `claude-sonnet-4-6` |
+| Metadata | `metadata_model` | `gemini-2.5-flash` |
+| Creative judge | `creative_judge_model` | `gemini-2.5-flash-lite` |
+| TTS | `tts_model` | `gemini-2.5-flash-preview-tts` |
+| TTS voice | `tts_voice` | `Puck` |
+| Image model | `image_model` | `zimage` |
+
+Longform defaults in `config/longform_config.json`:
+
+| Purpose | Setting | Current value |
+| --- | --- | --- |
+| Research | `research_model` | `gemini-2.5-flash` |
+| Script | `script_model` | `claude-sonnet-4-6` |
+| Metadata | `metadata_model` | `gemini-2.5-flash` |
+| Creative judge | `creative_judge_model` | `gemini-2.5-flash-lite` |
+| TTS | `tts_model` | `gemini-2.5-flash-preview-tts` |
+| TTS voice | `tts_voice` | `Puck` |
+
+## Running Locally
+
+### Setup
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python main.py --fresh --skip-upload
+brew install ffmpeg
 ```
 
-To run the full upload flow:
+On Linux:
 
 ```bash
-python main.py --fresh
+sudo apt-get install ffmpeg
 ```
 
-To generate and upload a separate long-form video:
+### Environment
+
+Copy `.env.example` to `.env`, or add the same values as GitHub Actions secrets:
 
 ```bash
-python main_long.py --mock
-python main_long.py
+GEMINI_API_KEY=
+ANTHROPIC_API_KEY=
+POLLINATIONS_API_KEY=
+PEXELS_API_KEY=
+COVERR_API_KEY=
+YOUTUBE_CLIENT_ID=
+YOUTUBE_CLIENT_SECRET=
+YOUTUBE_REFRESH_TOKEN=
+ALERT_EMAIL_FROM=
+ALERT_EMAIL_TO=
+ALERT_EMAIL_PASSWORD=
 ```
 
-Long-form uses separate memory and analytics files:
-
-- `topic_memory_soft_reset_long.json`
-- `performance_memory_soft_reset_long.json`
-
-The long-form track follows the same module shape as Shorts: research -> script -> metadata -> voiceover -> captions -> video assembly -> thumbnail -> upload -> creative judge -> logger. It renders a separate horizontal `06_longform_video.mp4` using short visual beats, Pexels/Coverr footage, audio-synced phrase captions, film overlay, long-form audio, a music bed, a 16:9 `07_longform_thumbnail.png`, and uploads directly as public.
-
-## Required Secrets
-
-Copy `.env.example` to `.env` for local runs, or add these as GitHub Actions secrets:
-
-- `GEMINI_API_KEY`
-- `ANTHROPIC_API_KEY`
-- `POLLINATIONS_API_KEY`
-- `PEXELS_API_KEY`
-- `COVERR_API_KEY`
-- `YOUTUBE_CLIENT_ID`
-- `YOUTUBE_CLIENT_SECRET`
-- `YOUTUBE_REFRESH_TOKEN`
-- `ALERT_EMAIL_FROM`
-- `ALERT_EMAIL_TO`
-- `ALERT_EMAIL_PASSWORD`
-
-Coverr is used by the long-form stock-footage renderer. Shorts still keep Coverr disabled unless the Shorts config enables it.
-
-## YouTube OAuth
-
-Before enabling upload, generate a refresh token while signed into the Google/YouTube account that owns **Soft Reset With Me**:
+Generate a YouTube refresh token while signed into the Google account that owns **Soft Reset With Me**:
 
 ```bash
 python tools/get_youtube_token.py
 ```
-
-Choose the `Soft Reset With Me` channel/account in the Google consent screen. Then update:
-
-- local `.env`: `YOUTUBE_REFRESH_TOKEN=...`
-- GitHub secret: `YOUTUBE_REFRESH_TOKEN`
 
 Verify the token points to the right channel:
 
@@ -81,58 +174,163 @@ Verify the token points to the right channel:
 python tools/check_youtube_channel.py
 ```
 
-Do not run live uploads until this prints `Soft Reset With Me`.
+Do not run live uploads until that check prints the Soft Reset With Me channel.
 
-The OAuth token must include YouTube upload and YouTube Analytics scopes. If Analytics sync reports an insufficient-scope error, rerun `tools/get_youtube_token.py` and update the `YOUTUBE_REFRESH_TOKEN` secret again.
+### Shorts Commands
 
-## Performance Feedback
+```bash
+# Generate assets and metadata without publishing.
+python main.py --fresh --skip-upload
 
-The pipeline syncs YouTube Analytics before research. It stores recent video metrics in `performance_memory_soft_reset.json`, including views, engaged views, average view duration, average view percentage, likes, comments, shares, and subscribers gained when available.
+# Live run. Auto-resumes an incomplete Shorts run if one exists.
+python main.py
 
-Shorts and long-form analytics are intentionally separate. Long-form uses higher minimum view thresholds, a longer lookback window, and different sample-size gates because 5-7 minute videos should be judged by watch time, retention curve behavior, and chapter coherence rather than Shorts completion dynamics.
+# Force a brand-new live Shorts run.
+python main.py --fresh
 
-The weekly Shorts self-improvement workflow runs `tools/weekly_strategy.py`, compares Shorts analytics and creative-judge traits, asks Gemini for the first strategy draft, asks Sonnet to review/refine it, archives both, and auto-promotes the reviewed strategy into `strategy/strategy_memory.json`. Future Shorts research, script, and metadata prompts inject that active strategy automatically. Long-form performance is logged separately and is not used by the weekly Shorts strategy loop.
+# Mock run.
+python main.py --mock --fresh
 
-Research and script prompts use staged learning so the channel does not overfit the first few Shorts:
+# Resume a specific Shorts run.
+python main.py --resume <video_id>
+```
 
-- 0-7 valid videos: collect data only; keep testing different pillars and formats.
-- 8-24 valid videos: use individual winning/weak examples directionally, not category conclusions.
-- 25+ valid videos: use pattern-level feedback by category, format, angle, hook quality, and research-score calibration.
+### Longform Commands
 
-Videos younger than 2 days are skipped for analytics, cached analytics are reused for 7 days, and pattern-level analysis ignores videos below the configured minimum view threshold. The `composite_score` weighs hook power, hold, emotional resonance, and reach rather than raw views alone:
+```bash
+# Mock longform run.
+python main_long.py --mock
 
-- 35% hook score: `engagedViews / views`
-- 35% hold score: `averageViewPercentage`
-- 20% resonance score: weighted engagement divided by `engagedViews`
-- 10% reach score: lightly weighted log-scaled views
+# Live longform run. Auto-resumes incomplete longform runs.
+python main_long.py
 
-`performance_score` is kept as a backward-compatible alias for `composite_score`.
+# Force a brand-new longform run.
+python main_long.py --fresh
 
-## Editorial Layer
+# Temporary 2-minute test mode.
+python main_long.py --test-2min
 
-The pipeline is designed to avoid generic AI output. Topic research must now produce a `core_claim`, `editorial_seed`, and `only_soft_reset_line` before scripting. The script validator checks for an explicit point of view and a signature Soft Reset sentence, then retries weak scripts before rendering.
-
-The script agent also runs an argument-coherence review. It checks whether the hook promise matches the payoff, every spoken section supports the `core_claim`, and no section drifts into neutral explainer mode. Failed reviews trigger a script rewrite with the review notes.
-
-This keeps AI in the execution role while the channel direction remains opinionated, emotionally specific, and non-templated.
+# Resume a specific longform run.
+python main_long.py --resume <long_video_id>
+```
 
 ## GitHub Actions
 
-The workflow at `.github/workflows/run_pipeline.yml` runs the public-now Shorts and long-form pipelines on the configured posting schedule and can also be triggered manually from the Actions tab.
+`.github/workflows/run_pipeline.yml` runs both publishing tracks.
 
-The workflow at `.github/workflows/weekly_strategy.yml` runs the Shorts self-improvement loop every Monday and commits the active strategy memory.
+Important behavior:
 
-Scheduled GitHub Actions runs upload to YouTube as public-now. Manual runs choose `shorts` or `longform` and also upload public-now. Rendered videos are saved as workflow artifacts for 7 days.
+- Schedule gate chooses `shorts` or `longform` based on New York local time.
+- Manual dispatch can choose `shorts` or `longform`.
+- The retry wrapper runs `python main.py` or `python main_long.py`, not `--fresh`, so retries can resume checkpoints.
+- Job timeout is 175 minutes to allow one retry of the longform path.
+- Rendered videos, metadata, scripts, render metadata, thumbnails, and judge reports are uploaded as 7-day artifacts.
+- Memory commits run with `if: always()` so late-stage failures do not automatically lose updated memory.
+- The workflow pulls with `--rebase --autostash` before committing memory to reduce push races.
 
-Scheduled Actions start 25 minutes before the target public upload window. The workflow uses DST-safe dual UTC cron entries plus an `America/New_York` gate, so the intended ET slots stay stable across EDT and EST.
+Required GitHub Actions secrets:
 
-The workflow commits Shorts and long-form topic/performance memory after successful runs so the channel avoids repeating recent topics and can learn from uploaded video performance.
+```bash
+GEMINI_API_KEY
+ANTHROPIC_API_KEY
+POLLINATIONS_API_KEY
+PEXELS_API_KEY
+COVERR_API_KEY
+YOUTUBE_CLIENT_ID
+YOUTUBE_CLIENT_SECRET
+YOUTUBE_REFRESH_TOKEN
+ALERT_EMAIL_FROM
+ALERT_EMAIL_TO
+ALERT_EMAIL_PASSWORD
+```
+
+## Weekly Shorts Self-Improvement
+
+`.github/workflows/weekly_strategy.yml` runs every Monday at 6:00 AM New York time.
+
+The weekly loop:
+
+1. Fetches mature Shorts analytics.
+2. Preprocesses comparisons by creative traits and performance buckets.
+3. Optionally watches top/bottom videos with Gemini; scheduled runs skip video watching by default.
+4. Uses Gemini to draft `strategy/strategy_memory_proposed.json`.
+5. Uses Sonnet to review/refine into `strategy/strategy_memory_reviewed.json`.
+6. Auto-promotes the reviewed file to `strategy/strategy_memory.json`.
+7. Archives history under `strategy/analysis_history/`.
+
+Longform performance is logged separately and is not used in the weekly Shorts strategy loop.
+
+Learning is staged to avoid overfitting early uploads:
+
+- 0-7 valid videos: collect data only; keep testing different pillars and formats.
+- 8-24 valid videos: use individual winning and weak examples directionally.
+- 25+ valid videos: use pattern-level feedback by category, format, angle, hook type, title type, thumbnail type, visual mix, and judge traits.
+
+Videos younger than 2 days are skipped for Shorts analytics. Cached analytics are reused for 7 days where configured.
 
 ## Important Files
 
-- `config/pipeline_config.json` - brand, schedule, provider, rendering, and upload settings
-- `prompts/script_prompt.txt` - script and hook rules
-- `prompts/research_candidates_prompt.txt` - topic research direction
-- `modules/image_gen.py` - Pexels/generated visual asset selection
-- `modules/video_assembler.py` - final render, captions, music, film overlay, CTA card
-- `topic_memory_soft_reset.json` - recent topic memory
+| Path | Purpose |
+| --- | --- |
+| `main.py` | Shorts pipeline entry point |
+| `main_long.py` | Longform pipeline entry point |
+| `config/pipeline_config.json` | Shorts schedule, model, upload, render, and learning settings |
+| `config/longform_config.json` | Longform settings |
+| `prompts/research_candidates_prompt.txt` | Shorts topic research |
+| `prompts/research_score_prompt.txt` | Shorts candidate scoring |
+| `prompts/script_prompt.txt` | Shorts script rules |
+| `prompts/metadata_prompt.txt` | Shorts metadata rules |
+| `prompts/longform_research_prompt.txt` | Longform research rules |
+| `prompts/longform_script_prompt.txt` | Longform script rules |
+| `prompts/longform_packaging_prompt.txt` | Longform title/thumbnail/metadata packaging |
+| `prompts/weekly_analysis_prompt.txt` | Weekly Shorts strategy analysis prompt |
+| `modules/image_gen.py` | Shorts Pexels/generated visual asset selection |
+| `modules/video_assembler.py` | Shorts final render |
+| `modules/longform_video_assembler.py` | Longform render from stock footage and fallback cards |
+| `modules/creative_judge.py` | Shared creative judge and trait extraction |
+| `modules/logger.py` | Shorts memory logger |
+| `modules/longform_logger.py` | Longform memory logger |
+| `tools/weekly_strategy.py` | Weekly Shorts self-improvement orchestrator |
+| `tools/validate_schedule.py` | Schedule validator |
+| `topic_memory_soft_reset.json` | Shorts topic and creative memory |
+| `performance_memory_soft_reset.json` | Shorts analytics memory |
+| `topic_memory_soft_reset_long.json` | Longform topic memory |
+| `performance_memory_soft_reset_long.json` | Longform analytics memory |
+| `strategy/strategy_memory.json` | Active Shorts strategy used by future runs |
+
+## Manual Tools
+
+```bash
+# Validate the GitHub Actions schedule
+python tools/validate_schedule.py
+
+# Fetch weekly Shorts analytics
+python tools/weekly_analytics_fetch.py
+
+# Preprocess weekly comparisons
+python tools/weekly_preprocess.py
+
+# Run weekly strategy cycle
+python tools/weekly_strategy.py --skip-video-watch
+
+# Run weekly strategy with Gemini video watching
+python tools/weekly_strategy.py
+
+# Swap eligible thumbnails where configured
+python tools/ab_thumbnail_swap.py
+
+# Audit tags for topic mismatch
+python tools/tag_audit.py
+
+# Verify YouTube OAuth channel
+python tools/check_youtube_channel.py
+```
+
+## Notes
+
+- Public immediate upload is intentional for both active tracks.
+- Longform uploads directly and logs YouTube IDs/URLs after upload.
+- Shorts and longform memories are separate because their analytics mature differently.
+- Weekly strategy currently updates the Shorts strategy only.
+- Scheduled Actions avoid `--fresh` so retries can use checkpoints.
+- Use `--fresh` locally only when you intentionally want to ignore resumable workspace runs.
