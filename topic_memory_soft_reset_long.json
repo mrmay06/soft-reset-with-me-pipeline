@@ -206,5 +206,148 @@
     "thumbnail": "07_longform_thumbnail.png",
     "youtube_video_id": "",
     "youtube_url": ""
+  },
+  {
+    "video_id": "long_20260507_164017",
+    "published_date": "2026-05-07",
+    "status": "uploaded",
+    "topic": "The quiet resistance to 'easy' love: Why consistent affection can feel threatening when you're used to chaos.",
+    "working_title": "When 'Easy' Love Feels Unsafe: Why We Resist What's Good For Us",
+    "content_pillar": "healing arcs",
+    "category": "healing arcs",
+    "angle_type": "emotional_deep_dive",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "Many of us, after experiencing chaotic or inconsistent love, unconsciously resist genuine, stable affection because its very consistency feels unfamiliar and therefore, unsafe.",
+    "editorial_seed": "We often mistake peace for boredom, or genuine kindness for a lack of passion. This video explores the subconscious reasons why consistent, healthy love can feel threatening when our nervous systems are wired for drama. It's about understanding that 'easy' isn't inherently weak, and learning to lean into the quiet comfort of stability, not away from it.",
+    "only_soft_reset_line": "You're not broken for flinching at steady hands; you're just unlearning the language of always bracing for impact.",
+    "word_count": 880,
+    "estimated_duration_sec": 340.6,
+    "argument_quality": "strong",
+    "final_duration_sec": 327.13,
+    "render_validation": "passed",
+    "title": "You're addicted to the chaos, not the chase",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why consistency feels dangerous after chaos"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "Why their kindness makes you want to run"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "You're addicted to the chaos, not the chase"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "clean_concept_close_up | highlighted_truth",
+        "thumbnail_text": "EASY LOVE FEELS WRONG",
+        "visual_prompt": "A close-up of a person's hand, mid-20s, with a gentle, consistent hand resting lightly over theirs. The person's eyes, visible in the background, show a subtle, almost imperceptible flinch or tension, not fear, but a quiet apprehension. The scene is softly lit, with the right 40% of the frame slightly darker for text, using Deep Midnight as background base, Warm Terracotta as subtle highlight on hands. Photorealistic cinematic editorial, 1280x720, 16:9."
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "digital_anxiety_overlay | emotional_hook",
+        "thumbnail_text": "THE CALM FEELS DANGEROUS",
+        "visual_prompt": "A tight, intimate shot of a person's face (18-35, androgynous or female coded), looking slightly overwhelmed or restless while sitting in a quiet, softly lit room (Deep Midnight tones). Their gaze is distant, suggesting an internal conflict. A subtle, almost imperceptible visual overlay of static or a faint, glowing, unformed 'thought cloud' around their head (Warm Terracotta accent). The left 40% of the frame is dark negative space for text. Photorealistic cinematic editorial, 1280x720, 16:9."
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "dichotomy_split | subject_vs_the_void",
+        "thumbnail_text": "YOU MISS THE CHAOS",
+        "visual_prompt": "A profile close-up of a person's face (18-35, male coded or androgynous), softly illuminated on the left, looking contemplatively into a deep, empty void on the right side of the frame. The void, a vast expanse of Deep Midnight, consumes the right 40% of the frame, serving as the text zone. A subtle ripple of unsettled emotion crosses their face. The light catching their features has a Warm Terracotta hue. Photorealistic cinematic editorial, 1280x720, 16:9."
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "tE85wCnMYYI",
+    "youtube_url": "https://www.youtube.com/watch?v=tE85wCnMYYI",
+    "privacy_status": "public",
+    "uploaded_at": "2026-05-07T16:54:50Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W19",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The quiet resistance to 'easy' love: Why consistent affectio",
+      "visual_style_mix": "unknown",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 0
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook uses evocative language ('addicted to chaos,' 'unlearning the language of always bracing for impact') which piques curiosity about the core message."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script effectively explains the concept of seeking chaos due to past experiences, providing clear examples and actionable advice for breaking the cycle."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The POV is deeply empathetic and insightful, resonating with viewers who have experienced similar relationship patterns, making it feel like a direct conversation."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "It clearly identifies the 'villain' as the internalized pattern of seeking familiar chaos rather than healthy connection, and explains how this pattern operates."
+      },
+      "cta_quality": {
+        "score": 7,
+        "reason": "The CTA encourages self-reflection and community engagement, which is appropriate for the channel's focus, though it could be slightly more direct."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title perfectly captures the core paradox discussed in the video, immediately drawing in the target audience."
+      },
+      "description_usefulness": {
+        "score": 7,
+        "reason": "The description is intriguing and sets the tone well, but could be more informative about the video's content to encourage clicks."
+      },
+      "visual_dialogue_sync": {
+        "score": 1,
+        "reason": "No visual elements (stock videos, brand images, scenes) were provided, making this score impossible to assess. Assuming a purely audio format, sync is not applicable."
+      },
+      "image_direction_strength": {
+        "score": 1,
+        "reason": "No visual elements were provided, so this cannot be scored."
+      },
+      "thumbnail_concept": {
+        "score": 1,
+        "reason": "No thumbnail concept was provided or implied."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The script is written in a conversational and reflective tone, suggesting excellent pacing for a faceless channel's narration."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of self-growth through understanding relationship patterns aligns perfectly with the channel's known focus."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is psychological and self-reflective, posing no factual risk or violation of policies."
+      }
+    },
+    "judge_composite_score": 6.5,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "Visual Dialogue Sync",
+    "only_soft_reset_score": 9
   }
 ]
