@@ -33,9 +33,11 @@ load_dotenv(override=True)
 from tools.weekly_analytics_fetch import run_fetch
 from tools.weekly_preprocess import run_preprocess
 from tools.weekly_analysis import run_analysis
+from tools.strategy_reviewer import review_strategy
 
 STRATEGY_FILE = "strategy/strategy_memory.json"
 PROPOSED_FILE = "strategy/strategy_memory_proposed.json"
+REVIEWED_FILE = "strategy/strategy_memory_reviewed.json"
 
 
 def _current_week() -> str:
@@ -51,6 +53,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Run analytics fetch only (no AI analysis)")
     parser.add_argument("--skip-fetch", action="store_true", help="Skip analytics fetch, use existing cache")
     parser.add_argument("--skip-video-watch", action="store_true", help="Skip Gemini video watching in analysis")
+    parser.add_argument("--review-model", default="claude-sonnet-4-6", help="Claude/Sonnet model for final strategy review")
     args = parser.parse_args()
 
     week = args.week or _current_week()
@@ -86,13 +89,23 @@ def main():
     proposed_path = run_analysis(week_label=week, skip_video_watch=args.skip_video_watch)
     print(f"\nAnalysis done in {round(time.time()-t0, 1)}s → {proposed_path}\n")
 
+    print("Step 4/4 — Sonnet Strategy Review\n")
+    t0 = time.time()
+    reviewed_path = review_strategy(
+        proposed_path=PROPOSED_FILE,
+        reviewed_path=REVIEWED_FILE,
+        comparison_path=comparison_path,
+        model=args.review_model,
+    )
+    print(f"\nReview done in {round(time.time()-t0, 1)}s → {reviewed_path}\n")
+
     total = round(time.time() - start, 1)
 
     print(f"{'='*60}")
     print(f" Weekly cycle complete in {total}s")
     print(f"{'='*60}")
-    shutil.copy(PROPOSED_FILE, STRATEGY_FILE)
-    print(f"\n Auto-promoted weekly strategy: {PROPOSED_FILE} → {STRATEGY_FILE}")
+    shutil.copy(REVIEWED_FILE, STRATEGY_FILE)
+    print(f"\n Auto-promoted reviewed weekly strategy: {REVIEWED_FILE} → {STRATEGY_FILE}")
     print(f"""
  ROLLBACK:
     cp strategy/analysis_history/<previous-week>_verdict.json {STRATEGY_FILE}

@@ -91,7 +91,7 @@ The pipeline syncs YouTube Analytics before research. It stores recent video met
 
 Shorts and long-form analytics are intentionally separate. Long-form uses higher minimum view thresholds, a longer lookback window, and different sample-size gates because 5-7 minute videos should be judged by watch time, retention curve behavior, and chapter coherence rather than Shorts completion dynamics.
 
-The weekly Shorts self-improvement workflow runs `tools/weekly_strategy.py`, compares Shorts analytics and creative-judge traits, writes an archived verdict, and auto-promotes the proposed strategy into `strategy/strategy_memory.json`. Future Shorts research, script, and metadata prompts inject that active strategy automatically. Long-form performance is logged separately and is not used by the weekly Shorts strategy loop.
+The weekly Shorts self-improvement workflow runs `tools/weekly_strategy.py`, compares Shorts analytics and creative-judge traits, asks Gemini for the first strategy draft, asks Sonnet to review/refine it, archives both, and auto-promotes the reviewed strategy into `strategy/strategy_memory.json`. Future Shorts research, script, and metadata prompts inject that active strategy automatically. Long-form performance is logged separately and is not used by the weekly Shorts strategy loop.
 
 Research and script prompts use staged learning so the channel does not overfit the first few Shorts:
 

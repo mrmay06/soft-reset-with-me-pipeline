@@ -79,12 +79,13 @@ jobs:
           YOUTUBE_CLIENT_ID:         ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET:     ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN:     ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          ANTHROPIC_API_KEY:         ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Commit strategy memory
         if: success() && steps.window.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add strategy/strategy_memory.json strategy/strategy_memory_proposed.json strategy/analysis_history strategy/analytics_cache strategy/comparisons
+          git add strategy/strategy_memory.json strategy/strategy_memory_proposed.json strategy/strategy_memory_reviewed.json strategy/analysis_history strategy/analytics_cache strategy/comparisons
           git diff --staged --quiet || git commit -m "chore: weekly self-improvement strategy $(date +%Y%m%d)"
           git push
