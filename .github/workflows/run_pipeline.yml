@@ -44,6 +44,10 @@ on:
           - 'shorts'
           - 'longform'
 
+concurrency:
+  group: soft-reset-public-now-main
+  cancel-in-progress: false
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
@@ -62,8 +66,9 @@ jobs:
         id: window
         shell: python
         run: |
+          import json
           import os
-          from datetime import datetime, timedelta
+          from datetime import datetime
           from zoneinfo import ZoneInfo
 
           event = os.environ.get("GITHUB_EVENT_NAME", "")
@@ -72,23 +77,37 @@ jobs:
 
           if event == "schedule":
               now = datetime.now(ZoneInfo("America/New_York"))
-              windows = {
-                  0: [("11:35", "shorts"), ("18:35", "shorts")],
-                  1: [("11:35", "shorts"), ("19:35", "shorts")],
-                  2: [("10:35", "shorts"), ("18:35", "shorts")],
-                  3: [("11:35", "shorts"), ("19:35", "shorts")],
-                  4: [("14:35", "shorts"), ("18:35", "shorts")],
-                  5: [("09:35", "shorts"), ("17:35", "shorts")],
-                  6: [("10:35", "shorts"), ("18:35", "shorts"), ("20:35", "longform")],
+              event_path = os.environ.get("GITHUB_EVENT_PATH")
+              event_payload = json.load(open(event_path)) if event_path else {}
+              fired_cron = event_payload.get("schedule", "")
+
+              # GitHub can delay scheduled jobs by more than an hour. Use the
+              # fired cron expression, not runner wall-clock time, to decide
+              # whether the EDT or EST duplicate should do real work.
+              active_crons = {
+                  "EDT": {
+                      "35 15 * * 1": "shorts", "35 22 * * 1": "shorts",
+                      "35 15 * * 2": "shorts", "35 23 * * 2": "shorts",
+                      "35 14 * * 3": "shorts", "35 22 * * 3": "shorts",
+                      "35 15 * * 4": "shorts", "35 23 * * 4": "shorts",
+                      "35 18 * * 5": "shorts", "35 22 * * 5": "shorts",
+                      "35 13 * * 6": "shorts", "35 21 * * 6": "shorts",
+                      "35 14 * * 0": "shorts", "35 22 * * 0": "shorts",
+                      "35 0 * * 1": "longform",
+                  },
+                  "EST": {
+                      "35 16 * * 1": "shorts", "35 23 * * 1": "shorts",
+                      "35 16 * * 2": "shorts", "35 0 * * 3": "shorts",
+                      "35 15 * * 3": "shorts", "35 23 * * 3": "shorts",
+                      "35 16 * * 4": "shorts", "35 0 * * 5": "shorts",
+                      "35 19 * * 5": "shorts", "35 23 * * 5": "shorts",
+                      "35 14 * * 6": "shorts", "35 22 * * 6": "shorts",
+                      "35 15 * * 0": "shorts", "35 23 * * 0": "shorts",
+                      "35 1 * * 1": "longform",
+                  },
               }
-              should_run = False
-              for time_label, candidate_track in windows.get(now.weekday(), []):
-                  hour, minute = map(int, time_label.split(":"))
-                  start = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
-                  if start <= now < start + timedelta(minutes=45):
-                      should_run = True
-                      track = candidate_track
-                      break
+              track = active_crons.get(now.tzname(), {}).get(fired_cron, "shorts")
+              should_run = fired_cron in active_crons.get(now.tzname(), {})
 
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
               out.write(f"should_run={str(should_run).lower()}\n")
@@ -104,6 +123,10 @@ jobs:
       - name: Validate configured schedule
         if: steps.window.outputs.should_run == 'true'
         run: python tools/validate_schedule.py
+
+      - name: Validate memory files before run
+        if: steps.window.outputs.should_run == 'true'
+        run: python tools/validate_memory_files.py
 
       - name: Cache pip dependencies
         if: steps.window.outputs.should_run == 'true'
@@ -181,10 +204,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase --autostash origin main
+          python tools/validate_memory_files.py
           git add topic_memory_soft_reset.json performance_memory_soft_reset.json topic_memory_soft_reset_long.json performance_memory_soft_reset_long.json strategy/strategy_memory.json
           git diff --staged --quiet && exit 0
           git commit -m "chore: log video $(date +%Y%m%d_%H%M%S)"
+          git pull --rebase origin main
+          python tools/validate_memory_files.py
           git push
 
       - name: Cleanup workspace
