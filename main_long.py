@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 warnings.filterwarnings("ignore", category=FutureWarning, module="google")
 load_dotenv(override=True)
 
-from utils.helpers import create_run_dir, load_config, make_video_id
+from utils.helpers import create_run_dir, load_config, load_json, make_video_id, save_json
 from utils.notify import send_failure_alert
 from modules.performance_agent import run_performance_sync, run_performance_sync_mock
 from modules.longform_research_agent import run_longform_research, run_longform_research_mock
@@ -32,11 +32,46 @@ def _checkpoint(run_dir: str, *paths: str) -> bool:
     return all(os.path.exists(os.path.join(run_dir, p)) for p in paths)
 
 
-def _find_latest_longform_run() -> tuple[str, str] | None:
+MODE_MARKER = "00_longform_mode.json"
+
+
+def _read_mode_marker(run_dir: str) -> dict:
+    path = os.path.join(run_dir, MODE_MARKER)
+    if not os.path.exists(path):
+        return {}
+    try:
+        data = load_json(path)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _write_mode_marker(run_dir: str, test_2min: bool):
+    save_json(
+        {
+            "track": "longform",
+            "test_2min": bool(test_2min),
+            "topic_memory_file": (
+                "topic_memory_soft_reset_long_test.json"
+                if test_2min else "topic_memory_soft_reset_long.json"
+            ),
+            "performance_memory_file": (
+                "performance_memory_soft_reset_long_test.json"
+                if test_2min else "performance_memory_soft_reset_long.json"
+            ),
+        },
+        os.path.join(run_dir, MODE_MARKER),
+    )
+
+
+def _find_latest_longform_run(test_2min: bool | None = None) -> tuple[str, str] | None:
     """Find the most recent incomplete longform run. Returns (video_id, run_dir) or None."""
     terminal = ["06_longform_video.mp4", "09_longform_upload_meta.json"]
     dirs = sorted(glob.glob("workspace/run_long_*"))
     for d in reversed(dirs):
+        marker = _read_mode_marker(d)
+        if test_2min is not None and marker and marker.get("test_2min") is not test_2min:
+            continue
         if not _checkpoint(d, *terminal):
             video_id = os.path.basename(d).replace("run_", "")
             return video_id, d
@@ -58,26 +93,48 @@ def _apply_test_2min_overrides(config: dict) -> dict:
     return config
 
 
+def _assert_test_2min_isolated(config: dict):
+    if config.get("topic_memory_file") != "topic_memory_soft_reset_long_test.json":
+        raise RuntimeError("--test-2min must use topic_memory_soft_reset_long_test.json")
+    if config.get("performance_memory_file") != "performance_memory_soft_reset_long_test.json":
+        raise RuntimeError("--test-2min must use performance_memory_soft_reset_long_test.json")
+
+
 def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resume_id: str | None = None):
     from utils.strategy import get_strategy_version, get_experiment_slot, get_active_experiment_id
     config = load_config("config/longform_config.json")
     if test_2min:
         config = _apply_test_2min_overrides(config)
+        _assert_test_2min_isolated(config)
 
     if resume_id:
         run_dir = f"workspace/run_{resume_id}"
         if not os.path.isdir(run_dir):
             print(f"[main_long] ERROR: run dir not found: {run_dir}")
             sys.exit(1)
+        marker = _read_mode_marker(run_dir)
+        if marker.get("test_2min") and not test_2min:
+            raise RuntimeError("This is a --test-2min run. Resume it with: python main_long.py --resume <id> --test-2min")
+        if test_2min and marker and not marker.get("test_2min"):
+            raise RuntimeError("Refusing to resume a production longform run with --test-2min")
         video_id = resume_id
         mode = "RESUME"
-    elif not fresh and not mock and _find_latest_longform_run():
-        video_id, run_dir = _find_latest_longform_run()
+    elif not fresh and not mock and _find_latest_longform_run(test_2min=test_2min):
+        video_id, run_dir = _find_latest_longform_run(test_2min=test_2min)
         mode = "AUTO-RESUME"
     else:
         video_id = "long_" + make_video_id()
         run_dir = create_run_dir(video_id)
         mode = "MOCK" if mock else "LIVE"
+
+    marker = _read_mode_marker(run_dir)
+    if marker:
+        if marker.get("test_2min") and not test_2min:
+            raise RuntimeError("Refusing to run test longform workspace with production memory config")
+        if test_2min and not marker.get("test_2min"):
+            raise RuntimeError("Refusing to run production longform workspace with test memory config")
+    else:
+        _write_mode_marker(run_dir, test_2min)
 
     strategy_version = get_strategy_version()
     experiment_label = get_experiment_slot(track="longform") if not mock else "baseline"

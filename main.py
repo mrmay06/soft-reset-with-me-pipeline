@@ -139,20 +139,20 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
         else:
             _run("Module 8  — Upload",            upload_fn,    video_id, run_dir, config, checkpoint_files=["08_upload_meta.json"])
 
-        _run("Module 10 — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
+        _run("Module 9  — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
 
         if skip_upload:
             if config.get("log_skip_upload_to_memory", True):
                 t0 = time.time()
                 logger_fn(video_id, run_dir, config)
-                timings["Module 9  — Logger"] = round(time.time() - t0, 1)
-                print(f"  {'Module 9  — Logger':<30} OK  (generated memory)\n")
+                timings["Module 10 — Logger"] = round(time.time() - t0, 1)
+                print(f"  {'Module 10 — Logger':<30} OK  (generated memory)\n")
             else:
-                print(f"  {'Module 9  — Logger':<30} SKIPPED (--skip-upload)\n")
+                print(f"  {'Module 10 — Logger':<30} SKIPPED (--skip-upload)\n")
         else:
             t0 = time.time()
             logger_fn(video_id, run_dir, config)
-            timings["Module 9  — Logger"] = round(time.time() - t0, 1)
+            timings["Module 10 — Logger"] = round(time.time() - t0, 1)
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'='*50}")
