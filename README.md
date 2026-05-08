@@ -48,7 +48,7 @@ The workflow starts each run at `:35` in the matching local hour, roughly 25 min
 
 1. **Performance Sync** - Fetches recent YouTube Analytics into `performance_memory_soft_reset.json`.
 2. **Research** - Uses pytrends, YouTube, and Reddit signals, then asks Gemini for topic candidates.
-3. **Script** - Uses Claude Sonnet to write a 45-75 word script with the Soft Reset editorial layer.
+3. **Script** - Uses Claude Sonnet to write a 45-75 word script with the Soft Reset editorial layer. The script agent enforces banned therapy-speak checks, unresolved loopback guardrails, prompt/script version fields, and validation notes.
 4. **TTS** - Uses Gemini TTS with the `Puck` voice.
 5. **Visual Director** - Builds a scene manifest with `visual_type` and `image_style`.
 6. **Image/Video Assets** - Uses Pexels video, generated images, and Pexels image fallback.
@@ -100,7 +100,9 @@ The Shorts track is designed to avoid generic relationship advice. Topic researc
 
 The script agent checks argument coherence so the hook promise, emotional mechanism, and final insight all support the same core claim. Weak or drifting scripts are retried before rendering.
 
-The prompt layer favors emotionally precise, plain-language insight over therapy-speak, hype-coach phrasing, or generic inspirational advice.
+The prompt layer favors emotionally precise, plain-language insight over therapy-speak, hype-coach phrasing, or generic inspirational advice. `psych_concept` is treated as an internal lens only; it should be translated into lived moments instead of spoken as clinical jargon.
+
+Every Shorts script includes `script_version`, `prompt_version`, `validation`, and `validation_notes` so future analytics can trace performance shifts back to prompt rules. `cta` remains a legacy alias for `like_cta`; `utils/script_contract.py` normalizes it before downstream modules read the script.
 
 ## Models And Providers
 
@@ -268,6 +270,16 @@ Learning is staged to avoid overfitting early uploads:
 
 Videos younger than 2 days are skipped for Shorts analytics. Cached analytics are reused for 7 days where configured.
 
+## Guardrails And Learning Memory
+
+The current Shorts flow records enough context for weekly strategy to make meaningful comparisons:
+
+- Script validation metadata: `script_version`, `prompt_version`, `script_validation`, and `script_validation_notes`.
+- Creative/topic traits: `category`, `angle_type`, `content_format`, `emotional_trigger`, `psych_concept`, hook quality, word count, thumbnail text, judge scores, and experiment metadata.
+- Weekly strategy metadata: `strategy_version`, active experiment IDs, active cooldowns, channel health, and recent strategy history.
+
+Longform stays separate. It logs to `topic_memory_soft_reset_long.json` and `performance_memory_soft_reset_long.json`, while the current weekly strategy loop analyzes Shorts only.
+
 ## Important Files
 
 | Path | Purpose |
@@ -288,6 +300,7 @@ Videos younger than 2 days are skipped for Shorts analytics. Cached analytics ar
 | `modules/video_assembler.py` | Shorts final render |
 | `modules/longform_video_assembler.py` | Longform render from stock footage and fallback cards |
 | `modules/creative_judge.py` | Shared creative judge and trait extraction |
+| `modules/script_agent.py` | Shorts script generation, retries, and guardrail validation |
 | `modules/logger.py` | Shorts memory logger |
 | `modules/longform_logger.py` | Longform memory logger |
 | `tools/weekly_strategy.py` | Weekly Shorts self-improvement orchestrator |
