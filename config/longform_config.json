@@ -117,7 +117,7 @@
   "longform_format": "faceless cinematic emotional essay",
   "youtube_category_id": "27",
   "privacy_status": "public",
-  "max_title_chars": 60,
+  "max_title_chars": 65,
   "youtube_tags_max_count": 15,
   "youtube_tags_total_chars": 450,
   "script_argument_review_enabled": true

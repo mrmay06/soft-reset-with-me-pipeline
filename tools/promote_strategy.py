@@ -27,6 +27,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 STRATEGY_DIR           = "strategy"
 ACTIVE_STRATEGY_PATH   = os.path.join(STRATEGY_DIR, "strategy_memory.json")
 PROPOSED_STRATEGY_PATH = os.path.join(STRATEGY_DIR, "strategy_memory_proposed.json")
+CHANGELOG_PATH = os.path.join(STRATEGY_DIR, "strategy_changelog.json")
 
 
 def _load_json(path: str) -> dict:
@@ -70,6 +71,36 @@ def _print_diff(proposed: dict, active: dict):
         print(f"\n  Brand bible check: {override_check}")
 
 
+def _write_changelog(proposed: dict, active: dict):
+    from datetime import datetime, timezone
+    changed_sections = [
+        section for section in ("research", "script", "visuals", "metadata", "voice", "thumbnail", "experiment_slots", "cooldowns")
+        if proposed.get(section) != active.get(section)
+    ]
+    entry = {
+        "week": proposed.get("version", "unversioned"),
+        "promoted_at": datetime.now(timezone.utc).isoformat(),
+        "source": PROPOSED_STRATEGY_PATH,
+        "previous_version": active.get("version", "none"),
+        "new_version": proposed.get("version", "unversioned"),
+        "changed_sections": changed_sections,
+        "changes_summary": proposed.get("channel_health_signal", "") or f"Changed sections: {', '.join(changed_sections) or 'none'}",
+    }
+    changelog = []
+    if os.path.exists(CHANGELOG_PATH):
+        try:
+            with open(CHANGELOG_PATH) as f:
+                existing = json.load(f)
+            if isinstance(existing, list):
+                changelog = existing
+        except Exception:
+            changelog = []
+    changelog.append(entry)
+    os.makedirs(STRATEGY_DIR, exist_ok=True)
+    with open(CHANGELOG_PATH, "w") as f:
+        json.dump(changelog, f, indent=2)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Review and promote weekly strategy proposals for Soft Reset With Me")
     parser.add_argument("--review", action="store_true", help="Print proposed strategy vs active")
@@ -107,6 +138,7 @@ def main():
 
         import shutil
         os.makedirs(STRATEGY_DIR, exist_ok=True)
+        _write_changelog(proposed, active)
         shutil.copy2(PROPOSED_STRATEGY_PATH, ACTIVE_STRATEGY_PATH)
 
         print(f"[promote_strategy] Done. Strategy v{proposed.get('version')} is now active.")

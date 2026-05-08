@@ -21,12 +21,20 @@ ONLY SOFT RESET LINE: {only_soft_reset_line}
 PERFORMANCE FEEDBACK:
 {performance_insights}
 
+If PERFORMANCE FEEDBACK says there is no reliable data, is empty, or contains fewer than 3 meaningful data points, ignore it as an optimization signal. Default to the hook formulas and brand rules below without bias toward any shape.
+
 ANTI-SLOP EDITORIAL LAYER:
 - The script must argue the editorial seed, not summarize relationship advice.
 - Every section must support one emotional thesis.
 - Include at least one line that feels specific to Soft Reset With Me: warm, sharp, and non-generic.
 - Remove filler that is true but useless.
 - Visuals and captions will be built around the argument, so write scenes with emotional intention.
+
+PSYCH_CONCEPT USAGE:
+- PSYCH CONCEPT is your internal framing lens. It informs the emotional argument but should not appear as clinical jargon in the script.
+- Translate concepts into lived moments.
+- "Anxious attachment" becomes "that panic when they do not text back."
+- "Avoidant behavior" becomes "the part of you that disappears when someone gets close."
 
 ONLY_SOFT_RESET_LINE — write this line LAST, after the rest of the script is finished:
 - It must emerge from the specific emotional territory of THIS script — not be a general truth.
@@ -49,6 +57,9 @@ Use one of these formulas:
 A. Specific scenario: "If you [specific emotional behavior], this is for you."
 B. Counter-intuitive identity check: "You think it's [normal belief]. It might be [deeper truth]."
 C. Uncomfortable truth: "[Painful observation most people won't say out loud.]"
+For formula C: name a specific behavior or moment, not a general emotional truth.
+Good: "If you rehearse texts before sending them, listen to this."
+Bad: "Sometimes the person you love cannot love you back."
 
 Strong examples:
 "You think it's intuition. It might be trauma."
@@ -68,12 +79,12 @@ TENSION (3-10s):
 Name the exact pain or situation.
 Make the viewer feel seen. They should think, "how does this know me."
 
-INSIGHT (10-35s):
+INSIGHT (10-28s):
 Land the reframe or revelation.
 Use 2-3 sharp points max. No rambling.
 Make every sentence earn its place.
 
-LOOPBACK (18-30s):
+LOOPBACK (28-35s):
 Land the emotional moment and connect back to the hook.
 The final line must feel like a quiet exhale — something true and specific.
 Do NOT end with: "you deserve better", "you are enough", "your feelings are valid", "healing takes time."
@@ -124,8 +135,19 @@ Field contract:
 - `like_cta` contains Line 2 only
 - `cta` is a legacy alias and must exactly match `like_cta`
 
+Before returning JSON, run this internal check:
+1. Does the hook use a banned opening? If yes, rewrite it.
+2. Does the script contain any banned phrase? If yes, remove it.
+3. Is word_count within the hard limit? If no, cut from insight first.
+4. Does ONLY_SOFT_RESET_LINE pass the anti-generic check? If no, rewrite it.
+5. Is the loopback ending banned or over-resolved? If yes, rewrite it.
+Only set "validation": "passed" if all checks pass.
+If any check fails after 2 rewrites, set "validation": "needs_review" and explain it in `validation_notes`.
+
 Return ONLY valid JSON, no extra text:
 {{
+  "script_version": "1",
+  "prompt_version": "soft-reset-script-v2.3",
   "video_id": "{video_id}",
   "topic": "{topic}",
   "category": "{category}",
@@ -146,5 +168,6 @@ Return ONLY valid JSON, no extra text:
   "word_count": 0,
   "estimated_duration_sec": 0,
   "validation": "passed",
+  "validation_notes": "",
   "generated_at": "{generated_at}"
 }}

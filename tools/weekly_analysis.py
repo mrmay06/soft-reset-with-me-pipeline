@@ -17,6 +17,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import os
 import shutil
@@ -165,6 +166,30 @@ def _call_gemini_analysis(genai, prompt: str, model_name: str = "gemini-2.0-flas
     return json.loads(text)
 
 
+def _load_recent_verdict_history(current_week: str, limit: int = 3) -> list[dict]:
+    files = sorted(glob.glob(os.path.join(ANALYSIS_HISTORY_DIR, "*_verdict.json")))
+    history = []
+    for path in reversed(files):
+        if os.path.basename(path).startswith(current_week):
+            continue
+        data = _load_json(path)
+        if not data:
+            continue
+        history.append({
+            "version": data.get("version", os.path.basename(path).replace("_verdict.json", "")),
+            "generated_at": data.get("generated_at", ""),
+            "videos_analyzed": data.get("videos_analyzed", 0),
+            "research": data.get("research", {}),
+            "script": data.get("script", {}),
+            "metadata": data.get("metadata", {}),
+            "thumbnail": data.get("thumbnail", {}),
+            "channel_health_signal": data.get("channel_health_signal", ""),
+        })
+        if len(history) >= limit:
+            break
+    return list(reversed(history))
+
+
 def run_analysis(week_label: str | None = None, skip_video_watch: bool = False) -> str:
     if week_label is None:
         today = datetime.now(timezone.utc)
@@ -200,6 +225,7 @@ def run_analysis(week_label: str | None = None, skip_video_watch: bool = False) 
 
     active_experiments = previous_strategy.get("experiment_slots", {})
     experiment_str = json.dumps(active_experiments, indent=2) if active_experiments else "None"
+    verdict_history = _load_recent_verdict_history(week_label)
 
     prompt = prompt_template.format(
         banned_phrases=banned_phrases,
@@ -207,10 +233,14 @@ def run_analysis(week_label: str | None = None, skip_video_watch: bool = False) 
         previous_strategy=json.dumps(previous_strategy, indent=2)[:3000],
         comparison_data=json.dumps(comparison.get("comparisons_by_trait", {}), indent=2)[:6000],
         channel_trend=json.dumps(comparison.get("channel_trend_4weeks", {}), indent=2),
+        channel_health_score=json.dumps(comparison.get("channel_health_score", {}), indent=2),
         top_performers=json.dumps(comparison.get("top_performers", []), indent=2),
         bottom_performers=json.dumps(comparison.get("bottom_performers", []), indent=2),
         video_analysis_notes=video_notes,
         active_experiments=experiment_str,
+        experiment_outcomes=json.dumps(comparison.get("experiment_outcomes", []), indent=2),
+        active_cooldowns=json.dumps(comparison.get("active_cooldowns", []), indent=2),
+        trend_history=json.dumps(verdict_history, indent=2)[:4000],
         week_label=week_label,
         generated_at=now_iso,
         analysis_window=window,

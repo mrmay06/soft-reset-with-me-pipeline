@@ -117,11 +117,41 @@ _GENERIC_EDITORIAL_PATTERNS = [
 ]
 
 
+_BANNED_SCRIPT_PHRASES = [
+    "you are enough",
+    "love yourself first",
+    "hi guys",
+    "so basically",
+    "your feelings are valid",
+    "that's valid",
+    "it's valid to feel",
+    "healing journey",
+    "healing takes time",
+    "do the work",
+    "show up for yourself",
+]
+
+
+_BANNED_LOOPBACK_PHRASES = [
+    "you deserve better",
+    "you are enough",
+    "your feelings are valid",
+    "healing takes time",
+    "your exhaustion is valid",
+    "you deserve support",
+]
+
+
 def _hook_has_ego_bait(hook: str) -> bool:
     h = hook.lower()
     if any(pattern in h for pattern in _WEAK_ABSTRACT_HOOK_PATTERNS):
         return False
     return any(sig in h for sig in _EGO_BAIT_SIGNALS)
+
+
+def _contains_any(text: str, phrases: list[str]) -> list[str]:
+    lower = text.lower()
+    return [phrase for phrase in phrases if phrase in lower]
 
 
 def _validate_editorial_layer(script: dict) -> bool:
@@ -135,9 +165,15 @@ def _validate_editorial_layer(script: dict) -> bool:
 
 def _validate_script(script: dict, config: dict) -> dict:
     script = normalize_script_contract(script)
+    incoming_validation = str(script.get("validation", "") or "").strip().lower()
+    script.setdefault("script_version", "1")
+    script.setdefault("prompt_version", "soft-reset-script-v2.3")
+    script.setdefault("validation_notes", "")
+
     full_text = build_spoken_script_text(script)
     words = word_count(full_text)
     script["word_count"] = words
+    validation_notes = []
 
     min_w = config["script_min_words"]
     max_w = config["script_max_words"]
@@ -145,13 +181,31 @@ def _validate_script(script: dict, config: dict) -> dict:
     if words < min_w or words > max_w:
         print(f"[script] Word count {words} outside {min_w}-{max_w} range — marking forced")
         script["validation"] = "forced"
+        validation_notes.append(f"word_count outside {min_w}-{max_w}")
     else:
         script["validation"] = "passed"
+
+    if incoming_validation == "needs_review" and script["validation"] == "passed":
+        script["validation"] = "needs_review"
+        validation_notes.append(str(script.get("validation_notes", "") or "model requested review"))
+
+    banned_hits = _contains_any(full_text, _BANNED_SCRIPT_PHRASES)
+    if banned_hits:
+        print(f"[script] ⚠ Banned script phrase(s): {banned_hits}")
+        script["validation"] = "forced"
+        validation_notes.append(f"banned phrases: {', '.join(banned_hits)}")
+
+    loopback_hits = _contains_any(str(script.get("loopback", "")), _BANNED_LOOPBACK_PHRASES)
+    if loopback_hits:
+        print(f"[script] ⚠ Banned loopback phrase(s): {loopback_hits}")
+        script["validation"] = "forced"
+        validation_notes.append(f"banned loopback: {', '.join(loopback_hits)}")
 
     if not _validate_editorial_layer(script):
         print("[script] ⚠ Weak editorial layer: missing POV or signature Soft Reset line")
         script["editorial_quality"] = "weak"
         script["validation"] = "forced"
+        validation_notes.append("weak editorial layer")
     else:
         script["editorial_quality"] = "strong"
         print("[script] ✓ Editorial layer: strong")
@@ -175,6 +229,7 @@ def _validate_script(script: dict, config: dict) -> dict:
         script["engagement_quality"] = "strong"
         print(f"[script] ✓ Engagement question: strong")
 
+    script["validation_notes"] = "; ".join(validation_notes)
     return script
 
 

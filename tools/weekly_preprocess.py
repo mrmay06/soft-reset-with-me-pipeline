@@ -22,6 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 ANALYTICS_CACHE_DIR = "strategy/analytics_cache"
 COMPARISONS_DIR = "strategy/comparisons"
+STRATEGY_FILE = "strategy/strategy_memory.json"
 
 TRAIT_DIMENSIONS = [
     "hook_type",
@@ -145,6 +146,124 @@ def _compute_channel_trend(videos: list[dict]) -> dict:
     return trend
 
 
+def _comments_per_view(videos: list[dict]) -> float | None:
+    views = sum(_safe_float(v.get("analytics", {}).get("views")) or 0 for v in videos)
+    comments = sum(_safe_float(v.get("analytics", {}).get("comments")) or 0 for v in videos)
+    if views <= 0:
+        return None
+    return round(comments / views, 6)
+
+
+def _compute_channel_health(trend: dict, videos: list[dict]) -> dict:
+    """Return a bounded 0-120 health score anchored to prior weeks when possible."""
+    if not videos:
+        return {"score": None, "status": "no eligible videos"}
+
+    weeks = sorted(trend.keys())
+    current_week = weeks[-1] if weeks else None
+    previous_weeks = weeks[:-1]
+    current = trend.get(current_week, {}) if current_week else {}
+    previous = [trend[w] for w in previous_weeks if trend.get(w)]
+
+    def avg(items: list[dict], key: str) -> float | None:
+        vals = [_safe_float(item.get(key)) for item in items]
+        vals = [v for v in vals if v is not None and v > 0]
+        return round(sum(vals) / len(vals), 4) if vals else None
+
+    current_ret = _safe_float(current.get("avg_retention"))
+    current_ctr = _safe_float(current.get("avg_ctr"))
+    def video_week(video: dict) -> str | None:
+        pub = video.get("published_at") or video.get("published_date", "")
+        if not pub:
+            return None
+        try:
+            if "T" in pub:
+                dt = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+            else:
+                dt = datetime.strptime(pub[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+            iso = dt.isocalendar()
+            return f"{iso[0]}-W{iso[1]:02d}"
+        except Exception:
+            return None
+
+    current_week_videos = [v for v in videos if video_week(v) == current_week]
+    current_cpv = _comments_per_view(current_week_videos) or _comments_per_view(videos)
+
+    baseline_ret = avg(previous, "avg_retention")
+    baseline_ctr = avg(previous, "avg_ctr")
+    baseline_cpv = _comments_per_view(videos)
+
+    if not baseline_ret or not baseline_ctr or not baseline_cpv:
+        return {
+            "score": None,
+            "status": "insufficient baseline",
+            "current_week": current_week,
+            "current_retention": current_ret,
+            "current_ctr": current_ctr,
+            "comments_per_view": current_cpv,
+        }
+
+    score = (
+        min((current_ret or 0) / baseline_ret, 1.5) * 0.4
+        + min((current_ctr or 0) / baseline_ctr, 1.5) * 0.3
+        + min((current_cpv or 0) / baseline_cpv, 1.5) * 0.3
+    ) * 100
+    return {
+        "score": round(score, 1),
+        "current_week": current_week,
+        "baseline_weeks": previous_weeks,
+        "current_retention": current_ret,
+        "baseline_retention": baseline_ret,
+        "current_ctr": current_ctr,
+        "baseline_ctr": baseline_ctr,
+        "current_comments_per_view": current_cpv,
+        "baseline_comments_per_view": baseline_cpv,
+    }
+
+
+def _summarize_experiments(videos: list[dict]) -> list[dict]:
+    buckets: dict[str, list[dict]] = defaultdict(list)
+    for video in videos:
+        experiment_id = video.get("experiment_id")
+        if experiment_id:
+            buckets[str(experiment_id)].append(video)
+    outcomes = []
+    for experiment_id, items in sorted(buckets.items()):
+        summary = _summarize_group(items)
+        outcomes.append({
+            "experiment_id": experiment_id,
+            "count": len(items),
+            "experiment_labels": sorted({str(v.get("experiment_label", "")) for v in items if v.get("experiment_label")}),
+            "avg_retention": summary.get("avg_averageViewPercentage"),
+            "avg_ctr": summary.get("avg_impressionClickThroughRate"),
+            "avg_comments_per_view": summary.get("avg_comments_per_view"),
+            "top_titles": summary.get("top_titles", []),
+        })
+    return outcomes
+
+
+def _active_cooldowns(today: datetime) -> list[dict]:
+    if not os.path.exists(STRATEGY_FILE):
+        return []
+    try:
+        with open(STRATEGY_FILE) as f:
+            strategy = json.load(f)
+    except Exception:
+        return []
+    cooldowns = strategy.get("cooldowns", []) or strategy.get("research", {}).get("cooldowns", [])
+    active = []
+    today_date = today.date()
+    for item in cooldowns if isinstance(cooldowns, list) else []:
+        avoid_until = item.get("avoid_until") if isinstance(item, dict) else None
+        try:
+            until = datetime.strptime(str(avoid_until)[:10], "%Y-%m-%d").date()
+        except Exception:
+            until = None
+        if until is None or until >= today_date:
+            active.append(item)
+    return active
+
+
 def _identify_top_bottom(videos: list[dict], n: int = 2) -> tuple[list[dict], list[dict]]:
     """Return top N and bottom N videos by composite performance score."""
     eligible = [
@@ -194,6 +313,9 @@ def run_preprocess(week_label: str | None = None) -> str:
             comparisons[dim][val] = _summarize_group(vids)
 
     trend = _compute_channel_trend(strategy_eligible)
+    channel_health = _compute_channel_health(trend, strategy_eligible)
+    experiment_outcomes = _summarize_experiments(strategy_eligible)
+    active_cooldowns = _active_cooldowns(datetime.now(timezone.utc))
     top_performers, bottom_performers = _identify_top_bottom(strategy_eligible)
 
     output = {
@@ -202,6 +324,9 @@ def run_preprocess(week_label: str | None = None) -> str:
         "total_videos": len(videos),
         "strategy_eligible_videos": len(strategy_eligible),
         "channel_trend_4weeks": trend,
+        "channel_health_score": channel_health,
+        "experiment_outcomes": experiment_outcomes,
+        "active_cooldowns": active_cooldowns,
         "top_performers": [
             {
                 "youtube_video_id": v.get("youtube_video_id"),

@@ -56,6 +56,10 @@ def get_strategy_context(section: str) -> str:
     section_data = strategy.get(section)
     if not section_data:
         return ""
+    if section == "research" and isinstance(section_data, dict):
+        cooldowns = _active_cooldowns(strategy)
+        if cooldowns:
+            section_data = {**section_data, "active_cooldowns": cooldowns}
 
     lines: list[str] = []
 
@@ -86,6 +90,29 @@ def get_strategy_context(section: str) -> str:
         "It does not override brand bible rules, safety rules, or content quality standards."
     )
     return "\n".join(lines)
+
+
+def _active_cooldowns(strategy: dict) -> list[dict]:
+    cooldowns = strategy.get("cooldowns", []) or strategy.get("research", {}).get("cooldowns", [])
+    if not isinstance(cooldowns, list):
+        return []
+    today = datetime.now(timezone.utc).date()
+    active = []
+    for item in cooldowns:
+        if not isinstance(item, dict):
+            continue
+        avoid_until = item.get("avoid_until")
+        if not avoid_until:
+            active.append(item)
+            continue
+        try:
+            until = datetime.strptime(str(avoid_until)[:10], "%Y-%m-%d").date()
+        except Exception:
+            active.append(item)
+            continue
+        if until >= today:
+            active.append(item)
+    return active
 
 
 def inject_strategy(prompt: str, section: str) -> str:

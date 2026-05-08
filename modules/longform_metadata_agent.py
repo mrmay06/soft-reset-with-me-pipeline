@@ -127,24 +127,28 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
         "relationship patterns": [
             "relationship advice", "dating advice", "situationship advice", "anxious attachment",
             "avoidant attachment", "trauma bonding", "love bombing signs", "emotional unavailability",
+            "emotional storytelling", "reflective video",
             "why do i keep attracting the wrong person", "signs of anxious attachment in dating",
             "why am i always the one who cares more", "how to stop chasing unavailable people",
         ],
         "psychology drops": [
             "relationship advice", "emotional health", "self awareness", "attachment style",
             "psychology of love", "emotional intelligence", "why do i push away good people",
+            "cinematic emotional video", "reflective video",
             "why does a good person feel boring", "signs you re used to chaos not love",
             "why don t i feel attracted to nice people", "am i addicted to chaos in relationships",
         ],
         "healing arcs": [
             "relationship advice", "breakup advice", "moving on after breakup", "emotional healing",
             "how to get over someone you love", "breakup recovery", "signs you re not over your ex",
+            "emotional storytelling", "faceless video essay",
             "why does heartbreak feel like grief", "how to stop thinking about someone",
             "why do i still miss someone who hurt me", "moving on from a situationship",
         ],
         "self-worth shifts": [
             "relationship advice", "self worth", "personal growth", "know your worth",
             "setting boundaries in relationships", "stop settling in relationships",
+            "emotional storytelling", "soft life",
             "why do i accept less than i deserve", "signs you have low self worth in relationships",
             "how to stop people pleasing in relationships", "why am i always the strong one",
             "how to stop shrinking yourself for others",
@@ -152,12 +156,14 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
         "conversation truths": [
             "relationship advice", "communication in relationships", "dating advice",
             "healthy communication in relationships", "emotional honesty", "hard conversations",
+            "reflective video", "emotional storytelling",
             "what to do when someone pulls away", "how to stop overthinking in relationships",
             "why do people go cold in relationships", "signs someone is losing interest",
         ],
         "identity and growth": [
             "relationship advice", "personal growth", "self worth", "emotional healing",
             "self improvement", "why do i lose myself in relationships",
+            "faceless video essay", "emotional storytelling",
             "how to find yourself after a relationship", "signs you re emotionally unavailable",
             "why do i attract emotionally unavailable people", "becoming a better version of yourself",
         ],
@@ -181,12 +187,16 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
         if not viewer_pain
         else f"Has this hit you somewhere specific? {viewer_pain[:80].rstrip()} — drop it below."
     )
+    feeling_line = (
+        "This is for the part of you that is tired of explaining why something still hurts."
+    )
     description = (
         f"{opening_line}\n\n"
-        f"{viewer_pain or topic}\n\n"
+        f"{viewer_pain or topic}\n"
+        f"{feeling_line}\n\n"
         f"{engagement_q}\n\n"
         "Subscribe for softer resets — @SoftResetWithMe\n\n"
-        "#SoftResetWithMe #RelationshipAdvice #EmotionalHealing #PersonalGrowth #HealingJourney"
+        "#SoftResetWithMe #RelationshipAdvice #EmotionalHealing #HealingJourney #SelfWorth #EmotionalStorytelling"
     )
 
     title_list = [

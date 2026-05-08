@@ -20,6 +20,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import shutil
 import sys
@@ -38,6 +39,7 @@ from tools.strategy_reviewer import review_strategy
 STRATEGY_FILE = "strategy/strategy_memory.json"
 PROPOSED_FILE = "strategy/strategy_memory_proposed.json"
 REVIEWED_FILE = "strategy/strategy_memory_reviewed.json"
+CHANGELOG_FILE = "strategy/strategy_changelog.json"
 
 
 def _current_week() -> str:
@@ -45,6 +47,46 @@ def _current_week() -> str:
     today = datetime.now(timezone.utc)
     iso = today.isocalendar()
     return f"{iso[0]}-W{iso[1]:02d}"
+
+
+def _load_json(path: str, default):
+    if not os.path.exists(path):
+        return default
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+
+def _write_changelog(week: str, reviewed_path: str, active_path: str):
+    reviewed = _load_json(reviewed_path, {})
+    active = _load_json(active_path, {})
+    changed_sections = [
+        section for section in ("research", "script", "visuals", "metadata", "voice", "thumbnail", "experiment_slots", "cooldowns")
+        if reviewed.get(section) != active.get(section)
+    ]
+    entry = {
+        "week": week,
+        "promoted_at": datetime_now_iso(),
+        "source": reviewed_path,
+        "previous_version": active.get("version", "none"),
+        "new_version": reviewed.get("version", week),
+        "changed_sections": changed_sections,
+        "changes_summary": reviewed.get("channel_health_signal", "") or f"Changed sections: {', '.join(changed_sections) or 'none'}",
+    }
+    changelog = _load_json(CHANGELOG_FILE, [])
+    if not isinstance(changelog, list):
+        changelog = []
+    changelog.append(entry)
+    os.makedirs(os.path.dirname(CHANGELOG_FILE), exist_ok=True)
+    with open(CHANGELOG_FILE, "w") as f:
+        json.dump(changelog, f, indent=2)
+
+
+def datetime_now_iso() -> str:
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).isoformat()
 
 
 def main():
@@ -104,6 +146,7 @@ def main():
     print(f"{'='*60}")
     print(f" Weekly cycle complete in {total}s")
     print(f"{'='*60}")
+    _write_changelog(week, REVIEWED_FILE, STRATEGY_FILE)
     shutil.copy(REVIEWED_FILE, STRATEGY_FILE)
     print(f"\n Auto-promoted reviewed weekly strategy: {REVIEWED_FILE} → {STRATEGY_FILE}")
     print(f"""

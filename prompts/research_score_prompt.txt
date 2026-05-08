@@ -1,4 +1,9 @@
-You are scoring a Soft Reset With Me topic for a US 18-35 Shorts audience. Current year: 2026.
+You are scoring one topic candidate for Soft Reset With Me, a US relationship and emotional self-growth YouTube Shorts channel.
+Current year: 2026. Audience: US 18-35.
+
+Channel scoring goal:
+Reward topics that are emotionally specific, safe, saveable/commentable, easy to script in 15-35 seconds, and clearly in the Soft Reset With Me voice.
+Do not reward generic self-help just because it sounds positive.
 
 TOPIC: {topic}
 CATEGORY: {category}
@@ -8,9 +13,13 @@ CORE CLAIM: {core_claim}
 EDITORIAL SEED: {editorial_seed}
 ONLY SOFT RESET LINE: {only_soft_reset_line}
 
-TASK 1 — SCORE on 5 dimensions (1-4 scale each):
+TASK 1 - SCORE on 5 dimensions (1-4 scale each):
 
-Important: 4 is rare. Give a 4 only when the candidate is unusually specific, emotionally sharp, and easy to script. Most good candidates should score 15-18 total, not 20.
+Scoring discipline:
+- 4 is rare. Give a 4 only when the candidate is unusually specific, emotionally sharp, and easy to script
+- Most good candidates should score 15-18 total, not 20
+- If a topic is broad, generic, diagnosis-heavy, or not scene-based, cap the relevant score at 3
+- If safety_brand_score = 1, total_score must be 0 regardless of all other scores
 
 1. Audience Fit:
    4 = instantly relevant to a specific breakup, dating confusion, situationship, self-worth, or emotional-growth moment
@@ -30,11 +39,12 @@ Important: 4 is rare. Give a 4 only when the candidate is unusually specific, em
    2 = needs too much explanation
    1 = too broad or multi-part
 
-4. Share/Save Potential:
-   4 = has an obvious reason to save/share/comment without needing a generic CTA
-   3 = solid engagement potential
-   2 = mild reaction
+4. Save/Comment Potential:
+   4 = viewer would naturally save it, send it, or comment "this is me" without needing a generic CTA
+   3 = solid emotional reaction and likely engagement
+   2 = mild reaction, but not very saveable
    1 = low emotional pull
+   This is share_save_score in the JSON.
 
 5. Safety/Brand Fit:
    4 = warm, truthful, gender-neutral, non-clinical, non-manipulative, and not blame-heavy
@@ -42,15 +52,14 @@ Important: 4 is rare. Give a 4 only when the candidate is unusually specific, em
    2 = emotionally charged; needs guardrails
    1 = diagnostic, manipulative, cruel, or likely harmful
 
-Scoring discipline:
+Additional scoring rules:
 - Penalize broad advice that could appear on any self-help account
 - Penalize candidates with no editorial point of view, no argument, or no "why this matters now"
 - Reward exact emotional scenes, e.g. rereading a DM, waiting for a reply, muting a story, hearing a song at night
 - Reward topics with a defensible Soft Reset take, not just a neutral summary of a psychology concept
 - Reward topics with a clean one-line payoff and a natural save/share reason
 - Penalize topics that need disclaimers, diagnosis, blame, or gendered assumptions
-- Penalize generic source names. If source_name is only "psychological principles" and no source_url is available, reliability_score should usually be 3, not 4
-- If confidence_level is observational and there is no source_url, reliability_score and share_save_score should usually cap at 3
+- If confidence_level is observational and no source_url is available, share_save_score should usually cap at 3 unless the emotional trigger is extremely specific
 - Only give total_score 20 when every score truly deserves a rare 4
 
 ONLY SOFT RESET LINE quality gate — before finalizing the score:
@@ -59,12 +68,12 @@ ONLY SOFT RESET LINE quality gate — before finalizing the score:
 - A strong only_soft_reset_line has a specific image or unexpected word choice. "That's not love. That's hope with someone else's face on it" = strong. "You deserve someone who chooses you" = weak.
 - Rewrite the only_soft_reset_line if it fails the above test before returning your score.
 
-HARD GATE: If reliability_score = 1, total_score must be 0 regardless of all other scores.
-
-TASK 2 — FIND a credible source basis.
+TASK 2 - FIND a credible source basis.
 - Prefer APA, Pew Research Center, CDC mental health data, peer-reviewed psychology research, university research, reputable mental health organizations, or widely accepted psychology concepts
-- If no source URL is needed, use a clear principle basis like anxious attachment, projection, nervous system threat response, rumination, emotional regulation, or boundary-setting
+- A source URL is not required for every emotional observation, but source_basis must name the credible principle clearly
+- Good principle bases: anxious attachment, projection, rejection sensitivity, rumination, emotional regulation, boundary-setting, grief after loss, nervous system threat response
 - Do NOT invent URLs. Only provide a URL if you are confident it is real and accessible
+- Never diagnose the viewer or the other person. Score ideas lower if they require diagnosis to work
 
 Return ONLY valid JSON with no extra text:
 {{
@@ -82,7 +91,7 @@ Return ONLY valid JSON with no extra text:
   "emotional_tension_score": 0,
   "scriptability_score": 0,
   "share_save_score": 0,
-  "reliability_score": 0,
+  "safety_brand_score": 0,
   "total_score": 0,
   "source_basis": "credible basis, study, or principle",
   "source_name": "source organisation, author, or principle",

@@ -518,18 +518,19 @@ def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> d
     result = _apply_scoring_penalties(result)
 
     # Enforce hard gate
-    if result.get("reliability_score", 1) == 1:
+    safety_score = result.get("safety_brand_score", result.get("reliability_score", 1))
+    if safety_score == 1:
         result["total_score"] = 0
 
     # Recalculate total_score from parts as a sanity check (only if reliability > 1).
     # Supports the relationship scoring schema, with legacy scoring keys as fallback.
-    if result.get("reliability_score", 1) > 1:
+    if safety_score > 1:
         relationship_parts = [
             "audience_fit_score",
             "emotional_tension_score",
             "scriptability_score",
             "share_save_score",
-            "reliability_score",
+            "safety_brand_score",
         ]
         legacy_parts = [
             "cpm_score",
@@ -561,23 +562,13 @@ def _apply_scoring_penalties(result: dict) -> dict:
     """Make 20/20 genuinely rare by capping vague or weakly sourced candidates."""
     topic = _normalise_text(result.get("topic", ""))
     trigger = _normalise_text(result.get("emotional_trigger", ""))
-    source_name = _normalise_text(result.get("source_name", ""))
     source_url = str(result.get("source_url", "") or "").strip()
     confidence_level = _normalise_text(result.get("confidence_level", ""))
     content_format = _normalise_text(result.get("content_format", ""))
     editorial_seed = _normalise_text(result.get("editorial_seed", ""))
     only_soft_reset_line = _normalise_text(result.get("only_soft_reset_line", ""))
 
-    generic_source_names = (
-        "psychological principles",
-        "widely accepted psychology principles",
-        "relationship psychology principle",
-        "psychological concept",
-    )
-    if not source_url and any(name in source_name for name in generic_source_names):
-        result["reliability_score"] = min(int(result.get("reliability_score", 1)), 3)
     if confidence_level == "observational" and not source_url:
-        result["reliability_score"] = min(int(result.get("reliability_score", 1)), 3)
         result["share_save_score"] = min(int(result.get("share_save_score", 1)), 3)
 
     scene_markers = (
@@ -622,7 +613,8 @@ def _score_candidates_parallel(candidates: list[dict], model: str) -> list[dict]
             try:
                 scored = future.result()
                 results.append(scored)
-                print(f"[research] Scored '{scored['topic'][:50]}' → {scored['total_score']}/20 (reliability: {scored['reliability_score']})")
+                safety = scored.get("safety_brand_score", scored.get("reliability_score", 0))
+                print(f"[research] Scored '{scored['topic'][:50]}' → {scored['total_score']}/20 (safety: {safety})")
             except Exception as e:
                 print(f"[research] Scoring failed for '{candidate.get('topic', '?')}': {e} — skipped")
     return results
@@ -644,7 +636,7 @@ def _fallback_score_candidate(candidate: dict, rank: int = 1) -> dict:
         "emotional_tension_score": int(candidate.get("emotional_tension_score", 4)),
         "scriptability_score": int(candidate.get("scriptability_score", 4)),
         "share_save_score": int(candidate.get("share_save_score", 4)),
-        "reliability_score": int(candidate.get("reliability_score", 3)),
+        "safety_brand_score": int(candidate.get("safety_brand_score", candidate.get("reliability_score", 3))),
         "source_fact": candidate.get("source_fact", core_claim or topic),
         "source_basis": candidate.get("source_basis", candidate.get("psych_concept", "")),
         "source_name": candidate.get("source_name", "relationship psychology principle"),
@@ -662,7 +654,7 @@ def _fallback_score_candidate(candidate: dict, rank: int = 1) -> dict:
             "emotional_tension_score",
             "scriptability_score",
             "share_save_score",
-            "reliability_score",
+            "safety_brand_score",
         )
     )
     return _apply_scoring_penalties(result)
@@ -829,7 +821,7 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
             "emotional_tension":   winner.get("emotional_tension_score", winner.get("trending_score", 0)),
             "scriptability":       winner.get("scriptability_score", 0),
             "share_save":          winner.get("share_save_score", winner.get("us_specificity_score", 0)),
-            "reliability":         winner.get("reliability_score", 0),
+            "safety_brand":        winner.get("safety_brand_score", winner.get("reliability_score", 0)),
         },
         "total_score":         winner.get("total_score", 0),
         "reasoning":           winner.get("reasoning", ""),

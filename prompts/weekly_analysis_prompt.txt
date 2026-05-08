@@ -13,11 +13,17 @@ CHANNEL IDENTITY (immutable — your recommendations must never conflict with th
 PREVIOUS STRATEGY (reference only — build on what worked, correct what didn't):
 {previous_strategy}
 
-PERFORMANCE DATA (pre-computed grouped comparisons — 4-week rolling window, 200+ view minimum):
+RECENT STRATEGY HISTORY (last 3 archived verdicts — use to separate one-week noise from repeated patterns):
+{trend_history}
+
+PERFORMANCE DATA (pre-computed grouped comparisons — rolling window, configured view minimum):
 {comparison_data}
 
 CHANNEL HEALTH TREND (last 4 weeks):
 {channel_trend}
+
+CHANNEL HEALTH SCORE:
+{channel_health_score}
 
 TOP PERFORMERS THIS WINDOW:
 {top_performers}
@@ -30,6 +36,12 @@ VIDEO ANALYSIS NOTES (from watching top and bottom performers):
 
 ACTIVE EXPERIMENTS (if any — include outcome assessment):
 {active_experiments}
+
+EXPERIMENT OUTCOMES FROM THIS WINDOW:
+{experiment_outcomes}
+
+ACTIVE COOLDOWNS:
+{active_cooldowns}
 
 ---
 
@@ -61,6 +73,10 @@ INSTRUCTIONS:
 8. Do NOT recommend banning anything outright. Use "reduce" for underperformers. Use "avoid" only for clear policy or brand violations.
 
 9. If data is too thin to draw conclusions (fewer than 10 strategy-eligible videos total), say so plainly and recommend maintaining current defaults.
+
+10. For cooldowns, include `avoid_until` and a short reason. Only add a cooldown when the same angle/category has underperformed repeatedly or conflicts with current strategy.
+
+11. For experiment_slots, evaluate existing experiment outcomes before proposing more. Close, continue, or revise experiments based on the data instead of stacking new experiments blindly.
 
 Return ONLY valid JSON matching this exact structure:
 {{
@@ -116,5 +132,7 @@ Return ONLY valid JSON matching this exact structure:
   }},
 
   "brand_bible_override_check": "no conflicts detected",
-  "channel_health_signal": ""
+  "channel_health_signal": "",
+  "channel_health_score": null,
+  "cooldowns": []
 }}

@@ -51,8 +51,8 @@ def _validate_metadata(metadata: dict, config: dict) -> dict:
     if "@softresetwithme" not in description.lower():
         description += "\n\nFollow for more — @SoftResetWithMe"
         errors.append("handle_added")
-    if "#shorts" not in description.lower():
-        description += "\n\n#Shorts #SoftResetWithMe #RelationshipAdvice #SelfWorth"
+    if "#softresetwithme" not in description.lower():
+        description += "\n\n#SoftResetWithMe #RelationshipAdvice #SelfWorth"
         errors.append("hashtags_added")
     if "ai" not in description.lower() and "artificial intelligence" not in description.lower():
         description += "\n\n✦ AI-assisted production."
@@ -78,8 +78,8 @@ def _fallback_metadata(script: dict, research: dict) -> dict:
         "Conversation Truths": ["#RelationshipTips", "#CommunicationSkills", "#HonestTalk"],
         "Identity and Growth": ["#PersonalGrowth", "#SelfImprovement", "#GrowthMindset"],
     }
-    hashtags = ["#Shorts", "#SoftResetWithMe"] + pillar_tags.get(category, ["#RelationshipAdvice", "#SelfWorth", "#MovingOn"])
-    hashtags = hashtags[:5]
+    hashtags = ["#SoftResetWithMe"] + pillar_tags.get(category, ["#RelationshipAdvice", "#SelfWorth", "#MovingOn"])
+    hashtags = hashtags[:4]
 
     description = (
         f"{script.get('hook', title)}\n"
@@ -168,7 +168,7 @@ def run_metadata_mock(video_id: str, run_dir: str, config: dict) -> dict:
             "Some heartbreak is grief for the version you invented.\n"
             "If this hit, share it with someone who needs to hear it.\n\n"
             "Follow for more — @SoftResetWithMe\n\n"
-            "#Shorts #SoftResetWithMe #HealingJourney #RelationshipAdvice #MovingOn"
+            "#SoftResetWithMe #HealingJourney #RelationshipAdvice #MovingOn"
         ),
         "tags": [
             "relationship advice",
