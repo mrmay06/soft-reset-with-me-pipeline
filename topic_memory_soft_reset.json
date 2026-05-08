@@ -636,5 +636,119 @@
     "strongest_element": "Title Accuracy",
     "weakest_element": "CTA Quality",
     "only_soft_reset_score": 8
+  },
+  {
+    "video_id": "20260508_233259",
+    "published_date": "2026-05-08",
+    "status": "uploaded",
+    "topic": "If calm feels boring it might be because you are used to anxiety not love",
+    "category": "psychology drops",
+    "angle_type": "reframe",
+    "total_score": 19,
+    "source_name": "General psychology principle / Trauma-informed care",
+    "source_basis": "Learned associations and nervous system conditioning, often discussed in trauma-informed care and attachment theory, where individuals may habituate to high-arousal states.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "Feeling restless or bored during peaceful moments, confusing high-intensity or anxiety for excitement or connection.",
+    "psych_concept": "Emotional regulation, nervous system threat response, learned associations",
+    "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
+    "editorial_seed": "Many of us grew up in environments where high-stress or dramatic situations felt like \"normal.\" When real peace arrives, our nervous system might interpret it as a lack of stimulation or even danger, rather than safety and love. It's about retraining your internal landscape.",
+    "only_soft_reset_line": "You're not bored. You're just waiting for the emergency that isn't coming.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "If calm feels boring, this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.3",
+    "script_validation": "forced",
+    "script_validation_notes": "word_count outside 45-75",
+    "word_count": 84,
+    "estimated_duration_sec": 27,
+    "thumbnail_text": "calm feels boring?",
+    "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring this is for you feeling restless or bored during peaceful moments confusing high intensity or anxiety for excitement or connection emotional regulation nervous system threat response learned associations you learned to read anxiety as excitement calm reads as indifference you re not bored you re just waiting for the emergency that isn t coming",
+    "title": "Calm feels boring? You were used to ANXIETY",
+    "youtube_video_id": "L0kGc4vgGY0",
+    "youtube_url": "https://youtube.com/shorts/L0kGc4vgGY0",
+    "fallback_count": 0,
+    "video_count": 12,
+    "total_scenes": 15,
+    "validation_warnings": [
+      "tags_sanitized"
+    ],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W19",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "reframe",
+      "category": "psychology drops",
+      "topic_cluster": "If calm feels boring it might be because you are used to anx",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 15
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "Intriguing premise that challenges a common misconception about calm."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script is concise and directly addresses the core reframe."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Clear reframe angle, suggesting anxiety is mistaken for love."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "Identifies 'anxiety as love' as the mechanism, which is specific enough."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "No call to action present in the script or details provided."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Directly reflects the hook and the core message of the video."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Effectively summarizes the video's premise and targets the audience."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Stock videos and brand images likely support the narrative, but no specific examples are given."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "The balance of brand images and stock videos seems appropriate for the content."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "The hook and title suggest a strong concept that could translate well to a thumbnail."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The short script (84 words for 37s) suggests a deliberate, potentially impactful pacing."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The 'psychology drops' category and reframe angle are consistent with the channel's presumed style."
+      },
+      "policy_factual_risk": {
+        "score": 9,
+        "reason": "The content is framed as a reframe of common experiences, posing minimal factual risk."
+      }
+    },
+    "judge_composite_score": 7.0,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8
   }
 ]
