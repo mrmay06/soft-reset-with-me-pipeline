@@ -522,5 +522,119 @@
     "strongest_element": "Script Clarity",
     "weakest_element": "CTA Quality",
     "only_soft_reset_score": 9
+  },
+  {
+    "video_id": "20260508_195753",
+    "published_date": "2026-05-08",
+    "status": "uploaded",
+    "topic": "Four signs you are not over them that have nothing to do with texting",
+    "category": "healing arcs",
+    "angle_type": "list",
+    "total_score": 19,
+    "source_name": "General psychological principles (Bowlby, Ainsworth, Gabor Mat\u00e9)",
+    "source_basis": "Attachment theory, grief and loss psychology, somatic experiencing principles.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "list",
+    "emotional_trigger": "The silent, persistent ways past relationships linger in your body and mind, even when you believe you've moved on from external contact.",
+    "psych_concept": "Lingering attachment, unresolved grief, nervous system responses to loss, rumination.",
+    "core_claim": "Your body can still be attached after your phone stops reaching.",
+    "editorial_seed": "Many people equate 'no contact' or 'no texting' with being over someone. But true letting go involves deeper emotional and physiological shifts. This video will highlight the subtle, often overlooked ways our nervous system and habits still cling to a past connection, even when your phone stays silent.",
+    "only_soft_reset_line": "You might have deleted their photos, but your nervous system is still narrating old feelings.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You deleted the app. You still check their location.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.3",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 70,
+    "estimated_duration_sec": 27,
+    "thumbnail_text": "4 Signs You're Not Over Them",
+    "content_fingerprint": "four signs you are not over them that have nothing to do with texting you deleted the app you still check their location the silent persistent ways past relationships linger in your body and mind even when you believe you ve moved on from external contact lingering attachment unresolved grief nervous system responses to loss rumination your body can still be attached after your phone stops reaching you might have deleted their photos but your nervous system is still narrating old feelings",
+    "title": "You deleted the app. You're STILL stuck",
+    "youtube_video_id": "4vHaOpnVLdo",
+    "youtube_url": "https://youtube.com/shorts/4vHaOpnVLdo",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 10,
+    "validation_warnings": [
+      "tags_sanitized"
+    ],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W19",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "list",
+      "category": "healing arcs",
+      "topic_cluster": "Four signs you are not over them that have nothing to do wit",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "under_30s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 10
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Relatable and immediately identifies a common post-breakup behavior, creating intrigue."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and direct message, easy to understand the core theme of lingering attachment."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "Establishes a clear empathetic tone for those still struggling, but could be slightly more distinct."
+      },
+      "villain_mechanism_specificity": {
+        "score": 6,
+        "reason": "Identifies the 'villain' as the lingering habit of checking on an ex, but the mechanism (addiction to information/control) could be more explicitly named."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "No clear call to action present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Perfectly reflects the hook and the core message of being stuck despite taking a step towards healing."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Effectively summarizes the video's essence and targets the intended audience with empathetic language."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "The use of stock videos and brand images suggests visuals will support the narrative, but direct sync quality is not yet assessed."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "The mix of stock and brand images is standard; effectiveness depends on the specific choices which aren't detailed."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "Assuming the thumbnail will visually represent the core conflict of deleting an app but still checking, it has potential."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The short script and video duration suggest a well-paced delivery is achievable for this topic."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The 'healing arcs' category and the empathetic, introspective tone align with typical Soft Reset With Me content."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is highly subjective and related to emotional healing, posing no factual risk."
+      }
+    },
+    "judge_composite_score": 7.0,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8
   }
 ]
