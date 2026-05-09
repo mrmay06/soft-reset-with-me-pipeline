@@ -27,7 +27,7 @@ MATURITY_DAYS = 2
 DEFAULT_MIN_VIEWS = 200
 ANALYTICS_CACHE_DIR = "strategy/analytics_cache"
 
-METRICS = [
+CORE_METRICS = [
     "views",
     "likes",
     "comments",
@@ -37,6 +37,9 @@ METRICS = [
     "estimatedMinutesWatched",
     "averageViewDuration",
     "averageViewPercentage",
+]
+
+OPTIONAL_METRICS = [
     "impressions",
     "impressionClickThroughRate",
 ]
@@ -141,32 +144,43 @@ def _is_mature(published_at: str) -> bool:
         return False
 
 
-def _fetch_video_analytics(analytics_client, youtube_video_id: str, channel_id: str) -> dict | None:
-    """Fetch aggregate metrics for a single video via YouTube Analytics API."""
+def _query_video_metrics(analytics_client, youtube_video_id: str, channel_id: str, metrics: list[str]) -> dict:
     end_date = datetime.now(timezone.utc).date()
     start_date = end_date - timedelta(days=365)
+    resp = analytics_client.reports().query(
+        ids=f"channel=={channel_id}",
+        startDate=str(start_date),
+        endDate=str(end_date),
+        metrics=",".join(metrics),
+        filters=f"video=={youtube_video_id}",
+        dimensions="video",
+    ).execute()
 
+    rows = resp.get("rows", [])
+    if not rows:
+        return {}
+
+    col_headers = [h["name"] for h in resp.get("columnHeaders", [])]
+    row = rows[0]
+    return {col_headers[i]: row[i] for i in range(len(col_headers)) if col_headers[i] != "video"}
+
+
+def _fetch_video_analytics(analytics_client, youtube_video_id: str, channel_id: str) -> dict | None:
+    """Fetch aggregate metrics for a single video via YouTube Analytics API."""
     try:
-        resp = analytics_client.reports().query(
-            ids=f"channel=={channel_id}",
-            startDate=str(start_date),
-            endDate=str(end_date),
-            metrics=",".join(METRICS),
-            filters=f"video=={youtube_video_id}",
-            dimensions="video",
-        ).execute()
-
-        rows = resp.get("rows", [])
-        if not rows:
+        result = _query_video_metrics(analytics_client, youtube_video_id, channel_id, CORE_METRICS)
+        if not result:
             return None
-
-        col_headers = [h["name"] for h in resp.get("columnHeaders", [])]
-        row = rows[0]
-        result = {col_headers[i]: row[i] for i in range(len(col_headers)) if col_headers[i] != "video"}
-        return result
     except Exception as e:
         print(f"[analytics_fetch] Could not fetch analytics for {youtube_video_id}: {e}")
         return None
+
+    try:
+        result.update(_query_video_metrics(analytics_client, youtube_video_id, channel_id, OPTIONAL_METRICS))
+    except Exception as e:
+        result["optional_metric_warning"] = f"optional metrics unavailable: {e}"
+
+    return result
 
 
 def _fetch_retention_curve(analytics_client, youtube_video_id: str, channel_id: str) -> dict | None:
