@@ -1,6 +1,6 @@
 {
   "week": "2026-W19",
-  "processed_at": "2026-05-09T12:28:40.818021+00:00",
+  "processed_at": "2026-05-09T12:56:13.462491+00:00",
   "total_videos": 4,
   "strategy_eligible_videos": 2,
   "channel_trend_4weeks": {
@@ -28,6 +28,15 @@
       "track": "shorts",
       "video_id": "20260506_235244",
       "traits": {},
+      "video_audit": {
+        "status": "missing",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
       "views": 486,
       "retention": 44.75,
       "ctr": null
@@ -38,6 +47,15 @@
       "track": "shorts",
       "video_id": "20260506_023743",
       "traits": {},
+      "video_audit": {
+        "status": "missing",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
       "views": 217,
       "retention": 29.69,
       "ctr": null
