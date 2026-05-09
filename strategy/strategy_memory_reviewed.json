@@ -1,0 +1,81 @@
+{
+  "version": "2026-W20",
+  "generated_at": "2026-05-09T12:28:40.994169+00:00",
+  "analysis_window": "2 videos processed, initial baseline still forming",
+  "videos_analyzed": 2,
+  "videos_excluded": 2,
+  "previous_version_reference": "2026-W19",
+  "research": {
+    "prioritize": [],
+    "reduce": [],
+    "cooldowns": [],
+    "strong_angle_types": [],
+    "notes": "All traits tagged unknown across both videos. No trait-based conclusions are possible yet. Hold existing creative direction and focus on tagging new uploads correctly so comparisons become available within 4-6 weeks."
+  },
+  "script": {
+    "prioritize": [],
+    "reduce": [],
+    "cta_patterns": [],
+    "word_count_signal": "Hold the existing 45-75 word contract. No data exists to justify narrowing the range."
+  },
+  "visuals": {
+    "prioritize": [],
+    "reduce": [],
+    "thumbnail_signal": "Hold all existing brand rules. Primary variant default remains B; prefer C if thumbnail text passes the non-clinical word check."
+  },
+  "metadata": {
+    "title_signal": "Hold existing title rules. Both live titles use short, specific, emotionally grounded phrasing \u2014 continue that approach.",
+    "description_signal": "Keep descriptions emotionally accurate and searchable. No changes warranted.",
+    "prioritize": [],
+    "reduce": []
+  },
+  "voice": {
+    "prioritize": [],
+    "notes": "No performance signal available yet. Encode pacing through sentence length and punctuation. Do not issue direct TTS performance directions until retention data supports it."
+  },
+  "thumbnail": {
+    "prioritize": [],
+    "reduce": [],
+    "clinical_word_block": "maintained"
+  },
+  "experiment_slots": {
+    "this_week": [
+      {
+        "id": "shorts_hook_style_question",
+        "hypothesis": "A precise, emotionally grounded question as the opening hook may hold attention longer than a statement hook. Untested at this stage \u2014 treat as exploratory.",
+        "target_prompt": "Produce a short-form script that opens with a single precise question naming a specific behavior or moment in a relational dynamic. Do not open with a statement. Tag hook_type as 'question' in metadata for future comparison.",
+        "run_count": 2,
+        "evaluate_after": "2026-06-01"
+      },
+      {
+        "id": "thumbnail_text_brevity",
+        "hypothesis": "Thumbnail text of 3-5 words may be more immediately readable than 6-8 words. CTR data is not yet available, so this is a tagging and observation exercise, not a confirmed signal.",
+        "target_prompt": "Generate thumbnail text of 3-5 words that is specific and emotionally direct. Check all words against the banned_thumbnail_words list before finalising. Tag thumbnail_type as 'short-text' in metadata.",
+        "run_count": 2,
+        "evaluate_after": "2026-06-01"
+      }
+    ],
+    "wildcard_slots": [
+      {
+        "id": "observational_perspective_focus",
+        "hypothesis": "A script framed from the raccoon's observational POV \u2014 describing what it notices without instructing the viewer \u2014 may sharpen brand distinctiveness. One data point only; evaluate qualitatively.",
+        "target_prompt": "Write a short faceless essay in which a quiet, perceptive observer describes the specific moment someone realises they have been holding a conversation together alone. Name the behaviour precisely. Do not address the viewer directly. Do not moralise. Tag character_used as 'raccoon-observer' in metadata.",
+        "run_count": 1,
+        "evaluate_after": "2026-06-01"
+      }
+    ],
+    "_removed": [
+      {
+        "id": "longform_essay_test",
+        "reason": "This channel is a Shorts channel. Introducing a 3-5 minute long-form video is a format change that requires deliberate strategic decision, not a wildcard experiment at two-video baseline. Remove until there is a clear rationale to expand format."
+      }
+    ]
+  },
+  "brand_bible_override_check": "no conflicts detected",
+  "channel_health_signal": "Baseline is forming. Two Shorts processed, avg retention 37.22%, avg view duration 13.5s. No CTR or comment data available. The retention split between the two videos (44.75% vs 29.69%) is notable but not actionable at n=2. Consistent tagging of new uploads is the primary operational priority this week.",
+  "channel_health_score": null,
+  "cooldowns": [],
+  "reviewed_at": "2026-05-09T12:29:16Z",
+  "review_model": "claude-sonnet-4-6",
+  "review_source": "sonnet"
+}

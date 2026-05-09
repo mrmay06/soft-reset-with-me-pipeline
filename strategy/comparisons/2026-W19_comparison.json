@@ -1,0 +1,279 @@
+{
+  "week": "2026-W19",
+  "processed_at": "2026-05-09T12:28:40.818021+00:00",
+  "total_videos": 4,
+  "strategy_eligible_videos": 2,
+  "channel_trend_4weeks": {
+    "2026-W19": {
+      "videos": 2,
+      "avg_retention": 37.22,
+      "avg_ctr": null,
+      "avg_views": 351.5
+    }
+  },
+  "channel_health_score": {
+    "score": null,
+    "status": "insufficient baseline",
+    "current_week": "2026-W19",
+    "current_retention": 37.22,
+    "current_ctr": null,
+    "comments_per_view": 0.0
+  },
+  "experiment_outcomes": [],
+  "active_cooldowns": [],
+  "top_performers": [
+    {
+      "youtube_video_id": "o-J2DhseYys",
+      "title": "Always remembering for two?",
+      "track": "shorts",
+      "video_id": "20260506_235244",
+      "traits": {},
+      "views": 486,
+      "retention": 44.75,
+      "ctr": null
+    },
+    {
+      "youtube_video_id": "kG8ZskBISf4",
+      "title": "All those plans, nothing ever happens",
+      "track": "shorts",
+      "video_id": "20260506_023743",
+      "traits": {},
+      "views": 217,
+      "retention": 29.69,
+      "ctr": null
+    }
+  ],
+  "bottom_performers": [],
+  "comparisons_by_trait": {
+    "hook_type": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "angle_type": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "category": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "title_type": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "visual_style_mix": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "thumbnail_type": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "video_length_band": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "narrative_format": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "character_used": {
+      "unknown": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    },
+    "experiment_label": {
+      "baseline": {
+        "count": 2,
+        "avg_views": 351.5,
+        "avg_averageViewPercentage": 37.22,
+        "avg_averageViewDuration": 13.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 4.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0093,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.001,
+        "avg_judge_composite": null,
+        "top_titles": [
+          "Always remembering for two?",
+          "All those plans, nothing ever happens"
+        ]
+      }
+    }
+  }
+}

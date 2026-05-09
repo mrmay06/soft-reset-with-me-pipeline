@@ -1,0 +1,79 @@
+{
+  "version": "2026-W20",
+  "generated_at": "2026-05-09T12:28:40.994169+00:00",
+  "analysis_window": "2 videos processed, initial baseline still forming",
+  "videos_analyzed": 2,
+  "videos_excluded": 2,
+  "previous_version_reference": "2026-W19",
+  "research": {
+    "prioritize": [],
+    "reduce": [],
+    "cooldowns": [],
+    "strong_angle_types": [],
+    "notes": "Data is insufficient to draw specific conclusions. Maintaining baseline strategy and focusing on categorizing new content to build a dataset. Only 2 videos have been processed and tagged 'unknown' across all categories, making trait-based analysis impossible at this stage. Both videos were shorts."
+  },
+  "script": {
+    "prioritize": [],
+    "reduce": [],
+    "cta_patterns": [],
+    "word_count_signal": "Use existing 45-75 word contract until enough data supports a narrower range. Data is currently insufficient to propose changes."
+  },
+  "visuals": {
+    "prioritize": [],
+    "reduce": [],
+    "thumbnail_signal": "Use existing Soft Reset With Me brand rules until enough data supports a change. Data is currently insufficient to propose changes."
+  },
+  "metadata": {
+    "title_signal": "Use existing title rules until enough data supports a change. Data is currently insufficient to propose changes.",
+    "description_signal": "Keep descriptions emotionally accurate and searchable.",
+    "prioritize": [],
+    "reduce": []
+  },
+  "voice": {
+    "prioritize": [],
+    "notes": "Encode pacing through sentence length and punctuation unless the TTS provider supports direct direction. No performance-based signals for voice yet due to insufficient data."
+  },
+  "thumbnail": {
+    "prioritize": [],
+    "reduce": [],
+    "clinical_word_block": "maintained"
+  },
+  "experiment_slots": {
+    "this_week": [
+      {
+        "id": "shorts_hook_style_question",
+        "hypothesis": "Using a direct, precise question as the opening hook in a short will lead to higher average view duration and potentially better retention than a statement hook.",
+        "target_prompt": "Produce a short-form script using a precise, emotionally intelligent question as the opening hook, focusing on a common relational dynamic. Ensure the video is explicitly categorized for future analysis.",
+        "run_count": 2,
+        "evaluate_after": "2026-06-01"
+      },
+      {
+        "id": "thumbnail_text_brevity",
+        "hypothesis": "Thumbnails with 3-5 words will have a higher (future) Impression Click-Through Rate (CTR) compared to those with 6-8 words, by being more immediately digestible while remaining precise.",
+        "target_prompt": "Generate a thumbnail text (3-5 words) that is precise and emotionally intelligent for a video about subtle relational burdens. Ensure the video is explicitly categorized for future analysis.",
+        "run_count": 2,
+        "evaluate_after": "2026-06-01"
+      }
+    ],
+    "wildcard_slots": [
+      {
+        "id": "longform_essay_test",
+        "hypothesis": "Introducing a longer-form (3-5 minute) essay might attract a different, more engaged audience segment, showing higher overall watch time or subscriber conversion, providing an important comparison to shorts.",
+        "target_prompt": "Draft a 3-5 minute faceless essay script exploring the quiet shifts in perspective that follow significant personal realizations, maintaining the channel's precise and emotionally intelligent voice. Ensure the video is explicitly categorized for future analysis.",
+        "run_count": 1,
+        "evaluate_after": "2026-06-08"
+      },
+      {
+        "id": "observational_perspective_focus",
+        "hypothesis": "A video explicitly framed from the raccoon's 'thoughtful observer' perspective, detailing observations without direct instruction, could resonate strongly with the brand identity and distinguish content.",
+        "target_prompt": "Write a short faceless essay from the perspective of a thoughtful observer (the raccoon mascot), describing the nuances of unspoken expectations in a friendship, ensuring the voice is precise and emotionally intelligent. Ensure the video is explicitly categorized for future analysis.",
+        "run_count": 1,
+        "evaluate_after": "2026-06-01"
+      }
+    ]
+  },
+  "brand_bible_override_check": "no conflicts detected",
+  "channel_health_signal": "Insufficient baseline data (only 2 videos analyzed). Initial videos are shorts, showing nascent retention figures (avg 37.22%). No Impression Click-Through Rate or comment data available yet. The focus for this week remains on gathering more categorized data to establish a proper baseline.",
+  "channel_health_score": null,
+  "cooldowns": []
+}
