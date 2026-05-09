@@ -66,7 +66,7 @@ def _write_mode_marker(run_dir: str, test_2min: bool):
 
 def _find_latest_longform_run(test_2min: bool | None = None) -> tuple[str, str] | None:
     """Find the most recent incomplete longform run. Returns (video_id, run_dir) or None."""
-    terminal = ["06_longform_video.mp4", "09_longform_upload_meta.json"]
+    terminal = ["06_longform_video.mp4", "09_longform_upload_meta.json", "11_longform_logger_meta.json"]
     dirs = sorted(glob.glob("workspace/run_long_*"))
     for d in reversed(dirs):
         marker = _read_mode_marker(d)
@@ -199,7 +199,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
         )
         _run("Module 8 — Long Upload", upload_fn, video_id, run_dir, config, checkpoint_files=["09_longform_upload_meta.json"])
         _run("Module 9 — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
-        _run("Module 10 — Long Logger", logger_fn, video_id, run_dir, config)
+        _run("Module 10 — Long Logger", logger_fn, video_id, run_dir, config, checkpoint_files=["11_longform_logger_meta.json"])
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'=' * 58}")

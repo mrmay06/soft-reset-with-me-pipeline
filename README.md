@@ -25,7 +25,7 @@ All active publishing is **public-now**. The pipeline does not schedule future Y
 - Longform TTS: Gemini `gemini-2.5-flash-preview-tts`, `Puck` voice
 - Script model: Claude Sonnet
 - Creative judge model: `gemini-2.5-flash-lite`
-- Weekly learning: Shorts-only analytics + creative judge traits -> Gemini draft -> Sonnet review -> auto-promoted strategy
+- Weekly learning: Shorts-only analytics + creative judge traits -> Gemini draft -> Sonnet review -> human-approved promotion
 
 ## Publishing Schedule
 
@@ -116,6 +116,7 @@ Shorts defaults in `config/pipeline_config.json`:
 | Script | `script_model` | `claude-sonnet-4-6` |
 | Metadata | `metadata_model` | `gemini-2.5-flash` |
 | Creative judge | `creative_judge_model` | `gemini-2.5-flash-lite` |
+| Visual director | `visual_model` | `gemini-2.5-flash` |
 | TTS | `tts_model` | `gemini-2.5-flash-preview-tts` |
 | TTS voice | `tts_voice` | `Aoede` |
 | Image model | `image_model` | `zimage` |
@@ -179,6 +180,14 @@ python tools/check_youtube_channel.py
 ```
 
 Do not run live uploads until that check prints the Soft Reset With Me channel.
+
+### Healthcheck
+
+```bash
+python tools/healthcheck.py
+```
+
+The healthcheck parses Python files, validates JSON files, checks configured Shorts/longform memory files, and confirms weekly strategy does not directly promote the active strategy.
 
 ### Shorts Commands
 
@@ -259,15 +268,15 @@ The weekly loop:
 3. Optionally watches top/bottom videos with Gemini; scheduled runs skip video watching by default.
 4. Uses Gemini to draft `strategy/strategy_memory_proposed.json`.
 5. Uses Sonnet to review/refine into `strategy/strategy_memory_reviewed.json`.
-6. Auto-promotes the reviewed file to `strategy/strategy_memory.json`.
+6. Leaves the active strategy unchanged until `tools/promote_strategy.py --promote --confirm`.
 7. Archives history under `strategy/analysis_history/`.
 
 Longform performance is logged separately and is not used in the weekly Shorts strategy loop.
 
 Learning is staged to avoid overfitting early uploads:
 
-- 0-7 valid videos: collect data only; keep testing different pillars and formats.
-- 8-24 valid videos: use individual winning and weak examples directionally.
+- 0-11 valid videos: collect data only; keep testing different pillars and formats.
+- 12-24 valid videos: use individual winning and weak examples directionally.
 - 25+ valid videos: use pattern-level feedback by category, format, angle, hook type, title type, thumbnail type, visual mix, and judge traits.
 
 Videos younger than 2 days are skipped for Shorts analytics. Cached analytics are reused for 7 days where configured.

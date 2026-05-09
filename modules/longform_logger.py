@@ -76,10 +76,13 @@ def run_longform_logger(video_id: str, run_dir: str, config: dict) -> dict:
     if max_entries > 0:
         memory = memory[-max_entries:]
     save_json(memory, memory_file)
+    save_json(entry, os.path.join(run_dir, "11_longform_logger_meta.json"))
     print(f"[longform_logger] Done. Entry saved to {memory_file}")
     return entry
 
 
 def run_longform_logger_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print("[longform_logger][MOCK] Skipping persistent log")
-    return {"video_id": video_id, "status": "mock_skipped"}
+    result = {"video_id": video_id, "status": "mock_skipped"}
+    save_json(result, os.path.join(run_dir, "11_longform_logger_meta.json"))
+    return result

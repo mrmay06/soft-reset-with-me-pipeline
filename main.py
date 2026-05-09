@@ -9,6 +9,7 @@ import traceback
 
 # Suppress third-party Google SDK deprecation noise in CLI output.
 warnings.filterwarnings("ignore", category=FutureWarning, module="google")
+warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL*")
 
 from dotenv import load_dotenv
 load_dotenv(override=True)
@@ -40,7 +41,7 @@ def _checkpoint(run_dir: str, *paths: str) -> bool:
 
 def _find_latest_run_dir() -> tuple[str, str] | None:
     """Find the most-recent incomplete run_dir. Returns (video_id, run_dir) or None."""
-    terminal_checkpoints = ["06_final_video.mp4", "07_metadata.json", "08_upload_meta.json"]
+    terminal_checkpoints = ["06_final_video.mp4", "07_metadata.json", "08_upload_meta.json", "11_logger_meta.json"]
     dirs = sorted(d for d in glob.glob("workspace/run_*") if not os.path.basename(d).startswith("run_long_"))
     for d in reversed(dirs):
         # Incomplete means any terminal stage has not finished yet.
@@ -143,16 +144,11 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
 
         if skip_upload:
             if config.get("log_skip_upload_to_memory", True):
-                t0 = time.time()
-                logger_fn(video_id, run_dir, config)
-                timings["Module 10 — Logger"] = round(time.time() - t0, 1)
-                print(f"  {'Module 10 — Logger':<30} OK  (generated memory)\n")
+                _run("Module 10 — Logger", logger_fn, video_id, run_dir, config, checkpoint_files=["11_logger_meta.json"])
             else:
                 print(f"  {'Module 10 — Logger':<30} SKIPPED (--skip-upload)\n")
         else:
-            t0 = time.time()
-            logger_fn(video_id, run_dir, config)
-            timings["Module 10 — Logger"] = round(time.time() - t0, 1)
+            _run("Module 10 — Logger", logger_fn, video_id, run_dir, config, checkpoint_files=["11_logger_meta.json"])
 
         total = round(time.time() - pipeline_start, 1)
         print(f"{'='*50}")

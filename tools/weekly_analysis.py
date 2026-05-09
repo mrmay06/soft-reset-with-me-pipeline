@@ -274,7 +274,7 @@ def run_analysis(week_label: str | None = None, skip_video_watch: bool = False) 
     print(f"  Archived at:      {archive_path}")
     print(f"\n  Channel health:   {verdict.get('channel_health_signal', 'N/A')}")
     print(f"  Brand check:      {verdict.get('brand_bible_override_check', 'N/A')}")
-    print(f"\n  Proposed strategy is ready for weekly_strategy.py to auto-promote.")
+    print(f"\n  Proposed strategy is ready for Sonnet review and manual promotion.")
     print(f"  Rollback remains available from {ANALYSIS_HISTORY_DIR}/.\n")
 
     return PROPOSED_FILE

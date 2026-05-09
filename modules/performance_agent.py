@@ -32,6 +32,8 @@ METRIC_FALLBACKS = [
     ["views", "likes", "comments", "shares", "subscribersGained"],
 ]
 
+SCORE_VERSION = 1
+
 
 def _youtube_analytics_client():
     if Credentials is None:
@@ -99,6 +101,8 @@ def _cache_by_video_id(performance_file: str) -> dict[str, dict]:
     for record in memory.get("videos", []):
         youtube_id = record.get("youtube_video_id")
         if youtube_id:
+            if record.get("data_available", True) is not False and record.get("score_version") != SCORE_VERSION:
+                record = {**record, **_score(_metrics(record))}
             cached[youtube_id] = record
     return cached
 
@@ -156,15 +160,15 @@ def _score(metrics: dict) -> dict:
     subs = _as_float(metrics.get("subscribersGained"))
     weighted_engagement = likes + comments * 3 + shares * 4 + subs * 8
 
-    hold_score = max(0.0, min(avg_pct, 200.0))
+    hold_score = max(0.0, min(avg_pct, 100.0))
     hook_score = min(_rate(engaged, views), 1.5) * 100.0
     resonance_per_engaged = _rate(weighted_engagement, max(engaged, 1.0))
     resonance_per_view = _rate(weighted_engagement, max(views, 1.0))
-    resonance_score = min(resonance_per_engaged * 100.0, 200.0)
+    resonance_score = min(resonance_per_engaged * 100.0, 100.0)
     # Subscriber conversion: subs per 1000 views, scaled so 2.0/1000 = 100 (industry avg for content Shorts)
     conversion_rate = _rate(subs, max(views, 1.0)) * 1000.0
     conversion_score = min(conversion_rate / 2.0 * 100.0, 100.0)
-    reach_score = min(math.log10(max(views, 0.0) + 1.0) * 25.0, 100.0)
+    reach_score = min(math.log1p(max(views, 0.0)) / math.log(1001) * 100.0, 100.0)
     composite_score = (
         hold_score        * 0.35
         + hook_score      * 0.25
@@ -175,6 +179,7 @@ def _score(metrics: dict) -> dict:
     return {
         "composite_score": round(composite_score, 2),
         "performance_score": round(composite_score, 2),
+        "score_version": SCORE_VERSION,
         "hook_score": round(hook_score, 2),
         "hold_score": round(hold_score, 2),
         "resonance_score": round(resonance_score, 2),
@@ -243,6 +248,7 @@ def _build_record(entry: dict, metrics: dict, fetched_at: str, today: datetime.d
 
 def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[performance] Syncing YouTube Analytics feedback for {video_id}")
+    run_start = now_iso()
     memory_file = config.get("topic_memory_file", "topic_memory_soft_reset.json")
     performance_file = config.get("performance_memory_file", "performance_memory_soft_reset.json")
     lookback_days = int(config.get("performance_lookback_days", 45))
@@ -257,7 +263,7 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
         "videos_synced": 0,
         "videos_reused": 0,
         "videos_too_new": 0,
-        "generated_at": now_iso(),
+        "generated_at": run_start,
     }
 
     required = ["YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "YOUTUBE_REFRESH_TOKEN"]
@@ -283,7 +289,7 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
         return result
 
     try:
-        today_iso = now_iso()
+        today_iso = run_start
         cached = _cache_by_video_id(performance_file)
         fresh_records = []
         entries_to_fetch = []
@@ -291,9 +297,15 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
 
         for entry in entries:
             youtube_id = entry["youtube_video_id"]
-            published = _parse_date(entry.get("published_date", "")) or today
-            age_days = (today - published).days
             cached_record = cached.get(youtube_id)
+            published = _parse_date(entry.get("published_date", ""))
+            if not published:
+                too_new += 1
+                print(f"[performance] Skipped {youtube_id}: missing or invalid published_date")
+                if cached_record:
+                    fresh_records.append(cached_record)
+                continue
+            age_days = (today - published).days
 
             if age_days < min_age_days:
                 too_new += 1
@@ -321,12 +333,20 @@ def run_performance_sync(video_id: str, run_dir: str, config: dict) -> dict:
         videos = []
         videos.extend(fresh_records)
         for entry in entries_to_fetch:
-            metrics = by_id.get(entry["youtube_video_id"], {})
-            videos.append(_build_record(entry, metrics, today_iso, today))
+            metrics = by_id.get(entry["youtube_video_id"])
+            if metrics is None:
+                record = _build_record(entry, {}, today_iso, today)
+                record["data_available"] = False
+                record["data_unavailable_reason"] = "youtube_analytics_no_row"
+                videos.append(record)
+            else:
+                record = _build_record(entry, metrics, today_iso, today)
+                record["data_available"] = True
+                videos.append(record)
 
         videos.sort(key=lambda item: item.get("composite_score", item.get("performance_score", 0)), reverse=True)
         memory = {
-            "generated_at": now_iso(),
+            "generated_at": run_start,
             "lookback_days": lookback_days,
             "min_video_age_days": min_age_days,
             "refresh_interval_days": refresh_days,

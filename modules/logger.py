@@ -113,6 +113,7 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
 
     try:
         _write_memory(entry, memory_file, max_entries)
+        save_json(entry, os.path.join(run_dir, "11_logger_meta.json"))
         is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
         if is_github_actions:
             print(f"[logger] Running in GitHub Actions — workflow will commit {memory_file}")
@@ -129,4 +130,6 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
 
 def run_logger_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[logger][MOCK] Skipping persistent log (mock mode)")
-    return {"video_id": video_id, "status": "mock_skipped"}
+    result = {"video_id": video_id, "status": "mock_skipped"}
+    save_json(result, os.path.join(run_dir, "11_logger_meta.json"))
+    return result

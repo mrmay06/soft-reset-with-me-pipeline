@@ -8,6 +8,7 @@ import warnings
 from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
 from utils.script_contract import build_spoken_script_text
+from utils.strategy import inject_strategy
 
 warnings.filterwarnings("ignore", category=FutureWarning, module="google")
 
@@ -383,7 +384,7 @@ def _call_gemini(prompt: str, model: str) -> dict:
 def _load_brand_context() -> str:
     path = "config/brand_characters.json"
     if not os.path.exists(path):
-        return "No brand character config found."
+        return ""
     try:
         return json.dumps(load_json(path), indent=2)
     except Exception as e:
@@ -399,6 +400,8 @@ def _assign_durations(manifest: dict, voice_duration: float) -> dict:
     Simple and reliable — TTS speed is roughly constant.
     """
     scenes = manifest["scenes"]
+    if not scenes:
+        raise ValueError("Cannot assign durations to an empty scene manifest")
     min_scene_duration = 1.5
     word_counts = [max(1, len(s["covers_dialogue"].split())) for s in scenes]
     total_words = sum(word_counts)
@@ -412,6 +415,8 @@ def _assign_durations(manifest: dict, voice_duration: float) -> dict:
             min_scene_duration + ((wc / total_words) * remaining)
             for wc in word_counts
         ]
+
+    assert len(durations) == len(scenes), f"Duration mismatch: {len(durations)} vs {len(scenes)}"
 
     for scene, wc in zip(scenes, word_counts):
         duration = round(durations.pop(0), 3)
@@ -438,7 +443,6 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
 
     raw_dialogue = build_spoken_script_text(script)
 
-    from utils.strategy import inject_strategy
     prompt = inject_strategy(DIRECTOR_PROMPT, "visuals").format(
         raw_dialogue=raw_dialogue,
         brand_context=_load_brand_context(),
@@ -446,12 +450,13 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
     manifest = None
 
     try:
-        manifest = _call_gemini(prompt, config.get("research_model", "gemini-2.5-flash"))
+        visual_model = config.get("visual_model", config.get("research_model", "gemini-2.5-flash"))
+        manifest = _call_gemini(prompt, visual_model)
         valid, err = _validate_manifest(manifest, raw_dialogue)
         if not valid:
             print(f"[visual_director] Validation failed: {err} — retrying")
             retry_prompt = prompt + f"\n\nFIX REQUIRED: {err}. Return corrected JSON only."
-            manifest = _call_gemini(retry_prompt, config.get("research_model", "gemini-2.5-flash"))
+            manifest = _call_gemini(retry_prompt, visual_model)
             valid, err = _validate_manifest(manifest, raw_dialogue)
             if not valid:
                 raise ValueError(f"Still invalid after retry: {err}")

@@ -9,7 +9,7 @@ Usage:
     python tools/tag_audit.py
     python tools/tag_audit.py --fix
 
-Requires: topic_memory_soft_reset.json, workspace/ directory with run outputs.
+Requires: configured topic memory, workspace/ directory with run outputs.
 """
 from __future__ import annotations
 
@@ -20,9 +20,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.helpers import load_json
+from utils.helpers import load_config, load_json
 
-TOPIC_MEMORY_FILE = "topic_memory_soft_reset.json"
+DEFAULT_TOPIC_MEMORY_FILE = "topic_memory_soft_reset.json"
 WORKSPACE_DIR     = "workspace"
 
 
@@ -36,7 +36,7 @@ def _load_tags_from_workspace(video_id: str) -> list[str] | None:
 
 def _load_research_topic(video_id: str) -> str | None:
     run_dir = os.path.join(WORKSPACE_DIR, f"run_{video_id}")
-    research_path = os.path.join(run_dir, "01_research_score.json")
+    research_path = os.path.join(run_dir, "01_research.json")
     if not os.path.exists(research_path):
         return None
     return load_json(research_path).get("topic", "")
@@ -51,12 +51,13 @@ def _tags_look_mismatched(topic: str, tags: list[str]) -> bool:
     return matches < max(1, len(topic_words) // 4)
 
 
-def audit(fix: bool = False) -> list[dict]:
-    if not os.path.exists(TOPIC_MEMORY_FILE):
-        print(f"[tag_audit] {TOPIC_MEMORY_FILE} not found.")
+def audit(fix: bool = False, memory_file: str | None = None) -> list[dict]:
+    memory_file = memory_file or load_config().get("topic_memory_file", DEFAULT_TOPIC_MEMORY_FILE)
+    if not os.path.exists(memory_file):
+        print(f"[tag_audit] {memory_file} not found.")
         return []
 
-    memory = load_json(TOPIC_MEMORY_FILE)
+    memory = load_json(memory_file)
     if not isinstance(memory, list):
         return []
 
@@ -97,6 +98,7 @@ def audit(fix: bool = False) -> list[dict]:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--memory", default=None, help="Topic memory JSON path")
     parser.add_argument("--fix", action="store_true")
     args = parser.parse_args()
-    audit(fix=args.fix)
+    audit(fix=args.fix, memory_file=args.memory)
