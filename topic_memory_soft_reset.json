@@ -862,5 +862,152 @@
     "strongest_element": "Script Clarity",
     "weakest_element": "CTA Quality",
     "only_soft_reset_score": 9
+  },
+  {
+    "video_id": "20260509_143639",
+    "published_date": "2026-05-09",
+    "status": "uploaded",
+    "topic": "You did not lose them, you lost who you imagined they would be",
+    "category": "healing arcs",
+    "angle_type": "truth drop",
+    "total_score": 20,
+    "source_name": "Therapeutic consensus",
+    "source_basis": "Grief for imagined futures, idealization in relationships, and cognitive reframing",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Heartbreak, confusion after a breakup, feeling lost after a situationship, grief for a future that won't happen",
+    "psych_concept": "Idealization, grief for an imagined future, cognitive reframing",
+    "core_claim": "Sometimes heartbreak is grief for the future you invented",
+    "editorial_seed": "It's painful to realize you're grieving a fantasy, not a reality. This truth can be a soft reset, allowing you to mourn what was never truly there and begin to heal authentically.",
+    "only_soft_reset_line": "That's not grief for them. That's grief for a person you wrote.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You think you're heartbroken over them. You might be heartbroken over who you needed them to be.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 71,
+    "estimated_duration_sec": 38,
+    "thumbnail_text": "You didn't lose them.",
+    "content_fingerprint": "you did not lose them you lost who you imagined they would be you think you re heartbroken over them you might be heartbroken over who you needed them to be heartbreak confusion after a breakup feeling lost after a situationship grief for a future that won t happen idealization grief for an imagined future cognitive reframing sometimes heartbreak is grief for the future you invented that s not grief for them that s grief for a person you wrote",
+    "title": "You miss who you needed them to BE",
+    "youtube_video_id": "EL6q2Sxn_4M",
+    "youtube_url": "https://youtube.com/shorts/EL6q2Sxn_4M",
+    "fallback_count": 0,
+    "video_count": 9,
+    "total_scenes": 12,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W19",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "truth drop",
+      "category": "healing arcs",
+      "topic_cluster": "You did not lose them, you lost who you imagined they would ",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 12
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "The hook immediately challenges a common assumption about heartbreak, creating intrigue and relevance for the target audience."
+      },
+      "script_clarity": {
+        "score": 10,
+        "reason": "The script is concise and delivers a clear, impactful message about grieving expectations versus people."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The angle is a direct 'truth drop,' aligning perfectly with the channel's brand of delivering candid insights."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "While the core concept is clear, the 'villain' is more of an internal projection (unmet needs/expectations), which is specific to this type of self-growth content."
+      },
+      "cta_quality": {
+        "score": 0,
+        "reason": "No CTA was provided in the video details to evaluate."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "The title directly reflects the core message of the hook and the video's content, accurately setting expectations."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "The description provides immediate context and reinforces the core message, enticing viewers to watch further."
+      },
+      "visual_dialogue_sync": {
+        "score": 8,
+        "reason": "With 9 stock videos and 3 brand images, the visuals should support the dialogue. The effectiveness depends on the chosen visuals, but the ratio is good."
+      },
+      "image_direction_strength": {
+        "score": 8,
+        "reason": "The use of brand images suggests a focus on reinforcing brand identity alongside stock videos for illustrative purposes. The blend should be effective if curated well."
+      },
+      "thumbnail_concept": {
+        "score": 0,
+        "reason": "No thumbnail concept was provided for evaluation."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The script is short and impactful. With appropriate pacing, the voiceover will deliver the message effectively within the short duration."
+      },
+      "brand_consistency": {
+        "score": 10,
+        "reason": "The 'truth drop' angle, focus on relationship/self-growth, and direct messaging are all hallmarks of the Soft Reset With Me brand."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content deals with emotional processing and self-reflection, with no factual claims that could pose a policy risk."
+      }
+    },
+    "judge_composite_score": 8.5,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively delivers a powerful psychological reframe with a perfectly aligned emotional tone and professional audio mix, embodying the 'Soft Reset With Me' brand. The voiceover is excellent, and the core message is deeply resonant. However, the video suffers from overly fragmented and fast-paced captions, particularly in the critical opening seconds, which can confuse and disengage viewers. Additionally, the use of generic stock footage alongside more specific, mood-setting visuals leads to an inconsistent visual narrative that sometimes dilutes the video's impact, potentially causing early drop-offs despite its strong foundational elements.",
+    "video_audit_strengths": [
+      "The voiceover talent and delivery are outstanding, perfectly embodying the brand's gentle and insightful tone.",
+      "The core psychological reframe ('grief for a person you wrote') is powerful, unique, and highly resonant, providing a strong anchor for the content.",
+      "The consistent emotional tone and atmosphere, supported by the music and relevant visuals, create a safe and reflective space for the viewer.",
+      "The audio mix is clean, balanced, and professional, ensuring clarity of message and a pleasant listening experience.",
+      "The closing line 'That's grief for a person you wrote' delivers a powerful, memorable insight that encourages sharing and reflection."
+    ],
+    "video_audit_dropoff_causes": [
+      "Confusing and fragmented captions in the first 2 seconds that do not match the spoken hook, leading to immediate cognitive dissonance.",
+      "Overly fast and fragmented caption pacing throughout the first half of the video, making it difficult for viewers to read, listen, and process visuals simultaneously.",
+      "Use of generic stock footage (e.g., cityscapes, street scenes) that doesn't specifically enhance the psychological message, potentially leading to a feeling of generic content rather than a unique brand experience."
+    ],
+    "video_audit_repeat_next": [
+      "Maintain the current voiceover talent and their empathetic, calm delivery style.",
+      "Continue selecting contemplative and emotionally resonant background music that supports the narrative without overpowering it.",
+      "Prioritize scripts with strong, insightful psychological reframes and 'truth drop' moments.",
+      "Consistently aim for the gentle, non-judgmental emotional tone that defines 'Soft Reset With Me'.",
+      "Ensure high-quality, balanced audio mixing with clear voiceover."
+    ],
+    "video_audit_reduce_next": [
+      "Eliminate fragmented, word-by-word captioning, especially in the hook, in favor of more cohesive phrases.",
+      "Reduce the speed of caption appearance to allow viewers ample time to read and process the text.",
+      "Minimize the use of generic stock footage; instead, prioritize visuals that are highly specific and directly enhance the narrative's psychological depth.",
+      "Avoid captioning that conflicts with or is extraneous to the voiceover, ensuring full alignment.",
+      "Reduce visual repetition without adding new narrative or emotional depth."
+    ],
+    "video_audit_tags": {
+      "hook_type": "truth drop",
+      "thumbnail_type": "moody text-over-visual",
+      "visual_style_mix": "introspective aesthetic",
+      "narrative_format": "psychological reframe monologue",
+      "character_used": "narrator voice only"
+    }
   }
 ]
