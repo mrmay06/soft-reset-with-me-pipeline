@@ -117,12 +117,16 @@ def _hard_failures(raw: dict, script: dict, config: dict) -> list[str]:
     if is_longform:
         min_w = int(config.get("longform_target_words_min", 750))
         max_w = int(config.get("longform_target_words_max", 1050))
+        hard_min_w = int(config.get("longform_hard_words_min", max(1, min_w - 100)))
+        hard_max_w = int(config.get("longform_hard_words_max", max_w + 150))
     else:
         min_w = int(config.get("script_min_words", 45))
         max_w = int(config.get("script_max_words", 75))
+        hard_min_w = int(config.get("script_hard_min_words", max(1, min_w - 10)))
+        hard_max_w = int(config.get("script_hard_max_words", max_w + 20))
     words = script.get("word_count", 0)
-    if isinstance(words, int) and not (min_w <= words <= max_w):
-        failures.append("word_count_in_range")
+    if isinstance(words, int) and not (hard_min_w <= words <= hard_max_w):
+        failures.append("word_count_hard_limit")
 
     if script.get("validation") in {"forced", "needs_review"} or script.get("human_review_required"):
         failures.append("script_validation_passed")
@@ -147,6 +151,21 @@ def _hard_failures(raw: dict, script: dict, config: dict) -> list[str]:
         failures.append("title_accuracy")
 
     return failures
+
+
+def _soft_warnings(script: dict, config: dict) -> list[str]:
+    warnings = []
+    is_longform = config.get("longform_target_words_min") is not None
+    if is_longform:
+        min_w = int(config.get("longform_target_words_min", 750))
+        max_w = int(config.get("longform_target_words_max", 1050))
+    else:
+        min_w = int(config.get("script_min_words", 45))
+        max_w = int(config.get("script_max_words", 75))
+    words = script.get("word_count", 0)
+    if isinstance(words, int) and not (min_w <= words <= max_w):
+        warnings.append("word_count_in_range")
+    return warnings
 
 
 @retry(max_attempts=2, wait_seconds=10, exceptions=(Exception,))
@@ -238,6 +257,7 @@ Return ONLY valid JSON:
         }
 
     hard_failures = _hard_failures(raw, script, config)
+    soft_warnings = _soft_warnings(script, config)
     passed = not hard_failures
 
     result = {
@@ -270,12 +290,15 @@ Return ONLY valid JSON:
         "gate": "passed" if passed else "failed",
         "passed": passed,
         "hard_failures": hard_failures,
+        "soft_warnings": soft_warnings,
         "judged_at": now_iso(),
     }
 
     save_json(result, os.path.join(run_dir, "10_judge_report.json"))
     if hard_failures:
         print(f"[creative_judge] GATE FAILED — hard failures: {hard_failures}")
+    elif soft_warnings:
+        print(f"[creative_judge] Gate passed with soft warnings: {soft_warnings}")
     else:
         print(
             f"[creative_judge] Gate passed. Composite: {result['composite_score']}/10  "

@@ -87,6 +87,8 @@
   "video_crf": 23,
   "script_min_words": 45,
   "script_max_words": 75,
+  "script_hard_min_words": 35,
+  "script_hard_max_words": 95,
   "script_argument_review_enabled": true,
   "audio_min_duration_sec": 18,
   "audio_max_duration_sec": 35,

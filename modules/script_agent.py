@@ -181,14 +181,21 @@ def _validate_script(script: dict, config: dict) -> dict:
 
     min_w = config["script_min_words"]
     max_w = config["script_max_words"]
+    hard_min_w = config.get("script_hard_min_words", max(1, min_w - 10))
+    hard_max_w = config.get("script_hard_max_words", max_w + 20)
 
     if words < min_w or words > max_w:
-        print(f"[script] Word count {words} outside {min_w}-{max_w} range — marking forced")
-        script["validation"] = "forced"
-        validation_failures.append("word_count")
-        validation_notes.append(f"word_count outside {min_w}-{max_w}")
+        print(f"[script] Word count {words} outside target {min_w}-{max_w} range — soft warning")
+        script["validation"] = "passed"
+        validation_notes.append(f"word_count outside target {min_w}-{max_w}")
     else:
         script["validation"] = "passed"
+
+    if words < hard_min_w or words > hard_max_w:
+        print(f"[script] Word count {words} outside hard {hard_min_w}-{hard_max_w} limit — marking forced")
+        script["validation"] = "forced"
+        validation_failures.append("word_count_hard")
+        validation_notes.append(f"word_count outside hard limit {hard_min_w}-{hard_max_w}")
 
     if incoming_validation == "needs_review" and script["validation"] == "passed":
         script["validation"] = "needs_review"
@@ -239,6 +246,7 @@ def _validate_script(script: dict, config: dict) -> dict:
 
     script["validation_failures"] = validation_failures
     script["word_count_in_range"] = min_w <= words <= max_w
+    script["word_count_hard_limit"] = hard_min_w <= words <= hard_max_w
     script["validation_notes"] = "; ".join(validation_notes)
     return script
 
@@ -246,7 +254,7 @@ def _validate_script(script: dict, config: dict) -> dict:
 def _needs_script_retry(script: dict) -> bool:
     return bool(
         set(script.get("validation_failures", []))
-        & {"word_count", "banned_script_phrase", "banned_loopback", "weak_editorial_layer"}
+        & {"word_count_hard", "banned_script_phrase", "banned_loopback", "weak_editorial_layer"}
     )
 
 
@@ -262,6 +270,46 @@ def _retry_instruction(script: dict, config: dict, attempt: int) -> str:
         "Do not use banned therapy-speak, hype-coach language, or generic self-help phrasing.\n"
         f"Rewrite attempt: {attempt}.\n"
     )
+
+
+def _word_count_repair_prompt(script: dict, config: dict, attempt: int) -> str:
+    min_w = config["script_min_words"]
+    max_w = config["script_max_words"]
+    current_words = script.get("word_count", 0)
+    direction = "EXPAND" if current_words < min_w else "CUT"
+    return (
+        "\n\nWORD COUNT REPAIR REQUIRED.\n"
+        f"Current script is {current_words} words. Target range is {min_w}-{max_w} spoken words.\n"
+        "Return the SAME JSON schema, corrected. No markdown. No explanation.\n"
+        "Aim for 58-68 spoken words across hook, tension, insight, loopback, engagement_question, and like_cta.\n"
+        f"Your job: {direction} the existing script while preserving the same core claim and emotional truth.\n"
+        "Keep `editorial_pov` and `only_soft_reset_line` specific, non-generic, and unmistakably on-brand.\n"
+        "Do not add therapy-speak, hype-coach language, diagnosis, or generic self-help phrasing.\n"
+        "If expanding, add concrete emotional mechanism detail, not filler.\n"
+        "If cutting, remove repetition and generic CTA language first.\n"
+        f"Repair attempt: {attempt}\n\n"
+        "CURRENT SCRIPT JSON:\n"
+        f"{json.dumps(script, indent=2)}\n"
+    )
+
+
+def _repair_word_count(script: dict, config: dict) -> dict:
+    if script.get("word_count_in_range", True):
+        return script
+
+    for attempt in range(1, 4):
+        print(f"[script] Repairing word count ({script.get('word_count', 0)} words), attempt {attempt}")
+        try:
+            repaired = _call_script_model(_word_count_repair_prompt(script, config, attempt), config["script_model"])
+            repaired = _validate_script(repaired, config)
+            script = repaired
+            if script.get("word_count_in_range", False):
+                print(f"[script] ✓ Word count repaired: {script.get('word_count', 0)} words")
+                return script
+        except Exception as e:
+            print(f"[script] Word count repair failed ({e})")
+
+    return script
 
 
 def _mark_needs_review(script: dict, reason: str) -> dict:
@@ -412,6 +460,9 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         script = _call_script_model(prompt + _retry_instruction(script, config, attempt), config["script_model"])
         script = _validate_script(script, config)
 
+    if _needs_script_retry(script) or not script.get("word_count_in_range", True):
+        script = _repair_word_count(script, config)
+
     if _needs_script_retry(script):
         print("[script] Hard validation still failing after retries — marking for review before media generation")
         script = _mark_needs_review(script, "hard script validation failed after retries")
@@ -502,6 +553,8 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
             print(f"[script] Engagement question retry failed ({e}) — keeping original")
 
     script = _validate_script(script, config)
+    if not script.get("word_count_in_range", True):
+        script = _repair_word_count(script, config)
     if hook_changed:
         final_review = _check_argument_coherence(script, research, config)
         script = _attach_argument_review(script, final_review)

@@ -31,6 +31,8 @@
   "longform_target_max_sec": 420,
   "longform_target_words_min": 750,
   "longform_target_words_max": 1050,
+  "longform_hard_words_min": 650,
+  "longform_hard_words_max": 1200,
   "longform_width": 1920,
   "longform_height": 1080,
   "longform_fps": 30,
