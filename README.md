@@ -21,7 +21,8 @@ All active publishing is **public-now**. The pipeline does not schedule future Y
 - Shorts visual priority: Pexels video -> generated AI image -> Pexels image fallback
 - Shorts Coverr setting: disabled by default
 - Longform stock footage: Pexels + Coverr
-- TTS: Gemini `gemini-2.5-flash-preview-tts`, `Puck` voice
+- Shorts TTS: Gemini `gemini-2.5-flash-preview-tts`, `Aoede` voice
+- Longform TTS: Gemini `gemini-2.5-flash-preview-tts`, `Puck` voice
 - Script model: Claude Sonnet
 - Creative judge model: `gemini-2.5-flash-lite`
 - Weekly learning: Shorts-only analytics + creative judge traits -> Gemini draft -> Sonnet review -> auto-promoted strategy
@@ -48,8 +49,8 @@ The workflow starts each run at `:35` in the matching local hour, roughly 25 min
 
 1. **Performance Sync** - Fetches recent YouTube Analytics into `performance_memory_soft_reset.json`.
 2. **Research** - Uses pytrends, YouTube, and Reddit signals, then asks Gemini for topic candidates.
-3. **Script** - Uses Claude Sonnet to write a 45-75 word script with the Soft Reset editorial layer. The script agent enforces banned therapy-speak checks, unresolved loopback guardrails, prompt/script version fields, and validation notes.
-4. **TTS** - Uses Gemini TTS with the `Puck` voice.
+3. **Script** - Uses Claude Sonnet to write a 45-75 word script with the Soft Reset editorial layer. The script agent enforces banned therapy-speak checks, landing-line quality, argument coherence, prompt/script version fields, and validation notes.
+4. **TTS** - Uses Gemini TTS with the `Aoede` voice.
 5. **Visual Director** - Builds a scene manifest with `visual_type` and `image_style`.
 6. **Image/Video Assets** - Uses Pexels video, generated images, and Pexels image fallback.
 7. **Captions** - Generates centered kinetic ASS captions.
@@ -97,10 +98,11 @@ The Shorts track is designed to avoid generic relationship advice. Topic researc
 - `only_soft_reset_line`
 - `source_basis`
 - `confidence_level`
+- `standout_line` in the finished script, mirrored to legacy `only_soft_reset_line` for validator compatibility
 
 The script agent checks argument coherence so the hook promise, emotional mechanism, and final insight all support the same core claim. Weak or drifting scripts are retried before rendering.
 
-The prompt layer favors emotionally precise, plain-language insight over therapy-speak, hype-coach phrasing, or generic inspirational advice. `psych_concept` is treated as an internal lens only; it should be translated into lived moments instead of spoken as clinical jargon.
+The prompt layer favors emotionally precise, plain-language insight over therapy-speak, hype-coach phrasing, or generic inspirational advice. `psych_concept` is treated as an internal lens only; it should be translated into lived moments instead of spoken as clinical jargon. Shorts end on a landing sentence rather than a forced callback; the JSON still uses the legacy `loopback` key for downstream compatibility.
 
 Every Shorts script includes `script_version`, `prompt_version`, `validation`, and `validation_notes` so future analytics can trace performance shifts back to prompt rules. `cta` remains a legacy alias for `like_cta`; `utils/script_contract.py` normalizes it before downstream modules read the script.
 
@@ -115,7 +117,7 @@ Shorts defaults in `config/pipeline_config.json`:
 | Metadata | `metadata_model` | `gemini-2.5-flash` |
 | Creative judge | `creative_judge_model` | `gemini-2.5-flash-lite` |
 | TTS | `tts_model` | `gemini-2.5-flash-preview-tts` |
-| TTS voice | `tts_voice` | `Puck` |
+| TTS voice | `tts_voice` | `Aoede` |
 | Image model | `image_model` | `zimage` |
 
 Longform defaults in `config/longform_config.json`:
@@ -270,6 +272,8 @@ Learning is staged to avoid overfitting early uploads:
 
 Videos younger than 2 days are skipped for Shorts analytics. Cached analytics are reused for 7 days where configured.
 
+Experiment slots are selected in code, not by the model. `utils/strategy.py` targets a history-balanced **60% baseline / 20% experiment / 20% wildcard** allocation from recent judge reports, separately for Shorts and Longform. Active experiment or wildcard guidance is injected into the Shorts research prompt through `utils/experiment.py`.
+
 ## Guardrails And Learning Memory
 
 The current Shorts flow records enough context for weekly strategy to make meaningful comparisons:
@@ -303,6 +307,9 @@ Longform stays separate. It logs to `topic_memory_soft_reset_long.json` and `per
 | `modules/script_agent.py` | Shorts script generation, retries, and guardrail validation |
 | `modules/logger.py` | Shorts memory logger |
 | `modules/longform_logger.py` | Longform memory logger |
+| `utils/experiment.py` | Shorts research prompt experiment-slot injection |
+| `utils/cooldowns.py` | Active strategy cooldown filtering |
+| `utils/strategy.py` | Strategy context and experiment allocation |
 | `tools/weekly_strategy.py` | Weekly Shorts self-improvement orchestrator |
 | `tools/validate_schedule.py` | Schedule validator |
 | `topic_memory_soft_reset.json` | Shorts topic and creative memory |
