@@ -750,5 +750,117 @@
     "strongest_element": "Title Accuracy",
     "weakest_element": "CTA Quality",
     "only_soft_reset_score": 8
+  },
+  {
+    "video_id": "20260509_091450",
+    "published_date": "2026-05-09",
+    "status": "uploaded",
+    "topic": "You keep explaining because part of you still wants permission",
+    "category": "self-worth shifts",
+    "angle_type": "truth drop",
+    "total_score": 18,
+    "source_name": "Therapist consensus, principles of CBT and interpersonal psychology",
+    "source_basis": "Boundary setting and validation seeking in interpersonal relationships, often addressed in Cognitive-Behavioral Therapy (CBT) and attachment theory frameworks.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Over-explaining a boundary, or constantly feeling the need to justify choices and decisions to others",
+    "psych_concept": "Boundary setting, self-worth, external validation, people-pleasing",
+    "core_claim": "A boundary does not need to win a debate to be real",
+    "editorial_seed": "Many of us unconsciously seek external validation for our boundaries, feeling they're only valid if others understand or approve. This truth drop helps viewers realize their peace and boundaries are inherently valid, regardless of external agreement.",
+    "only_soft_reset_line": "You're not explaining. You're asking for permission.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You're not explaining the boundary. You're asking if it's okay.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 71,
+    "estimated_duration_sec": 28,
+    "thumbnail_text": "You keep explaining it because you still want permission",
+    "content_fingerprint": "you keep explaining because part of you still wants permission you re not explaining the boundary you re asking if it s okay over explaining a boundary or constantly feeling the need to justify choices and decisions to others boundary setting self worth external validation people pleasing a boundary does not need to win a debate to be real you re not explaining you re asking for permission",
+    "title": "You keep explaining because you want permission",
+    "youtube_video_id": "oXq38wemKkk",
+    "youtube_url": "https://youtube.com/shorts/oXq38wemKkk",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W19",
+    "judge_traits": {
+      "hook_type": "direct_accusation",
+      "title_type": "accusation",
+      "angle_type": "truth drop",
+      "category": "self-worth shifts",
+      "topic_cluster": "You keep explaining because part of you still wants permissi",
+      "visual_style_mix": "brand_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "The hook directly addresses a common internal conflict and offers a thought-provoking reframe."
+      },
+      "script_clarity": {
+        "score": 10,
+        "reason": "The script is concise, direct, and easy to understand. It conveys the core message effectively in a short word count."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The point of view is distinct and aligns with the channel's focus on self-worth and boundary setting."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "The 'villain' (seeking permission to have boundaries) is clearly identified and explained."
+      },
+      "cta_quality": {
+        "score": 2,
+        "reason": "There is no explicit or implicit CTA. The video ends without guiding the viewer on what to do next."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the core message of the script, hinting at the underlying reason for a behavior."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "The description effectively summarizes the video's premise and targets the intended audience's pain point."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "The visuals generally support the message, but could be more dynamically synchronized with the script's nuances."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "The brand images are present but don't add significant depth or emotional resonance to the 'truth drop' angle."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "The concept is relevant but could be more visually compelling or intriguing to stand out."
+      },
+      "voice_pacing_readiness": {
+        "score": 10,
+        "reason": "The short script implies a clear, deliberate pacing suitable for a voiceover."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The content aligns perfectly with the channel's established themes of self-growth and relationship dynamics."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is subjective advice and poses no factual risk."
+      }
+    },
+    "judge_composite_score": 7.15,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9
   }
 ]

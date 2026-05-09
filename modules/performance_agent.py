@@ -95,6 +95,22 @@ def _parse_iso(value: str) -> datetime | None:
         return None
 
 
+def _metrics(record: dict) -> dict:
+    metrics = record.get("metrics")
+    if isinstance(metrics, dict) and metrics:
+        return metrics
+    return {
+        "views": record.get("views", 0),
+        "engagedViews": record.get("engagedViews", record.get("engaged_views", 0)),
+        "averageViewDuration": record.get("averageViewDuration", record.get("average_view_duration", 0)),
+        "averageViewPercentage": record.get("averageViewPercentage", record.get("average_view_percentage", 0)),
+        "likes": record.get("likes", 0),
+        "comments": record.get("comments", 0),
+        "shares": record.get("shares", 0),
+        "subscribersGained": record.get("subscribersGained", record.get("subscribers_gained", 0)),
+    }
+
+
 def _cache_by_video_id(performance_file: str) -> dict[str, dict]:
     memory = _load_performance_memory(performance_file)
     cached = {}
