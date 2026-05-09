@@ -26,7 +26,7 @@ def _remove_duplicate_sentences(text: str) -> str:
     """
     import re
     # Split into sentences
-    raw = re.split(r'(?<=[.!?,—])\s+', text.strip())
+    raw = re.split(r'(?<=[.!?])\s+', text.strip())
     sentences = [s.strip() for s in raw if s.strip()]
 
     seen = []
@@ -47,13 +47,15 @@ def _remove_duplicate_sentences(text: str) -> str:
 def _build_tts_input(script: dict) -> str:
     """
     Gemini TTS style instruction prepended to drive pace + energy.
-    Warm honest-friend narration — calm, hushed, direct, never preachy.
+    Warm honest-friend narration -- calm, hushed, direct, grounded.
     """
     style = (
-        "Warm, calm, slightly hushed honest friend. Not a therapist, not a guru, not a hype coach. "
-        "Confident, conversational, direct, and gentle. Speak a little fast, with tight gaps between sentences. "
-        "Never sound robotic, preachy, overly energetic, or clinical. "
-        "Short sentences should feel like something the listener needed to hear.\n\n"
+        "Warm, slightly hushed, confident. "
+        "Speak at a calm but purposeful pace -- not slow, not rushed. "
+        "Let short sentences breathe. A natural pause after each thought. "
+        "Intimate but not fragile. Like a close friend who noticed the thing "
+        "you were trying to hide, and said it quietly. "
+        "No performance. No uplift at the end of sentences. Grounded throughout.\n\n"
     )
     script_text = build_spoken_script_text(script)
     # Replace em-dashes with comma-pause so TTS reads naturally
@@ -122,10 +124,10 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
     )
     os.remove(wav_path)
 
-    # Remove leading silence (threshold -50dB, max 0.3s trim)
+    # Remove leading silence conservatively so hushed openings stay intact.
     subprocess.run(
         ["ffmpeg", "-y", "-i", trimmed_path,
-         "-af", "silenceremove=start_periods=1:start_duration=0.05:start_threshold=-50dB",
+         "-af", "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-45dB",
          "-acodec", "libmp3lame", "-q:a", "2",
          output_path],
         check=True, capture_output=True
@@ -191,7 +193,6 @@ def run_tts(video_id: str, run_dir: str, config: dict) -> dict:
         "model": config["tts_model"],
         "duration_sec": validation["duration_sec"],
         "validation": validation["validation"],
-        "tags_used": ["tension", "concern", "enthusiasm", "neutral"],
         "generated_at": now_iso(),
     }
     if "warning" in validation:
@@ -258,7 +259,6 @@ def run_tts_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "model": config["tts_model"],
         "duration_sec": duration_sec,
         "validation": "passed",
-        "tags_used": ["tension", "concern", "enthusiasm", "neutral"],
         "generated_at": now_iso(),
     }
     save_json(meta, os.path.join(run_dir, "03_voice_meta.json"))

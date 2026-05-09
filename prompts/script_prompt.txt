@@ -16,50 +16,34 @@ EMOTIONAL TRIGGER: {emotional_trigger}
 PSYCH CONCEPT: {psych_concept}
 CORE CLAIM: {core_claim}
 EDITORIAL SEED: {editorial_seed}
-ONLY SOFT RESET LINE: {only_soft_reset_line}
 
 PERFORMANCE FEEDBACK:
 {performance_insights}
 
-If PERFORMANCE FEEDBACK says there is no reliable data, is empty, or contains fewer than 3 meaningful data points, ignore it as an optimization signal. Default to the hook formulas and brand rules below without bias toward any shape.
+Ignore performance feedback if it has no reliable pattern or fewer than 3 meaningful data points.
 
-ANTI-SLOP EDITORIAL LAYER:
+WHAT THIS SCRIPT MUST DO:
+Argue one emotional thesis. Make the viewer feel recognized, not coached. The strongest line should sound like something whispered by a friend who noticed the exact thing they were trying to hide.
+
+VOICE RULES:
 - The script must argue the editorial seed, not summarize relationship advice.
-- Every section must support one emotional thesis.
-- Include at least one line that feels specific to Soft Reset With Me: warm, sharp, and non-generic.
+- Every spoken section supports one emotional thesis.
 - Remove filler that is true but useless.
-- Visuals and captions will be built around the argument, so write scenes with emotional intention.
+- End on recognition, not permission.
+- Gender-neutral by default. Use direct address: "you".
 
-PSYCH_CONCEPT USAGE:
-- PSYCH CONCEPT is your internal framing lens. It informs the emotional argument but should not appear as clinical jargon in the script.
-- Translate concepts into lived moments.
-- "Anxious attachment" becomes "that panic when they do not text back."
-- "Avoidant behavior" becomes "the part of you that disappears when someone gets close."
+PSYCH CONCEPT:
+Use PSYCH CONCEPT as an internal lens, not spoken clinical jargon. Translate concepts into lived moments.
+"Anxious attachment" becomes "that panic when they do not text back."
+"Avoidant behavior" becomes "the part of you that disappears when someone gets close."
 
-ONLY_SOFT_RESET_LINE — write this line LAST, after the rest of the script is finished:
-- It must emerge from the specific emotional territory of THIS script — not be a general truth.
-- If a generic self-help account (BetterHelp, TherapyJeff, any relationship coach) could post this
-  line without changing a single word, it fails. Rewrite it until only Soft Reset With Me would say it.
-- It must be 6+ words. Not Pinterest. Not a poster quote. Screenshot-worthy because it is SPECIFIC.
-- Good: "You didn't lose them. You lost the version you made up." (specific, non-generic)
-- Good: "That's not strength. That's just loneliness with good posture." (unexpected image)
-- Bad: "You deserve someone who shows up." (any account would say this)
-- Bad: "It's okay to grieve what could have been." (Pinterest quote, non-specific)
-
-SCRIPT FRAMEWORK:
-
-HOOK (0-3s) — scroll-stopper.
-The hook must be instantly understandable in the first half-second.
-Use plain, direct words before poetic language.
-It must create one of these reactions: "wait, I do that", "that might be me", or "I need to know if this is true."
+HOOK:
+Make the viewer instantly think: "wait, I do that", "that might be me", or "I need to know if this is true."
 
 Use one of these formulas:
-A. Specific scenario: "If you [specific emotional behavior], this is for you."
-B. Counter-intuitive identity check: "You think it's [normal belief]. It might be [deeper truth]."
-C. Uncomfortable truth: "[Painful observation most people won't say out loud.]"
-For formula C: name a specific behavior or moment, not a general emotional truth.
-Good: "If you rehearse texts before sending them, listen to this."
-Bad: "Sometimes the person you love cannot love you back."
+- Specific scenario: "If you [specific emotional behavior], this is for you."
+- Counter-intuitive identity check: "You think it's [normal belief]. It might be [deeper truth]."
+- Uncomfortable truth: "[Painful specific observation most people won't say out loud.]"
 
 Strong examples:
 "You think it's intuition. It might be trauma."
@@ -72,52 +56,25 @@ Weak examples to avoid:
 "Your nervous system remembers things your mind calls intuition."
 "Healing starts when you listen to yourself."
 "Sometimes love teaches us the hardest lessons."
-Never start with "Today I want to talk about."
-If performance feedback shows a hook shape is working, adapt that shape. Never copy a previous hook exactly.
 
-TENSION (3-10s):
-Name the exact pain or situation.
-Make the viewer feel seen. They should think, "how does this know me."
+TENSION:
+Name the exact pain or situation. Make the viewer feel seen.
 
-INSIGHT (10-28s):
-Land the reframe or revelation.
-Use 2-3 sharp points max. No rambling.
-Make every sentence earn its place.
+INSIGHT:
+Land the reframe or revelation. Use 2-3 sharp points max. No rambling.
 
-LOOPBACK (28-35s):
-Land the emotional moment and connect back to the hook.
-The final line must feel like a quiet exhale — something true and specific.
-Do NOT end with: "you deserve better", "you are enough", "your feelings are valid", "healing takes time."
-Do end with: a precise observation that names the feeling without resolving it too neatly.
-Good: "That's not strength. That's just loneliness with good posture."
-Good: "You didn't lose them. You lost the version you made up."
-Bad: "Your exhaustion is valid and you deserve support."
+LANDING:
+One sentence that lands the emotional moment. It does not need to echo the hook. It should feel like a quiet exhale: true, specific, and not too neatly resolved.
 
-CTA FIELDS (not spoken by the voiceover):
-Line 1 engagement question or soft prompt, used for comments/metadata:
-- lists ask for comments
-- scenarios ask for saves
-- hot takes ask for opinions
-- truth drops/reframes ask for shares or saves
-Line 2 like/save CTA, used for metadata/end-screen strategy:
-"Save this for when you need it." OR "Share this with someone who needs to hear it."
+CTA FIELDS:
+These are not spoken by the voiceover.
+- `engagement_question`: match the format. Lists ask for comments, scenarios ask for saves, hot takes ask for opinions, truth drops/reframes ask for shares or saves.
+- `like_cta`: short save/share/like CTA tied to this specific script.
 
-WORD COUNT:
-- 75 words maximum across hook + tension + insight + loopback combined
-- Ideal length is 20-35 seconds
-- Write for a slightly fast 160-170 words per minute pace
-- If the script reads well under 60 words, do not pad it — clean endings outperform extended ones
+BANNED:
+"you are enough" | "healing journey" | "healing takes time" | "your feelings are valid" | "you deserve better" | "most people don't know this" | "the shocking truth is"
 
-COPY RULES:
-- Gender-neutral by default
-- Direct address: "you"
-- No emojis in spoken script
-- No full therapy-script language like "validate your feelings"
-- Never say: "you are enough", "love yourself first", "hi guys", "so basically", "your feelings are valid", "that's valid", "it's valid to feel", "healing journey", "healing takes time", "do the work", "show up for yourself"
-- Never diagnose anyone as narcissist, avoidant, toxic, crazy, broken, or abusive
-- Never teach manipulation, revenge, chasing, or how to make someone miss you
-- If danger or abuse is implied, point to trusted support
-- BANNED AFFIRMATIONS: never end on reassurance that the viewer "deserves better" or that their feelings are "valid" — these words create distance. End on recognition, not permission.
+Never diagnose anyone as narcissist, avoidant, toxic, crazy, broken, or abusive. Never teach manipulation, revenge, chasing, or how to make someone miss you. If danger or abuse is implied, point to trusted support.
 
 WRITE LIKE THIS:
 "You didn't lose them. You lost the version you made up."
@@ -125,29 +82,20 @@ WRITE LIKE THIS:
 "Soft does not mean weak."
 
 SENTENCE RULES:
-- Every sentence under 12 words
-- Use intentional pauses with periods and commas
-- No rambling, no filler
+- Every sentence under 12 words.
+- Use intentional pauses with periods and commas.
+- No rambling, no filler.
 - Avoid pause-heavy phrasing. Keep sentence gaps tight.
 
-Field contract:
-- `engagement_question` contains Line 1 only
-- `like_cta` contains Line 2 only
-- `cta` is a legacy alias and must exactly match `like_cta`
+WORD COUNT:
+45-75 words across hook + tension + insight + landing. If the script reads well under 60 words, do not pad it.
 
-Before returning JSON, run this internal check:
-1. Does the hook use a banned opening? If yes, rewrite it.
-2. Does the script contain any banned phrase? If yes, remove it.
-3. Is word_count within the hard limit? If no, cut from insight first.
-4. Does ONLY_SOFT_RESET_LINE pass the anti-generic check? If no, rewrite it.
-5. Is the loopback ending banned or over-resolved? If yes, rewrite it.
-Only set "validation": "passed" if all checks pass.
-If any check fails after 2 rewrites, set "validation": "needs_review" and explain it in `validation_notes`.
+After writing the full script, identify the single sharpest sentence and return it as `standout_line`. Do not write it separately. Discover it from what you already wrote.
 
 Return ONLY valid JSON, no extra text:
 {{
   "script_version": "1",
-  "prompt_version": "soft-reset-script-v2.3",
+  "prompt_version": "soft-reset-script-v2.4",
   "video_id": "{video_id}",
   "topic": "{topic}",
   "category": "{category}",
@@ -156,7 +104,8 @@ Return ONLY valid JSON, no extra text:
   "psych_concept": "{psych_concept}",
   "core_claim": "{core_claim}",
   "editorial_pov": "...",
-  "only_soft_reset_line": "...",
+  "standout_line": "the sharpest sentence already present in the script",
+  "only_soft_reset_line": "same value as standout_line",
   "hook": "...",
   "tension": "...",
   "insight": "...",

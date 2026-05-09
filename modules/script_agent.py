@@ -6,6 +6,7 @@ from utils.gemini_client import generate_json, generate_text
 from utils.retry import retry
 from utils.script_contract import build_spoken_script_text, normalize_script_contract, word_count
 from utils.performance_insights import summarize_performance_for_prompt
+from utils.strategy import inject_strategy
 
 try:
     import anthropic as _anthropic
@@ -167,7 +168,7 @@ def _validate_script(script: dict, config: dict) -> dict:
     script = normalize_script_contract(script)
     incoming_validation = str(script.get("validation", "") or "").strip().lower()
     script.setdefault("script_version", "1")
-    script.setdefault("prompt_version", "soft-reset-script-v2.3")
+    script.setdefault("prompt_version", "soft-reset-script-v2.4")
     script.setdefault("validation_notes", "")
 
     full_text = build_spoken_script_text(script)
@@ -321,11 +322,22 @@ def _attach_argument_review(script: dict, review: dict) -> dict:
     return script
 
 
+def _log_final_state(script: dict) -> None:
+    print(
+        "[script] Final state — "
+        f"validation: {script.get('validation', '')} | "
+        f"hook: {script.get('hook_quality', '')} | "
+        f"editorial: {script.get('editorial_quality', '')} | "
+        f"argument: {script.get('argument_quality', '')} | "
+        f"engagement: {script.get('engagement_quality', '')} | "
+        f"words: {script.get('word_count', 0)}"
+    )
+
+
 def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[script] Generating script for {video_id}")
 
     research = load_json(os.path.join(run_dir, "01_research.json"))
-    from utils.strategy import inject_strategy
     prompt_template = inject_strategy(open("prompts/script_prompt.txt").read(), "script")
     performance_insights = summarize_performance_for_prompt(
         config.get("performance_memory_file", "performance_memory_soft_reset.json"),
@@ -456,8 +468,11 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     if hook_changed:
         final_review = _check_argument_coherence(script, research, config)
         script = _attach_argument_review(script, final_review)
+    elif script.get("argument_quality") == "weak":
+        script = _attach_argument_review(script, script.get("argument_review", {}))
 
     output_path = os.path.join(run_dir, "02_script.json")
+    _log_final_state(script)
     save_json(script, output_path)
     print(f"[script] Done. Words: {script['word_count']}, validation: {script['validation']}")
     return script

@@ -11,6 +11,7 @@ from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
 from utils.gemini_client import generate_json
 from utils.performance_insights import summarize_performance_for_prompt
+from utils.experiment import inject_experiment_slot
 
 try:
     from pytrends.request import TrendReq
@@ -182,11 +183,10 @@ def _normalise_categories(categories: list[str]) -> set[str]:
     return {str(c).strip().lower() for c in categories if str(c).strip()}
 
 
-def _configure_gemini() -> str:
+def _assert_gemini_key() -> None:
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY not set")
-    return api_key
 
 
 def _clean_signal(value: str) -> str:
@@ -332,7 +332,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
                          recent_categories: list[str], blocked_categories: list[str],
                          config: dict, model: str,
                          recent_angles: list[str] | None = None) -> list[dict]:
-    _configure_gemini()
+    _assert_gemini_key()
 
     # Format signals block
     all_signals = signals.get("pytrends", []) + signals.get("youtube", []) + signals.get("reddit", [])
@@ -365,25 +365,13 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         niche=config.get("niche", "relationship self-improvement"),
     )
 
-    # A/B experiment slot: inject one active hypothesis variation into research prompt.
-    # Baseline = no change. Experiment = vary content_format emphasis. Wildcard = vary angle_type.
-    experiment_label = config.get("experiment_label", "baseline")
-    if experiment_label == "experiment":
-        experiment_id = config.get("experiment_id", "")
-        from utils.strategy import load_strategy
-        strategy = load_strategy()
-        experiments = strategy.get("experiment_slots", {}).get("this_week", [])
-        active_exp = next((e for e in experiments if e.get("id") == experiment_id), None)
-        if active_exp and active_exp.get("prompt_injection"):
-            prompt += f"\n\n[EXPERIMENT SLOT — {experiment_id}]\n{active_exp['prompt_injection']}"
-            print(f"[research] A/B experiment slot active: {experiment_id}")
-    elif experiment_label == "wildcard":
-        prompt += (
-            "\n\n[WILDCARD SLOT] Generate at least 2 candidates in content_format='hot_take' — "
-            "controversial, polarizing, will generate comments and shares. "
-            "One candidate must be a topic you would not normally pitch for this channel."
-        )
-        print("[research] Wildcard slot active: hot_take emphasis")
+    prompt = inject_experiment_slot(
+        prompt,
+        config,
+        "[WILDCARD SLOT] Generate at least 2 candidates in content_format='hot_take' — "
+        "controversial, polarizing, will generate comments and shares. "
+        "One candidate must be a topic you would not normally pitch for this channel.",
+    )
 
     candidates = generate_json(prompt, model)
     if not isinstance(candidates, list):
@@ -502,7 +490,7 @@ Example: [2, 4]"""
 
 @retry(max_attempts=2, wait_seconds=5, exceptions=(Exception,))
 def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> dict:
-    _configure_gemini()
+    _assert_gemini_key()
 
     prompt = prompt_template.format(
         topic     = candidate.get("topic", ""),
@@ -831,7 +819,7 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
 
     output_path = os.path.join(run_dir, "01_research.json")
     save_json(result, output_path)
-    print(f"[research] Done. Topic: {result['topic']} | Score: {result['total_score']}/20 | Reliability: {result['scores']['reliability']}")
+    print(f"[research] Done. Topic: {result['topic']} | Score: {result['total_score']}/20 | Safety: {result['scores']['safety_brand']}")
     return result
 
 
@@ -859,7 +847,7 @@ def run_research_mock(video_id: str, run_dir: str, config: dict) -> dict:
             "emotional_tension": 4,
             "scriptability":  4,
             "share_save": 4,
-            "reliability":    4,
+            "safety_brand":   4,
         },
         "total_score":          20,
         "reasoning":            "A direct breakup healing truth with strong save/share potential and clean brand fit.",

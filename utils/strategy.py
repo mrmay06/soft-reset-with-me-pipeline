@@ -9,6 +9,8 @@ import json
 import os
 from datetime import datetime, timezone
 
+from utils.cooldowns import active_cooldowns
+
 STRATEGY_FILE = "strategy/strategy_memory.json"
 BRAND_BIBLE_FILE = "strategy/brand_bible.json"
 
@@ -57,7 +59,7 @@ def get_strategy_context(section: str) -> str:
     if not section_data:
         return ""
     if section == "research" and isinstance(section_data, dict):
-        cooldowns = _active_cooldowns(strategy)
+        cooldowns = active_cooldowns(strategy)
         if cooldowns:
             section_data = {**section_data, "active_cooldowns": cooldowns}
 
@@ -90,29 +92,6 @@ def get_strategy_context(section: str) -> str:
         "It does not override brand bible rules, safety rules, or content quality standards."
     )
     return "\n".join(lines)
-
-
-def _active_cooldowns(strategy: dict) -> list[dict]:
-    cooldowns = strategy.get("cooldowns", []) or strategy.get("research", {}).get("cooldowns", [])
-    if not isinstance(cooldowns, list):
-        return []
-    today = datetime.now(timezone.utc).date()
-    active = []
-    for item in cooldowns:
-        if not isinstance(item, dict):
-            continue
-        avoid_until = item.get("avoid_until")
-        if not avoid_until:
-            active.append(item)
-            continue
-        try:
-            until = datetime.strptime(str(avoid_until)[:10], "%Y-%m-%d").date()
-        except Exception:
-            active.append(item)
-            continue
-        if until >= today:
-            active.append(item)
-    return active
 
 
 def inject_strategy(prompt: str, section: str) -> str:
@@ -169,4 +148,6 @@ def get_active_experiment_id(slot: str) -> str | None:
     strategy = load_strategy()
     slots = strategy.get("experiment_slots", {})
     pool = slots.get("this_week", []) if slot == "experiment" else slots.get("wildcard_slots", [])
-    return pool[0].get("id") if pool else None
+    if pool and isinstance(pool[0], dict):
+        return pool[0].get("id")
+    return None
