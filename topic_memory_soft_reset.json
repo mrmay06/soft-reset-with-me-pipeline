@@ -1009,5 +1009,146 @@
       "narrative_format": "psychological reframe monologue",
       "character_used": "narrator voice only"
     }
+  },
+  {
+    "video_id": "20260509_221203",
+    "published_date": "2026-05-09",
+    "status": "uploaded",
+    "topic": "Why you miss them even when they were not even good for you",
+    "category": "healing arcs",
+    "angle_type": "psychology drop",
+    "total_score": 19,
+    "source_name": "B.F. Skinner, behavioral psychology",
+    "source_basis": "Operant conditioning / Intermittent reinforcement schedules",
+    "source_url": "",
+    "confidence_level": "peer_reviewed",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "Feeling confused and ashamed for missing someone who was inconsistent or hurtful, despite knowing they weren't good for you.",
+    "psych_concept": "Intermittent Reinforcement",
+    "core_claim": "Intermittent reward creates stronger attachment than consistent care",
+    "editorial_seed": "Many people feel ashamed or confused when they can't 'get over' someone who treated them poorly. This topic validates their experience by explaining the powerful, often unconscious, psychological mechanism at play, shifting blame from self to brain response.",
+    "only_soft_reset_line": "Inconsistency did not confuse you. It hooked you.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You don't miss them. You miss the feeling of almost being chosen.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 60,
+    "estimated_duration_sec": 21,
+    "thumbnail_text": "why you still miss them",
+    "content_fingerprint": "why you miss them even when they were not even good for you you don t miss them you miss the feeling of almost being chosen feeling confused and ashamed for missing someone who was inconsistent or hurtful despite knowing they weren t good for you intermittent reinforcement intermittent reward creates stronger attachment than consistent care inconsistency did not confuse you it hooked you",
+    "title": "You don't miss them, you miss ALMOST chosen",
+    "youtube_video_id": "mP7M1KUgvPs",
+    "youtube_url": "https://youtube.com/shorts/mP7M1KUgvPs",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W19",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "psychology drop",
+      "category": "healing arcs",
+      "topic_cluster": "Why you miss them even when they were not even good for you",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Intriguing and relatable, taps into a common but often unspoken aspect of breakups."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and clear, effectively communicates the core psychological concept in a short word count."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Distinctly aligns with the channel's focus on psychological self-growth and relationship insights."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Identifies a specific psychological mechanism ('almost chosen') for the pain, which is good, but could be slightly more defined."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "No Call to Action is present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "Directly reflects the hook and the core message of the script; highly honest."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Effectively expands on the title and hook, setting the stage for the video's content and target audience."
+      },
+      "visual_dialogue_sync": {
+        "score": 8,
+        "reason": "Assumes good synergy, but without seeing the video, it's hard to score definitively. The number of scenes and stock video count suggest potential for good sync."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images are mentioned but not described; their strength is contingent on their execution and relevance."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "The concept implied by the hook and title (internal feeling vs. external reality) has strong potential for a compelling thumbnail."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "A 34-second script at 60 words is very short, allowing for excellent pacing and clarity, making it highly 'voice-ready'."
+      },
+      "brand_consistency": {
+        "score": 10,
+        "reason": "The topic, angle, and language are perfectly aligned with the 'healing arcs' and 'psychology drop' categories of Soft Reset With Me."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is psychological interpretation and personal growth advice, carrying no factual policy risks."
+      }
+    },
+    "judge_composite_score": 8.3,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 10,
+    "video_audit_status": "ok",
+    "video_audit_summary": "The short effectively delivers a psychological insight into missing inconsistent partners, leveraging a strong, empathetic voice-over and clear textual overlays. While some visuals could be more specific, the overall emotional tone and rapid pacing generally maintain engagement, offering validation and understanding to the audience, consistent with the channel's 'soft reset' theme.",
+    "video_audit_strengths": [
+      "The nuanced and empathetic delivery of the voice-over, which adds significant emotional depth to the script.",
+      "The seamless alignment and impactful delivery of the hook, core insight, and loopback, creating a tightly woven narrative.",
+      "The choice and strategic use of background music to consistently reinforce the desired emotional atmosphere and brand identity.",
+      "The effective use of text overlays to highlight key phrases and drive the narrative forward, even with rapid transitions."
+    ],
+    "video_audit_dropoff_causes": [
+      "The abstract visual of neon lights and a gaming chair at the 2-second mark is less thematically specific and could momentarily disorient or disconnect viewers from the emotional narrative.",
+      "The rapid-fire, single-word captioning, while intended for pace, might overwhelm some viewers who struggle to process the text and accompanying visual as quickly."
+    ],
+    "video_audit_repeat_next": [
+      "The empathetic and clear voice-over narration style.",
+      "The direct, re-framing hook and satisfying loopback structure that reinforces the initial premise.",
+      "The thoughtful background music selection and its balanced audio mixing with the voice-over.",
+      "The strategic use of text overlays to emphasize core messages and emotional beats."
+    ],
+    "video_audit_reduce_next": [
+      "Abstract or less directly thematic visuals that do not clearly resonate with the emotional or psychological concept being discussed (e.g., the neon lights shot).",
+      "The extreme speed of some single-word caption transitions; minor adjustments for slightly longer display times or grouping of words could improve overall readability without sacrificing pace."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Reframe",
+      "thumbnail_type": "Mood-shot",
+      "visual_style_mix": "Stock-b-roll; Cinematic",
+      "narrative_format": "Psychology-explainer; Problem-solution",
+      "character_used": "Single-person-mood; Anonymous-relatability"
+    }
   }
 ]
