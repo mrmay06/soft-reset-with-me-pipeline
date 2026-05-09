@@ -78,6 +78,8 @@ INSTRUCTIONS:
 
 11. For experiment_slots, evaluate existing experiment outcomes before proposing more. Close, continue, or revise experiments based on the data instead of stacking new experiments blindly.
 
+12. Use saved `video_audit` fields in top/bottom performers as qualitative evidence about first seconds, caption pacing, emotional tone, visual specificity, and likely drop-off causes. Treat these as explanatory clues, not proof, and combine them with YouTube Analytics before recommending changes.
+
 Return ONLY valid JSON matching this exact structure:
 {{
   "version": "{week_label}",

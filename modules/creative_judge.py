@@ -1,7 +1,7 @@
 """
-Creative Judge — runs after upload as a non-blocking background module.
-Scores 13 creative dimensions, extracts trait labels, writes 10_judge_report.json.
-Does NOT trigger regeneration. Soft failures are logged only.
+Creative Judge — pre-publish gate plus learning signal.
+Scores 13 creative dimensions, extracts trait labels, writes 10_judge_report.json,
+and blocks upload on hard quality/safety failures.
 """
 from __future__ import annotations
 
@@ -96,6 +96,59 @@ def _load(run_dir: str, *paths: str) -> dict:
     return {}
 
 
+def _score_value(scores: dict, name: str) -> int:
+    item = scores.get(name, {})
+    if isinstance(item, dict):
+        try:
+            return int(item.get("score", 0))
+        except (TypeError, ValueError):
+            return 0
+    try:
+        return int(item)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _hard_failures(raw: dict, script: dict, config: dict) -> list[str]:
+    scores = raw.get("scores", {}) if isinstance(raw.get("scores", {}), dict) else {}
+    failures = []
+
+    is_longform = config.get("longform_target_words_min") is not None
+    if is_longform:
+        min_w = int(config.get("longform_target_words_min", 750))
+        max_w = int(config.get("longform_target_words_max", 1050))
+    else:
+        min_w = int(config.get("script_min_words", 45))
+        max_w = int(config.get("script_max_words", 75))
+    words = script.get("word_count", 0)
+    if isinstance(words, int) and not (min_w <= words <= max_w):
+        failures.append("word_count_in_range")
+
+    if script.get("validation") in {"forced", "needs_review"} or script.get("human_review_required"):
+        failures.append("script_validation_passed")
+
+    composite_min = float(config.get("creative_judge_min_composite", 5.5))
+    policy_min = int(config.get("creative_judge_min_policy_risk", 7))
+    clarity_min = int(config.get("creative_judge_min_script_clarity", 6))
+    title_min = int(config.get("creative_judge_min_title_accuracy", 6))
+
+    try:
+        composite = float(raw.get("composite_score", 0))
+    except (TypeError, ValueError):
+        composite = 0.0
+
+    if composite < composite_min:
+        failures.append("creative_composite")
+    if _score_value(scores, "policy_factual_risk") < policy_min:
+        failures.append("policy_factual_risk")
+    if _score_value(scores, "script_clarity") < clarity_min:
+        failures.append("script_clarity")
+    if _score_value(scores, "title_accuracy") < title_min:
+        failures.append("title_accuracy")
+
+    return failures
+
+
 @retry(max_attempts=2, wait_seconds=10, exceptions=(Exception,))
 def _call_judge(prompt: str, model: str) -> dict:
     result = generate_json(prompt, model)
@@ -130,7 +183,7 @@ def run_creative_judge(video_id: str, run_dir: str, config: dict) -> dict:
 
     prompt = f"""You are a creative quality judge for Soft Reset With Me, a faceless YouTube relationship/self-growth channel.
 Score this video on each dimension from 1–10. Be precise and direct.
-This data is used for channel improvement only — it does not block or retry the video.
+This is a pre-publish gate. Be strict about clarity, accuracy, title honesty, and policy risk.
 
 VIDEO DETAILS:
 Hook: {hook}
@@ -184,6 +237,9 @@ Return ONLY valid JSON:
             "only_soft_reset_reason": "judge_unavailable",
         }
 
+    hard_failures = _hard_failures(raw, script, config)
+    passed = not hard_failures
+
     result = {
         "video_id": video_id,
         "youtube_video_id": upload_meta.get("youtube_video_id", ""),
@@ -211,15 +267,21 @@ Return ONLY valid JSON:
         "weakest_element": raw.get("weakest_element", ""),
         "only_soft_reset_score": raw.get("only_soft_reset_score", 0),
         "only_soft_reset_reason": raw.get("only_soft_reset_reason", ""),
+        "gate": "passed" if passed else "failed",
+        "passed": passed,
+        "hard_failures": hard_failures,
         "judged_at": now_iso(),
     }
 
     save_json(result, os.path.join(run_dir, "10_judge_report.json"))
-    print(
-        f"[creative_judge] Done. Composite: {result['composite_score']}/10  "
-        f"| Strongest: {result['strongest_element']}  "
-        f"| Weakest: {result['weakest_element']}"
-    )
+    if hard_failures:
+        print(f"[creative_judge] GATE FAILED — hard failures: {hard_failures}")
+    else:
+        print(
+            f"[creative_judge] Gate passed. Composite: {result['composite_score']}/10  "
+            f"| Strongest: {result['strongest_element']}  "
+            f"| Weakest: {result['weakest_element']}"
+        )
     return result
 
 
@@ -251,6 +313,9 @@ def run_creative_judge_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "weakest_element": "mock",
         "only_soft_reset_score": 7,
         "only_soft_reset_reason": "mock",
+        "gate": "passed",
+        "passed": True,
+        "hard_failures": [],
         "mock": True,
         "judged_at": now_iso(),
     }

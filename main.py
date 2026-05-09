@@ -30,6 +30,7 @@ from modules.metadata_agent import run_metadata, run_metadata_mock
 from modules.uploader import run_upload, run_upload_mock
 from modules.logger import run_logger, run_logger_mock
 from modules.creative_judge import run_creative_judge, run_creative_judge_mock
+from modules.video_audit_agent import run_video_audit, run_video_audit_mock
 
 
 # ── Checkpoint helpers ──────────────────────────────────────────────────────
@@ -44,11 +45,49 @@ def _find_latest_run_dir() -> tuple[str, str] | None:
     terminal_checkpoints = ["06_final_video.mp4", "07_metadata.json", "08_upload_meta.json", "11_logger_meta.json"]
     dirs = sorted(d for d in glob.glob("workspace/run_*") if not os.path.basename(d).startswith("run_long_"))
     for d in reversed(dirs):
+        judge_path = os.path.join(d, "10_judge_report.json")
+        if os.path.exists(judge_path):
+            try:
+                judge = load_json(judge_path)
+                if isinstance(judge, dict) and judge.get("passed") is False:
+                    continue
+            except Exception:
+                pass
         # Incomplete means any terminal stage has not finished yet.
         if not _checkpoint(d, *terminal_checkpoints):
             video_id = os.path.basename(d).replace("run_", "")
             return video_id, d
     return None
+
+
+def _enforce_script_review_gate(run_dir: str):
+    script_path = os.path.join(run_dir, "02_script.json")
+    if not os.path.exists(script_path):
+        return
+    script = load_json(script_path)
+    if not isinstance(script, dict):
+        return
+    if script.get("human_review_required") or script.get("validation") == "needs_review":
+        notes = script.get("validation_notes") or "script marked for human review"
+        raise RuntimeError(
+            "Script requires human review before upload. "
+            f"Reason: {notes}. Review {script_path}, then rerun after clearing the flag."
+        )
+
+
+def _enforce_creative_judge_gate(run_dir: str):
+    judge_path = os.path.join(run_dir, "10_judge_report.json")
+    if not os.path.exists(judge_path):
+        raise RuntimeError(f"Creative judge report missing before upload: {judge_path}")
+    judge = load_json(judge_path)
+    if not isinstance(judge, dict):
+        raise RuntimeError(f"Creative judge report is invalid: {judge_path}")
+    if judge.get("passed") is False:
+        failures = judge.get("hard_failures") or []
+        raise RuntimeError(
+            "Creative judge blocked upload. "
+            f"Hard failures: {failures}. Review {judge_path}, fix the issue, then rerun."
+        )
 
 
 # ── Main ────────────────────────────────────────────────────────────────────
@@ -103,6 +142,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
     upload_fn     = run_upload_mock           if mock else run_upload
     logger_fn     = run_logger_mock           if mock else run_logger
     judge_fn      = run_creative_judge_mock   if mock else run_creative_judge
+    audit_fn      = run_video_audit_mock      if mock else run_video_audit
 
     pipeline_start = time.time()
     timings = {}
@@ -122,6 +162,8 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
         _run("Module 0  — Performance",     performance_fn, video_id, run_dir, config, checkpoint_files=["00_performance_sync.json"])
         _run("Module 1  — Research",        research_fn,  video_id, run_dir, config, checkpoint_files=["01_research.json"])
         _run("Module 2  — Script",           script_fn,    video_id, run_dir, config, checkpoint_files=["02_script.json"])
+        if not mock:
+            _enforce_script_review_gate(run_dir)
         _run("Module 3A — TTS",              tts_fn,       video_id, run_dir, config, checkpoint_files=["03_voice.mp3", "03_voice_meta.json"])
         _run("Module 3B — Visual Director",  director_fn,  video_id, run_dir, config, checkpoint_files=["03b_scene_manifest.json"])
         _run("Module 3C — Images",           image_fn,     video_id, run_dir, config, checkpoint_files=["03_asset_meta.json"])
@@ -131,16 +173,22 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
 
         _run("Module 7  — Metadata",          metadata_fn,  video_id, run_dir, config, checkpoint_files=["07_metadata.json"])
 
+        if config.get("creative_judge_enabled", True):
+            _run("Module 8A — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
+            if not mock:
+                _enforce_creative_judge_gate(run_dir)
+
+        if config.get("video_audit_enabled", True):
+            _run("Module 8B — Video Audit", audit_fn, video_id, run_dir, config, checkpoint_files=["09_video_audit.json"])
+
         if skip_upload:
             run_upload_mock(video_id, run_dir, config)
-            print(f"  {'Module 8  — Upload':<30} SKIPPED (--skip-upload)\n")
+            print(f"  {'Module 8C — Upload':<30} SKIPPED (--skip-upload)\n")
         elif mock:
             upload_fn(video_id, run_dir, config)
-            print(f"  {'Module 8  — Upload':<30} SKIPPED (mock)\n")
+            print(f"  {'Module 8C — Upload':<30} SKIPPED (mock)\n")
         else:
-            _run("Module 8  — Upload",            upload_fn,    video_id, run_dir, config, checkpoint_files=["08_upload_meta.json"])
-
-        _run("Module 9  — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
+            _run("Module 8C — Upload",            upload_fn,    video_id, run_dir, config, checkpoint_files=["08_upload_meta.json"])
 
         if skip_upload:
             if config.get("log_skip_upload_to_memory", True):

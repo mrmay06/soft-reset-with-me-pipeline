@@ -69,6 +69,14 @@ def _find_latest_longform_run(test_2min: bool | None = None) -> tuple[str, str] 
     terminal = ["06_longform_video.mp4", "09_longform_upload_meta.json", "11_longform_logger_meta.json"]
     dirs = sorted(glob.glob("workspace/run_long_*"))
     for d in reversed(dirs):
+        judge_path = os.path.join(d, "10_judge_report.json")
+        if os.path.exists(judge_path):
+            try:
+                judge = load_json(judge_path)
+                if isinstance(judge, dict) and judge.get("passed") is False:
+                    continue
+            except Exception:
+                pass
         marker = _read_mode_marker(d)
         if test_2min is not None and marker and marker.get("test_2min") is not test_2min:
             continue
@@ -76,6 +84,21 @@ def _find_latest_longform_run(test_2min: bool | None = None) -> tuple[str, str] 
             video_id = os.path.basename(d).replace("run_", "")
             return video_id, d
     return None
+
+
+def _enforce_creative_judge_gate(run_dir: str):
+    judge_path = os.path.join(run_dir, "10_judge_report.json")
+    if not os.path.exists(judge_path):
+        raise RuntimeError(f"Creative judge report missing before upload: {judge_path}")
+    judge = load_json(judge_path)
+    if not isinstance(judge, dict):
+        raise RuntimeError(f"Creative judge report is invalid: {judge_path}")
+    if judge.get("passed") is False:
+        failures = judge.get("hard_failures") or []
+        raise RuntimeError(
+            "Creative judge blocked upload. "
+            f"Hard failures: {failures}. Review {judge_path}, fix the issue, then rerun."
+        )
 
 
 def _apply_test_2min_overrides(config: dict) -> dict:
@@ -197,8 +220,10 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
                 "07_longform_thumbnail_meta.json",
             ],
         )
-        _run("Module 8 — Long Upload", upload_fn, video_id, run_dir, config, checkpoint_files=["09_longform_upload_meta.json"])
-        _run("Module 9 — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
+        _run("Module 8A — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
+        if not mock:
+            _enforce_creative_judge_gate(run_dir)
+        _run("Module 8B — Long Upload", upload_fn, video_id, run_dir, config, checkpoint_files=["09_longform_upload_meta.json"])
         _run("Module 10 — Long Logger", logger_fn, video_id, run_dir, config, checkpoint_files=["11_longform_logger_meta.json"])
 
         total = round(time.time() - pipeline_start, 1)

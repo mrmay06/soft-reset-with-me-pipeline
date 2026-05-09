@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import os
 import json
 
@@ -175,6 +177,7 @@ def _validate_script(script: dict, config: dict) -> dict:
     words = word_count(full_text)
     script["word_count"] = words
     validation_notes = []
+    validation_failures = []
 
     min_w = config["script_min_words"]
     max_w = config["script_max_words"]
@@ -182,6 +185,7 @@ def _validate_script(script: dict, config: dict) -> dict:
     if words < min_w or words > max_w:
         print(f"[script] Word count {words} outside {min_w}-{max_w} range — marking forced")
         script["validation"] = "forced"
+        validation_failures.append("word_count")
         validation_notes.append(f"word_count outside {min_w}-{max_w}")
     else:
         script["validation"] = "passed"
@@ -194,18 +198,21 @@ def _validate_script(script: dict, config: dict) -> dict:
     if banned_hits:
         print(f"[script] ⚠ Banned script phrase(s): {banned_hits}")
         script["validation"] = "forced"
+        validation_failures.append("banned_script_phrase")
         validation_notes.append(f"banned phrases: {', '.join(banned_hits)}")
 
     loopback_hits = _contains_any(str(script.get("loopback", "")), _BANNED_LOOPBACK_PHRASES)
     if loopback_hits:
         print(f"[script] ⚠ Banned loopback phrase(s): {loopback_hits}")
         script["validation"] = "forced"
+        validation_failures.append("banned_loopback")
         validation_notes.append(f"banned loopback: {', '.join(loopback_hits)}")
 
     if not _validate_editorial_layer(script):
         print("[script] ⚠ Weak editorial layer: missing POV or signature Soft Reset line")
         script["editorial_quality"] = "weak"
         script["validation"] = "forced"
+        validation_failures.append("weak_editorial_layer")
         validation_notes.append("weak editorial layer")
     else:
         script["editorial_quality"] = "strong"
@@ -230,7 +237,38 @@ def _validate_script(script: dict, config: dict) -> dict:
         script["engagement_quality"] = "strong"
         print(f"[script] ✓ Engagement question: strong")
 
+    script["validation_failures"] = validation_failures
+    script["word_count_in_range"] = min_w <= words <= max_w
     script["validation_notes"] = "; ".join(validation_notes)
+    return script
+
+
+def _needs_script_retry(script: dict) -> bool:
+    return bool(
+        set(script.get("validation_failures", []))
+        & {"word_count", "banned_script_phrase", "banned_loopback", "weak_editorial_layer"}
+    )
+
+
+def _retry_instruction(script: dict, config: dict, attempt: int) -> str:
+    failures = ", ".join(script.get("validation_failures", [])) or "validation failed"
+    min_w = config["script_min_words"]
+    max_w = config["script_max_words"]
+    return (
+        "\n\nCRITICAL REWRITE REQUIRED.\n"
+        f"Previous attempt failed: {failures}.\n"
+        f"Write {min_w}-{max_w} spoken words TOTAL, no exceptions. Aim for 58-68 words.\n"
+        "Keep `editorial_pov` and `only_soft_reset_line` specific, non-generic, and unmistakably on-brand.\n"
+        "Do not use banned therapy-speak, hype-coach language, or generic self-help phrasing.\n"
+        f"Rewrite attempt: {attempt}.\n"
+    )
+
+
+def _mark_needs_review(script: dict, reason: str) -> dict:
+    notes = str(script.get("validation_notes", "") or "").strip()
+    script["validation"] = "needs_review"
+    script["human_review_required"] = True
+    script["validation_notes"] = f"{notes}; {reason}".strip("; ")
     return script
 
 
@@ -367,17 +405,16 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
     script = _call_script_model(prompt, config["script_model"])
     script = _validate_script(script, config)
 
-    if script["validation"] == "forced":
-        print(f"[script] Retrying due to validation issue...")
-        retry_prompt = (
-            prompt
-            + "\n\nIMPORTANT: Script MUST be 45-75 words and must include "
-            "`editorial_pov` plus `only_soft_reset_line` that are specific, non-generic, and on-brand."
-        )
-        script = _call_script_model(retry_prompt, config["script_model"])
+    for attempt in range(1, 4):
+        if not _needs_script_retry(script):
+            break
+        print(f"[script] Retrying hard validation failures: {script.get('validation_failures', [])}")
+        script = _call_script_model(prompt + _retry_instruction(script, config, attempt), config["script_model"])
         script = _validate_script(script, config)
-        if script["validation"] != "passed":
-            print("[script] Still outside range after retry — proceeding with forced validation")
+
+    if _needs_script_retry(script):
+        print("[script] Hard validation still failing after retries — marking for review before media generation")
+        script = _mark_needs_review(script, "hard script validation failed after retries")
 
     review = _check_argument_coherence(script, research, config)
     script = _attach_argument_review(script, review)

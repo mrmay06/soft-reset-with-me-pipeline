@@ -57,9 +57,10 @@ The workflow starts each run at `:35` in the matching local hour, roughly 25 min
 8. **Thumbnail** - Builds `05_thumbnail.png`.
 9. **Video Assembly** - Renders `06_final_video.mp4` with captions, music, film overlay, and CTA card.
 10. **Metadata** - Generates title, description, and tags.
-11. **Upload** - Uploads directly to YouTube as public.
-12. **Creative Judge** - Scores the uploaded run and extracts learning traits into `10_judge_report.json`.
-13. **Logger** - Appends topic, metadata, judge traits, experiment slot, and upload info to `topic_memory_soft_reset.json`.
+11. **Creative Judge** - Runs as a pre-upload gate, blocks hard quality/safety failures, and writes learning traits to `10_judge_report.json`.
+12. **Video Audit** - Gemini watches the finished Short and stores video-specific creative observations.
+13. **Upload** - Uploads directly to YouTube as public only after the gate passes.
+14. **Logger** - Appends topic, metadata, judge traits, video-audit signals, experiment slot, and upload info to `topic_memory_soft_reset.json`.
 
 Shorts can run with `--skip-upload` for local generation without publishing. If `log_skip_upload_to_memory` is true, skip-upload runs can still write memory for testing.
 
@@ -75,8 +76,8 @@ Shorts can run with `--skip-upload` for local generation without publishing. If 
 6. **Long Captions** - Generates phrase-level captions.
 7. **Long Video** - Renders `06_longform_video.mp4` from short visual beats, Pexels/Coverr footage, fallback cards, music, and film overlay.
 8. **Long Thumbnail** - Creates `07_longform_thumbnail.png` and A/B/C thumbnail variants.
-9. **Long Upload** - Uploads directly to YouTube as public.
-10. **Creative Judge** - Scores the longform run with the shared judge module.
+9. **Creative Judge** - Runs as a pre-upload gate with the shared judge module.
+10. **Long Upload** - Uploads directly to YouTube as public only after the gate passes.
 11. **Long Logger** - Writes upload status, YouTube URL, thumbnail variant, judge traits, experiment metadata, and topic data to `topic_memory_soft_reset_long.json`.
 
 Longform uses separate memory files:
@@ -282,6 +283,30 @@ Learning is staged to avoid overfitting early uploads:
 Videos younger than 2 days are skipped for Shorts analytics. Cached analytics are reused for 7 days where configured.
 
 Experiment slots are selected in code, not by the model. `utils/strategy.py` targets a history-balanced **60% baseline / 20% experiment / 20% wildcard** allocation from recent judge reports, separately for Shorts and Longform. Active experiment or wildcard guidance is injected into the Shorts research prompt through `utils/experiment.py`.
+
+## YouTube Analytics Data Flow
+
+Soft Reset has two YouTube Analytics paths with different responsibilities:
+
+1. **Every Shorts or Longform pipeline run** starts with Module 0, `modules/performance_agent.py`.
+   - Trigger: `main.py` for Shorts and `main_long.py` for Longform.
+   - Source lists: `topic_memory_soft_reset.json`, `topic_memory_soft_reset_long.json`, or the test memory file configured for a test run.
+   - API: YouTube Analytics aggregate query for eligible uploaded videos.
+   - Freshness rules: videos under 2 days old are skipped; recently fetched videos are reused for 7 days where configured.
+   - Outputs: the configured performance memory file plus the run checkpoint `workspace/run_*/00_performance_sync.json` or `workspace/run_long_*/00_performance_sync.json`.
+   - Product role: gives the daily production agent recent performance context. Analytics failures soft-fail so production can continue.
+
+2. **The weekly Shorts strategy workflow** runs from `.github/workflows/weekly_strategy.yml`.
+   - Trigger: Monday 6:00 AM New York time, or manual Actions dispatch.
+   - Source list: Shorts topic memory only.
+   - API: `tools/weekly_analytics_fetch.py` fetches a fresh mature-Short snapshot into `strategy/analytics_cache/`.
+   - Processing: `tools/weekly_preprocess.py` converts the snapshot into creative-trait and performance comparisons.
+   - Strategy output: Gemini drafts `strategy/strategy_memory_proposed.json`; Sonnet reviews it into `strategy/strategy_memory_reviewed.json`.
+   - Product role: creates a reviewed Shorts strategy proposal. It never changes the active strategy until `tools/promote_strategy.py --promote --confirm`.
+
+So the performance memory files are daily run feedback, while `strategy/analytics_cache/` is the weekly Shorts analysis snapshot. Longform currently gets performance memory but does not feed the weekly Shorts strategy loop.
+
+Video-specific learning comes from `modules/video_audit_agent.py`. It runs after the Creative Judge passes and before upload, while `06_final_video.mp4` still exists. Gemini watches the finished Short and writes `workspace/run_*/09_video_audit.json`; the logger copies the summary, drop-off causes, strengths, repeat/reduce recommendations, and tag suggestions into `topic_memory_soft_reset.json`. Weekly strategy then receives both YT Analytics and these video-audit observations.
 
 ## Guardrails And Learning Memory
 

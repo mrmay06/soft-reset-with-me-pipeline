@@ -48,6 +48,8 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
     judge_path = os.path.join(run_dir, "10_judge_report.json")
     if os.path.exists(judge_path):
         judge = load_json(judge_path)
+    audit_path = os.path.join(run_dir, "09_video_audit.json")
+    video_audit = load_json(audit_path) if os.path.exists(audit_path) else {}
     memory_file = config.get("topic_memory_file", DEFAULT_MEMORY_FILE)
     max_entries = int(config.get("topic_memory_max_entries", 30))
     upload_status = (
@@ -109,6 +111,13 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "strongest_element": judge.get("strongest_element", ""),
         "weakest_element": judge.get("weakest_element", ""),
         "only_soft_reset_score": judge.get("only_soft_reset_score", 0),
+        "video_audit_status": video_audit.get("status", "missing"),
+        "video_audit_summary": video_audit.get("summary", ""),
+        "video_audit_strengths": video_audit.get("underrated_strengths", []),
+        "video_audit_dropoff_causes": video_audit.get("likely_dropoff_causes", []),
+        "video_audit_repeat_next": video_audit.get("repeat_next", []),
+        "video_audit_reduce_next": video_audit.get("reduce_next", []),
+        "video_audit_tags": video_audit.get("tag_suggestions", {}),
     }
 
     try:

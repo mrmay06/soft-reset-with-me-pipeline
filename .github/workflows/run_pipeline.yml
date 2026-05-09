@@ -196,6 +196,7 @@ jobs:
             workspace/run_long_*/06_longform_render_meta.json
             workspace/run_*/10_judge_report.json
             workspace/run_long_*/10_judge_report.json
+            workspace/run_*/09_video_audit.json
           if-no-files-found: warn
           retention-days: 7
 

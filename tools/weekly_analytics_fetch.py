@@ -124,6 +124,15 @@ def _collect_video_ids() -> list[dict]:
                         "experiment_label": entry.get("experiment_label", "baseline"),
                         "experiment_id": entry.get("experiment_id"),
                         "strategy_version": entry.get("strategy_version", "untracked"),
+                        "video_audit": {
+                            "status": entry.get("video_audit_status", "missing"),
+                            "summary": entry.get("video_audit_summary", ""),
+                            "strengths": entry.get("video_audit_strengths", []),
+                            "dropoff_causes": entry.get("video_audit_dropoff_causes", []),
+                            "repeat_next": entry.get("video_audit_repeat_next", []),
+                            "reduce_next": entry.get("video_audit_reduce_next", []),
+                            "tag_suggestions": entry.get("video_audit_tags", {}),
+                        },
                         "min_views_for_strategy": int(track_config.get("performance_min_views", DEFAULT_MIN_VIEWS)),
                     })
         except Exception as e:
@@ -276,6 +285,7 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
             "experiment_label": judge.get("experiment_label", entry.get("experiment_label", "baseline")),
             "experiment_id": judge.get("experiment_id", entry.get("experiment_id")),
             "strategy_version": judge.get("strategy_version", entry.get("strategy_version", "untracked")),
+            "video_audit": entry.get("video_audit", {}),
             "fetched_at": datetime.now(timezone.utc).isoformat(),
         }
         results.append(record)
