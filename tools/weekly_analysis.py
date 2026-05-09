@@ -37,6 +37,7 @@ BRAND_BIBLE_FILE = "strategy/brand_bible.json"
 WORKSPACE_DIR = "workspace"
 
 MAX_VIDEO_WATCH = 2  # top N and bottom N performers to watch
+DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 
 
 def _load_json(path: str) -> dict:
@@ -133,7 +134,7 @@ def _watch_videos(genai, comparison: dict, skip_video_watch: bool) -> str:
         return "Could not watch any videos (files not found or upload failed)."
 
     try:
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel(DEFAULT_GEMINI_MODEL)
         parts = []
         for v in uploaded:
             parts.append(f"\n{v['label']}: \"{v['title']}\" | retention={v['retention']}% | ctr={v['ctr']}%")
@@ -153,7 +154,7 @@ def _watch_videos(genai, comparison: dict, skip_video_watch: bool) -> str:
         return f"Video watching failed: {e}"
 
 
-def _call_gemini_analysis(genai, prompt: str, model_name: str = "gemini-2.0-flash") -> dict:
+def _call_gemini_analysis(genai, prompt: str, model_name: str = DEFAULT_GEMINI_MODEL) -> dict:
     model = genai.GenerativeModel(model_name)
     response = model.generate_content(prompt)
     text = response.text.strip()
