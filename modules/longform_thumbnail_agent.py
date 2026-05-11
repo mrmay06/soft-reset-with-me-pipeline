@@ -10,6 +10,8 @@ from PIL import Image, ImageDraw, ImageFont  # noqa: F401 — ImageDraw/ImageFon
 
 from utils.helpers import load_json, save_json, now_iso
 
+MAX_THUMBNAIL_BYTES = 2 * 1024 * 1024
+
 
 def _extract_frame(video_path: str, output_path: str, at_sec: float):
     subprocess.run(
@@ -25,126 +27,117 @@ def _resize_to_target(path_in: str, path_out: str, width: int, height: int):
     image.save(path_out)
 
 
-def _sanitize_thumb_text(text: str) -> str:
-    """Normalize to ASCII-safe uppercase, max 5 words."""
+def _save_png_under_limit(image: Image.Image, output_path: str) -> bool:
+    image.save(output_path, optimize=True)
+    if os.path.getsize(output_path) <= MAX_THUMBNAIL_BYTES:
+        return False
+    # YouTube thumbnails must be under 2MB. Adaptive PNG quantization keeps the
+    # existing .png upload path while avoiding oversized photorealistic renders.
+    quantized = image.convert("P", palette=Image.ADAPTIVE, colors=256)
+    quantized.save(output_path, optimize=True)
+    return os.path.getsize(output_path) <= MAX_THUMBNAIL_BYTES
+
+
+def _sanitize_thumb_text(text: str, max_words: int = 5, uppercase: bool = True) -> str:
+    """Normalize to ASCII-safe thumbnail copy."""
     replacements = {"≠": "!=", "→": ">", "—": "-", "–": "-", "'": "'", "'": "'",
                     "“": '"', "”": '"', "…": "...", "é": "e", "è": "e"}
     for src, dst in replacements.items():
         text = text.replace(src, dst)
     text = text.encode("ascii", errors="ignore").decode("ascii")
-    words = text.upper().split()
-    return " ".join(words[:5]).strip()
+    text = " ".join(text.split())
+    words = text.split()
+    cleaned = " ".join(words[:max_words]).strip()
+    return cleaned.upper() if uppercase else cleaned.lower()
 
 
-def _draw_text_overlay(image_path: str, thumb_text: str, variant_id: str, width: int, height: int) -> None:
-    """Bake brand text onto thumbnail with PIL — guaranteed legibility regardless of image source."""
-    if not thumb_text:
+def _variant_copy(variant: dict) -> tuple[str, str, str]:
+    line1 = _sanitize_thumb_text(variant.get("line1", ""), max_words=4, uppercase=True)
+    line2 = _sanitize_thumb_text(variant.get("line2", ""), max_words=6, uppercase=False)
+    if not line1:
+        legacy = _sanitize_thumb_text(variant.get("thumbnail_text", ""), max_words=4, uppercase=True)
+        line1 = legacy or "YOU ALREADY KNOW"
+    if not line2:
+        line2 = "this is why it hurts"
+    combined = f"{line1} / {line2}"
+    return line1, line2, combined
+
+
+def _fit_font(draw: ImageDraw.ImageDraw, text: str, font_path: str, start_size: int, max_width: int, min_size: int):
+    size = max(start_size, min_size)
+    try:
+        font = ImageFont.truetype(font_path, size=size)  # noqa: F821
+    except Exception:
+        font = ImageFont.load_default()  # noqa: F821
+    while size >= min_size:
+        try:
+            font = ImageFont.truetype(font_path, size=size)  # noqa: F821
+        except Exception:
+            font = ImageFont.load_default()  # noqa: F821
+        bbox = draw.textbbox((0, 0), text, font=font, stroke_width=max(2, size // 18))
+        if bbox[2] - bbox[0] <= max_width:
+            return font, size
+        size -= 4
+    return font, size
+
+
+def _draw_text_overlay(image_path: str, line1: str, line2: str, variant_id: str, width: int, height: int) -> None:
+    """Bake the two-line thumbnail system with PIL for exact, readable text."""
+    if not line1 and not line2:
         return
     img = Image.open(image_path).convert("RGB")
     draw = ImageDraw.Draw(img)  # noqa: F821
 
-    font_size = max(72, height // 8)
-    try:
-        font = ImageFont.truetype("assets/fonts/DMSerifDisplay-Regular.ttf", size=font_size)  # noqa: F821
-    except Exception:
-        try:
-            font = ImageFont.truetype("assets/fonts/Inter-Bold.ttf", size=font_size)  # noqa: F821
-        except Exception:
-            font = ImageFont.load_default()  # noqa: F821
-
-    TERRACOTTA = (196, 120, 90)
-    CREAM = (245, 240, 232)
+    inter = "assets/fonts/Inter-Bold.ttf"
+    WHITE = (255, 255, 255)
     BLACK = (0, 0, 0)
 
-    text_on_left = variant_id in {"A", "C"}
-    zone_cx = int(width * 0.25) if text_on_left else int(width * 0.75)
-    max_line_w = int(width * 0.42)
+    left = int(width * 0.075)
+    top = int(height * 0.22)
+    max_width = int(width * 0.36)
+    line1_font, line1_size = _fit_font(draw, line1, inter, int(height * 0.118), max_width, int(height * 0.066))
+    line2_font, line2_size = _fit_font(draw, line2, inter, int(line1_size * 0.58), max_width, int(height * 0.042))
+    stroke = max(5, line1_size // 13)
+    shadow = max(4, line1_size // 12)
 
-    words = thumb_text.upper().split()
-    lines: list[str] = []
-    current: list[str] = []
-    for word in words:
-        test = " ".join(current + [word])
-        bbox = draw.textbbox((0, 0), test, font=font)
-        if bbox[2] - bbox[0] <= max_line_w or not current:
-            current.append(word)
-        else:
-            lines.append(" ".join(current))
-            current = [word]
-    if current:
-        lines.append(" ".join(current))
-    lines = lines[:3]
+    draw.text((left + shadow, top + shadow), line1, font=line1_font, fill=BLACK, stroke_width=stroke, stroke_fill=BLACK)
+    draw.text((left, top), line1, font=line1_font, fill=WHITE, stroke_width=stroke, stroke_fill=BLACK)
 
-    line_h = int(font_size * 1.18)
-    total_h = len(lines) * line_h
-    y = (height - total_h) // 2
-    stroke = max(5, font_size // 16)
+    line1_box = draw.textbbox((left, top), line1, font=line1_font, stroke_width=stroke)
+    line2_y = line1_box[3] + int(height * 0.035)
+    draw.text((left + 2, line2_y + 2), line2, font=line2_font, fill=(0, 0, 0))
+    draw.text((left, line2_y), line2, font=line2_font, fill=(235, 235, 235))
 
-    for i, line in enumerate(lines):
-        bbox = draw.textbbox((0, 0), line, font=font)
-        tw = bbox[2] - bbox[0]
-        x = int(zone_cx - tw / 2)
-        color = TERRACOTTA if i == len(lines) - 1 else CREAM
-        for dx in range(-stroke, stroke + 1, stroke):
-            for dy in range(-stroke, stroke + 1, stroke):
-                if dx == 0 and dy == 0:
-                    continue
-                draw.text((x + dx, y + dy), line, font=font, fill=BLACK)
-        draw.text((x, y), line, font=font, fill=color)
-        y += line_h
-
-    img.save(image_path)
-    print(f"[longform_thumbnail] Text overlay applied: '{thumb_text}' (variant {variant_id})")
+    compressed = _save_png_under_limit(img, image_path)
+    print(f"[longform_thumbnail] Text overlay applied: '{line1}' / '{line2}' (variant {variant_id})")
+    if compressed:
+        print("[longform_thumbnail] Thumbnail PNG optimized under 2MB")
 
 
 def _build_generation_prompt(research: dict, variant: dict) -> str:
     topic = str(research.get("topic", "") or "relationship healing").strip()
-    pattern = str(variant.get("pattern", "clean_concept_close_up")).strip()
-    thumb_text = str(variant.get("thumbnail_text", "")).strip()
-    text_zone = "left" if variant.get("id") in {"A", "C"} else "right"
-    visual_zone = "right" if text_zone == "left" else "left"
-    text_style = "extra bold heavy serif uppercase" if pattern in {"clean_concept_close_up", "subject_vs_the_void", "dichotomy_split"} else "extra bold heavy sans-serif uppercase"
-    text_color = "#C4785A" if variant.get("id") in {"A", "B"} else "#F5F0E8"
-    prompt_by_pattern = {
-        "clean_concept_close_up": (
-            f"The {visual_zone} half shows a single emotional subject taking up about 60% of the frame, in three-quarter profile, "
-            "lit from one side with warm terracotta light and deep midnight shadow, showing genuine exhaustion, realization, grief, or quiet determination. "
-            f"The {text_zone} half contains clean dark negative space for the text zone."
-        ),
-        "highlighted_truth": (
-            "The background is a blurred handwritten journal page or note texture in warm low light. "
-            f"The {text_zone} side contains one crisp highlighted truth moment and a clean zone for text while the {visual_zone} side stays soft and out of focus."
-        ),
-        "digital_anxiety_overlay": (
-            f"The {visual_zone} half shows a person in a dark bedroom or apartment lit only by a phone screen, with the exact physical feeling of waiting for a reply that will not come. "
-            "A realistic message or read-receipt anxiety moment is visible in the scene. "
-            f"The {text_zone} half stays darker and cleaner for the text block."
-        ),
-        "dichotomy_split": (
-            "The image is divided into a clean 50/50 vertical split with a thin warm terracotta dividing line. "
-            f"On the {visual_zone} side the subject is in the problem state with cool muted tones, shadow, and tension. "
-            f"On the {text_zone} side the resolution state is calmer, warmer, and more open with negative space preserved for text."
-        ),
-        "subject_vs_the_void": (
-            "About 80 to 90 percent of the frame is imposing negative space in a vast dark environment. "
-            f"A tiny human silhouette sits or stands low in the {visual_zone} area, dwarfed by the environment. "
-            f"The upper {text_zone} area is a clean dark field for typography."
-        ),
-    }
+    visual_context = str(variant.get("visual_prompt", "") or "").strip()
     mood = {
         "A": "introspective and premium",
         "B": "raw and emotionally immediate",
         "C": "counter-intuitive and quietly intense",
     }.get(variant.get("id"), "introspective")
     return (
-        "A cinematic YouTube thumbnail image. Final upload quality. 1280x720 pixels. 16:9 horizontal ratio. "
-        "No watermarks, no borders, no logos, no UI chrome. "
-        f'The scene is about "{topic}". {prompt_by_pattern.get(pattern, prompt_by_pattern["clean_concept_close_up"])} '
-        f'In the text zone, {text_style} text reads exactly "{thumb_text}" in {text_color} with a heavy black outline for maximum contrast and readability at mobile scale. '
-        "No important elements in the bottom-right 15% of the frame. "
-        "Overall color grading is moody and cinematic. Base palette is deep midnight navy (#1C1C2B), warm terracotta (#C4785A), and soft cream (#F5F0E8), with optional sage green (#7BAE8A) only as a tiny accent if needed. "
-        "High contrast between all elements, clearly readable in grayscale. One dominant focal point. Maximum three elements total. "
-        f"Mood is {mood}. Photorealistic cinematic quality. Editorial film still aesthetic."
+        "Generate a 1280x720 photorealistic cinematic YouTube thumbnail background with NO TEXT. "
+        "One young adult face in close-up fills the right 55 to 65 percent of the frame. "
+        "The left 35 to 40 percent of the frame is clean dark negative space for text, completely empty. "
+        "Expression: quiet devastated recognition, heavy eyes, direct camera contact, lips softly parted or gently closed. "
+        "No smile, no open-mouth shock, no obvious crying, no performed drama. "
+        "Camera at eye level or slightly below eye level. Tight crop: face and upper shoulder only. "
+        "Loose natural slightly disheveled hair, simple dark or neutral clothing with no logos and no patterns. "
+        "Lighting: soft diffused cool-neutral daylight from a large overcast window. "
+        "Do not use warm amber light, golden hour, candlelight, orange tones, teal tones, or blue-green color cast. "
+        "Background: completely out-of-focus neutral dark gray, no identifiable location, no sharp objects, no text, no UI. "
+        "Natural skin texture with visible pores, subtle film grain, slightly desaturated prestige drama color grade. "
+        "No watermarks, no borders, no logos. No important elements in the bottom-right 15 percent. "
+        "Maximum three visual elements total: face, background, empty text zone. "
+        f'The emotional context is "{topic}". Mood is {mood}. '
+        f"Additional visual context to translate subtly without adding objects or text: {visual_context}"
     )
 
 
@@ -208,8 +201,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
         variant_id = str(variant.get("id", "")).upper()
         if variant_id not in {"A", "B", "C"}:
             continue
-        thumb_text = _sanitize_thumb_text(variant.get("thumbnail_text", ""))
-        prompt = str(variant.get("visual_prompt", "")).strip() or _build_generation_prompt(research, variant)
+        line1, line2, thumb_text = _variant_copy(variant)
+        prompt = _build_generation_prompt(research, variant)
         prompt_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_prompt.txt")
         generated_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_generated.png")
         output_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}.png")
@@ -233,7 +226,7 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
             source = "video_frame_fallback"
 
         # Always bake text via PIL — guarantees legibility regardless of image source
-        _draw_text_overlay(output_path, thumb_text, variant_id, width, height)
+        _draw_text_overlay(output_path, line1, line2, variant_id, width, height)
 
         raw_generated = (
             generated_path if source == "pollinations_gptimage" else
@@ -244,6 +237,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
             "id": variant_id,
             "angle": variant.get("angle", ""),
             "pattern": variant.get("pattern", ""),
+            "line1": line1,
+            "line2": line2,
             "thumbnail_text": thumb_text,
             "prompt_file": os.path.basename(prompt_path),
             "generated_file": os.path.basename(raw_generated) if raw_generated and os.path.exists(raw_generated) else "",
@@ -297,12 +292,14 @@ def run_longform_thumbnail_mock(video_id: str, run_dir: str, config: dict) -> st
         draw.rectangle((0, 0, width, 20), fill=(196, 120, 90))
         draw.rectangle((0, height - 20, width, height), fill=(123, 174, 138))
         image.save(output_path)
-        thumb_text = _sanitize_thumb_text(variant.get("thumbnail_text", "SOFT RESET"))
-        _draw_text_overlay(output_path, thumb_text, variant_id, width, height)
+        line1, line2, thumb_text = _variant_copy(variant)
+        _draw_text_overlay(output_path, line1, line2, variant_id, width, height)
         generated_variants.append({
             "id": variant_id,
             "angle": variant.get("angle", "mock"),
             "pattern": variant.get("pattern", "mock"),
+            "line1": line1,
+            "line2": line2,
             "thumbnail_text": thumb_text,
             "prompt_file": "",
             "generated_file": "",

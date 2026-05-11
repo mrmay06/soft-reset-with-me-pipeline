@@ -38,32 +38,59 @@ PRIMARY VARIANT SELECTION:
 THUMBNAIL TEXT RULES — READ CAREFULLY:
 Thumbnail text is the most important packaging decision. It must pass the 2-second test: if someone at 11pm who just went through a situationship sees this text, do they immediately recognize themselves in those exact words? If not, the text fails.
 
-CORE RULE: Thumbnail text must come from the sharpest emotional line in the script — ideally the "only Soft Reset line" or the hook. It is NOT a label for the topic. It is the viewer's private internal monologue, made visible.
+CORE RULE: Thumbnail copy must address the viewer as the subject. It is NOT a label for the topic. It is the viewer's private internal monologue, made visible.
+
+The thumbnail uses exactly TWO lines:
+- line1 = the gut punch. 3-4 words maximum. Ultra-bold uppercase. No full stop.
+- line2 = the whisper. 4-6 words. Smaller, still readable at mobile size.
+
+Line 1 makes the viewer feel caught.
+Line 2 makes them feel the video has the answer they need.
+
+Wrong copy:
+"SITUATIONSHIP EXPLAINED" / "ALMOST RELATIONSHIPS" / "RELATIONSHIP ADVICE"
+
+Right copy:
+"YOU ALREADY KNOW" + "you just won't admit it"
+"YOU'RE NOT STUCK" + "this is why you stay"
+"WHAT ARE WE" + "and why does it hurt"
 
 BANNED WORDS IN THUMBNAIL TEXT (these are clinical labels, not feelings):
 withdrawal, reinforcement, regulation, dysregulation, intermittent, subconscious, pattern, attachment, nervous system, trauma, process, journey, healing, toxic, growth.
 
 If you find yourself using any of those words — stop and find the line from the script that says the feeling without naming the mechanism.
 
-- Create exactly 3 thumbnail variants: A = Clean Concept Close-Up or Highlighted Truth, B = Emotional Hook or Digital Anxiety Overlay, C = Dichotomy Split or Subject vs The Void.
-- Thumbnail text: 3-5 words max, ALL CAPS in the final render.
-- Thumbnail text must NOT repeat the title word-for-word.
-- Thumbnail text and title must feel like one system — the text names the feeling, the title explains it.
-- The strongest thumbnail text is usually the line the viewer would screenshot and send to a friend.
+- Create exactly 3 thumbnail variants: A = SEO angle, B = Emotional Hook angle, C = Counter-Intuitive angle.
+- Each variant must have line1 and line2.
+- line1 must be 3-4 words max, uppercase in meaning, and must not end with punctuation.
+- line2 must be 4-6 words and deepen the implication without giving away the answer.
+- The thumbnail copy must NOT repeat the title word-for-word.
+- Thumbnail copy and title must feel like one system — the copy names the private feeling, the title explains the tension.
+- The strongest thumbnail copy usually sounds like the viewer's thought at 2am, not a topic label.
 
 THUMBNAIL TEXT EXAMPLES:
-Good: "THE SPARK WAS ANXIETY" / "PEACE ISN'T BORING" / "YOU MISS THE DREAM" / "IT WASN'T NOTHING" / "CALM FELT WRONG"
-Bad: "WITHDRAWAL FROM CHAOS" / "NERVOUS SYSTEM EXPLAINED" / "INTERMITTENT REINFORCEMENT" / "ATTACHMENT PATTERNS"
+Good:
+- line1: "YOU ALREADY KNOW" / line2: "you just won't admit it"
+- line1: "ALMOST ISN'T ENOUGH" / line2: "here's what it costs"
+- line1: "YOU'RE NOT STUCK" / line2: "this is why you stay"
+- line1: "WHAT ARE WE" / line2: "and why does it hurt"
+Bad:
+- line1: "WITHDRAWAL FROM CHAOS" / line2: "intermittent reinforcement explained"
+- line1: "NERVOUS SYSTEM" / line2: "attachment patterns explained"
+- line1: "SITUATIONSHIP ADVICE" / line2: "relationship tips for you"
 
 VISUAL PROMPT RULES (for AI image generation — text is baked on by PIL post-generation):
-- Describe a specific emotional scenario, not a generic "person sitting" or "woman looking sad."
-- The visual must create instant parasocial recognition: "that's what I look like when I feel this."
-- Use tight framing: face, hands, or a specific object in context.
-- Specify exactly which side stays dark for text zone (text zone = at least 40% dark negative space).
-- Brand palette: Deep Midnight #1C1C2B background, Warm Terracotta #C4785A accent, Soft Cream #F5F0E8.
-- No watermarks, no logos, no UI chrome. No symbolic nature (trees, oceans, mountains).
+- The generated image must contain NO TEXT. The pipeline adds text later.
+- One face. One background. One text-zone. Maximum three visual elements total.
+- Face occupies the right 55-65% of the frame.
+- Left 35-40% is clean dark negative space for text.
+- Single young adult face, mid-twenties to early thirties.
+- Expression: quiet devastated recognition. Heavy eyes, direct camera contact, lips softly parted or gently closed. No smile, no open crying, no shocked reaction.
+- Lighting: cool-neutral diffused overcast window light. No warm amber, no golden hour, no candlelight, no orange cast.
+- Background: out of focus neutral dark gray, no identifiable location, no objects, no logos, no UI chrome.
+- Real skin texture, subtle film grain, slightly desaturated prestige drama color grade.
+- No important elements in the bottom-right 15%.
 - 1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality.
-- High contrast, clearly readable in grayscale.
 
 ---
 
@@ -140,23 +167,29 @@ Return ONLY valid JSON:
     {{
       "id": "A",
       "angle": "seo",
-      "pattern": "clean_concept_close_up | highlighted_truth",
-      "thumbnail_text": "3-5 WORDS — FROM THE SCRIPT, NOT A CLINICAL LABEL",
-      "prompt": "visual-only cinematic prompt — PIL adds text post-generation"
+      "pattern": "one_face_right_negative_space_left",
+      "line1": "3-4 WORD GUT PUNCH, NO FULL STOP",
+      "line2": "4-6 word whisper that deepens it",
+      "thumbnail_text": "legacy combined line1 + line2 for compatibility",
+      "prompt": "visual-only prompt with one face on right, empty dark left text zone, no text"
     }},
     {{
       "id": "B",
       "angle": "emotional_hook",
-      "pattern": "digital_anxiety_overlay | emotional_hook",
-      "thumbnail_text": "3-5 WORDS — VIEWER'S INTERNAL MONOLOGUE MADE VISIBLE",
-      "prompt": "visual-only cinematic prompt — PIL adds text post-generation"
+      "pattern": "one_face_right_negative_space_left",
+      "line1": "3-4 WORD GUT PUNCH, NO FULL STOP",
+      "line2": "4-6 word whisper that deepens it",
+      "thumbnail_text": "legacy combined line1 + line2 for compatibility",
+      "prompt": "visual-only prompt with one face on right, empty dark left text zone, no text"
     }},
     {{
       "id": "C",
       "angle": "counter_intuitive",
-      "pattern": "dichotomy_split | subject_vs_the_void",
-      "thumbnail_text": "3-5 WORDS — CHALLENGES THE OBVIOUS TAKE",
-      "prompt": "visual-only cinematic prompt — PIL adds text post-generation"
+      "pattern": "one_face_right_negative_space_left",
+      "line1": "3-4 WORD GUT PUNCH, NO FULL STOP",
+      "line2": "4-6 word whisper that deepens it",
+      "thumbnail_text": "legacy combined line1 + line2 for compatibility",
+      "prompt": "visual-only prompt with one face on right, empty dark left text zone, no text"
     }}
   ]
 }}

@@ -4,7 +4,7 @@ import os
 import time
 
 from utils.helpers import load_json, save_json, now_iso
-from utils.notify import send_auth_expiry_alert
+from utils.notify import send_auth_expiry_alert, send_longform_upload_confirmation
 from utils.youtube_tags import sanitize_youtube_tags
 
 try:
@@ -133,6 +133,11 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
     engagement_question = script.get("engagement_question", "")
     comment_id = _post_engagement_comment(youtube, youtube_video_id, engagement_question)
 
+    thumbnail_meta = {}
+    thumbnail_meta_path = os.path.join(run_dir, "07_longform_thumbnail_meta.json")
+    if os.path.exists(thumbnail_meta_path):
+        thumbnail_meta = load_json(thumbnail_meta_path)
+
     # Update topic memory entry with live YouTube IDs
     memory_file = config.get("topic_memory_file", "topic_memory_soft_reset_long.json")
     if os.path.exists(memory_file):
@@ -158,6 +163,14 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
         "uploaded_at": now_iso(),
     }
     save_json(result, os.path.join(run_dir, "09_longform_upload_meta.json"))
+    send_longform_upload_confirmation(
+        video_id=video_id,
+        title=metadata["title"],
+        youtube_url=youtube_url,
+        metadata=metadata,
+        thumbnail_meta=thumbnail_meta,
+        run_dir=run_dir,
+    )
     print(f"[longform_uploader] Done. URL: {youtube_url}")
     return result
 

@@ -34,6 +34,31 @@ def _clean_thumb_text(text: str) -> str:
     return " ".join(words[:5]).strip()
 
 
+def _clean_thumb_line1(text: str) -> str:
+    text = _clean_thumb_text(text)
+    words = text.split()
+    return " ".join(words[:4]).strip()
+
+
+def _clean_thumb_line2(text: str) -> str:
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    text = text.replace("—", " ").replace("–", " ").replace("--", " ")
+    text = re.sub(r"[^\w\s']", "", text)
+    words = text.lower().split()
+    return " ".join(words[:6]).strip()
+
+
+def _combine_thumb_copy(line1: str, line2: str) -> str:
+    return " / ".join(part for part in (_clean_thumb_line1(line1), _clean_thumb_line2(line2)) if part)
+
+
+def _split_legacy_thumb_text(text: str) -> tuple[str, str]:
+    line1 = _clean_thumb_line1(text)
+    if line1:
+        return line1, "this is why it hurts"
+    return "YOU ALREADY KNOW", "this is why it hurts"
+
+
 _CLINICAL_THUMB_WORDS = {
     "withdrawal", "reinforcement", "regulation", "dysregulation", "intermittent",
     "subconscious", "pattern", "attachment", "nervous", "system", "trauma",
@@ -46,13 +71,22 @@ def _thumb_text_is_clinical(text: str) -> bool:
     return bool(words & _CLINICAL_THUMB_WORDS)
 
 
+def _thumb_variant_is_clinical(item: dict) -> bool:
+    return _thumb_text_is_clinical(
+        " ".join(
+            str(item.get(key, ""))
+            for key in ("thumbnail_text", "line1", "line2", "thumb_line1", "thumb_line2")
+        )
+    )
+
+
 def _pick_primary_variant(variants: list[dict], thumb_variants: list[dict]) -> str:
     """Pick B by default unless C is a genuine counter-intuitive and its thumb text is non-clinical.
     Never pick A as primary."""
     c_thumb = next((t for t in thumb_variants if t.get("id") == "C"), None)
     c_title = next((t for t in variants if t.get("id") == "C"), None)
     if c_thumb and c_title:
-        if not _thumb_text_is_clinical(c_thumb.get("thumbnail_text", "")):
+        if not _thumb_variant_is_clinical(c_thumb):
             return "C"
     return "B"
 
@@ -74,9 +108,9 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
             ("C", "counter", "counter-intuitive", "You're Not Missing Them. You're Missing Closure"),
         ]
         thumbs = [
-            ("A", "seo", "clean_concept_close_up", "IT WASN'T NOTHING"),
-            ("B", "emotional", "digital_anxiety_overlay", "LEFT ON READ"),
-            ("C", "counter", "subject_vs_the_void", "YOU MISS THE ENDING"),
+            ("A", "seo", "one_face_right_negative_space_left", "IT WASN'T NOTHING", "here's why it hurts"),
+            ("B", "emotional", "one_face_right_negative_space_left", "LEFT ON READ", "and still waiting"),
+            ("C", "counter", "one_face_right_negative_space_left", "YOU MISS THE ENDING", "not just the person"),
         ]
     elif "potential" in topic_lower or "imagined" in topic_lower:
         titles = [
@@ -85,9 +119,9 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
             ("C", "counter", "counter-intuitive", "You Didn't Miss Them. You Missed The Dream"),
         ]
         thumbs = [
-            ("A", "seo", "clean_concept_close_up", "YOU MISS THE DREAM"),
-            ("B", "emotional", "digital_anxiety_overlay", "IT FELT REAL"),
-            ("C", "counter", "dichotomy_split", "NOT THE PERSON"),
+            ("A", "seo", "one_face_right_negative_space_left", "YOU MISS THE DREAM", "not just the person"),
+            ("B", "emotional", "one_face_right_negative_space_left", "IT FELT REAL", "even when it wasn't"),
+            ("C", "counter", "one_face_right_negative_space_left", "NOT THE PERSON", "the future you imagined"),
         ]
     elif "strong one" in topic_lower or "strong" in topic_lower:
         titles = [
@@ -96,9 +130,9 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
             ("C", "counter", "counter-intuitive", "That's Not Strength. That's Loneliness With Good Posture"),
         ]
         thumbs = [
-            ("A", "seo", "clean_concept_close_up", "TIRED OF CARRYING"),
-            ("B", "emotional", "clean_concept_close_up", "NO ONE ASKED"),
-            ("C", "counter", "subject_vs_the_void", "ALONE IN THE CROWD"),
+            ("A", "seo", "one_face_right_negative_space_left", "TIRED OF CARRYING", "everyone else's weight"),
+            ("B", "emotional", "one_face_right_negative_space_left", "NO ONE ASKED", "if you were okay"),
+            ("C", "counter", "one_face_right_negative_space_left", "THAT'S NOT STRENGTH", "it's loneliness with posture"),
         ]
     elif "peace" in topic_lower or "boring" in topic_lower or "calm" in topic_lower or "chaos" in topic_lower:
         titles = [
@@ -107,9 +141,9 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
             ("C", "counter", "counter-intuitive", "That Spark You Miss? It Was Just Anxiety"),
         ]
         thumbs = [
-            ("A", "seo", "clean_concept_close_up", "PEACE ISN'T BORING"),
-            ("B", "emotional", "digital_anxiety_overlay", "CALM FELT WRONG"),
-            ("C", "counter", "dichotomy_split", "THE SPARK WAS ANXIETY"),
+            ("A", "seo", "one_face_right_negative_space_left", "PEACE ISN'T BORING", "your body just forgot"),
+            ("B", "emotional", "one_face_right_negative_space_left", "CALM FELT WRONG", "because chaos felt familiar"),
+            ("C", "counter", "one_face_right_negative_space_left", "THE SPARK WAS ANXIETY", "not proof of love"),
         ]
     else:
         titles = [
@@ -118,9 +152,9 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
             ("C", "counter", "counter-intuitive", _safe_title(core_claim or "It's Not About Them. It's About The Pattern", max_title_chars)),
         ]
         thumbs = [
-            ("A", "seo", "clean_concept_close_up", _clean_thumb_text(only_soft_reset_line) or "THE REAL REASON"),
-            ("B", "emotional", "digital_anxiety_overlay", "YOU ALREADY KNEW"),
-            ("C", "counter", "dichotomy_split", "IT WASN'T LOVE"),
+            ("A", "seo", "one_face_right_negative_space_left", _clean_thumb_line1(only_soft_reset_line) or "THE REAL REASON", "here's what it costs"),
+            ("B", "emotional", "one_face_right_negative_space_left", "YOU ALREADY KNOW", "you just won't admit it"),
+            ("C", "counter", "one_face_right_negative_space_left", "YOU'RE NOT STUCK", "this is why you stay"),
         ]
 
     pillar_tags = {
@@ -203,10 +237,18 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
         {"id": item[0], "angle": item[1], "formula": item[2], "title": _safe_title(item[3], max_title_chars)}
         for item in titles
     ]
-    thumb_list = [
-        {"id": item[0], "angle": item[1], "pattern": item[2], "thumbnail_text": _clean_thumb_text(item[3])}
-        for item in thumbs
-    ]
+    thumb_list = []
+    for item in thumbs:
+        line1 = _clean_thumb_line1(item[3])
+        line2 = _clean_thumb_line2(item[4] if len(item) > 4 else "this is why it hurts")
+        thumb_list.append({
+            "id": item[0],
+            "angle": item[1],
+            "pattern": item[2],
+            "line1": line1,
+            "line2": line2,
+            "thumbnail_text": _combine_thumb_copy(line1, line2),
+        })
     primary = _pick_primary_variant(title_list, thumb_list)
     return {
         "primary_variant_id": primary,
@@ -239,18 +281,29 @@ def _validate_packaging(raw: dict, research: dict, max_title_chars: int) -> dict
     thumb_by_id = {}
     for item in thumb_variants:
         vid = str(item.get("id", "")).upper()
-        text = _clean_thumb_text(item.get("thumbnail_text", ""))
+        raw_line1 = item.get("line1", item.get("thumb_line1", ""))
+        raw_line2 = item.get("line2", item.get("thumb_line2", ""))
+        if raw_line1 or raw_line2:
+            line1 = _clean_thumb_line1(raw_line1)
+            line2 = _clean_thumb_line2(raw_line2)
+        else:
+            line1, line2 = _split_legacy_thumb_text(item.get("thumbnail_text", ""))
+        text = _combine_thumb_copy(line1, line2)
         if vid in {"A", "B", "C"} and text:
             # Reject clinical thumbnail text — swap in fallback text for this variant
             if _thumb_text_is_clinical(text):
                 fallback_thumb = next((t for t in fallback["thumbnail_variants"] if t["id"] == vid), None)
                 if fallback_thumb:
                     print(f"[longform_metadata] Variant {vid} thumbnail text '{text}' is clinical — using fallback: '{fallback_thumb['thumbnail_text']}'")
+                    line1 = fallback_thumb.get("line1", "")
+                    line2 = fallback_thumb.get("line2", "")
                     text = fallback_thumb["thumbnail_text"]
             entry = {
                 "id": vid,
                 "angle": str(item.get("angle", "")).lower() or {"A": "seo", "B": "emotional_hook", "C": "counter_intuitive"}[vid],
                 "pattern": str(item.get("pattern", "")).strip() or fallback["thumbnail_variants"][ord(vid) - 65]["pattern"],
+                "line1": line1,
+                "line2": line2,
                 "thumbnail_text": text,
             }
             # Preserve AI-generated visual prompt if present; thumbnail agent can use it directly.

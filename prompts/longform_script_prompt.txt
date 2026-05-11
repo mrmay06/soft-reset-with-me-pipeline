@@ -31,6 +31,15 @@ WRITING RULES:
 
 WORD COUNT: {target_words_min}-{target_words_max} spoken words. Every chapter must support the core claim.
 
+NARRATIVE SPINE (mandatory):
+This is not a floating essay. Build the video around one recurring lived scene the viewer can picture.
+The scene can be fictional but must feel real: a phone in bed, an unanswered message, a kitchen at midnight, a quiet walk home, a paused conversation, a moment of waiting.
+Return to this spine at least 3 times:
+- in the hook
+- near the emotional cost section
+- in the ending
+The viewer should feel like they are moving through a miniature emotional film, not listening to a lecture.
+
 HOOK (first 20 seconds):
 The first sentence must make the viewer think "wait, that's me" — not "interesting topic."
 Name a specific behavior, moment, or physical sensation — not a broad theme.
@@ -43,15 +52,41 @@ BANNED LANGUAGE:
 - Preachy closings: any sentence that sounds like a motivational poster
 
 RETENTION RE-HOOKS (mandatory):
-At the OPENING of chapter 3 AND chapter 4, write a single sentence (under 10 words) that reopens the emotional loop or pivots the angle. This arrests the viewer drop-off curve at the 90-120s mark.
-Good examples: "But here's what makes this harder." / "And then something shifts." / "Here's the part most people skip." / "This is where it gets specific." / "But there's something underneath that."
-Bad: Starting chapter 3 directly with explanation or information.
+Open chapters 2, 3, and 4 with a single sentence (under 10 words) that reopens the emotional loop or pivots the angle.
+Use them to create emotional altitude changes every 60-90 seconds.
+Good examples: "But here's what makes this harder." / "This is where it gets darker." / "Here's the part most people skip." / "But there is something underneath that."
+Bad: Starting a chapter directly with explanation or information.
 
 MID-VIDEO DIRECT ADDRESS (mandatory — exactly once):
 Between chapters 2 and 3, insert ONE sentence of direct viewer address that arrests the drop. Format:
 "If that's familiar — stay with me. Because what comes next is the part that actually explains it."
 Or: "If you've felt that before, don't leave yet. This next part is for you specifically."
 This is NOT part of the chapter voiceover. It is a single line inserted between chapters.
+
+HUMAN PSYCHOLOGY LAYER (mandatory, but translate it):
+Use the psych concept as the hidden engine, not as spoken textbook language.
+You may use ideas like intermittent reinforcement, ambiguous loss, cognitive dissonance, sunk cost, self-concept drift, fantasy bonding, or avoidance of finality.
+But do NOT say them clinically unless the wording is simple and lived-in.
+Bad: "This is intermittent reinforcement caused by anxious attachment."
+Good: "If they were cold all the time, you would leave faster. But they are warm just often enough to make leaving feel like giving up too soon."
+
+ESCALATING COST (mandatory):
+The middle must get heavier before it gets clearer.
+Show what the pattern is quietly costing the viewer: self-trust, standards, emotional energy, ability to want clearly, or the definition of what they deserve.
+Give the darkest insight its own breath. Do not rush past it.
+
+MIRROR MOMENT (mandatory):
+Include exactly one direct, uncomfortable sentence that makes the viewer feel gently caught.
+Examples:
+"Be honest. If they texted you right now, you would still answer fast."
+"You are not just waiting for clarity. You are helping the fog stay useful."
+It must be emotionally confronting, not cruel.
+
+DECISION TOOL (mandatory):
+Before the soft ending, give the viewer one concrete question, test, sentence, or framework they can use tonight.
+It must be specific enough to act on, but still emotionally on-brand.
+Good: "If nothing changes in the next three months, if it stays exactly this undefined and exactly this warm and exactly this inconclusive, would I still choose it?"
+Bad: "Set boundaries." / "Choose yourself." / "Communicate your needs."
 
 EMOTIONAL PRECISION:
 Include 2-3 moments of precise emotional observation — a specific behavior, a thought, a physical sensation — that the viewer has never seen named exactly that way before.
@@ -62,7 +97,8 @@ ONLY SOFT RESET LINE:
 This is the most important field in the output. It is the single sentence the viewer would screenshot and send to a friend. It must feel like something no one has ever said exactly that way before. If it sounds like it could be a generic quote on Pinterest, it fails. Rewrite it until it is specific, sharp, and slightly uncomfortable. It belongs inside the script — ideally in the final chapter or the reframe.
 
 ENDING:
-End with a soft emotional reset, not a motivational speech. The final line should feel like a quiet exhale — permission, not instruction. Not "you've got this." Not "you deserve better." Something true and small and specific.
+End with a soft emotional reset, not a motivational speech. Bring back the narrative spine from the opening so the viewer feels the loop close.
+The final line should feel like a quiet exhale — permission, not instruction. Not "you've got this." Not "you deserve better." Something true and small and specific.
 
 ENGAGEMENT QUESTION:
 Write one question the viewer would type in the comments at 2am. It must be confessional or polarizing — not a survey. BANNED WORDS in the question: subconsciously, validate, process, dysregulate, attachment style (as a label), journey, nervous system.
@@ -87,6 +123,10 @@ Return ONLY valid JSON:
   "longform_format": "{longform_format}",
   "core_claim": "{core_claim}",
   "editorial_pov": "the specific angle this script argues — one sentence",
+  "narrative_spine": "the recurring lived scene this video returns to at least 3 times",
+  "psychology_engine": "the human psychology mechanism translated into plain lived language",
+  "decision_tool": "one concrete question, test, sentence, or framework the viewer can use tonight",
+  "mirror_moment": "the single gently confronting sentence that makes the viewer feel caught",
   "only_soft_reset_line": "the single most screenshot-worthy line in the script — sharp, specific, not a Pinterest quote",
   "engagement_question": "what the viewer would type in comments at 2am — confessional, no clinical words",
   "estimated_duration_sec": 0,
