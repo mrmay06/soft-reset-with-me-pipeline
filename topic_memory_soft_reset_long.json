@@ -492,5 +492,154 @@
     "strongest_element": "Title Accuracy",
     "weakest_element": "Visual Dialogue Sync",
     "only_soft_reset_score": 8
+  },
+  {
+    "video_id": "long_20260511_122328",
+    "published_date": "2026-05-11",
+    "status": "uploaded",
+    "topic": "The quiet panic when someone actually gives you what you\u2019ve always asked for.",
+    "working_title": "The Gentle Push: Why We Sabotage Love When It Finally Feels Right",
+    "content_pillar": "self-worth shifts",
+    "category": "self-worth shifts",
+    "angle_type": "pattern_breakdown",
+    "longform_format": "pattern_breakdown",
+    "core_claim": "We often subconsciously push away the very love and security we crave when it finally arrives because our nervous system is wired for past patterns, mistaking consistent safety for a new, unfamiliar threat.",
+    "editorial_seed": "We spend years articulating our needs, wishing for a partner who 'gets it,' who is kind, consistent, and truly understands. But what happens when they actually do? Sometimes, the sudden arrival of genuine, stable love can trigger an unexpected sense of panic or resistance. This isn't about them; it's about our deep-seated patterns mistaking genuine safety for a new, unknown threat. This video explores why we subtly sabotage the good things and how to learn to lean into the love we truly deserve.",
+    "only_soft_reset_line": "The real work isn't finding someone who finally gives you everything \u2014 it's learning to quietly let yourself receive it without running.",
+    "word_count": 900,
+    "estimated_duration_sec": 348.4,
+    "argument_quality": "strong",
+    "final_duration_sec": 321.4,
+    "render_validation": "passed",
+    "title": "You're Not Afraid Of Love. You're Afraid Of Safety",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why Quiet Love Feels Wrong When You're Used To Chaos"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You Finally Got What You Wanted. Now You Want To Run"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "You're Not Afraid Of Love. You're Afraid Of Safety"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "one_face_right_negative_space_left",
+        "line1": "CALM FEELS WRONG",
+        "line2": "when you expect chaos",
+        "thumbnail_text": "CALM FEELS WRONG / when you expect chaos",
+        "visual_prompt": "Photorealistic cinematic editorial 16:9 horizontal 1280x720 shot of a young adult (mid-twenties to early thirties) with quiet devastated recognition on face, heavy eyes, direct camera contact, lips softly parted. Face occupies right 55-65% of the frame. Left 35-40% is clean dark negative space. Cool-neutral diffused overcast window light. Out-of-focus neutral dark gray background, no identifiable location or objects. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. No important elements in bottom-right 15%. No text in image."
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "one_face_right_negative_space_left",
+        "line1": "I SAID I WANTED",
+        "line2": "so why do i feel afraid",
+        "thumbnail_text": "I SAID I WANTED / so why do i feel afraid",
+        "visual_prompt": "Photorealistic cinematic editorial 16:9 horizontal 1280x720 shot of a young adult (mid-twenties to early thirties) with quiet devastated recognition on face, heavy eyes, direct camera contact, lips softly parted. Face occupies right 55-65% of the frame. Left 35-40% is clean dark negative space. Cool-neutral diffused overcast window light. Out-of-focus neutral dark gray background, no identifiable location or objects. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. No important elements in bottom-right 15%. No text in image."
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "one_face_right_negative_space_left",
+        "line1": "WHAT AM I DOING",
+        "line2": "they're finally kind",
+        "thumbnail_text": "WHAT AM I DOING / they're finally kind",
+        "visual_prompt": "Photorealistic cinematic editorial 16:9 horizontal 1280x720 shot of a young adult (mid-twenties to early thirties) with quiet devastated recognition on face, heavy eyes, direct camera contact, lips softly parted. Face occupies right 55-65% of the frame. Left 35-40% is clean dark negative space. Cool-neutral diffused overcast window light. Out-of-focus neutral dark gray background, no identifiable location or objects. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. No important elements in bottom-right 15%. No text in image."
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "vDCTmfqMR2o",
+    "youtube_url": "https://www.youtube.com/watch?v=vDCTmfqMR2o",
+    "privacy_status": "public",
+    "uploaded_at": "2026-05-11T12:39:03Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The quiet panic when someone actually gives you what you\u2019ve ",
+      "visual_style_mix": "unknown",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 0
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook presents a compelling paradox that directly challenges common beliefs about love and fear, immediately engaging the viewer."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script explores a nuanced psychological concept effectively, breaking down complex ideas into understandable points for the audience."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The perspective on love and safety as an internal challenge, rather than an external one, aligns well with the channel's self-growth focus."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'villain' is identified as the internal fear of safety and vulnerability, which is specific enough to be relatable and actionable."
+      },
+      "cta_quality": {
+        "score": 5,
+        "reason": "No explicit CTA is provided in the given details, which is a missed opportunity for engagement. The description hints at a call to reflection but lacks directness."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is highly accurate and provocative, perfectly reflecting the script's core message about the underlying fear being safety, not love."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description is concise, intriguing, and accurately summarizes the video's central theme, enticing viewers to learn more."
+      },
+      "visual_dialogue_sync": {
+        "score": 3,
+        "reason": "With 0 scenes and 0 stock videos, there's no basis to evaluate visual-dialogue sync. This is a critical area for a video channel."
+      },
+      "image_direction_strength": {
+        "score": 1,
+        "reason": "No visual elements (scenes, brand images, stock videos) are provided, making it impossible to assess image direction."
+      },
+      "thumbnail_concept": {
+        "score": 3,
+        "reason": "No thumbnail concept is provided. A strong thumbnail is crucial for click-through rate and communicating the video's essence."
+      },
+      "voice_pacing_readiness": {
+        "score": 7,
+        "reason": "Assuming standard narration, the pacing would likely be appropriate for a 321s video on this topic, but requires actual listening to confirm."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The theme of overcoming internal barriers to achieve healthy relationships and self-growth is highly consistent with the channel's presumed brand."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is psychological advice, which carries inherent subjective risk. However, this specific angle avoids making absolute claims and focuses on self-reflection, minimizing direct factual risk. The advice is presented as insight rather than a definitive diagnostic tool."
+      }
+    },
+    "judge_composite_score": 6.3,
+    "strongest_element": "title_accuracy",
+    "weakest_element": "visual_dialogue_sync",
+    "only_soft_reset_score": 8
   }
 ]
