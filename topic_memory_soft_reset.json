@@ -1435,5 +1435,148 @@
       "narrative_format": "Personal Reframe",
       "character_used": "Empathetic Narrator, Solitary Figures"
     }
+  },
+  {
+    "video_id": "20260511_173531",
+    "published_date": "2026-05-11",
+    "status": "uploaded",
+    "topic": "The Quiet Killers of Your Dreams",
+    "category": "Conversation Truths",
+    "angle_type": "hot_take",
+    "total_score": 19,
+    "source_name": "Psychological research on relationship dynamics and self-concept",
+    "source_basis": "Emotional invalidation in relationships, self-efficacy theory, and the impact of social support on motivation",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "hot_take",
+    "emotional_trigger": "Sharing a personal dream or ambition with a partner and receiving subtle, dismissive reactions.",
+    "psych_concept": "Emotional invalidation, impact on self-efficacy and motivation in relationships",
+    "core_claim": "Subtle forms of dismissal, like lukewarm support, 'realistic' advice, or quiet disinterest, can be more damaging to your aspirations than overt negativity because they're harder to identify and confront.",
+    "editorial_seed": "We often look for big, obvious red flags, but sometimes the most insidious dream-killers are the quiet ways someone you love subtly dismisses your ambitions. It feels like they're just being 'practical,' but it slowly corrodes your confidence and sense of possibility.",
+    "only_soft_reset_line": "You didn't lose ambition. You lost the audience that kept killing it with a shrug.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Some people support you and still shrink your dreams.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 65,
+    "estimated_duration_sec": 22,
+    "thumbnail_text": "They Never Said Stop",
+    "content_fingerprint": "the quiet killers of your dreams some people support you and still shrink your dreams sharing a personal dream or ambition with a partner and receiving subtle dismissive reactions emotional invalidation impact on self efficacy and motivation in relationships subtle forms of dismissal like lukewarm support realistic advice or quiet disinterest can be more damaging to your aspirations than overt negativity because they re harder to identify and confront you didn t lose ambition you lost the audience that kept killing it with a shrug",
+    "title": "Loved ones can STILL shrink your dreams",
+    "youtube_video_id": "bRfA5Kzkjuo",
+    "youtube_url": "https://youtube.com/shorts/bRfA5Kzkjuo",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 10,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "hot_take",
+      "category": "Conversation Truths",
+      "topic_cluster": "The Quiet Killers of Your Dreams",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 10
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook is relatable and poses an intriguing contradiction (supportive people shrinking dreams)."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and clearly conveys the central message within the short word count."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The 'hot take' angle is evident, presenting a strong, albeit brief, perspective on a common relationship dynamic."
+      },
+      "villain_mechanism_specificity": {
+        "score": 5,
+        "reason": "The script mentions 'shrink your dreams' but lacks specific examples of *how* loved ones do this, making the mechanism less clear."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "There is no explicit or implicit CTA in the provided script details. This is a missed opportunity."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the hook and the core topic of the video. 'Loved ones' is a good synonym for 'people'."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description expands slightly on the hook and title, giving viewers a bit more context and encouraging clicks."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "With 7 stock videos and 3 brand images for 10 scenes, there's a good opportunity for visual alignment, assuming thoughtful selection."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The mix of brand and stock images suggests a deliberate visual strategy, aiming for relatability and brand reinforcement."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "While not provided, the hook and title suggest a strong concept for a thumbnail that would be attention-grabbing and relevant."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The short script length and clear message are well-suited for a measured, impactful delivery, typical of the channel's style."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The topic aligns well with the channel's relationship/self-growth niche, and the 'hot take' angle fits the brand's direct approach."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The topic is a subjective observation about relationships and ambition; it carries no inherent factual claims that could be easily disproven or violate policies."
+      }
+    },
+    "judge_composite_score": 7.2,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys a deep, empathetic emotional tone through its clear, gentle voiceover and perfectly mixed melancholic music, powerfully validating the subtle experience of dreams being undermined. While the hook aligns strongly with the title and the script's specific behavioral examples are well-delivered, the initial caption pacing and some generic visuals in the opening seconds could be optimized for quicker audience engagement. Implementing more specific and intentional visual metaphors, akin to the successful empty chair imagery, would further enhance the video's potent narrative and overall impact.",
+    "video_audit_strengths": [
+      "The consistent, introspective mood is deeply empathetic and validating, fostering a strong emotional connection with the audience.",
+      "The audio production (voiceover clarity and music mix) is exceptionally well done, creating a professional and engaging listening experience.",
+      "Effective use of subtle visual metaphors, particularly the empty coffee cup ('lukewarm') and the empty chair ('lost audience'), which powerfully illustrate abstract emotional concepts.",
+      "The voiceover's delivery of the script's specific behavioral examples ('that specific tone') makes the abstract concept tangible and relatable."
+    ],
+    "video_audit_dropoff_causes": [
+      "Slow initial caption pacing and generic visuals in the first 2-3 seconds might not immediately hook viewers in a fast-paced Shorts feed.",
+      "Some visual transitions feel a bit disconnected or jarring, reducing the flow and immersion (e.g., switching between different women in contemplative poses).",
+      "The abstract nature of certain visuals might not immediately resonate with all viewers, potentially losing engagement if the metaphor isn't grasped quickly."
+    ],
+    "video_audit_repeat_next": [
+      "Maintain the consistent, empathetic voiceover delivery and melancholic background music, as these are significant strengths.",
+      "Continue using subtle and intentional visual metaphors to illustrate complex emotional concepts, especially those that evoke absence or quiet dismissal.",
+      "Prioritize high-quality audio production, ensuring crystal-clear narration and perfectly balanced background elements.",
+      "Ensure the core emotional trigger is addressed and validated throughout the narrative and visual presentation."
+    ],
+    "video_audit_reduce_next": [
+      "Avoid generic 'pensive person' stock footage; aim for more unique or direct visual representations of the specific emotion or action being described in the opening.",
+      "Increase the pace of caption delivery in the first few seconds to grab attention more quickly and clarify the hook's full statement.",
+      "Minimize jarring visual transitions, striving for smoother, more thematically connected shifts between clips to maintain viewer flow."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Contrarian Statement",
+      "thumbnail_type": "Symbolic Imagery",
+      "visual_style_mix": "Melancholic, Introspective, Cinematic",
+      "narrative_format": "Personal Reflection, Direct Address",
+      "character_used": "The Dreamer, The Empath"
+    }
   }
 ]
