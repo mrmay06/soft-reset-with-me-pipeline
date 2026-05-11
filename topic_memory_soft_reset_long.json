@@ -349,5 +349,148 @@
     "strongest_element": "Title Accuracy",
     "weakest_element": "Visual Dialogue Sync",
     "only_soft_reset_score": 9
+  },
+  {
+    "video_id": "long_20260511_044644",
+    "published_date": "2026-05-11",
+    "status": "uploaded",
+    "topic": "The Hidden Comfort of 'Almost': Why We Linger in the Space Between \"Something\" and \"Nothing\"",
+    "working_title": "The Comfort Zone of 'Almost Love': Why You Keep Choosing Ambiguity",
+    "content_pillar": "relationship patterns | psychology drops | self-worth shifts",
+    "category": "relationship patterns | psychology drops | self-worth shifts",
+    "angle_type": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
+    "longform_format": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
+    "core_claim": "Our subconscious gravitation towards 'almost' relationships offers a false sense of safety, subtly eroding our capacity for genuine intimacy and delaying the self-worth we truly deserve.",
+    "editorial_seed": "There's a peculiar comfort in the 'almost' relationship: the intense connection without the demands, the hope without the vulnerability. We convince ourselves it's safer, a holding pattern before the 'real' thing. But this elusive middle ground often masks a deeper fear of true intimacy, subtly diminishing our self-worth and trapping us in a cycle of emotional deferral, mistaking uncertainty for endless potential.",
+    "only_soft_reset_line": "The 'almost' isn't a waiting room for something real \u2014 it's an agreement you keep renewing because somewhere along the way, you decided that partial was safer than possible.",
+    "word_count": 930,
+    "estimated_duration_sec": 360.0,
+    "argument_quality": "strong",
+    "final_duration_sec": 328.6,
+    "render_validation": "passed",
+    "title": "That 'almost' isn't a stepping stone; it's a quiet stop",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why that 'almost' relationship feels safer than real love"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "Why you secretly prefer the 'almost' over being together"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "That 'almost' isn't a stepping stone; it's a quiet stop"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "clean_concept_close_up | highlighted_truth",
+        "thumbnail_text": "THE COMFORT OF ALMOST",
+        "visual_prompt": "1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality. A close-up of a person's hand subtly holding a nearly empty coffee cup, knuckles slightly white, resting on a dark, textured surface. Their other hand is just out of frame, implying a shared, but undefined, space. The light is dim, cinematic, focusing on the soft, hesitant grip. Background is Deep Midnight #1C1C2B, cup Warm Terracotta #C4785A. Dark negative space for text on the left 40% of the frame. High contrast, clearly readable in grayscale. No watermarks, no logos, no UI chrome."
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "digital_anxiety_overlay | emotional_hook",
+        "thumbnail_text": "I SECRETLY PREFER THIS",
+        "visual_prompt": "1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality. A tight close-up on a person's slightly strained face, illuminated by the soft, cool glow of a phone screen held just out of view. Their eyes are half-closed, a subtle mix of weariness and quiet contemplation. A single tear might be barely visible, or just the glint in a tired eye. The background fades into Deep Midnight #1C1C2B. Dark negative space for text on the top right 40% of the frame, blending with the phone's ambient light. High contrast, clearly readable in grayscale. No watermarks, no logos, no UI chrome."
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "dichotomy_split | subject_vs_the_void",
+        "thumbnail_text": "THIS ISN'T A PHASE",
+        "visual_prompt": "1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality. A split image. On the left, a person's reflection in a slightly smudged window, looking out into a soft, blurry distance, a look of quiet longing. On the right, the reality outside the window is a vast, empty expanse of Deep Midnight #1C1C2B, symbolizing the void or lack of progression. The person's face is framed to occupy the left 50% of the horizontal frame, looking towards the empty right. Dark negative space for text on the right 40% of the frame. Colors: Warm Terracotta #C4785A tones for the person's skin/clothing, Soft Cream #F5F0E8 for subtle light accents. High contrast, clearly readable in grayscale. No watermarks, no logos, no UI chrome."
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "2dTYLXo3LVg",
+    "youtube_url": "https://www.youtube.com/watch?v=2dTYLXo3LVg",
+    "privacy_status": "public",
+    "uploaded_at": "2026-05-11T05:03:14Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The Hidden Comfort of 'Almost': Why We Linger in the Space B",
+      "visual_style_mix": "unknown",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 0
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook is intriguing and poses a question that many viewers experiencing 'almost' relationships will relate to, drawing them in."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script effectively communicates the central theme of the 'almost' relationship being a form of self-sabotage and delayed growth, with clear arguments."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The channel's perspective is strong and consistent, offering a distinct take on relationship stagnation and the need for decisive action."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "The 'villain' (the 'almost' state) is well-defined as a comfortable but ultimately limiting zone, with clear mechanisms of fear of change and comfort driving it."
+      },
+      "cta_quality": {
+        "score": 5,
+        "reason": "There is no explicit CTA provided in the prompt, making it impossible to score. Assuming a standard channel CTA, it would be average."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "The title perfectly encapsulates the core message of the video, accurately reflecting the nuanced perspective on 'almost' relationships."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "The description provides a concise and compelling summary of the video's premise, effectively hooking potential viewers and setting expectations."
+      },
+      "visual_dialogue_sync": {
+        "score": 1,
+        "reason": "The video has 0 scenes, indicating no visual content to sync with the dialogue. This is a critical failure for a video channel."
+      },
+      "image_direction_strength": {
+        "score": 1,
+        "reason": "There are 0 brand images and 0 stock videos, meaning there are no visual elements to assess for strength or direction."
+      },
+      "thumbnail_concept": {
+        "score": 3,
+        "reason": "Without a thumbnail provided, its concept cannot be evaluated. This lack of visual strategy is a significant weakness."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "Assuming the script is to be read, the word count (930) is manageable for a ~5.5-minute video (329s), suggesting good pacing potential if delivered well."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The theme of self-growth, relationship introspection, and encouraging decisive action aligns well with a 'Soft Reset With Me' channel."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content discusses relationship dynamics and personal growth, posing no apparent factual inaccuracies or policy violations."
+      }
+    },
+    "judge_composite_score": 7,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "Visual Dialogue Sync",
+    "only_soft_reset_score": 8
   }
 ]
