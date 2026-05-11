@@ -373,8 +373,6 @@ def run_longform_metadata(video_id: str, run_dir: str, config: dict) -> dict:
     description = packaged["description"]
     if "@softresetwithme" not in description.lower():
         description += "\n\nSubscribe for softer resets — @SoftResetWithMe"
-    if "ai" not in description.lower() and "artificial intelligence" not in description.lower():
-        description += "\n\n✦ This video was produced with AI-assisted tools."
     tags = sanitize_youtube_tags(
         packaged["tags"],
         config.get("youtube_tags_total_chars", 450),
