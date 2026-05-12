@@ -2,7 +2,7 @@
 One-time script to get your YouTube OAuth refresh token.
 
 Steps:
-  1. Run:  python tools/get_youtube_token.py
+  1. Run:  python3 tools/get_youtube_token.py
   2. It opens your browser for Google login — sign in with your YouTube channel account
   3. Copy the refresh_token it prints
   4. Paste it into .env → YOUTUBE_REFRESH_TOKEN=<token>

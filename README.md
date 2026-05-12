@@ -171,7 +171,7 @@ ALERT_EMAIL_PASSWORD=
 Generate a YouTube refresh token while signed into the Google account that owns **Soft Reset With Me**:
 
 ```bash
-python tools/get_youtube_token.py
+python3 tools/get_youtube_token.py
 ```
 
 Verify the token points to the right channel:

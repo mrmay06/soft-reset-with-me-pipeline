@@ -151,7 +151,7 @@ Videos generated after this point will NOT be uploaded until you re-authenticate
 Steps to fix:
 1. On your Mac, run:
    cd /Users/mayurdusane/Documents/finance-shorts-pipeline
-   python tools/start_youtube_reauth.py
+   python3 tools/start_youtube_reauth.py
 2. Log in with the correct YouTube channel Google account and click Allow
 3. Re-run the failed pipeline
 
