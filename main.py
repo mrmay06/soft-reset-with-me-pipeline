@@ -31,6 +31,7 @@ from modules.uploader import run_upload, run_upload_mock
 from modules.logger import run_logger, run_logger_mock
 from modules.creative_judge import run_creative_judge, run_creative_judge_mock
 from modules.video_audit_agent import run_video_audit, run_video_audit_mock
+from utils.youtube_preflight import check_youtube_refresh_token
 
 
 # ── Checkpoint helpers ──────────────────────────────────────────────────────
@@ -128,6 +129,9 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
     print(f" Run dir:  {run_dir}")
     print(f" Strategy: {strategy_version}  |  Slot: {experiment_label}" + (f"  |  Exp: {experiment_id}" if experiment_id else ""))
     print(f"{'='*50}\n")
+
+    if not mock and not skip_upload:
+        check_youtube_refresh_token("Shorts uploader")
 
     performance_fn = run_performance_sync_mock    if mock else run_performance_sync
     research_fn   = run_research_mock         if mock else run_research

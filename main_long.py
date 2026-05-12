@@ -26,6 +26,7 @@ from modules.longform_thumbnail_agent import run_longform_thumbnail, run_longfor
 from modules.longform_uploader import run_longform_upload, run_longform_upload_mock
 from modules.longform_logger import run_longform_logger, run_longform_logger_mock
 from modules.creative_judge import run_creative_judge, run_creative_judge_mock
+from utils.youtube_preflight import check_youtube_refresh_token
 
 
 def _checkpoint(run_dir: str, *paths: str) -> bool:
@@ -172,6 +173,9 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
     print(f" Run dir:  {run_dir}")
     print(f" Strategy: {strategy_version}  |  Slot: {experiment_label}" + (f"  |  Exp: {experiment_id}" if experiment_id else ""))
     print(f"{'=' * 58}\n")
+
+    if not mock:
+        check_youtube_refresh_token("Longform uploader")
 
     performance_fn = run_performance_sync_mock if mock else run_performance_sync
     research_fn = run_longform_research_mock if mock else run_longform_research
