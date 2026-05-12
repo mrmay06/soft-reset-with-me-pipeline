@@ -1,11 +1,177 @@
 {
-  "generated_at": "2026-05-11T23:33:46Z",
+  "generated_at": "2026-05-12T19:13:25Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-03-26",
-  "end_date": "2026-05-10",
+  "start_date": "2026-03-27",
+  "end_date": "2026-05-11",
   "videos": [
+    {
+      "video_id": "20260510_233328",
+      "published_date": "2026-05-10",
+      "status": "uploaded",
+      "topic": "Soft does not mean weak",
+      "category": "self-worth shifts",
+      "angle_type": "truth drop",
+      "total_score": 18,
+      "source_name": "Authenticity and Psychological Safety (general principle)",
+      "source_basis": "Concepts of authenticity and psychological safety in relationships and self-worth.",
+      "source_url": null,
+      "confidence_level": "observational",
+      "content_format": "truth_drop",
+      "emotional_trigger": "The exhaustion of constantly performing strength or building walls to protect oneself in past or current relationships.",
+      "psych_concept": "Authenticity, psychological safety, emotional labor, boundary-setting",
+      "core_claim": "It can mean you stopped performing hardness for unsafe people",
+      "editorial_seed": "Many confuse emotional softness with vulnerability or weakness. But for those who've had to build walls, letting them down is a profound act of self-trust. It's a statement that you no longer need to perform strength for those who drain it.",
+      "only_soft_reset_line": "You were never hard. You were just tired of being unprotected.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You stopped being hard. That scared you more than it should.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 68,
+      "estimated_duration_sec": 21,
+      "thumbnail_text": "Soft \u2260 Weak",
+      "content_fingerprint": "soft does not mean weak you stopped being hard that scared you more than it should the exhaustion of constantly performing strength or building walls to protect oneself in past or current relationships authenticity psychological safety emotional labor boundary setting it can mean you stopped performing hardness for unsafe people you were never hard you were just tired of being unprotected",
+      "title": "You stopped being hard. That felt SCARY",
+      "youtube_video_id": "uW6XK_fyauU",
+      "youtube_url": "https://youtube.com/shorts/uW6XK_fyauU",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W19",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth drop",
+        "category": "self-worth shifts",
+        "topic_cluster": "Soft does not mean weak",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and directly addresses a potential internal conflict, creating immediate curiosity."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and easy to understand, delivering a clear message within a short word count."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "Establishes a clear perspective that challenges conventional notions of strength."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "Identifies 'hardness' as the 'villain' and its perceived strength as the mechanism, which is understandable."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "No explicit or implicit CTA present in the script or metadata."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the hook and the core message of the video. The addition of 'SCARY' enhances intrigue."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively summarizes the core theme and provides a compelling reason to watch, setting the right expectation."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumed good sync based on typical SRWM style, but without seeing the video, it's a general assessment."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Assumed alignment with the channel's aesthetic and message, brand images likely support the theme."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "A concept that could visually represent the shift from 'hard' to 'soft' would be strong. Needs to be abstract yet relatable."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The short script implies a deliberate and impactful pacing is intended, suitable for a truth drop."
+        },
+        "brand_consistency": {
+          "score": 10,
+          "reason": "The theme of embracing softness as strength aligns perfectly with the channel's self-growth and relationship focus."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is introspective and subjective, posing no factual claims that could be disputed or violate policies."
+        }
+      },
+      "judge_composite_score": 7.2,
+      "strongest_element": "brand_consistency",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers an empathetic message through its strong voiceover, well-chosen music, and excellent captioning, establishing a consistent and reflective emotional tone. The hook is compelling and aligns well with the video's title, drawing viewers in with an emotional paradox. However, the visual specificity is occasionally lacking, with some generic stock footage failing to fully deepen the narrative or represent the relational dynamics implied by the script, which could lead to viewer disengagement in certain segments. Future videos would benefit from more deliberate visual choices that directly enhance the emotional and thematic nuances of the script.",
+      "video_audit_strengths": [
+        "The consistent use of a subtle, filmic visual filter across all clips enhances the overall aesthetic and brand identity.",
+        "The voiceover artist's delivery is exceptional, conveying empathy and wisdom, which is crucial for the channel's 'truth drop' format.",
+        "The careful selection of background music effectively amplifies the emotional resonance of the script without overpowering it."
+      ],
+      "video_audit_dropoff_causes": [
+        "Some stock footage clips are too generic and don't contribute meaningfully to the unique emotional journey described, potentially leading to visual disengagement.",
+        "The lack of visual representation of 'unsafe people' or relational dynamics, despite the script hinting at it, might make the narrative feel less tangible or relatable to the specific context.",
+        "A few shots feel held slightly too long without sufficient visual progression or specific metaphorical meaning, which can cause attention to wane."
+      ],
+      "video_audit_repeat_next": [
+        "The quality and tone of the voiceover narration.",
+        "The thoughtful selection and mixing of background music.",
+        "The clear, well-paced, and accessible captioning style.",
+        "The powerful loopback structure of the script, reinforcing the core message at the end."
+      ],
+      "video_audit_reduce_next": [
+        "Reliance on overly generic stock footage that lacks specific emotional or narrative connection to the script.",
+        "Shots of static or unmoving scenes that don't visually progress the story or emotion.",
+        "Abstract visuals when more specific metaphors could illustrate the 'hardness' or 'protection' concepts."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Emotional Paradox",
+        "thumbnail_type": "Text Overlay - Emotional Truth",
+        "visual_style_mix": "Cinematic Aesthetic, Reflective Vignette, Solo Introspection",
+        "narrative_format": "Personal Reframe",
+        "character_used": "Empathetic Narrator, Solitary Figures"
+      },
+      "metrics": {
+        "views": 318,
+        "engagedViews": 69,
+        "averageViewDuration": 13,
+        "averageViewPercentage": 38.1,
+        "likes": 4,
+        "comments": 0,
+        "shares": 2,
+        "subscribersGained": 0
+      },
+      "composite_score": 26.41,
+      "performance_score": 26.41,
+      "score_version": 1,
+      "hook_score": 21.7,
+      "hold_score": 38.1,
+      "resonance_score": 17.39,
+      "resonance_per_engaged": 0.1739,
+      "resonance_per_view": 0.0377,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 83.45,
+      "analytics_fetched_at": "2026-05-12T19:13:25Z",
+      "analytics_days_old": 2,
+      "data_available": true
+    },
     {
       "video_id": "20260506_023743",
       "published_date": "2026-05-06",
@@ -61,6 +227,173 @@
       "analytics_fetched_at": "2026-05-08T07:29:02Z",
       "analytics_days_old": 2,
       "score_version": 1
+    },
+    {
+      "video_id": "20260510_153457",
+      "published_date": "2026-05-10",
+      "status": "uploaded",
+      "topic": "When they move from wanting to know you to subtly wanting to 'fix' you.",
+      "category": "Relationship Patterns",
+      "angle_type": "specific_scenario",
+      "total_score": 19,
+      "source_name": "Relationship psychology / Therapist consensus",
+      "source_basis": "Principles of active listening, validation, and emotional safety in interpersonal communication.",
+      "source_url": null,
+      "confidence_level": "observational",
+      "content_format": "specific_scenario",
+      "emotional_trigger": "Feeling misunderstood, unvalidated, or like a project in a relationship.",
+      "psych_concept": "Validation and empathy in communication.",
+      "core_claim": "True connection is built on empathy and understanding, not on one person trying to 'fix' the other.",
+      "editorial_seed": "It starts subtly. They listened, they understood. Then, slowly, every share becomes an opportunity for them to tell you what you *should* do, or what's 'wrong' with your perspective. You start to feel like a project, not a partner.",
+      "only_soft_reset_line": "You stopped sharing. Not because you closed off. Because every time you opened up, they handed you a fix instead of staying in the room with you.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If you've started editing what you share with someone, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "word_count outside target 45-75",
+      "word_count": 79,
+      "estimated_duration_sec": 5,
+      "thumbnail_text": "When You Became Their Project",
+      "content_fingerprint": "when they move from wanting to know you to subtly wanting to fix you if you ve started editing what you share with someone this is for you feeling misunderstood unvalidated or like a project in a relationship validation and empathy in communication true connection is built on empathy and understanding not on one person trying to fix the other you stopped sharing not because you closed off because every time you opened up they handed you a fix instead of staying in the room with you",
+      "title": "They want to fix you, not know you anymore",
+      "youtube_video_id": "mEoAgeT9ls8",
+      "youtube_url": "https://youtube.com/shorts/mEoAgeT9ls8",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 9,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W19",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "specific_scenario",
+        "category": "Relationship Patterns",
+        "topic_cluster": "When they move from wanting to know you to subtly wanting to",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and directly addresses a specific behavior, creating immediate relatability for those experiencing it."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and clear message, easily understandable within the short video format."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "Strong, distinct perspective on relationship dynamics, clearly articulating the channel's viewpoint."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Identifies a specific 'villain' mechanism (editing what you share) and its underlying motivation (fixing vs. knowing)."
+        },
+        "cta_quality": {
+          "score": 2,
+          "reason": "No explicit Call to Action in the provided details. Needs to be added."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurate and reflective of the script's core message and the described scenario."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Effectively summarizes the video's theme and expands on the title, providing good context."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Relies on stock footage and brand images; effective sync will depend heavily on the specific choices made during editing."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The strength depends on how well the brand images and stock videos visually represent the abstract concepts of 'fixing' versus 'knowing'."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "Needs to be created, but the title and hook provide a strong concept to build from (e.g., contrasting imagery of forced change vs. acceptance)."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "Short script is ideal for controlled, deliberate pacing suitable for a faceless channel's message delivery."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The theme aligns well with relationship patterns and self-growth, fitting the channel's established niche."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content deals with subjective relationship dynamics and psychological interpretations, posing no significant factual risk."
+        }
+      },
+      "judge_composite_score": 7.3,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively communicates a subtle relationship dynamic through a strong, empathetic voiceover and well-chosen background music, consistent with the Soft Reset With Me brand. The core message is highly relatable and some visual metaphors are impactful. However, significant issues with incorrect and fragmented captions in the crucial opening seconds, alongside a reliance on some generic stock footage, likely hinder viewer retention and the overall clarity of the message. Addressing these production details, particularly the caption accuracy, will significantly enhance content quality.",
+      "video_audit_strengths": [
+        "The voiceover delivery is exceptional, conveying genuine empathy and understanding.",
+        "The ability to translate complex emotional experiences into relatable, specific scenarios is a hallmark strength.",
+        "Effective use of specific visual metaphors (like the 'chair' and 'fix' object) that powerfully convey abstract concepts.",
+        "Consistent and calming brand aesthetic (music, text style, end screen)."
+      ],
+      "video_audit_dropoff_causes": [
+        "Incorrect and fragmented captions in the crucial opening seconds, creating immediate confusion and a disjointed experience.",
+        "Use of generic stock footage that doesn't always deeply connect with the spoken message, potentially causing viewer disengagement.",
+        "The word-by-word captioning, combined with frequent visual cuts, can make the content feel rushed or hard to absorb for some viewers."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the empathetic and validating voiceover style.",
+        "Continue to explore subtle, highly relatable relationship dynamics and emotional patterns.",
+        "Utilize specific, conceptual metaphors in visuals to deepen the message.",
+        "Keep the consistent Soft Reset With Me brand identity (music, overall feel)."
+      ],
+      "video_audit_reduce_next": [
+        "Eliminate all caption errors and ensure captions accurately reflect the spoken words.",
+        "Minimize the use of generic, non-specific stock footage, prioritizing visuals that add direct meaning or metaphor.",
+        "Experiment with slightly slower caption pacing (e.g., phrase-by-phrase) or more dynamic visuals to compensate for rapid word-by-word display."
+      ],
+      "video_audit_tags": {
+        "hook_type": "relatable_experience",
+        "thumbnail_type": "conceptual_metaphor",
+        "visual_style_mix": "cinematic_emotional_minimalist",
+        "narrative_format": "insight_revelation",
+        "character_used": "supportive_guide"
+      },
+      "metrics": {
+        "views": 29,
+        "engagedViews": 3,
+        "averageViewDuration": 10,
+        "averageViewPercentage": 28.360000000000003,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 14.97,
+      "performance_score": 14.97,
+      "score_version": 1,
+      "hook_score": 10.34,
+      "hold_score": 28.36,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 49.23,
+      "analytics_fetched_at": "2026-05-12T19:13:25Z",
+      "analytics_days_old": 2,
+      "data_available": true
     },
     {
       "video_id": "20260505_172553",
