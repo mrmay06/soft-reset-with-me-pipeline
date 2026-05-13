@@ -1718,5 +1718,145 @@
       "narrative_format": "Insight/Psychology Drop",
       "character_used": "Introspective Thinker"
     }
+  },
+  {
+    "video_id": "20260513_012611",
+    "published_date": "2026-05-13",
+    "status": "uploaded",
+    "topic": "Some people leave because they were never ready to stay",
+    "category": "healing arcs",
+    "angle_type": "truth drop",
+    "total_score": 18,
+    "source_name": "John Bowlby, Cindy Hazan & Phillip Shaver (Adult Attachment Theory)",
+    "source_basis": "Attachment theory, specifically concepts of commitment avoidance and fear of intimacy often associated with avoidant attachment styles.",
+    "source_url": "https://www.simplypsychology.org/attachment.html",
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "feeling unworthy after being left, confusion about a breakup, questions about 'what went wrong'",
+    "psych_concept": "readiness for intimacy/commitment, avoidant attachment",
+    "core_claim": "Their leaving says more about their readiness than your worth",
+    "editorial_seed": "When someone leaves, it's natural to internalize it and question your worth. But often, their departure isn't a reflection of you, but of their own unresolved issues or inability to commit. Understanding this truth can be a powerful step in reclaiming your self-worth and healing.",
+    "only_soft_reset_line": "Some people leave not because you weren't enough, but because closeness itself scared them.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You think you did something wrong. You might have just gotten close.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 70,
+    "estimated_duration_sec": 24,
+    "thumbnail_text": "They left. It wasn't about you.",
+    "content_fingerprint": "some people leave because they were never ready to stay you think you did something wrong you might have just gotten close feeling unworthy after being left confusion about a breakup questions about what went wrong readiness for intimacy commitment avoidant attachment their leaving says more about their readiness than your worth some people leave not because you weren t enough but because closeness itself scared them",
+    "title": "You got close. They weren't ready to STAY",
+    "youtube_video_id": "Vk7hqFLivGs",
+    "youtube_url": "https://youtube.com/shorts/Vk7hqFLivGs",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 9,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "truth drop",
+      "category": "healing arcs",
+      "topic_cluster": "Some people leave because they were never ready to stay",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 9
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Intriguing and relatable, immediately addresses a common feeling of self-blame in relationships."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and easy to understand, delivers the core message effectively within the short word count."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Clear and empathetic perspective, aligning with the channel's focus on healing and self-growth."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'villain' is the other person's unreadiness, which is somewhat specific but could be elaborated on slightly more."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "There is no explicit CTA in the provided details, which is a missed opportunity for engagement."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurately reflects the script's premise \u2013 getting close and the other person not being ready to stay."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Effectively summarizes the video's premise and targets the intended audience, encouraging them to watch."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed good sync, but without seeing the video, it's hard to judge precisely. Stock footage needs careful selection to match the emotional tone."
+      },
+      "image_direction_strength": {
+        "score": 8,
+        "reason": "The use of brand images suggests a focus on consistent branding, likely supporting the emotional message."
+      },
+      "thumbnail_concept": {
+        "score": 0,
+        "reason": "No thumbnail concept provided for scoring."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "Script is short and direct, suitable for a clear and measured delivery common in this niche."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The number of brand images suggests an effort to maintain brand identity, which is positive."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No factual claims are made that carry significant policy risk; it's a subjective relationship interpretation."
+      }
+    },
+    "judge_composite_score": 7.38,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys an empathetic message through its clear voiceover, well-paced captions, and reflective music. The hook strongly aligns with the title, immediately drawing viewers into the core message. However, the visual journey is undermined by a jarring, thematically inconsistent shot of a woman with retro phones, and some other visuals lack the specificity needed to deepen the emotional connection, potentially causing viewer drop-off. Refining visual choices to maintain a consistent introspective and healing aesthetic will significantly enhance future content.",
+    "video_audit_strengths": [
+      "The consistent, empathetic voiceover and carefully chosen background music create a strong, soothing auditory experience.",
+      "Excellent caption pacing and typography ensure high readability and message absorption.",
+      "The direct alignment between the hook, title, and core message provides immediate clarity and relevance for the target audience."
+    ],
+    "video_audit_dropoff_causes": [
+      "The jarring visual change at 0:09-0:12 (woman with retro phones) which completely breaks the emotional and thematic flow of the video.",
+      "Some overly generic stock footage choices (e.g., empty coffee cup) that don't deeply resonate with the specific emotional nuance of the message, potentially leading to disengagement."
+    ],
+    "video_audit_repeat_next": [
+      "Continue using the calm, empathetic voiceover and reflective background music.",
+      "Maintain the strong alignment between the video hook and title.",
+      "Keep the effective caption pacing and clear typography."
+    ],
+    "video_audit_reduce_next": [
+      "Reduce the use of visually jarring or thematically disconnected stock footage (e.g., the retro phones visual).",
+      "Minimize generic visuals that don't add specific emotional or metaphorical depth to the script.",
+      "Avoid extreme shifts in visual style or brightness within the same emotional arc of the video."
+    ],
+    "video_audit_tags": {
+      "hook_type": "reframe_self_blame",
+      "thumbnail_type": "text_overlay_melancholic",
+      "visual_style_mix": "introspective_moody_cinematic",
+      "narrative_format": "truth_drop_healing",
+      "character_used": "narrator_only"
+    }
   }
 ]
