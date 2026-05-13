@@ -1858,5 +1858,147 @@
       "narrative_format": "truth_drop_healing",
       "character_used": "narrator_only"
     }
+  },
+  {
+    "video_id": "20260513_170132",
+    "published_date": "2026-05-13",
+    "status": "uploaded",
+    "topic": "You are not clingy \u2014 you just have not had consistent people",
+    "category": "psychology drops",
+    "angle_type": "reframe",
+    "total_score": 18,
+    "source_name": "Attachment Theory (John Bowlby, Mary Ainsworth)",
+    "source_basis": "Attachment Theory principles detailing how inconsistent caregiving or relationship experiences can lead to anxious attachment and heightened needs for reassurance.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "reframe",
+    "emotional_trigger": "Feeling 'too much' or anxious in relationships; self-labeling as 'clingy' or 'needy'.",
+    "psych_concept": "Attachment Theory (Anxious Attachment), Nervous System Regulation",
+    "core_claim": "Needing reassurance is not weakness when the people around you have been inconsistent.",
+    "editorial_seed": "It\u2019s easy to internalize the label of 'clingy' when you crave stability. But your desire for reassurance isn't a flaw; it\u2019s a learned response to inconsistent patterns from past relationships. It's your nervous system trying to protect you.",
+    "only_soft_reset_line": "Your nervous system learned to panic because people kept making panic reasonable.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "If one unanswered text can ruin your entire evening, this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 61,
+    "estimated_duration_sec": 24,
+    "thumbnail_text": "You're not clingy. You're under-consistencied.",
+    "content_fingerprint": "you are not clingy you just have not had consistent people if one unanswered text can ruin your entire evening this is for you feeling too much or anxious in relationships self labeling as clingy or needy attachment theory anxious attachment nervous system regulation needing reassurance is not weakness when the people around you have been inconsistent your nervous system learned to panic because people kept making panic reasonable",
+    "title": "Silence still feels like abandonment",
+    "youtube_video_id": "lrksCVdUGpY",
+    "youtube_url": "https://youtube.com/shorts/lrksCVdUGpY",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 9,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "fragment",
+      "angle_type": "reframe",
+      "category": "psychology drops",
+      "topic_cluster": "You are not clingy \u2014 you just have not had consistent people",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 9
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Directly addresses a common anxiety and targets a specific emotional state, making it highly relatable."
+      },
+      "script_clarity": {
+        "score": 10,
+        "reason": "Extremely concise and clear. Every word serves a purpose in delivering the core message within a very short timeframe."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The reframe angle is present, shifting the perspective from personal failing to unmet needs, which aligns with the channel's typical approach."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'unanswered text' is a specific mechanism, but the core villain is 'overthinking' or 'abandonment fear', which could be slightly more defined."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "There is no explicit CTA in the provided details, which is a missed opportunity for engagement."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is evocative and accurately reflects the script's theme of interpreting silence as a sign of abandonment or unmet needs."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Effectively summarizes the video's premise, hooks the target audience ('quiet overthinkers'), and sets the reframe context."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming stock videos and brand images will complement the short, impactful script, sync should be decent, but needs careful execution to enhance the message."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "With 3 brand images and 6 stock videos, there's potential for strong visual storytelling if chosen strategically to match the emotional tone."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "Likely a strong concept that will convey the mood and topic (e.g., a phone with an unanswered message, a pensive expression) effectively."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The script is very short (61 words), allowing for a deliberate, impactful pace that suits the reflective, psychological nature of the content."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The reframe angle and focus on psychological insights fit the 'psychology drops' category and the channel's typical content."
+      },
+      "policy_factual_risk": {
+        "score": 9,
+        "reason": "The content reframes a common emotional response rather than making objective factual claims about relationships or psychology, thus posing minimal risk."
+      }
+    },
+    "judge_composite_score": 8,
+    "strongest_element": "Hook and Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "The Short excels at hooking viewers with a relatable emotional pain point, supported by an immediate, empathetic voiceover and perfectly aligned initial visuals. Its audio mix and consistent emotional tone are outstanding, establishing a strong 'Soft Reset With Me' brand identity. However, the video's visual specificity diminishes towards the end, utilizing more generic footage that fails to fully amplify the powerful psychological reframe, potentially leading to a slight drop-off in viewer engagement during the resolution of the message.",
+    "video_audit_strengths": [
+      "The exceptional quality and empathetic delivery of the voiceover, which consistently carries the brand's tone and message.",
+      "The strong initial visual storytelling that immediately captures the viewer's emotional state and sets a compelling mood.",
+      "The seamless integration of music and voiceover, creating a consistently high-quality and branded auditory experience.",
+      "Effective word-by-word captioning, which enhances accessibility and allows for deeper engagement with the spoken words."
+    ],
+    "video_audit_dropoff_causes": [
+      "Decreased visual specificity in the latter half, particularly for abstract concepts like 'adaptation' and 'you just have not had enough,' which might lead to visual disengagement.",
+      "Lack of a strong visual resolution or powerful imagery for the reframe, making the end less impactful visually than the initial problem setup.",
+      "The absence of a clear visual call-to-action to 'Save this if it landed' from the script, which could reduce immediate engagement post-watch."
+    ],
+    "video_audit_repeat_next": [
+      "The use of emotionally resonant and metaphorical visuals for the problem statement (e.g., the dilapidated hallway for 'disappears without warning').",
+      "The consistent, empathetic, and clear voiceover delivery.",
+      "The thoughtful choice and subtle mixing of background music that reinforces the brand's gentle and reflective tone.",
+      "The clear and well-paced word-by-word captioning."
+    ],
+    "video_audit_reduce_next": [
+      "Reliance on generic 'cozy' or 'lifestyle' stock footage for the resolution or insight portions of the script, as these clips often lack the specificity needed to visually amplify complex psychological concepts.",
+      "Visuals that are merely aesthetically pleasing but don't add specific contextual or emotional depth to the accompanying spoken text, especially during critical reframe moments."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Problem/Pain Point",
+      "thumbnail_type": "Mood/Atmospheric",
+      "visual_style_mix": "Moody Cinematic, Introspective Lifestyle",
+      "narrative_format": "Reframe, Validation, Insight",
+      "character_used": "Everyperson, Thoughtful Individual"
+    }
   }
 ]
