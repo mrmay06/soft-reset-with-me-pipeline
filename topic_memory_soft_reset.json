@@ -2000,5 +2000,148 @@
       "narrative_format": "Reframe, Validation, Insight",
       "character_used": "Everyperson, Thoughtful Individual"
     }
+  },
+  {
+    "video_id": "20260513_234005",
+    "published_date": "2026-05-13",
+    "status": "uploaded",
+    "topic": "Silence in a relationship is not always neutral",
+    "category": "conversation truths",
+    "angle_type": "truth_drop",
+    "total_score": 20,
+    "source_name": "Gottman Institute / Relationship Psychology",
+    "source_basis": "The concept of stonewalling as a destructive communication pattern (Gottman Institute), and emotional withdrawal as a form of non-verbal communication that impacts perceived self-worth.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Being ignored, stonewalled, or ghosted in a relationship; feeling unimportant when a partner withdraws without explanation.",
+    "psych_concept": "Emotional withdrawal, stonewalling, passive communication, rejection sensitivity",
+    "core_claim": "Withdrawal without explanation is still a communication \u2014 it says you do not matter enough",
+    "editorial_seed": "When someone pulls away without a word, it's not a mystery for you to solve. It's a statement about their emotional capacity and how they value your connection. You deserve clear communication, not the burden of interpreting absence.",
+    "only_soft_reset_line": "Their silence was not a gap. It was a sentence.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "When someone goes quiet, that silence is already telling you something.",
+    "hook_quality": "weak",
+    "script_version": "2",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 68,
+    "estimated_duration_sec": 22,
+    "thumbnail_text": "Their silence was already an answer.",
+    "content_fingerprint": "silence in a relationship is not always neutral when someone goes quiet that silence is already telling you something being ignored stonewalled or ghosted in a relationship feeling unimportant when a partner withdraws without explanation emotional withdrawal stonewalling passive communication rejection sensitivity withdrawal without explanation is still a communication it says you do not matter enough their silence was not a gap it was a sentence",
+    "title": "When they go quiet, it's NOT just quiet",
+    "youtube_video_id": "GIcxZYZ6p8s",
+    "youtube_url": "https://youtube.com/shorts/GIcxZYZ6p8s",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "truth_drop",
+      "category": "conversation truths",
+      "topic_cluster": "Silence in a relationship is not always neutral",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Intriguing and relatable, immediately grabs attention by highlighting a common relationship dynamic."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and direct, the message about the meaning of silence is clearly articulated within the word count."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Establishes a clear perspective that silence in relationships is not passive but an active form of communication."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "While the 'villain' isn't explicit, the concept of 'going quiet' as a negative mechanism impacting connection is clear."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "No explicit CTA present in the script or description provided."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurately reflects the hook and the core message of the video \u2013 that silence has deeper implications."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Effectively expands on the hook, posing a question that invites viewer engagement and clarifies the video's topic."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed to be adequate as stock videos and brand images are mentioned, but direct sync cannot be fully assessed without seeing the video."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images and stock videos suggest a curated visual experience, likely supporting the narrative, but strength is medium."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "The concept is strong given the title and hook, implying a visual that represents the 'unspoken' or a significant silence."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The short script (68 words) is easily manageable for a 40s video, suggesting good pacing potential."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The topic and angle type ('conversation truths', 'truth_drop') align well with a relationship/self-growth channel focused on insights."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content discusses relationship dynamics and communication, which carries no apparent factual or policy risk. It's subjective advice."
+      }
+    },
+    "judge_composite_score": 7.5,
+    "strongest_element": "script_clarity",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short excels in its audio production, script delivery, and captioning, all of which contribute to a powerful and engaging message about relationship dynamics. The hook and title alignment are also outstanding, immediately drawing the viewer in. However, the video suffers significantly from inconsistent visual choices; several clips are completely unrelated to the topic or contradict the emotional tone, creating jarring interruptions that are likely to cause viewer drop-off. Refining the visual curation to ensure every clip supports the overarching theme is crucial for future videos.",
+    "video_audit_strengths": [
+      "The clarity and impact of the voiceover delivery.",
+      "The effective use of a melancholic instrumental track to establish mood.",
+      "The perfect synchronization and pacing of on-screen captions.",
+      "The strong, direct, and relatable core message delivered by the script."
+    ],
+    "video_audit_dropoff_causes": [
+      "Jarring and irrelevant visual clips that break thematic consistency (e.g., the hand counting clip, the smiling woman, the 'TEAM WORK' clipboard).",
+      "Visuals that contradict the emotional tone and message of the voiceover, causing confusion or disengagement."
+    ],
+    "video_audit_repeat_next": [
+      "Maintain the high quality of voiceover delivery and script clarity.",
+      "Continue with a well-balanced audio mix of voice and background music.",
+      "Utilize precise, word-by-word caption pacing.",
+      "Employ direct and engaging hooks that align seamlessly with the title.",
+      "Select abstract, moody, or reflective visuals that consistently support the emotional theme."
+    ],
+    "video_audit_reduce_next": [
+      "Eliminate stock footage clips that are visually or thematically irrelevant to the core message.",
+      "Avoid visuals that contradict the emotional tone or specific words being spoken in the script.",
+      "Minimize abrupt changes in visual style that disrupt viewer immersion."
+    ],
+    "video_audit_tags": {
+      "hook_type": "truth_drop",
+      "thumbnail_type": "text_overlay",
+      "visual_style_mix": "abstract_moody_reflective",
+      "narrative_format": "insight_sharing",
+      "character_used": "female_narrator"
+    }
   }
 ]
