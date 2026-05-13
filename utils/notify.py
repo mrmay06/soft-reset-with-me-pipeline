@@ -99,6 +99,13 @@ def send_longform_upload_confirmation(
         output_path = os.path.join(run_dir, output_file)
         if os.path.exists(output_path):
             attachments.append(output_path)
+        prompt_file = output_item.get("prompt_file") or f"07_longform_thumbnail_{variant_id}_prompt.txt"
+        prompt_path = os.path.join(run_dir, prompt_file)
+        prompt_preview = ""
+        if os.path.exists(prompt_path):
+            attachments.append(prompt_path)
+            with open(prompt_path, "r", encoding="utf-8") as f:
+                prompt_preview = f.read().strip()[:1200]
         marker = "PRIMARY" if variant_id == primary_id else "ALT"
         line1 = thumb_item.get("line1", "")
         line2 = thumb_item.get("line2", "")
@@ -110,8 +117,12 @@ def send_longform_upload_confirmation(
 Variant {variant_id} ({marker})
 Title:     {title_item.get("title", "")}
 Angle:     {title_item.get("angle", thumb_item.get("angle", ""))}
+Structure: {output_item.get("structure", thumb_item.get("structure", ""))}
 Thumbnail: {thumb_copy}
 File:      {output_file}
+Prompt:    {prompt_file}
+Prompt preview:
+{prompt_preview}
 """
         )
 
@@ -125,6 +136,7 @@ Time:        {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}
 
 YouTube Studio Test & Compare package:
 Upload the attached A/B/C thumbnails in this order if you want to run native thumbnail testing.
+The exact image-generation prompt files are attached beside the thumbnail PNGs.
 YouTube's public API only sets one thumbnail, so the pipeline uploaded the primary variant and attached all variants here for manual Studio testing.
 
 {'='*48}

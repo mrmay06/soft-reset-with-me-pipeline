@@ -241,10 +241,12 @@ def _fallback_variants(research: dict, max_title_chars: int) -> dict:
     for item in thumbs:
         line1 = _clean_thumb_line1(item[3])
         line2 = _clean_thumb_line2(item[4] if len(item) > 4 else "this is why it hurts")
+        structure = {"A": "typography", "B": "face_text", "C": "split"}[item[0]]
         thumb_list.append({
             "id": item[0],
             "angle": item[1],
             "pattern": item[2],
+            "structure": structure,
             "line1": line1,
             "line2": line2,
             "thumbnail_text": _combine_thumb_copy(line1, line2),
@@ -302,6 +304,7 @@ def _validate_packaging(raw: dict, research: dict, max_title_chars: int) -> dict
                 "id": vid,
                 "angle": str(item.get("angle", "")).lower() or {"A": "seo", "B": "emotional_hook", "C": "counter_intuitive"}[vid],
                 "pattern": str(item.get("pattern", "")).strip() or fallback["thumbnail_variants"][ord(vid) - 65]["pattern"],
+                "structure": str(item.get("structure", "")).strip().lower() or {"A": "typography", "B": "face_text", "C": "split"}[vid],
                 "line1": line1,
                 "line2": line2,
                 "thumbnail_text": text,
@@ -310,6 +313,10 @@ def _validate_packaging(raw: dict, research: dict, max_title_chars: int) -> dict
             ai_prompt = str(item.get("prompt", "")).strip()
             if ai_prompt:
                 entry["visual_prompt"] = ai_prompt
+            for key in ("subject_gender", "scene_left", "scene_right", "portrait_scene"):
+                value = str(item.get(key, "")).strip()
+                if value:
+                    entry[key] = value
             thumb_by_id[vid] = entry
     for item in fallback["thumbnail_variants"]:
         fb_entry = {k: v for k, v in item.items() if k != "prompt"}

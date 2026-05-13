@@ -81,16 +81,16 @@ Bad:
 
 VISUAL PROMPT RULES (for AI image generation — text is baked on by PIL post-generation):
 - The generated image must contain NO TEXT. The pipeline adds text later.
-- One face. One background. One text-zone. Maximum three visual elements total.
-- Face occupies the right 55-65% of the frame.
-- Left 35-40% is clean dark negative space for text.
-- Single young adult face, mid-twenties to early thirties.
-- Expression: quiet devastated recognition. Heavy eyes, direct camera contact, lips softly parted or gently closed. No smile, no open crying, no shocked reaction.
-- Lighting: cool-neutral diffused overcast window light. No warm amber, no golden hour, no candlelight, no orange cast.
-- Background: out of focus neutral dark gray, no identifiable location, no objects, no logos, no UI chrome.
-- Real skin texture, subtle film grain, slightly desaturated prestige drama color grade.
-- No important elements in the bottom-right 15%.
-- 1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality.
+- Canvas is 1920x1080, 16:9 horizontal. Final output must stay under 2MB.
+- Safe zone: no important elements in the bottom-right 20% or bottom-left 15%.
+- Use cool-neutral cinematic color. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, or watermarks.
+- Use exactly one thumbnail structure per variant:
+  A = "typography" — pure typography on dark charcoal, no photo, premium editorial book-cover feel.
+  B = "face_text" — one young adult face on right 58%, clean dark text zone on left 42%.
+  C = "split" — before/after two-plate composite, left problem state and right clearer resolution state.
+- For face_text: single young adult face, mid-twenties to early thirties. Expression: quiet devastated recognition. Heavy eyes, gaze slightly toward the left text zone, no smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade.
+- For split: provide scene_left and scene_right. Left is unresolved/cold/dark. Right is clear/cool-neutral/steady but not happy or bright.
+- Each variant should include structure plus the fields needed for that structure. Do not write text into the image prompt; text is handled by line1 and line2.
 
 ---
 
@@ -167,29 +167,36 @@ Return ONLY valid JSON:
     {{
       "id": "A",
       "angle": "seo",
-      "pattern": "one_face_right_negative_space_left",
+      "pattern": "pure_typography",
+      "structure": "typography",
       "line1": "3-4 WORD GUT PUNCH, NO FULL STOP",
       "line2": "4-6 word whisper that deepens it",
       "thumbnail_text": "legacy combined line1 + line2 for compatibility",
-      "prompt": "visual-only prompt with one face on right, empty dark left text zone, no text"
+      "prompt": "visual-only prompt for premium dark editorial typography background, no text generated"
     }},
     {{
       "id": "B",
       "angle": "emotional_hook",
-      "pattern": "one_face_right_negative_space_left",
+      "pattern": "face_right_text_left",
+      "structure": "face_text",
       "line1": "3-4 WORD GUT PUNCH, NO FULL STOP",
       "line2": "4-6 word whisper that deepens it",
       "thumbnail_text": "legacy combined line1 + line2 for compatibility",
+      "subject_gender": "woman or man",
+      "portrait_scene": "cool-neutral portrait scene with empty dark left text zone, no text",
       "prompt": "visual-only prompt with one face on right, empty dark left text zone, no text"
     }},
     {{
       "id": "C",
       "angle": "counter_intuitive",
-      "pattern": "one_face_right_negative_space_left",
+      "pattern": "split_screen",
+      "structure": "split",
       "line1": "3-4 WORD GUT PUNCH, NO FULL STOP",
       "line2": "4-6 word whisper that deepens it",
       "thumbnail_text": "legacy combined line1 + line2 for compatibility",
-      "prompt": "visual-only prompt with one face on right, empty dark left text zone, no text"
+      "scene_left": "problem-state scene, cold dark, no text",
+      "scene_right": "resolution-state scene, cool-neutral clarity, no text",
+      "prompt": "visual-only prompt for two-plate split-screen background, no text"
     }}
   ]
 }}
