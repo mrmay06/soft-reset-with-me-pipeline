@@ -1,11 +1,66 @@
 {
-  "generated_at": "2026-05-13T23:40:05Z",
+  "generated_at": "2026-05-14T17:21:43Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-03-28",
-  "end_date": "2026-05-12",
+  "start_date": "2026-03-29",
+  "end_date": "2026-05-13",
   "videos": [
+    {
+      "video_id": "20260505_172553",
+      "published_date": "2026-05-05",
+      "status": "uploaded",
+      "topic": "That specific micro-anxiety of checking if *they* watched your story or saw your casual message, and the hit to your self-worth.",
+      "category": "identity and growth",
+      "angle_type": "specific_scenario",
+      "total_score": 19,
+      "source_name": "Widely accepted psychological principles",
+      "content_format": "reframe",
+      "emotional_trigger": "checking story views / waiting for message reply",
+      "psych_concept": "external validation, social comparison",
+      "core_claim": "The immediate emotional reaction to checking passive digital interactions reveals a deeper dependency on external validation that can quietly erode your self-worth.",
+      "editorial_seed": "We've all been there: posting something, then compulsively checking the 'seen by' list or waiting for a reply to a casual DM. That tiny ping of anxiety or disappointment isn't just about their engagement; it's a specific emotional trigger that highlights how much we've outsourced our sense of self-worth to digital signals.",
+      "only_soft_reset_line": "That tiny ping of disappointment isn't about their engagement. It's a silent signal from your own nervous system that your attention is currently on external validation, not internal peace.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If you post something and immediately check if they saw it, this is for you.",
+      "hook_quality": "strong",
+      "word_count": 102,
+      "estimated_duration_sec": 27,
+      "thumbnail_text": "You checked, didn't you.",
+      "content_fingerprint": "that specific micro anxiety of checking if they watched your story or saw your casual message and the hit to your self worth if you post something and immediately check if they saw it this is for you checking story views waiting for message reply external validation social comparison the immediate emotional reaction to checking passive digital interactions reveals a deeper dependency on external validation that can quietly erode your self worth that tiny ping of disappointment isn t about their engagement it s a silent signal from your own nervous system that your attention is currently on external validation not internal peace",
+      "title": "If you immediately check if they saw it, listen",
+      "youtube_video_id": "HuiW4_4JdfA",
+      "youtube_url": "https://youtube.com/shorts/HuiW4_4JdfA",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "metrics": {
+        "views": 7,
+        "engagedViews": 2,
+        "averageViewDuration": 17,
+        "averageViewPercentage": 55.00000000000001,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 27.9,
+      "performance_score": 27.9,
+      "score_version": 1,
+      "hook_score": 28.57,
+      "hold_score": 55.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 30.1,
+      "analytics_fetched_at": "2026-05-14T17:21:43Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
     {
       "video_id": "20260510_233328",
       "published_date": "2026-05-10",
@@ -394,51 +449,6 @@
       "analytics_fetched_at": "2026-05-12T19:13:25Z",
       "analytics_days_old": 2,
       "data_available": true
-    },
-    {
-      "video_id": "20260505_172553",
-      "published_date": "2026-05-05",
-      "status": "uploaded",
-      "topic": "That specific micro-anxiety of checking if *they* watched your story or saw your casual message, and the hit to your self-worth.",
-      "category": "identity and growth",
-      "angle_type": "specific_scenario",
-      "total_score": 19,
-      "source_name": "Widely accepted psychological principles",
-      "content_format": "reframe",
-      "emotional_trigger": "checking story views / waiting for message reply",
-      "psych_concept": "external validation, social comparison",
-      "core_claim": "The immediate emotional reaction to checking passive digital interactions reveals a deeper dependency on external validation that can quietly erode your self-worth.",
-      "editorial_seed": "We've all been there: posting something, then compulsively checking the 'seen by' list or waiting for a reply to a casual DM. That tiny ping of anxiety or disappointment isn't just about their engagement; it's a specific emotional trigger that highlights how much we've outsourced our sense of self-worth to digital signals.",
-      "only_soft_reset_line": "That tiny ping of disappointment isn't about their engagement. It's a silent signal from your own nervous system that your attention is currently on external validation, not internal peace.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If you post something and immediately check if they saw it, this is for you.",
-      "hook_quality": "strong",
-      "word_count": 102,
-      "estimated_duration_sec": 27,
-      "thumbnail_text": "You checked, didn't you.",
-      "content_fingerprint": "that specific micro anxiety of checking if they watched your story or saw your casual message and the hit to your self worth if you post something and immediately check if they saw it this is for you checking story views waiting for message reply external validation social comparison the immediate emotional reaction to checking passive digital interactions reveals a deeper dependency on external validation that can quietly erode your self worth that tiny ping of disappointment isn t about their engagement it s a silent signal from your own nervous system that your attention is currently on external validation not internal peace",
-      "title": "If you immediately check if they saw it, listen",
-      "youtube_video_id": "HuiW4_4JdfA",
-      "youtube_url": "https://youtube.com/shorts/HuiW4_4JdfA",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 11,
-      "validation_warnings": [],
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-07T16:40:08Z",
-      "analytics_days_old": 2,
-      "score_version": 1
     },
     {
       "video_id": "20260506_162442",
@@ -1641,6 +1651,162 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-13T01:26:11Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260512_191324",
+      "published_date": "2026-05-12",
+      "status": "uploaded",
+      "topic": "The quiet weight of the expectations you didn't know you had",
+      "category": "Identity and Growth",
+      "angle_type": "psychology_drop",
+      "total_score": 20,
+      "source_name": "Psychological principles, therapeutic consensus",
+      "source_basis": "The concept of implicit or unspoken expectations in relationships, often rooted in early life experiences or schemas, is a fundamental aspect of many psychotherapeutic approaches to relationship health and personal growth.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "psychology_drop",
+      "emotional_trigger": "Feeling unexplained disappointment or resentment in a relationship, stemming from invisible needs or rules.",
+      "psych_concept": "Implicit relationship expectations, relational schemas, unconscious biases",
+      "core_claim": "Many relationship disappointments stem not from explicit disagreements, but from hidden, unspoken expectations we carried in from childhood or past experiences.",
+      "editorial_seed": "We all walk into relationships with a hidden backpack full of 'rules' and expectations we absorbed growing up or from previous partners. These aren't things we consciously decided on; they just *are*. When a partner doesn't meet these invisible standards, it feels like a personal slight, but it's really an opportunity to uncover your own unconscious beliefs.",
+      "only_soft_reset_line": "You're holding them to a contract they never signed.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Nobody hurt you. Nothing specific happened. You're just quietly disappointed, and you don't know why.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 71,
+      "estimated_duration_sec": 28,
+      "thumbnail_text": "The rule you never said out loud",
+      "content_fingerprint": "the quiet weight of the expectations you didn t know you had nobody hurt you nothing specific happened you re just quietly disappointed and you don t know why feeling unexplained disappointment or resentment in a relationship stemming from invisible needs or rules implicit relationship expectations relational schemas unconscious biases many relationship disappointments stem not from explicit disagreements but from hidden unspoken expectations we carried in from childhood or past experiences you re holding them to a contract they never signed",
+      "title": "Quietly disappointed for NO reason",
+      "youtube_video_id": "NVZAk2dLYFk",
+      "youtube_url": "https://youtube.com/shorts/NVZAk2dLYFk",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "fragment",
+        "angle_type": "psychology_drop",
+        "category": "Identity and Growth",
+        "topic_cluster": "The quiet weight of the expectations you didn't know you had",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "The hook is compelling as it taps into a common, yet often unexplained, feeling of dissatisfaction. It's relatable and immediately piques curiosity."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and clearly explains the underlying cause of the 'quiet disappointment' as unspoken expectations, making it easy to understand."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The POV is established as understanding and insightful, guiding the viewer toward self-reflection and recognizing internal dynamics."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "The 'villain' is identified as unspoken, invisible expectations, which is specific enough for this psychology drop format and relatable."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "There is no explicit CTA present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the hook and the core message of the video \u2013 experiencing disappointment without an obvious external cause."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "The description effectively summarizes the video's topic and offers a clear benefit to the viewer, encouraging them to watch and understand their 'invisible burdens'."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming standard stock footage usage, the visual sync is likely adequate for a psychology drop, but direct examples of strong sync are not provided."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The use of brand images (3) suggests an intention for brand consistency, and stock videos (8) are standard. Their strength depends on execution not detailed here."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "Based on the hook and title, a thumbnail concept could effectively convey the feeling of quiet, internal disappointment, likely through evocative imagery."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With a short script (71 words) and short duration (38s), the pacing can easily be controlled for clarity and impact, assuming professional delivery."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The category 'Identity and Growth' and the psychology_drop angle align well with a self-growth channel's typical content. Brand images contribute to this."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content discusses internal feelings and psychological concepts in a general, non-diagnostic way. It poses no factual risk or violation of policies."
+        }
+      },
+      "judge_composite_score": 8.08,
+      "strongest_element": "Hook Strength",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 7,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short masterfully delivers a psychological insight, leveraging a calm, empathetic voiceover and well-chosen visual metaphors to guide the viewer from unexplained disappointment to an understanding of implicit expectations. The emotional tone and audio mix are excellently aligned with the 'Soft Reset With Me' brand, fostering introspection. While the execution of key visual metaphors is strong, refining the rapid caption pacing and elevating the specificity of all visuals, particularly in the opening, would enhance immediate viewer engagement and overall impact.",
+      "video_audit_strengths": [
+        "The strategic use of powerful visual metaphors (e.g., 'DELETE' eraser, hand reaching out) to concretize abstract psychological concepts, making the insight more tangible and memorable.",
+        "The consistent, empathetic, and calming vocal delivery that creates a safe space for introspection, reinforcing the brand's 'soft reset' ethos.",
+        "The ability to distill a complex psychological concept into a clear, concise, and highly relatable narrative within a short timeframe."
+      ],
+      "video_audit_dropoff_causes": [
+        "The very rapid appearance of single-word captions, especially in the first few seconds, might make it hard for some viewers to keep up, potentially leading to a scroll-off.",
+        "Some of the initial visuals are slightly generic stock footage, which might not immediately captivate viewers looking for highly unique or deeply engaging imagery from the outset.",
+        "The contemplative and slower-paced visual progression, while intentional, could be perceived as lacking dynamic action by viewers accustomed to faster-cut content."
+      ],
+      "video_audit_repeat_next": [
+        "The use of direct address ('You') in the narration to create an immediate personal connection with the viewer.",
+        "The overall emotional tone and thoughtful pacing of the narrative arc, moving from a relatable problem to a profound insight.",
+        "The selection of background music that complements the introspective mood without overpowering the voiceover."
+      ],
+      "video_audit_reduce_next": [
+        "The extreme speed of single-word caption transitions, particularly at the beginning of the video, to improve readability and allow viewers more time to absorb the text.",
+        "Reliance on overly generic stock footage for introductory or transitional scenes; prioritize more unique or metaphorically resonant visuals throughout."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Relatable Problem/Internal Question",
+        "thumbnail_type": "Symbolic Metaphor",
+        "visual_style_mix": "Minimalist & Reflective",
+        "narrative_format": "Insight/Psychology Drop",
+        "character_used": "Introspective Thinker"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-14T17:21:43Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
