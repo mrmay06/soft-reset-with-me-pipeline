@@ -2427,5 +2427,149 @@
       "narrative_format": "Reflective, direct advice, gentle confrontation",
       "character_used": "Narrator (voice-over), abstract representation"
     }
+  },
+  {
+    "video_id": "20260515_200605",
+    "published_date": "2026-05-15",
+    "status": "uploaded",
+    "topic": "Moving on fast does not mean you did not care",
+    "category": "healing arcs",
+    "angle_type": "reframe",
+    "total_score": 17,
+    "source_name": "Therapist consensus on self-compassion and healthy healing processes.",
+    "source_basis": "Emotional regulation and self-compassion facilitate healing, and breaking patterns of self-abandonment can lead to a quicker return to well-being.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Guilt or judgment for moving on 'too fast' after a breakup or difficult emotional situation.",
+    "psych_concept": "Self-compassion, emotional regulation, breaking cycles of self-abandonment.",
+    "core_claim": "It can mean you finally stopped abandoning yourself",
+    "editorial_seed": "This topic validates individuals who feel guilt or face judgment for processing breakups or difficult experiences quickly. It reframes 'moving on fast' as a sign of personal growth and self-respect, rather than a lack of care, connecting it to a positive shift in self-relationship.",
+    "only_soft_reset_line": "You stayed loyal to the loss, not to yourself.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Moving on fast doesn't mean you didn't care. It might mean the opposite.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 71,
+    "estimated_duration_sec": 22,
+    "thumbnail_text": "Moving on fast doesn't mean you didn't care.",
+    "content_fingerprint": "moving on fast does not mean you did not care moving on fast doesn t mean you didn t care it might mean the opposite guilt or judgment for moving on too fast after a breakup or difficult emotional situation self compassion emotional regulation breaking cycles of self abandonment it can mean you finally stopped abandoning yourself you stayed loyal to the loss not to yourself",
+    "title": "Moving on fast meant you cared DEEPLY",
+    "youtube_video_id": "jqW9J8mW-Uw",
+    "youtube_url": "https://youtube.com/shorts/jqW9J8mW-Uw",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "reframe",
+      "category": "healing arcs",
+      "topic_cluster": "Moving on fast does not mean you did not care",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook is strong and immediately challenges a common perception, promising a unique perspective."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise, easy to understand, and directly conveys the intended message."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The reframe angle is clear and consistent with the channel's focus on self-growth and healing."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "While the reframed idea is clear, the 'villain' (societal expectation or self-judgment) is implied rather than explicitly defined, leaving room for greater specificity."
+      },
+      "cta_quality": {
+        "score": 0,
+        "reason": "No CTA was provided in the script or details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is highly accurate to the hook and the core message of the video, creating strong curiosity."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description quickly reiterates the core message and clearly identifies the target audience."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "The balance of stock videos and brand images suggests potential for good sync, but actual sync depends on execution."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images (3) are present, suggesting an intention for visual branding, but their strength depends on their actual content and integration."
+      },
+      "thumbnail_concept": {
+        "score": 0,
+        "reason": "Thumbnail concept not provided."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The short script length (71 words) indicates it can be delivered at a thoughtful, effective pace within 35 seconds."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The angle type (reframe) and category (healing arcs) align well with a self-growth channel. Use of brand images further supports this."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is subjective advice focused on emotional reframing and has no factual claims that could pose a policy risk."
+      }
+    },
+    "judge_composite_score": 7.2,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively delivers a validating message with a consistent, empathetic tone and clear voiceover, supported by a well-structured narrative and suitable background music. While the video hook strongly aligns with the title, the initial pacing of captions and some generic opening visuals could be improved to more immediately capture viewer attention, leveraging more specific and impactful imagery from the outset to prevent early drop-offs.",
+    "video_audit_strengths": [
+      "The exceptional quality and empathetic delivery of the voiceover, which truly elevates the message.",
+      "The robust narrative structure that takes viewers from tension to insight and a powerful loopback within a short timeframe.",
+      "The consistent brand identity, ensuring the video feels authentically 'Soft Reset With Me' in both tone and message.",
+      "The strong alignment between the video's hook and its title, promising and delivering a clear reframe."
+    ],
+    "video_audit_dropoff_causes": [
+      "Slow caption pacing, particularly within the first few seconds, which delays the delivery of the hook's full message.",
+      "The initial visuals are somewhat generic and dark, lacking the immediate visual impact needed to stand out in a rapidly scrolling Shorts feed.",
+      "The overall low-energy start might not compete effectively for attention against more dynamic or quickly revealing content."
+    ],
+    "video_audit_repeat_next": [
+      "The use of a high-quality, empathetic voiceover.",
+      "The clear and concise narrative arc (hook, tension, insight, loopback) for delivering psychological insights.",
+      "The strong alignment between the video's initial hook and its title.",
+      "Thoughtful selection of background music that enhances, rather than distracts from, the message.",
+      "Integrating symbolic visuals that directly reinforce the core message, especially towards the resolution."
+    ],
+    "video_audit_reduce_next": [
+      "Slow caption pacing, particularly in the critical first 5 seconds, to deliver the hook more rapidly.",
+      "Reliance on overly generic or static opening visuals; aim for more immediate visual intrigue.",
+      "Any delays in presenting the core idea within the very beginning of the Short."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Contrarian Take",
+      "thumbnail_type": "Text Overlay & Symbolic Image",
+      "visual_style_mix": "Evocative B-roll",
+      "narrative_format": "Reframe / Truth Drop",
+      "character_used": "Narrator (VO only)"
+    }
   }
 ]
