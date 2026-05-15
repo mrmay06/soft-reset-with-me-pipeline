@@ -2287,5 +2287,145 @@
       "narrative_format": "Voiceover Monologue / Reframe Narrative",
       "character_used": "Empathetic Guide / Mentor"
     }
+  },
+  {
+    "video_id": "20260515_012406",
+    "published_date": "2026-05-15",
+    "status": "uploaded",
+    "topic": "The difference between someone who is busy and someone who does not prioritize you",
+    "category": "conversation truths",
+    "angle_type": "specific scenario",
+    "total_score": 18,
+    "source_name": "Observational behavioral psychology",
+    "source_basis": "Observational behavioral psychology regarding relational priorities and time allocation",
+    "source_url": null,
+    "confidence_level": "observational",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Feeling unprioritized, making excuses for others' lack of effort, relationship ambiguity",
+    "psych_concept": "Relational prioritization, self-worth, boundary setting",
+    "core_claim": "Everyone has the same 24 hours \u2014 what differs is who they choose to spend them on",
+    "editorial_seed": "It's easy to tell ourselves someone is 'just busy' when they don't make time for us. But busyness is a neutral state; prioritization is an active choice. Soft Reset reminds you to look at actions, not just words, to understand your place in someone's life.",
+    "only_soft_reset_line": "They found time for everything they wanted. You just weren't one of them.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "If you keep telling yourself they're just busy, this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 68,
+    "estimated_duration_sec": 18,
+    "thumbnail_text": "busy or just not choosing you",
+    "content_fingerprint": "the difference between someone who is busy and someone who does not prioritize you if you keep telling yourself they re just busy this is for you feeling unprioritized making excuses for others lack of effort relationship ambiguity relational prioritization self worth boundary setting everyone has the same 24 hours what differs is who they choose to spend them on they found time for everything they wanted you just weren t one of them",
+    "title": "They're not busy, you're just not the priority",
+    "youtube_video_id": "2RsPY5CJ18c",
+    "youtube_url": "https://youtube.com/shorts/2RsPY5CJ18c",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 13,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "specific scenario",
+      "category": "conversation truths",
+      "topic_cluster": "The difference between someone who is busy and someone who d",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 13
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Directly addresses a common self-deception in relationships, immediately engaging the target audience."
+      },
+      "script_clarity": {
+        "score": 10,
+        "reason": "The script is extremely concise and delivers a single, clear message without ambiguity."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The perspective is empathetic yet firm, aligning with the channel's self-growth focus, but could be slightly more nuanced for the short format."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "Clearly identifies the 'villain' as the self-deceptive thought process ('they're busy') and the underlying truth of misplaced priority."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no Call To Action present in the video details provided."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "The title perfectly and honestly reflects the core message of the video and the hook."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Effectively teases the video's content and reinforces the hook, but could benefit from a slightly more developed sentence or two within the character limit."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed synchronization based on typical faceless channel formats; effectiveness relies heavily on execution of stock footage matching the narrative tone."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images should complement the direct, introspective tone. Effectiveness depends on their specific selection and placement."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "A strong concept would involve contrasting elements representing 'busy' vs. 'priority'. Needs specific execution to be highly effective."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "With a short script, controlled pacing will be key to delivering the message impactfully. Assumed readiness."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The topic and tone align perfectly with a relationship/self-growth channel focused on truths and introspection."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No factual claims are made that could be disputed or violate policy. It's an opinion/perspective piece."
+      }
+    },
+    "judge_composite_score": 7.6,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "The video successfully delivers a challenging emotional truth through a masterclass in empathetic narration, perfectly synchronized captions, and highly specific visual metaphors. The consistent emotional tone, coupled with a strong narrative arc and excellent audio mix, creates a powerful and cohesive message. While the opening could benefit from slightly more visual dynamism to hook ultra-fast swipers, the overall execution, particularly the intelligent use of visuals to reinforce complex feelings and the brand's direct truth-telling style, is exemplary and effectively embodies the 'Soft Reset With Me' ethos.",
+    "video_audit_strengths": [
+      "The narrative arc is incredibly strong, guiding the viewer from a relatable starting point (making excuses) through observations to a potent, concise truth, and a clear call to self-awareness.",
+      "The use of visual metaphors (empty chair, city lights as chosen activity, empty bed) is sophisticated and adds significant emotional depth without relying solely on text or explicit storytelling.",
+      "The consistent brand aesthetic \u2013 both visually and aurally \u2013 reinforces 'Soft Reset With Me's identity as a source of empathetic yet direct truths, building trust and recognition."
+    ],
+    "video_audit_dropoff_causes": [
+      "The very slow and static visual at the beginning might not immediately capture the attention of some viewers accustomed to rapid cuts and dynamic openers in Shorts, potentially leading to early swipe-aways.",
+      "The inherent emotional weight of the topic \u2013 confronting the reality of being unprioritized \u2013 might be too intense or uncomfortable for some viewers, causing them to disengage if they are not ready to face that truth."
+    ],
+    "video_audit_repeat_next": [
+      "Continue with direct, empathetic hooks that immediately address a specific viewer pain point.",
+      "Replicate the strategy of using strong, contrasting visual metaphors to illustrate abstract concepts or emotional states (e.g., 'their busy life' vs. 'your neglect').",
+      "Maintain the clear, calm, and firm narration style, which is crucial for delivering sensitive 'truth bomb' content effectively.",
+      "Continue to craft powerful, concise signature lines that distill the core message, like 'You just weren't one of them,' for maximum impact."
+    ],
+    "video_audit_reduce_next": [
+      "Minimize static visuals in the very first few seconds, aiming for subtle movement or quicker cuts to immediately grab attention in the competitive Shorts feed.",
+      "Reduce reliance on overly generic stock footage, even if it fits the theme, to ensure every visual contributes uniquely and powerfully to the specific message."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Direct address, specific scenario",
+      "thumbnail_type": "Text overlay, emotional object",
+      "visual_style_mix": "Stock footage (emotive), text-overlay",
+      "narrative_format": "Reflective, direct advice, gentle confrontation",
+      "character_used": "Narrator (voice-over), abstract representation"
+    }
   }
 ]
