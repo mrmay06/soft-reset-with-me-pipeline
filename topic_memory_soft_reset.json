@@ -1,25 +1,5 @@
 [
   {
-    "video_id": "20260504_203041",
-    "published_date": "2026-05-04",
-    "status": "generated_not_uploaded",
-    "topic": "When their 'maybe' is actually a slow-motion 'no'",
-    "category": "conversation truths",
-    "total_score": 20,
-    "source_name": "Psychological principles",
-    "content_format": "reframe",
-    "emotional_trigger": "Dating uncertainty, feeling strung along, waiting for a clear answer, self-doubt in relationships",
-    "psych_concept": "Cognitive Reframing, Boundary-Setting",
-    "hook": "That long 'maybe' they gave you? It was never actually a maybe.",
-    "thumbnail_text": "Their 'maybe' was always a no",
-    "content_fingerprint": "when their maybe is actually a slow motion no that long maybe they gave you it was never actually a maybe dating uncertainty feeling strung along waiting for a clear answer self doubt in relationships cognitive reframing boundary setting",
-    "title": "That maybe? It was always a slow-motion no",
-    "youtube_video_id": "MOCK_NOT_UPLOADED",
-    "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
-    "fallback_count": 0,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260504_182052_cta_test",
     "published_date": "2026-05-04",
     "status": "generated_not_uploaded",
@@ -2710,6 +2690,150 @@
       "visual_style_mix": "Reflective/Melancholic",
       "narrative_format": "List/Insight-driven",
       "character_used": "Relatable/Internal Experience"
+    }
+  },
+  {
+    "video_id": "20260516_144222",
+    "published_date": "2026-05-16",
+    "status": "uploaded",
+    "topic": "When 'don't question my love' is a red flag.",
+    "category": "relationship patterns",
+    "angle_type": "truth_drop",
+    "total_score": 17,
+    "source_name": "Relationship Psychology",
+    "source_basis": "Principles of healthy relationship communication and psychological safety.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Feeling confused or gaslit when a partner demands unquestioning trust, especially when doubt is warranted.",
+    "psych_concept": "Psychological safety, earned trust, healthy communication, control dynamics.",
+    "core_claim": "Demanding unquestioning trust without a history of earning it, or reacting defensively to reasonable questions, is a red flag that erodes psychological safety and healthy communication.",
+    "editorial_seed": "Healthy relationships thrive on open communication and earned trust. When a partner demands you *never* question their love, especially when there are valid reasons for doubt, it's less about love and more about control, or their own insecurity. It leaves you feeling isolated in your own reality.",
+    "only_soft_reset_line": "Trust is built in the asking, not buried in the silence.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "That phrase protects them, not your relationship.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 55,
+    "estimated_duration_sec": 26,
+    "thumbnail_text": "'Don't question my love' is not reassurance.",
+    "content_fingerprint": "when don t question my love is a red flag that phrase protects them not your relationship feeling confused or gaslit when a partner demands unquestioning trust especially when doubt is warranted psychological safety earned trust healthy communication control dynamics demanding unquestioning trust without a history of earning it or reacting defensively to reasonable questions is a red flag that erodes psychological safety and healthy communication trust is built in the asking not buried in the silence",
+    "title": "That phrase protects THEM, not your love",
+    "youtube_video_id": "4yEjXowgjkg",
+    "youtube_url": "https://youtube.com/shorts/4yEjXowgjkg",
+    "fallback_count": 0,
+    "video_count": 5,
+    "total_scenes": 8,
+    "validation_warnings": [
+      "tags_sanitized"
+    ],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "truth_drop",
+      "category": "relationship patterns",
+      "topic_cluster": "When 'don't question my love' is a red flag.",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 8
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Intriguing and directly addresses a common relationship dynamic."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "Concise and easy to understand, though the specific phrase isn't named, which can be a strength or weakness depending on context."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Strong, authoritative stance aligned with the channel's truth_drop angle."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'phrase' is a bit vague, but the mechanism (protecting individuals over the relationship) is clear."
+      },
+      "cta_quality": {
+        "score": 7,
+        "reason": "Implied call to action to question and seek clarity. Could be more explicit."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurate to the hook and overall message. 'Love' is a good synonym for 'relationship'."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Effectively mirrors the hook and adds a reinforcing statement about true love welcoming questions."
+      },
+      "visual_dialogue_sync": {
+        "score": 8,
+        "reason": "Assumed good sync with stock footage and brand images supporting the narrative."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images should align with the message of relationship safety and clarity. Stock videos need to be relevant."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "Likely to be effective if it visually represents a protective barrier or a question mark related to love."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "Script is short and allows for deliberate pacing suitable for a truth_drop."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The core message aligns well with the channel's relationship/self-growth focus and truth_drop angle."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No identifiable policy or factual risk. General relationship advice."
+      }
+    },
+    "judge_composite_score": 84,
+    "strongest_element": "hook_strength",
+    "weakest_element": "villain_mechanism_specificity",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys its message with a strong script, clear voiceover, and well-mixed, mood-setting music. However, it struggles with visual engagement due to generic, dark stock footage and slow caption pacing, especially in the critical opening seconds. While the emotional tone is consistent with the trigger, it leans heavily into somber reflection, which might diminish the 'truth drop's' empowering impact for some viewers and contribute to early drop-offs.",
+    "video_audit_strengths": [
+      "The underlying script content is exceptionally strong and clearly articulated, offering valuable insights.",
+      "The voiceover quality is professional, clear, and engaging.",
+      "The background music is consistently appropriate and well-mixed, enhancing the overall mood."
+    ],
+    "video_audit_dropoff_causes": [
+      "Slow caption pacing, particularly in the initial seconds, may lead to early viewer disengagement.",
+      "Generic and consistently dark/moody visuals fail to provide strong visual anchors or progressive storytelling, which can reduce sustained attention.",
+      "The uniform melancholic tone, while consistent, might not appeal to all viewers seeking a more direct and empowering 'truth drop' message in a rapid-fire Shorts environment."
+    ],
+    "video_audit_repeat_next": [
+      "The high-quality and thoughtful scriptwriting.",
+      "The clear and engaging voiceover performance.",
+      "The consistent use of mood-appropriate background music.",
+      "Professional overall audio production quality."
+    ],
+    "video_audit_reduce_next": [
+      "The slow pacing of captions; aim for more dynamic and responsive text display.",
+      "Overly generic stock footage; prioritize visuals that directly illustrate or creatively metaphorize the specific relationship dynamics being discussed.",
+      "The initial darkness and lack of visual dynamism in the hook; consider more immediately engaging visuals."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Direct Truth Drop",
+      "thumbnail_type": "Statement Text",
+      "visual_style_mix": "Moody Cinematic Stock",
+      "narrative_format": "Insightful Validation",
+      "character_used": "Narrator and Implied Viewer"
     }
   }
 ]

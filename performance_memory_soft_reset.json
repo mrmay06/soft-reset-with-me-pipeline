@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-15T23:31:50Z",
+  "generated_at": "2026-05-16T14:42:23Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-03-30",
-  "end_date": "2026-05-14",
+  "start_date": "2026-03-31",
+  "end_date": "2026-05-15",
   "videos": [
     {
       "video_id": "20260506_235244",
@@ -447,6 +447,138 @@
       "data_available": true
     },
     {
+      "video_id": "20260507_164008",
+      "published_date": "2026-05-07",
+      "status": "uploaded",
+      "topic": "The subtle micro-betrayals that quietly erode trust over time.",
+      "category": "Relationship Patterns",
+      "angle_type": "list",
+      "total_score": 19,
+      "source_name": "Relationship Science (e.g., John Gottman's research on relational bids, Bren\u00e9 Brown's BRAVING framework for trust)",
+      "source_basis": "The cumulative effect of small, inconsistent actions and interactions on relationship trust and psychological safety, a cornerstone of relationship science.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "list",
+      "emotional_trigger": "Feeling confused, unheard, or questioning your own perception in a relationship due to consistent subtle actions.",
+      "psych_concept": "Cumulative Erosion of Relational Trust",
+      "core_claim": "Trust often erodes through a series of small, seemingly insignificant actions\u2014like consistent 'forgetting,' subtle blame-shifting, or downplaying your feelings\u2014rather than one big betrayal.",
+      "editorial_seed": "It's easy to dismiss small inconsistencies as 'not a big deal,' but these micro-betrayals compound. They make you question your memory, your worth, and ultimately, the safety of the relationship. Recognizing these patterns is key to protecting your peace.",
+      "only_soft_reset_line": "You didn't stop trusting them. You stopped trusting what you remembered.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You did not get lied to. You got slowly let down.",
+      "hook_quality": "weak",
+      "word_count": 78,
+      "estimated_duration_sec": 27,
+      "thumbnail_text": "It wasn't one big thing.",
+      "content_fingerprint": "the subtle micro betrayals that quietly erode trust over time you did not get lied to you got slowly let down feeling confused unheard or questioning your own perception in a relationship due to consistent subtle actions cumulative erosion of relational trust trust often erodes through a series of small seemingly insignificant actions like consistent forgetting subtle blame shifting or downplaying your feelings rather than one big betrayal you didn t stop trusting them you stopped trusting what you remembered",
+      "title": "You weren't lied to. You were just slowly let down",
+      "youtube_video_id": "BDAa-n3KV8s",
+      "youtube_url": "https://youtube.com/shorts/BDAa-n3KV8s",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 12,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W19",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "list",
+        "category": "Relationship Patterns",
+        "topic_cluster": "The subtle micro-betrayals that quietly erode trust over tim",
+        "visual_style_mix": "balanced",
+        "video_length_band": "under_30s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "The hook is intriguing and sets up a relatable scenario, but could be more impactful."
+        },
+        "script_clarity": {
+          "score": 8,
+          "reason": "The script is concise and clearly conveys the core message within the word count."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is present, offering a specific take on relationship dynamics, but could be more distinct."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "The concept of 'slowly let down' is specific and offers a nuanced understanding of relationship issues."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no clear call to action in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title perfectly reflects the hook and the core message of the video."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description expands slightly on the hook, providing a good initial summary and hinting at the content."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming visuals complement the script, the sync is likely adequate but could be more dynamic."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The mix of brand images and stock videos suggests a standard approach; strength depends on execution."
+        },
+        "thumbnail_concept": {
+          "score": 6,
+          "reason": "No thumbnail concept provided, making this impossible to score accurately based on provided data."
+        },
+        "voice_pacing_readiness": {
+          "score": 7,
+          "reason": "The short duration suggests a potentially faster pace; readiness depends on the voiceover delivery."
+        },
+        "brand_consistency": {
+          "score": 7,
+          "reason": "The number of brand images suggests an attempt at consistency, but overall consistency depends on the overall aesthetic."
+        },
+        "policy_factual_risk": {
+          "score": 9,
+          "reason": "The content is opinion-based and psychological, posing minimal factual risk."
+        }
+      },
+      "judge_composite_score": 6.5,
+      "strongest_element": "title_accuracy",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 6,
+      "metrics": {
+        "views": 163,
+        "engagedViews": 40,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 41.02,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 26.18,
+      "performance_score": 26.18,
+      "score_version": 1,
+      "hook_score": 24.54,
+      "hold_score": 41.02,
+      "resonance_score": 10.0,
+      "resonance_per_engaged": 0.1,
+      "resonance_per_view": 0.0245,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 73.82,
+      "analytics_fetched_at": "2026-05-16T14:42:23Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
+    {
       "video_id": "20260506_023743",
       "published_date": "2026-05-06",
       "status": "uploaded",
@@ -724,130 +856,6 @@
       "analytics_fetched_at": "2026-05-15T20:06:05Z",
       "analytics_days_old": 9,
       "data_available": true
-    },
-    {
-      "video_id": "20260507_164008",
-      "published_date": "2026-05-07",
-      "status": "uploaded",
-      "topic": "The subtle micro-betrayals that quietly erode trust over time.",
-      "category": "Relationship Patterns",
-      "angle_type": "list",
-      "total_score": 19,
-      "source_name": "Relationship Science (e.g., John Gottman's research on relational bids, Bren\u00e9 Brown's BRAVING framework for trust)",
-      "source_basis": "The cumulative effect of small, inconsistent actions and interactions on relationship trust and psychological safety, a cornerstone of relationship science.",
-      "source_url": "",
-      "confidence_level": "therapist_consensus",
-      "content_format": "list",
-      "emotional_trigger": "Feeling confused, unheard, or questioning your own perception in a relationship due to consistent subtle actions.",
-      "psych_concept": "Cumulative Erosion of Relational Trust",
-      "core_claim": "Trust often erodes through a series of small, seemingly insignificant actions\u2014like consistent 'forgetting,' subtle blame-shifting, or downplaying your feelings\u2014rather than one big betrayal.",
-      "editorial_seed": "It's easy to dismiss small inconsistencies as 'not a big deal,' but these micro-betrayals compound. They make you question your memory, your worth, and ultimately, the safety of the relationship. Recognizing these patterns is key to protecting your peace.",
-      "only_soft_reset_line": "You didn't stop trusting them. You stopped trusting what you remembered.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "You did not get lied to. You got slowly let down.",
-      "hook_quality": "weak",
-      "word_count": 78,
-      "estimated_duration_sec": 27,
-      "thumbnail_text": "It wasn't one big thing.",
-      "content_fingerprint": "the subtle micro betrayals that quietly erode trust over time you did not get lied to you got slowly let down feeling confused unheard or questioning your own perception in a relationship due to consistent subtle actions cumulative erosion of relational trust trust often erodes through a series of small seemingly insignificant actions like consistent forgetting subtle blame shifting or downplaying your feelings rather than one big betrayal you didn t stop trusting them you stopped trusting what you remembered",
-      "title": "You weren't lied to. You were just slowly let down",
-      "youtube_video_id": "BDAa-n3KV8s",
-      "youtube_url": "https://youtube.com/shorts/BDAa-n3KV8s",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 12,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W19",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "list",
-        "category": "Relationship Patterns",
-        "topic_cluster": "The subtle micro-betrayals that quietly erode trust over tim",
-        "visual_style_mix": "balanced",
-        "video_length_band": "under_30s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 12
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook is intriguing and sets up a relatable scenario, but could be more impactful."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script is concise and clearly conveys the core message within the word count."
-        },
-        "editorial_pov": {
-          "score": 7,
-          "reason": "The POV is present, offering a specific take on relationship dynamics, but could be more distinct."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "The concept of 'slowly let down' is specific and offers a nuanced understanding of relationship issues."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no clear call to action in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title perfectly reflects the hook and the core message of the video."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description expands slightly on the hook, providing a good initial summary and hinting at the content."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming visuals complement the script, the sync is likely adequate but could be more dynamic."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The mix of brand images and stock videos suggests a standard approach; strength depends on execution."
-        },
-        "thumbnail_concept": {
-          "score": 6,
-          "reason": "No thumbnail concept provided, making this impossible to score accurately based on provided data."
-        },
-        "voice_pacing_readiness": {
-          "score": 7,
-          "reason": "The short duration suggests a potentially faster pace; readiness depends on the voiceover delivery."
-        },
-        "brand_consistency": {
-          "score": 7,
-          "reason": "The number of brand images suggests an attempt at consistency, but overall consistency depends on the overall aesthetic."
-        },
-        "policy_factual_risk": {
-          "score": 9,
-          "reason": "The content is opinion-based and psychological, posing minimal factual risk."
-        }
-      },
-      "judge_composite_score": 6.5,
-      "strongest_element": "title_accuracy",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 6,
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-09T14:36:39Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
     },
     {
       "video_id": "20260508_072902",
@@ -2309,6 +2317,166 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-15T01:24:06Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260514_172143",
+      "published_date": "2026-05-14",
+      "status": "uploaded",
+      "topic": "You are not too much \u2014 you were just around people with too little",
+      "category": "self-worth shifts",
+      "angle_type": "reframe",
+      "total_score": 18,
+      "source_name": "Therapist consensus and observational psychology",
+      "source_basis": "Psychological principle of projection and individual differences in emotional regulation capacity in interpersonal relationships.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "reframe",
+      "emotional_trigger": "Feeling inherently flawed or overwhelming after being told you are 'too much' in a relationship or social setting.",
+      "psych_concept": "Projection, emotional regulation capacity",
+      "core_claim": "Being called 'too much' is often a reflection of someone else's emotional limits, not a flaw in your authentic self.",
+      "editorial_seed": "This topic validates a painful and common experience: being labeled 'too much' in relationships. It offers a powerful reframe, shifting the perspective from self-blame to understanding that the issue lies with the other person's capacity and comfort levels, not one's inherent value or expression. This empowers the audience to embrace their authentic self without shame.",
+      "only_soft_reset_line": "They didn't have the capacity. They just handed you the bill.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If you shrank yourself because someone called you too much, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 75,
+      "estimated_duration_sec": 21,
+      "thumbnail_text": "you weren't too much",
+      "content_fingerprint": "you are not too much you were just around people with too little if you shrank yourself because someone called you too much this is for you feeling inherently flawed or overwhelming after being told you are too much in a relationship or social setting projection emotional regulation capacity being called too much is often a reflection of someone else s emotional limits not a flaw in your authentic self they didn t have the capacity they just handed you the bill",
+      "title": "You weren't too much, they were just SMALL",
+      "youtube_video_id": "I-8SRp8D7PM",
+      "youtube_url": "https://youtube.com/shorts/I-8SRp8D7PM",
+      "fallback_count": 0,
+      "video_count": 9,
+      "total_scenes": 13,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "You are not too much \u2014 you were just around people with too ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook is relatable and directly addresses a common emotional experience, drawing viewers in by promising a solution."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and effectively conveys a powerful reframe in a short word count."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The POV is clear: validating the viewer's feelings and reframing perceived 'too-muchness' as emotional depth."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "While the 'villain' mechanism (making someone feel 'too much') is implied, it could be slightly more specific about *how* this happens."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no explicit or implicit CTA present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title is creative, uses a compelling metaphor, and accurately reflects the script's core message of validating the viewer's magnitude."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description is concise, reinforces the hook, and clearly states the video's benefit to the viewer."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "With stock footage and brand images, sync is likely adequate but not guaranteed to be perfectly tailored without seeing the edit. Assumed moderate sync."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Assuming brand images are relevant and stock videos support the narrative, the direction is functional. Lacks explicit detail for higher score."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The title is strong enough to suggest a compelling thumbnail concept, likely focusing on scale or emotional expression. Needs confirmation."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The script's brevity suggests good pacing potential. Assumed voiceover would align with the brand's calm, reflective tone."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The topic (self-worth shifts, emotional depth) and reframe angle align perfectly with the channel's established identity."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is subjective and focuses on emotional reframing, posing no factual or policy risks."
+        }
+      },
+      "judge_composite_score": 7.2,
+      "strongest_element": "Brand consistency",
+      "weakest_element": "CTA quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers a powerful message of self-worth through strong narrative alignment, empathetic narration, and visually specific metaphors. While the pacing could be slightly optimized for the Shorts format and a minor visual filter choice was jarring, the overall production quality, emotional resonance, and precise captioning create a compelling and validating experience for the viewer, effectively embodying the channel's purpose.",
+      "video_audit_strengths": [
+        "The consistent use of a subtle 'film grain' overlay acts as an effective stylistic unifier for the diverse stock footage, adding a cohesive and polished feel.",
+        "The clever and impactful use of visual metaphors, such as the hand drawing a circle to represent 'their limit' and the folded paper for 'the bill', significantly strengthens the narrative's core message.",
+        "The narrator's consistent empathetic and reassuring vocal delivery is a cornerstone of the video's emotional effectiveness.",
+        "The precise word-by-word captioning not only enhances accessibility but also controls the reader's pace, ensuring the narrative unfolds deliberately."
+      ],
+      "video_audit_dropoff_causes": [
+        "The overall pacing of the video is quite slow for a short, which might lead some viewers to swipe away if they prefer more dynamic content.",
+        "The transition from the 'plant as growth' visual (0:10) to the contrasting statement 'You thought that was growth' could cause a momentary disconnect if the viewer isn't reading the captions quickly or processing the reframe.",
+        "The strong purple filter on the visual of men playing cards (0:29) creates a sudden aesthetic shift that feels slightly jarring compared to the otherwise natural and muted tones."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the high quality, empathetic voiceover and narration style.",
+        "Continue with precise, well-timed captioning that aids comprehension and pacing.",
+        "Utilize thoughtful and specific visual metaphors to illustrate abstract psychological concepts.",
+        "Apply consistent aesthetic filters or overlays to unify disparate stock footage into a cohesive visual style.",
+        "Keep background music subtle and perfectly matched to the emotional tone."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize or avoid jarring color filters that deviate significantly from the video's established aesthetic.",
+        "Consider optimizing visual pacing in certain sections to be slightly more dynamic for the Shorts format, without sacrificing emotional depth.",
+        "Review transitions between highly abstract visuals to ensure a smoother, more seamless flow."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Relatable Problem / Vulnerability Hook",
+        "thumbnail_type": "Text-Overlay",
+        "visual_style_mix": "Muted, Reflective, Cinematic, Metaphorical",
+        "narrative_format": "Voiceover Monologue / Reframe Narrative",
+        "character_used": "Empathetic Guide / Mentor"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-16T14:42:23Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
