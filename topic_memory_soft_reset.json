@@ -1,25 +1,5 @@
 [
   {
-    "video_id": "20260504_182052_cta_test",
-    "published_date": "2026-05-04",
-    "status": "generated_not_uploaded",
-    "topic": "The quiet strength of saying 'no' to a 'maybe'.",
-    "category": "Self-Worth Shifts",
-    "total_score": 20,
-    "source_name": "Widely accepted psychology principles",
-    "content_format": "truth_drop",
-    "emotional_trigger": "Ambiguity, self-doubt, lack of clarity in relationships/situationships",
-    "psych_concept": "Boundary-setting, self-worth, emotional regulation",
-    "hook": "Waiting on a maybe is still choosing to wait.",
-    "thumbnail_text": "A maybe is a slow no.",
-    "content_fingerprint": "the quiet strength of saying no to a maybe waiting on a maybe is still choosing to wait ambiguity self doubt lack of clarity in relationships situationships boundary setting self worth emotional regulation",
-    "title": "Waiting on a maybe is still choosing to wait",
-    "youtube_video_id": "MOCK_NOT_UPLOADED",
-    "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
-    "fallback_count": 0,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260504_211521",
     "published_date": "2026-05-04",
     "status": "generated_not_uploaded",
@@ -2834,6 +2814,146 @@
       "visual_style_mix": "Moody Cinematic Stock",
       "narrative_format": "Insightful Validation",
       "character_used": "Narrator and Implied Viewer"
+    }
+  },
+  {
+    "video_id": "20260516_222552",
+    "published_date": "2026-05-16",
+    "status": "uploaded",
+    "topic": "The myth of the 'cute fight' and what healthy conflict actually looks like.",
+    "category": "conversation truths",
+    "angle_type": "hot_take",
+    "total_score": 18,
+    "source_name": "Gottman Institute, general relationship psychology consensus",
+    "source_basis": "Research on healthy communication and conflict resolution in intimate relationships, challenging misconceptions perpetuated by media.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "hot_take",
+    "emotional_trigger": "That specific unease when you see a couple's 'cute' fight online and realize it's actually just passive aggression dressed up as playful banter.",
+    "psych_concept": "Healthy conflict resolution & communication patterns",
+    "core_claim": "True relationship health is built on mature conflict resolution, not performative drama or unresolved tension masquerading as affection.",
+    "editorial_seed": "Social media often glamorizes arguments as proof of 'passion.' But genuinely healthy relationships navigate disagreements with respect, active listening, and a commitment to resolution, not 'who wins' or dramatic make-ups.",
+    "only_soft_reset_line": "Passion doesn't need an audience. And it doesn't leave you feeling quietly terrible afterward.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You think the fighting means you care deeply. It might mean the real conversation never happened.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 73,
+    "estimated_duration_sec": 22,
+    "thumbnail_text": "cute fights aren't cute",
+    "content_fingerprint": "the myth of the cute fight and what healthy conflict actually looks like you think the fighting means you care deeply it might mean the real conversation never happened that specific unease when you see a couple s cute fight online and realize it s actually just passive aggression dressed up as playful banter healthy conflict resolution communication patterns true relationship health is built on mature conflict resolution not performative drama or unresolved tension masquerading as affection passion doesn t need an audience and it doesn t leave you feeling quietly terrible afterward",
+    "title": "Fighting isn't deep care. It's a missed conversation",
+    "youtube_video_id": "iKjWj4bi72A",
+    "youtube_url": "https://youtube.com/shorts/iKjWj4bi72A",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "hot_take",
+      "category": "conversation truths",
+      "topic_cluster": "The myth of the 'cute fight' and what healthy conflict actua",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook is intriguing and poses a counter-intuitive idea about fighting, which grabs attention."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and the message is clear: fighting doesn't necessarily equal deep care, and it might be a sign of missed communication."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The POV is clear: challenging the common belief that passionate arguments signify deep love, and suggesting an alternative interpretation of missed conversations."
+      },
+      "villain_mechanism_specificity": {
+        "score": 6,
+        "reason": "The 'villain' is the misinterpretation of fighting as a sign of care. It's reasonably specific but could be elaborated slightly more if the script were longer."
+      },
+      "cta_quality": {
+        "score": 5,
+        "reason": "There is no explicit CTA in the provided details. A strong CTA is missing."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the core message of the hook and script, presenting a hot take on the relationship between fighting and care."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description expands on the title and hook, clearly stating the premise and hinting at further exploration, enticing viewers."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming stock videos and brand images are chosen to reflect the themes of conflict, conversation, and reflection, there's potential for good sync, but it's not explicitly detailed."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "With 3 brand images and 8 stock videos, there's room for visual storytelling, but the strength depends on the execution and relevance to the script's nuanced message."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "A thumbnail concept isn't provided, but the title and hook suggest strong potential for a compelling visual that contrasts fighting with quiet conversation."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The script is very short (73 words), which at a moderate pace (approx. 150 wpm) would be under a minute, allowing for deliberate and clear pacing. This is a positive for a faceless channel."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The topic 'conversation truths' and the hot-take angle align with a relationship/self-growth channel. The faceless format implies a focus on the message and visuals, which this video seems to support."
+      },
+      "policy_factual_risk": {
+        "score": 9,
+        "reason": "The content is subjective relationship advice. It does not make factual claims that carry significant policy risk. The risk is minimal."
+      }
+    },
+    "judge_composite_score": 7.2,
+    "strongest_element": "script_clarity",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 7,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively delivers a thought-provoking message through a meticulously crafted blend of atmospheric visuals, a perfectly balanced audio mix, and clear, well-paced captions. While its introspective nature and slower initial pacing might cause some viewers to scroll past, the strong alignment between the hook and the overall emotional tone ensures that those who engage are rewarded with a coherent and impactful experience. The skillful use of visual metaphors to represent complex relationship dynamics is a significant strength that elevates the content.",
+    "video_audit_strengths": [
+      "The skillful curation and thematic consistency of the diverse stock footage choices, which collectively create a cohesive and deeply metaphorical visual narrative.",
+      "The ability to translate complex psychological concepts (like 'unresolved tension' or 'healthy conflict') into powerful and easily understood visual metaphors.",
+      "The subtle, consistent application of film grain and light leaks across visuals, which enhances the overall introspective and slightly melancholic aesthetic."
+    ],
+    "video_audit_dropoff_causes": [
+      "The initial visual sequence, while moody and brand-aligned, relies on a slower reveal and atmospheric build-up rather than immediate dynamic action, potentially not hooking all viewers in the first 2 seconds of rapid scrolling.",
+      "The conceptual and reflective nature of the content requires a moment of internal processing from the viewer, which might be a barrier for those looking for instantly digestible or high-energy short-form content."
+    ],
+    "video_audit_repeat_next": [
+      "The strong alignment between the script's hook and its immediate visual and audio execution.",
+      "The consistent, thoughtful emotional tone maintained throughout the video via music, voiceover, and visual selection.",
+      "The high-quality, clear, and perfectly paced captions.",
+      "The strategic use of symbolic and metaphorical visuals to convey complex or abstract ideas."
+    ],
+    "video_audit_reduce_next": [
+      "Consider experimenting with slightly faster visual cuts or a more immediately arresting visual element in the very first few seconds, especially for hooks that demand more immediate attention, without sacrificing the brand's reflective tone.",
+      "Ensure visual metaphors, even when abstract, are as directly congruent with the specific verbal message as possible to avoid any momentary disconnect for the viewer (e.g., the 'staying in the room' visual)."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Contrarian Question",
+      "thumbnail_type": "Text Overlay",
+      "visual_style_mix": "Aesthetic, Philosophical, Cinematic",
+      "narrative_format": "Reflective Essay, Hot Take, Relationship Advice",
+      "character_used": "Empathetic Narrator"
     }
   }
 ]
