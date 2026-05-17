@@ -1,11 +1,149 @@
 {
-  "generated_at": "2026-05-16T22:25:53Z",
+  "generated_at": "2026-05-17T15:41:43Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-03-31",
-  "end_date": "2026-05-15",
+  "start_date": "2026-04-01",
+  "end_date": "2026-05-16",
   "videos": [
+    {
+      "video_id": "20260508_195753",
+      "published_date": "2026-05-08",
+      "status": "uploaded",
+      "topic": "Four signs you are not over them that have nothing to do with texting",
+      "category": "healing arcs",
+      "angle_type": "list",
+      "total_score": 19,
+      "source_name": "General psychological principles (Bowlby, Ainsworth, Gabor Mat\u00e9)",
+      "source_basis": "Attachment theory, grief and loss psychology, somatic experiencing principles.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "list",
+      "emotional_trigger": "The silent, persistent ways past relationships linger in your body and mind, even when you believe you've moved on from external contact.",
+      "psych_concept": "Lingering attachment, unresolved grief, nervous system responses to loss, rumination.",
+      "core_claim": "Your body can still be attached after your phone stops reaching.",
+      "editorial_seed": "Many people equate 'no contact' or 'no texting' with being over someone. But true letting go involves deeper emotional and physiological shifts. This video will highlight the subtle, often overlooked ways our nervous system and habits still cling to a past connection, even when your phone stays silent.",
+      "only_soft_reset_line": "You might have deleted their photos, but your nervous system is still narrating old feelings.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You deleted the app. You still check their location.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.3",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 70,
+      "estimated_duration_sec": 27,
+      "thumbnail_text": "4 Signs You're Not Over Them",
+      "content_fingerprint": "four signs you are not over them that have nothing to do with texting you deleted the app you still check their location the silent persistent ways past relationships linger in your body and mind even when you believe you ve moved on from external contact lingering attachment unresolved grief nervous system responses to loss rumination your body can still be attached after your phone stops reaching you might have deleted their photos but your nervous system is still narrating old feelings",
+      "title": "You deleted the app. You're STILL stuck",
+      "youtube_video_id": "4vHaOpnVLdo",
+      "youtube_url": "https://youtube.com/shorts/4vHaOpnVLdo",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 10,
+      "validation_warnings": [
+        "tags_sanitized"
+      ],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W19",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "list",
+        "category": "healing arcs",
+        "topic_cluster": "Four signs you are not over them that have nothing to do wit",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "under_30s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Relatable and immediately identifies a common post-breakup behavior, creating intrigue."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and direct message, easy to understand the core theme of lingering attachment."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "Establishes a clear empathetic tone for those still struggling, but could be slightly more distinct."
+        },
+        "villain_mechanism_specificity": {
+          "score": 6,
+          "reason": "Identifies the 'villain' as the lingering habit of checking on an ex, but the mechanism (addiction to information/control) could be more explicitly named."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "No clear call to action present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Perfectly reflects the hook and the core message of being stuck despite taking a step towards healing."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Effectively summarizes the video's essence and targets the intended audience with empathetic language."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "The use of stock videos and brand images suggests visuals will support the narrative, but direct sync quality is not yet assessed."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "The mix of stock and brand images is standard; effectiveness depends on the specific choices which aren't detailed."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "Assuming the thumbnail will visually represent the core conflict of deleting an app but still checking, it has potential."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The short script and video duration suggest a well-paced delivery is achievable for this topic."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The 'healing arcs' category and the empathetic, introspective tone align with typical Soft Reset With Me content."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is highly subjective and related to emotional healing, posing no factual risk."
+        }
+      },
+      "judge_composite_score": 7.0,
+      "strongest_element": "Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "metrics": {
+        "views": 230,
+        "engagedViews": 57,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 40.95,
+        "likes": 6,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 2
+      },
+      "composite_score": 47.19,
+      "performance_score": 47.19,
+      "score_version": 1,
+      "hook_score": 24.78,
+      "hold_score": 40.95,
+      "resonance_score": 38.6,
+      "resonance_per_engaged": 0.386,
+      "resonance_per_view": 0.0957,
+      "conversion_score": 100.0,
+      "conversion_rate_per_1k": 8.6957,
+      "reach_score": 78.78,
+      "analytics_fetched_at": "2026-05-17T15:41:43Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
     {
       "video_id": "20260506_235244",
       "published_date": "2026-05-06",
@@ -59,6 +197,302 @@
       "reach_score": 90.3,
       "analytics_fetched_at": "2026-05-15T20:06:05Z",
       "analytics_days_old": 9,
+      "data_available": true
+    },
+    {
+      "video_id": "20260508_072902",
+      "published_date": "2026-05-08",
+      "status": "uploaded",
+      "topic": "Hot Take: The myth of a partner 'completing' you stunts individual growth.",
+      "category": "Identity and Growth",
+      "angle_type": "hot_take",
+      "total_score": 18,
+      "source_name": "Carl Rogers, Abraham Maslow, contemporary relationship psychology.",
+      "source_basis": "Foundational principles of humanistic psychology, emphasizing self-actualization and the importance of individual wholeness for healthy, interdependent relationships.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "hot_take",
+      "emotional_trigger": "Feeling incomplete, seeking external validation from a partner, relationship dissatisfaction due to unrealistic expectations, or fear of individual growth within a partnership.",
+      "psych_concept": "Self-actualization, interdependence vs. codependence, individual identity formation.",
+      "core_claim": "The romantic fantasy of a partner 'completing' you is a dangerous myth that actively undermines your journey of self-discovery and the cultivation of a robust, independent identity.",
+      "editorial_seed": "We're fed this narrative that finding 'the one' will fill all our voids. But waiting for someone else to complete you is a passive approach to life. It robs you of the vital work of understanding your own wholeness and true identity. Relationships thrive when two whole people choose to be together, not when one needs the other to feel complete.",
+      "only_soft_reset_line": "You weren't half a person waiting. You were a whole one who never got introduced to yourself.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Waiting for someone to arrive so you can finally start living.",
+      "hook_quality": "weak",
+      "word_count": 87,
+      "estimated_duration_sec": 27,
+      "thumbnail_text": "You're not half a person.",
+      "content_fingerprint": "hot take the myth of a partner completing you stunts individual growth waiting for someone to arrive so you can finally start living feeling incomplete seeking external validation from a partner relationship dissatisfaction due to unrealistic expectations or fear of individual growth within a partnership self actualization interdependence vs codependence individual identity formation the romantic fantasy of a partner completing you is a dangerous myth that actively undermines your journey of self discovery and the cultivation of a robust independent identity you weren t half a person waiting you were a whole one who never got introduced to yourself",
+      "title": "You're waiting to finally start living",
+      "youtube_video_id": "zeAUuo9HI0A",
+      "youtube_url": "https://youtube.com/shorts/zeAUuo9HI0A",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 9,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W19",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "hot_take",
+        "category": "Identity and Growth",
+        "topic_cluster": "Hot Take: The myth of a partner 'completing' you stunts indi",
+        "visual_style_mix": "balanced",
+        "video_length_band": "under_30s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "The hook is relatable, posing a common internal struggle. It could be slightly more specific or intriguing."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and clearly conveys the core message of self-reliance and present living."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The perspective is empowering and aligns with the channel's self-growth focus. It's direct and encouraging."
+        },
+        "villain_mechanism_specificity": {
+          "score": 6,
+          "reason": "The 'villain' (waiting for external validation) is identified, but could be more explicitly defined or illustrated."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no clear Call To Action in the script or provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title perfectly reflects the hook and the core message of the video, creating strong alignment."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description is a good, concise summary that reiterates the hook and promises a key takeaway."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming appropriate stock footage is used, there's potential for good sync. However, without seeing the edit, this is an educated guess. The count of stock videos (6) suggests a decent effort."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The use of brand images (3) and stock videos (6) suggests an effort to create visual interest. The specific direction would depend on the execution."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The concept of waiting or anticipation could translate well to a thumbnail, but needs a strong visual execution to be compelling."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script length (87 words) and clear message suggest it's well-suited for a 30s video with good pacing, assuming professional delivery."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The 'Identity and Growth' category and 'hot_take' angle align perfectly with the channel's established brand. The message is highly on-brand."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is subjective and focuses on personal growth, posing no factual risk."
+        }
+      },
+      "judge_composite_score": 7,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "metrics": {
+        "views": 16,
+        "engagedViews": 7,
+        "averageViewDuration": 17,
+        "averageViewPercentage": 58.06,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 36.17,
+      "performance_score": 36.17,
+      "score_version": 1,
+      "hook_score": 43.75,
+      "hold_score": 58.06,
+      "resonance_score": 14.29,
+      "resonance_per_engaged": 0.1429,
+      "resonance_per_view": 0.0625,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 41.01,
+      "analytics_fetched_at": "2026-05-17T15:41:43Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
+    {
+      "video_id": "20260515_012406",
+      "published_date": "2026-05-15",
+      "status": "uploaded",
+      "topic": "The difference between someone who is busy and someone who does not prioritize you",
+      "category": "conversation truths",
+      "angle_type": "specific scenario",
+      "total_score": 18,
+      "source_name": "Observational behavioral psychology",
+      "source_basis": "Observational behavioral psychology regarding relational priorities and time allocation",
+      "source_url": null,
+      "confidence_level": "observational",
+      "content_format": "truth_drop",
+      "emotional_trigger": "Feeling unprioritized, making excuses for others' lack of effort, relationship ambiguity",
+      "psych_concept": "Relational prioritization, self-worth, boundary setting",
+      "core_claim": "Everyone has the same 24 hours \u2014 what differs is who they choose to spend them on",
+      "editorial_seed": "It's easy to tell ourselves someone is 'just busy' when they don't make time for us. But busyness is a neutral state; prioritization is an active choice. Soft Reset reminds you to look at actions, not just words, to understand your place in someone's life.",
+      "only_soft_reset_line": "They found time for everything they wanted. You just weren't one of them.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If you keep telling yourself they're just busy, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 68,
+      "estimated_duration_sec": 18,
+      "thumbnail_text": "busy or just not choosing you",
+      "content_fingerprint": "the difference between someone who is busy and someone who does not prioritize you if you keep telling yourself they re just busy this is for you feeling unprioritized making excuses for others lack of effort relationship ambiguity relational prioritization self worth boundary setting everyone has the same 24 hours what differs is who they choose to spend them on they found time for everything they wanted you just weren t one of them",
+      "title": "They're not busy, you're just not the priority",
+      "youtube_video_id": "2RsPY5CJ18c",
+      "youtube_url": "https://youtube.com/shorts/2RsPY5CJ18c",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 13,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "conversation truths",
+        "topic_cluster": "The difference between someone who is busy and someone who d",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Directly addresses a common self-deception in relationships, immediately engaging the target audience."
+        },
+        "script_clarity": {
+          "score": 10,
+          "reason": "The script is extremely concise and delivers a single, clear message without ambiguity."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The perspective is empathetic yet firm, aligning with the channel's self-growth focus, but could be slightly more nuanced for the short format."
+        },
+        "villain_mechanism_specificity": {
+          "score": 9,
+          "reason": "Clearly identifies the 'villain' as the self-deceptive thought process ('they're busy') and the underlying truth of misplaced priority."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no Call To Action present in the video details provided."
+        },
+        "title_accuracy": {
+          "score": 10,
+          "reason": "The title perfectly and honestly reflects the core message of the video and the hook."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Effectively teases the video's content and reinforces the hook, but could benefit from a slightly more developed sentence or two within the character limit."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumed synchronization based on typical faceless channel formats; effectiveness relies heavily on execution of stock footage matching the narrative tone."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images should complement the direct, introspective tone. Effectiveness depends on their specific selection and placement."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "A strong concept would involve contrasting elements representing 'busy' vs. 'priority'. Needs specific execution to be highly effective."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With a short script, controlled pacing will be key to delivering the message impactfully. Assumed readiness."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The topic and tone align perfectly with a relationship/self-growth channel focused on truths and introspection."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No factual claims are made that could be disputed or violate policy. It's an opinion/perspective piece."
+        }
+      },
+      "judge_composite_score": 7.6,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "The video successfully delivers a challenging emotional truth through a masterclass in empathetic narration, perfectly synchronized captions, and highly specific visual metaphors. The consistent emotional tone, coupled with a strong narrative arc and excellent audio mix, creates a powerful and cohesive message. While the opening could benefit from slightly more visual dynamism to hook ultra-fast swipers, the overall execution, particularly the intelligent use of visuals to reinforce complex feelings and the brand's direct truth-telling style, is exemplary and effectively embodies the 'Soft Reset With Me' ethos.",
+      "video_audit_strengths": [
+        "The narrative arc is incredibly strong, guiding the viewer from a relatable starting point (making excuses) through observations to a potent, concise truth, and a clear call to self-awareness.",
+        "The use of visual metaphors (empty chair, city lights as chosen activity, empty bed) is sophisticated and adds significant emotional depth without relying solely on text or explicit storytelling.",
+        "The consistent brand aesthetic \u2013 both visually and aurally \u2013 reinforces 'Soft Reset With Me's identity as a source of empathetic yet direct truths, building trust and recognition."
+      ],
+      "video_audit_dropoff_causes": [
+        "The very slow and static visual at the beginning might not immediately capture the attention of some viewers accustomed to rapid cuts and dynamic openers in Shorts, potentially leading to early swipe-aways.",
+        "The inherent emotional weight of the topic \u2013 confronting the reality of being unprioritized \u2013 might be too intense or uncomfortable for some viewers, causing them to disengage if they are not ready to face that truth."
+      ],
+      "video_audit_repeat_next": [
+        "Continue with direct, empathetic hooks that immediately address a specific viewer pain point.",
+        "Replicate the strategy of using strong, contrasting visual metaphors to illustrate abstract concepts or emotional states (e.g., 'their busy life' vs. 'your neglect').",
+        "Maintain the clear, calm, and firm narration style, which is crucial for delivering sensitive 'truth bomb' content effectively.",
+        "Continue to craft powerful, concise signature lines that distill the core message, like 'You just weren't one of them,' for maximum impact."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize static visuals in the very first few seconds, aiming for subtle movement or quicker cuts to immediately grab attention in the competitive Shorts feed.",
+        "Reduce reliance on overly generic stock footage, even if it fits the theme, to ensure every visual contributes uniquely and powerfully to the specific message."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Direct address, specific scenario",
+        "thumbnail_type": "Text overlay, emotional object",
+        "visual_style_mix": "Stock footage (emotive), text-overlay",
+        "narrative_format": "Reflective, direct advice, gentle confrontation",
+        "character_used": "Narrator (voice-over), abstract representation"
+      },
+      "metrics": {
+        "views": 9,
+        "engagedViews": 6,
+        "averageViewDuration": 15,
+        "averageViewPercentage": 37.92,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 31.61,
+      "performance_score": 31.61,
+      "score_version": 1,
+      "hook_score": 66.67,
+      "hold_score": 37.92,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 33.33,
+      "analytics_fetched_at": "2026-05-17T15:41:43Z",
+      "analytics_days_old": 2,
       "data_available": true
     },
     {
@@ -579,6 +1013,144 @@
       "data_available": true
     },
     {
+      "video_id": "20260508_233259",
+      "published_date": "2026-05-08",
+      "status": "uploaded",
+      "topic": "If calm feels boring it might be because you are used to anxiety not love",
+      "category": "psychology drops",
+      "angle_type": "reframe",
+      "total_score": 19,
+      "source_name": "General psychology principle / Trauma-informed care",
+      "source_basis": "Learned associations and nervous system conditioning, often discussed in trauma-informed care and attachment theory, where individuals may habituate to high-arousal states.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "psychology_drop",
+      "emotional_trigger": "Feeling restless or bored during peaceful moments, confusing high-intensity or anxiety for excitement or connection.",
+      "psych_concept": "Emotional regulation, nervous system threat response, learned associations",
+      "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
+      "editorial_seed": "Many of us grew up in environments where high-stress or dramatic situations felt like \"normal.\" When real peace arrives, our nervous system might interpret it as a lack of stimulation or even danger, rather than safety and love. It's about retraining your internal landscape.",
+      "only_soft_reset_line": "You're not bored. You're just waiting for the emergency that isn't coming.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If calm feels boring, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.3",
+      "script_validation": "forced",
+      "script_validation_notes": "word_count outside 45-75",
+      "word_count": 84,
+      "estimated_duration_sec": 27,
+      "thumbnail_text": "calm feels boring?",
+      "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring this is for you feeling restless or bored during peaceful moments confusing high intensity or anxiety for excitement or connection emotional regulation nervous system threat response learned associations you learned to read anxiety as excitement calm reads as indifference you re not bored you re just waiting for the emergency that isn t coming",
+      "title": "Calm feels boring? You were used to ANXIETY",
+      "youtube_video_id": "L0kGc4vgGY0",
+      "youtube_url": "https://youtube.com/shorts/L0kGc4vgGY0",
+      "fallback_count": 0,
+      "video_count": 12,
+      "total_scenes": 15,
+      "validation_warnings": [
+        "tags_sanitized"
+      ],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W19",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "psychology drops",
+        "topic_cluster": "If calm feels boring it might be because you are used to anx",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 15
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "Intriguing premise that challenges a common misconception about calm."
+        },
+        "script_clarity": {
+          "score": 8,
+          "reason": "The script is concise and directly addresses the core reframe."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "Clear reframe angle, suggesting anxiety is mistaken for love."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "Identifies 'anxiety as love' as the mechanism, which is specific enough."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "No call to action present in the script or details provided."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Directly reflects the hook and the core message of the video."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Effectively summarizes the video's premise and targets the audience."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Stock videos and brand images likely support the narrative, but no specific examples are given."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "The balance of brand images and stock videos seems appropriate for the content."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The hook and title suggest a strong concept that could translate well to a thumbnail."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script (84 words for 37s) suggests a deliberate, potentially impactful pacing."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The 'psychology drops' category and reframe angle are consistent with the channel's presumed style."
+        },
+        "policy_factual_risk": {
+          "score": 9,
+          "reason": "The content is framed as a reframe of common experiences, posing minimal factual risk."
+        }
+      },
+      "judge_composite_score": 7.0,
+      "strongest_element": "Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "metrics": {
+        "views": 276,
+        "engagedViews": 63,
+        "averageViewDuration": 15,
+        "averageViewPercentage": 40.88,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 24.72,
+      "performance_score": 24.72,
+      "score_version": 1,
+      "hook_score": 22.83,
+      "hold_score": 40.88,
+      "resonance_score": 3.17,
+      "resonance_per_engaged": 0.0317,
+      "resonance_per_view": 0.0072,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 81.4,
+      "analytics_fetched_at": "2026-05-17T15:41:43Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
+    {
       "video_id": "20260506_023743",
       "published_date": "2026-05-06",
       "status": "uploaded",
@@ -856,390 +1428,6 @@
       "analytics_fetched_at": "2026-05-15T20:06:05Z",
       "analytics_days_old": 9,
       "data_available": true
-    },
-    {
-      "video_id": "20260508_072902",
-      "published_date": "2026-05-08",
-      "status": "uploaded",
-      "topic": "Hot Take: The myth of a partner 'completing' you stunts individual growth.",
-      "category": "Identity and Growth",
-      "angle_type": "hot_take",
-      "total_score": 18,
-      "source_name": "Carl Rogers, Abraham Maslow, contemporary relationship psychology.",
-      "source_basis": "Foundational principles of humanistic psychology, emphasizing self-actualization and the importance of individual wholeness for healthy, interdependent relationships.",
-      "source_url": "",
-      "confidence_level": "therapist_consensus",
-      "content_format": "hot_take",
-      "emotional_trigger": "Feeling incomplete, seeking external validation from a partner, relationship dissatisfaction due to unrealistic expectations, or fear of individual growth within a partnership.",
-      "psych_concept": "Self-actualization, interdependence vs. codependence, individual identity formation.",
-      "core_claim": "The romantic fantasy of a partner 'completing' you is a dangerous myth that actively undermines your journey of self-discovery and the cultivation of a robust, independent identity.",
-      "editorial_seed": "We're fed this narrative that finding 'the one' will fill all our voids. But waiting for someone else to complete you is a passive approach to life. It robs you of the vital work of understanding your own wholeness and true identity. Relationships thrive when two whole people choose to be together, not when one needs the other to feel complete.",
-      "only_soft_reset_line": "You weren't half a person waiting. You were a whole one who never got introduced to yourself.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Waiting for someone to arrive so you can finally start living.",
-      "hook_quality": "weak",
-      "word_count": 87,
-      "estimated_duration_sec": 27,
-      "thumbnail_text": "You're not half a person.",
-      "content_fingerprint": "hot take the myth of a partner completing you stunts individual growth waiting for someone to arrive so you can finally start living feeling incomplete seeking external validation from a partner relationship dissatisfaction due to unrealistic expectations or fear of individual growth within a partnership self actualization interdependence vs codependence individual identity formation the romantic fantasy of a partner completing you is a dangerous myth that actively undermines your journey of self discovery and the cultivation of a robust independent identity you weren t half a person waiting you were a whole one who never got introduced to yourself",
-      "title": "You're waiting to finally start living",
-      "youtube_video_id": "zeAUuo9HI0A",
-      "youtube_url": "https://youtube.com/shorts/zeAUuo9HI0A",
-      "fallback_count": 0,
-      "video_count": 6,
-      "total_scenes": 9,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W19",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "hot_take",
-        "category": "Identity and Growth",
-        "topic_cluster": "Hot Take: The myth of a partner 'completing' you stunts indi",
-        "visual_style_mix": "balanced",
-        "video_length_band": "under_30s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 9
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook is relatable, posing a common internal struggle. It could be slightly more specific or intriguing."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and clearly conveys the core message of self-reliance and present living."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The perspective is empowering and aligns with the channel's self-growth focus. It's direct and encouraging."
-        },
-        "villain_mechanism_specificity": {
-          "score": 6,
-          "reason": "The 'villain' (waiting for external validation) is identified, but could be more explicitly defined or illustrated."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no clear Call To Action in the script or provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title perfectly reflects the hook and the core message of the video, creating strong alignment."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description is a good, concise summary that reiterates the hook and promises a key takeaway."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming appropriate stock footage is used, there's potential for good sync. However, without seeing the edit, this is an educated guess. The count of stock videos (6) suggests a decent effort."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The use of brand images (3) and stock videos (6) suggests an effort to create visual interest. The specific direction would depend on the execution."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The concept of waiting or anticipation could translate well to a thumbnail, but needs a strong visual execution to be compelling."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script length (87 words) and clear message suggest it's well-suited for a 30s video with good pacing, assuming professional delivery."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The 'Identity and Growth' category and 'hot_take' angle align perfectly with the channel's established brand. The message is highly on-brand."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is subjective and focuses on personal growth, posing no factual risk."
-        }
-      },
-      "judge_composite_score": 7,
-      "strongest_element": "Script Clarity",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 9,
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-10T15:34:57Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260508_195753",
-      "published_date": "2026-05-08",
-      "status": "uploaded",
-      "topic": "Four signs you are not over them that have nothing to do with texting",
-      "category": "healing arcs",
-      "angle_type": "list",
-      "total_score": 19,
-      "source_name": "General psychological principles (Bowlby, Ainsworth, Gabor Mat\u00e9)",
-      "source_basis": "Attachment theory, grief and loss psychology, somatic experiencing principles.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "list",
-      "emotional_trigger": "The silent, persistent ways past relationships linger in your body and mind, even when you believe you've moved on from external contact.",
-      "psych_concept": "Lingering attachment, unresolved grief, nervous system responses to loss, rumination.",
-      "core_claim": "Your body can still be attached after your phone stops reaching.",
-      "editorial_seed": "Many people equate 'no contact' or 'no texting' with being over someone. But true letting go involves deeper emotional and physiological shifts. This video will highlight the subtle, often overlooked ways our nervous system and habits still cling to a past connection, even when your phone stays silent.",
-      "only_soft_reset_line": "You might have deleted their photos, but your nervous system is still narrating old feelings.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "You deleted the app. You still check their location.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.3",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 70,
-      "estimated_duration_sec": 27,
-      "thumbnail_text": "4 Signs You're Not Over Them",
-      "content_fingerprint": "four signs you are not over them that have nothing to do with texting you deleted the app you still check their location the silent persistent ways past relationships linger in your body and mind even when you believe you ve moved on from external contact lingering attachment unresolved grief nervous system responses to loss rumination your body can still be attached after your phone stops reaching you might have deleted their photos but your nervous system is still narrating old feelings",
-      "title": "You deleted the app. You're STILL stuck",
-      "youtube_video_id": "4vHaOpnVLdo",
-      "youtube_url": "https://youtube.com/shorts/4vHaOpnVLdo",
-      "fallback_count": 0,
-      "video_count": 7,
-      "total_scenes": 10,
-      "validation_warnings": [
-        "tags_sanitized"
-      ],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W19",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "list",
-        "category": "healing arcs",
-        "topic_cluster": "Four signs you are not over them that have nothing to do wit",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "under_30s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 10
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Relatable and immediately identifies a common post-breakup behavior, creating intrigue."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "Concise and direct message, easy to understand the core theme of lingering attachment."
-        },
-        "editorial_pov": {
-          "score": 7,
-          "reason": "Establishes a clear empathetic tone for those still struggling, but could be slightly more distinct."
-        },
-        "villain_mechanism_specificity": {
-          "score": 6,
-          "reason": "Identifies the 'villain' as the lingering habit of checking on an ex, but the mechanism (addiction to information/control) could be more explicitly named."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "No clear call to action present in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "Perfectly reflects the hook and the core message of being stuck despite taking a step towards healing."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Effectively summarizes the video's essence and targets the intended audience with empathetic language."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "The use of stock videos and brand images suggests visuals will support the narrative, but direct sync quality is not yet assessed."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "The mix of stock and brand images is standard; effectiveness depends on the specific choices which aren't detailed."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "Assuming the thumbnail will visually represent the core conflict of deleting an app but still checking, it has potential."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "The short script and video duration suggest a well-paced delivery is achievable for this topic."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The 'healing arcs' category and the empathetic, introspective tone align with typical Soft Reset With Me content."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is highly subjective and related to emotional healing, posing no factual risk."
-        }
-      },
-      "judge_composite_score": 7.0,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-10T15:34:57Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260508_233259",
-      "published_date": "2026-05-08",
-      "status": "uploaded",
-      "topic": "If calm feels boring it might be because you are used to anxiety not love",
-      "category": "psychology drops",
-      "angle_type": "reframe",
-      "total_score": 19,
-      "source_name": "General psychology principle / Trauma-informed care",
-      "source_basis": "Learned associations and nervous system conditioning, often discussed in trauma-informed care and attachment theory, where individuals may habituate to high-arousal states.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "psychology_drop",
-      "emotional_trigger": "Feeling restless or bored during peaceful moments, confusing high-intensity or anxiety for excitement or connection.",
-      "psych_concept": "Emotional regulation, nervous system threat response, learned associations",
-      "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
-      "editorial_seed": "Many of us grew up in environments where high-stress or dramatic situations felt like \"normal.\" When real peace arrives, our nervous system might interpret it as a lack of stimulation or even danger, rather than safety and love. It's about retraining your internal landscape.",
-      "only_soft_reset_line": "You're not bored. You're just waiting for the emergency that isn't coming.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If calm feels boring, this is for you.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.3",
-      "script_validation": "forced",
-      "script_validation_notes": "word_count outside 45-75",
-      "word_count": 84,
-      "estimated_duration_sec": 27,
-      "thumbnail_text": "calm feels boring?",
-      "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring this is for you feeling restless or bored during peaceful moments confusing high intensity or anxiety for excitement or connection emotional regulation nervous system threat response learned associations you learned to read anxiety as excitement calm reads as indifference you re not bored you re just waiting for the emergency that isn t coming",
-      "title": "Calm feels boring? You were used to ANXIETY",
-      "youtube_video_id": "L0kGc4vgGY0",
-      "youtube_url": "https://youtube.com/shorts/L0kGc4vgGY0",
-      "fallback_count": 0,
-      "video_count": 12,
-      "total_scenes": 15,
-      "validation_warnings": [
-        "tags_sanitized"
-      ],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W19",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "reframe",
-        "category": "psychology drops",
-        "topic_cluster": "If calm feels boring it might be because you are used to anx",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 15
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "Intriguing premise that challenges a common misconception about calm."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script is concise and directly addresses the core reframe."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "Clear reframe angle, suggesting anxiety is mistaken for love."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "Identifies 'anxiety as love' as the mechanism, which is specific enough."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "No call to action present in the script or details provided."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "Directly reflects the hook and the core message of the video."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Effectively summarizes the video's premise and targets the audience."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Stock videos and brand images likely support the narrative, but no specific examples are given."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "The balance of brand images and stock videos seems appropriate for the content."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The hook and title suggest a strong concept that could translate well to a thumbnail."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script (84 words for 37s) suggests a deliberate, potentially impactful pacing."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The 'psychology drops' category and reframe angle are consistent with the channel's presumed style."
-        },
-        "policy_factual_risk": {
-          "score": 9,
-          "reason": "The content is framed as a reframe of common experiences, posing minimal factual risk."
-        }
-      },
-      "judge_composite_score": 7.0,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-10T15:34:57Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
     },
     {
       "video_id": "20260509_091450",
@@ -2477,6 +2665,322 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-16T14:42:23Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260515_200605",
+      "published_date": "2026-05-15",
+      "status": "uploaded",
+      "topic": "Moving on fast does not mean you did not care",
+      "category": "healing arcs",
+      "angle_type": "reframe",
+      "total_score": 17,
+      "source_name": "Therapist consensus on self-compassion and healthy healing processes.",
+      "source_basis": "Emotional regulation and self-compassion facilitate healing, and breaking patterns of self-abandonment can lead to a quicker return to well-being.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "truth_drop",
+      "emotional_trigger": "Guilt or judgment for moving on 'too fast' after a breakup or difficult emotional situation.",
+      "psych_concept": "Self-compassion, emotional regulation, breaking cycles of self-abandonment.",
+      "core_claim": "It can mean you finally stopped abandoning yourself",
+      "editorial_seed": "This topic validates individuals who feel guilt or face judgment for processing breakups or difficult experiences quickly. It reframes 'moving on fast' as a sign of personal growth and self-respect, rather than a lack of care, connecting it to a positive shift in self-relationship.",
+      "only_soft_reset_line": "You stayed loyal to the loss, not to yourself.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Moving on fast doesn't mean you didn't care. It might mean the opposite.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 71,
+      "estimated_duration_sec": 22,
+      "thumbnail_text": "Moving on fast doesn't mean you didn't care.",
+      "content_fingerprint": "moving on fast does not mean you did not care moving on fast doesn t mean you didn t care it might mean the opposite guilt or judgment for moving on too fast after a breakup or difficult emotional situation self compassion emotional regulation breaking cycles of self abandonment it can mean you finally stopped abandoning yourself you stayed loyal to the loss not to yourself",
+      "title": "Moving on fast meant you cared DEEPLY",
+      "youtube_video_id": "jqW9J8mW-Uw",
+      "youtube_url": "https://youtube.com/shorts/jqW9J8mW-Uw",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "Moving on fast does not mean you did not care",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook is strong and immediately challenges a common perception, promising a unique perspective."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise, easy to understand, and directly conveys the intended message."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The reframe angle is clear and consistent with the channel's focus on self-growth and healing."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "While the reframed idea is clear, the 'villain' (societal expectation or self-judgment) is implied rather than explicitly defined, leaving room for greater specificity."
+        },
+        "cta_quality": {
+          "score": 0,
+          "reason": "No CTA was provided in the script or details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title is highly accurate to the hook and the core message of the video, creating strong curiosity."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description quickly reiterates the core message and clearly identifies the target audience."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "The balance of stock videos and brand images suggests potential for good sync, but actual sync depends on execution."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images (3) are present, suggesting an intention for visual branding, but their strength depends on their actual content and integration."
+        },
+        "thumbnail_concept": {
+          "score": 0,
+          "reason": "Thumbnail concept not provided."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script length (71 words) indicates it can be delivered at a thoughtful, effective pace within 35 seconds."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The angle type (reframe) and category (healing arcs) align well with a self-growth channel. Use of brand images further supports this."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is subjective advice focused on emotional reframing and has no factual claims that could pose a policy risk."
+        }
+      },
+      "judge_composite_score": 7.2,
+      "strongest_element": "Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers a validating message with a consistent, empathetic tone and clear voiceover, supported by a well-structured narrative and suitable background music. While the video hook strongly aligns with the title, the initial pacing of captions and some generic opening visuals could be improved to more immediately capture viewer attention, leveraging more specific and impactful imagery from the outset to prevent early drop-offs.",
+      "video_audit_strengths": [
+        "The exceptional quality and empathetic delivery of the voiceover, which truly elevates the message.",
+        "The robust narrative structure that takes viewers from tension to insight and a powerful loopback within a short timeframe.",
+        "The consistent brand identity, ensuring the video feels authentically 'Soft Reset With Me' in both tone and message.",
+        "The strong alignment between the video's hook and its title, promising and delivering a clear reframe."
+      ],
+      "video_audit_dropoff_causes": [
+        "Slow caption pacing, particularly within the first few seconds, which delays the delivery of the hook's full message.",
+        "The initial visuals are somewhat generic and dark, lacking the immediate visual impact needed to stand out in a rapidly scrolling Shorts feed.",
+        "The overall low-energy start might not compete effectively for attention against more dynamic or quickly revealing content."
+      ],
+      "video_audit_repeat_next": [
+        "The use of a high-quality, empathetic voiceover.",
+        "The clear and concise narrative arc (hook, tension, insight, loopback) for delivering psychological insights.",
+        "The strong alignment between the video's initial hook and its title.",
+        "Thoughtful selection of background music that enhances, rather than distracts from, the message.",
+        "Integrating symbolic visuals that directly reinforce the core message, especially towards the resolution."
+      ],
+      "video_audit_reduce_next": [
+        "Slow caption pacing, particularly in the critical first 5 seconds, to deliver the hook more rapidly.",
+        "Reliance on overly generic or static opening visuals; aim for more immediate visual intrigue.",
+        "Any delays in presenting the core idea within the very beginning of the Short."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Contrarian Take",
+        "thumbnail_type": "Text Overlay & Symbolic Image",
+        "visual_style_mix": "Evocative B-roll",
+        "narrative_format": "Reframe / Truth Drop",
+        "character_used": "Narrator (VO only)"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-17T15:41:43Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260515_233150",
+      "published_date": "2026-05-15",
+      "status": "uploaded",
+      "topic": "3 signs your fight is actually over, not just paused.",
+      "category": "Relationship Patterns",
+      "angle_type": "list",
+      "total_score": 20,
+      "source_name": "Therapeutic Consensus on Relationship Repair",
+      "source_basis": "Principles of healthy conflict resolution and emotional repair in relationships, often discussed in attachment theory and polyvagal theory contexts.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "list",
+      "emotional_trigger": "Lingering discomfort and uncertainty after an argument, even when words of apology have been exchanged.",
+      "psych_concept": "Conflict resolution, emotional repair, nervous system regulation, safety cues.",
+      "core_claim": "True repair after a conflict has specific, often subtle, indicators beyond just silence or an 'I'm sorry.'",
+      "editorial_seed": "This short addresses the common experience of lingering discomfort after an argument, even when words of apology have been exchanged. It highlights concrete, observable signs that indicate a true return to emotional safety and connection, rather than just a temporary truce, helping viewers discern genuine resolution.",
+      "only_soft_reset_line": "Silence after a fight isn't peace. It's just quiet.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You both moved on. But you never actually finished the fight.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 64,
+      "estimated_duration_sec": 29,
+      "thumbnail_text": "The fight ended. Did it?",
+      "content_fingerprint": "3 signs your fight is actually over not just paused you both moved on but you never actually finished the fight lingering discomfort and uncertainty after an argument even when words of apology have been exchanged conflict resolution emotional repair nervous system regulation safety cues true repair after a conflict has specific often subtle indicators beyond just silence or an i m sorry silence after a fight isn t peace it s just quiet",
+      "title": "That fight was never REALLY over",
+      "youtube_video_id": "lFj1KTfEyEc",
+      "youtube_url": "https://youtube.com/shorts/lFj1KTfEyEc",
+      "fallback_count": 0,
+      "video_count": 5,
+      "total_scenes": 8,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "list",
+        "category": "Relationship Patterns",
+        "topic_cluster": "3 signs your fight is actually over, not just paused.",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook is intriguing and directly addresses a common, albeit unspoken, relationship dynamic. It creates immediate curiosity."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and easy to understand. The core message about unresolved conflict is clear."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is empathetic and insightful, offering a perspective on lingering relationship issues. It aligns with the channel's likely tone."
+        },
+        "villain_mechanism_specificity": {
+          "score": 6,
+          "reason": "The 'fight' is presented as the villain mechanism, but it could be more specific. What aspects of the 'fight' are unresolved? It's a bit general."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "No explicit CTA is present in the provided details. A CTA would enhance engagement and provide direction."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title perfectly reflects the hook and the underlying theme of unresolved conflict. It's honest and compelling."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description effectively expands on the hook, clarifies the target audience, and sets the emotional tone. It's a good summary."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming stock videos and brand images will be chosen to align with the script's themes, there's potential for good sync. Needs careful selection."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The use of brand images and stock videos can enhance the message, but their effectiveness depends on the quality and relevance of the chosen assets."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "A thumbnail showing subtle tension or a past argument could be very effective. The concept has high potential for click-through."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "With only 64 words, a skilled voiceover artist can deliver this at an engaging pace, allowing for pauses and emotional nuance."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The theme of unresolved relationship patterns and lingering emotional doubt fits perfectly with a channel like Soft Reset With Me."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is highly subjective and emotional, posing no factual claims that could lead to policy violations. No risk identified."
+        }
+      },
+      "judge_composite_score": 7.6,
+      "strongest_element": "Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short features a compelling hook and a well-delivered script with clear captions and a good audio mix, all of which align well with the 'Soft Reset With Me' brand's empathetic tone. However, the visual choices are inconsistent; particularly, the jarring and overly literal snake visual disrupts the otherwise reflective emotional tone and disconnects from the nuanced topic of relationship repair. While some visuals set a mood, a stronger focus on specific, abstract, or metaphorical imagery would better enhance the script's meaning and prevent potential viewer drop-off.",
+      "video_audit_strengths": [
+        "The voiceover delivery is exceptionally strong, maintaining an empathetic, calm, and thoughtful tone that perfectly suits the 'Soft Reset With Me' brand identity.",
+        "The script is well-crafted, offering clear, actionable insights into a relatable emotional challenge, which is a core strength for this type of content.",
+        "The clarity and timing of the captions are excellent, ensuring accessibility and ease of comprehension for all viewers."
+      ],
+      "video_audit_dropoff_causes": [
+        "The jarring and overly literal visual of the woman with the snake (0:11-0:17) is a strong candidate for viewer drop-off. It's a significant visual disconnect from the nuanced emotional topic and the brand's gentle approach, potentially confusing or alienating viewers.",
+        "Reliance on generic stock footage for several segments could lead to visual fatigue or disengagement for viewers seeking more thoughtful or unique imagery that truly enhances the script's message."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the high quality and empathetic tone of the voiceover delivery.",
+        "Continue with the clear, concise, and insight-driven script writing.",
+        "Keep the excellent captioning style and pacing for readability and accessibility.",
+        "Ensure strong alignment between the video title and the in-video hook to set clear viewer expectations."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize the use of overly generic stock footage that doesn't add specific value or deepens the narrative.",
+        "Eliminate visuals that are overly literal or jarringly specific for nuanced emotional concepts, like the snake used for 'waiting to feel safe again.' Seek more metaphorical, abstract, or subtly representative visuals instead."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Problem/Solution",
+        "thumbnail_type": "Emotional/Abstract",
+        "visual_style_mix": "Reflective/Melancholic",
+        "narrative_format": "List/Insight-driven",
+        "character_used": "Relatable/Internal Experience"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-17T15:41:43Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"

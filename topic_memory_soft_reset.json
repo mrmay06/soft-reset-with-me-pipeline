@@ -1,25 +1,5 @@
 [
   {
-    "video_id": "20260504_211521",
-    "published_date": "2026-05-04",
-    "status": "generated_not_uploaded",
-    "topic": "The quiet anxiety of waiting for *their* reply after you\u2019ve sent a vulnerable message.",
-    "category": "relationship patterns",
-    "total_score": 19,
-    "source_name": "Attachment Theory (Bowlby, Ainsworth)",
-    "content_format": "psychology_drop",
-    "emotional_trigger": "uncertainty, vulnerability, fear of rejection",
-    "psych_concept": "anxious attachment patterns & nervous system response to uncertainty",
-    "hook": "You sent it. Now the silence is doing something to you.",
-    "thumbnail_text": "why waiting for their reply feels like this",
-    "content_fingerprint": "the quiet anxiety of waiting for their reply after you ve sent a vulnerable message you sent it now the silence is doing something to you uncertainty vulnerability fear of rejection anxious attachment patterns nervous system response to uncertainty",
-    "title": "You sent that text. Now the silence is hitting",
-    "youtube_video_id": "MOCK_NOT_UPLOADED",
-    "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
-    "fallback_count": 4,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260504_213805",
     "published_date": "2026-05-04",
     "status": "generated_not_uploaded",
@@ -2954,6 +2934,146 @@
       "visual_style_mix": "Aesthetic, Philosophical, Cinematic",
       "narrative_format": "Reflective Essay, Hot Take, Relationship Advice",
       "character_used": "Empathetic Narrator"
+    }
+  },
+  {
+    "video_id": "20260517_154143",
+    "published_date": "2026-05-17",
+    "status": "uploaded",
+    "topic": "Why rushing to define a relationship can actually kill it",
+    "category": "Identity and Growth",
+    "angle_type": "reframe",
+    "total_score": 17,
+    "source_name": "Relationship Psychology / Therapist Consensus",
+    "source_basis": "The importance of natural relationship progression and the impact of premature commitment on intimacy development, often discussed in relationship psychology and counseling.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "reframe",
+    "emotional_trigger": "Anxiety about relationship status, fear of losing potential connection, feeling pressured to define.",
+    "psych_concept": "Relationship pacing, premature commitment, organic intimacy development",
+    "core_claim": "Pressuring a relationship into a defined box too early can stifle its natural development and prevent true intimacy from forming organically.",
+    "editorial_seed": "In our desire for security and clarity, we often rush to label relationships. But sometimes, forcing a definition before a genuine connection has had time to blossom can put undue pressure on the dynamic and prevent it from evolving authentically. Let true intimacy guide the labels, not the other way around.",
+    "only_soft_reset_line": "You didn't need the label. You needed the discomfort to stop.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Needing a label fast might be anxiety, not love.",
+    "hook_quality": "strong",
+    "script_version": "2",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 61,
+    "estimated_duration_sec": 26,
+    "thumbnail_text": "Asking 'what are we' too soon ends it.",
+    "content_fingerprint": "why rushing to define a relationship can actually kill it needing a label fast might be anxiety not love anxiety about relationship status fear of losing potential connection feeling pressured to define relationship pacing premature commitment organic intimacy development pressuring a relationship into a defined box too early can stifle its natural development and prevent true intimacy from forming organically you didn t need the label you needed the discomfort to stop",
+    "title": "Needing a label fast is quiet ANXIETY",
+    "youtube_video_id": "tl39aYlEIHw",
+    "youtube_url": "https://youtube.com/shorts/tl39aYlEIHw",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 9,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W20",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "reframe",
+      "category": "Identity and Growth",
+      "topic_cluster": "Why rushing to define a relationship can actually kill it",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 9
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Directly addresses a common internal conflict, posing a question that implies a deeper, less obvious truth."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and easy to understand. The core message is immediately apparent within the short script."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Clearly reframes a common relationship behavior (needing labels) as a manifestation of anxiety, a typical Soft Reset angle."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Identifies 'quiet anxiety' as the villain mechanism, specifically linking it to the need for external validation (labels) and control."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no Call to Action (CTA) present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the video's core message and the reframe offered, using the term 'quiet anxiety' effectively."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Expands on the title and hook, providing context and identifying the target audience (those who rush things) clearly."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed positive sync based on typical Soft Reset style; stock videos should align with the emotional tone of anxiety and self-discovery."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Assuming brand images align with Soft Reset's aesthetic, they likely support the theme of introspection and emotional processing."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "The concept is strong if it visually represents anxiety or the conflict between love and anxiety, hinting at the reframe."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "With a short script and clear message, the pacing should be easily manageable for a professional voice-over."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The reframing of common relationship anxieties into actionable self-awareness aligns perfectly with the channel's identity."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is opinion-based and psychological reframing, posing no factual risk or policy violation."
+      }
+    },
+    "judge_composite_score": 7.3,
+    "strongest_element": "Editorial POV",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively delivers a nuanced psychological reframe through a strong verbal hook, excellent voiceover, and well-integrated captions. While the overall emotional tone and audio mix are highly polished and on-brand, some visual choices lean towards generic, potentially disrupting the thematic flow for discerning viewers. The video excels in its narrative clarity and brand consistency, setting a high standard for spoken content and presentation, but could benefit from more bespoke or highly specific visual storytelling to fully elevate its impactful message.",
+    "video_audit_strengths": [
+      "The voiceover delivery is exceptional, conveying empathy and authority without sounding detached.",
+      "The consistent, atmospheric color grading and visual filtering contribute strongly to the brand's identity and mood.",
+      "The text-on-screen hook provides immediate value and clarity, acting as a strong verbal and visual anchor."
+    ],
+    "video_audit_dropoff_causes": [
+      "Some visual choices, like the person with the blind cane or the police lights, might feel disjointed or too generic for viewers seeking highly specific illustrative content, potentially leading to a loss of engagement.",
+      "The consistently low-key, melancholic aesthetic, while on-brand, might not appeal to all viewers looking for a 'reset' who might prefer a more uplifting or visually dynamic approach."
+    ],
+    "video_audit_repeat_next": [
+      "The style of voiceover narration (calm, empathetic, confident).",
+      "The clean and well-paced captioning style.",
+      "The use of an atmospheric, consistent musical backdrop.",
+      "The direct, text-based hook in the first few seconds."
+    ],
+    "video_audit_reduce_next": [
+      "Reliance on generic stock footage that isn't highly specific to the emotional or psychological nuance of the script.",
+      "Visuals that create jarring transitions or require too much interpretation to connect to the core message (e.g., police lights)."
+    ],
+    "video_audit_tags": {
+      "hook_type": "psychological reframe",
+      "thumbnail_type": "text overlay with evocative imagery",
+      "visual_style_mix": "cinematic; dark academia; lofi; introspective",
+      "narrative_format": "explanatory; reflective; self-help; relationship psychology",
+      "character_used": "narrator as guide"
     }
   }
 ]
