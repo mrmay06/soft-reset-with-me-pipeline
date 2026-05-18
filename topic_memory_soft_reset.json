@@ -1,25 +1,5 @@
 [
   {
-    "video_id": "20260504_224908",
-    "published_date": "2026-05-04",
-    "status": "generated_not_uploaded",
-    "topic": "The unspoken pressure to be \"perfect\" when dating, and losing yourself trying.",
-    "category": "identity and growth",
-    "total_score": 19,
-    "source_name": "Social Psychology",
-    "content_format": "truth_drop",
-    "emotional_trigger": "Feeling exhausted or inauthentic after a date; internal pressure to perform or change oneself for a partner.",
-    "psych_concept": "Authenticity, Self-Presentation, Impression Management",
-    "hook": "If you come home from a date exhausted, that's worth paying attention to.",
-    "thumbnail_text": "That date exhausted you for a reason.",
-    "content_fingerprint": "the unspoken pressure to be perfect when dating and losing yourself trying if you come home from a date exhausted that s worth paying attention to feeling exhausted or inauthentic after a date internal pressure to perform or change oneself for a partner authenticity self presentation impression management",
-    "title": "Being yourself on a date shouldn't drain you",
-    "youtube_video_id": "MOCK_NOT_UPLOADED",
-    "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
-    "fallback_count": 0,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260505_075652",
     "published_date": "2026-05-05",
     "status": "generated_not_uploaded",
@@ -3320,6 +3300,151 @@
       "visual_style_mix": "cinematic b-roll & text",
       "narrative_format": "explainer with personal reflection",
       "character_used": "none"
+    }
+  },
+  {
+    "video_id": "20260518_234049",
+    "published_date": "2026-05-18",
+    "status": "uploaded",
+    "topic": "The subtle ways you push people away right when a relationship starts getting truly good.",
+    "category": "Self-Worth Shifts",
+    "angle_type": "specific_scenario",
+    "total_score": 18,
+    "source_name": "Psychological principles (e.g., Hazan & Shaver, Bowlby, Beck's Cognitive Theory)",
+    "source_basis": "Fear of intimacy, attachment theory (anxious/fearful-avoidant), and self-worth schemas impacting relationship behavior.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Feeling 'too good to be true' in a new, healthy relationship; an urge to find flaws or create distance when intimacy deepens.",
+    "psych_concept": "Fear of intimacy, self-sabotage, attachment styles (fearful-avoidant/anxious), core beliefs about self-worth.",
+    "core_claim": "When a relationship finally offers safety and connection, some people unconsciously create distance or conflict because deep down, they don't believe they deserve it, or they fear the pain of eventual loss.",
+    "editorial_seed": "It's a cruel irony: the closer you get to the healthy connection you crave, the more your old patterns scream that it's too good to be true. This isn't about them, it's about the subconscious fear that true intimacy means eventual pain or loss. Recognizing it is the first step to staying present.",
+    "only_soft_reset_line": "You're not finding red flags. You're making them.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Things are actually going well and you're suddenly pulling back \u2014 this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 72,
+    "estimated_duration_sec": 28,
+    "thumbnail_text": "When it's going well and you start pulling away",
+    "content_fingerprint": "the subtle ways you push people away right when a relationship starts getting truly good things are actually going well and you re suddenly pulling back this is for you feeling too good to be true in a new healthy relationship an urge to find flaws or create distance when intimacy deepens fear of intimacy self sabotage attachment styles fearful avoidant anxious core beliefs about self worth when a relationship finally offers safety and connection some people unconsciously create distance or conflict because deep down they don t believe they deserve it or they fear the pain of eventual loss you re not finding red flags you re making them",
+    "title": "Good things feel WRONG, so you pull away",
+    "youtube_video_id": "DUy6gI2gSRk",
+    "youtube_url": "https://youtube.com/shorts/DUy6gI2gSRk",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 10,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "specific_scenario",
+      "category": "Self-Worth Shifts",
+      "topic_cluster": "The subtle ways you push people away right when a relationsh",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 10
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Directly addresses a specific, relatable internal conflict for the target audience."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "Concise and clear, gets straight to the point of the internal conflict, though could benefit from a slightly more developed explanation within the word count."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Clearly adopts the channel's signature empathetic and introspective tone for self-growth."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Identifies 'good things feel wrong' as the villain mechanism, which is specific enough to resonate with the scenario."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "No CTA is present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurately reflects the hook and the core conflict of the video. Captures the emotional dissonance."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Effectively summarizes the video's premise and piques interest, hinting at the underlying psychological reason."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed good sync based on the scene count and stock video usage, but requires actual review of the video."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images and stock videos are likely used to support the mood, but their specific effectiveness can't be judged without seeing the final cut."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "Concept is likely to be aligned with the title and hook, but the actual thumbnail design would need review for effectiveness."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The script is short enough that pacing should be manageable for a clear delivery, but actual delivery needs to be checked."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The topic and angle align perfectly with the channel's focus on self-worth and relationship dynamics in a faceless format."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No discernible policy or factual risks present. Content is subjective and self-reflective."
+      }
+    },
+    "judge_composite_score": 7.54,
+    "strongest_element": "Hook & Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys an empathetic and insightful message consistent with the Soft Reset With Me brand, thanks to its clear voiceover, well-balanced audio, and thoughtful emotional tone. However, the video's engagement is hampered by an overly slow and dark opening, extremely deliberate word-by-word caption pacing, and a reliance on generic visuals that don't always powerfully reinforce the script's specific points, potentially leading to viewer drop-off.",
+    "video_audit_strengths": [
+      "The consistent empathetic and introspective brand tone, perfectly aligned with 'Soft Reset With Me'.",
+      "The high-quality, clear, and well-modulated voiceover performance.",
+      "The concise, insightful, and highly relatable core message that resonates with a specific psychological experience.",
+      "The effective and subtle use of background music that enhances mood without distracting from the message."
+    ],
+    "video_audit_dropoff_causes": [
+      "The initial visual is too dark and slow for a short-form video, failing to immediately hook attention.",
+      "The word-by-word caption pacing is overly slow, making the text tedious to read and hindering quick information absorption.",
+      "Many visuals are generic and lack specific connection to the script's nuanced points, reducing visual engagement and storytelling impact.",
+      "Overall visual pacing is quite slow with minimal cuts, which can lead to disengagement in a fast-paced Shorts feed."
+    ],
+    "video_audit_repeat_next": [
+      "The empathetic and gentle voiceover delivery.",
+      "The clear, concise, and insightful script structure.",
+      "The high audio production quality (voice and music balance).",
+      "The consistent brand emotional tone and thoughtful approach to sensitive topics."
+    ],
+    "video_audit_reduce_next": [
+      "Overly slow, fragmented caption reveals.",
+      "Reliance on generic stock footage that doesn't add specific narrative value to the script.",
+      "Dark or slow initial visual entry points that delay viewer engagement.",
+      "Overall slow visual pacing and minimal cuts for short-form content."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Problem/Solution, Call-Out, Self-Reflection",
+      "thumbnail_type": "Emotional, Text Overlay, Muted",
+      "visual_style_mix": "Cinematic, Minimalist, Reflective",
+      "narrative_format": "Truth Drop, Introspection, Psychological Insight",
+      "character_used": "Empathic Guide, Observer"
     }
   }
 ]
