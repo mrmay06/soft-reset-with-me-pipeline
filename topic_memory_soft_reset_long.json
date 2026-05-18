@@ -641,5 +641,161 @@
     "strongest_element": "title_accuracy",
     "weakest_element": "visual_dialogue_sync",
     "only_soft_reset_score": 8
+  },
+  {
+    "video_id": "long_20260518_045256",
+    "published_date": "2026-05-18",
+    "status": "uploaded",
+    "topic": "The quiet anxiety of having 'nothing to fix' in a healthy relationship.",
+    "working_title": "When Peace Feels Unsafe: The Anxiety of a Relationship Where You Don't Have to Earn Love",
+    "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+    "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+    "angle_type": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
+    "longform_format": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
+    "core_claim": "Our nervous systems can be so conditioned by past chaos or conditional love that genuine peace and unconditional acceptance in a relationship can paradoxically trigger anxiety, making us feel like we always need to 'do' something to maintain it, rather than simply receive it.",
+    "editorial_seed": "We often talk about 'red flags,' but what about 'green flags' that feel... wrong? When a relationship is genuinely stable, kind, and asks nothing more than for you to simply *be*, it can paradoxically activate a deep-seated anxiety. This video explores why our minds might try to create problems where none exist, pushing us to 'fix' a perfectly good thing, and how to gently retrain ourselves to trust and receive true peace.",
+    "only_soft_reset_line": "Learning to simply exist \u2014 without performing for love or constantly searching for a problem to solve \u2014 is the most profound act of unlearning conditional affection.",
+    "word_count": 1004,
+    "estimated_duration_sec": 388.6,
+    "argument_quality": "strong",
+    "final_duration_sec": 361.13,
+    "render_validation": "passed",
+    "title": "The Quiet Anxiety of Finally Having Nothing to Fix",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why You Feel Anxious When Your Relationship Is Good"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You Still Wait for Something to Go Wrong, Even When It's Good"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "The Quiet Anxiety of Finally Having Nothing to Fix"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "pure_typography",
+        "structure": "typography",
+        "line1": "THIS CAN'T LAST",
+        "line2": "why peace feels wrong",
+        "thumbnail_text": "THIS CAN'T LAST / why peace feels wrong",
+        "visual_prompt": "Minimalist dark charcoal background, subtle paper texture, premium editorial book cover aesthetic, no text, cool neutral cinematic color. 16:9 aspect ratio."
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "face_right_text_left",
+        "structure": "face_text",
+        "line1": "YOU'RE STILL WAITING",
+        "line2": "for something to break",
+        "thumbnail_text": "YOU'RE STILL WAITING / for something to break",
+        "visual_prompt": "A cinematic portrait of a young woman in her late 20s, facing forward but with eyes subtly drawn towards the left. Her expression conveys quiet, devastated recognition and internal thought, not sadness or joy. Heavy, reflective eyes. Soft diffused cool-neutral window light, prestige drama color grade, subtle film grain. Right 58% of the frame features her face and upper body, with the left 42% completely dark and empty, reserved for text overlay. 16:9 aspect ratio, no text.",
+        "subject_gender": "woman",
+        "portrait_scene": "A young woman (mid-twenties to early thirties) with quiet, devastated recognition in her eyes, looking slightly left. Soft diffused cool-neutral window light. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. The right 58% of the frame is occupied by her face, with the left 42% as a clean, empty dark zone. No text. 16:9 aspect ratio."
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "split_screen",
+        "structure": "split",
+        "line1": "NOTHING TO FIX",
+        "line2": "and why that scares you",
+        "thumbnail_text": "NOTHING TO FIX / and why that scares you",
+        "visual_prompt": "Two-plate split composite: Left side: A solitary figure (gender ambiguous) seen from behind, sitting in a dimly lit, slightly cluttered room, bathed in cold, deep shadows. The atmosphere is unresolved and melancholic. Right side: A separate figure (gender ambiguous) seen from behind, standing at a clean, minimalist window, looking out at a clear, cool-neutral sky. The light is steady and diffused, conveying quiet clarity and peace, not bright happiness. Both sides have a prestige drama color grade and subtle film grain. No text. 16:9 aspect ratio.",
+        "scene_left": "A solitary figure (from behind, gender ambiguous) sitting alone in a dimly lit, slightly chaotic room, bathed in cold, deep shadows. Overcast, melancholic atmosphere. A sense of unrest and yearning. No text. 16:9 aspect ratio.",
+        "scene_right": "A person (from behind, gender ambiguous) standing at a clean, minimalist window, looking out at a cool, clear, steady sky. Soft, diffused cool-neutral light. Sense of quiet contemplation, but not joy or full resolution. No strong warmth. No text. 16:9 aspect ratio."
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "Fbf3HUSqXRk",
+    "youtube_url": "https://www.youtube.com/watch?v=Fbf3HUSqXRk",
+    "privacy_status": "public",
+    "uploaded_at": "2026-05-18T05:08:11Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The quiet anxiety of having 'nothing to fix' in a healthy re",
+      "visual_style_mix": "unknown",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 0
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook introduces a relatable emotional state (anxiety) and hints at a counter-intuitive solution (having nothing to fix), sparking curiosity."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script, based on the word count and topic, likely explores a nuanced psychological concept with depth. Assumes clear articulation."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The angle of \"quiet anxiety of finally having nothing to fix\" is a deeply introspective and potentially unique perspective aligning with self-growth themes."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'villain' is internal (anxiety, conditioning), and while specific, the mechanism of 'unlearning' needs to be clearly demonstrated in the script."
+      },
+      "cta_quality": {
+        "score": 0,
+        "reason": "No CTA information provided in the prompt."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is highly accurate to the described concept, capturing a specific, relatable, and intriguing emotional state. It's honest and draws attention."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "The description is concise, philosophically intriguing, and accurately reflects the core theme of the video, setting expectations well."
+      },
+      "visual_dialogue_sync": {
+        "score": 0,
+        "reason": "No visual information provided for scoring."
+      },
+      "image_direction_strength": {
+        "score": 0,
+        "reason": "No visual information provided for scoring."
+      },
+      "thumbnail_concept": {
+        "score": 0,
+        "reason": "No thumbnail concept provided for scoring."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The script length suggests a need for thoughtful pacing. Assumes a voice that can convey introspection and calm."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of 'unlearning conditioning,' 'performing for love,' and introspection is highly consistent with a relationship/self-growth channel's typical content."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The topic is purely psychological and subjective, posing no factual or policy risk."
+      }
+    },
+    "judge_composite_score": 8.1,
+    "strongest_element": "title_accuracy",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 9
   }
 ]
