@@ -1,36 +1,5 @@
 [
   {
-    "video_id": "20260505_075652",
-    "published_date": "2026-05-05",
-    "status": "generated_not_uploaded",
-    "topic": "That feeling when a song hits different at 2am",
-    "category": "healing arcs",
-    "angle_type": "specific scenario",
-    "total_score": 20,
-    "source_name": "Affective Neuroscience, Cognitive Psychology",
-    "content_format": "specific_scenario",
-    "emotional_trigger": "late-night introspection, emotional memory, nostalgia, regret, longing",
-    "psych_concept": "Emotional Memory; Embodied Cognition; Visceral Recall",
-    "core_claim": "Some memories return through your body before your logic catches up",
-    "editorial_seed": "Those late-night song triggers aren't just random. Your body holds a unique archive of emotional memories that can resurface when your guard is down. This insight isn't about wallowing, but understanding and gently processing.",
-    "only_soft_reset_line": "That sudden ache isn't a sign of weakness. It's your body's wisdom reminding you what's still asking for gentle acknowledgement.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If a song has ever ruined your night, this is for you.",
-    "hook_quality": "strong",
-    "word_count": 90,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "why that song wrecks you at 2am",
-    "content_fingerprint": "that feeling when a song hits different at 2am if a song has ever ruined your night this is for you late night introspection emotional memory nostalgia regret longing emotional memory embodied cognition visceral recall some memories return through your body before your logic catches up that sudden ache isn t a sign of weakness it s your body s wisdom reminding you what s still asking for gentle acknowledgement",
-    "title": "If a song has ever ruined your night, this is for you",
-    "youtube_video_id": "MOCK_NOT_UPLOADED",
-    "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
-    "fallback_count": 1,
-    "video_count": 6,
-    "total_scenes": 11,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260505_083053",
     "published_date": "2026-05-05",
     "status": "generated_not_uploaded",
@@ -3445,6 +3414,148 @@
       "visual_style_mix": "Cinematic, Minimalist, Reflective",
       "narrative_format": "Truth Drop, Introspection, Psychological Insight",
       "character_used": "Empathic Guide, Observer"
+    }
+  },
+  {
+    "video_id": "20260519_175643",
+    "published_date": "2026-05-19",
+    "status": "uploaded",
+    "topic": "The unspoken rule from your childhood that makes you self-sabotage intimacy.",
+    "category": "Psychology Drops",
+    "angle_type": "truth_drop",
+    "total_score": 18,
+    "source_name": "John Bowlby, Mary Ainsworth",
+    "source_basis": "Attachment Theory and its influence on adult relationship patterns",
+    "source_url": "",
+    "confidence_level": "peer_reviewed",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "The recurring feeling of 'I've been here before' in unhealthy relationships, or choosing partners that feel familiar despite being unsafe.",
+    "psych_concept": "Attachment Theory, Internal Working Models",
+    "core_claim": "Your earliest relational dynamics create a subconscious template for 'love' or 'safety' that you unconsciously seek out, even if it's not healthy.",
+    "editorial_seed": "It's not about blaming your past, but recognizing how old patterns show up in new relationships. Understanding this can break the cycle of choosing what's familiar over what's actually good for you.",
+    "only_soft_reset_line": "Familiar isn't the same as safe. But your nervous system never got that memo.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You don't self-sabotage on purpose. You learned it was safer.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 69,
+    "estimated_duration_sec": 18,
+    "thumbnail_text": "You keep choosing 'home' \u2014 even when home hurt you.",
+    "content_fingerprint": "the unspoken rule from your childhood that makes you self sabotage intimacy you don t self sabotage on purpose you learned it was safer the recurring feeling of i ve been here before in unhealthy relationships or choosing partners that feel familiar despite being unsafe attachment theory internal working models your earliest relational dynamics create a subconscious template for love or safety that you unconsciously seek out even if it s not healthy familiar isn t the same as safe but your nervous system never got that memo",
+    "title": "Self-sabotage was how you felt SAFE",
+    "youtube_video_id": "-hnBAFRy28Q",
+    "youtube_url": "https://youtube.com/shorts/-hnBAFRy28Q",
+    "fallback_count": 0,
+    "video_count": 5,
+    "total_scenes": 8,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "truth_drop",
+      "category": "Psychology Drops",
+      "topic_cluster": "The unspoken rule from your childhood that makes you self-sa",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 8
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "Intriguing premise that challenges a common assumption about self-sabotage."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script is concise and delivers its core message effectively within the short word count."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "The POV is clear, focusing on a psychological explanation rooted in learned safety behaviors."
+      },
+      "villain_mechanism_specificity": {
+        "score": 6,
+        "reason": "While it names 'learned safety' as the mechanism, it could be more specific on *how* this safety is achieved through self-sabotage."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no Call To Action in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the core message of the hook and script, linking self-sabotage to feeling safe."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description effectively summarizes the video's premise and hints at the underlying psychological concept."
+      },
+      "visual_dialogue_sync": {
+        "score": 6,
+        "reason": "Assuming standard integration, sync is likely adequate but not explicitly detailed for a higher score. Visuals need to complement the psychological concepts."
+      },
+      "image_direction_strength": {
+        "score": 5,
+        "reason": "Brand images are present, but their strength in conveying the core message isn't detailed. They need to visually support the psychology."
+      },
+      "thumbnail_concept": {
+        "score": 6,
+        "reason": "A strong thumbnail concept would visually represent the tension between self-sabotage and safety. Needs to be compelling and relevant."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "With a short script, pacing is manageable. The text suggests a thoughtful, slightly slow pace which suits the topic."
+      },
+      "brand_consistency": {
+        "score": 7,
+        "reason": "The topic aligns with relationship/self-growth, fitting the channel's niche. The 'truth drop' angle is also consistent."
+      },
+      "policy_factual_risk": {
+        "score": 9,
+        "reason": "The claim is presented as a psychological interpretation, not a definitive scientific fact, minimizing factual risk. It avoids diagnostic language."
+      }
+    },
+    "judge_composite_score": 7,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 7,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively delivers a powerful psychological insight with a strong, empathetic voiceover and well-paced captions. The hook immediately grabs attention by reframing self-sabotage as a learned safety mechanism, aligning perfectly with the video's title. While the emotional tone and audio mix are excellent, some visual choices are too abstract or disjointed, occasionally hindering the connection between the spoken word and the imagery. Focusing on more specific and stylistically consistent visuals would further enhance viewer engagement and reduce potential drop-offs.",
+    "video_audit_strengths": [
+      "The voiceover's empathetic and non-judgmental delivery is a core strength, fostering trust and connection with the audience on a sensitive topic.",
+      "The script's ability to simplify complex psychological concepts (like attachment theory and internal working models) into relatable, concise statements is excellent.",
+      "The consistent brand identity, even with varied stock footage, is maintained through the mood, captions, and overall narrative tone, reinforcing Soft Reset With Me's unique voice."
+    ],
+    "video_audit_dropoff_causes": [
+      "Abrupt shifts in visual style (e.g., sudden switch from color to black and white, then back again) can be jarring and momentarily pull the viewer out of the narrative flow.",
+      "Several abstract visuals (e.g., coffee cup, open notebook, old key) lack direct relevance to the specific psychological concepts being discussed, potentially leading to a disconnect between the visual and auditory experience.",
+      "Some viewers might find the overall slow, somber pacing of the visuals (even with quick caption changes) to be less engaging, especially if they prefer more dynamic or directly illustrative content for psychology topics."
+    ],
+    "video_audit_repeat_next": [
+      "The clear, empathetic, and measured voiceover delivery.",
+      "The concise, impactful script that distills complex ideas into easily digestible insights.",
+      "The use of a strong emotional hook that immediately connects with a common struggle.",
+      "The effective use of music to establish and maintain a consistent emotional tone."
+    ],
+    "video_audit_reduce_next": [
+      "Overly abstract stock footage that doesn't directly enhance the spoken message.",
+      "Sudden and jarring changes in visual style (e.g., frequent shifts between color and black & white imagery).",
+      "Reliance on visuals that could be used for many different topics, aiming for more unique and specific imagery where possible."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Bold Claim|Relatable Problem",
+      "thumbnail_type": "Text Overlay|Emotional Resonance",
+      "visual_style_mix": "Cinematic|Moody Stock",
+      "narrative_format": "Explainer|Insight",
+      "character_used": "Abstract|Stock Characters"
     }
   }
 ]
