@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-19T17:56:43Z",
+  "generated_at": "2026-05-20T23:52:08Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-03",
-  "end_date": "2026-05-18",
+  "start_date": "2026-04-04",
+  "end_date": "2026-05-19",
   "videos": [
     {
       "video_id": "20260509_091450",
@@ -1016,6 +1016,172 @@
       "data_available": true
     },
     {
+      "video_id": "20260518_174052",
+      "published_date": "2026-05-18",
+      "status": "uploaded",
+      "topic": "The 'dating rule' you still follow that came straight from your parents.",
+      "category": "psychology drops",
+      "angle_type": "psychology_drop",
+      "total_score": 19,
+      "source_name": "Family Systems Theory, Attachment Theory",
+      "source_basis": "Intergenerational transmission of relationship patterns and schemas; influence of early family experiences on adult romantic relationships.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "psychology_drop",
+      "emotional_trigger": "Realizing an unconscious 'rule' you follow in dating isn't your own, but inherited.",
+      "psych_concept": "Intergenerational transmission of relationship patterns and schemas",
+      "core_claim": "Many unspoken rules about relationships come from childhood observations or direct parental advice, shaping our adult dating behavior unconsciously.",
+      "editorial_seed": "We often adopt 'rules' about relationships, love, or conflict from our parents without realizing it. These can be helpful or incredibly limiting, influencing who we choose and how we show up, even when we consciously disagree with our parents. It's about recognizing the invisible scripts we're running.",
+      "only_soft_reset_line": "You didn't choose that. You absorbed it.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Your dating standards might actually be your parents' fears.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 72,
+      "estimated_duration_sec": 22,
+      "thumbnail_text": "It's not your rule.",
+      "content_fingerprint": "the dating rule you still follow that came straight from your parents your dating standards might actually be your parents fears realizing an unconscious rule you follow in dating isn t your own but inherited intergenerational transmission of relationship patterns and schemas many unspoken rules about relationships come from childhood observations or direct parental advice shaping our adult dating behavior unconsciously you didn t choose that you absorbed it",
+      "title": "Your dating standards are your parents' FEARS",
+      "youtube_video_id": "QW9-xpVhJNs",
+      "youtube_url": "https://youtube.com/shorts/QW9-xpVhJNs",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 9,
+      "validation_warnings": [
+        "tags_sanitized"
+      ],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology_drop",
+        "category": "psychology drops",
+        "topic_cluster": "The 'dating rule' you still follow that came straight from y",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and directly challenges a common perception about dating standards."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and easy to understand, the core message is delivered effectively within the word count."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is implied through the framing of standards as inherited fears, which is a psychological take. Could be slightly more pronounced."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "Identifies parents' fears as the 'villain' mechanism, which is specific, but the 'how' could be elaborated slightly more if space allowed."
+        },
+        "cta_quality": {
+          "score": 3,
+          "reason": "No explicit CTA is present in the provided details. This is a significant omission for a YouTube video."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Directly reflects the core message of the hook and script, accurately representing the video's premise."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively expands on the title and hook, creating curiosity and setting expectations for the viewer."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumed good sync based on provided scene breakdown, but without the actual video, this is an estimation. The prompt implies a focus on content over visual storytelling here."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "Brand images are mentioned but their specific direction and impact on the narrative aren't detailed. A neutral score as it's not a primary focus of the provided text."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The concept is implied by the title/hook. A strong visual based on 'parents' fears' impacting dating would be key, but is not explicitly described."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The script is short and punchy, suitable for a measured but engaging read. Assumes a professional VO."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The psychological angle aligns well with a relationship/self-growth channel. The framing is fitting for the brand."
+        },
+        "policy_factual_risk": {
+          "score": 9,
+          "reason": "The claim is a psychological interpretation, not a hard scientific fact. Presented as an interpretation, it carries low factual risk. The risk is low as it's framed as a perspective."
+        }
+      },
+      "judge_composite_score": 7.38,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers a psychology drop with a compelling emotional tone and high production quality, fostering an introspective atmosphere. While the hook's visual delivery could be more immediate to maximize early engagement, the strong alignment between the hook and title, excellent audio mix, and well-paced captions ensure the core message is clear and resonant throughout. The consistent emotional tone and choice of evocative visuals are significant strengths to replicate.",
+      "video_audit_strengths": [
+        "The exceptional consistency in emotional atmosphere, created through a harmonious blend of music, voiceover, and visuals, draws the viewer into a reflective state.",
+        "The clarity and conciseness of the script, delivered with empathy, make complex psychological concepts accessible and relatable.",
+        "The high overall production quality, from the crisp voiceover to the aesthetically pleasing B-roll footage, elevates the professional feel of the content."
+      ],
+      "video_audit_dropoff_causes": [
+        "The initial visual engagement could be stronger. The opening shot of the person by the rainy window, while aesthetically pleasing, is static and takes several seconds to convey the full hook text visually, which might cause some viewers to swipe before the core message fully registers.",
+        "While the visuals are emotionally appropriate, some shots are quite static (e.g., empty chair, rain on window) which, without more dynamic movement or rapid cuts, can lead to decreased retention for viewers seeking constant visual stimulation in a Shorts format."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the strong, empathetic, and introspective voiceover style.",
+        "Continue with the high-quality, mood-setting background music.",
+        "Utilize visuals that, even if not literal, powerfully convey the emotional subtext of the script.",
+        "Ensure caption readability and generally good pacing with the spoken word."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize static, slow-reveal visuals in the first 2-3 seconds; aim for more immediate visual impact or a quicker text reveal for the hook.",
+        "Avoid overly long shots of unchanging scenes unless there's a specific, dynamic element introduced."
+      ],
+      "video_audit_tags": {
+        "hook_type": "provocative statement",
+        "thumbnail_type": "text only",
+        "visual_style_mix": "cinematic b-roll & text",
+        "narrative_format": "explainer with personal reflection",
+        "character_used": "none"
+      },
+      "metrics": {
+        "views": 10,
+        "engagedViews": 5,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 34.53,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 26.32,
+      "performance_score": 26.32,
+      "score_version": 1,
+      "hook_score": 50.0,
+      "hold_score": 34.53,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 34.71,
+      "analytics_fetched_at": "2026-05-20T23:52:08Z",
+      "analytics_days_old": 2,
+      "data_available": true
+    },
+    {
       "video_id": "20260510_233328",
       "published_date": "2026-05-10",
       "status": "uploaded",
@@ -1157,28 +1323,28 @@
         "character_used": "Empathetic Narrator, Solitary Figures"
       },
       "metrics": {
-        "views": 318,
-        "engagedViews": 69,
-        "averageViewDuration": 13,
-        "averageViewPercentage": 38.1,
-        "likes": 4,
+        "views": 346,
+        "engagedViews": 75,
+        "averageViewDuration": 14,
+        "averageViewPercentage": 39.1,
+        "likes": 3,
         "comments": 0,
         "shares": 2,
         "subscribersGained": 0
       },
-      "composite_score": 26.41,
-      "performance_score": 26.41,
+      "composite_score": 26.27,
+      "performance_score": 26.27,
       "score_version": 1,
-      "hook_score": 21.7,
-      "hold_score": 38.1,
-      "resonance_score": 17.39,
-      "resonance_per_engaged": 0.1739,
-      "resonance_per_view": 0.0377,
+      "hook_score": 21.68,
+      "hold_score": 39.1,
+      "resonance_score": 14.67,
+      "resonance_per_engaged": 0.1467,
+      "resonance_per_view": 0.0318,
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
-      "reach_score": 83.45,
-      "analytics_fetched_at": "2026-05-12T19:13:25Z",
-      "analytics_days_old": 2,
+      "reach_score": 84.67,
+      "analytics_fetched_at": "2026-05-20T23:52:08Z",
+      "analytics_days_old": 10,
       "data_available": true
     },
     {
@@ -1452,6 +1618,342 @@
       "data_available": true
     },
     {
+      "video_id": "20260518_234049",
+      "published_date": "2026-05-18",
+      "status": "uploaded",
+      "topic": "The subtle ways you push people away right when a relationship starts getting truly good.",
+      "category": "Self-Worth Shifts",
+      "angle_type": "specific_scenario",
+      "total_score": 18,
+      "source_name": "Psychological principles (e.g., Hazan & Shaver, Bowlby, Beck's Cognitive Theory)",
+      "source_basis": "Fear of intimacy, attachment theory (anxious/fearful-avoidant), and self-worth schemas impacting relationship behavior.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "truth_drop",
+      "emotional_trigger": "Feeling 'too good to be true' in a new, healthy relationship; an urge to find flaws or create distance when intimacy deepens.",
+      "psych_concept": "Fear of intimacy, self-sabotage, attachment styles (fearful-avoidant/anxious), core beliefs about self-worth.",
+      "core_claim": "When a relationship finally offers safety and connection, some people unconsciously create distance or conflict because deep down, they don't believe they deserve it, or they fear the pain of eventual loss.",
+      "editorial_seed": "It's a cruel irony: the closer you get to the healthy connection you crave, the more your old patterns scream that it's too good to be true. This isn't about them, it's about the subconscious fear that true intimacy means eventual pain or loss. Recognizing it is the first step to staying present.",
+      "only_soft_reset_line": "You're not finding red flags. You're making them.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Things are actually going well and you're suddenly pulling back \u2014 this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 72,
+      "estimated_duration_sec": 28,
+      "thumbnail_text": "When it's going well and you start pulling away",
+      "content_fingerprint": "the subtle ways you push people away right when a relationship starts getting truly good things are actually going well and you re suddenly pulling back this is for you feeling too good to be true in a new healthy relationship an urge to find flaws or create distance when intimacy deepens fear of intimacy self sabotage attachment styles fearful avoidant anxious core beliefs about self worth when a relationship finally offers safety and connection some people unconsciously create distance or conflict because deep down they don t believe they deserve it or they fear the pain of eventual loss you re not finding red flags you re making them",
+      "title": "Good things feel WRONG, so you pull away",
+      "youtube_video_id": "DUy6gI2gSRk",
+      "youtube_url": "https://youtube.com/shorts/DUy6gI2gSRk",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 10,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "specific_scenario",
+        "category": "Self-Worth Shifts",
+        "topic_cluster": "The subtle ways you push people away right when a relationsh",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Directly addresses a specific, relatable internal conflict for the target audience."
+        },
+        "script_clarity": {
+          "score": 8,
+          "reason": "Concise and clear, gets straight to the point of the internal conflict, though could benefit from a slightly more developed explanation within the word count."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "Clearly adopts the channel's signature empathetic and introspective tone for self-growth."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Identifies 'good things feel wrong' as the villain mechanism, which is specific enough to resonate with the scenario."
+        },
+        "cta_quality": {
+          "score": 3,
+          "reason": "No CTA is present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the hook and the core conflict of the video. Captures the emotional dissonance."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Effectively summarizes the video's premise and piques interest, hinting at the underlying psychological reason."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumed good sync based on the scene count and stock video usage, but requires actual review of the video."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images and stock videos are likely used to support the mood, but their specific effectiveness can't be judged without seeing the final cut."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "Concept is likely to be aligned with the title and hook, but the actual thumbnail design would need review for effectiveness."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The script is short enough that pacing should be manageable for a clear delivery, but actual delivery needs to be checked."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The topic and angle align perfectly with the channel's focus on self-worth and relationship dynamics in a faceless format."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No discernible policy or factual risks present. Content is subjective and self-reflective."
+        }
+      },
+      "judge_composite_score": 7.54,
+      "strongest_element": "Hook & Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively conveys an empathetic and insightful message consistent with the Soft Reset With Me brand, thanks to its clear voiceover, well-balanced audio, and thoughtful emotional tone. However, the video's engagement is hampered by an overly slow and dark opening, extremely deliberate word-by-word caption pacing, and a reliance on generic visuals that don't always powerfully reinforce the script's specific points, potentially leading to viewer drop-off.",
+      "video_audit_strengths": [
+        "The consistent empathetic and introspective brand tone, perfectly aligned with 'Soft Reset With Me'.",
+        "The high-quality, clear, and well-modulated voiceover performance.",
+        "The concise, insightful, and highly relatable core message that resonates with a specific psychological experience.",
+        "The effective and subtle use of background music that enhances mood without distracting from the message."
+      ],
+      "video_audit_dropoff_causes": [
+        "The initial visual is too dark and slow for a short-form video, failing to immediately hook attention.",
+        "The word-by-word caption pacing is overly slow, making the text tedious to read and hindering quick information absorption.",
+        "Many visuals are generic and lack specific connection to the script's nuanced points, reducing visual engagement and storytelling impact.",
+        "Overall visual pacing is quite slow with minimal cuts, which can lead to disengagement in a fast-paced Shorts feed."
+      ],
+      "video_audit_repeat_next": [
+        "The empathetic and gentle voiceover delivery.",
+        "The clear, concise, and insightful script structure.",
+        "The high audio production quality (voice and music balance).",
+        "The consistent brand emotional tone and thoughtful approach to sensitive topics."
+      ],
+      "video_audit_reduce_next": [
+        "Overly slow, fragmented caption reveals.",
+        "Reliance on generic stock footage that doesn't add specific narrative value to the script.",
+        "Dark or slow initial visual entry points that delay viewer engagement.",
+        "Overall slow visual pacing and minimal cuts for short-form content."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Problem/Solution, Call-Out, Self-Reflection",
+        "thumbnail_type": "Emotional, Text Overlay, Muted",
+        "visual_style_mix": "Cinematic, Minimalist, Reflective",
+        "narrative_format": "Truth Drop, Introspection, Psychological Insight",
+        "character_used": "Empathic Guide, Observer"
+      },
+      "metrics": {
+        "views": 18,
+        "engagedViews": 3,
+        "averageViewDuration": 16,
+        "averageViewPercentage": 46.12,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 22.44,
+      "performance_score": 22.44,
+      "score_version": 1,
+      "hook_score": 16.67,
+      "hold_score": 46.12,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 42.62,
+      "analytics_fetched_at": "2026-05-20T23:52:08Z",
+      "analytics_days_old": 2,
+      "data_available": true
+    },
+    {
+      "video_id": "20260511_173531",
+      "published_date": "2026-05-11",
+      "status": "uploaded",
+      "topic": "The Quiet Killers of Your Dreams",
+      "category": "Conversation Truths",
+      "angle_type": "hot_take",
+      "total_score": 19,
+      "source_name": "Psychological research on relationship dynamics and self-concept",
+      "source_basis": "Emotional invalidation in relationships, self-efficacy theory, and the impact of social support on motivation",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "hot_take",
+      "emotional_trigger": "Sharing a personal dream or ambition with a partner and receiving subtle, dismissive reactions.",
+      "psych_concept": "Emotional invalidation, impact on self-efficacy and motivation in relationships",
+      "core_claim": "Subtle forms of dismissal, like lukewarm support, 'realistic' advice, or quiet disinterest, can be more damaging to your aspirations than overt negativity because they're harder to identify and confront.",
+      "editorial_seed": "We often look for big, obvious red flags, but sometimes the most insidious dream-killers are the quiet ways someone you love subtly dismisses your ambitions. It feels like they're just being 'practical,' but it slowly corrodes your confidence and sense of possibility.",
+      "only_soft_reset_line": "You didn't lose ambition. You lost the audience that kept killing it with a shrug.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Some people support you and still shrink your dreams.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 65,
+      "estimated_duration_sec": 22,
+      "thumbnail_text": "They Never Said Stop",
+      "content_fingerprint": "the quiet killers of your dreams some people support you and still shrink your dreams sharing a personal dream or ambition with a partner and receiving subtle dismissive reactions emotional invalidation impact on self efficacy and motivation in relationships subtle forms of dismissal like lukewarm support realistic advice or quiet disinterest can be more damaging to your aspirations than overt negativity because they re harder to identify and confront you didn t lose ambition you lost the audience that kept killing it with a shrug",
+      "title": "Loved ones can STILL shrink your dreams",
+      "youtube_video_id": "bRfA5Kzkjuo",
+      "youtube_url": "https://youtube.com/shorts/bRfA5Kzkjuo",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 10,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "hot_take",
+        "category": "Conversation Truths",
+        "topic_cluster": "The Quiet Killers of Your Dreams",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "The hook is relatable and poses an intriguing contradiction (supportive people shrinking dreams)."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and clearly conveys the central message within the short word count."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The 'hot take' angle is evident, presenting a strong, albeit brief, perspective on a common relationship dynamic."
+        },
+        "villain_mechanism_specificity": {
+          "score": 5,
+          "reason": "The script mentions 'shrink your dreams' but lacks specific examples of *how* loved ones do this, making the mechanism less clear."
+        },
+        "cta_quality": {
+          "score": 3,
+          "reason": "There is no explicit or implicit CTA in the provided script details. This is a missed opportunity."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the hook and the core topic of the video. 'Loved ones' is a good synonym for 'people'."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description expands slightly on the hook and title, giving viewers a bit more context and encouraging clicks."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "With 7 stock videos and 3 brand images for 10 scenes, there's a good opportunity for visual alignment, assuming thoughtful selection."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The mix of brand and stock images suggests a deliberate visual strategy, aiming for relatability and brand reinforcement."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "While not provided, the hook and title suggest a strong concept for a thumbnail that would be attention-grabbing and relevant."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script length and clear message are well-suited for a measured, impactful delivery, typical of the channel's style."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The topic aligns well with the channel's relationship/self-growth niche, and the 'hot take' angle fits the brand's direct approach."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The topic is a subjective observation about relationships and ambition; it carries no inherent factual claims that could be easily disproven or violate policies."
+        }
+      },
+      "judge_composite_score": 7.2,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively conveys a deep, empathetic emotional tone through its clear, gentle voiceover and perfectly mixed melancholic music, powerfully validating the subtle experience of dreams being undermined. While the hook aligns strongly with the title and the script's specific behavioral examples are well-delivered, the initial caption pacing and some generic visuals in the opening seconds could be optimized for quicker audience engagement. Implementing more specific and intentional visual metaphors, akin to the successful empty chair imagery, would further enhance the video's potent narrative and overall impact.",
+      "video_audit_strengths": [
+        "The consistent, introspective mood is deeply empathetic and validating, fostering a strong emotional connection with the audience.",
+        "The audio production (voiceover clarity and music mix) is exceptionally well done, creating a professional and engaging listening experience.",
+        "Effective use of subtle visual metaphors, particularly the empty coffee cup ('lukewarm') and the empty chair ('lost audience'), which powerfully illustrate abstract emotional concepts.",
+        "The voiceover's delivery of the script's specific behavioral examples ('that specific tone') makes the abstract concept tangible and relatable."
+      ],
+      "video_audit_dropoff_causes": [
+        "Slow initial caption pacing and generic visuals in the first 2-3 seconds might not immediately hook viewers in a fast-paced Shorts feed.",
+        "Some visual transitions feel a bit disconnected or jarring, reducing the flow and immersion (e.g., switching between different women in contemplative poses).",
+        "The abstract nature of certain visuals might not immediately resonate with all viewers, potentially losing engagement if the metaphor isn't grasped quickly."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the consistent, empathetic voiceover delivery and melancholic background music, as these are significant strengths.",
+        "Continue using subtle and intentional visual metaphors to illustrate complex emotional concepts, especially those that evoke absence or quiet dismissal.",
+        "Prioritize high-quality audio production, ensuring crystal-clear narration and perfectly balanced background elements.",
+        "Ensure the core emotional trigger is addressed and validated throughout the narrative and visual presentation."
+      ],
+      "video_audit_reduce_next": [
+        "Avoid generic 'pensive person' stock footage; aim for more unique or direct visual representations of the specific emotion or action being described in the opening.",
+        "Increase the pace of caption delivery in the first few seconds to grab attention more quickly and clarify the hook's full statement.",
+        "Minimize jarring visual transitions, striving for smoother, more thematically connected shifts between clips to maintain viewer flow."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Contrarian Statement",
+        "thumbnail_type": "Symbolic Imagery",
+        "visual_style_mix": "Melancholic, Introspective, Cinematic",
+        "narrative_format": "Personal Reflection, Direct Address",
+        "character_used": "The Dreamer, The Empath"
+      },
+      "metrics": {
+        "views": 20,
+        "engagedViews": 4,
+        "averageViewDuration": 12,
+        "averageViewPercentage": 33.25,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 18.84,
+      "performance_score": 18.84,
+      "score_version": 1,
+      "hook_score": 20.0,
+      "hold_score": 33.25,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 44.07,
+      "analytics_fetched_at": "2026-05-20T23:52:08Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
+    {
       "video_id": "20260506_023743",
       "published_date": "2026-05-06",
       "status": "uploaded",
@@ -1651,7 +2153,7 @@
         "character_used": "supportive_guide"
       },
       "metrics": {
-        "views": 29,
+        "views": 39,
         "engagedViews": 3,
         "averageViewDuration": 10,
         "averageViewPercentage": 28.360000000000003,
@@ -1660,19 +2162,19 @@
         "shares": 0,
         "subscribersGained": 0
       },
-      "composite_score": 14.97,
-      "performance_score": 14.97,
+      "composite_score": 14.52,
+      "performance_score": 14.52,
       "score_version": 1,
-      "hook_score": 10.34,
+      "hook_score": 7.69,
       "hold_score": 28.36,
       "resonance_score": 0.0,
       "resonance_per_engaged": 0.0,
       "resonance_per_view": 0.0,
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
-      "reach_score": 49.23,
-      "analytics_fetched_at": "2026-05-12T19:13:25Z",
-      "analytics_days_old": 2,
+      "reach_score": 53.39,
+      "analytics_fetched_at": "2026-05-20T23:52:08Z",
+      "analytics_days_old": 10,
       "data_available": true
     },
     {
@@ -1890,165 +2392,6 @@
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-18T17:40:52Z",
       "analytics_days_old": 9,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260511_173531",
-      "published_date": "2026-05-11",
-      "status": "uploaded",
-      "topic": "The Quiet Killers of Your Dreams",
-      "category": "Conversation Truths",
-      "angle_type": "hot_take",
-      "total_score": 19,
-      "source_name": "Psychological research on relationship dynamics and self-concept",
-      "source_basis": "Emotional invalidation in relationships, self-efficacy theory, and the impact of social support on motivation",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "hot_take",
-      "emotional_trigger": "Sharing a personal dream or ambition with a partner and receiving subtle, dismissive reactions.",
-      "psych_concept": "Emotional invalidation, impact on self-efficacy and motivation in relationships",
-      "core_claim": "Subtle forms of dismissal, like lukewarm support, 'realistic' advice, or quiet disinterest, can be more damaging to your aspirations than overt negativity because they're harder to identify and confront.",
-      "editorial_seed": "We often look for big, obvious red flags, but sometimes the most insidious dream-killers are the quiet ways someone you love subtly dismisses your ambitions. It feels like they're just being 'practical,' but it slowly corrodes your confidence and sense of possibility.",
-      "only_soft_reset_line": "You didn't lose ambition. You lost the audience that kept killing it with a shrug.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Some people support you and still shrink your dreams.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 65,
-      "estimated_duration_sec": 22,
-      "thumbnail_text": "They Never Said Stop",
-      "content_fingerprint": "the quiet killers of your dreams some people support you and still shrink your dreams sharing a personal dream or ambition with a partner and receiving subtle dismissive reactions emotional invalidation impact on self efficacy and motivation in relationships subtle forms of dismissal like lukewarm support realistic advice or quiet disinterest can be more damaging to your aspirations than overt negativity because they re harder to identify and confront you didn t lose ambition you lost the audience that kept killing it with a shrug",
-      "title": "Loved ones can STILL shrink your dreams",
-      "youtube_video_id": "bRfA5Kzkjuo",
-      "youtube_url": "https://youtube.com/shorts/bRfA5Kzkjuo",
-      "fallback_count": 0,
-      "video_count": 7,
-      "total_scenes": 10,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "hot_take",
-        "category": "Conversation Truths",
-        "topic_cluster": "The Quiet Killers of Your Dreams",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 10
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook is relatable and poses an intriguing contradiction (supportive people shrinking dreams)."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and clearly conveys the central message within the short word count."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The 'hot take' angle is evident, presenting a strong, albeit brief, perspective on a common relationship dynamic."
-        },
-        "villain_mechanism_specificity": {
-          "score": 5,
-          "reason": "The script mentions 'shrink your dreams' but lacks specific examples of *how* loved ones do this, making the mechanism less clear."
-        },
-        "cta_quality": {
-          "score": 3,
-          "reason": "There is no explicit or implicit CTA in the provided script details. This is a missed opportunity."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the hook and the core topic of the video. 'Loved ones' is a good synonym for 'people'."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description expands slightly on the hook and title, giving viewers a bit more context and encouraging clicks."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "With 7 stock videos and 3 brand images for 10 scenes, there's a good opportunity for visual alignment, assuming thoughtful selection."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The mix of brand and stock images suggests a deliberate visual strategy, aiming for relatability and brand reinforcement."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "While not provided, the hook and title suggest a strong concept for a thumbnail that would be attention-grabbing and relevant."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script length and clear message are well-suited for a measured, impactful delivery, typical of the channel's style."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The topic aligns well with the channel's relationship/self-growth niche, and the 'hot take' angle fits the brand's direct approach."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The topic is a subjective observation about relationships and ambition; it carries no inherent factual claims that could be easily disproven or violate policies."
-        }
-      },
-      "judge_composite_score": 7.2,
-      "strongest_element": "Script Clarity",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively conveys a deep, empathetic emotional tone through its clear, gentle voiceover and perfectly mixed melancholic music, powerfully validating the subtle experience of dreams being undermined. While the hook aligns strongly with the title and the script's specific behavioral examples are well-delivered, the initial caption pacing and some generic visuals in the opening seconds could be optimized for quicker audience engagement. Implementing more specific and intentional visual metaphors, akin to the successful empty chair imagery, would further enhance the video's potent narrative and overall impact.",
-      "video_audit_strengths": [
-        "The consistent, introspective mood is deeply empathetic and validating, fostering a strong emotional connection with the audience.",
-        "The audio production (voiceover clarity and music mix) is exceptionally well done, creating a professional and engaging listening experience.",
-        "Effective use of subtle visual metaphors, particularly the empty coffee cup ('lukewarm') and the empty chair ('lost audience'), which powerfully illustrate abstract emotional concepts.",
-        "The voiceover's delivery of the script's specific behavioral examples ('that specific tone') makes the abstract concept tangible and relatable."
-      ],
-      "video_audit_dropoff_causes": [
-        "Slow initial caption pacing and generic visuals in the first 2-3 seconds might not immediately hook viewers in a fast-paced Shorts feed.",
-        "Some visual transitions feel a bit disconnected or jarring, reducing the flow and immersion (e.g., switching between different women in contemplative poses).",
-        "The abstract nature of certain visuals might not immediately resonate with all viewers, potentially losing engagement if the metaphor isn't grasped quickly."
-      ],
-      "video_audit_repeat_next": [
-        "Maintain the consistent, empathetic voiceover delivery and melancholic background music, as these are significant strengths.",
-        "Continue using subtle and intentional visual metaphors to illustrate complex emotional concepts, especially those that evoke absence or quiet dismissal.",
-        "Prioritize high-quality audio production, ensuring crystal-clear narration and perfectly balanced background elements.",
-        "Ensure the core emotional trigger is addressed and validated throughout the narrative and visual presentation."
-      ],
-      "video_audit_reduce_next": [
-        "Avoid generic 'pensive person' stock footage; aim for more unique or direct visual representations of the specific emotion or action being described in the opening.",
-        "Increase the pace of caption delivery in the first few seconds to grab attention more quickly and clarify the hook's full statement.",
-        "Minimize jarring visual transitions, striving for smoother, more thematically connected shifts between clips to maintain viewer flow."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Contrarian Statement",
-        "thumbnail_type": "Symbolic Imagery",
-        "visual_style_mix": "Melancholic, Introspective, Cinematic",
-        "narrative_format": "Personal Reflection, Direct Address",
-        "character_used": "The Dreamer, The Empath"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-13T01:26:11Z",
-      "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
     },

@@ -1,36 +1,5 @@
 [
   {
-    "video_id": "20260505_083053",
-    "published_date": "2026-05-05",
-    "status": "generated_not_uploaded",
-    "topic": "Talking every day does not make you close",
-    "category": "conversation truths",
-    "angle_type": "hot take",
-    "total_score": 19,
-    "source_name": "relationship psychology principle",
-    "content_format": "hot_take",
-    "emotional_trigger": "confusing frequency with intimacy",
-    "psych_concept": "consistency versus access",
-    "core_claim": "Closeness is consistency, not constant access",
-    "editorial_seed": "This topic starts from a specific emotional moment: confusing frequency with intimacy. The point is not generic advice; it is the claim that closeness is consistency, not constant access. Keep the voice gentle, direct, and emotionally precise.",
-    "only_soft_reset_line": "You can be someone's daily habit and still not be someone they really know.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "Talking every day does not make you close.",
-    "hook_quality": "strong",
-    "word_count": 69,
-    "estimated_duration_sec": 26,
-    "thumbnail_text": "Daily texts \u2260 real closeness",
-    "content_fingerprint": "talking every day does not make you close talking every day does not make you close confusing frequency with intimacy consistency versus access closeness is consistency not constant access you can be someone s daily habit and still not be someone they really know",
-    "title": "Talking every day does not make you close",
-    "youtube_video_id": "MOCK_NOT_UPLOADED",
-    "youtube_url": "https://youtube.com/shorts/MOCK_NOT_UPLOADED",
-    "fallback_count": 0,
-    "video_count": 4,
-    "total_scenes": 7,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260505_172553",
     "published_date": "2026-05-05",
     "status": "uploaded",
@@ -3556,6 +3525,148 @@
       "visual_style_mix": "Cinematic|Moody Stock",
       "narrative_format": "Explainer|Insight",
       "character_used": "Abstract|Stock Characters"
+    }
+  },
+  {
+    "video_id": "20260520_235208",
+    "published_date": "2026-05-20",
+    "status": "uploaded",
+    "topic": "When your constant effort to 'fix' the relationship is actually avoiding the truth.",
+    "category": "Healing Arcs",
+    "angle_type": "reframe",
+    "total_score": 19,
+    "source_name": "Psychological principles (e.g., CBT, ACT insights on avoidance)",
+    "source_basis": "Avoidance coping mechanisms, cognitive dissonance in relationships, and the distinction between productive effort and futile 'fixing'.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "reframe",
+    "emotional_trigger": "Feeling exhausted from constantly trying to 'fix' a relationship, realizing it might be futile or one-sided, and dreading a deeper, harder truth.",
+    "psych_concept": "Avoidance coping, cognitive dissonance, relationship maintenance vs. dissolution",
+    "core_claim": "Obsessively trying to 'fix' a struggling relationship can be a form of avoidance, preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone.",
+    "editorial_seed": "We\u2019re taught to fight for relationships, to work on them. But sometimes, that relentless 'fixing' isn't productive work \u2013 it's a way to avoid admitting something deeper isn't right. It\u2019s easier to try and mend a broken vase endlessly than to accept it\u2019s shattered.",
+    "only_soft_reset_line": "You're not fixing the relationship. You're fixing around the truth.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You think all that effort means you're trying. It might mean you're hiding.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 71,
+    "estimated_duration_sec": 21,
+    "thumbnail_text": "You're not fixing it. You're avoiding it.",
+    "content_fingerprint": "when your constant effort to fix the relationship is actually avoiding the truth you think all that effort means you re trying it might mean you re hiding feeling exhausted from constantly trying to fix a relationship realizing it might be futile or one sided and dreading a deeper harder truth avoidance coping cognitive dissonance relationship maintenance vs dissolution obsessively trying to fix a struggling relationship can be a form of avoidance preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone you re not fixing the relationship you re fixing around the truth",
+    "title": "You're not fixing, you're just HIDING",
+    "youtube_video_id": "QMDWhbyhg3I",
+    "youtube_url": "https://youtube.com/shorts/QMDWhbyhg3I",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "reframe",
+      "category": "Healing Arcs",
+      "topic_cluster": "When your constant effort to 'fix' the relationship is actua",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Intriguing premise that challenges a common assumption about effort in relationships."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and directly conveys the core message of the reframe."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "The POV is clear, offering a new perspective on relationship 'fixing'."
+      },
+      "villain_mechanism_specificity": {
+        "score": 6,
+        "reason": "While the mechanism ('hiding') is named, it could be more specific about what is being hidden."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no call to action present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the video's core message and hook."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description effectively summarizes the video's premise and targets the intended audience."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming standard stock video usage, there's potential for good sync, but it relies heavily on execution."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The brand images should ideally reinforce the message, but their specific impact is unknown without seeing them."
+      },
+      "thumbnail_concept": {
+        "score": 6,
+        "reason": "The concept needs to visually represent 'hiding' versus 'fixing' effectively to be strong."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The short script suggests it can be delivered with excellent pacing."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The reframe angle aligns well with typical Soft Reset With Me content."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is opinion-based and reframes a common behavior, posing no significant factual risk."
+      }
+    },
+    "judge_composite_score": 6.3,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short masterfully delivers a poignant reframe about 'fixing' as a form of avoidance, leveraging an exceptionally clear voiceover, precise caption pacing, and a cohesive, melancholic aesthetic. While the initial hook and several visual metaphors are highly impactful, a couple of slightly generic shots and one potentially ambiguous facial expression momentarily dilute the otherwise powerful emotional resonance. The video's strong brand identity and insightful message are consistently maintained throughout.",
+    "video_audit_strengths": [
+      "The creative and strategic use of visual metaphors to translate abstract psychological concepts into relatable imagery (e.g., washing face, drawing lines, rain overlay).",
+      "The consistent, empathetic, and direct voiceover delivery that builds trust and authority.",
+      "The excellent caption pacing and style (word-by-word/phrase-by-phrase) significantly enhance message comprehension and retention in a short format.",
+      "The overall cohesive aesthetic, including the subtle film grain and color grading, contributes to a distinct and thoughtful brand identity."
+    ],
+    "video_audit_dropoff_causes": [
+      "A few slightly generic or less specific visual choices (e.g., empty coffee cup, man looking bored) could momentarily reduce engagement.",
+      "The visual of the stern-faced woman at 0:27, while possibly intended as self-reflection, could be perceived as judgmental by some viewers, potentially causing a brief disconnect from the empathetic tone."
+    ],
+    "video_audit_repeat_next": [
+      "The impactful and emotionally resonant visual hooks in the first few seconds.",
+      "The strategic use of visual metaphors that directly illustrate complex verbal concepts.",
+      "The precise and engaging caption pacing (word-by-word/short phrase).",
+      "The effective use of visual overlays and transitions to add depth to the message (e.g., rain/lights overlay).",
+      "The consistent quality and emotional tone of the voiceover."
+    ],
+    "video_audit_reduce_next": [
+      "Reliance on overly generic stock footage that lacks specific metaphorical connection to the script.",
+      "Visuals that could be ambiguously interpreted as accusatory or judgmental, ensuring all imagery maintains an empathetic and self-reflective tone."
+    ],
+    "video_audit_tags": {
+      "hook_type": "reframe-statement",
+      "thumbnail_type": "emotional-face-closeup",
+      "visual_style_mix": "aesthetic-stock-footage-with-text-overlay",
+      "narrative_format": "reframe",
+      "character_used": "stock-actors"
     }
   }
 ]
