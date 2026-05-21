@@ -1,36 +1,5 @@
 [
   {
-    "video_id": "20260505_172553",
-    "published_date": "2026-05-05",
-    "status": "uploaded",
-    "topic": "That specific micro-anxiety of checking if *they* watched your story or saw your casual message, and the hit to your self-worth.",
-    "category": "identity and growth",
-    "angle_type": "specific_scenario",
-    "total_score": 19,
-    "source_name": "Widely accepted psychological principles",
-    "content_format": "reframe",
-    "emotional_trigger": "checking story views / waiting for message reply",
-    "psych_concept": "external validation, social comparison",
-    "core_claim": "The immediate emotional reaction to checking passive digital interactions reveals a deeper dependency on external validation that can quietly erode your self-worth.",
-    "editorial_seed": "We've all been there: posting something, then compulsively checking the 'seen by' list or waiting for a reply to a casual DM. That tiny ping of anxiety or disappointment isn't just about their engagement; it's a specific emotional trigger that highlights how much we've outsourced our sense of self-worth to digital signals.",
-    "only_soft_reset_line": "That tiny ping of disappointment isn't about their engagement. It's a silent signal from your own nervous system that your attention is currently on external validation, not internal peace.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If you post something and immediately check if they saw it, this is for you.",
-    "hook_quality": "strong",
-    "word_count": 102,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "You checked, didn't you.",
-    "content_fingerprint": "that specific micro anxiety of checking if they watched your story or saw your casual message and the hit to your self worth if you post something and immediately check if they saw it this is for you checking story views waiting for message reply external validation social comparison the immediate emotional reaction to checking passive digital interactions reveals a deeper dependency on external validation that can quietly erode your self worth that tiny ping of disappointment isn t about their engagement it s a silent signal from your own nervous system that your attention is currently on external validation not internal peace",
-    "title": "If you immediately check if they saw it, listen",
-    "youtube_video_id": "HuiW4_4JdfA",
-    "youtube_url": "https://youtube.com/shorts/HuiW4_4JdfA",
-    "fallback_count": 0,
-    "video_count": 8,
-    "total_scenes": 11,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260506_023743",
     "published_date": "2026-05-06",
     "status": "uploaded",
@@ -3667,6 +3636,148 @@
       "visual_style_mix": "aesthetic-stock-footage-with-text-overlay",
       "narrative_format": "reframe",
       "character_used": "stock-actors"
+    }
+  },
+  {
+    "video_id": "20260521_173815",
+    "published_date": "2026-05-21",
+    "status": "uploaded",
+    "topic": "The specific ache of being the 'backup' option in a relationship or dating scenario.",
+    "category": "Self-Worth Shifts",
+    "angle_type": "specific_scenario",
+    "total_score": 19,
+    "source_name": "John Bowlby, general psychological principles",
+    "source_basis": "Attachment theory; self-esteem and relational choices.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "specific_scenario",
+    "emotional_trigger": "The realization that you were never the first choice; receiving a 'check-in' text after a long silence.",
+    "psych_concept": "Insecure attachment, self-worth, scarcity mindset in relationships.",
+    "core_claim": "True connection doesn't feel like an audition you only get if others don't show up; it feels like an invitation based on genuine desire.",
+    "editorial_seed": "It stings when you realize someone only 'chose' you because their other options dried up. This isn't a reflection of your worth, but a clear sign they're operating from a place of scarcity, not genuine desire for you.",
+    "only_soft_reset_line": "You weren't chosen. You were what was left.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "If you felt chosen \u2014 until you noticed their silence ended the same night someone else went quiet \u2014 this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 73,
+    "estimated_duration_sec": 29,
+    "thumbnail_text": "You weren't chosen. You were what was left.",
+    "content_fingerprint": "the specific ache of being the backup option in a relationship or dating scenario if you felt chosen until you noticed their silence ended the same night someone else went quiet this is for you the realization that you were never the first choice receiving a check in text after a long silence insecure attachment self worth scarcity mindset in relationships true connection doesn t feel like an audition you only get if others don t show up it feels like an invitation based on genuine desire you weren t chosen you were what was left",
+    "title": "You were chosen until their OTHER quiet",
+    "youtube_video_id": "tlTUvAm4kS8",
+    "youtube_url": "https://youtube.com/shorts/tlTUvAm4kS8",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "specific_scenario",
+      "category": "Self-Worth Shifts",
+      "topic_cluster": "The specific ache of being the 'backup' option in a relation",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook is intriguing and speaks to a very specific, relatable pain point of feeling chosen then discarded, directly addressing the video's core theme."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and clear, effectively conveying the emotional experience of realizing one's temporary status in someone else's life."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The POV is distinctly empathetic and validating, focusing on the internal shift in self-worth triggered by external validation (or lack thereof)."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "The 'villain' is the person's inconsistent attention and the silence that reveals a deeper truth about their priorities, which is specific and well-defined."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "There is no visible CTA in the provided details. This needs to be added for channel growth."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the content by highlighting the shift from being 'chosen' to the realization of being the 'other quiet,' implying a backup."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "The description is evocative and clearly sets the emotional tone, inviting viewers who resonate with the specific feeling of being a temporary choice."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "While not explicitly detailed, the description implies visuals would align with feelings of quietness, realization, and perhaps background scenarios. A stronger sync would be guaranteed with more specific visual direction."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The 4 brand images need a clear directive to evoke the feeling of being 'chosen' but then realizing the 'backup' status, to reinforce the narrative."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "A thumbnail concept reflecting the duality of 'chosen' versus 'backup' (perhaps a split image or contrasting visuals) would be strong, though not detailed here."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "Given the short script and emotional nature, the pacing should be deliberate and empathetic. Readiness is assumed but would be confirmed on review."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of self-worth shifts tied to relational dynamics is core to the Soft Reset With Me brand. The specific scenario aligns well."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No apparent factual claims are made that could be disputed. The content is purely relational and emotional interpretation."
+      }
+    },
+    "judge_composite_score": 8.0,
+    "strongest_element": "script_clarity",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively hooks viewers by validating a specific emotional experience, delivered through a clear, empathetic voiceover and well-timed captions. The audio mix and overall emotional tone are exceptionally well-executed, reinforcing the 'Soft Reset With Me' brand identity. While the atmospheric visuals contribute to the mood, their generic nature occasionally misses the opportunity to specifically illustrate the nuanced aspects of the script, potentially limiting deeper viewer engagement with the visual story. Future content could benefit from more intentional visual specificity to fully match the precision of the script's emotional beats.",
+    "video_audit_strengths": [
+      "The voiceover's consistent empathetic and understanding tone is a strong brand asset.",
+      "The script's ability to articulate a highly specific and often unspoken emotional pain point is a significant strength.",
+      "The impactful 'You weren't chosen. You were what was left.' line serves as a powerful and memorable core claim.",
+      "The music selection is consistently perfect for the mood, enhancing the emotional delivery without being intrusive."
+    ],
+    "video_audit_dropoff_causes": [
+      "The generic nature of some visuals might lead to a slight disconnect for viewers expecting more direct visual storytelling to match the script's specific nuances (e.g., 'someone else went quiet').",
+      "The consistent use of a film grain/scratch overlay, while a stylistic choice, could be perceived as a mild visual distraction by some, slightly obscuring the footage rather than purely enhancing it."
+    ],
+    "video_audit_repeat_next": [
+      "Maintaining the empathetic, clear voiceover and strong brand tone.",
+      "Ensuring excellent alignment between the title, hook, and core message.",
+      "Continuing to use well-paced and legible captions for accessibility and engagement.",
+      "Leveraging atmospheric and mood-setting background music.",
+      "Crafting sharp, impactful core claims or loopback lines that resonate deeply."
+    ],
+    "video_audit_reduce_next": [
+      "Reliance on overly generic stock footage; aim for visuals that more specifically illustrate the unique scenarios described in the script.",
+      "The intensity or continuous presence of the film grain/scratch overlay, considering whether it always enhances or sometimes detracts from visual clarity."
+    ],
+    "video_audit_tags": {
+      "hook_type": "scenario_validation",
+      "thumbnail_type": "text_overlay",
+      "visual_style_mix": "moody_cinematic_stock",
+      "narrative_format": "emotional_diagnosis",
+      "character_used": "none"
     }
   }
 ]

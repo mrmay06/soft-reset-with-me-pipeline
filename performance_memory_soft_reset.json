@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-20T23:52:08Z",
+  "generated_at": "2026-05-21T17:38:15Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-04",
-  "end_date": "2026-05-19",
+  "start_date": "2026-04-05",
+  "end_date": "2026-05-20",
   "videos": [
     {
       "video_id": "20260509_091450",
@@ -847,7 +847,171 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 30.1,
-      "analytics_fetched_at": "2026-05-14T17:21:43Z",
+      "analytics_fetched_at": "2026-05-21T17:38:15Z",
+      "analytics_days_old": 16,
+      "data_available": true
+    },
+    {
+      "video_id": "20260512_191324",
+      "published_date": "2026-05-12",
+      "status": "uploaded",
+      "topic": "The quiet weight of the expectations you didn't know you had",
+      "category": "Identity and Growth",
+      "angle_type": "psychology_drop",
+      "total_score": 20,
+      "source_name": "Psychological principles, therapeutic consensus",
+      "source_basis": "The concept of implicit or unspoken expectations in relationships, often rooted in early life experiences or schemas, is a fundamental aspect of many psychotherapeutic approaches to relationship health and personal growth.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "psychology_drop",
+      "emotional_trigger": "Feeling unexplained disappointment or resentment in a relationship, stemming from invisible needs or rules.",
+      "psych_concept": "Implicit relationship expectations, relational schemas, unconscious biases",
+      "core_claim": "Many relationship disappointments stem not from explicit disagreements, but from hidden, unspoken expectations we carried in from childhood or past experiences.",
+      "editorial_seed": "We all walk into relationships with a hidden backpack full of 'rules' and expectations we absorbed growing up or from previous partners. These aren't things we consciously decided on; they just *are*. When a partner doesn't meet these invisible standards, it feels like a personal slight, but it's really an opportunity to uncover your own unconscious beliefs.",
+      "only_soft_reset_line": "You're holding them to a contract they never signed.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Nobody hurt you. Nothing specific happened. You're just quietly disappointed, and you don't know why.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 71,
+      "estimated_duration_sec": 28,
+      "thumbnail_text": "The rule you never said out loud",
+      "content_fingerprint": "the quiet weight of the expectations you didn t know you had nobody hurt you nothing specific happened you re just quietly disappointed and you don t know why feeling unexplained disappointment or resentment in a relationship stemming from invisible needs or rules implicit relationship expectations relational schemas unconscious biases many relationship disappointments stem not from explicit disagreements but from hidden unspoken expectations we carried in from childhood or past experiences you re holding them to a contract they never signed",
+      "title": "Quietly disappointed for NO reason",
+      "youtube_video_id": "NVZAk2dLYFk",
+      "youtube_url": "https://youtube.com/shorts/NVZAk2dLYFk",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "fragment",
+        "angle_type": "psychology_drop",
+        "category": "Identity and Growth",
+        "topic_cluster": "The quiet weight of the expectations you didn't know you had",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "The hook is compelling as it taps into a common, yet often unexplained, feeling of dissatisfaction. It's relatable and immediately piques curiosity."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and clearly explains the underlying cause of the 'quiet disappointment' as unspoken expectations, making it easy to understand."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The POV is established as understanding and insightful, guiding the viewer toward self-reflection and recognizing internal dynamics."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "The 'villain' is identified as unspoken, invisible expectations, which is specific enough for this psychology drop format and relatable."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "There is no explicit CTA present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the hook and the core message of the video \u2013 experiencing disappointment without an obvious external cause."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "The description effectively summarizes the video's topic and offers a clear benefit to the viewer, encouraging them to watch and understand their 'invisible burdens'."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming standard stock footage usage, the visual sync is likely adequate for a psychology drop, but direct examples of strong sync are not provided."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The use of brand images (3) suggests an intention for brand consistency, and stock videos (8) are standard. Their strength depends on execution not detailed here."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "Based on the hook and title, a thumbnail concept could effectively convey the feeling of quiet, internal disappointment, likely through evocative imagery."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With a short script (71 words) and short duration (38s), the pacing can easily be controlled for clarity and impact, assuming professional delivery."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The category 'Identity and Growth' and the psychology_drop angle align well with a self-growth channel's typical content. Brand images contribute to this."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content discusses internal feelings and psychological concepts in a general, non-diagnostic way. It poses no factual risk or violation of policies."
+        }
+      },
+      "judge_composite_score": 8.08,
+      "strongest_element": "Hook Strength",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 7,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short masterfully delivers a psychological insight, leveraging a calm, empathetic voiceover and well-chosen visual metaphors to guide the viewer from unexplained disappointment to an understanding of implicit expectations. The emotional tone and audio mix are excellently aligned with the 'Soft Reset With Me' brand, fostering introspection. While the execution of key visual metaphors is strong, refining the rapid caption pacing and elevating the specificity of all visuals, particularly in the opening, would enhance immediate viewer engagement and overall impact.",
+      "video_audit_strengths": [
+        "The strategic use of powerful visual metaphors (e.g., 'DELETE' eraser, hand reaching out) to concretize abstract psychological concepts, making the insight more tangible and memorable.",
+        "The consistent, empathetic, and calming vocal delivery that creates a safe space for introspection, reinforcing the brand's 'soft reset' ethos.",
+        "The ability to distill a complex psychological concept into a clear, concise, and highly relatable narrative within a short timeframe."
+      ],
+      "video_audit_dropoff_causes": [
+        "The very rapid appearance of single-word captions, especially in the first few seconds, might make it hard for some viewers to keep up, potentially leading to a scroll-off.",
+        "Some of the initial visuals are slightly generic stock footage, which might not immediately captivate viewers looking for highly unique or deeply engaging imagery from the outset.",
+        "The contemplative and slower-paced visual progression, while intentional, could be perceived as lacking dynamic action by viewers accustomed to faster-cut content."
+      ],
+      "video_audit_repeat_next": [
+        "The use of direct address ('You') in the narration to create an immediate personal connection with the viewer.",
+        "The overall emotional tone and thoughtful pacing of the narrative arc, moving from a relatable problem to a profound insight.",
+        "The selection of background music that complements the introspective mood without overpowering the voiceover."
+      ],
+      "video_audit_reduce_next": [
+        "The extreme speed of single-word caption transitions, particularly at the beginning of the video, to improve readability and allow viewers more time to absorb the text.",
+        "Reliance on overly generic stock footage for introductory or transitional scenes; prioritize more unique or metaphorically resonant visuals throughout."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Relatable Problem/Internal Question",
+        "thumbnail_type": "Symbolic Metaphor",
+        "visual_style_mix": "Minimalist & Reflective",
+        "narrative_format": "Insight/Psychology Drop",
+        "character_used": "Introspective Thinker"
+      },
+      "metrics": {
+        "views": 37,
+        "engagedViews": 16,
+        "averageViewDuration": 14,
+        "averageViewPercentage": 37.57,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 27.84,
+      "performance_score": 27.84,
+      "score_version": 1,
+      "hook_score": 43.24,
+      "hold_score": 37.57,
+      "resonance_score": 6.25,
+      "resonance_per_engaged": 0.0625,
+      "resonance_per_view": 0.027,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 52.65,
+      "analytics_fetched_at": "2026-05-21T17:38:15Z",
       "analytics_days_old": 9,
       "data_available": true
     },
@@ -2396,162 +2560,6 @@
       "data_unavailable_reason": "youtube_analytics_no_row"
     },
     {
-      "video_id": "20260512_191324",
-      "published_date": "2026-05-12",
-      "status": "uploaded",
-      "topic": "The quiet weight of the expectations you didn't know you had",
-      "category": "Identity and Growth",
-      "angle_type": "psychology_drop",
-      "total_score": 20,
-      "source_name": "Psychological principles, therapeutic consensus",
-      "source_basis": "The concept of implicit or unspoken expectations in relationships, often rooted in early life experiences or schemas, is a fundamental aspect of many psychotherapeutic approaches to relationship health and personal growth.",
-      "source_url": "",
-      "confidence_level": "therapist_consensus",
-      "content_format": "psychology_drop",
-      "emotional_trigger": "Feeling unexplained disappointment or resentment in a relationship, stemming from invisible needs or rules.",
-      "psych_concept": "Implicit relationship expectations, relational schemas, unconscious biases",
-      "core_claim": "Many relationship disappointments stem not from explicit disagreements, but from hidden, unspoken expectations we carried in from childhood or past experiences.",
-      "editorial_seed": "We all walk into relationships with a hidden backpack full of 'rules' and expectations we absorbed growing up or from previous partners. These aren't things we consciously decided on; they just *are*. When a partner doesn't meet these invisible standards, it feels like a personal slight, but it's really an opportunity to uncover your own unconscious beliefs.",
-      "only_soft_reset_line": "You're holding them to a contract they never signed.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Nobody hurt you. Nothing specific happened. You're just quietly disappointed, and you don't know why.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 71,
-      "estimated_duration_sec": 28,
-      "thumbnail_text": "The rule you never said out loud",
-      "content_fingerprint": "the quiet weight of the expectations you didn t know you had nobody hurt you nothing specific happened you re just quietly disappointed and you don t know why feeling unexplained disappointment or resentment in a relationship stemming from invisible needs or rules implicit relationship expectations relational schemas unconscious biases many relationship disappointments stem not from explicit disagreements but from hidden unspoken expectations we carried in from childhood or past experiences you re holding them to a contract they never signed",
-      "title": "Quietly disappointed for NO reason",
-      "youtube_video_id": "NVZAk2dLYFk",
-      "youtube_url": "https://youtube.com/shorts/NVZAk2dLYFk",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 11,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "fragment",
-        "angle_type": "psychology_drop",
-        "category": "Identity and Growth",
-        "topic_cluster": "The quiet weight of the expectations you didn't know you had",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 11
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 9,
-          "reason": "The hook is compelling as it taps into a common, yet often unexplained, feeling of dissatisfaction. It's relatable and immediately piques curiosity."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and clearly explains the underlying cause of the 'quiet disappointment' as unspoken expectations, making it easy to understand."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The POV is established as understanding and insightful, guiding the viewer toward self-reflection and recognizing internal dynamics."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "The 'villain' is identified as unspoken, invisible expectations, which is specific enough for this psychology drop format and relatable."
-        },
-        "cta_quality": {
-          "score": 5,
-          "reason": "There is no explicit CTA present in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the hook and the core message of the video \u2013 experiencing disappointment without an obvious external cause."
-        },
-        "description_usefulness": {
-          "score": 9,
-          "reason": "The description effectively summarizes the video's topic and offers a clear benefit to the viewer, encouraging them to watch and understand their 'invisible burdens'."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming standard stock footage usage, the visual sync is likely adequate for a psychology drop, but direct examples of strong sync are not provided."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The use of brand images (3) suggests an intention for brand consistency, and stock videos (8) are standard. Their strength depends on execution not detailed here."
-        },
-        "thumbnail_concept": {
-          "score": 8,
-          "reason": "Based on the hook and title, a thumbnail concept could effectively convey the feeling of quiet, internal disappointment, likely through evocative imagery."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "With a short script (71 words) and short duration (38s), the pacing can easily be controlled for clarity and impact, assuming professional delivery."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The category 'Identity and Growth' and the psychology_drop angle align well with a self-growth channel's typical content. Brand images contribute to this."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content discusses internal feelings and psychological concepts in a general, non-diagnostic way. It poses no factual risk or violation of policies."
-        }
-      },
-      "judge_composite_score": 8.08,
-      "strongest_element": "Hook Strength",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 7,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short masterfully delivers a psychological insight, leveraging a calm, empathetic voiceover and well-chosen visual metaphors to guide the viewer from unexplained disappointment to an understanding of implicit expectations. The emotional tone and audio mix are excellently aligned with the 'Soft Reset With Me' brand, fostering introspection. While the execution of key visual metaphors is strong, refining the rapid caption pacing and elevating the specificity of all visuals, particularly in the opening, would enhance immediate viewer engagement and overall impact.",
-      "video_audit_strengths": [
-        "The strategic use of powerful visual metaphors (e.g., 'DELETE' eraser, hand reaching out) to concretize abstract psychological concepts, making the insight more tangible and memorable.",
-        "The consistent, empathetic, and calming vocal delivery that creates a safe space for introspection, reinforcing the brand's 'soft reset' ethos.",
-        "The ability to distill a complex psychological concept into a clear, concise, and highly relatable narrative within a short timeframe."
-      ],
-      "video_audit_dropoff_causes": [
-        "The very rapid appearance of single-word captions, especially in the first few seconds, might make it hard for some viewers to keep up, potentially leading to a scroll-off.",
-        "Some of the initial visuals are slightly generic stock footage, which might not immediately captivate viewers looking for highly unique or deeply engaging imagery from the outset.",
-        "The contemplative and slower-paced visual progression, while intentional, could be perceived as lacking dynamic action by viewers accustomed to faster-cut content."
-      ],
-      "video_audit_repeat_next": [
-        "The use of direct address ('You') in the narration to create an immediate personal connection with the viewer.",
-        "The overall emotional tone and thoughtful pacing of the narrative arc, moving from a relatable problem to a profound insight.",
-        "The selection of background music that complements the introspective mood without overpowering the voiceover."
-      ],
-      "video_audit_reduce_next": [
-        "The extreme speed of single-word caption transitions, particularly at the beginning of the video, to improve readability and allow viewers more time to absorb the text.",
-        "Reliance on overly generic stock footage for introductory or transitional scenes; prioritize more unique or metaphorically resonant visuals throughout."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Relatable Problem/Internal Question",
-        "thumbnail_type": "Symbolic Metaphor",
-        "visual_style_mix": "Minimalist & Reflective",
-        "narrative_format": "Insight/Psychology Drop",
-        "character_used": "Introspective Thinker"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-14T17:21:43Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
       "video_id": "20260513_170132",
       "published_date": "2026-05-13",
       "status": "uploaded",
@@ -3972,6 +3980,164 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-19T17:56:43Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260519_175643",
+      "published_date": "2026-05-19",
+      "status": "uploaded",
+      "topic": "The unspoken rule from your childhood that makes you self-sabotage intimacy.",
+      "category": "Psychology Drops",
+      "angle_type": "truth_drop",
+      "total_score": 18,
+      "source_name": "John Bowlby, Mary Ainsworth",
+      "source_basis": "Attachment Theory and its influence on adult relationship patterns",
+      "source_url": "",
+      "confidence_level": "peer_reviewed",
+      "content_format": "psychology_drop",
+      "emotional_trigger": "The recurring feeling of 'I've been here before' in unhealthy relationships, or choosing partners that feel familiar despite being unsafe.",
+      "psych_concept": "Attachment Theory, Internal Working Models",
+      "core_claim": "Your earliest relational dynamics create a subconscious template for 'love' or 'safety' that you unconsciously seek out, even if it's not healthy.",
+      "editorial_seed": "It's not about blaming your past, but recognizing how old patterns show up in new relationships. Understanding this can break the cycle of choosing what's familiar over what's actually good for you.",
+      "only_soft_reset_line": "Familiar isn't the same as safe. But your nervous system never got that memo.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You don't self-sabotage on purpose. You learned it was safer.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 69,
+      "estimated_duration_sec": 18,
+      "thumbnail_text": "You keep choosing 'home' \u2014 even when home hurt you.",
+      "content_fingerprint": "the unspoken rule from your childhood that makes you self sabotage intimacy you don t self sabotage on purpose you learned it was safer the recurring feeling of i ve been here before in unhealthy relationships or choosing partners that feel familiar despite being unsafe attachment theory internal working models your earliest relational dynamics create a subconscious template for love or safety that you unconsciously seek out even if it s not healthy familiar isn t the same as safe but your nervous system never got that memo",
+      "title": "Self-sabotage was how you felt SAFE",
+      "youtube_video_id": "-hnBAFRy28Q",
+      "youtube_url": "https://youtube.com/shorts/-hnBAFRy28Q",
+      "fallback_count": 0,
+      "video_count": 5,
+      "total_scenes": 8,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "Psychology Drops",
+        "topic_cluster": "The unspoken rule from your childhood that makes you self-sa",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "Intriguing premise that challenges a common assumption about self-sabotage."
+        },
+        "script_clarity": {
+          "score": 8,
+          "reason": "The script is concise and delivers its core message effectively within the short word count."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is clear, focusing on a psychological explanation rooted in learned safety behaviors."
+        },
+        "villain_mechanism_specificity": {
+          "score": 6,
+          "reason": "While it names 'learned safety' as the mechanism, it could be more specific on *how* this safety is achieved through self-sabotage."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no Call To Action in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the core message of the hook and script, linking self-sabotage to feeling safe."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description effectively summarizes the video's premise and hints at the underlying psychological concept."
+        },
+        "visual_dialogue_sync": {
+          "score": 6,
+          "reason": "Assuming standard integration, sync is likely adequate but not explicitly detailed for a higher score. Visuals need to complement the psychological concepts."
+        },
+        "image_direction_strength": {
+          "score": 5,
+          "reason": "Brand images are present, but their strength in conveying the core message isn't detailed. They need to visually support the psychology."
+        },
+        "thumbnail_concept": {
+          "score": 6,
+          "reason": "A strong thumbnail concept would visually represent the tension between self-sabotage and safety. Needs to be compelling and relevant."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "With a short script, pacing is manageable. The text suggests a thoughtful, slightly slow pace which suits the topic."
+        },
+        "brand_consistency": {
+          "score": 7,
+          "reason": "The topic aligns with relationship/self-growth, fitting the channel's niche. The 'truth drop' angle is also consistent."
+        },
+        "policy_factual_risk": {
+          "score": 9,
+          "reason": "The claim is presented as a psychological interpretation, not a definitive scientific fact, minimizing factual risk. It avoids diagnostic language."
+        }
+      },
+      "judge_composite_score": 7,
+      "strongest_element": "Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 7,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers a powerful psychological insight with a strong, empathetic voiceover and well-paced captions. The hook immediately grabs attention by reframing self-sabotage as a learned safety mechanism, aligning perfectly with the video's title. While the emotional tone and audio mix are excellent, some visual choices are too abstract or disjointed, occasionally hindering the connection between the spoken word and the imagery. Focusing on more specific and stylistically consistent visuals would further enhance viewer engagement and reduce potential drop-offs.",
+      "video_audit_strengths": [
+        "The voiceover's empathetic and non-judgmental delivery is a core strength, fostering trust and connection with the audience on a sensitive topic.",
+        "The script's ability to simplify complex psychological concepts (like attachment theory and internal working models) into relatable, concise statements is excellent.",
+        "The consistent brand identity, even with varied stock footage, is maintained through the mood, captions, and overall narrative tone, reinforcing Soft Reset With Me's unique voice."
+      ],
+      "video_audit_dropoff_causes": [
+        "Abrupt shifts in visual style (e.g., sudden switch from color to black and white, then back again) can be jarring and momentarily pull the viewer out of the narrative flow.",
+        "Several abstract visuals (e.g., coffee cup, open notebook, old key) lack direct relevance to the specific psychological concepts being discussed, potentially leading to a disconnect between the visual and auditory experience.",
+        "Some viewers might find the overall slow, somber pacing of the visuals (even with quick caption changes) to be less engaging, especially if they prefer more dynamic or directly illustrative content for psychology topics."
+      ],
+      "video_audit_repeat_next": [
+        "The clear, empathetic, and measured voiceover delivery.",
+        "The concise, impactful script that distills complex ideas into easily digestible insights.",
+        "The use of a strong emotional hook that immediately connects with a common struggle.",
+        "The effective use of music to establish and maintain a consistent emotional tone."
+      ],
+      "video_audit_reduce_next": [
+        "Overly abstract stock footage that doesn't directly enhance the spoken message.",
+        "Sudden and jarring changes in visual style (e.g., frequent shifts between color and black & white imagery).",
+        "Reliance on visuals that could be used for many different topics, aiming for more unique and specific imagery where possible."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Bold Claim|Relatable Problem",
+        "thumbnail_type": "Text Overlay|Emotional Resonance",
+        "visual_style_mix": "Cinematic|Moody Stock",
+        "narrative_format": "Explainer|Insight",
+        "character_used": "Abstract|Stock Characters"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-21T17:38:15Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
