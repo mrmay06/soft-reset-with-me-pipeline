@@ -1,36 +1,5 @@
 [
   {
-    "video_id": "20260506_235244",
-    "published_date": "2026-05-06",
-    "status": "uploaded",
-    "topic": "The silent shame of 'unseen' emotional effort in a relationship.",
-    "category": "Self-Worth Shifts",
-    "angle_type": "specific_scenario",
-    "total_score": 20,
-    "source_name": "Elaine Hatfield & Ellen Berscheid (developed Equity Theory)",
-    "content_format": "specific_scenario",
-    "emotional_trigger": "Feeling unseen, unappreciated, or that your emotional contributions don't matter in a relationship.",
-    "psych_concept": "Relationship Equity Theory",
-    "core_claim": "Consistently unreciprocated or unseen effort erodes self-worth and breeds deep resentment. True partnership requires visible and acknowledged contributions from both sides.",
-    "editorial_seed": "There\u2019s a specific kind of exhaustion that comes from being the one who always initiates, plans, or holds the emotional space, only for it to go unnoticed. It makes you question if your contributions matter, or if *you* matter, which quietly chips away at your sense of worth.",
-    "only_soft_reset_line": "It's the tiny, invisible cuts of always being the one who reaches first, until your arm just feels too heavy.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If you're always the one who remembers, plans, and checks in \u2014 this is for you.",
-    "hook_quality": "strong",
-    "word_count": 104,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "You stopped expecting. You called it peace.",
-    "content_fingerprint": "the silent shame of unseen emotional effort in a relationship if you re always the one who remembers plans and checks in this is for you feeling unseen unappreciated or that your emotional contributions don t matter in a relationship relationship equity theory consistently unreciprocated or unseen effort erodes self worth and breeds deep resentment true partnership requires visible and acknowledged contributions from both sides it s the tiny invisible cuts of always being the one who reaches first until your arm just feels too heavy",
-    "title": "Always remembering for two?",
-    "youtube_video_id": "o-J2DhseYys",
-    "youtube_url": "https://youtube.com/shorts/o-J2DhseYys",
-    "fallback_count": 0,
-    "video_count": 9,
-    "total_scenes": 14,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260507_164008",
     "published_date": "2026-05-07",
     "status": "uploaded",
@@ -3969,6 +3938,125 @@
     "strongest_element": "hook_strength",
     "weakest_element": "cta_quality",
     "only_soft_reset_score": 9,
+    "video_audit_status": "soft_failed",
+    "video_audit_summary": "",
+    "video_audit_strengths": [],
+    "video_audit_dropoff_causes": [],
+    "video_audit_repeat_next": [],
+    "video_audit_reduce_next": [],
+    "video_audit_tags": {}
+  },
+  {
+    "video_id": "20260522_234228",
+    "published_date": "2026-05-22",
+    "status": "uploaded",
+    "topic": "What anxious attachment actually looks like in real life",
+    "category": "psychology drops",
+    "angle_type": "psychology drop",
+    "total_score": 20,
+    "source_name": "John Bowlby, Mary Ainsworth (Attachment Theory); general contemporary psychology consensus",
+    "source_basis": "Anxious Attachment (Attachment Theory), Rumination, Rejection Sensitivity",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "Obsessive overthinking of communication in relationships, often triggered by ambiguous messages or silence.",
+    "psych_concept": "Anxious attachment, rumination, hypervigilance, rejection sensitivity.",
+    "core_claim": "Sometimes it looks like rereading one sentence until it hurts",
+    "editorial_seed": "Anxious attachment isn't just about seeking constant reassurance or being 'needy.' Often, it manifests internally as obsessive rumination over small details, searching for hidden meanings or potential rejections. This quiet suffering can be more draining than overt displays.",
+    "only_soft_reset_line": "You read it six times looking for the part where they stopped caring.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You don't argue. You just go quiet and wait to be left.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 71,
+    "estimated_duration_sec": 28,
+    "thumbnail_text": "anxious attachment is quiet",
+    "content_fingerprint": "what anxious attachment actually looks like in real life you don t argue you just go quiet and wait to be left obsessive overthinking of communication in relationships often triggered by ambiguous messages or silence anxious attachment rumination hypervigilance rejection sensitivity sometimes it looks like rereading one sentence until it hurts you read it six times looking for the part where they stopped caring",
+    "title": "You go quiet and wait to be left",
+    "youtube_video_id": "tvgtuZlTwzk",
+    "youtube_url": "https://youtube.com/shorts/tvgtuZlTwzk",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 8,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "psychology drop",
+      "category": "psychology drops",
+      "topic_cluster": "What anxious attachment actually looks like in real life",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 8
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Direct and intriguing, immediately identifies a common, painful behavior."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and easy to understand, gets straight to the point about anxious attachment."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "The POV is clear but could be more distinctive to the channel's specific tone."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Clearly identifies 'going quiet' as a maladaptive coping mechanism driven by fear of abandonment."
+      },
+      "cta_quality": {
+        "score": 2,
+        "reason": "No clear CTA was provided in the script."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurately reflects the core behavior discussed in the video."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Effectively summarizes the video's topic and connects it to anxious attachment, providing context."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Stock footage needs to be carefully selected to truly enhance the script's emotional weight."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "Brand images are present but their strategic placement and impact could be stronger."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "The concept is relevant, but could be more visually striking and attention-grabbing."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The short script allows for deliberate pacing, assuming a good voiceover performance."
+      },
+      "brand_consistency": {
+        "score": 7,
+        "reason": "While the topic fits, the execution needs to ensure it aligns with the channel's established feel."
+      },
+      "policy_factual_risk": {
+        "score": 9,
+        "reason": "General psychological observation, low risk of factual inaccuracy or policy violation."
+      }
+    },
+    "judge_composite_score": 6.8,
+    "strongest_element": "script_clarity",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 6,
     "video_audit_status": "soft_failed",
     "video_audit_summary": "",
     "video_audit_strengths": [],
