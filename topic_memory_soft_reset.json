@@ -1,36 +1,5 @@
 [
   {
-    "video_id": "20260506_162442",
-    "published_date": "2026-05-06",
-    "status": "uploaded",
-    "topic": "What anxious attachment actually looks like in real life",
-    "category": "psychology drops",
-    "angle_type": "psychology drop",
-    "total_score": 19,
-    "source_name": "Psychological principle: Anxious Attachment",
-    "content_format": "psychology_drop",
-    "emotional_trigger": "dating anxiety, self-worth, rumination, relationship uncertainty",
-    "psych_concept": "Anxious Attachment, Rumination",
-    "core_claim": "Sometimes it looks like rereading one sentence until it hurts",
-    "editorial_seed": "This topic validates a common, often overlooked, internal manifestation of anxious attachment. It helps the audience recognize subtle signs within themselves, fostering self-awareness and emotional growth by reframing what anxious attachment truly means beyond overt behaviors.",
-    "only_soft_reset_line": "That quiet, obsessive loop over one phrase isn't just overthinking. It's your anxious attachment trying to build certainty out of someone else's ambiguity.",
-    "editorial_quality": "strong",
-    "argument_quality": "unknown",
-    "hook": "If you've ever reread one sentence until it felt like an accusation \u2014 this is for you.",
-    "hook_quality": "strong",
-    "word_count": 96,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "anxious attachment is quiet",
-    "content_fingerprint": "what anxious attachment actually looks like in real life if you ve ever reread one sentence until it felt like an accusation this is for you dating anxiety self worth rumination relationship uncertainty anxious attachment rumination sometimes it looks like rereading one sentence until it hurts that quiet obsessive loop over one phrase isn t just overthinking it s your anxious attachment trying to build certainty out of someone else s ambiguity",
-    "title": "Rereading every text until it hurts",
-    "youtube_video_id": "PDpL3lkf7Ik",
-    "youtube_url": "https://youtube.com/shorts/PDpL3lkf7Ik",
-    "fallback_count": 0,
-    "video_count": 3,
-    "total_scenes": 6,
-    "validation_warnings": []
-  },
-  {
     "video_id": "20260506_235244",
     "published_date": "2026-05-06",
     "status": "uploaded",
@@ -3888,5 +3857,124 @@
       "narrative_format": "Deep Dive (Emotional)",
       "character_used": "N/A"
     }
+  },
+  {
+    "video_id": "20260522_202418",
+    "published_date": "2026-05-22",
+    "status": "uploaded",
+    "topic": "That feeling when a song hits different at 2am",
+    "category": "healing arcs",
+    "angle_type": "specific scenario",
+    "total_score": 20,
+    "source_name": "Cognitive Neuroscience / Psychology (e.g., LeDoux's work on emotional memory)",
+    "source_basis": "The concept of emotional memory and implicit memory, where past experiences and associated emotions are stored and can be triggered outside of conscious recall, often involving physiological responses.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "specific_scenario",
+    "emotional_trigger": "Listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment.",
+    "psych_concept": "Emotional memory / Somatic memory / Implicit memory",
+    "core_claim": "Some memories return through your body before your logic catches up",
+    "editorial_seed": "We've all been there: a song comes on at 2 AM and suddenly you're back in a moment you thought you'd moved past. It's not just nostalgia; it's your nervous system bringing an emotional memory to the surface.",
+    "only_soft_reset_line": "Your body remembered before your brain had a chance to argue.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "If a song has ever ruined your night, this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 68,
+    "estimated_duration_sec": 18,
+    "thumbnail_text": "why that song ruins you at 2am",
+    "content_fingerprint": "that feeling when a song hits different at 2am if a song has ever ruined your night this is for you listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment emotional memory somatic memory implicit memory some memories return through your body before your logic catches up your body remembered before your brain had a chance to argue",
+    "title": "The 2am song that quietly unravels you",
+    "youtube_video_id": "ypRLIoZP9O0",
+    "youtube_url": "https://youtube.com/shorts/ypRLIoZP9O0",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 8,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "specific scenario",
+      "category": "healing arcs",
+      "topic_cluster": "That feeling when a song hits different at 2am",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 8
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Intriguing and relatable, immediately draws in viewers who have experienced this specific emotional reaction to music."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and evocative, clearly communicates the emotional theme within the word count."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Establishes a specific, empathetic viewpoint on how certain music can trigger deep emotional responses."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Focuses on a 'song' as the specific trigger, which is a unique and tangible 'villain' for the scenario."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no call to action present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurately reflects the content and tone, creating intrigue without overpromising."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Expands on the hook and title, providing a good emotional context for potential viewers."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming stock videos will align with the emotional tone of a 'ruined night' song, sync should be good but not perfect without seeing the edit."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images should reinforce the emotional narrative; their strength depends on execution within the edit."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "A strong concept would likely involve imagery evoking late-night solitude and emotional introspection, fitting the title."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "Short script suggests it's easily manageable for a deliberate, reflective pacing suitable for the channel's style."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of emotional processing and healing aligns perfectly with the channel's established niche."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No factual claims are made, focusing entirely on subjective emotional experience. Zero policy risk."
+      }
+    },
+    "judge_composite_score": 73,
+    "strongest_element": "hook_strength",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "soft_failed",
+    "video_audit_summary": "",
+    "video_audit_strengths": [],
+    "video_audit_dropoff_causes": [],
+    "video_audit_repeat_next": [],
+    "video_audit_reduce_next": [],
+    "video_audit_tags": {}
   }
 ]
