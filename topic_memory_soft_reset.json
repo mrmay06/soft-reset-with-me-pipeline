@@ -1,38 +1,5 @@
 [
   {
-    "video_id": "20260506_023743",
-    "published_date": "2026-05-06",
-    "status": "uploaded",
-    "topic": "The 'Future Faking' Trap",
-    "category": "Psychology Drops",
-    "angle_type": "truth_drop",
-    "total_score": 19,
-    "source_name": "Relationship Psychology Concepts",
-    "content_format": "psychology_drop",
-    "emotional_trigger": "dating confusion, situationships, unfulfilled promises, emotional investment",
-    "psych_concept": "Future Faking (as a manipulation tactic)",
-    "core_claim": "Future faking is a manipulation tactic, designed to keep you emotionally invested without genuine commitment or effort.",
-    "editorial_seed": "It\u2019s easy to get swept up in grand visions of a shared future. But when someone consistently talks about 'us' in five years, yet can\u2019t commit to next Tuesday, that's a red flag. It\u2019s a psychological tactic to keep you hooked on potential, not present reality.",
-    "only_soft_reset_line": "That dream vacation they keep mentioning? It's emotional bait. It's there to distract you from how little is happening right now.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "They plan everything with you. But nothing ever happens.",
-    "hook_quality": "weak",
-    "word_count": 95,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "They Promise Everything. Except Today.",
-    "content_fingerprint": "the future faking trap they plan everything with you but nothing ever happens dating confusion situationships unfulfilled promises emotional investment future faking as a manipulation tactic future faking is a manipulation tactic designed to keep you emotionally invested without genuine commitment or effort that dream vacation they keep mentioning it s emotional bait it s there to distract you from how little is happening right now",
-    "title": "All those plans, nothing ever happens",
-    "youtube_video_id": "kG8ZskBISf4",
-    "youtube_url": "https://youtube.com/shorts/kG8ZskBISf4",
-    "fallback_count": 0,
-    "video_count": 13,
-    "total_scenes": 17,
-    "validation_warnings": [
-      "tags_sanitized"
-    ]
-  },
-  {
     "video_id": "20260506_162442",
     "published_date": "2026-05-06",
     "status": "uploaded",
@@ -3778,6 +3745,148 @@
       "visual_style_mix": "moody_cinematic_stock",
       "narrative_format": "emotional_diagnosis",
       "character_used": "none"
+    }
+  },
+  {
+    "video_id": "20260522_013246",
+    "published_date": "2026-05-22",
+    "status": "uploaded",
+    "topic": "Dating app burnout isn't one big event. It's 100 tiny losses.",
+    "category": "Identity and Growth",
+    "angle_type": "truth_drop",
+    "total_score": 18,
+    "source_name": "General psychology consensus",
+    "source_basis": "Psychological principles of cumulative stress, micro-grief, and rejection sensitivity.",
+    "source_url": "",
+    "confidence_level": "observational",
+    "content_format": "truth_drop",
+    "emotional_trigger": "The feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps.",
+    "psych_concept": "Cumulative stress, unacknowledged grief, rejection sensitivity",
+    "core_claim": "The emotional weight of modern dating comes from the small, unacknowledged disappointments that add up, rather than just dramatic breakups.",
+    "editorial_seed": "We don't acknowledge the little losses on dating apps: the hopeful first messages, the almost-connections, the slow fade-outs. Each one is a tiny grief, and they stack up until you feel completely drained, even without a big, dramatic ending.",
+    "only_soft_reset_line": "Nobody ghosted you dramatically. They just quietly never became anyone.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Every unmatched conversation cost you something. You just never counted it.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 62,
+    "estimated_duration_sec": 30,
+    "thumbnail_text": "100 tiny losses",
+    "content_fingerprint": "dating app burnout isn t one big event it s 100 tiny losses every unmatched conversation cost you something you just never counted it the feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps cumulative stress unacknowledged grief rejection sensitivity the emotional weight of modern dating comes from the small unacknowledged disappointments that add up rather than just dramatic breakups nobody ghosted you dramatically they just quietly never became anyone",
+    "title": "Every unmatched chat quietly drains you",
+    "youtube_video_id": "yL7ckEhDVpQ",
+    "youtube_url": "https://youtube.com/shorts/yL7ckEhDVpQ",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 12,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "truth_drop",
+      "category": "Identity and Growth",
+      "topic_cluster": "Dating app burnout isn't one big event. It's 100 tiny losses",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 12
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook is strong and introduces an intriguing concept by quantifying the unquantified cost of unmatched conversations."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and directly addresses the core idea of dating burnout stemming from multiple small losses."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The POV is clearly about the emotional toll of dating and the concept of burnout, fitting the channel's identity."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'villain' is 'unmatched conversations' and the mechanism is 'draining' or 'tiny losses'. It's specific enough to be relatable but could be more detailed."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "There is no explicit Call to Action (CTA) present in the provided details. This is a significant omission."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the core message of the hook and the script's theme of being drained by unmatched chats."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description is useful as it expands on the hook and title, introducing the concept of 'dating burnout' and '100 tiny losses'."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming stock videos and brand images are chosen to match the themes of dating, frustration, and introspection, sync should be adequate. However, without seeing the actual video, it's an assumption."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The use of brand images (4) and stock videos (8) suggests an effort to visually support the narrative. Strength depends on execution, but the balance is reasonable for a short video."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "The concept likely revolves around the title and hook's theme (drained, unmatched). A strong thumbnail would visually represent the emotional cost of dating."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "Given the short script (62 words) and duration (36s), pacing should be manageable for a clear and deliberate narration, fitting a 'truth drop' style."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The identity and growth category, truth drop angle, and focus on self-perception align well with a channel like Soft Reset With Me."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is subjective and discusses emotional experiences, posing no apparent factual risk or policy violation."
+      }
+    },
+    "judge_composite_score": 7.3,
+    "strongest_element": "script_clarity",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This video masterfully uses an empathetic voiceover, melancholic music, and well-paced captions to deliver its 'truth drop' on dating app burnout, making a strong emotional connection with its audience from the hook. While the visual aesthetic is largely cohesive and reinforces the mood, some generic stock footage and occasional visual overlays slightly reduce specificity and could contribute to viewer drop-off. The poignant delivery of the signature line and the consistent, validating tone are key strengths to replicate, while future videos could benefit from increased visual variety and fewer distracting overlays to enhance engagement.",
+    "video_audit_strengths": [
+      "Voiceover performance: The narrator's tone is perfectly empathetic, gentle, and reflective, crucial for a 'truth drop' format, making the emotional message deeply resonant.",
+      "Powerful signature line delivery: The loopback line, 'They just quietly never became anyone,' is delivered with a subtle emotional weight that elevates its impact and makes it highly memorable.",
+      "Cohesive aesthetic: Despite some minor issues with visual specificity, the overall dark, moody, and contemplative visual aesthetic is consistently maintained, effectively supporting the narrative's emotional depth."
+    ],
+    "video_audit_dropoff_causes": [
+      "Pacing of visual changes: While captions are well-timed, the visual cuts and scene progression can sometimes feel slightly slow for a rapidly consumed Short, potentially leading to disengagement.",
+      "Generic or overlaid visuals: Some stock footage choices are less specific to the narration, and the use of visual overlays occasionally makes scenes busy or less clear, which could cause viewers to lose focus.",
+      "Solely introspective/validating content: As a 'truth drop,' the video is purely observational. Viewers seeking immediate actionable advice or a lighter tone might drop off once the core insight is delivered."
+    ],
+    "video_audit_repeat_next": [
+      "Empathetic, validating voiceover tone and delivery.",
+      "Clear, easy-to-read captions synced to the narration.",
+      "Consistent emotional pacing and subtle, supportive musical backing.",
+      "Strong, relatable, and specific hooks and signature lines that validate audience experiences."
+    ],
+    "video_audit_reduce_next": [
+      "Visual overlays: Minimize or eliminate instances where one visual is semi-transparently overlaid on another, as it can detract from clarity and focus.",
+      "Generic stock footage: Prioritize more unique, specific, or powerfully metaphorical visuals that directly illustrate the script's nuances rather than relying on broadly melancholic scenes.",
+      "Repetitive visual themes: While the mood is consistent, aim for slightly more visual variety in depicting sadness or introspection to keep the viewer engaged."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Emotional Validation",
+      "thumbnail_type": "Text Overlay (Concept)",
+      "visual_style_mix": "Cinematic Melancholy",
+      "narrative_format": "Deep Dive (Emotional)",
+      "character_used": "N/A"
     }
   }
 ]
