@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-22T23:42:28Z",
+  "generated_at": "2026-05-23T14:49:14Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-06",
-  "end_date": "2026-05-21",
+  "start_date": "2026-04-07",
+  "end_date": "2026-05-22",
   "videos": [
     {
       "video_id": "20260509_091450",
@@ -278,61 +278,6 @@
       "reach_score": 78.78,
       "analytics_fetched_at": "2026-05-17T15:41:43Z",
       "analytics_days_old": 9,
-      "data_available": true
-    },
-    {
-      "video_id": "20260506_235244",
-      "published_date": "2026-05-06",
-      "status": "uploaded",
-      "topic": "The silent shame of 'unseen' emotional effort in a relationship.",
-      "category": "Self-Worth Shifts",
-      "angle_type": "specific_scenario",
-      "total_score": 20,
-      "source_name": "Elaine Hatfield & Ellen Berscheid (developed Equity Theory)",
-      "content_format": "specific_scenario",
-      "emotional_trigger": "Feeling unseen, unappreciated, or that your emotional contributions don't matter in a relationship.",
-      "psych_concept": "Relationship Equity Theory",
-      "core_claim": "Consistently unreciprocated or unseen effort erodes self-worth and breeds deep resentment. True partnership requires visible and acknowledged contributions from both sides.",
-      "editorial_seed": "There\u2019s a specific kind of exhaustion that comes from being the one who always initiates, plans, or holds the emotional space, only for it to go unnoticed. It makes you question if your contributions matter, or if *you* matter, which quietly chips away at your sense of worth.",
-      "only_soft_reset_line": "It's the tiny, invisible cuts of always being the one who reaches first, until your arm just feels too heavy.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If you're always the one who remembers, plans, and checks in \u2014 this is for you.",
-      "hook_quality": "strong",
-      "word_count": 104,
-      "estimated_duration_sec": 27,
-      "thumbnail_text": "You stopped expecting. You called it peace.",
-      "content_fingerprint": "the silent shame of unseen emotional effort in a relationship if you re always the one who remembers plans and checks in this is for you feeling unseen unappreciated or that your emotional contributions don t matter in a relationship relationship equity theory consistently unreciprocated or unseen effort erodes self worth and breeds deep resentment true partnership requires visible and acknowledged contributions from both sides it s the tiny invisible cuts of always being the one who reaches first until your arm just feels too heavy",
-      "title": "Always remembering for two?",
-      "youtube_video_id": "o-J2DhseYys",
-      "youtube_url": "https://youtube.com/shorts/o-J2DhseYys",
-      "fallback_count": 0,
-      "video_count": 9,
-      "total_scenes": 14,
-      "validation_warnings": [],
-      "metrics": {
-        "views": 511,
-        "engagedViews": 194,
-        "averageViewDuration": 17,
-        "averageViewPercentage": 46.14,
-        "likes": 10,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 1
-      },
-      "composite_score": 46.69,
-      "performance_score": 46.69,
-      "score_version": 1,
-      "hook_score": 37.96,
-      "hold_score": 46.14,
-      "resonance_score": 9.28,
-      "resonance_per_engaged": 0.0928,
-      "resonance_per_view": 0.0352,
-      "conversion_score": 97.85,
-      "conversion_rate_per_1k": 1.9569,
-      "reach_score": 90.3,
-      "analytics_fetched_at": "2026-05-22T20:24:18Z",
-      "analytics_days_old": 16,
       "data_available": true
     },
     {
@@ -964,6 +909,174 @@
       "data_available": true
     },
     {
+      "video_id": "20260514_172143",
+      "published_date": "2026-05-14",
+      "status": "uploaded",
+      "topic": "You are not too much \u2014 you were just around people with too little",
+      "category": "self-worth shifts",
+      "angle_type": "reframe",
+      "total_score": 18,
+      "source_name": "Therapist consensus and observational psychology",
+      "source_basis": "Psychological principle of projection and individual differences in emotional regulation capacity in interpersonal relationships.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "reframe",
+      "emotional_trigger": "Feeling inherently flawed or overwhelming after being told you are 'too much' in a relationship or social setting.",
+      "psych_concept": "Projection, emotional regulation capacity",
+      "core_claim": "Being called 'too much' is often a reflection of someone else's emotional limits, not a flaw in your authentic self.",
+      "editorial_seed": "This topic validates a painful and common experience: being labeled 'too much' in relationships. It offers a powerful reframe, shifting the perspective from self-blame to understanding that the issue lies with the other person's capacity and comfort levels, not one's inherent value or expression. This empowers the audience to embrace their authentic self without shame.",
+      "only_soft_reset_line": "They didn't have the capacity. They just handed you the bill.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If you shrank yourself because someone called you too much, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 75,
+      "estimated_duration_sec": 21,
+      "thumbnail_text": "you weren't too much",
+      "content_fingerprint": "you are not too much you were just around people with too little if you shrank yourself because someone called you too much this is for you feeling inherently flawed or overwhelming after being told you are too much in a relationship or social setting projection emotional regulation capacity being called too much is often a reflection of someone else s emotional limits not a flaw in your authentic self they didn t have the capacity they just handed you the bill",
+      "title": "You weren't too much, they were just SMALL",
+      "youtube_video_id": "I-8SRp8D7PM",
+      "youtube_url": "https://youtube.com/shorts/I-8SRp8D7PM",
+      "fallback_count": 0,
+      "video_count": 9,
+      "total_scenes": 13,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "You are not too much \u2014 you were just around people with too ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook is relatable and directly addresses a common emotional experience, drawing viewers in by promising a solution."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and effectively conveys a powerful reframe in a short word count."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The POV is clear: validating the viewer's feelings and reframing perceived 'too-muchness' as emotional depth."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "While the 'villain' mechanism (making someone feel 'too much') is implied, it could be slightly more specific about *how* this happens."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no explicit or implicit CTA present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title is creative, uses a compelling metaphor, and accurately reflects the script's core message of validating the viewer's magnitude."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description is concise, reinforces the hook, and clearly states the video's benefit to the viewer."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "With stock footage and brand images, sync is likely adequate but not guaranteed to be perfectly tailored without seeing the edit. Assumed moderate sync."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Assuming brand images are relevant and stock videos support the narrative, the direction is functional. Lacks explicit detail for higher score."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The title is strong enough to suggest a compelling thumbnail concept, likely focusing on scale or emotional expression. Needs confirmation."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The script's brevity suggests good pacing potential. Assumed voiceover would align with the brand's calm, reflective tone."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The topic (self-worth shifts, emotional depth) and reframe angle align perfectly with the channel's established identity."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is subjective and focuses on emotional reframing, posing no factual or policy risks."
+        }
+      },
+      "judge_composite_score": 7.2,
+      "strongest_element": "Brand consistency",
+      "weakest_element": "CTA quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers a powerful message of self-worth through strong narrative alignment, empathetic narration, and visually specific metaphors. While the pacing could be slightly optimized for the Shorts format and a minor visual filter choice was jarring, the overall production quality, emotional resonance, and precise captioning create a compelling and validating experience for the viewer, effectively embodying the channel's purpose.",
+      "video_audit_strengths": [
+        "The consistent use of a subtle 'film grain' overlay acts as an effective stylistic unifier for the diverse stock footage, adding a cohesive and polished feel.",
+        "The clever and impactful use of visual metaphors, such as the hand drawing a circle to represent 'their limit' and the folded paper for 'the bill', significantly strengthens the narrative's core message.",
+        "The narrator's consistent empathetic and reassuring vocal delivery is a cornerstone of the video's emotional effectiveness.",
+        "The precise word-by-word captioning not only enhances accessibility but also controls the reader's pace, ensuring the narrative unfolds deliberately."
+      ],
+      "video_audit_dropoff_causes": [
+        "The overall pacing of the video is quite slow for a short, which might lead some viewers to swipe away if they prefer more dynamic content.",
+        "The transition from the 'plant as growth' visual (0:10) to the contrasting statement 'You thought that was growth' could cause a momentary disconnect if the viewer isn't reading the captions quickly or processing the reframe.",
+        "The strong purple filter on the visual of men playing cards (0:29) creates a sudden aesthetic shift that feels slightly jarring compared to the otherwise natural and muted tones."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the high quality, empathetic voiceover and narration style.",
+        "Continue with precise, well-timed captioning that aids comprehension and pacing.",
+        "Utilize thoughtful and specific visual metaphors to illustrate abstract psychological concepts.",
+        "Apply consistent aesthetic filters or overlays to unify disparate stock footage into a cohesive visual style.",
+        "Keep background music subtle and perfectly matched to the emotional tone."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize or avoid jarring color filters that deviate significantly from the video's established aesthetic.",
+        "Consider optimizing visual pacing in certain sections to be slightly more dynamic for the Shorts format, without sacrificing emotional depth.",
+        "Review transitions between highly abstract visuals to ensure a smoother, more seamless flow."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Relatable Problem / Vulnerability Hook",
+        "thumbnail_type": "Text-Overlay",
+        "visual_style_mix": "Muted, Reflective, Cinematic, Metaphorical",
+        "narrative_format": "Voiceover Monologue / Reframe Narrative",
+        "character_used": "Empathetic Guide / Mentor"
+      },
+      "metrics": {
+        "views": 15,
+        "engagedViews": 5,
+        "averageViewDuration": 19,
+        "averageViewPercentage": 52.59,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 28.75,
+      "performance_score": 28.75,
+      "score_version": 1,
+      "hook_score": 33.33,
+      "hold_score": 52.59,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 40.13,
+      "analytics_fetched_at": "2026-05-23T14:49:14Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
+    {
       "video_id": "20260512_191324",
       "published_date": "2026-05-12",
       "status": "uploaded",
@@ -1587,8 +1700,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 73.82,
-      "analytics_fetched_at": "2026-05-16T14:42:23Z",
-      "analytics_days_old": 9,
+      "analytics_fetched_at": "2026-05-23T14:49:14Z",
+      "analytics_days_old": 16,
       "data_available": true
     },
     {
@@ -2722,166 +2835,6 @@
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-18T17:40:52Z",
       "analytics_days_old": 9,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260514_172143",
-      "published_date": "2026-05-14",
-      "status": "uploaded",
-      "topic": "You are not too much \u2014 you were just around people with too little",
-      "category": "self-worth shifts",
-      "angle_type": "reframe",
-      "total_score": 18,
-      "source_name": "Therapist consensus and observational psychology",
-      "source_basis": "Psychological principle of projection and individual differences in emotional regulation capacity in interpersonal relationships.",
-      "source_url": "",
-      "confidence_level": "therapist_consensus",
-      "content_format": "reframe",
-      "emotional_trigger": "Feeling inherently flawed or overwhelming after being told you are 'too much' in a relationship or social setting.",
-      "psych_concept": "Projection, emotional regulation capacity",
-      "core_claim": "Being called 'too much' is often a reflection of someone else's emotional limits, not a flaw in your authentic self.",
-      "editorial_seed": "This topic validates a painful and common experience: being labeled 'too much' in relationships. It offers a powerful reframe, shifting the perspective from self-blame to understanding that the issue lies with the other person's capacity and comfort levels, not one's inherent value or expression. This empowers the audience to embrace their authentic self without shame.",
-      "only_soft_reset_line": "They didn't have the capacity. They just handed you the bill.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If you shrank yourself because someone called you too much, this is for you.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 75,
-      "estimated_duration_sec": 21,
-      "thumbnail_text": "you weren't too much",
-      "content_fingerprint": "you are not too much you were just around people with too little if you shrank yourself because someone called you too much this is for you feeling inherently flawed or overwhelming after being told you are too much in a relationship or social setting projection emotional regulation capacity being called too much is often a reflection of someone else s emotional limits not a flaw in your authentic self they didn t have the capacity they just handed you the bill",
-      "title": "You weren't too much, they were just SMALL",
-      "youtube_video_id": "I-8SRp8D7PM",
-      "youtube_url": "https://youtube.com/shorts/I-8SRp8D7PM",
-      "fallback_count": 0,
-      "video_count": 9,
-      "total_scenes": 13,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "reframe",
-        "category": "self-worth shifts",
-        "topic_cluster": "You are not too much \u2014 you were just around people with too ",
-        "visual_style_mix": "balanced",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 13
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "The hook is relatable and directly addresses a common emotional experience, drawing viewers in by promising a solution."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and effectively conveys a powerful reframe in a short word count."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The POV is clear: validating the viewer's feelings and reframing perceived 'too-muchness' as emotional depth."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "While the 'villain' mechanism (making someone feel 'too much') is implied, it could be slightly more specific about *how* this happens."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no explicit or implicit CTA present in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title is creative, uses a compelling metaphor, and accurately reflects the script's core message of validating the viewer's magnitude."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description is concise, reinforces the hook, and clearly states the video's benefit to the viewer."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "With stock footage and brand images, sync is likely adequate but not guaranteed to be perfectly tailored without seeing the edit. Assumed moderate sync."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "Assuming brand images are relevant and stock videos support the narrative, the direction is functional. Lacks explicit detail for higher score."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The title is strong enough to suggest a compelling thumbnail concept, likely focusing on scale or emotional expression. Needs confirmation."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The script's brevity suggests good pacing potential. Assumed voiceover would align with the brand's calm, reflective tone."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The topic (self-worth shifts, emotional depth) and reframe angle align perfectly with the channel's established identity."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is subjective and focuses on emotional reframing, posing no factual or policy risks."
-        }
-      },
-      "judge_composite_score": 7.2,
-      "strongest_element": "Brand consistency",
-      "weakest_element": "CTA quality",
-      "only_soft_reset_score": 9,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively delivers a powerful message of self-worth through strong narrative alignment, empathetic narration, and visually specific metaphors. While the pacing could be slightly optimized for the Shorts format and a minor visual filter choice was jarring, the overall production quality, emotional resonance, and precise captioning create a compelling and validating experience for the viewer, effectively embodying the channel's purpose.",
-      "video_audit_strengths": [
-        "The consistent use of a subtle 'film grain' overlay acts as an effective stylistic unifier for the diverse stock footage, adding a cohesive and polished feel.",
-        "The clever and impactful use of visual metaphors, such as the hand drawing a circle to represent 'their limit' and the folded paper for 'the bill', significantly strengthens the narrative's core message.",
-        "The narrator's consistent empathetic and reassuring vocal delivery is a cornerstone of the video's emotional effectiveness.",
-        "The precise word-by-word captioning not only enhances accessibility but also controls the reader's pace, ensuring the narrative unfolds deliberately."
-      ],
-      "video_audit_dropoff_causes": [
-        "The overall pacing of the video is quite slow for a short, which might lead some viewers to swipe away if they prefer more dynamic content.",
-        "The transition from the 'plant as growth' visual (0:10) to the contrasting statement 'You thought that was growth' could cause a momentary disconnect if the viewer isn't reading the captions quickly or processing the reframe.",
-        "The strong purple filter on the visual of men playing cards (0:29) creates a sudden aesthetic shift that feels slightly jarring compared to the otherwise natural and muted tones."
-      ],
-      "video_audit_repeat_next": [
-        "Maintain the high quality, empathetic voiceover and narration style.",
-        "Continue with precise, well-timed captioning that aids comprehension and pacing.",
-        "Utilize thoughtful and specific visual metaphors to illustrate abstract psychological concepts.",
-        "Apply consistent aesthetic filters or overlays to unify disparate stock footage into a cohesive visual style.",
-        "Keep background music subtle and perfectly matched to the emotional tone."
-      ],
-      "video_audit_reduce_next": [
-        "Minimize or avoid jarring color filters that deviate significantly from the video's established aesthetic.",
-        "Consider optimizing visual pacing in certain sections to be slightly more dynamic for the Shorts format, without sacrificing emotional depth.",
-        "Review transitions between highly abstract visuals to ensure a smoother, more seamless flow."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Relatable Problem / Vulnerability Hook",
-        "thumbnail_type": "Text-Overlay",
-        "visual_style_mix": "Muted, Reflective, Cinematic, Metaphorical",
-        "narrative_format": "Voiceover Monologue / Reframe Narrative",
-        "character_used": "Empathetic Guide / Mentor"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-16T14:42:23Z",
-      "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
     },
@@ -4145,6 +4098,164 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-22T01:32:46Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260521_173815",
+      "published_date": "2026-05-21",
+      "status": "uploaded",
+      "topic": "The specific ache of being the 'backup' option in a relationship or dating scenario.",
+      "category": "Self-Worth Shifts",
+      "angle_type": "specific_scenario",
+      "total_score": 19,
+      "source_name": "John Bowlby, general psychological principles",
+      "source_basis": "Attachment theory; self-esteem and relational choices.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "specific_scenario",
+      "emotional_trigger": "The realization that you were never the first choice; receiving a 'check-in' text after a long silence.",
+      "psych_concept": "Insecure attachment, self-worth, scarcity mindset in relationships.",
+      "core_claim": "True connection doesn't feel like an audition you only get if others don't show up; it feels like an invitation based on genuine desire.",
+      "editorial_seed": "It stings when you realize someone only 'chose' you because their other options dried up. This isn't a reflection of your worth, but a clear sign they're operating from a place of scarcity, not genuine desire for you.",
+      "only_soft_reset_line": "You weren't chosen. You were what was left.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If you felt chosen \u2014 until you noticed their silence ended the same night someone else went quiet \u2014 this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 73,
+      "estimated_duration_sec": 29,
+      "thumbnail_text": "You weren't chosen. You were what was left.",
+      "content_fingerprint": "the specific ache of being the backup option in a relationship or dating scenario if you felt chosen until you noticed their silence ended the same night someone else went quiet this is for you the realization that you were never the first choice receiving a check in text after a long silence insecure attachment self worth scarcity mindset in relationships true connection doesn t feel like an audition you only get if others don t show up it feels like an invitation based on genuine desire you weren t chosen you were what was left",
+      "title": "You were chosen until their OTHER quiet",
+      "youtube_video_id": "tlTUvAm4kS8",
+      "youtube_url": "https://youtube.com/shorts/tlTUvAm4kS8",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "specific_scenario",
+        "category": "Self-Worth Shifts",
+        "topic_cluster": "The specific ache of being the 'backup' option in a relation",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook is intriguing and speaks to a very specific, relatable pain point of feeling chosen then discarded, directly addressing the video's core theme."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and clear, effectively conveying the emotional experience of realizing one's temporary status in someone else's life."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "The POV is distinctly empathetic and validating, focusing on the internal shift in self-worth triggered by external validation (or lack thereof)."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "The 'villain' is the person's inconsistent attention and the silence that reveals a deeper truth about their priorities, which is specific and well-defined."
+        },
+        "cta_quality": {
+          "score": 3,
+          "reason": "There is no visible CTA in the provided details. This needs to be added for channel growth."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the content by highlighting the shift from being 'chosen' to the realization of being the 'other quiet,' implying a backup."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "The description is evocative and clearly sets the emotional tone, inviting viewers who resonate with the specific feeling of being a temporary choice."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "While not explicitly detailed, the description implies visuals would align with feelings of quietness, realization, and perhaps background scenarios. A stronger sync would be guaranteed with more specific visual direction."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The 4 brand images need a clear directive to evoke the feeling of being 'chosen' but then realizing the 'backup' status, to reinforce the narrative."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "A thumbnail concept reflecting the duality of 'chosen' versus 'backup' (perhaps a split image or contrasting visuals) would be strong, though not detailed here."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "Given the short script and emotional nature, the pacing should be deliberate and empathetic. Readiness is assumed but would be confirmed on review."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The theme of self-worth shifts tied to relational dynamics is core to the Soft Reset With Me brand. The specific scenario aligns well."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No apparent factual claims are made that could be disputed. The content is purely relational and emotional interpretation."
+        }
+      },
+      "judge_composite_score": 8.0,
+      "strongest_element": "script_clarity",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively hooks viewers by validating a specific emotional experience, delivered through a clear, empathetic voiceover and well-timed captions. The audio mix and overall emotional tone are exceptionally well-executed, reinforcing the 'Soft Reset With Me' brand identity. While the atmospheric visuals contribute to the mood, their generic nature occasionally misses the opportunity to specifically illustrate the nuanced aspects of the script, potentially limiting deeper viewer engagement with the visual story. Future content could benefit from more intentional visual specificity to fully match the precision of the script's emotional beats.",
+      "video_audit_strengths": [
+        "The voiceover's consistent empathetic and understanding tone is a strong brand asset.",
+        "The script's ability to articulate a highly specific and often unspoken emotional pain point is a significant strength.",
+        "The impactful 'You weren't chosen. You were what was left.' line serves as a powerful and memorable core claim.",
+        "The music selection is consistently perfect for the mood, enhancing the emotional delivery without being intrusive."
+      ],
+      "video_audit_dropoff_causes": [
+        "The generic nature of some visuals might lead to a slight disconnect for viewers expecting more direct visual storytelling to match the script's specific nuances (e.g., 'someone else went quiet').",
+        "The consistent use of a film grain/scratch overlay, while a stylistic choice, could be perceived as a mild visual distraction by some, slightly obscuring the footage rather than purely enhancing it."
+      ],
+      "video_audit_repeat_next": [
+        "Maintaining the empathetic, clear voiceover and strong brand tone.",
+        "Ensuring excellent alignment between the title, hook, and core message.",
+        "Continuing to use well-paced and legible captions for accessibility and engagement.",
+        "Leveraging atmospheric and mood-setting background music.",
+        "Crafting sharp, impactful core claims or loopback lines that resonate deeply."
+      ],
+      "video_audit_reduce_next": [
+        "Reliance on overly generic stock footage; aim for visuals that more specifically illustrate the unique scenarios described in the script.",
+        "The intensity or continuous presence of the film grain/scratch overlay, considering whether it always enhances or sometimes detracts from visual clarity."
+      ],
+      "video_audit_tags": {
+        "hook_type": "scenario_validation",
+        "thumbnail_type": "text_overlay",
+        "visual_style_mix": "moody_cinematic_stock",
+        "narrative_format": "emotional_diagnosis",
+        "character_used": "none"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-23T14:49:14Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
