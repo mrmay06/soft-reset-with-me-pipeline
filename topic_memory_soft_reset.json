@@ -1,113 +1,5 @@
 [
   {
-    "video_id": "20260508_072902",
-    "published_date": "2026-05-08",
-    "status": "uploaded",
-    "topic": "Hot Take: The myth of a partner 'completing' you stunts individual growth.",
-    "category": "Identity and Growth",
-    "angle_type": "hot_take",
-    "total_score": 18,
-    "source_name": "Carl Rogers, Abraham Maslow, contemporary relationship psychology.",
-    "source_basis": "Foundational principles of humanistic psychology, emphasizing self-actualization and the importance of individual wholeness for healthy, interdependent relationships.",
-    "source_url": "",
-    "confidence_level": "therapist_consensus",
-    "content_format": "hot_take",
-    "emotional_trigger": "Feeling incomplete, seeking external validation from a partner, relationship dissatisfaction due to unrealistic expectations, or fear of individual growth within a partnership.",
-    "psych_concept": "Self-actualization, interdependence vs. codependence, individual identity formation.",
-    "core_claim": "The romantic fantasy of a partner 'completing' you is a dangerous myth that actively undermines your journey of self-discovery and the cultivation of a robust, independent identity.",
-    "editorial_seed": "We're fed this narrative that finding 'the one' will fill all our voids. But waiting for someone else to complete you is a passive approach to life. It robs you of the vital work of understanding your own wholeness and true identity. Relationships thrive when two whole people choose to be together, not when one needs the other to feel complete.",
-    "only_soft_reset_line": "You weren't half a person waiting. You were a whole one who never got introduced to yourself.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "Waiting for someone to arrive so you can finally start living.",
-    "hook_quality": "weak",
-    "word_count": 87,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "You're not half a person.",
-    "content_fingerprint": "hot take the myth of a partner completing you stunts individual growth waiting for someone to arrive so you can finally start living feeling incomplete seeking external validation from a partner relationship dissatisfaction due to unrealistic expectations or fear of individual growth within a partnership self actualization interdependence vs codependence individual identity formation the romantic fantasy of a partner completing you is a dangerous myth that actively undermines your journey of self discovery and the cultivation of a robust independent identity you weren t half a person waiting you were a whole one who never got introduced to yourself",
-    "title": "You're waiting to finally start living",
-    "youtube_video_id": "zeAUuo9HI0A",
-    "youtube_url": "https://youtube.com/shorts/zeAUuo9HI0A",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 9,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W19",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "declarative",
-      "angle_type": "hot_take",
-      "category": "Identity and Growth",
-      "topic_cluster": "Hot Take: The myth of a partner 'completing' you stunts indi",
-      "visual_style_mix": "balanced",
-      "video_length_band": "under_30s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 9
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 7,
-        "reason": "The hook is relatable, posing a common internal struggle. It could be slightly more specific or intriguing."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "The script is concise and clearly conveys the core message of self-reliance and present living."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "The perspective is empowering and aligns with the channel's self-growth focus. It's direct and encouraging."
-      },
-      "villain_mechanism_specificity": {
-        "score": 6,
-        "reason": "The 'villain' (waiting for external validation) is identified, but could be more explicitly defined or illustrated."
-      },
-      "cta_quality": {
-        "score": 1,
-        "reason": "There is no clear Call To Action in the script or provided details."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title perfectly reflects the hook and the core message of the video, creating strong alignment."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "The description is a good, concise summary that reiterates the hook and promises a key takeaway."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assuming appropriate stock footage is used, there's potential for good sync. However, without seeing the edit, this is an educated guess. The count of stock videos (6) suggests a decent effort."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "The use of brand images (3) and stock videos (6) suggests an effort to create visual interest. The specific direction would depend on the execution."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "The concept of waiting or anticipation could translate well to a thumbnail, but needs a strong visual execution to be compelling."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "The short script length (87 words) and clear message suggest it's well-suited for a 30s video with good pacing, assuming professional delivery."
-      },
-      "brand_consistency": {
-        "score": 9,
-        "reason": "The 'Identity and Growth' category and 'hot_take' angle align perfectly with the channel's established brand. The message is highly on-brand."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content is subjective and focuses on personal growth, posing no factual risk."
-      }
-    },
-    "judge_composite_score": 7,
-    "strongest_element": "Script Clarity",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 9
-  },
-  {
     "video_id": "20260508_195753",
     "published_date": "2026-05-08",
     "status": "uploaded",
@@ -4100,6 +3992,147 @@
       "visual_style_mix": "Cinematic/Symbolic + Social Media Overlay",
       "narrative_format": "Truth Drop/Insight",
       "character_used": "Solitary/Introspective"
+    }
+  },
+  {
+    "video_id": "20260523_222914",
+    "published_date": "2026-05-23",
+    "status": "uploaded",
+    "topic": "They didn't 'shut down.' Their nervous system just went offline.",
+    "category": "Psychology Drops",
+    "angle_type": "psychology_drop",
+    "total_score": 18,
+    "source_name": "Stephen Porges, et al.",
+    "source_basis": "Polyvagal Theory; Autonomic Nervous System's fight-flight-freeze responses",
+    "source_url": "",
+    "confidence_level": "peer_reviewed",
+    "content_format": "reframe",
+    "emotional_trigger": "Feeling dismissed or disrespected when a partner 'shuts down' during an argument.",
+    "psych_concept": "Freeze response / Nervous system overwhelm",
+    "core_claim": "When someone 'shuts down,' it's often a physiological freeze response to perceived threat or emotional overwhelm, not necessarily a conscious choice to be avoidant or disrespectful.",
+    "editorial_seed": "It's easy to interpret 'shutting down' as a personal slight or disinterest, but often it's a primal, automatic response. Understanding this doesn't excuse behavior, but it can shift the conversation from blame to regulation and repair.",
+    "only_soft_reset_line": "They went blank. That's not indifference. That's a body hitting its limit.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Their silence isn't coldness. Their brain literally went offline.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 69,
+    "estimated_duration_sec": 22,
+    "thumbnail_text": "They didn't check out. They shut down.",
+    "content_fingerprint": "they didn t shut down their nervous system just went offline their silence isn t coldness their brain literally went offline feeling dismissed or disrespected when a partner shuts down during an argument freeze response nervous system overwhelm when someone shuts down it s often a physiological freeze response to perceived threat or emotional overwhelm not necessarily a conscious choice to be avoidant or disrespectful they went blank that s not indifference that s a body hitting its limit",
+    "title": "You didn't shut down. Your brain went OFFLINE",
+    "youtube_video_id": "o2dP_RYLNtY",
+    "youtube_url": "https://youtube.com/shorts/o2dP_RYLNtY",
+    "fallback_count": 0,
+    "video_count": 10,
+    "total_scenes": 14,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "psychology_drop",
+      "category": "Psychology Drops",
+      "topic_cluster": "They didn't 'shut down.' Their nervous system just went offl",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 14
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Intriguing and directly addresses a common relational experience with a surprising explanation."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and clearly explains the concept of the brain going 'offline' as a safety mechanism."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "The POV is empathetic and educational, fitting the channel's self-growth niche. Could be slightly more distinctive."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Effectively names the 'villain' (brain going offline) and its mechanism (safety response to overwhelm)."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no CTA present in the provided details. This is a critical omission for engagement."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is highly accurate to the hook and script's core message. 'Shut down' is a strong synonym for 'offline'."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Provides a concise, engaging summary that accurately reflects the video's content and offers a clear benefit."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Stock videos and brand images are generally suitable for psychology drops, but synchronization effectiveness is not fully assessable without the actual video."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "The mix of stock and brand images is typical. Strength depends heavily on execution and relevance, which is hard to judge here."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "A strong thumbnail would likely feature a visual metaphor for 'offline' or 'brain shutdown' paired with an evocative image. Concept is strong, execution is key."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The short script and clear message suggest good pacing potential. The 39s duration is ideal for this format."
+      },
+      "brand_consistency": {
+        "score": 7,
+        "reason": "The psychology drop angle and empathetic tone align with a self-growth channel. The brand images contribute to this."
+      },
+      "policy_factual_risk": {
+        "score": 9,
+        "reason": "The explanation is a simplified psychological concept, but generally accepted and presented as a potential experience, not a diagnostic tool. Low risk."
+      }
+    },
+    "judge_composite_score": 7.08,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 7,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys its empathetic message through a strong textual hook, clear voiceover, and perfectly chosen background music, all aligning well with the brand's emotional tone. While the audio quality and emotional resonance are exemplary, the visual storytelling could benefit from more cohesive transitions and less generic imagery. Occasional fast caption pacing also presents a minor hurdle to full viewer comprehension. Future videos should aim for a more integrated visual narrative and refined caption timing, building upon the solid foundation of audio and emotional delivery.",
+    "video_audit_strengths": [
+      "The voiceover delivery is exceptionally calm, empathetic, and engaging, perfectly embodying the brand's intended tone.",
+      "The background music is masterfully selected, subtly enhancing the emotional depth and introspective mood of the content without distraction.",
+      "The strategic use of single-word or short-phrase text overlays effectively highlights key concepts and reinforces the message, even when visuals are varied."
+    ],
+    "video_audit_dropoff_causes": [
+      "Abrupt visual transitions between disparate stock footage clips can be jarring and may disrupt viewer engagement.",
+      "Occasional fast pacing of multi-word captions might cause some viewers to miss key information or feel rushed.",
+      "The lack of a direct, spoken call to action or a more visually engaging closing segment before the end card could lead to a passive viewer experience at the end."
+    ],
+    "video_audit_repeat_next": [
+      "Continue to prioritize high-quality voiceover and audio mixing for clear and pleasant listening.",
+      "Maintain the empathetic and understanding emotional tone in both script and delivery.",
+      "Utilize short, impactful text overlays to emphasize core messages and key psychological concepts."
+    ],
+    "video_audit_reduce_next": [
+      "Minimize abrupt visual cuts between unrelated scenes or individuals to create a more fluid and continuous visual narrative.",
+      "Avoid generic stock footage when more metaphoric or specific imagery could reinforce the message more powerfully.",
+      "Reduce instances of rapid, multi-word caption displays to ensure all text is easily readable by viewers."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Reframe/Intrigue",
+      "thumbnail_type": "Text-on-Image/Conceptual",
+      "visual_style_mix": "Emotional/Abstract/Stock",
+      "narrative_format": "Explainer/Insight",
+      "character_used": "Relatable Everyperson"
     }
   }
 ]
