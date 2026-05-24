@@ -1,119 +1,5 @@
 [
   {
-    "video_id": "20260508_233259",
-    "published_date": "2026-05-08",
-    "status": "uploaded",
-    "topic": "If calm feels boring it might be because you are used to anxiety not love",
-    "category": "psychology drops",
-    "angle_type": "reframe",
-    "total_score": 19,
-    "source_name": "General psychology principle / Trauma-informed care",
-    "source_basis": "Learned associations and nervous system conditioning, often discussed in trauma-informed care and attachment theory, where individuals may habituate to high-arousal states.",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "psychology_drop",
-    "emotional_trigger": "Feeling restless or bored during peaceful moments, confusing high-intensity or anxiety for excitement or connection.",
-    "psych_concept": "Emotional regulation, nervous system threat response, learned associations",
-    "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
-    "editorial_seed": "Many of us grew up in environments where high-stress or dramatic situations felt like \"normal.\" When real peace arrives, our nervous system might interpret it as a lack of stimulation or even danger, rather than safety and love. It's about retraining your internal landscape.",
-    "only_soft_reset_line": "You're not bored. You're just waiting for the emergency that isn't coming.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If calm feels boring, this is for you.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.3",
-    "script_validation": "forced",
-    "script_validation_notes": "word_count outside 45-75",
-    "word_count": 84,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "calm feels boring?",
-    "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring this is for you feeling restless or bored during peaceful moments confusing high intensity or anxiety for excitement or connection emotional regulation nervous system threat response learned associations you learned to read anxiety as excitement calm reads as indifference you re not bored you re just waiting for the emergency that isn t coming",
-    "title": "Calm feels boring? You were used to ANXIETY",
-    "youtube_video_id": "L0kGc4vgGY0",
-    "youtube_url": "https://youtube.com/shorts/L0kGc4vgGY0",
-    "fallback_count": 0,
-    "video_count": 12,
-    "total_scenes": 15,
-    "validation_warnings": [
-      "tags_sanitized"
-    ],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W19",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "declarative",
-      "angle_type": "reframe",
-      "category": "psychology drops",
-      "topic_cluster": "If calm feels boring it might be because you are used to anx",
-      "visual_style_mix": "stock_heavy",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 15
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 7,
-        "reason": "Intriguing premise that challenges a common misconception about calm."
-      },
-      "script_clarity": {
-        "score": 8,
-        "reason": "The script is concise and directly addresses the core reframe."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "Clear reframe angle, suggesting anxiety is mistaken for love."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "Identifies 'anxiety as love' as the mechanism, which is specific enough."
-      },
-      "cta_quality": {
-        "score": 1,
-        "reason": "No call to action present in the script or details provided."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Directly reflects the hook and the core message of the video."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "Effectively summarizes the video's premise and targets the audience."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Stock videos and brand images likely support the narrative, but no specific examples are given."
-      },
-      "image_direction_strength": {
-        "score": 6,
-        "reason": "The balance of brand images and stock videos seems appropriate for the content."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "The hook and title suggest a strong concept that could translate well to a thumbnail."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "The short script (84 words for 37s) suggests a deliberate, potentially impactful pacing."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The 'psychology drops' category and reframe angle are consistent with the channel's presumed style."
-      },
-      "policy_factual_risk": {
-        "score": 9,
-        "reason": "The content is framed as a reframe of common experiences, posing minimal factual risk."
-      }
-    },
-    "judge_composite_score": 7.0,
-    "strongest_element": "Title Accuracy",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8
-  },
-  {
     "video_id": "20260509_091450",
     "published_date": "2026-05-09",
     "status": "uploaded",
@@ -4163,5 +4049,124 @@
       "narrative_format": "hot take breakdown",
       "character_used": "narrator voice"
     }
+  },
+  {
+    "video_id": "20260524_234017",
+    "published_date": "2026-05-24",
+    "status": "uploaded",
+    "topic": "Four signs you are not over them that have nothing to do with texting",
+    "category": "healing arcs",
+    "angle_type": "list",
+    "total_score": 19,
+    "source_name": "Peter Levine (Somatic Experiencing), Bessel van der Kolk (The Body Keeps the Score), Attachment Theory",
+    "source_basis": "Somatic psychology and attachment theory, recognizing that emotional processing and attachment are not purely cognitive but deeply embodied, influencing the nervous system and physical sensations even when conscious thought has 'moved on'.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "list",
+    "emotional_trigger": "Lingering attachment/grief after a breakup, despite conscious attempts to move on and cut contact",
+    "psych_concept": "Somatic attachment, grief processing, nervous system regulation",
+    "core_claim": "Your body can still be attached after your phone stops reaching",
+    "editorial_seed": "Even when you've cut contact and the phone is quiet, your nervous system can still be in a state of attachment or grief. It's not about weakness, but about acknowledging the deeper ways our bodies hold onto connection and loss. Understanding these subtle signs can help you truly move forward.",
+    "only_soft_reset_line": "Your body is still waiting for someone who already left.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You deleted the app. You still check their location.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 75,
+    "estimated_duration_sec": 31,
+    "thumbnail_text": "Not over it (and it's not the texts)",
+    "content_fingerprint": "four signs you are not over them that have nothing to do with texting you deleted the app you still check their location lingering attachment grief after a breakup despite conscious attempts to move on and cut contact somatic attachment grief processing nervous system regulation your body can still be attached after your phone stops reaching your body is still waiting for someone who already left",
+    "title": "You deleted the app. Your body still knows",
+    "youtube_video_id": "XiknVG7dX0s",
+    "youtube_url": "https://youtube.com/shorts/XiknVG7dX0s",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "list",
+      "category": "healing arcs",
+      "topic_cluster": "Four signs you are not over them that have nothing to do wit",
+      "visual_style_mix": "brand_heavy",
+      "video_length_band": "45_60s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Intriguing and relatable paradox that immediately grabs attention by highlighting a common post-breakup behavior."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and clear language effectively conveys the core message of lingering emotional attachment."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Strong, empathetic POV focused on the internal struggle of moving on, typical of the channel's style."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "Identifies the 'villain' as the lingering connection/habit, but could be slightly more specific on the 'why' behind it."
+      },
+      "cta_quality": {
+        "score": 5,
+        "reason": "No explicit CTA is present in the provided details. If there is one, it needs to be assessed separately."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Title accurately reflects the core theme of subconscious, lingering connection despite conscious actions."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Effectively expands on the hook and title, setting the emotional tone and clarifying the video's focus."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumes good sync, but needs to be confirmed during production. Potential for disconnect if visuals don't match the subtle emotional cues."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images likely reinforce the channel's aesthetic; effectiveness depends on their specific content and placement."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "A strong concept combining relatable imagery with the core theme. Needs to be visually compelling and representative."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "Script length suggests good pacing potential. Voiceover delivery needs to match the reflective and gentle tone."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of emotional healing and introspective struggle aligns perfectly with the 'Soft Reset With Me' brand."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No identifiable policy or factual risks. Content is subjective and focuses on emotional experience."
+      }
+    },
+    "judge_composite_score": 7.8,
+    "strongest_element": "Brand Consistency",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "soft_failed",
+    "video_audit_summary": "",
+    "video_audit_strengths": [],
+    "video_audit_dropoff_causes": [],
+    "video_audit_repeat_next": [],
+    "video_audit_reduce_next": [],
+    "video_audit_tags": {}
   }
 ]
