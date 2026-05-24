@@ -1,119 +1,5 @@
 [
   {
-    "video_id": "20260508_195753",
-    "published_date": "2026-05-08",
-    "status": "uploaded",
-    "topic": "Four signs you are not over them that have nothing to do with texting",
-    "category": "healing arcs",
-    "angle_type": "list",
-    "total_score": 19,
-    "source_name": "General psychological principles (Bowlby, Ainsworth, Gabor Mat\u00e9)",
-    "source_basis": "Attachment theory, grief and loss psychology, somatic experiencing principles.",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "list",
-    "emotional_trigger": "The silent, persistent ways past relationships linger in your body and mind, even when you believe you've moved on from external contact.",
-    "psych_concept": "Lingering attachment, unresolved grief, nervous system responses to loss, rumination.",
-    "core_claim": "Your body can still be attached after your phone stops reaching.",
-    "editorial_seed": "Many people equate 'no contact' or 'no texting' with being over someone. But true letting go involves deeper emotional and physiological shifts. This video will highlight the subtle, often overlooked ways our nervous system and habits still cling to a past connection, even when your phone stays silent.",
-    "only_soft_reset_line": "You might have deleted their photos, but your nervous system is still narrating old feelings.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "You deleted the app. You still check their location.",
-    "hook_quality": "weak",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.3",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 70,
-    "estimated_duration_sec": 27,
-    "thumbnail_text": "4 Signs You're Not Over Them",
-    "content_fingerprint": "four signs you are not over them that have nothing to do with texting you deleted the app you still check their location the silent persistent ways past relationships linger in your body and mind even when you believe you ve moved on from external contact lingering attachment unresolved grief nervous system responses to loss rumination your body can still be attached after your phone stops reaching you might have deleted their photos but your nervous system is still narrating old feelings",
-    "title": "You deleted the app. You're STILL stuck",
-    "youtube_video_id": "4vHaOpnVLdo",
-    "youtube_url": "https://youtube.com/shorts/4vHaOpnVLdo",
-    "fallback_count": 0,
-    "video_count": 7,
-    "total_scenes": 10,
-    "validation_warnings": [
-      "tags_sanitized"
-    ],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W19",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "list",
-      "category": "healing arcs",
-      "topic_cluster": "Four signs you are not over them that have nothing to do wit",
-      "visual_style_mix": "stock_heavy",
-      "video_length_band": "under_30s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 10
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "Relatable and immediately identifies a common post-breakup behavior, creating intrigue."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "Concise and direct message, easy to understand the core theme of lingering attachment."
-      },
-      "editorial_pov": {
-        "score": 7,
-        "reason": "Establishes a clear empathetic tone for those still struggling, but could be slightly more distinct."
-      },
-      "villain_mechanism_specificity": {
-        "score": 6,
-        "reason": "Identifies the 'villain' as the lingering habit of checking on an ex, but the mechanism (addiction to information/control) could be more explicitly named."
-      },
-      "cta_quality": {
-        "score": 1,
-        "reason": "No clear call to action present in the provided details."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Perfectly reflects the hook and the core message of being stuck despite taking a step towards healing."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "Effectively summarizes the video's essence and targets the intended audience with empathetic language."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "The use of stock videos and brand images suggests visuals will support the narrative, but direct sync quality is not yet assessed."
-      },
-      "image_direction_strength": {
-        "score": 6,
-        "reason": "The mix of stock and brand images is standard; effectiveness depends on the specific choices which aren't detailed."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "Assuming the thumbnail will visually represent the core conflict of deleting an app but still checking, it has potential."
-      },
-      "voice_pacing_readiness": {
-        "score": 9,
-        "reason": "The short script and video duration suggest a well-paced delivery is achievable for this topic."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The 'healing arcs' category and the empathetic, introspective tone align with typical Soft Reset With Me content."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content is highly subjective and related to emotional healing, posing no factual risk."
-      }
-    },
-    "judge_composite_score": 7.0,
-    "strongest_element": "Title Accuracy",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8
-  },
-  {
     "video_id": "20260508_233259",
     "published_date": "2026-05-08",
     "status": "uploaded",
@@ -4133,6 +4019,149 @@
       "visual_style_mix": "Emotional/Abstract/Stock",
       "narrative_format": "Explainer/Insight",
       "character_used": "Relatable Everyperson"
+    }
+  },
+  {
+    "video_id": "20260524_154637",
+    "published_date": "2026-05-24",
+    "status": "uploaded",
+    "topic": "Talking every day does not make you close",
+    "category": "conversation truths",
+    "angle_type": "hot take",
+    "total_score": 19,
+    "source_name": "Relationship Psychology Principles, Attachment Theory",
+    "source_basis": "Relationship psychology principles emphasizing quality over quantity in communication for true intimacy; attachment theory's focus on consistent emotional responsiveness.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "hot_take",
+    "emotional_trigger": "Feeling disconnected despite constant communication; the illusion of intimacy through frequency.",
+    "psych_concept": "Emotional intimacy vs. superficial contact, relationship depth, quality of communication.",
+    "core_claim": "Closeness is consistency, not constant access",
+    "editorial_seed": "This idea challenges a common assumption in relationships (both platonic and romantic) that constant communication equals intimacy. It highlights that true closeness comes from reliable presence and shared vulnerability over time, not just frequent check-ins. It speaks to the feeling of being 'connected' without feeling truly seen or understood.",
+    "only_soft_reset_line": "You can be someone's daily habit and still be a stranger to them.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Daily conversation does not mean they actually know you.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 71,
+    "estimated_duration_sec": 29,
+    "thumbnail_text": "talking every day \u2260 close",
+    "content_fingerprint": "talking every day does not make you close daily conversation does not mean they actually know you feeling disconnected despite constant communication the illusion of intimacy through frequency emotional intimacy vs superficial contact relationship depth quality of communication closeness is consistency not constant access you can be someone s daily habit and still be a stranger to them",
+    "title": "You talk daily but feel ALONE",
+    "youtube_video_id": "i_Pp76KiYa8",
+    "youtube_url": "https://youtube.com/shorts/i_Pp76KiYa8",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 9,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W21",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "hot take",
+      "category": "conversation truths",
+      "topic_cluster": "Talking every day does not make you close",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 9
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook is intriguing and directly addresses a common feeling of disconnect despite frequent communication."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise, clear, and delivers its core message effectively within the short duration."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The 'hot take' angle is present, offering a contrarian perspective on common relationship dynamics."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'villain' (lack of true connection despite daily contact) is identifiable, though could be slightly more specific about *why* this happens."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no Call to Action (CTA) present in the script or details provided."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the hook and the core message of the video: talking daily but feeling alone."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description effectively summarizes the video's premise and targets the intended audience."
+      },
+      "visual_dialogue_sync": {
+        "score": 8,
+        "reason": "Assuming stock videos will be chosen to visually represent the theme of connection/disconnection, there's good potential for sync."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images need to be strategically placed to reinforce the message, their strength depends on execution."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "The concept of 'talking daily but feeling alone' offers strong visual potential for a thumbnail that grabs attention."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The short script suggests a pacing that can be easily managed for clear and engaging delivery."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The theme aligns well with the channel's relationship/self-growth niche. Use of brand images will further enhance consistency."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is subjective and deals with common relationship feelings, posing no factual risk."
+      }
+    },
+    "judge_composite_score": 7.1,
+    "strongest_element": "script_clarity",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 7,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys a profound 'hot take' through a perfectly aligned emotional tone, excellent voiceover, and meticulous captioning. While the overall mood is consistently strong, some visuals are too generic or static, particularly in the opening seconds and during longer B-roll segments, which could impact viewer retention. Refining visual specificity and pacing, especially at the start, would elevate an already strong foundation for the Soft Reset With Me brand.",
+    "video_audit_strengths": [
+      "The clarity and empathetic tone of the voiceover are outstanding and a core strength of the brand.",
+      "The meticulous caption pacing and legibility significantly enhance accessibility and viewer comprehension.",
+      "The consistent emotional atmosphere created through the music and overall visual style effectively lands the brand's tone.",
+      "The script's hook is highly relatable and offers a provocative insight that resonates deeply with the target audience."
+    ],
+    "video_audit_dropoff_causes": [
+      "Static visual at the very beginning (0:00-0:03) while the hook is being delivered; faster visual changes are usually more engaging for Shorts.",
+      "Extended duration of generic B-roll shots (e.g., cityscape from 0:11-0:16, window silhouette from 0:24-0:29) that don't specifically illustrate the spoken words, potentially causing visual fatigue.",
+      "Lack of direct visual representation for some concepts like 'memes,' 'voice notes about nothing,' or 'what you're actually carrying,' which could lead to viewers feeling a disconnect between the audio and visual narrative."
+    ],
+    "video_audit_repeat_next": [
+      "The calm, empathetic, and clear voiceover delivery.",
+      "The word-by-word caption style with excellent timing and legibility.",
+      "The ability to create a consistent and intentional emotional atmosphere through audio and visual selection.",
+      "Crafting hooks that challenge common assumptions and tap into subtle emotional truths."
+    ],
+    "video_audit_reduce_next": [
+      "Initial static visual duration; aim for immediate visual dynamism or a quicker hook delivery over a static shot.",
+      "Reliance on overly generic moody B-roll footage, especially for longer durations; strive for more specific or conceptually illustrative visuals.",
+      "Repetitive visual motifs (e.g., similar window shots); introduce more diverse scenarios to maintain visual interest."
+    ],
+    "video_audit_tags": {
+      "hook_type": "provocative claim",
+      "thumbnail_type": "mood shot",
+      "visual_style_mix": "cinematic B-roll",
+      "narrative_format": "hot take breakdown",
+      "character_used": "narrator voice"
     }
   }
 ]
