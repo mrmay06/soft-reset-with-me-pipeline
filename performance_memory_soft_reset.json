@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-24T23:40:17Z",
+  "generated_at": "2026-05-25T17:21:37Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-08",
-  "end_date": "2026-05-23",
+  "start_date": "2026-04-09",
+  "end_date": "2026-05-24",
   "videos": [
     {
       "video_id": "20260509_091450",
@@ -1632,144 +1632,6 @@
       "reach_score": 39.2,
       "analytics_fetched_at": "2026-05-24T15:46:37Z",
       "analytics_days_old": 9,
-      "data_available": true
-    },
-    {
-      "video_id": "20260508_233259",
-      "published_date": "2026-05-08",
-      "status": "uploaded",
-      "topic": "If calm feels boring it might be because you are used to anxiety not love",
-      "category": "psychology drops",
-      "angle_type": "reframe",
-      "total_score": 19,
-      "source_name": "General psychology principle / Trauma-informed care",
-      "source_basis": "Learned associations and nervous system conditioning, often discussed in trauma-informed care and attachment theory, where individuals may habituate to high-arousal states.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "psychology_drop",
-      "emotional_trigger": "Feeling restless or bored during peaceful moments, confusing high-intensity or anxiety for excitement or connection.",
-      "psych_concept": "Emotional regulation, nervous system threat response, learned associations",
-      "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
-      "editorial_seed": "Many of us grew up in environments where high-stress or dramatic situations felt like \"normal.\" When real peace arrives, our nervous system might interpret it as a lack of stimulation or even danger, rather than safety and love. It's about retraining your internal landscape.",
-      "only_soft_reset_line": "You're not bored. You're just waiting for the emergency that isn't coming.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If calm feels boring, this is for you.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.3",
-      "script_validation": "forced",
-      "script_validation_notes": "word_count outside 45-75",
-      "word_count": 84,
-      "estimated_duration_sec": 27,
-      "thumbnail_text": "calm feels boring?",
-      "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring this is for you feeling restless or bored during peaceful moments confusing high intensity or anxiety for excitement or connection emotional regulation nervous system threat response learned associations you learned to read anxiety as excitement calm reads as indifference you re not bored you re just waiting for the emergency that isn t coming",
-      "title": "Calm feels boring? You were used to ANXIETY",
-      "youtube_video_id": "L0kGc4vgGY0",
-      "youtube_url": "https://youtube.com/shorts/L0kGc4vgGY0",
-      "fallback_count": 0,
-      "video_count": 12,
-      "total_scenes": 15,
-      "validation_warnings": [
-        "tags_sanitized"
-      ],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W19",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "reframe",
-        "category": "psychology drops",
-        "topic_cluster": "If calm feels boring it might be because you are used to anx",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 15
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "Intriguing premise that challenges a common misconception about calm."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script is concise and directly addresses the core reframe."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "Clear reframe angle, suggesting anxiety is mistaken for love."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "Identifies 'anxiety as love' as the mechanism, which is specific enough."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "No call to action present in the script or details provided."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "Directly reflects the hook and the core message of the video."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Effectively summarizes the video's premise and targets the audience."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Stock videos and brand images likely support the narrative, but no specific examples are given."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "The balance of brand images and stock videos seems appropriate for the content."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The hook and title suggest a strong concept that could translate well to a thumbnail."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script (84 words for 37s) suggests a deliberate, potentially impactful pacing."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The 'psychology drops' category and reframe angle are consistent with the channel's presumed style."
-        },
-        "policy_factual_risk": {
-          "score": 9,
-          "reason": "The content is framed as a reframe of common experiences, posing minimal factual risk."
-        }
-      },
-      "judge_composite_score": 7.0,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "metrics": {
-        "views": 276,
-        "engagedViews": 63,
-        "averageViewDuration": 15,
-        "averageViewPercentage": 40.88,
-        "likes": 2,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 24.72,
-      "performance_score": 24.72,
-      "score_version": 1,
-      "hook_score": 22.83,
-      "hold_score": 40.88,
-      "resonance_score": 3.17,
-      "resonance_per_engaged": 0.0317,
-      "resonance_per_view": 0.0072,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 81.4,
-      "analytics_fetched_at": "2026-05-24T15:46:37Z",
-      "analytics_days_old": 16,
       "data_available": true
     },
     {
@@ -4298,6 +4160,324 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-24T15:46:37Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260523_144914",
+      "published_date": "2026-05-23",
+      "status": "uploaded",
+      "topic": "When your 'perfect' relationship on social media feels empty in real life.",
+      "category": "Relationship Patterns",
+      "angle_type": "reframe",
+      "total_score": 18,
+      "source_name": "Psychological research & Pew Research Center findings",
+      "source_basis": "Research on social media's impact on relationship quality, intimacy, and external validation.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "truth_drop",
+      "emotional_trigger": "Feeling a disconnect between your relationship's online portrayal and its real-life emptiness.",
+      "psych_concept": "External validation and social comparison",
+      "core_claim": "Seeking external validation for your relationship can prevent genuine intimacy from forming.",
+      "editorial_seed": "Many of us curate our relationships for social media, chasing likes and external approval. But that performative effort often comes at the cost of authentic connection and vulnerability with our partner. It's time to check if the relationship you're building is for you, or for an audience.",
+      "only_soft_reset_line": "You're not building a relationship. You're building a reputation of one.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You curate the relationship better than you actually live it.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 58,
+      "estimated_duration_sec": 23,
+      "thumbnail_text": "Your relationship looks perfect. So why does it feel empty?",
+      "content_fingerprint": "when your perfect relationship on social media feels empty in real life you curate the relationship better than you actually live it feeling a disconnect between your relationship s online portrayal and its real life emptiness external validation and social comparison seeking external validation for your relationship can prevent genuine intimacy from forming you re not building a relationship you re building a reputation of one",
+      "title": "You curate love better than you LIVE it",
+      "youtube_video_id": "GQU-EIZoTZo",
+      "youtube_url": "https://youtube.com/shorts/GQU-EIZoTZo",
+      "fallback_count": 0,
+      "video_count": 5,
+      "total_scenes": 8,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "Relationship Patterns",
+        "topic_cluster": "When your 'perfect' relationship on social media feels empty",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Provocative and relatable, immediately draws the viewer in by highlighting a common modern paradox."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and impactful, delivers a strong message with very few words."
+        },
+        "editorial_pov": {
+          "score": 10,
+          "reason": "The core message of prioritizing lived experience over curated presentation is a consistent theme for the channel."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Effectively identifies the 'villain' as the gap between online persona and real-life experience, which is specific to the channel's niche."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "No explicit CTA present in the provided details. Assumed for a short video, but would usually be present."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Directly reflects the hook and the core message of the video, setting accurate expectations."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively expands on the title and hook, targeting a specific emotional state ('quiet ache') and use case (when feed goes dark)."
+        },
+        "visual_dialogue_sync": {
+          "score": 8,
+          "reason": "Assumed to be good given the short length and focused message, but not explicitly detailed. Brand images and stock videos need to support the reframe."
+        },
+        "image_direction_strength": {
+          "score": 8,
+          "reason": "Brand images and stock videos should align with the theme of curated vs. real life, and the reframe angle. Expectation is for strong thematic alignment."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "The concept of 'curated vs. real' offers strong visual potential for a compelling thumbnail. Needs to visually represent the dichotomy."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With only 58 words and a 31s duration, pacing should be deliberate and impactful, allowing the message to land."
+        },
+        "brand_consistency": {
+          "score": 10,
+          "reason": "The theme of authenticity over online facade is central to the channel's identity and reframe angle."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No factual claims are made that could pose a policy risk. The content is subjective and opinion-based."
+        }
+      },
+      "judge_composite_score": 8.4,
+      "strongest_element": "Editorial POV",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively conveys a melancholic, introspective tone through its consistent voiceover and carefully chosen music, culminating in a powerful closing visual. While the hook aligns perfectly with the title, the initial visual's impact and the caption pacing are too slow, potentially causing early drop-off. The video excels with symbolic imagery like empty chairs but falters with generic stock footage (like the coffee cup) that lacks specific relevance, briefly disrupting the narrative flow. Focusing on dynamic, highly specific visuals from the outset and maintaining a more consistent, slightly faster caption pace would significantly improve viewer retention.",
+      "video_audit_strengths": [
+        "The consistently gentle and reflective voiceover delivery, which is a hallmark of the brand's tone.",
+        "The impactful and symbolic visuals (e.g., arms through a wall, empty chairs, mirror reflection) that effectively communicate complex emotional states.",
+        "The cohesive emotional tone fostered by the audio and select visuals, reinforcing the brand's introspective identity.",
+        "The strong final visual and loopback line, which offer a powerful and memorable conclusion."
+      ],
+      "video_audit_dropoff_causes": [
+        "The slow initial visual and the drawn-out word-by-word captions in the first few seconds of the hook may cause early viewer disengagement.",
+        "The inclusion of generic stock footage, especially the 'coffee time' shot (0:22-0:25), disrupts the narrative immersion and feels irrelevant to the specific message, creating a moment where viewers might swipe away.",
+        "Inconsistent caption pacing, with critical segments feeling too slow, can lead to viewer impatience and a desire to scroll past.",
+        "Some visuals are not specific enough to the nuanced emotional insights (e.g., couple moving boxes for vulnerability vs. presentability), potentially diluting the message's impact."
+      ],
+      "video_audit_repeat_next": [
+        "The use of highly symbolic and evocative visuals that abstractly but powerfully convey complex emotional concepts (e.g., empty chairs for distance, mirror for self-perception).",
+        "Maintaining the consistent, gentle, and thoughtful voiceover delivery style.",
+        "The strategic use of background music to enhance the emotional atmosphere without competing with the narration.",
+        "Crafting a strong, memorable loopback line and pairing it with a potent closing visual."
+      ],
+      "video_audit_reduce_next": [
+        "Reliance on generic stock footage that does not directly or uniquely illustrate the specific emotional and psychological points of the script (e.g., the coffee cup, or overly generalized activities like moving boxes).",
+        "Overly slow, word-by-word caption reveals, especially in the critical opening seconds and for short words.",
+        "Initial visuals that are primarily atmospheric but lack an immediate, specific connection to the hook to grab attention more quickly.",
+        "Any moments of visual ambiguity that do not clearly support or enhance the spoken narrative, creating potential for viewer confusion."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Problem/Internal Conflict",
+        "thumbnail_type": "Emotional/Reflective",
+        "visual_style_mix": "Cinematic/Symbolic + Social Media Overlay",
+        "narrative_format": "Truth Drop/Insight",
+        "character_used": "Solitary/Introspective"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-25T17:21:37Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260523_222914",
+      "published_date": "2026-05-23",
+      "status": "uploaded",
+      "topic": "They didn't 'shut down.' Their nervous system just went offline.",
+      "category": "Psychology Drops",
+      "angle_type": "psychology_drop",
+      "total_score": 18,
+      "source_name": "Stephen Porges, et al.",
+      "source_basis": "Polyvagal Theory; Autonomic Nervous System's fight-flight-freeze responses",
+      "source_url": "",
+      "confidence_level": "peer_reviewed",
+      "content_format": "reframe",
+      "emotional_trigger": "Feeling dismissed or disrespected when a partner 'shuts down' during an argument.",
+      "psych_concept": "Freeze response / Nervous system overwhelm",
+      "core_claim": "When someone 'shuts down,' it's often a physiological freeze response to perceived threat or emotional overwhelm, not necessarily a conscious choice to be avoidant or disrespectful.",
+      "editorial_seed": "It's easy to interpret 'shutting down' as a personal slight or disinterest, but often it's a primal, automatic response. Understanding this doesn't excuse behavior, but it can shift the conversation from blame to regulation and repair.",
+      "only_soft_reset_line": "They went blank. That's not indifference. That's a body hitting its limit.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Their silence isn't coldness. Their brain literally went offline.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 69,
+      "estimated_duration_sec": 22,
+      "thumbnail_text": "They didn't check out. They shut down.",
+      "content_fingerprint": "they didn t shut down their nervous system just went offline their silence isn t coldness their brain literally went offline feeling dismissed or disrespected when a partner shuts down during an argument freeze response nervous system overwhelm when someone shuts down it s often a physiological freeze response to perceived threat or emotional overwhelm not necessarily a conscious choice to be avoidant or disrespectful they went blank that s not indifference that s a body hitting its limit",
+      "title": "You didn't shut down. Your brain went OFFLINE",
+      "youtube_video_id": "o2dP_RYLNtY",
+      "youtube_url": "https://youtube.com/shorts/o2dP_RYLNtY",
+      "fallback_count": 0,
+      "video_count": 10,
+      "total_scenes": 14,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology_drop",
+        "category": "Psychology Drops",
+        "topic_cluster": "They didn't 'shut down.' Their nervous system just went offl",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 14
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and directly addresses a common relational experience with a surprising explanation."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and clearly explains the concept of the brain going 'offline' as a safety mechanism."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is empathetic and educational, fitting the channel's self-growth niche. Could be slightly more distinctive."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Effectively names the 'villain' (brain going offline) and its mechanism (safety response to overwhelm)."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no CTA present in the provided details. This is a critical omission for engagement."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title is highly accurate to the hook and script's core message. 'Shut down' is a strong synonym for 'offline'."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Provides a concise, engaging summary that accurately reflects the video's content and offers a clear benefit."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Stock videos and brand images are generally suitable for psychology drops, but synchronization effectiveness is not fully assessable without the actual video."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "The mix of stock and brand images is typical. Strength depends heavily on execution and relevance, which is hard to judge here."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "A strong thumbnail would likely feature a visual metaphor for 'offline' or 'brain shutdown' paired with an evocative image. Concept is strong, execution is key."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script and clear message suggest good pacing potential. The 39s duration is ideal for this format."
+        },
+        "brand_consistency": {
+          "score": 7,
+          "reason": "The psychology drop angle and empathetic tone align with a self-growth channel. The brand images contribute to this."
+        },
+        "policy_factual_risk": {
+          "score": 9,
+          "reason": "The explanation is a simplified psychological concept, but generally accepted and presented as a potential experience, not a diagnostic tool. Low risk."
+        }
+      },
+      "judge_composite_score": 7.08,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 7,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively conveys its empathetic message through a strong textual hook, clear voiceover, and perfectly chosen background music, all aligning well with the brand's emotional tone. While the audio quality and emotional resonance are exemplary, the visual storytelling could benefit from more cohesive transitions and less generic imagery. Occasional fast caption pacing also presents a minor hurdle to full viewer comprehension. Future videos should aim for a more integrated visual narrative and refined caption timing, building upon the solid foundation of audio and emotional delivery.",
+      "video_audit_strengths": [
+        "The voiceover delivery is exceptionally calm, empathetic, and engaging, perfectly embodying the brand's intended tone.",
+        "The background music is masterfully selected, subtly enhancing the emotional depth and introspective mood of the content without distraction.",
+        "The strategic use of single-word or short-phrase text overlays effectively highlights key concepts and reinforces the message, even when visuals are varied."
+      ],
+      "video_audit_dropoff_causes": [
+        "Abrupt visual transitions between disparate stock footage clips can be jarring and may disrupt viewer engagement.",
+        "Occasional fast pacing of multi-word captions might cause some viewers to miss key information or feel rushed.",
+        "The lack of a direct, spoken call to action or a more visually engaging closing segment before the end card could lead to a passive viewer experience at the end."
+      ],
+      "video_audit_repeat_next": [
+        "Continue to prioritize high-quality voiceover and audio mixing for clear and pleasant listening.",
+        "Maintain the empathetic and understanding emotional tone in both script and delivery.",
+        "Utilize short, impactful text overlays to emphasize core messages and key psychological concepts."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize abrupt visual cuts between unrelated scenes or individuals to create a more fluid and continuous visual narrative.",
+        "Avoid generic stock footage when more metaphoric or specific imagery could reinforce the message more powerfully.",
+        "Reduce instances of rapid, multi-word caption displays to ensure all text is easily readable by viewers."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Reframe/Intrigue",
+        "thumbnail_type": "Text-on-Image/Conceptual",
+        "visual_style_mix": "Emotional/Abstract/Stock",
+        "narrative_format": "Explainer/Insight",
+        "character_used": "Relatable Everyperson"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-25T17:21:37Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"

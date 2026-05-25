@@ -1,117 +1,5 @@
 [
   {
-    "video_id": "20260509_091450",
-    "published_date": "2026-05-09",
-    "status": "uploaded",
-    "topic": "You keep explaining because part of you still wants permission",
-    "category": "self-worth shifts",
-    "angle_type": "truth drop",
-    "total_score": 18,
-    "source_name": "Therapist consensus, principles of CBT and interpersonal psychology",
-    "source_basis": "Boundary setting and validation seeking in interpersonal relationships, often addressed in Cognitive-Behavioral Therapy (CBT) and attachment theory frameworks.",
-    "source_url": "",
-    "confidence_level": "therapist_consensus",
-    "content_format": "truth_drop",
-    "emotional_trigger": "Over-explaining a boundary, or constantly feeling the need to justify choices and decisions to others",
-    "psych_concept": "Boundary setting, self-worth, external validation, people-pleasing",
-    "core_claim": "A boundary does not need to win a debate to be real",
-    "editorial_seed": "Many of us unconsciously seek external validation for our boundaries, feeling they're only valid if others understand or approve. This truth drop helps viewers realize their peace and boundaries are inherently valid, regardless of external agreement.",
-    "only_soft_reset_line": "You're not explaining. You're asking for permission.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "You're not explaining the boundary. You're asking if it's okay.",
-    "hook_quality": "weak",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 71,
-    "estimated_duration_sec": 28,
-    "thumbnail_text": "You keep explaining it because you still want permission",
-    "content_fingerprint": "you keep explaining because part of you still wants permission you re not explaining the boundary you re asking if it s okay over explaining a boundary or constantly feeling the need to justify choices and decisions to others boundary setting self worth external validation people pleasing a boundary does not need to win a debate to be real you re not explaining you re asking for permission",
-    "title": "You keep explaining because you want permission",
-    "youtube_video_id": "oXq38wemKkk",
-    "youtube_url": "https://youtube.com/shorts/oXq38wemKkk",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 11,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W19",
-    "judge_traits": {
-      "hook_type": "direct_accusation",
-      "title_type": "accusation",
-      "angle_type": "truth drop",
-      "category": "self-worth shifts",
-      "topic_cluster": "You keep explaining because part of you still wants permissi",
-      "visual_style_mix": "brand_heavy",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 11
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 9,
-        "reason": "The hook directly addresses a common internal conflict and offers a thought-provoking reframe."
-      },
-      "script_clarity": {
-        "score": 10,
-        "reason": "The script is concise, direct, and easy to understand. It conveys the core message effectively in a short word count."
-      },
-      "editorial_pov": {
-        "score": 9,
-        "reason": "The point of view is distinct and aligns with the channel's focus on self-worth and boundary setting."
-      },
-      "villain_mechanism_specificity": {
-        "score": 8,
-        "reason": "The 'villain' (seeking permission to have boundaries) is clearly identified and explained."
-      },
-      "cta_quality": {
-        "score": 2,
-        "reason": "There is no explicit or implicit CTA. The video ends without guiding the viewer on what to do next."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title accurately reflects the core message of the script, hinting at the underlying reason for a behavior."
-      },
-      "description_usefulness": {
-        "score": 9,
-        "reason": "The description effectively summarizes the video's premise and targets the intended audience's pain point."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "The visuals generally support the message, but could be more dynamically synchronized with the script's nuances."
-      },
-      "image_direction_strength": {
-        "score": 6,
-        "reason": "The brand images are present but don't add significant depth or emotional resonance to the 'truth drop' angle."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "The concept is relevant but could be more visually compelling or intriguing to stand out."
-      },
-      "voice_pacing_readiness": {
-        "score": 10,
-        "reason": "The short script implies a clear, deliberate pacing suitable for a voiceover."
-      },
-      "brand_consistency": {
-        "score": 9,
-        "reason": "The content aligns perfectly with the channel's established themes of self-growth and relationship dynamics."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content is subjective advice and poses no factual risk."
-      }
-    },
-    "judge_composite_score": 7.15,
-    "strongest_element": "Script Clarity",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 9
-  },
-  {
     "video_id": "20260509_143639",
     "published_date": "2026-05-09",
     "status": "uploaded",
@@ -4168,5 +4056,147 @@
     "video_audit_repeat_next": [],
     "video_audit_reduce_next": [],
     "video_audit_tags": {}
+  },
+  {
+    "video_id": "20260525_172136",
+    "published_date": "2026-05-25",
+    "status": "uploaded",
+    "topic": "If calm feels boring it might be because you are used to anxiety not love",
+    "category": "psychology drops",
+    "angle_type": "reframe",
+    "total_score": 18,
+    "source_name": "Therapist consensus on attachment theory and trauma-informed care",
+    "source_basis": "Conditioned emotional responses and nervous system regulation in the context of attachment styles.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "reframe",
+    "emotional_trigger": "Feeling restless or 'bored' in a stable, peaceful relationship after experiencing turbulent ones.",
+    "psych_concept": "Conditioned emotional responses, nervous system regulation, trauma bonding, attachment patterns",
+    "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
+    "editorial_seed": "This channel helps you see patterns in your emotional responses that might be holding you back from stable love. It redefines what true love feels like, moving beyond intense highs and lows to a more sustainable, gentle connection.",
+    "only_soft_reset_line": "You were never bored. You were finally safe, and it scared you.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "If calm feels boring in a relationship, this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 72,
+    "estimated_duration_sec": 21,
+    "thumbnail_text": "calm feels boring?",
+    "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring in a relationship this is for you feeling restless or bored in a stable peaceful relationship after experiencing turbulent ones conditioned emotional responses nervous system regulation trauma bonding attachment patterns you learned to read anxiety as excitement calm reads as indifference you were never bored you were finally safe and it scared you",
+    "title": "Calm only feels boring after chaos",
+    "youtube_video_id": "HK1vq_qUzAU",
+    "youtube_url": "https://youtube.com/shorts/HK1vq_qUzAU",
+    "fallback_count": 0,
+    "video_count": 5,
+    "total_scenes": 7,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W22",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "reframe",
+      "category": "psychology drops",
+      "topic_cluster": "If calm feels boring it might be because you are used to anx",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 7
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Directly addresses a common feeling (calm feels boring) and promises a solution relevant to relationships."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise, easy to understand, and gets straight to the core message of the reframe."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The channel's signature reframe style (challenging the perception of 'boring' vs. 'anxious') is evident."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "Identifies the 'villain' as the body's 'conditioning' to anxiety, which is reasonably specific for a short format."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "There is no explicit or implicit CTA present in the script or details provided."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "The title perfectly captures the essence of the reframe, implying that what feels like boredom is a residual effect of past chaos."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "The description is a clear, concise expansion of the hook and title, offering a compelling preview of the video's content."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming stock videos will align with the psychological theme, the sync should be decent, but potential for generic visuals exists."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "Brand images need to strongly convey the contrast between chaos and calm/anxiety and love to be effective."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "Needs to visually represent the 'calm vs. boring' or 'anxiety vs. love' dichotomy effectively to draw viewers in."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The script is short and direct, making it easy for a voiceover artist to deliver with appropriate pacing and tone."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The psychological reframe angle is highly consistent with the channel's established niche."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is presented as a psychological observation/reframe, not medical advice, posing minimal policy risk."
+      }
+    },
+    "judge_composite_score": 7.7,
+    "strongest_element": "title_accuracy",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short masterfully delivers its powerful reframe with an consistently calm and empathetic tone, aligning perfectly with the 'Soft Reset With Me' brand. The voiceover and caption pacing are excellent, skillfully guiding viewers through the narrative. While some mid-video visuals could benefit from increased specificity to fully match the emotional nuances of the script, the overall aesthetic, balanced audio mix, and particularly the impactful closing visual create a highly engaging and thought-provoking experience that resonates deeply with the core message.",
+    "video_audit_strengths": [
+      "Consistent brand aesthetic: The use of film grain, muted color palettes, and reflective imagery establishes a strong, recognizable visual identity for 'Soft Reset With Me.'",
+      "Empathetic voiceover delivery: The narrator's tone is perfectly calibrated to the sensitive subject matter, fostering a sense of understanding and trust.",
+      "Powerful loopback visual: The final shot of the man looking out the window, paired with the 'You were never bored. You were finally safe, and it scared you' line, delivers a profound emotional punch and reinforces the core reframe.",
+      "Effective use of background music: The subtle, ambient soundtrack perfectly complements the narrative without competing for attention, enhancing the contemplative mood."
+    ],
+    "video_audit_dropoff_causes": [
+      "Inconsistent visual specificity: The visual of hands molding clay (17-21s) doesn't clearly convey the 'anxiety felt like passion' or 'pit in your stomach' concept, potentially causing momentary viewer disconnect.",
+      "Lack of immediate visual progression for the 'waiting' section: The shift from the woman on her phone to the man on his laptop (5-14s) is somewhat generic, and could be made more impactful to specifically illustrate the 'waiting for anxious text' and 'argument that proves they care' if possible."
+    ],
+    "video_audit_repeat_next": [
+      "Maintain the empathetic and calm voiceover tone and pacing.",
+      "Continue with the consistent brand visual filter and aesthetic (film grain, muted, warm tones).",
+      "Utilize word-by-word/phrase-by-phrase captioning for optimal text engagement.",
+      "Craft strong, emotionally resonant closing visuals that reinforce the core message and 'soft reset' feeling.",
+      "Begin videos with immediate, direct hooks that speak to a specific pain point or experience."
+    ],
+    "video_audit_reduce_next": [
+      "Avoid generic stock footage that doesn't specifically or abstractly align with the precise emotional or physiological sensations described in the script (e.g., the clay hands). Seek visuals that are more metaphorically or directly linked.",
+      "Minimize rapid shifts between disparate visual subjects in short succession without a very strong thematic or narrative link, especially in the middle section of the video."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Relatable Problem, Direct Address, Reframe Setup",
+      "thumbnail_type": "Symbolic, Text Overlay (Calm feels boring?)",
+      "visual_style_mix": "Aesthetic, Cinematic, Text-Focused, Lifestyle",
+      "narrative_format": "Reframe, Insight-Driven, Problem-Solution",
+      "character_used": "Introspective Seeker, Anxious Individual (implied)"
+    }
   }
 ]
