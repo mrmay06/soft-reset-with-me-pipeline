@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-25T23:42:04Z",
+  "generated_at": "2026-05-26T18:11:57Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-09",
-  "end_date": "2026-05-24",
+  "start_date": "2026-04-10",
+  "end_date": "2026-05-25",
   "videos": [
     {
       "video_id": "20260509_221203",
@@ -1831,6 +1831,174 @@
       "data_available": true
     },
     {
+      "video_id": "20260517_233728",
+      "published_date": "2026-05-17",
+      "status": "uploaded",
+      "topic": "The difference between a 'cute fight' and actual relationship repair.",
+      "category": "Conversation Truths",
+      "angle_type": "reframe",
+      "total_score": 18,
+      "source_name": "The Gottman Institute (John Gottman)",
+      "source_basis": "Gottman Institute research on conflict resolution and the importance of genuine repair attempts vs. superficial reconciliation.",
+      "source_url": "https://www.gottman.com/blog/the-seven-principles-for-making-marriage-work/",
+      "confidence_level": "peer_reviewed",
+      "content_format": "reframe",
+      "emotional_trigger": "recurring arguments, feeling unheard after reconciliation, superficial make-ups, eroding trust.",
+      "psych_concept": "effective conflict resolution, emotional validation, superficial repair vs. genuine understanding.",
+      "core_claim": "True repair after a fight goes beyond affection; it requires addressing the underlying issue and genuine understanding.",
+      "editorial_seed": "Many couples fall into the pattern of quickly patching up arguments with affection, making them seem 'cute' or easily resolved. However, true resolution requires addressing the underlying issue, feeling heard, and making a change. Without genuine repair, these 'cute' fights become repetitive wounds that slowly erode trust and intimacy over time.",
+      "only_soft_reset_line": "Affection ends the discomfort. It doesn't touch the wound.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You made up but nothing actually feels different.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 74,
+      "estimated_duration_sec": 15,
+      "thumbnail_text": "You made up. It's not fixed.",
+      "content_fingerprint": "the difference between a cute fight and actual relationship repair you made up but nothing actually feels different recurring arguments feeling unheard after reconciliation superficial make ups eroding trust effective conflict resolution emotional validation superficial repair vs genuine understanding true repair after a fight goes beyond affection it requires addressing the underlying issue and genuine understanding affection ends the discomfort it doesn t touch the wound",
+      "title": "You made up, but it's still UNSETTLED",
+      "youtube_video_id": "X9aBCyu2aIY",
+      "youtube_url": "https://youtube.com/shorts/X9aBCyu2aIY",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 10,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "Conversation Truths",
+        "topic_cluster": "The difference between a 'cute fight' and actual relationshi",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "The hook is relatable to many relationship conflicts, posing a common scenario. It could be stronger by hinting at the 'why' behind the lack of change."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and directly addresses the core issue of superficial resolution after conflict."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The POV is clear, focusing on the need for deeper repair beyond superficial peace, which aligns with the channel's niche."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "The 'villain' is the pattern of making up without true resolution. It's specific enough for this context but could be more vividly named or described."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "There is no explicit CTA in the provided details. This needs to be addressed."
+        },
+        "title_accuracy": {
+          "score": 8,
+          "reason": "The title is mostly accurate, capturing the essence of making up but leaving underlying issues unresolved. 'UNSETTLED' is a strong word choice."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "The description clearly defines the target audience and the video's purpose, highlighting the need for genuine repair."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming the stock videos and brand images will align with the conversation themes, it's likely to be good. Needs actual visual review."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "Brand images need to be consistently aligned with the channel's tone and the video's message of introspection and growth."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The concept of a superficial 'make up' versus underlying issues is strong. Visual execution is key for impact."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With a word count of 74, pacing is likely to be good, allowing for a deliberate and impactful delivery suitable for the channel's style."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The theme aligns well with the channel's focus on relationship repair and self-growth beyond surface-level fixes."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content discusses common relationship dynamics and emotional states, posing no discernible factual or policy risks."
+        }
+      },
+      "judge_composite_score": 7,
+      "strongest_element": "Description Usefulness",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively communicates a nuanced emotional truth about relationship repair through a clear voiceover, well-paced captions, and a strong hook that aligns perfectly with its title. The emotional tone and audio mix are excellent, creating an introspective and empathetic brand experience. However, the visual pacing is somewhat slow, with some static or repetitive clips and abstract imagery that could lead to viewer drop-off, suggesting future iterations could benefit from more dynamic or consistently specific visuals to maintain engagement in the short-form format.",
+      "video_audit_strengths": [
+        "Consistent and well-defined brand aesthetic: The video's visual style, voiceover, and music immediately communicate the thoughtful and introspective 'Soft Reset With Me' brand.",
+        "Powerful signature line: 'Affection ends the discomfort. It doesn't touch the wound' is a highly memorable and impactful statement, effectively illustrated visually.",
+        "Exceptional clarity and readability of captions: The large, well-timed text makes the message accessible even without sound.",
+        "Relatable and nuanced emotional core: The topic addresses a subtle but common relationship pain point that many experience but struggle to articulate, fostering strong audience connection."
+      ],
+      "video_audit_dropoff_causes": [
+        "Visual pacing is generally slow; viewers accustomed to faster-paced Shorts might swipe away due to a lack of dynamic visual progression.",
+        "Repetitive use of similar static, contemplative shots (e.g., person looking out window) can lead to visual fatigue and a sense of stagnation.",
+        "The final visual of a group setting might be too abstract or less directly relevant to 'relationship repair' compared to earlier, more intimate couple-focused shots, potentially causing disengagement at the end."
+      ],
+      "video_audit_repeat_next": [
+        "The calm, empathetic, and clear voiceover delivery.",
+        "The clean, readable, and well-timed caption presentation.",
+        "The strong alignment between the video's hook, script, and title.",
+        "The use of subtle, atmospheric background music to enhance emotional tone.",
+        "The inclusion of highly specific visual metaphors (like the cracked hands) that directly illustrate complex emotional concepts."
+      ],
+      "video_audit_reduce_next": [
+        "Over-reliance on static or visually repetitive clips, particularly at key transition points in the narrative.",
+        "The duration of individual clips that lack internal movement or progression, as this can slow down the overall pacing for a Short.",
+        "Including visuals that are too abstract or indirectly related to the specific core claim of the script, especially in the latter half of the video."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Emotional Pain Point",
+        "thumbnail_type": "Text-Overlay",
+        "visual_style_mix": "Ambient & Abstract",
+        "narrative_format": "Reframe",
+        "character_used": "Relatable Archetype"
+      },
+      "metrics": {
+        "views": 61,
+        "engagedViews": 15,
+        "averageViewDuration": 15,
+        "averageViewPercentage": 39.14,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 22.83,
+      "performance_score": 22.83,
+      "score_version": 1,
+      "hook_score": 24.59,
+      "hold_score": 39.14,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 59.74,
+      "analytics_fetched_at": "2026-05-26T18:11:57Z",
+      "analytics_days_old": 9,
+      "data_available": true
+    },
+    {
       "video_id": "20260516_222552",
       "published_date": "2026-05-16",
       "status": "uploaded",
@@ -2161,6 +2329,170 @@
       "reach_score": 42.62,
       "analytics_fetched_at": "2026-05-20T23:52:08Z",
       "analytics_days_old": 2,
+      "data_available": true
+    },
+    {
+      "video_id": "20260517_154143",
+      "published_date": "2026-05-17",
+      "status": "uploaded",
+      "topic": "Why rushing to define a relationship can actually kill it",
+      "category": "Identity and Growth",
+      "angle_type": "reframe",
+      "total_score": 17,
+      "source_name": "Relationship Psychology / Therapist Consensus",
+      "source_basis": "The importance of natural relationship progression and the impact of premature commitment on intimacy development, often discussed in relationship psychology and counseling.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "reframe",
+      "emotional_trigger": "Anxiety about relationship status, fear of losing potential connection, feeling pressured to define.",
+      "psych_concept": "Relationship pacing, premature commitment, organic intimacy development",
+      "core_claim": "Pressuring a relationship into a defined box too early can stifle its natural development and prevent true intimacy from forming organically.",
+      "editorial_seed": "In our desire for security and clarity, we often rush to label relationships. But sometimes, forcing a definition before a genuine connection has had time to blossom can put undue pressure on the dynamic and prevent it from evolving authentically. Let true intimacy guide the labels, not the other way around.",
+      "only_soft_reset_line": "You didn't need the label. You needed the discomfort to stop.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Needing a label fast might be anxiety, not love.",
+      "hook_quality": "strong",
+      "script_version": "2",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 61,
+      "estimated_duration_sec": 26,
+      "thumbnail_text": "Asking 'what are we' too soon ends it.",
+      "content_fingerprint": "why rushing to define a relationship can actually kill it needing a label fast might be anxiety not love anxiety about relationship status fear of losing potential connection feeling pressured to define relationship pacing premature commitment organic intimacy development pressuring a relationship into a defined box too early can stifle its natural development and prevent true intimacy from forming organically you didn t need the label you needed the discomfort to stop",
+      "title": "Needing a label fast is quiet ANXIETY",
+      "youtube_video_id": "tl39aYlEIHw",
+      "youtube_url": "https://youtube.com/shorts/tl39aYlEIHw",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 9,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W20",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "Identity and Growth",
+        "topic_cluster": "Why rushing to define a relationship can actually kill it",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Directly addresses a common internal conflict, posing a question that implies a deeper, less obvious truth."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and easy to understand. The core message is immediately apparent within the short script."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "Clearly reframes a common relationship behavior (needing labels) as a manifestation of anxiety, a typical Soft Reset angle."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Identifies 'quiet anxiety' as the villain mechanism, specifically linking it to the need for external validation (labels) and control."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no Call to Action (CTA) present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the video's core message and the reframe offered, using the term 'quiet anxiety' effectively."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Expands on the title and hook, providing context and identifying the target audience (those who rush things) clearly."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumed positive sync based on typical Soft Reset style; stock videos should align with the emotional tone of anxiety and self-discovery."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Assuming brand images align with Soft Reset's aesthetic, they likely support the theme of introspection and emotional processing."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "The concept is strong if it visually represents anxiety or the conflict between love and anxiety, hinting at the reframe."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With a short script and clear message, the pacing should be easily manageable for a professional voice-over."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The reframing of common relationship anxieties into actionable self-awareness aligns perfectly with the channel's identity."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is opinion-based and psychological reframing, posing no factual risk or policy violation."
+        }
+      },
+      "judge_composite_score": 7.3,
+      "strongest_element": "Editorial POV",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers a nuanced psychological reframe through a strong verbal hook, excellent voiceover, and well-integrated captions. While the overall emotional tone and audio mix are highly polished and on-brand, some visual choices lean towards generic, potentially disrupting the thematic flow for discerning viewers. The video excels in its narrative clarity and brand consistency, setting a high standard for spoken content and presentation, but could benefit from more bespoke or highly specific visual storytelling to fully elevate its impactful message.",
+      "video_audit_strengths": [
+        "The voiceover delivery is exceptional, conveying empathy and authority without sounding detached.",
+        "The consistent, atmospheric color grading and visual filtering contribute strongly to the brand's identity and mood.",
+        "The text-on-screen hook provides immediate value and clarity, acting as a strong verbal and visual anchor."
+      ],
+      "video_audit_dropoff_causes": [
+        "Some visual choices, like the person with the blind cane or the police lights, might feel disjointed or too generic for viewers seeking highly specific illustrative content, potentially leading to a loss of engagement.",
+        "The consistently low-key, melancholic aesthetic, while on-brand, might not appeal to all viewers looking for a 'reset' who might prefer a more uplifting or visually dynamic approach."
+      ],
+      "video_audit_repeat_next": [
+        "The style of voiceover narration (calm, empathetic, confident).",
+        "The clean and well-paced captioning style.",
+        "The use of an atmospheric, consistent musical backdrop.",
+        "The direct, text-based hook in the first few seconds."
+      ],
+      "video_audit_reduce_next": [
+        "Reliance on generic stock footage that isn't highly specific to the emotional or psychological nuance of the script.",
+        "Visuals that create jarring transitions or require too much interpretation to connect to the core message (e.g., police lights)."
+      ],
+      "video_audit_tags": {
+        "hook_type": "psychological reframe",
+        "thumbnail_type": "text overlay with evocative imagery",
+        "visual_style_mix": "cinematic; dark academia; lofi; introspective",
+        "narrative_format": "explanatory; reflective; self-help; relationship psychology",
+        "character_used": "narrator as guide"
+      },
+      "metrics": {
+        "views": 111,
+        "engagedViews": 18,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 34.61,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 19.58,
+      "performance_score": 19.58,
+      "score_version": 1,
+      "hook_score": 16.22,
+      "hold_score": 34.61,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 68.3,
+      "analytics_fetched_at": "2026-05-26T18:11:57Z",
+      "analytics_days_old": 9,
       "data_available": true
     },
     {
@@ -2662,322 +2994,6 @@
       "analytics_fetched_at": "2026-05-20T23:52:08Z",
       "analytics_days_old": 10,
       "data_available": true
-    },
-    {
-      "video_id": "20260517_154143",
-      "published_date": "2026-05-17",
-      "status": "uploaded",
-      "topic": "Why rushing to define a relationship can actually kill it",
-      "category": "Identity and Growth",
-      "angle_type": "reframe",
-      "total_score": 17,
-      "source_name": "Relationship Psychology / Therapist Consensus",
-      "source_basis": "The importance of natural relationship progression and the impact of premature commitment on intimacy development, often discussed in relationship psychology and counseling.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "reframe",
-      "emotional_trigger": "Anxiety about relationship status, fear of losing potential connection, feeling pressured to define.",
-      "psych_concept": "Relationship pacing, premature commitment, organic intimacy development",
-      "core_claim": "Pressuring a relationship into a defined box too early can stifle its natural development and prevent true intimacy from forming organically.",
-      "editorial_seed": "In our desire for security and clarity, we often rush to label relationships. But sometimes, forcing a definition before a genuine connection has had time to blossom can put undue pressure on the dynamic and prevent it from evolving authentically. Let true intimacy guide the labels, not the other way around.",
-      "only_soft_reset_line": "You didn't need the label. You needed the discomfort to stop.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Needing a label fast might be anxiety, not love.",
-      "hook_quality": "strong",
-      "script_version": "2",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 61,
-      "estimated_duration_sec": 26,
-      "thumbnail_text": "Asking 'what are we' too soon ends it.",
-      "content_fingerprint": "why rushing to define a relationship can actually kill it needing a label fast might be anxiety not love anxiety about relationship status fear of losing potential connection feeling pressured to define relationship pacing premature commitment organic intimacy development pressuring a relationship into a defined box too early can stifle its natural development and prevent true intimacy from forming organically you didn t need the label you needed the discomfort to stop",
-      "title": "Needing a label fast is quiet ANXIETY",
-      "youtube_video_id": "tl39aYlEIHw",
-      "youtube_url": "https://youtube.com/shorts/tl39aYlEIHw",
-      "fallback_count": 0,
-      "video_count": 6,
-      "total_scenes": 9,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "reframe",
-        "category": "Identity and Growth",
-        "topic_cluster": "Why rushing to define a relationship can actually kill it",
-        "visual_style_mix": "balanced",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 9
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Directly addresses a common internal conflict, posing a question that implies a deeper, less obvious truth."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "Concise and easy to understand. The core message is immediately apparent within the short script."
-        },
-        "editorial_pov": {
-          "score": 9,
-          "reason": "Clearly reframes a common relationship behavior (needing labels) as a manifestation of anxiety, a typical Soft Reset angle."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "Identifies 'quiet anxiety' as the villain mechanism, specifically linking it to the need for external validation (labels) and control."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no Call to Action (CTA) present in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the video's core message and the reframe offered, using the term 'quiet anxiety' effectively."
-        },
-        "description_usefulness": {
-          "score": 9,
-          "reason": "Expands on the title and hook, providing context and identifying the target audience (those who rush things) clearly."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assumed positive sync based on typical Soft Reset style; stock videos should align with the emotional tone of anxiety and self-discovery."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "Assuming brand images align with Soft Reset's aesthetic, they likely support the theme of introspection and emotional processing."
-        },
-        "thumbnail_concept": {
-          "score": 8,
-          "reason": "The concept is strong if it visually represents anxiety or the conflict between love and anxiety, hinting at the reframe."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "With a short script and clear message, the pacing should be easily manageable for a professional voice-over."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The reframing of common relationship anxieties into actionable self-awareness aligns perfectly with the channel's identity."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is opinion-based and psychological reframing, posing no factual risk or policy violation."
-        }
-      },
-      "judge_composite_score": 7.3,
-      "strongest_element": "Editorial POV",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 9,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively delivers a nuanced psychological reframe through a strong verbal hook, excellent voiceover, and well-integrated captions. While the overall emotional tone and audio mix are highly polished and on-brand, some visual choices lean towards generic, potentially disrupting the thematic flow for discerning viewers. The video excels in its narrative clarity and brand consistency, setting a high standard for spoken content and presentation, but could benefit from more bespoke or highly specific visual storytelling to fully elevate its impactful message.",
-      "video_audit_strengths": [
-        "The voiceover delivery is exceptional, conveying empathy and authority without sounding detached.",
-        "The consistent, atmospheric color grading and visual filtering contribute strongly to the brand's identity and mood.",
-        "The text-on-screen hook provides immediate value and clarity, acting as a strong verbal and visual anchor."
-      ],
-      "video_audit_dropoff_causes": [
-        "Some visual choices, like the person with the blind cane or the police lights, might feel disjointed or too generic for viewers seeking highly specific illustrative content, potentially leading to a loss of engagement.",
-        "The consistently low-key, melancholic aesthetic, while on-brand, might not appeal to all viewers looking for a 'reset' who might prefer a more uplifting or visually dynamic approach."
-      ],
-      "video_audit_repeat_next": [
-        "The style of voiceover narration (calm, empathetic, confident).",
-        "The clean and well-paced captioning style.",
-        "The use of an atmospheric, consistent musical backdrop.",
-        "The direct, text-based hook in the first few seconds."
-      ],
-      "video_audit_reduce_next": [
-        "Reliance on generic stock footage that isn't highly specific to the emotional or psychological nuance of the script.",
-        "Visuals that create jarring transitions or require too much interpretation to connect to the core message (e.g., police lights)."
-      ],
-      "video_audit_tags": {
-        "hook_type": "psychological reframe",
-        "thumbnail_type": "text overlay with evocative imagery",
-        "visual_style_mix": "cinematic; dark academia; lofi; introspective",
-        "narrative_format": "explanatory; reflective; self-help; relationship psychology",
-        "character_used": "narrator as guide"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-19T17:56:43Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260517_233728",
-      "published_date": "2026-05-17",
-      "status": "uploaded",
-      "topic": "The difference between a 'cute fight' and actual relationship repair.",
-      "category": "Conversation Truths",
-      "angle_type": "reframe",
-      "total_score": 18,
-      "source_name": "The Gottman Institute (John Gottman)",
-      "source_basis": "Gottman Institute research on conflict resolution and the importance of genuine repair attempts vs. superficial reconciliation.",
-      "source_url": "https://www.gottman.com/blog/the-seven-principles-for-making-marriage-work/",
-      "confidence_level": "peer_reviewed",
-      "content_format": "reframe",
-      "emotional_trigger": "recurring arguments, feeling unheard after reconciliation, superficial make-ups, eroding trust.",
-      "psych_concept": "effective conflict resolution, emotional validation, superficial repair vs. genuine understanding.",
-      "core_claim": "True repair after a fight goes beyond affection; it requires addressing the underlying issue and genuine understanding.",
-      "editorial_seed": "Many couples fall into the pattern of quickly patching up arguments with affection, making them seem 'cute' or easily resolved. However, true resolution requires addressing the underlying issue, feeling heard, and making a change. Without genuine repair, these 'cute' fights become repetitive wounds that slowly erode trust and intimacy over time.",
-      "only_soft_reset_line": "Affection ends the discomfort. It doesn't touch the wound.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "You made up but nothing actually feels different.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 74,
-      "estimated_duration_sec": 15,
-      "thumbnail_text": "You made up. It's not fixed.",
-      "content_fingerprint": "the difference between a cute fight and actual relationship repair you made up but nothing actually feels different recurring arguments feeling unheard after reconciliation superficial make ups eroding trust effective conflict resolution emotional validation superficial repair vs genuine understanding true repair after a fight goes beyond affection it requires addressing the underlying issue and genuine understanding affection ends the discomfort it doesn t touch the wound",
-      "title": "You made up, but it's still UNSETTLED",
-      "youtube_video_id": "X9aBCyu2aIY",
-      "youtube_url": "https://youtube.com/shorts/X9aBCyu2aIY",
-      "fallback_count": 0,
-      "video_count": 7,
-      "total_scenes": 10,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "reframe",
-        "category": "Conversation Truths",
-        "topic_cluster": "The difference between a 'cute fight' and actual relationshi",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 10
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook is relatable to many relationship conflicts, posing a common scenario. It could be stronger by hinting at the 'why' behind the lack of change."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and directly addresses the core issue of superficial resolution after conflict."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The POV is clear, focusing on the need for deeper repair beyond superficial peace, which aligns with the channel's niche."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' is the pattern of making up without true resolution. It's specific enough for this context but could be more vividly named or described."
-        },
-        "cta_quality": {
-          "score": 5,
-          "reason": "There is no explicit CTA in the provided details. This needs to be addressed."
-        },
-        "title_accuracy": {
-          "score": 8,
-          "reason": "The title is mostly accurate, capturing the essence of making up but leaving underlying issues unresolved. 'UNSETTLED' is a strong word choice."
-        },
-        "description_usefulness": {
-          "score": 9,
-          "reason": "The description clearly defines the target audience and the video's purpose, highlighting the need for genuine repair."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming the stock videos and brand images will align with the conversation themes, it's likely to be good. Needs actual visual review."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "Brand images need to be consistently aligned with the channel's tone and the video's message of introspection and growth."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The concept of a superficial 'make up' versus underlying issues is strong. Visual execution is key for impact."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "With a word count of 74, pacing is likely to be good, allowing for a deliberate and impactful delivery suitable for the channel's style."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The theme aligns well with the channel's focus on relationship repair and self-growth beyond surface-level fixes."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content discusses common relationship dynamics and emotional states, posing no discernible factual or policy risks."
-        }
-      },
-      "judge_composite_score": 7,
-      "strongest_element": "Description Usefulness",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 9,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively communicates a nuanced emotional truth about relationship repair through a clear voiceover, well-paced captions, and a strong hook that aligns perfectly with its title. The emotional tone and audio mix are excellent, creating an introspective and empathetic brand experience. However, the visual pacing is somewhat slow, with some static or repetitive clips and abstract imagery that could lead to viewer drop-off, suggesting future iterations could benefit from more dynamic or consistently specific visuals to maintain engagement in the short-form format.",
-      "video_audit_strengths": [
-        "Consistent and well-defined brand aesthetic: The video's visual style, voiceover, and music immediately communicate the thoughtful and introspective 'Soft Reset With Me' brand.",
-        "Powerful signature line: 'Affection ends the discomfort. It doesn't touch the wound' is a highly memorable and impactful statement, effectively illustrated visually.",
-        "Exceptional clarity and readability of captions: The large, well-timed text makes the message accessible even without sound.",
-        "Relatable and nuanced emotional core: The topic addresses a subtle but common relationship pain point that many experience but struggle to articulate, fostering strong audience connection."
-      ],
-      "video_audit_dropoff_causes": [
-        "Visual pacing is generally slow; viewers accustomed to faster-paced Shorts might swipe away due to a lack of dynamic visual progression.",
-        "Repetitive use of similar static, contemplative shots (e.g., person looking out window) can lead to visual fatigue and a sense of stagnation.",
-        "The final visual of a group setting might be too abstract or less directly relevant to 'relationship repair' compared to earlier, more intimate couple-focused shots, potentially causing disengagement at the end."
-      ],
-      "video_audit_repeat_next": [
-        "The calm, empathetic, and clear voiceover delivery.",
-        "The clean, readable, and well-timed caption presentation.",
-        "The strong alignment between the video's hook, script, and title.",
-        "The use of subtle, atmospheric background music to enhance emotional tone.",
-        "The inclusion of highly specific visual metaphors (like the cracked hands) that directly illustrate complex emotional concepts."
-      ],
-      "video_audit_reduce_next": [
-        "Over-reliance on static or visually repetitive clips, particularly at key transition points in the narrative.",
-        "The duration of individual clips that lack internal movement or progression, as this can slow down the overall pacing for a Short.",
-        "Including visuals that are too abstract or indirectly related to the specific core claim of the script, especially in the latter half of the video."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Emotional Pain Point",
-        "thumbnail_type": "Text-Overlay",
-        "visual_style_mix": "Ambient & Abstract",
-        "narrative_format": "Reframe",
-        "character_used": "Relatable Archetype"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-19T17:56:43Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
     },
     {
       "video_id": "20260519_175643",
@@ -4200,161 +4216,148 @@
       "data_unavailable_reason": "youtube_analytics_no_row"
     },
     {
-      "video_id": "20260509_143639",
-      "published_date": "2026-05-09",
+      "video_id": "20260524_154637",
+      "published_date": "2026-05-24",
       "status": "uploaded",
-      "topic": "You did not lose them, you lost who you imagined they would be",
-      "category": "healing arcs",
-      "angle_type": "truth drop",
-      "total_score": 20,
-      "source_name": "Therapeutic consensus",
-      "source_basis": "Grief for imagined futures, idealization in relationships, and cognitive reframing",
+      "topic": "Talking every day does not make you close",
+      "category": "conversation truths",
+      "angle_type": "hot take",
+      "total_score": 19,
+      "source_name": "Relationship Psychology Principles, Attachment Theory",
+      "source_basis": "Relationship psychology principles emphasizing quality over quantity in communication for true intimacy; attachment theory's focus on consistent emotional responsiveness.",
       "source_url": "",
       "confidence_level": "therapist_consensus",
-      "content_format": "truth_drop",
-      "emotional_trigger": "Heartbreak, confusion after a breakup, feeling lost after a situationship, grief for a future that won't happen",
-      "psych_concept": "Idealization, grief for an imagined future, cognitive reframing",
-      "core_claim": "Sometimes heartbreak is grief for the future you invented",
-      "editorial_seed": "It's painful to realize you're grieving a fantasy, not a reality. This truth can be a soft reset, allowing you to mourn what was never truly there and begin to heal authentically.",
-      "only_soft_reset_line": "That's not grief for them. That's grief for a person you wrote.",
+      "content_format": "hot_take",
+      "emotional_trigger": "Feeling disconnected despite constant communication; the illusion of intimacy through frequency.",
+      "psych_concept": "Emotional intimacy vs. superficial contact, relationship depth, quality of communication.",
+      "core_claim": "Closeness is consistency, not constant access",
+      "editorial_seed": "This idea challenges a common assumption in relationships (both platonic and romantic) that constant communication equals intimacy. It highlights that true closeness comes from reliable presence and shared vulnerability over time, not just frequent check-ins. It speaks to the feeling of being 'connected' without feeling truly seen or understood.",
+      "only_soft_reset_line": "You can be someone's daily habit and still be a stranger to them.",
       "editorial_quality": "strong",
       "argument_quality": "strong",
-      "hook": "You think you're heartbroken over them. You might be heartbroken over who you needed them to be.",
-      "hook_quality": "strong",
+      "hook": "Daily conversation does not mean they actually know you.",
+      "hook_quality": "weak",
       "script_version": "1",
       "prompt_version": "soft-reset-script-v2.4",
       "script_validation": "passed",
       "script_validation_notes": "",
       "word_count": 71,
-      "estimated_duration_sec": 38,
-      "thumbnail_text": "You didn't lose them.",
-      "content_fingerprint": "you did not lose them you lost who you imagined they would be you think you re heartbroken over them you might be heartbroken over who you needed them to be heartbreak confusion after a breakup feeling lost after a situationship grief for a future that won t happen idealization grief for an imagined future cognitive reframing sometimes heartbreak is grief for the future you invented that s not grief for them that s grief for a person you wrote",
-      "title": "You miss who you needed them to BE",
-      "youtube_video_id": "EL6q2Sxn_4M",
-      "youtube_url": "https://youtube.com/shorts/EL6q2Sxn_4M",
+      "estimated_duration_sec": 29,
+      "thumbnail_text": "talking every day \u2260 close",
+      "content_fingerprint": "talking every day does not make you close daily conversation does not mean they actually know you feeling disconnected despite constant communication the illusion of intimacy through frequency emotional intimacy vs superficial contact relationship depth quality of communication closeness is consistency not constant access you can be someone s daily habit and still be a stranger to them",
+      "title": "You talk daily but feel ALONE",
+      "youtube_video_id": "i_Pp76KiYa8",
+      "youtube_url": "https://youtube.com/shorts/i_Pp76KiYa8",
       "fallback_count": 0,
-      "video_count": 9,
-      "total_scenes": 12,
+      "video_count": 7,
+      "total_scenes": 9,
       "validation_warnings": [],
       "experiment_label": "baseline",
       "experiment_id": null,
-      "strategy_version": "2026-W19",
+      "strategy_version": "2026-W21",
       "judge_traits": {
         "hook_type": "statement",
         "title_type": "accusation",
-        "angle_type": "truth drop",
-        "category": "healing arcs",
-        "topic_cluster": "You did not lose them, you lost who you imagined they would ",
+        "angle_type": "hot take",
+        "category": "conversation truths",
+        "topic_cluster": "Talking every day does not make you close",
         "visual_style_mix": "stock_heavy",
         "video_length_band": "30_45s",
         "narrative_format": "unknown",
         "thumbnail_type": "text_only",
         "character_used": "brand_still",
-        "total_scenes": 12
+        "total_scenes": 9
       },
       "judge_scores": {
         "hook_strength": {
-          "score": 9,
-          "reason": "The hook immediately challenges a common assumption about heartbreak, creating intrigue and relevance for the target audience."
+          "score": 8,
+          "reason": "The hook is intriguing and directly addresses a common feeling of disconnect despite frequent communication."
         },
         "script_clarity": {
-          "score": 10,
-          "reason": "The script is concise and delivers a clear, impactful message about grieving expectations versus people."
+          "score": 9,
+          "reason": "The script is concise, clear, and delivers its core message effectively within the short duration."
         },
         "editorial_pov": {
-          "score": 9,
-          "reason": "The angle is a direct 'truth drop,' aligning perfectly with the channel's brand of delivering candid insights."
+          "score": 8,
+          "reason": "The 'hot take' angle is present, offering a contrarian perspective on common relationship dynamics."
         },
         "villain_mechanism_specificity": {
           "score": 7,
-          "reason": "While the core concept is clear, the 'villain' is more of an internal projection (unmet needs/expectations), which is specific to this type of self-growth content."
+          "reason": "The 'villain' (lack of true connection despite daily contact) is identifiable, though could be slightly more specific about *why* this happens."
         },
         "cta_quality": {
-          "score": 0,
-          "reason": "No CTA was provided in the video details to evaluate."
+          "score": 1,
+          "reason": "There is no Call to Action (CTA) present in the script or details provided."
         },
         "title_accuracy": {
-          "score": 10,
-          "reason": "The title directly reflects the core message of the hook and the video's content, accurately setting expectations."
+          "score": 9,
+          "reason": "The title accurately reflects the hook and the core message of the video: talking daily but feeling alone."
         },
         "description_usefulness": {
-          "score": 9,
-          "reason": "The description provides immediate context and reinforces the core message, enticing viewers to watch further."
+          "score": 8,
+          "reason": "The description effectively summarizes the video's premise and targets the intended audience."
         },
         "visual_dialogue_sync": {
           "score": 8,
-          "reason": "With 9 stock videos and 3 brand images, the visuals should support the dialogue. The effectiveness depends on the chosen visuals, but the ratio is good."
+          "reason": "Assuming stock videos will be chosen to visually represent the theme of connection/disconnection, there's good potential for sync."
         },
         "image_direction_strength": {
-          "score": 8,
-          "reason": "The use of brand images suggests a focus on reinforcing brand identity alongside stock videos for illustrative purposes. The blend should be effective if curated well."
+          "score": 7,
+          "reason": "Brand images need to be strategically placed to reinforce the message, their strength depends on execution."
         },
         "thumbnail_concept": {
-          "score": 0,
-          "reason": "No thumbnail concept was provided for evaluation."
+          "score": 8,
+          "reason": "The concept of 'talking daily but feeling alone' offers strong visual potential for a thumbnail that grabs attention."
         },
         "voice_pacing_readiness": {
           "score": 9,
-          "reason": "The script is short and impactful. With appropriate pacing, the voiceover will deliver the message effectively within the short duration."
+          "reason": "The short script suggests a pacing that can be easily managed for clear and engaging delivery."
         },
         "brand_consistency": {
-          "score": 10,
-          "reason": "The 'truth drop' angle, focus on relationship/self-growth, and direct messaging are all hallmarks of the Soft Reset With Me brand."
+          "score": 8,
+          "reason": "The theme aligns well with the channel's relationship/self-growth niche. Use of brand images will further enhance consistency."
         },
         "policy_factual_risk": {
           "score": 10,
-          "reason": "The content deals with emotional processing and self-reflection, with no factual claims that could pose a policy risk."
+          "reason": "The content is subjective and deals with common relationship feelings, posing no factual risk."
         }
       },
-      "judge_composite_score": 8.5,
-      "strongest_element": "Script Clarity",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 9,
+      "judge_composite_score": 7.1,
+      "strongest_element": "script_clarity",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 7,
       "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively delivers a powerful psychological reframe with a perfectly aligned emotional tone and professional audio mix, embodying the 'Soft Reset With Me' brand. The voiceover is excellent, and the core message is deeply resonant. However, the video suffers from overly fragmented and fast-paced captions, particularly in the critical opening seconds, which can confuse and disengage viewers. Additionally, the use of generic stock footage alongside more specific, mood-setting visuals leads to an inconsistent visual narrative that sometimes dilutes the video's impact, potentially causing early drop-offs despite its strong foundational elements.",
+      "video_audit_summary": "This Short effectively conveys a profound 'hot take' through a perfectly aligned emotional tone, excellent voiceover, and meticulous captioning. While the overall mood is consistently strong, some visuals are too generic or static, particularly in the opening seconds and during longer B-roll segments, which could impact viewer retention. Refining visual specificity and pacing, especially at the start, would elevate an already strong foundation for the Soft Reset With Me brand.",
       "video_audit_strengths": [
-        "The voiceover talent and delivery are outstanding, perfectly embodying the brand's gentle and insightful tone.",
-        "The core psychological reframe ('grief for a person you wrote') is powerful, unique, and highly resonant, providing a strong anchor for the content.",
-        "The consistent emotional tone and atmosphere, supported by the music and relevant visuals, create a safe and reflective space for the viewer.",
-        "The audio mix is clean, balanced, and professional, ensuring clarity of message and a pleasant listening experience.",
-        "The closing line 'That's grief for a person you wrote' delivers a powerful, memorable insight that encourages sharing and reflection."
+        "The clarity and empathetic tone of the voiceover are outstanding and a core strength of the brand.",
+        "The meticulous caption pacing and legibility significantly enhance accessibility and viewer comprehension.",
+        "The consistent emotional atmosphere created through the music and overall visual style effectively lands the brand's tone.",
+        "The script's hook is highly relatable and offers a provocative insight that resonates deeply with the target audience."
       ],
       "video_audit_dropoff_causes": [
-        "Confusing and fragmented captions in the first 2 seconds that do not match the spoken hook, leading to immediate cognitive dissonance.",
-        "Overly fast and fragmented caption pacing throughout the first half of the video, making it difficult for viewers to read, listen, and process visuals simultaneously.",
-        "Use of generic stock footage (e.g., cityscapes, street scenes) that doesn't specifically enhance the psychological message, potentially leading to a feeling of generic content rather than a unique brand experience."
+        "Static visual at the very beginning (0:00-0:03) while the hook is being delivered; faster visual changes are usually more engaging for Shorts.",
+        "Extended duration of generic B-roll shots (e.g., cityscape from 0:11-0:16, window silhouette from 0:24-0:29) that don't specifically illustrate the spoken words, potentially causing visual fatigue.",
+        "Lack of direct visual representation for some concepts like 'memes,' 'voice notes about nothing,' or 'what you're actually carrying,' which could lead to viewers feeling a disconnect between the audio and visual narrative."
       ],
       "video_audit_repeat_next": [
-        "Maintain the current voiceover talent and their empathetic, calm delivery style.",
-        "Continue selecting contemplative and emotionally resonant background music that supports the narrative without overpowering it.",
-        "Prioritize scripts with strong, insightful psychological reframes and 'truth drop' moments.",
-        "Consistently aim for the gentle, non-judgmental emotional tone that defines 'Soft Reset With Me'.",
-        "Ensure high-quality, balanced audio mixing with clear voiceover."
+        "The calm, empathetic, and clear voiceover delivery.",
+        "The word-by-word caption style with excellent timing and legibility.",
+        "The ability to create a consistent and intentional emotional atmosphere through audio and visual selection.",
+        "Crafting hooks that challenge common assumptions and tap into subtle emotional truths."
       ],
       "video_audit_reduce_next": [
-        "Eliminate fragmented, word-by-word captioning, especially in the hook, in favor of more cohesive phrases.",
-        "Reduce the speed of caption appearance to allow viewers ample time to read and process the text.",
-        "Minimize the use of generic stock footage; instead, prioritize visuals that are highly specific and directly enhance the narrative's psychological depth.",
-        "Avoid captioning that conflicts with or is extraneous to the voiceover, ensuring full alignment.",
-        "Reduce visual repetition without adding new narrative or emotional depth."
+        "Initial static visual duration; aim for immediate visual dynamism or a quicker hook delivery over a static shot.",
+        "Reliance on overly generic moody B-roll footage, especially for longer durations; strive for more specific or conceptually illustrative visuals.",
+        "Repetitive visual motifs (e.g., similar window shots); introduce more diverse scenarios to maintain visual interest."
       ],
       "video_audit_tags": {
-        "hook_type": "truth drop",
-        "thumbnail_type": "moody text-over-visual",
-        "visual_style_mix": "introspective aesthetic",
-        "narrative_format": "psychological reframe monologue",
-        "character_used": "narrator voice only"
+        "hook_type": "provocative claim",
+        "thumbnail_type": "mood shot",
+        "visual_style_mix": "cinematic B-roll",
+        "narrative_format": "hot take breakdown",
+        "character_used": "narrator voice"
       },
-      "metrics": {
-        "views": 0,
-        "engagedViews": 0,
-        "averageViewDuration": 0,
-        "averageViewPercentage": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
+      "metrics": {},
       "composite_score": 0.0,
       "performance_score": 0.0,
       "score_version": 1,
@@ -4366,9 +4369,145 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-25T23:42:04Z",
-      "analytics_days_old": 16,
-      "data_available": true
+      "analytics_fetched_at": "2026-05-26T18:11:57Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260524_234017",
+      "published_date": "2026-05-24",
+      "status": "uploaded",
+      "topic": "Four signs you are not over them that have nothing to do with texting",
+      "category": "healing arcs",
+      "angle_type": "list",
+      "total_score": 19,
+      "source_name": "Peter Levine (Somatic Experiencing), Bessel van der Kolk (The Body Keeps the Score), Attachment Theory",
+      "source_basis": "Somatic psychology and attachment theory, recognizing that emotional processing and attachment are not purely cognitive but deeply embodied, influencing the nervous system and physical sensations even when conscious thought has 'moved on'.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "list",
+      "emotional_trigger": "Lingering attachment/grief after a breakup, despite conscious attempts to move on and cut contact",
+      "psych_concept": "Somatic attachment, grief processing, nervous system regulation",
+      "core_claim": "Your body can still be attached after your phone stops reaching",
+      "editorial_seed": "Even when you've cut contact and the phone is quiet, your nervous system can still be in a state of attachment or grief. It's not about weakness, but about acknowledging the deeper ways our bodies hold onto connection and loss. Understanding these subtle signs can help you truly move forward.",
+      "only_soft_reset_line": "Your body is still waiting for someone who already left.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You deleted the app. You still check their location.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 75,
+      "estimated_duration_sec": 31,
+      "thumbnail_text": "Not over it (and it's not the texts)",
+      "content_fingerprint": "four signs you are not over them that have nothing to do with texting you deleted the app you still check their location lingering attachment grief after a breakup despite conscious attempts to move on and cut contact somatic attachment grief processing nervous system regulation your body can still be attached after your phone stops reaching your body is still waiting for someone who already left",
+      "title": "You deleted the app. Your body still knows",
+      "youtube_video_id": "XiknVG7dX0s",
+      "youtube_url": "https://youtube.com/shorts/XiknVG7dX0s",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "list",
+        "category": "healing arcs",
+        "topic_cluster": "Four signs you are not over them that have nothing to do wit",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "45_60s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and relatable paradox that immediately grabs attention by highlighting a common post-breakup behavior."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and clear language effectively conveys the core message of lingering emotional attachment."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "Strong, empathetic POV focused on the internal struggle of moving on, typical of the channel's style."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "Identifies the 'villain' as the lingering connection/habit, but could be slightly more specific on the 'why' behind it."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "No explicit CTA is present in the provided details. If there is one, it needs to be assessed separately."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Title accurately reflects the core theme of subconscious, lingering connection despite conscious actions."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively expands on the hook and title, setting the emotional tone and clarifying the video's focus."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumes good sync, but needs to be confirmed during production. Potential for disconnect if visuals don't match the subtle emotional cues."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images likely reinforce the channel's aesthetic; effectiveness depends on their specific content and placement."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "A strong concept combining relatable imagery with the core theme. Needs to be visually compelling and representative."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "Script length suggests good pacing potential. Voiceover delivery needs to match the reflective and gentle tone."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The theme of emotional healing and introspective struggle aligns perfectly with the 'Soft Reset With Me' brand."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No identifiable policy or factual risks. Content is subjective and focuses on emotional experience."
+        }
+      },
+      "judge_composite_score": 7.8,
+      "strongest_element": "Brand Consistency",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "soft_failed",
+      "video_audit_summary": "",
+      "video_audit_strengths": [],
+      "video_audit_dropoff_causes": [],
+      "video_audit_repeat_next": [],
+      "video_audit_reduce_next": [],
+      "video_audit_tags": {},
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-05-26T18:11:57Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
     }
   ]
 }
