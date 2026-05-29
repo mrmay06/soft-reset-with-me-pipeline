@@ -1,148 +1,5 @@
 [
   {
-    "video_id": "20260510_153457",
-    "published_date": "2026-05-10",
-    "status": "uploaded",
-    "topic": "When they move from wanting to know you to subtly wanting to 'fix' you.",
-    "category": "Relationship Patterns",
-    "angle_type": "specific_scenario",
-    "total_score": 19,
-    "source_name": "Relationship psychology / Therapist consensus",
-    "source_basis": "Principles of active listening, validation, and emotional safety in interpersonal communication.",
-    "source_url": null,
-    "confidence_level": "observational",
-    "content_format": "specific_scenario",
-    "emotional_trigger": "Feeling misunderstood, unvalidated, or like a project in a relationship.",
-    "psych_concept": "Validation and empathy in communication.",
-    "core_claim": "True connection is built on empathy and understanding, not on one person trying to 'fix' the other.",
-    "editorial_seed": "It starts subtly. They listened, they understood. Then, slowly, every share becomes an opportunity for them to tell you what you *should* do, or what's 'wrong' with your perspective. You start to feel like a project, not a partner.",
-    "only_soft_reset_line": "You stopped sharing. Not because you closed off. Because every time you opened up, they handed you a fix instead of staying in the room with you.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If you've started editing what you share with someone, this is for you.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "word_count outside target 45-75",
-    "word_count": 79,
-    "estimated_duration_sec": 5,
-    "thumbnail_text": "When You Became Their Project",
-    "content_fingerprint": "when they move from wanting to know you to subtly wanting to fix you if you ve started editing what you share with someone this is for you feeling misunderstood unvalidated or like a project in a relationship validation and empathy in communication true connection is built on empathy and understanding not on one person trying to fix the other you stopped sharing not because you closed off because every time you opened up they handed you a fix instead of staying in the room with you",
-    "title": "They want to fix you, not know you anymore",
-    "youtube_video_id": "mEoAgeT9ls8",
-    "youtube_url": "https://youtube.com/shorts/mEoAgeT9ls8",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 9,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W19",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "specific_scenario",
-      "category": "Relationship Patterns",
-      "topic_cluster": "When they move from wanting to know you to subtly wanting to",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 9
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "Intriguing and directly addresses a specific behavior, creating immediate relatability for those experiencing it."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "Concise and clear message, easily understandable within the short video format."
-      },
-      "editorial_pov": {
-        "score": 9,
-        "reason": "Strong, distinct perspective on relationship dynamics, clearly articulating the channel's viewpoint."
-      },
-      "villain_mechanism_specificity": {
-        "score": 8,
-        "reason": "Identifies a specific 'villain' mechanism (editing what you share) and its underlying motivation (fixing vs. knowing)."
-      },
-      "cta_quality": {
-        "score": 2,
-        "reason": "No explicit Call to Action in the provided details. Needs to be added."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Accurate and reflective of the script's core message and the described scenario."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "Effectively summarizes the video's theme and expands on the title, providing good context."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Relies on stock footage and brand images; effective sync will depend heavily on the specific choices made during editing."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "The strength depends on how well the brand images and stock videos visually represent the abstract concepts of 'fixing' versus 'knowing'."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "Needs to be created, but the title and hook provide a strong concept to build from (e.g., contrasting imagery of forced change vs. acceptance)."
-      },
-      "voice_pacing_readiness": {
-        "score": 9,
-        "reason": "Short script is ideal for controlled, deliberate pacing suitable for a faceless channel's message delivery."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The theme aligns well with relationship patterns and self-growth, fitting the channel's established niche."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content deals with subjective relationship dynamics and psychological interpretations, posing no significant factual risk."
-      }
-    },
-    "judge_composite_score": 7.3,
-    "strongest_element": "Script Clarity",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively communicates a subtle relationship dynamic through a strong, empathetic voiceover and well-chosen background music, consistent with the Soft Reset With Me brand. The core message is highly relatable and some visual metaphors are impactful. However, significant issues with incorrect and fragmented captions in the crucial opening seconds, alongside a reliance on some generic stock footage, likely hinder viewer retention and the overall clarity of the message. Addressing these production details, particularly the caption accuracy, will significantly enhance content quality.",
-    "video_audit_strengths": [
-      "The voiceover delivery is exceptional, conveying genuine empathy and understanding.",
-      "The ability to translate complex emotional experiences into relatable, specific scenarios is a hallmark strength.",
-      "Effective use of specific visual metaphors (like the 'chair' and 'fix' object) that powerfully convey abstract concepts.",
-      "Consistent and calming brand aesthetic (music, text style, end screen)."
-    ],
-    "video_audit_dropoff_causes": [
-      "Incorrect and fragmented captions in the crucial opening seconds, creating immediate confusion and a disjointed experience.",
-      "Use of generic stock footage that doesn't always deeply connect with the spoken message, potentially causing viewer disengagement.",
-      "The word-by-word captioning, combined with frequent visual cuts, can make the content feel rushed or hard to absorb for some viewers."
-    ],
-    "video_audit_repeat_next": [
-      "Maintain the empathetic and validating voiceover style.",
-      "Continue to explore subtle, highly relatable relationship dynamics and emotional patterns.",
-      "Utilize specific, conceptual metaphors in visuals to deepen the message.",
-      "Keep the consistent Soft Reset With Me brand identity (music, overall feel)."
-    ],
-    "video_audit_reduce_next": [
-      "Eliminate all caption errors and ensure captions accurately reflect the spoken words.",
-      "Minimize the use of generic, non-specific stock footage, prioritizing visuals that add direct meaning or metaphor.",
-      "Experiment with slightly slower caption pacing (e.g., phrase-by-phrase) or more dynamic visuals to compensate for rapid word-by-word display."
-    ],
-    "video_audit_tags": {
-      "hook_type": "relatable_experience",
-      "thumbnail_type": "conceptual_metaphor",
-      "visual_style_mix": "cinematic_emotional_minimalist",
-      "narrative_format": "insight_revelation",
-      "character_used": "supportive_guide"
-    }
-  },
-  {
     "video_id": "20260510_233328",
     "published_date": "2026-05-10",
     "status": "uploaded",
@@ -4194,5 +4051,124 @@
       "narrative_format": "Psychological Insight",
       "character_used": "Empathic Narrator"
     }
+  },
+  {
+    "video_id": "20260529_013405",
+    "published_date": "2026-05-29",
+    "status": "uploaded",
+    "topic": "Peace as the most radical boundary you can set",
+    "category": "self-worth shifts",
+    "angle_type": "truth_drop",
+    "total_score": 20,
+    "source_name": "Psychological theories of boundary setting and self-worth",
+    "source_basis": "Principles of boundary setting in psychology, self-worth theories, and emotional regulation strategies.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "The internal conflict of sacrificing personal peace for others' comfort or approval.",
+    "psych_concept": "Self-worth; Boundary setting; Emotional regulation",
+    "core_claim": "Choosing and protecting your internal peace requires a profound act of self-worth, often necessitating difficult boundaries and a willingness to let go of external validation.",
+    "editorial_seed": "We often think of boundaries as what we say 'no' to others. But the deepest boundary is the one you set around your own peace. It's choosing to disengage from drama, walk away from chaos, and prioritize your internal calm, even when it means disappointing others or facing uncertainty. This isn't selfish; it's a vital act of emotional self-preservation that allows for true connection.",
+    "only_soft_reset_line": "Some people need you unsettled. Peace threatens the dynamic.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "If you feel guilty for being calm, this is for you.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 74,
+    "estimated_duration_sec": 32,
+    "thumbnail_text": "Peace is a boundary",
+    "content_fingerprint": "peace as the most radical boundary you can set if you feel guilty for being calm this is for you the internal conflict of sacrificing personal peace for others comfort or approval self worth boundary setting emotional regulation choosing and protecting your internal peace requires a profound act of self worth often necessitating difficult boundaries and a willingness to let go of external validation some people need you unsettled peace threatens the dynamic",
+    "title": "Finally calm? It's not WRONG",
+    "youtube_video_id": "5DMe-lOk-UU",
+    "youtube_url": "https://youtube.com/shorts/5DMe-lOk-UU",
+    "fallback_count": 0,
+    "video_count": 10,
+    "total_scenes": 13,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W22",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "fragment",
+      "angle_type": "truth_drop",
+      "category": "self-worth shifts",
+      "topic_cluster": "Peace as the most radical boundary you can set",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 13
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Directly addresses a specific, relatable feeling (guilt for being calm) that resonates with the target audience seeking self-growth."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and clear message, directly addressing the hook and delivering the core idea within the word count."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Establishes a supportive and validating perspective, aligning with the channel's self-growth focus."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "Identifies 'guilt' as the mechanism preventing peace, which is specific enough for the context, though 'chaos' could be explored further."
+      },
+      "cta_quality": {
+        "score": 6,
+        "reason": "No explicit CTA provided in the details. Implied CTA is to embrace peace, but a stronger, more actionable CTA would improve this score."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "Perfectly reflects the video's core message and hook, honest and intriguing."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Summarizes the video's essence effectively, setting the right expectation and reinforcing the hook's promise."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumes stock videos and brand images will generally support the narrative, but without seeing the edit, sync is hard to fully assess. Potential for strong sync if visuals are chosen carefully."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "Brand images and stock videos will need to convey a sense of peace and relief to match the script, which is achievable but requires careful selection."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "Needs to visually represent 'calm' or 'peace' without implying sadness or guilt, which is achievable with a strong concept."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "Short script (74 words) is ideal for a natural, deliberate pacing that emphasizes the 'truth drop' angle and allows listeners to absorb the message."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of overcoming guilt to embrace peace aligns perfectly with self-worth shifts and personal growth, fitting the channel's ethos."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is subjective and motivational, posing no factual claims or policy risks."
+      }
+    },
+    "judge_composite_score": 8.3,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "soft_failed",
+    "video_audit_summary": "",
+    "video_audit_strengths": [],
+    "video_audit_dropoff_causes": [],
+    "video_audit_repeat_next": [],
+    "video_audit_reduce_next": [],
+    "video_audit_tags": {}
   }
 ]
