@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-31T01:37:10Z",
+  "generated_at": "2026-06-01T01:40:13Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-15",
-  "end_date": "2026-05-30",
+  "start_date": "2026-04-16",
+  "end_date": "2026-05-31",
   "videos": [
     {
       "video_id": "20260521_173815",
@@ -169,6 +169,292 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 10.03,
       "analytics_fetched_at": "2026-05-31T01:37:10Z",
+      "analytics_days_old": 10,
+      "data_available": true
+    },
+    {
+      "video_id": "20260522_234228",
+      "published_date": "2026-05-22",
+      "status": "uploaded",
+      "topic": "What anxious attachment actually looks like in real life",
+      "category": "psychology drops",
+      "angle_type": "psychology drop",
+      "total_score": 20,
+      "source_name": "John Bowlby, Mary Ainsworth (Attachment Theory); general contemporary psychology consensus",
+      "source_basis": "Anxious Attachment (Attachment Theory), Rumination, Rejection Sensitivity",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "psychology_drop",
+      "emotional_trigger": "Obsessive overthinking of communication in relationships, often triggered by ambiguous messages or silence.",
+      "psych_concept": "Anxious attachment, rumination, hypervigilance, rejection sensitivity.",
+      "core_claim": "Sometimes it looks like rereading one sentence until it hurts",
+      "editorial_seed": "Anxious attachment isn't just about seeking constant reassurance or being 'needy.' Often, it manifests internally as obsessive rumination over small details, searching for hidden meanings or potential rejections. This quiet suffering can be more draining than overt displays.",
+      "only_soft_reset_line": "You read it six times looking for the part where they stopped caring.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You don't argue. You just go quiet and wait to be left.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 71,
+      "estimated_duration_sec": 28,
+      "thumbnail_text": "anxious attachment is quiet",
+      "content_fingerprint": "what anxious attachment actually looks like in real life you don t argue you just go quiet and wait to be left obsessive overthinking of communication in relationships often triggered by ambiguous messages or silence anxious attachment rumination hypervigilance rejection sensitivity sometimes it looks like rereading one sentence until it hurts you read it six times looking for the part where they stopped caring",
+      "title": "You go quiet and wait to be left",
+      "youtube_video_id": "tvgtuZlTwzk",
+      "youtube_url": "https://youtube.com/shorts/tvgtuZlTwzk",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 8,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology drop",
+        "category": "psychology drops",
+        "topic_cluster": "What anxious attachment actually looks like in real life",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Direct and intriguing, immediately identifies a common, painful behavior."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and easy to understand, gets straight to the point about anxious attachment."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is clear but could be more distinctive to the channel's specific tone."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Clearly identifies 'going quiet' as a maladaptive coping mechanism driven by fear of abandonment."
+        },
+        "cta_quality": {
+          "score": 2,
+          "reason": "No clear CTA was provided in the script."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the core behavior discussed in the video."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Effectively summarizes the video's topic and connects it to anxious attachment, providing context."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Stock footage needs to be carefully selected to truly enhance the script's emotional weight."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "Brand images are present but their strategic placement and impact could be stronger."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The concept is relevant, but could be more visually striking and attention-grabbing."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script allows for deliberate pacing, assuming a good voiceover performance."
+        },
+        "brand_consistency": {
+          "score": 7,
+          "reason": "While the topic fits, the execution needs to ensure it aligns with the channel's established feel."
+        },
+        "policy_factual_risk": {
+          "score": 9,
+          "reason": "General psychological observation, low risk of factual inaccuracy or policy violation."
+        }
+      },
+      "judge_composite_score": 6.8,
+      "strongest_element": "script_clarity",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 6,
+      "video_audit_status": "soft_failed",
+      "video_audit_summary": "",
+      "video_audit_strengths": [],
+      "video_audit_dropoff_causes": [],
+      "video_audit_repeat_next": [],
+      "video_audit_reduce_next": [],
+      "video_audit_tags": {},
+      "metrics": {
+        "views": 130,
+        "engagedViews": 7,
+        "averageViewDuration": 13,
+        "averageViewPercentage": 34.12,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1
+      },
+      "composite_score": 51.82,
+      "performance_score": 51.82,
+      "score_version": 1,
+      "hook_score": 5.38,
+      "hold_score": 34.12,
+      "resonance_score": 100.0,
+      "resonance_per_engaged": 1.1429,
+      "resonance_per_view": 0.0615,
+      "conversion_score": 100.0,
+      "conversion_rate_per_1k": 7.6923,
+      "reach_score": 70.57,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
+      "analytics_days_old": 10,
+      "data_available": true
+    },
+    {
+      "video_id": "20260522_202418",
+      "published_date": "2026-05-22",
+      "status": "uploaded",
+      "topic": "That feeling when a song hits different at 2am",
+      "category": "healing arcs",
+      "angle_type": "specific scenario",
+      "total_score": 20,
+      "source_name": "Cognitive Neuroscience / Psychology (e.g., LeDoux's work on emotional memory)",
+      "source_basis": "The concept of emotional memory and implicit memory, where past experiences and associated emotions are stored and can be triggered outside of conscious recall, often involving physiological responses.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "specific_scenario",
+      "emotional_trigger": "Listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment.",
+      "psych_concept": "Emotional memory / Somatic memory / Implicit memory",
+      "core_claim": "Some memories return through your body before your logic catches up",
+      "editorial_seed": "We've all been there: a song comes on at 2 AM and suddenly you're back in a moment you thought you'd moved past. It's not just nostalgia; it's your nervous system bringing an emotional memory to the surface.",
+      "only_soft_reset_line": "Your body remembered before your brain had a chance to argue.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If a song has ever ruined your night, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 68,
+      "estimated_duration_sec": 18,
+      "thumbnail_text": "why that song ruins you at 2am",
+      "content_fingerprint": "that feeling when a song hits different at 2am if a song has ever ruined your night this is for you listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment emotional memory somatic memory implicit memory some memories return through your body before your logic catches up your body remembered before your brain had a chance to argue",
+      "title": "The 2am song that quietly unravels you",
+      "youtube_video_id": "ypRLIoZP9O0",
+      "youtube_url": "https://youtube.com/shorts/ypRLIoZP9O0",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 8,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "healing arcs",
+        "topic_cluster": "That feeling when a song hits different at 2am",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Intriguing and relatable, immediately draws in viewers who have experienced this specific emotional reaction to music."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and evocative, clearly communicates the emotional theme within the word count."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "Establishes a specific, empathetic viewpoint on how certain music can trigger deep emotional responses."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Focuses on a 'song' as the specific trigger, which is a unique and tangible 'villain' for the scenario."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no call to action present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the content and tone, creating intrigue without overpromising."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Expands on the hook and title, providing a good emotional context for potential viewers."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming stock videos will align with the emotional tone of a 'ruined night' song, sync should be good but not perfect without seeing the edit."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images should reinforce the emotional narrative; their strength depends on execution within the edit."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "A strong concept would likely involve imagery evoking late-night solitude and emotional introspection, fitting the title."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "Short script suggests it's easily manageable for a deliberate, reflective pacing suitable for the channel's style."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The theme of emotional processing and healing aligns perfectly with the channel's established niche."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No factual claims are made, focusing entirely on subjective emotional experience. Zero policy risk."
+        }
+      },
+      "judge_composite_score": 73,
+      "strongest_element": "hook_strength",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "soft_failed",
+      "video_audit_summary": "",
+      "video_audit_strengths": [],
+      "video_audit_dropoff_causes": [],
+      "video_audit_repeat_next": [],
+      "video_audit_reduce_next": [],
+      "video_audit_tags": {},
+      "metrics": {
+        "views": 378,
+        "engagedViews": 135,
+        "averageViewDuration": 15,
+        "averageViewPercentage": 46.31,
+        "likes": 14,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1
+      },
+      "composite_score": 47.69,
+      "performance_score": 47.69,
+      "score_version": 1,
+      "hook_score": 35.71,
+      "hold_score": 46.31,
+      "resonance_score": 16.3,
+      "resonance_per_engaged": 0.163,
+      "resonance_per_view": 0.0582,
+      "conversion_score": 100.0,
+      "conversion_rate_per_1k": 2.6455,
+      "reach_score": 85.94,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
       "analytics_days_old": 10,
       "data_available": true
     },
@@ -667,8 +953,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 38.2,
-      "analytics_fetched_at": "2026-05-24T15:46:37Z",
-      "analytics_days_old": 9,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
+      "analytics_days_old": 17,
       "data_available": true
     },
     {
@@ -1003,8 +1289,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 66.94,
-      "analytics_fetched_at": "2026-05-24T15:46:37Z",
-      "analytics_days_old": 9,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
+      "analytics_days_old": 17,
       "data_available": true
     },
     {
@@ -1497,8 +1783,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 39.2,
-      "analytics_fetched_at": "2026-05-24T15:46:37Z",
-      "analytics_days_old": 9,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
+      "analytics_days_old": 17,
       "data_available": true
     },
     {
@@ -2662,173 +2948,6 @@
       "data_available": true
     },
     {
-      "video_id": "20260511_173531",
-      "published_date": "2026-05-11",
-      "status": "uploaded",
-      "topic": "The Quiet Killers of Your Dreams",
-      "category": "Conversation Truths",
-      "angle_type": "hot_take",
-      "total_score": 19,
-      "source_name": "Psychological research on relationship dynamics and self-concept",
-      "source_basis": "Emotional invalidation in relationships, self-efficacy theory, and the impact of social support on motivation",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "hot_take",
-      "emotional_trigger": "Sharing a personal dream or ambition with a partner and receiving subtle, dismissive reactions.",
-      "psych_concept": "Emotional invalidation, impact on self-efficacy and motivation in relationships",
-      "core_claim": "Subtle forms of dismissal, like lukewarm support, 'realistic' advice, or quiet disinterest, can be more damaging to your aspirations than overt negativity because they're harder to identify and confront.",
-      "editorial_seed": "We often look for big, obvious red flags, but sometimes the most insidious dream-killers are the quiet ways someone you love subtly dismisses your ambitions. It feels like they're just being 'practical,' but it slowly corrodes your confidence and sense of possibility.",
-      "only_soft_reset_line": "You didn't lose ambition. You lost the audience that kept killing it with a shrug.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Some people support you and still shrink your dreams.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 65,
-      "estimated_duration_sec": 22,
-      "thumbnail_text": "They Never Said Stop",
-      "content_fingerprint": "the quiet killers of your dreams some people support you and still shrink your dreams sharing a personal dream or ambition with a partner and receiving subtle dismissive reactions emotional invalidation impact on self efficacy and motivation in relationships subtle forms of dismissal like lukewarm support realistic advice or quiet disinterest can be more damaging to your aspirations than overt negativity because they re harder to identify and confront you didn t lose ambition you lost the audience that kept killing it with a shrug",
-      "title": "Loved ones can STILL shrink your dreams",
-      "youtube_video_id": "bRfA5Kzkjuo",
-      "youtube_url": "https://youtube.com/shorts/bRfA5Kzkjuo",
-      "fallback_count": 0,
-      "video_count": 7,
-      "total_scenes": 10,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "hot_take",
-        "category": "Conversation Truths",
-        "topic_cluster": "The Quiet Killers of Your Dreams",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 10
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook is relatable and poses an intriguing contradiction (supportive people shrinking dreams)."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and clearly conveys the central message within the short word count."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The 'hot take' angle is evident, presenting a strong, albeit brief, perspective on a common relationship dynamic."
-        },
-        "villain_mechanism_specificity": {
-          "score": 5,
-          "reason": "The script mentions 'shrink your dreams' but lacks specific examples of *how* loved ones do this, making the mechanism less clear."
-        },
-        "cta_quality": {
-          "score": 3,
-          "reason": "There is no explicit or implicit CTA in the provided script details. This is a missed opportunity."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the hook and the core topic of the video. 'Loved ones' is a good synonym for 'people'."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description expands slightly on the hook and title, giving viewers a bit more context and encouraging clicks."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "With 7 stock videos and 3 brand images for 10 scenes, there's a good opportunity for visual alignment, assuming thoughtful selection."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The mix of brand and stock images suggests a deliberate visual strategy, aiming for relatability and brand reinforcement."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "While not provided, the hook and title suggest a strong concept for a thumbnail that would be attention-grabbing and relevant."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script length and clear message are well-suited for a measured, impactful delivery, typical of the channel's style."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The topic aligns well with the channel's relationship/self-growth niche, and the 'hot take' angle fits the brand's direct approach."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The topic is a subjective observation about relationships and ambition; it carries no inherent factual claims that could be easily disproven or violate policies."
-        }
-      },
-      "judge_composite_score": 7.2,
-      "strongest_element": "Script Clarity",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively conveys a deep, empathetic emotional tone through its clear, gentle voiceover and perfectly mixed melancholic music, powerfully validating the subtle experience of dreams being undermined. While the hook aligns strongly with the title and the script's specific behavioral examples are well-delivered, the initial caption pacing and some generic visuals in the opening seconds could be optimized for quicker audience engagement. Implementing more specific and intentional visual metaphors, akin to the successful empty chair imagery, would further enhance the video's potent narrative and overall impact.",
-      "video_audit_strengths": [
-        "The consistent, introspective mood is deeply empathetic and validating, fostering a strong emotional connection with the audience.",
-        "The audio production (voiceover clarity and music mix) is exceptionally well done, creating a professional and engaging listening experience.",
-        "Effective use of subtle visual metaphors, particularly the empty coffee cup ('lukewarm') and the empty chair ('lost audience'), which powerfully illustrate abstract emotional concepts.",
-        "The voiceover's delivery of the script's specific behavioral examples ('that specific tone') makes the abstract concept tangible and relatable."
-      ],
-      "video_audit_dropoff_causes": [
-        "Slow initial caption pacing and generic visuals in the first 2-3 seconds might not immediately hook viewers in a fast-paced Shorts feed.",
-        "Some visual transitions feel a bit disconnected or jarring, reducing the flow and immersion (e.g., switching between different women in contemplative poses).",
-        "The abstract nature of certain visuals might not immediately resonate with all viewers, potentially losing engagement if the metaphor isn't grasped quickly."
-      ],
-      "video_audit_repeat_next": [
-        "Maintain the consistent, empathetic voiceover delivery and melancholic background music, as these are significant strengths.",
-        "Continue using subtle and intentional visual metaphors to illustrate complex emotional concepts, especially those that evoke absence or quiet dismissal.",
-        "Prioritize high-quality audio production, ensuring crystal-clear narration and perfectly balanced background elements.",
-        "Ensure the core emotional trigger is addressed and validated throughout the narrative and visual presentation."
-      ],
-      "video_audit_reduce_next": [
-        "Avoid generic 'pensive person' stock footage; aim for more unique or direct visual representations of the specific emotion or action being described in the opening.",
-        "Increase the pace of caption delivery in the first few seconds to grab attention more quickly and clarify the hook's full statement.",
-        "Minimize jarring visual transitions, striving for smoother, more thematically connected shifts between clips to maintain viewer flow."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Contrarian Statement",
-        "thumbnail_type": "Symbolic Imagery",
-        "visual_style_mix": "Melancholic, Introspective, Cinematic",
-        "narrative_format": "Personal Reflection, Direct Address",
-        "character_used": "The Dreamer, The Empath"
-      },
-      "metrics": {
-        "views": 20,
-        "engagedViews": 4,
-        "averageViewDuration": 12,
-        "averageViewPercentage": 33.25,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 18.84,
-      "performance_score": 18.84,
-      "score_version": 1,
-      "hook_score": 20.0,
-      "hold_score": 33.25,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 44.07,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 18,
-      "data_available": true
-    },
-    {
       "video_id": "20260513_170132",
       "published_date": "2026-05-13",
       "status": "uploaded",
@@ -2992,6 +3111,172 @@
       "reach_score": 37.13,
       "analytics_fetched_at": "2026-05-29T01:34:05Z",
       "analytics_days_old": 16,
+      "data_available": true
+    },
+    {
+      "video_id": "20260530_012940",
+      "published_date": "2026-05-30",
+      "status": "uploaded",
+      "topic": "The \"I'll be back\" fantasy that keeps you stuck",
+      "category": "healing arcs",
+      "angle_type": "reframe",
+      "total_score": 19,
+      "source_name": "Attachment Theory / Cognitive Behavioral Therapy (CBT)",
+      "source_basis": "Attachment theory (Bowlby, Ainsworth) on attachment styles and their impact on coping with relationship loss, alongside principles of cognitive behavioral therapy regarding unhelpful thought patterns (rumination, wishful thinking).",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "truth_drop",
+      "emotional_trigger": "The persistent hope and rumination over an ex's potential return, often manifested in checking social media or re-reading old messages.",
+      "psych_concept": "Anxious attachment, rumination, and cognitive distortions in post-breakup healing",
+      "core_claim": "Waiting for someone to change *for you* keeps you from building a future with someone who already values you.",
+      "editorial_seed": "We often hold onto the idea of an ex returning as a comfort, a proof of our worth. But this fantasy can prevent us from truly healing and recognizing that someone who left once might not have the capacity to stay long-term, no matter how much we wish for it.",
+      "only_soft_reset_line": "You're not waiting for them. You're waiting for proof you mattered.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Still checking their profile, just to see? This is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 74,
+      "estimated_duration_sec": 26,
+      "thumbnail_text": "Still waiting for them to come back?",
+      "content_fingerprint": "the i ll be back fantasy that keeps you stuck still checking their profile just to see this is for you the persistent hope and rumination over an ex s potential return often manifested in checking social media or re reading old messages anxious attachment rumination and cognitive distortions in post breakup healing waiting for someone to change for you keeps you from building a future with someone who already values you you re not waiting for them you re waiting for proof you mattered",
+      "title": "Still checking? You're STILL waiting for them",
+      "youtube_video_id": "N-ri5uKLvVU",
+      "youtube_url": "https://youtube.com/shorts/N-ri5uKLvVU",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 10,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "The \"I'll be back\" fantasy that keeps you stuck",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Directly addresses a common, relatable behavior (checking profiles) and creates immediate intrigue."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and directly addresses the core issue of lingering hope and the need to move on."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "The 'reframe' angle and focus on internal mechanisms (mind waiting) are characteristic of the channel's self-growth approach."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "Identifies the 'I'll be back fantasy' as the villain mechanism, which is specific enough but could be slightly more detailed."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "No explicit CTA is provided in the script or details. This needs to be added."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the hook and the core theme of the video; honest about the user's state."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Clearly states the problem (checking profiles) and the solution (understanding why you're stuck), aligning with the title and hook."
+        },
+        "visual_dialogue_sync": {
+          "score": 8,
+          "reason": "With 8 stock videos and 2 brand images for 10 scenes, the intention is likely good sync, assuming relevant visuals are chosen."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The prompt doesn't detail the specific content of the brand images or stock videos, so this is based on assumed quality for a 'healing arcs' theme."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "Not provided in details, but the hook/title suggest a strong concept related to profiles or waiting."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The script is short (74 words), allowing for deliberate and effective pacing within 42 seconds."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The focus on internal psychological mechanisms and reframing aligns perfectly with the channel's established identity."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is psychological and self-help oriented, posing no factual risk or policy violations."
+        }
+      },
+      "judge_composite_score": 8.1,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "The Short \"Still checking? You're STILL waiting for them\" effectively delivers a truth-drop message through a compelling blend of empathetic voiceover, melancholic music, and highly symbolic visuals. Its strong hook immediately draws in the audience, supported by precise, single-word captions that enhance readability and emotional impact. While most visuals are powerfully resonant, a few moments of abstract imagery could potentially cause minor, momentary disengagement. Overall, the video masterfully maintains a consistent, supportive tone, guiding viewers through a profound reframe of their emotional state towards self-worth.",
+      "video_audit_strengths": [
+        "The empathetic yet firm delivery of the voiceover that establishes both understanding and authority.",
+        "The effective use of single-word, well-timed captions that enhance comprehension and impact without being distracting.",
+        "The subtle film grain overlay that adds a consistent, melancholic aesthetic throughout the video.",
+        "The powerful visual of hands reaching then retracting, perfectly symbolizing the core conflict."
+      ],
+      "video_audit_dropoff_causes": [
+        "The abstract visual of stirring coffee (0:23-0:26) might briefly disengage viewers who prefer more direct or emotionally resonant imagery.",
+        "The metaphor of the person tied with red strings, while powerful, could be slightly ambiguous for some in a fast-paced Shorts feed, requiring a moment of interpretation."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the high quality and emotional resonance of the voiceover delivery.",
+        "Continue the practice of precise, single-word or short-phrase captioning for maximum impact and readability.",
+        "Replicate the careful audio mixing that allows the music to support the message without overpowering the voice.",
+        "Utilize strong, symbolic visual metaphors that directly align with the script's emotional beats (e.g., the red strings, the hands).",
+        "Ensure the ending call-to-action is concise and clear."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize reliance on abstract or less directly relevant stock footage (e.g., the coffee stirring shot) unless its metaphorical connection is immediately obvious and integrated.",
+        "Avoid visuals that, while aesthetically pleasing, do not deepen the narrative or emotional connection to the script's specific claims."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Direct Address",
+        "thumbnail_type": "Text Overlay",
+        "visual_style_mix": "Reflective, Melancholic, Symbolic",
+        "narrative_format": "Truth Drop, Reframe",
+        "character_used": "None (Faceless Voiceover)"
+      },
+      "metrics": {
+        "views": 41,
+        "engagedViews": 3,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 27.67,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 14.22,
+      "performance_score": 14.22,
+      "score_version": 1,
+      "hook_score": 7.32,
+      "hold_score": 27.67,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 54.1,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
+      "analytics_days_old": 2,
       "data_available": true
     },
     {
@@ -3292,434 +3577,6 @@
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-29T01:34:05Z",
       "analytics_days_old": 9,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260522_013246",
-      "published_date": "2026-05-22",
-      "status": "uploaded",
-      "topic": "Dating app burnout isn't one big event. It's 100 tiny losses.",
-      "category": "Identity and Growth",
-      "angle_type": "truth_drop",
-      "total_score": 18,
-      "source_name": "General psychology consensus",
-      "source_basis": "Psychological principles of cumulative stress, micro-grief, and rejection sensitivity.",
-      "source_url": "",
-      "confidence_level": "observational",
-      "content_format": "truth_drop",
-      "emotional_trigger": "The feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps.",
-      "psych_concept": "Cumulative stress, unacknowledged grief, rejection sensitivity",
-      "core_claim": "The emotional weight of modern dating comes from the small, unacknowledged disappointments that add up, rather than just dramatic breakups.",
-      "editorial_seed": "We don't acknowledge the little losses on dating apps: the hopeful first messages, the almost-connections, the slow fade-outs. Each one is a tiny grief, and they stack up until you feel completely drained, even without a big, dramatic ending.",
-      "only_soft_reset_line": "Nobody ghosted you dramatically. They just quietly never became anyone.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Every unmatched conversation cost you something. You just never counted it.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 62,
-      "estimated_duration_sec": 30,
-      "thumbnail_text": "100 tiny losses",
-      "content_fingerprint": "dating app burnout isn t one big event it s 100 tiny losses every unmatched conversation cost you something you just never counted it the feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps cumulative stress unacknowledged grief rejection sensitivity the emotional weight of modern dating comes from the small unacknowledged disappointments that add up rather than just dramatic breakups nobody ghosted you dramatically they just quietly never became anyone",
-      "title": "Every unmatched chat quietly drains you",
-      "youtube_video_id": "yL7ckEhDVpQ",
-      "youtube_url": "https://youtube.com/shorts/yL7ckEhDVpQ",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 12,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W21",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "truth_drop",
-        "category": "Identity and Growth",
-        "topic_cluster": "Dating app burnout isn't one big event. It's 100 tiny losses",
-        "visual_style_mix": "balanced",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 12
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "The hook is strong and introduces an intriguing concept by quantifying the unquantified cost of unmatched conversations."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and directly addresses the core idea of dating burnout stemming from multiple small losses."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The POV is clearly about the emotional toll of dating and the concept of burnout, fitting the channel's identity."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' is 'unmatched conversations' and the mechanism is 'draining' or 'tiny losses'. It's specific enough to be relatable but could be more detailed."
-        },
-        "cta_quality": {
-          "score": 3,
-          "reason": "There is no explicit Call to Action (CTA) present in the provided details. This is a significant omission."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the core message of the hook and the script's theme of being drained by unmatched chats."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description is useful as it expands on the hook and title, introducing the concept of 'dating burnout' and '100 tiny losses'."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming stock videos and brand images are chosen to match the themes of dating, frustration, and introspection, sync should be adequate. However, without seeing the actual video, it's an assumption."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The use of brand images (4) and stock videos (8) suggests an effort to visually support the narrative. Strength depends on execution, but the balance is reasonable for a short video."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The concept likely revolves around the title and hook's theme (drained, unmatched). A strong thumbnail would visually represent the emotional cost of dating."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "Given the short script (62 words) and duration (36s), pacing should be manageable for a clear and deliberate narration, fitting a 'truth drop' style."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The identity and growth category, truth drop angle, and focus on self-perception align well with a channel like Soft Reset With Me."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is subjective and discusses emotional experiences, posing no apparent factual risk or policy violation."
-        }
-      },
-      "judge_composite_score": 7.3,
-      "strongest_element": "script_clarity",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This video masterfully uses an empathetic voiceover, melancholic music, and well-paced captions to deliver its 'truth drop' on dating app burnout, making a strong emotional connection with its audience from the hook. While the visual aesthetic is largely cohesive and reinforces the mood, some generic stock footage and occasional visual overlays slightly reduce specificity and could contribute to viewer drop-off. The poignant delivery of the signature line and the consistent, validating tone are key strengths to replicate, while future videos could benefit from increased visual variety and fewer distracting overlays to enhance engagement.",
-      "video_audit_strengths": [
-        "Voiceover performance: The narrator's tone is perfectly empathetic, gentle, and reflective, crucial for a 'truth drop' format, making the emotional message deeply resonant.",
-        "Powerful signature line delivery: The loopback line, 'They just quietly never became anyone,' is delivered with a subtle emotional weight that elevates its impact and makes it highly memorable.",
-        "Cohesive aesthetic: Despite some minor issues with visual specificity, the overall dark, moody, and contemplative visual aesthetic is consistently maintained, effectively supporting the narrative's emotional depth."
-      ],
-      "video_audit_dropoff_causes": [
-        "Pacing of visual changes: While captions are well-timed, the visual cuts and scene progression can sometimes feel slightly slow for a rapidly consumed Short, potentially leading to disengagement.",
-        "Generic or overlaid visuals: Some stock footage choices are less specific to the narration, and the use of visual overlays occasionally makes scenes busy or less clear, which could cause viewers to lose focus.",
-        "Solely introspective/validating content: As a 'truth drop,' the video is purely observational. Viewers seeking immediate actionable advice or a lighter tone might drop off once the core insight is delivered."
-      ],
-      "video_audit_repeat_next": [
-        "Empathetic, validating voiceover tone and delivery.",
-        "Clear, easy-to-read captions synced to the narration.",
-        "Consistent emotional pacing and subtle, supportive musical backing.",
-        "Strong, relatable, and specific hooks and signature lines that validate audience experiences."
-      ],
-      "video_audit_reduce_next": [
-        "Visual overlays: Minimize or eliminate instances where one visual is semi-transparently overlaid on another, as it can detract from clarity and focus.",
-        "Generic stock footage: Prioritize more unique, specific, or powerfully metaphorical visuals that directly illustrate the script's nuances rather than relying on broadly melancholic scenes.",
-        "Repetitive visual themes: While the mood is consistent, aim for slightly more visual variety in depicting sadness or introspection to keep the viewer engaged."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Emotional Validation",
-        "thumbnail_type": "Text Overlay (Concept)",
-        "visual_style_mix": "Cinematic Melancholy",
-        "narrative_format": "Deep Dive (Emotional)",
-        "character_used": "N/A"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-24T15:46:37Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260522_202418",
-      "published_date": "2026-05-22",
-      "status": "uploaded",
-      "topic": "That feeling when a song hits different at 2am",
-      "category": "healing arcs",
-      "angle_type": "specific scenario",
-      "total_score": 20,
-      "source_name": "Cognitive Neuroscience / Psychology (e.g., LeDoux's work on emotional memory)",
-      "source_basis": "The concept of emotional memory and implicit memory, where past experiences and associated emotions are stored and can be triggered outside of conscious recall, often involving physiological responses.",
-      "source_url": "",
-      "confidence_level": "therapist_consensus",
-      "content_format": "specific_scenario",
-      "emotional_trigger": "Listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment.",
-      "psych_concept": "Emotional memory / Somatic memory / Implicit memory",
-      "core_claim": "Some memories return through your body before your logic catches up",
-      "editorial_seed": "We've all been there: a song comes on at 2 AM and suddenly you're back in a moment you thought you'd moved past. It's not just nostalgia; it's your nervous system bringing an emotional memory to the surface.",
-      "only_soft_reset_line": "Your body remembered before your brain had a chance to argue.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If a song has ever ruined your night, this is for you.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 68,
-      "estimated_duration_sec": 18,
-      "thumbnail_text": "why that song ruins you at 2am",
-      "content_fingerprint": "that feeling when a song hits different at 2am if a song has ever ruined your night this is for you listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment emotional memory somatic memory implicit memory some memories return through your body before your logic catches up your body remembered before your brain had a chance to argue",
-      "title": "The 2am song that quietly unravels you",
-      "youtube_video_id": "ypRLIoZP9O0",
-      "youtube_url": "https://youtube.com/shorts/ypRLIoZP9O0",
-      "fallback_count": 0,
-      "video_count": 6,
-      "total_scenes": 8,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W21",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "specific scenario",
-        "category": "healing arcs",
-        "topic_cluster": "That feeling when a song hits different at 2am",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 8
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 9,
-          "reason": "Intriguing and relatable, immediately draws in viewers who have experienced this specific emotional reaction to music."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "Concise and evocative, clearly communicates the emotional theme within the word count."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "Establishes a specific, empathetic viewpoint on how certain music can trigger deep emotional responses."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "Focuses on a 'song' as the specific trigger, which is a unique and tangible 'villain' for the scenario."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no call to action present in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "Accurately reflects the content and tone, creating intrigue without overpromising."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Expands on the hook and title, providing a good emotional context for potential viewers."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming stock videos will align with the emotional tone of a 'ruined night' song, sync should be good but not perfect without seeing the edit."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "Brand images should reinforce the emotional narrative; their strength depends on execution within the edit."
-        },
-        "thumbnail_concept": {
-          "score": 8,
-          "reason": "A strong concept would likely involve imagery evoking late-night solitude and emotional introspection, fitting the title."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "Short script suggests it's easily manageable for a deliberate, reflective pacing suitable for the channel's style."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The theme of emotional processing and healing aligns perfectly with the channel's established niche."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "No factual claims are made, focusing entirely on subjective emotional experience. Zero policy risk."
-        }
-      },
-      "judge_composite_score": 73,
-      "strongest_element": "hook_strength",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 9,
-      "video_audit_status": "soft_failed",
-      "video_audit_summary": "",
-      "video_audit_strengths": [],
-      "video_audit_dropoff_causes": [],
-      "video_audit_repeat_next": [],
-      "video_audit_reduce_next": [],
-      "video_audit_tags": {},
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-24T15:46:37Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260522_234228",
-      "published_date": "2026-05-22",
-      "status": "uploaded",
-      "topic": "What anxious attachment actually looks like in real life",
-      "category": "psychology drops",
-      "angle_type": "psychology drop",
-      "total_score": 20,
-      "source_name": "John Bowlby, Mary Ainsworth (Attachment Theory); general contemporary psychology consensus",
-      "source_basis": "Anxious Attachment (Attachment Theory), Rumination, Rejection Sensitivity",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "psychology_drop",
-      "emotional_trigger": "Obsessive overthinking of communication in relationships, often triggered by ambiguous messages or silence.",
-      "psych_concept": "Anxious attachment, rumination, hypervigilance, rejection sensitivity.",
-      "core_claim": "Sometimes it looks like rereading one sentence until it hurts",
-      "editorial_seed": "Anxious attachment isn't just about seeking constant reassurance or being 'needy.' Often, it manifests internally as obsessive rumination over small details, searching for hidden meanings or potential rejections. This quiet suffering can be more draining than overt displays.",
-      "only_soft_reset_line": "You read it six times looking for the part where they stopped caring.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "You don't argue. You just go quiet and wait to be left.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 71,
-      "estimated_duration_sec": 28,
-      "thumbnail_text": "anxious attachment is quiet",
-      "content_fingerprint": "what anxious attachment actually looks like in real life you don t argue you just go quiet and wait to be left obsessive overthinking of communication in relationships often triggered by ambiguous messages or silence anxious attachment rumination hypervigilance rejection sensitivity sometimes it looks like rereading one sentence until it hurts you read it six times looking for the part where they stopped caring",
-      "title": "You go quiet and wait to be left",
-      "youtube_video_id": "tvgtuZlTwzk",
-      "youtube_url": "https://youtube.com/shorts/tvgtuZlTwzk",
-      "fallback_count": 0,
-      "video_count": 6,
-      "total_scenes": 8,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W21",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "psychology drop",
-        "category": "psychology drops",
-        "topic_cluster": "What anxious attachment actually looks like in real life",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 8
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Direct and intriguing, immediately identifies a common, painful behavior."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "Concise and easy to understand, gets straight to the point about anxious attachment."
-        },
-        "editorial_pov": {
-          "score": 7,
-          "reason": "The POV is clear but could be more distinctive to the channel's specific tone."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "Clearly identifies 'going quiet' as a maladaptive coping mechanism driven by fear of abandonment."
-        },
-        "cta_quality": {
-          "score": 2,
-          "reason": "No clear CTA was provided in the script."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "Accurately reflects the core behavior discussed in the video."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Effectively summarizes the video's topic and connects it to anxious attachment, providing context."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Stock footage needs to be carefully selected to truly enhance the script's emotional weight."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "Brand images are present but their strategic placement and impact could be stronger."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The concept is relevant, but could be more visually striking and attention-grabbing."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script allows for deliberate pacing, assuming a good voiceover performance."
-        },
-        "brand_consistency": {
-          "score": 7,
-          "reason": "While the topic fits, the execution needs to ensure it aligns with the channel's established feel."
-        },
-        "policy_factual_risk": {
-          "score": 9,
-          "reason": "General psychological observation, low risk of factual inaccuracy or policy violation."
-        }
-      },
-      "judge_composite_score": 6.8,
-      "strongest_element": "script_clarity",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 6,
-      "video_audit_status": "soft_failed",
-      "video_audit_summary": "",
-      "video_audit_strengths": [],
-      "video_audit_dropoff_causes": [],
-      "video_audit_repeat_next": [],
-      "video_audit_reduce_next": [],
-      "video_audit_tags": {},
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-24T15:46:37Z",
-      "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
     },
@@ -4649,6 +4506,164 @@
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-27T01:36:48Z",
       "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260522_013246",
+      "published_date": "2026-05-22",
+      "status": "uploaded",
+      "topic": "Dating app burnout isn't one big event. It's 100 tiny losses.",
+      "category": "Identity and Growth",
+      "angle_type": "truth_drop",
+      "total_score": 18,
+      "source_name": "General psychology consensus",
+      "source_basis": "Psychological principles of cumulative stress, micro-grief, and rejection sensitivity.",
+      "source_url": "",
+      "confidence_level": "observational",
+      "content_format": "truth_drop",
+      "emotional_trigger": "The feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps.",
+      "psych_concept": "Cumulative stress, unacknowledged grief, rejection sensitivity",
+      "core_claim": "The emotional weight of modern dating comes from the small, unacknowledged disappointments that add up, rather than just dramatic breakups.",
+      "editorial_seed": "We don't acknowledge the little losses on dating apps: the hopeful first messages, the almost-connections, the slow fade-outs. Each one is a tiny grief, and they stack up until you feel completely drained, even without a big, dramatic ending.",
+      "only_soft_reset_line": "Nobody ghosted you dramatically. They just quietly never became anyone.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Every unmatched conversation cost you something. You just never counted it.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 62,
+      "estimated_duration_sec": 30,
+      "thumbnail_text": "100 tiny losses",
+      "content_fingerprint": "dating app burnout isn t one big event it s 100 tiny losses every unmatched conversation cost you something you just never counted it the feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps cumulative stress unacknowledged grief rejection sensitivity the emotional weight of modern dating comes from the small unacknowledged disappointments that add up rather than just dramatic breakups nobody ghosted you dramatically they just quietly never became anyone",
+      "title": "Every unmatched chat quietly drains you",
+      "youtube_video_id": "yL7ckEhDVpQ",
+      "youtube_url": "https://youtube.com/shorts/yL7ckEhDVpQ",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 12,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "Identity and Growth",
+        "topic_cluster": "Dating app burnout isn't one big event. It's 100 tiny losses",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook is strong and introduces an intriguing concept by quantifying the unquantified cost of unmatched conversations."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and directly addresses the core idea of dating burnout stemming from multiple small losses."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The POV is clearly about the emotional toll of dating and the concept of burnout, fitting the channel's identity."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "The 'villain' is 'unmatched conversations' and the mechanism is 'draining' or 'tiny losses'. It's specific enough to be relatable but could be more detailed."
+        },
+        "cta_quality": {
+          "score": 3,
+          "reason": "There is no explicit Call to Action (CTA) present in the provided details. This is a significant omission."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the core message of the hook and the script's theme of being drained by unmatched chats."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description is useful as it expands on the hook and title, introducing the concept of 'dating burnout' and '100 tiny losses'."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming stock videos and brand images are chosen to match the themes of dating, frustration, and introspection, sync should be adequate. However, without seeing the actual video, it's an assumption."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The use of brand images (4) and stock videos (8) suggests an effort to visually support the narrative. Strength depends on execution, but the balance is reasonable for a short video."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The concept likely revolves around the title and hook's theme (drained, unmatched). A strong thumbnail would visually represent the emotional cost of dating."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "Given the short script (62 words) and duration (36s), pacing should be manageable for a clear and deliberate narration, fitting a 'truth drop' style."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The identity and growth category, truth drop angle, and focus on self-perception align well with a channel like Soft Reset With Me."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is subjective and discusses emotional experiences, posing no apparent factual risk or policy violation."
+        }
+      },
+      "judge_composite_score": 7.3,
+      "strongest_element": "script_clarity",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This video masterfully uses an empathetic voiceover, melancholic music, and well-paced captions to deliver its 'truth drop' on dating app burnout, making a strong emotional connection with its audience from the hook. While the visual aesthetic is largely cohesive and reinforces the mood, some generic stock footage and occasional visual overlays slightly reduce specificity and could contribute to viewer drop-off. The poignant delivery of the signature line and the consistent, validating tone are key strengths to replicate, while future videos could benefit from increased visual variety and fewer distracting overlays to enhance engagement.",
+      "video_audit_strengths": [
+        "Voiceover performance: The narrator's tone is perfectly empathetic, gentle, and reflective, crucial for a 'truth drop' format, making the emotional message deeply resonant.",
+        "Powerful signature line delivery: The loopback line, 'They just quietly never became anyone,' is delivered with a subtle emotional weight that elevates its impact and makes it highly memorable.",
+        "Cohesive aesthetic: Despite some minor issues with visual specificity, the overall dark, moody, and contemplative visual aesthetic is consistently maintained, effectively supporting the narrative's emotional depth."
+      ],
+      "video_audit_dropoff_causes": [
+        "Pacing of visual changes: While captions are well-timed, the visual cuts and scene progression can sometimes feel slightly slow for a rapidly consumed Short, potentially leading to disengagement.",
+        "Generic or overlaid visuals: Some stock footage choices are less specific to the narration, and the use of visual overlays occasionally makes scenes busy or less clear, which could cause viewers to lose focus.",
+        "Solely introspective/validating content: As a 'truth drop,' the video is purely observational. Viewers seeking immediate actionable advice or a lighter tone might drop off once the core insight is delivered."
+      ],
+      "video_audit_repeat_next": [
+        "Empathetic, validating voiceover tone and delivery.",
+        "Clear, easy-to-read captions synced to the narration.",
+        "Consistent emotional pacing and subtle, supportive musical backing.",
+        "Strong, relatable, and specific hooks and signature lines that validate audience experiences."
+      ],
+      "video_audit_reduce_next": [
+        "Visual overlays: Minimize or eliminate instances where one visual is semi-transparently overlaid on another, as it can detract from clarity and focus.",
+        "Generic stock footage: Prioritize more unique, specific, or powerfully metaphorical visuals that directly illustrate the script's nuances rather than relying on broadly melancholic scenes.",
+        "Repetitive visual themes: While the mood is consistent, aim for slightly more visual variety in depicting sadness or introspection to keep the viewer engaged."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Emotional Validation",
+        "thumbnail_type": "Text Overlay (Concept)",
+        "visual_style_mix": "Cinematic Melancholy",
+        "narrative_format": "Deep Dive (Emotional)",
+        "character_used": "N/A"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
+      "analytics_days_old": 10,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
     }
