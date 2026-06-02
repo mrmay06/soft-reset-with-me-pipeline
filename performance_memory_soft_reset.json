@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-01T01:40:13Z",
+  "generated_at": "2026-06-02T02:00:10Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-16",
-  "end_date": "2026-05-31",
+  "start_date": "2026-04-17",
+  "end_date": "2026-06-01",
   "videos": [
     {
       "video_id": "20260521_173815",
@@ -622,8 +622,173 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 42.62,
-      "analytics_fetched_at": "2026-05-25T23:42:04Z",
-      "analytics_days_old": 9,
+      "analytics_fetched_at": "2026-06-02T02:00:10Z",
+      "analytics_days_old": 17,
+      "data_available": true
+    },
+    {
+      "video_id": "20260523_222914",
+      "published_date": "2026-05-23",
+      "status": "uploaded",
+      "topic": "They didn't 'shut down.' Their nervous system just went offline.",
+      "category": "Psychology Drops",
+      "angle_type": "psychology_drop",
+      "total_score": 18,
+      "source_name": "Stephen Porges, et al.",
+      "source_basis": "Polyvagal Theory; Autonomic Nervous System's fight-flight-freeze responses",
+      "source_url": "",
+      "confidence_level": "peer_reviewed",
+      "content_format": "reframe",
+      "emotional_trigger": "Feeling dismissed or disrespected when a partner 'shuts down' during an argument.",
+      "psych_concept": "Freeze response / Nervous system overwhelm",
+      "core_claim": "When someone 'shuts down,' it's often a physiological freeze response to perceived threat or emotional overwhelm, not necessarily a conscious choice to be avoidant or disrespectful.",
+      "editorial_seed": "It's easy to interpret 'shutting down' as a personal slight or disinterest, but often it's a primal, automatic response. Understanding this doesn't excuse behavior, but it can shift the conversation from blame to regulation and repair.",
+      "only_soft_reset_line": "They went blank. That's not indifference. That's a body hitting its limit.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "Their silence isn't coldness. Their brain literally went offline.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 69,
+      "estimated_duration_sec": 22,
+      "thumbnail_text": "They didn't check out. They shut down.",
+      "content_fingerprint": "they didn t shut down their nervous system just went offline their silence isn t coldness their brain literally went offline feeling dismissed or disrespected when a partner shuts down during an argument freeze response nervous system overwhelm when someone shuts down it s often a physiological freeze response to perceived threat or emotional overwhelm not necessarily a conscious choice to be avoidant or disrespectful they went blank that s not indifference that s a body hitting its limit",
+      "title": "You didn't shut down. Your brain went OFFLINE",
+      "youtube_video_id": "o2dP_RYLNtY",
+      "youtube_url": "https://youtube.com/shorts/o2dP_RYLNtY",
+      "fallback_count": 0,
+      "video_count": 10,
+      "total_scenes": 14,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology_drop",
+        "category": "Psychology Drops",
+        "topic_cluster": "They didn't 'shut down.' Their nervous system just went offl",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 14
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and directly addresses a common relational experience with a surprising explanation."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and clearly explains the concept of the brain going 'offline' as a safety mechanism."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is empathetic and educational, fitting the channel's self-growth niche. Could be slightly more distinctive."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Effectively names the 'villain' (brain going offline) and its mechanism (safety response to overwhelm)."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no CTA present in the provided details. This is a critical omission for engagement."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title is highly accurate to the hook and script's core message. 'Shut down' is a strong synonym for 'offline'."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Provides a concise, engaging summary that accurately reflects the video's content and offers a clear benefit."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Stock videos and brand images are generally suitable for psychology drops, but synchronization effectiveness is not fully assessable without the actual video."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "The mix of stock and brand images is typical. Strength depends heavily on execution and relevance, which is hard to judge here."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "A strong thumbnail would likely feature a visual metaphor for 'offline' or 'brain shutdown' paired with an evocative image. Concept is strong, execution is key."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script and clear message suggest good pacing potential. The 39s duration is ideal for this format."
+        },
+        "brand_consistency": {
+          "score": 7,
+          "reason": "The psychology drop angle and empathetic tone align with a self-growth channel. The brand images contribute to this."
+        },
+        "policy_factual_risk": {
+          "score": 9,
+          "reason": "The explanation is a simplified psychological concept, but generally accepted and presented as a potential experience, not a diagnostic tool. Low risk."
+        }
+      },
+      "judge_composite_score": 7.08,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 7,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively conveys its empathetic message through a strong textual hook, clear voiceover, and perfectly chosen background music, all aligning well with the brand's emotional tone. While the audio quality and emotional resonance are exemplary, the visual storytelling could benefit from more cohesive transitions and less generic imagery. Occasional fast caption pacing also presents a minor hurdle to full viewer comprehension. Future videos should aim for a more integrated visual narrative and refined caption timing, building upon the solid foundation of audio and emotional delivery.",
+      "video_audit_strengths": [
+        "The voiceover delivery is exceptionally calm, empathetic, and engaging, perfectly embodying the brand's intended tone.",
+        "The background music is masterfully selected, subtly enhancing the emotional depth and introspective mood of the content without distraction.",
+        "The strategic use of single-word or short-phrase text overlays effectively highlights key concepts and reinforces the message, even when visuals are varied."
+      ],
+      "video_audit_dropoff_causes": [
+        "Abrupt visual transitions between disparate stock footage clips can be jarring and may disrupt viewer engagement.",
+        "Occasional fast pacing of multi-word captions might cause some viewers to miss key information or feel rushed.",
+        "The lack of a direct, spoken call to action or a more visually engaging closing segment before the end card could lead to a passive viewer experience at the end."
+      ],
+      "video_audit_repeat_next": [
+        "Continue to prioritize high-quality voiceover and audio mixing for clear and pleasant listening.",
+        "Maintain the empathetic and understanding emotional tone in both script and delivery.",
+        "Utilize short, impactful text overlays to emphasize core messages and key psychological concepts."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize abrupt visual cuts between unrelated scenes or individuals to create a more fluid and continuous visual narrative.",
+        "Avoid generic stock footage when more metaphoric or specific imagery could reinforce the message more powerfully.",
+        "Reduce instances of rapid, multi-word caption displays to ensure all text is easily readable by viewers."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Reframe/Intrigue",
+        "thumbnail_type": "Text-on-Image/Conceptual",
+        "visual_style_mix": "Emotional/Abstract/Stock",
+        "narrative_format": "Explainer/Insight",
+        "character_used": "Relatable Everyperson"
+      },
+      "metrics": {
+        "views": 36,
+        "engagedViews": 15,
+        "averageViewDuration": 20,
+        "averageViewPercentage": 51.71,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 32.46,
+      "performance_score": 32.46,
+      "score_version": 1,
+      "hook_score": 41.67,
+      "hold_score": 51.71,
+      "resonance_score": 6.67,
+      "resonance_per_engaged": 0.0667,
+      "resonance_per_view": 0.0278,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 52.27,
+      "analytics_fetched_at": "2026-06-02T02:00:10Z",
+      "analytics_days_old": 10,
       "data_available": true
     },
     {
@@ -1294,170 +1459,6 @@
       "data_available": true
     },
     {
-      "video_id": "20260512_191324",
-      "published_date": "2026-05-12",
-      "status": "uploaded",
-      "topic": "The quiet weight of the expectations you didn't know you had",
-      "category": "Identity and Growth",
-      "angle_type": "psychology_drop",
-      "total_score": 20,
-      "source_name": "Psychological principles, therapeutic consensus",
-      "source_basis": "The concept of implicit or unspoken expectations in relationships, often rooted in early life experiences or schemas, is a fundamental aspect of many psychotherapeutic approaches to relationship health and personal growth.",
-      "source_url": "",
-      "confidence_level": "therapist_consensus",
-      "content_format": "psychology_drop",
-      "emotional_trigger": "Feeling unexplained disappointment or resentment in a relationship, stemming from invisible needs or rules.",
-      "psych_concept": "Implicit relationship expectations, relational schemas, unconscious biases",
-      "core_claim": "Many relationship disappointments stem not from explicit disagreements, but from hidden, unspoken expectations we carried in from childhood or past experiences.",
-      "editorial_seed": "We all walk into relationships with a hidden backpack full of 'rules' and expectations we absorbed growing up or from previous partners. These aren't things we consciously decided on; they just *are*. When a partner doesn't meet these invisible standards, it feels like a personal slight, but it's really an opportunity to uncover your own unconscious beliefs.",
-      "only_soft_reset_line": "You're holding them to a contract they never signed.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Nobody hurt you. Nothing specific happened. You're just quietly disappointed, and you don't know why.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 71,
-      "estimated_duration_sec": 28,
-      "thumbnail_text": "The rule you never said out loud",
-      "content_fingerprint": "the quiet weight of the expectations you didn t know you had nobody hurt you nothing specific happened you re just quietly disappointed and you don t know why feeling unexplained disappointment or resentment in a relationship stemming from invisible needs or rules implicit relationship expectations relational schemas unconscious biases many relationship disappointments stem not from explicit disagreements but from hidden unspoken expectations we carried in from childhood or past experiences you re holding them to a contract they never signed",
-      "title": "Quietly disappointed for NO reason",
-      "youtube_video_id": "NVZAk2dLYFk",
-      "youtube_url": "https://youtube.com/shorts/NVZAk2dLYFk",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 11,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "fragment",
-        "angle_type": "psychology_drop",
-        "category": "Identity and Growth",
-        "topic_cluster": "The quiet weight of the expectations you didn't know you had",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 11
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 9,
-          "reason": "The hook is compelling as it taps into a common, yet often unexplained, feeling of dissatisfaction. It's relatable and immediately piques curiosity."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and clearly explains the underlying cause of the 'quiet disappointment' as unspoken expectations, making it easy to understand."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The POV is established as understanding and insightful, guiding the viewer toward self-reflection and recognizing internal dynamics."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "The 'villain' is identified as unspoken, invisible expectations, which is specific enough for this psychology drop format and relatable."
-        },
-        "cta_quality": {
-          "score": 5,
-          "reason": "There is no explicit CTA present in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the hook and the core message of the video \u2013 experiencing disappointment without an obvious external cause."
-        },
-        "description_usefulness": {
-          "score": 9,
-          "reason": "The description effectively summarizes the video's topic and offers a clear benefit to the viewer, encouraging them to watch and understand their 'invisible burdens'."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming standard stock footage usage, the visual sync is likely adequate for a psychology drop, but direct examples of strong sync are not provided."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The use of brand images (3) suggests an intention for brand consistency, and stock videos (8) are standard. Their strength depends on execution not detailed here."
-        },
-        "thumbnail_concept": {
-          "score": 8,
-          "reason": "Based on the hook and title, a thumbnail concept could effectively convey the feeling of quiet, internal disappointment, likely through evocative imagery."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "With a short script (71 words) and short duration (38s), the pacing can easily be controlled for clarity and impact, assuming professional delivery."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The category 'Identity and Growth' and the psychology_drop angle align well with a self-growth channel's typical content. Brand images contribute to this."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content discusses internal feelings and psychological concepts in a general, non-diagnostic way. It poses no factual risk or violation of policies."
-        }
-      },
-      "judge_composite_score": 8.08,
-      "strongest_element": "Hook Strength",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 7,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short masterfully delivers a psychological insight, leveraging a calm, empathetic voiceover and well-chosen visual metaphors to guide the viewer from unexplained disappointment to an understanding of implicit expectations. The emotional tone and audio mix are excellently aligned with the 'Soft Reset With Me' brand, fostering introspection. While the execution of key visual metaphors is strong, refining the rapid caption pacing and elevating the specificity of all visuals, particularly in the opening, would enhance immediate viewer engagement and overall impact.",
-      "video_audit_strengths": [
-        "The strategic use of powerful visual metaphors (e.g., 'DELETE' eraser, hand reaching out) to concretize abstract psychological concepts, making the insight more tangible and memorable.",
-        "The consistent, empathetic, and calming vocal delivery that creates a safe space for introspection, reinforcing the brand's 'soft reset' ethos.",
-        "The ability to distill a complex psychological concept into a clear, concise, and highly relatable narrative within a short timeframe."
-      ],
-      "video_audit_dropoff_causes": [
-        "The very rapid appearance of single-word captions, especially in the first few seconds, might make it hard for some viewers to keep up, potentially leading to a scroll-off.",
-        "Some of the initial visuals are slightly generic stock footage, which might not immediately captivate viewers looking for highly unique or deeply engaging imagery from the outset.",
-        "The contemplative and slower-paced visual progression, while intentional, could be perceived as lacking dynamic action by viewers accustomed to faster-cut content."
-      ],
-      "video_audit_repeat_next": [
-        "The use of direct address ('You') in the narration to create an immediate personal connection with the viewer.",
-        "The overall emotional tone and thoughtful pacing of the narrative arc, moving from a relatable problem to a profound insight.",
-        "The selection of background music that complements the introspective mood without overpowering the voiceover."
-      ],
-      "video_audit_reduce_next": [
-        "The extreme speed of single-word caption transitions, particularly at the beginning of the video, to improve readability and allow viewers more time to absorb the text.",
-        "Reliance on overly generic stock footage for introductory or transitional scenes; prioritize more unique or metaphorically resonant visuals throughout."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Relatable Problem/Internal Question",
-        "thumbnail_type": "Symbolic Metaphor",
-        "visual_style_mix": "Minimalist & Reflective",
-        "narrative_format": "Insight/Psychology Drop",
-        "character_used": "Introspective Thinker"
-      },
-      "metrics": {
-        "views": 37,
-        "engagedViews": 16,
-        "averageViewDuration": 14,
-        "averageViewPercentage": 37.57,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 27.84,
-      "performance_score": 27.84,
-      "score_version": 1,
-      "hook_score": 43.24,
-      "hold_score": 37.57,
-      "resonance_score": 6.25,
-      "resonance_per_engaged": 0.0625,
-      "resonance_per_view": 0.027,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 52.65,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 17,
-      "data_available": true
-    },
-    {
       "video_id": "20260518_174052",
       "published_date": "2026-05-18",
       "status": "uploaded",
@@ -1785,6 +1786,175 @@
       "reach_score": 39.2,
       "analytics_fetched_at": "2026-06-01T01:40:13Z",
       "analytics_days_old": 17,
+      "data_available": true
+    },
+    {
+      "video_id": "20260523_144914",
+      "published_date": "2026-05-23",
+      "status": "uploaded",
+      "topic": "When your 'perfect' relationship on social media feels empty in real life.",
+      "category": "Relationship Patterns",
+      "angle_type": "reframe",
+      "total_score": 18,
+      "source_name": "Psychological research & Pew Research Center findings",
+      "source_basis": "Research on social media's impact on relationship quality, intimacy, and external validation.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "truth_drop",
+      "emotional_trigger": "Feeling a disconnect between your relationship's online portrayal and its real-life emptiness.",
+      "psych_concept": "External validation and social comparison",
+      "core_claim": "Seeking external validation for your relationship can prevent genuine intimacy from forming.",
+      "editorial_seed": "Many of us curate our relationships for social media, chasing likes and external approval. But that performative effort often comes at the cost of authentic connection and vulnerability with our partner. It's time to check if the relationship you're building is for you, or for an audience.",
+      "only_soft_reset_line": "You're not building a relationship. You're building a reputation of one.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You curate the relationship better than you actually live it.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 58,
+      "estimated_duration_sec": 23,
+      "thumbnail_text": "Your relationship looks perfect. So why does it feel empty?",
+      "content_fingerprint": "when your perfect relationship on social media feels empty in real life you curate the relationship better than you actually live it feeling a disconnect between your relationship s online portrayal and its real life emptiness external validation and social comparison seeking external validation for your relationship can prevent genuine intimacy from forming you re not building a relationship you re building a reputation of one",
+      "title": "You curate love better than you LIVE it",
+      "youtube_video_id": "GQU-EIZoTZo",
+      "youtube_url": "https://youtube.com/shorts/GQU-EIZoTZo",
+      "fallback_count": 0,
+      "video_count": 5,
+      "total_scenes": 8,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "Relationship Patterns",
+        "topic_cluster": "When your 'perfect' relationship on social media feels empty",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Provocative and relatable, immediately draws the viewer in by highlighting a common modern paradox."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and impactful, delivers a strong message with very few words."
+        },
+        "editorial_pov": {
+          "score": 10,
+          "reason": "The core message of prioritizing lived experience over curated presentation is a consistent theme for the channel."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Effectively identifies the 'villain' as the gap between online persona and real-life experience, which is specific to the channel's niche."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "No explicit CTA present in the provided details. Assumed for a short video, but would usually be present."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Directly reflects the hook and the core message of the video, setting accurate expectations."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively expands on the title and hook, targeting a specific emotional state ('quiet ache') and use case (when feed goes dark)."
+        },
+        "visual_dialogue_sync": {
+          "score": 8,
+          "reason": "Assumed to be good given the short length and focused message, but not explicitly detailed. Brand images and stock videos need to support the reframe."
+        },
+        "image_direction_strength": {
+          "score": 8,
+          "reason": "Brand images and stock videos should align with the theme of curated vs. real life, and the reframe angle. Expectation is for strong thematic alignment."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "The concept of 'curated vs. real' offers strong visual potential for a compelling thumbnail. Needs to visually represent the dichotomy."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With only 58 words and a 31s duration, pacing should be deliberate and impactful, allowing the message to land."
+        },
+        "brand_consistency": {
+          "score": 10,
+          "reason": "The theme of authenticity over online facade is central to the channel's identity and reframe angle."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No factual claims are made that could pose a policy risk. The content is subjective and opinion-based."
+        }
+      },
+      "judge_composite_score": 8.4,
+      "strongest_element": "Editorial POV",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively conveys a melancholic, introspective tone through its consistent voiceover and carefully chosen music, culminating in a powerful closing visual. While the hook aligns perfectly with the title, the initial visual's impact and the caption pacing are too slow, potentially causing early drop-off. The video excels with symbolic imagery like empty chairs but falters with generic stock footage (like the coffee cup) that lacks specific relevance, briefly disrupting the narrative flow. Focusing on dynamic, highly specific visuals from the outset and maintaining a more consistent, slightly faster caption pace would significantly improve viewer retention.",
+      "video_audit_strengths": [
+        "The consistently gentle and reflective voiceover delivery, which is a hallmark of the brand's tone.",
+        "The impactful and symbolic visuals (e.g., arms through a wall, empty chairs, mirror reflection) that effectively communicate complex emotional states.",
+        "The cohesive emotional tone fostered by the audio and select visuals, reinforcing the brand's introspective identity.",
+        "The strong final visual and loopback line, which offer a powerful and memorable conclusion."
+      ],
+      "video_audit_dropoff_causes": [
+        "The slow initial visual and the drawn-out word-by-word captions in the first few seconds of the hook may cause early viewer disengagement.",
+        "The inclusion of generic stock footage, especially the 'coffee time' shot (0:22-0:25), disrupts the narrative immersion and feels irrelevant to the specific message, creating a moment where viewers might swipe away.",
+        "Inconsistent caption pacing, with critical segments feeling too slow, can lead to viewer impatience and a desire to scroll past.",
+        "Some visuals are not specific enough to the nuanced emotional insights (e.g., couple moving boxes for vulnerability vs. presentability), potentially diluting the message's impact."
+      ],
+      "video_audit_repeat_next": [
+        "The use of highly symbolic and evocative visuals that abstractly but powerfully convey complex emotional concepts (e.g., empty chairs for distance, mirror for self-perception).",
+        "Maintaining the consistent, gentle, and thoughtful voiceover delivery style.",
+        "The strategic use of background music to enhance the emotional atmosphere without competing with the narration.",
+        "Crafting a strong, memorable loopback line and pairing it with a potent closing visual."
+      ],
+      "video_audit_reduce_next": [
+        "Reliance on generic stock footage that does not directly or uniquely illustrate the specific emotional and psychological points of the script (e.g., the coffee cup, or overly generalized activities like moving boxes).",
+        "Overly slow, word-by-word caption reveals, especially in the critical opening seconds and for short words.",
+        "Initial visuals that are primarily atmospheric but lack an immediate, specific connection to the hook to grab attention more quickly.",
+        "Any moments of visual ambiguity that do not clearly support or enhance the spoken narrative, creating potential for viewer confusion."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Problem/Internal Conflict",
+        "thumbnail_type": "Emotional/Reflective",
+        "visual_style_mix": "Cinematic/Symbolic + Social Media Overlay",
+        "narrative_format": "Truth Drop/Insight",
+        "character_used": "Solitary/Introspective"
+      },
+      "metrics": {
+        "views": 200,
+        "engagedViews": 18,
+        "averageViewDuration": 12,
+        "averageViewPercentage": 37.73,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 24.85,
+      "performance_score": 24.85,
+      "score_version": 1,
+      "hook_score": 9.0,
+      "hold_score": 37.73,
+      "resonance_score": 27.78,
+      "resonance_per_engaged": 0.2778,
+      "resonance_per_view": 0.025,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 76.76,
+      "analytics_fetched_at": "2026-06-02T02:00:10Z",
+      "analytics_days_old": 10,
       "data_available": true
     },
     {
@@ -2279,8 +2449,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 54.77,
-      "analytics_fetched_at": "2026-05-25T23:42:04Z",
-      "analytics_days_old": 9,
+      "analytics_fetched_at": "2026-06-02T02:00:10Z",
+      "analytics_days_old": 17,
       "data_available": true
     },
     {
@@ -2612,6 +2782,172 @@
       "reach_score": 41.84,
       "analytics_fetched_at": "2026-05-29T01:34:05Z",
       "analytics_days_old": 10,
+      "data_available": true
+    },
+    {
+      "video_id": "20260531_013710",
+      "published_date": "2026-05-31",
+      "status": "uploaded",
+      "topic": "You did not lose them, you lost who you imagined they would be",
+      "category": "healing arcs",
+      "angle_type": "truth drop",
+      "total_score": 20,
+      "source_name": "Psychology principles",
+      "source_basis": "Concepts of psychological projection and grief for imagined futures",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "reframe",
+      "emotional_trigger": "post-breakup heartbreak, grief for a future that won't happen, idealized partner image",
+      "psych_concept": "projection, anticipatory grief, idealized self/other",
+      "core_claim": "Sometimes heartbreak is grief for the future you invented",
+      "editorial_seed": "Heartbreak often feels like losing a person, but sometimes it's really the painful process of letting go of the beautiful, elaborate story you wrote for them in your head. It's not about them disappearing, but your imagined future collapsing.",
+      "only_soft_reset_line": "That's not love. That's hope with someone else's face on it.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You think you're missing them. You might just be mourning a story you wrote.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 73,
+      "estimated_duration_sec": 26,
+      "thumbnail_text": "You didn't lose them. You lost who you invented.",
+      "content_fingerprint": "you did not lose them you lost who you imagined they would be you think you re missing them you might just be mourning a story you wrote post breakup heartbreak grief for a future that won t happen idealized partner image projection anticipatory grief idealized self other sometimes heartbreak is grief for the future you invented that s not love that s hope with someone else s face on it",
+      "title": "You just miss the person you invented",
+      "youtube_video_id": "VteHlarKJjY",
+      "youtube_url": "https://youtube.com/shorts/VteHlarKJjY",
+      "fallback_count": 0,
+      "video_count": 6,
+      "total_scenes": 12,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth drop",
+        "category": "healing arcs",
+        "topic_cluster": "You did not lose them, you lost who you imagined they would ",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and directly addresses a common misconception in heartbreak."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The message is concise and easy to understand within the short format."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "Clear, authoritative, and aligns with the channel's healing/self-growth niche."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "Identifies the 'invented person' as the source of pain, which is specific to the concept."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "No explicit CTA is present in the provided details. This is a significant omission for engagement."
+        },
+        "title_accuracy": {
+          "score": 10,
+          "reason": "Perfectly captures the essence of the script's core message."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively summarizes the video's theme and invites further thought."
+        },
+        "visual_dialogue_sync": {
+          "score": 8,
+          "reason": "Assumed to be effective given the provided scene breakdown (6 brand, 6 stock) and short duration, implying visual support for the narrative."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images should strongly align with the emotional core of the message. Stock videos need to be highly relevant."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "A strong thumbnail would visually represent the 'invented person' or the narrative aspect of loss."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The script is short and direct, suggesting it's well-suited for a clear, deliberate read."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The theme of re-framing grief and self-awareness aligns perfectly with the channel's presumed brand."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No identifiable policy or factual risks. The content is psychological and subjective."
+        }
+      },
+      "judge_composite_score": 7.1,
+      "strongest_element": "title_accuracy",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively conveys a profound reframe of heartbreak by masterfully blending melancholic visuals, an empathetic voiceover, and a well-balanced audio mix. Its standout strength is the consistent emotional tone and the clever use of specific visual metaphors, like the ghostly reflection, which significantly amplify the core message. While some visual choices could be more distinct and the visual pacing slightly smoother, the video successfully establishes a strong brand aesthetic and delivers a powerful, introspective experience for viewers grappling with loss.",
+      "video_audit_strengths": [
+        "The powerful visual metaphor of the ghostly reflection for 'who you needed them to become' is exceptionally well-executed and memorable.",
+        "The consistent brand aesthetic of thoughtful melancholy and introspection is strongly established through the visual style, voiceover, and music, building a distinct identity.",
+        "The signature line, 'That's not love. That's hope with someone else's face on it,' is delivered with strong emphasis and visual backing, making it highly impactful and quotable.",
+        "The overall cohesion of mood, message, and audio creates a deeply empathetic and resonant viewing experience."
+      ],
+      "video_audit_dropoff_causes": [
+        "Some viewers might disengage due to the abstract nature of the core message ('grief for a story you wrote'), requiring more cognitive processing than some prefer for a short-form video.",
+        "A few transitions between highly distinct visual scenes (e.g., apartment to corridor to candle) feel slightly abrupt, which could momentarily break immersion.",
+        "The absence of a consistent on-screen presenter (beyond a brief appearance) or a face to connect with the empathetic voice might lead to lower emotional connection for some viewers who prefer a more direct human presence."
+      ],
+      "video_audit_repeat_next": [
+        "Continue using a calm, empathetic female voiceover for consistent brand identity and emotional connection.",
+        "Prioritize highly specific and creative visual metaphors that directly illustrate abstract concepts (e.g., the ghostly reflection).",
+        "Maintain the consistently melancholic and introspective emotional tone, enhanced by appropriate background music.",
+        "Focus on crafting clear, reframe-oriented hooks that challenge common assumptions, as seen in the opening."
+      ],
+      "video_audit_reduce_next": [
+        "Reduce reliance on overly generic stock footage that doesn't add unique meaning or specificity to the spoken words (e.g., generic silhouettes, routine objects like a coffee cup).",
+        "Minimize rapid, disjointed transitions between visually distinct scenes; aim for smoother visual storytelling or more deliberate scene pacing."
+      ],
+      "video_audit_tags": {
+        "hook_type": "truth_drop",
+        "thumbnail_type": "text_on_video_still",
+        "visual_style_mix": "emotional_aesthetic",
+        "narrative_format": "monologue_reframe",
+        "character_used": "archetypal_figures"
+      },
+      "metrics": {
+        "views": 76,
+        "engagedViews": 14,
+        "averageViewDuration": 14,
+        "averageViewPercentage": 37.94,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 21.03,
+      "performance_score": 21.03,
+      "score_version": 1,
+      "hook_score": 18.42,
+      "hold_score": 37.94,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 62.87,
+      "analytics_fetched_at": "2026-06-02T02:00:10Z",
+      "analytics_days_old": 2,
       "data_available": true
     },
     {
@@ -3581,148 +3917,145 @@
       "data_unavailable_reason": "youtube_analytics_no_row"
     },
     {
-      "video_id": "20260523_144914",
-      "published_date": "2026-05-23",
+      "video_id": "20260522_013246",
+      "published_date": "2026-05-22",
       "status": "uploaded",
-      "topic": "When your 'perfect' relationship on social media feels empty in real life.",
-      "category": "Relationship Patterns",
-      "angle_type": "reframe",
+      "topic": "Dating app burnout isn't one big event. It's 100 tiny losses.",
+      "category": "Identity and Growth",
+      "angle_type": "truth_drop",
       "total_score": 18,
-      "source_name": "Psychological research & Pew Research Center findings",
-      "source_basis": "Research on social media's impact on relationship quality, intimacy, and external validation.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
+      "source_name": "General psychology consensus",
+      "source_basis": "Psychological principles of cumulative stress, micro-grief, and rejection sensitivity.",
+      "source_url": "",
+      "confidence_level": "observational",
       "content_format": "truth_drop",
-      "emotional_trigger": "Feeling a disconnect between your relationship's online portrayal and its real-life emptiness.",
-      "psych_concept": "External validation and social comparison",
-      "core_claim": "Seeking external validation for your relationship can prevent genuine intimacy from forming.",
-      "editorial_seed": "Many of us curate our relationships for social media, chasing likes and external approval. But that performative effort often comes at the cost of authentic connection and vulnerability with our partner. It's time to check if the relationship you're building is for you, or for an audience.",
-      "only_soft_reset_line": "You're not building a relationship. You're building a reputation of one.",
+      "emotional_trigger": "The feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps.",
+      "psych_concept": "Cumulative stress, unacknowledged grief, rejection sensitivity",
+      "core_claim": "The emotional weight of modern dating comes from the small, unacknowledged disappointments that add up, rather than just dramatic breakups.",
+      "editorial_seed": "We don't acknowledge the little losses on dating apps: the hopeful first messages, the almost-connections, the slow fade-outs. Each one is a tiny grief, and they stack up until you feel completely drained, even without a big, dramatic ending.",
+      "only_soft_reset_line": "Nobody ghosted you dramatically. They just quietly never became anyone.",
       "editorial_quality": "strong",
       "argument_quality": "strong",
-      "hook": "You curate the relationship better than you actually live it.",
+      "hook": "Every unmatched conversation cost you something. You just never counted it.",
       "hook_quality": "weak",
       "script_version": "1",
       "prompt_version": "soft-reset-script-v2.4",
       "script_validation": "passed",
       "script_validation_notes": "",
-      "word_count": 58,
-      "estimated_duration_sec": 23,
-      "thumbnail_text": "Your relationship looks perfect. So why does it feel empty?",
-      "content_fingerprint": "when your perfect relationship on social media feels empty in real life you curate the relationship better than you actually live it feeling a disconnect between your relationship s online portrayal and its real life emptiness external validation and social comparison seeking external validation for your relationship can prevent genuine intimacy from forming you re not building a relationship you re building a reputation of one",
-      "title": "You curate love better than you LIVE it",
-      "youtube_video_id": "GQU-EIZoTZo",
-      "youtube_url": "https://youtube.com/shorts/GQU-EIZoTZo",
+      "word_count": 62,
+      "estimated_duration_sec": 30,
+      "thumbnail_text": "100 tiny losses",
+      "content_fingerprint": "dating app burnout isn t one big event it s 100 tiny losses every unmatched conversation cost you something you just never counted it the feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps cumulative stress unacknowledged grief rejection sensitivity the emotional weight of modern dating comes from the small unacknowledged disappointments that add up rather than just dramatic breakups nobody ghosted you dramatically they just quietly never became anyone",
+      "title": "Every unmatched chat quietly drains you",
+      "youtube_video_id": "yL7ckEhDVpQ",
+      "youtube_url": "https://youtube.com/shorts/yL7ckEhDVpQ",
       "fallback_count": 0,
-      "video_count": 5,
-      "total_scenes": 8,
+      "video_count": 8,
+      "total_scenes": 12,
       "validation_warnings": [],
       "experiment_label": "baseline",
       "experiment_id": null,
       "strategy_version": "2026-W21",
       "judge_traits": {
         "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "reframe",
-        "category": "Relationship Patterns",
-        "topic_cluster": "When your 'perfect' relationship on social media feels empty",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "Identity and Growth",
+        "topic_cluster": "Dating app burnout isn't one big event. It's 100 tiny losses",
         "visual_style_mix": "balanced",
         "video_length_band": "30_45s",
         "narrative_format": "unknown",
         "thumbnail_type": "text_only",
         "character_used": "brand_still",
-        "total_scenes": 8
+        "total_scenes": 12
       },
       "judge_scores": {
         "hook_strength": {
-          "score": 9,
-          "reason": "Provocative and relatable, immediately draws the viewer in by highlighting a common modern paradox."
+          "score": 8,
+          "reason": "The hook is strong and introduces an intriguing concept by quantifying the unquantified cost of unmatched conversations."
         },
         "script_clarity": {
           "score": 9,
-          "reason": "Concise and impactful, delivers a strong message with very few words."
+          "reason": "The script is concise and directly addresses the core idea of dating burnout stemming from multiple small losses."
         },
         "editorial_pov": {
-          "score": 10,
-          "reason": "The core message of prioritizing lived experience over curated presentation is a consistent theme for the channel."
+          "score": 8,
+          "reason": "The POV is clearly about the emotional toll of dating and the concept of burnout, fitting the channel's identity."
         },
         "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "Effectively identifies the 'villain' as the gap between online persona and real-life experience, which is specific to the channel's niche."
+          "score": 7,
+          "reason": "The 'villain' is 'unmatched conversations' and the mechanism is 'draining' or 'tiny losses'. It's specific enough to be relatable but could be more detailed."
         },
         "cta_quality": {
-          "score": 5,
-          "reason": "No explicit CTA present in the provided details. Assumed for a short video, but would usually be present."
+          "score": 3,
+          "reason": "There is no explicit Call to Action (CTA) present in the provided details. This is a significant omission."
         },
         "title_accuracy": {
           "score": 9,
-          "reason": "Directly reflects the hook and the core message of the video, setting accurate expectations."
+          "reason": "The title accurately reflects the core message of the hook and the script's theme of being drained by unmatched chats."
         },
         "description_usefulness": {
-          "score": 9,
-          "reason": "Effectively expands on the title and hook, targeting a specific emotional state ('quiet ache') and use case (when feed goes dark)."
+          "score": 8,
+          "reason": "The description is useful as it expands on the hook and title, introducing the concept of 'dating burnout' and '100 tiny losses'."
         },
         "visual_dialogue_sync": {
-          "score": 8,
-          "reason": "Assumed to be good given the short length and focused message, but not explicitly detailed. Brand images and stock videos need to support the reframe."
+          "score": 7,
+          "reason": "Assuming stock videos and brand images are chosen to match the themes of dating, frustration, and introspection, sync should be adequate. However, without seeing the actual video, it's an assumption."
         },
         "image_direction_strength": {
-          "score": 8,
-          "reason": "Brand images and stock videos should align with the theme of curated vs. real life, and the reframe angle. Expectation is for strong thematic alignment."
+          "score": 7,
+          "reason": "The use of brand images (4) and stock videos (8) suggests an effort to visually support the narrative. Strength depends on execution, but the balance is reasonable for a short video."
         },
         "thumbnail_concept": {
-          "score": 8,
-          "reason": "The concept of 'curated vs. real' offers strong visual potential for a compelling thumbnail. Needs to visually represent the dichotomy."
+          "score": 7,
+          "reason": "The concept likely revolves around the title and hook's theme (drained, unmatched). A strong thumbnail would visually represent the emotional cost of dating."
         },
         "voice_pacing_readiness": {
           "score": 9,
-          "reason": "With only 58 words and a 31s duration, pacing should be deliberate and impactful, allowing the message to land."
+          "reason": "Given the short script (62 words) and duration (36s), pacing should be manageable for a clear and deliberate narration, fitting a 'truth drop' style."
         },
         "brand_consistency": {
-          "score": 10,
-          "reason": "The theme of authenticity over online facade is central to the channel's identity and reframe angle."
+          "score": 8,
+          "reason": "The identity and growth category, truth drop angle, and focus on self-perception align well with a channel like Soft Reset With Me."
         },
         "policy_factual_risk": {
           "score": 10,
-          "reason": "No factual claims are made that could pose a policy risk. The content is subjective and opinion-based."
+          "reason": "The content is subjective and discusses emotional experiences, posing no apparent factual risk or policy violation."
         }
       },
-      "judge_composite_score": 8.4,
-      "strongest_element": "Editorial POV",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 9,
+      "judge_composite_score": 7.3,
+      "strongest_element": "script_clarity",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 8,
       "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively conveys a melancholic, introspective tone through its consistent voiceover and carefully chosen music, culminating in a powerful closing visual. While the hook aligns perfectly with the title, the initial visual's impact and the caption pacing are too slow, potentially causing early drop-off. The video excels with symbolic imagery like empty chairs but falters with generic stock footage (like the coffee cup) that lacks specific relevance, briefly disrupting the narrative flow. Focusing on dynamic, highly specific visuals from the outset and maintaining a more consistent, slightly faster caption pace would significantly improve viewer retention.",
+      "video_audit_summary": "This video masterfully uses an empathetic voiceover, melancholic music, and well-paced captions to deliver its 'truth drop' on dating app burnout, making a strong emotional connection with its audience from the hook. While the visual aesthetic is largely cohesive and reinforces the mood, some generic stock footage and occasional visual overlays slightly reduce specificity and could contribute to viewer drop-off. The poignant delivery of the signature line and the consistent, validating tone are key strengths to replicate, while future videos could benefit from increased visual variety and fewer distracting overlays to enhance engagement.",
       "video_audit_strengths": [
-        "The consistently gentle and reflective voiceover delivery, which is a hallmark of the brand's tone.",
-        "The impactful and symbolic visuals (e.g., arms through a wall, empty chairs, mirror reflection) that effectively communicate complex emotional states.",
-        "The cohesive emotional tone fostered by the audio and select visuals, reinforcing the brand's introspective identity.",
-        "The strong final visual and loopback line, which offer a powerful and memorable conclusion."
+        "Voiceover performance: The narrator's tone is perfectly empathetic, gentle, and reflective, crucial for a 'truth drop' format, making the emotional message deeply resonant.",
+        "Powerful signature line delivery: The loopback line, 'They just quietly never became anyone,' is delivered with a subtle emotional weight that elevates its impact and makes it highly memorable.",
+        "Cohesive aesthetic: Despite some minor issues with visual specificity, the overall dark, moody, and contemplative visual aesthetic is consistently maintained, effectively supporting the narrative's emotional depth."
       ],
       "video_audit_dropoff_causes": [
-        "The slow initial visual and the drawn-out word-by-word captions in the first few seconds of the hook may cause early viewer disengagement.",
-        "The inclusion of generic stock footage, especially the 'coffee time' shot (0:22-0:25), disrupts the narrative immersion and feels irrelevant to the specific message, creating a moment where viewers might swipe away.",
-        "Inconsistent caption pacing, with critical segments feeling too slow, can lead to viewer impatience and a desire to scroll past.",
-        "Some visuals are not specific enough to the nuanced emotional insights (e.g., couple moving boxes for vulnerability vs. presentability), potentially diluting the message's impact."
+        "Pacing of visual changes: While captions are well-timed, the visual cuts and scene progression can sometimes feel slightly slow for a rapidly consumed Short, potentially leading to disengagement.",
+        "Generic or overlaid visuals: Some stock footage choices are less specific to the narration, and the use of visual overlays occasionally makes scenes busy or less clear, which could cause viewers to lose focus.",
+        "Solely introspective/validating content: As a 'truth drop,' the video is purely observational. Viewers seeking immediate actionable advice or a lighter tone might drop off once the core insight is delivered."
       ],
       "video_audit_repeat_next": [
-        "The use of highly symbolic and evocative visuals that abstractly but powerfully convey complex emotional concepts (e.g., empty chairs for distance, mirror for self-perception).",
-        "Maintaining the consistent, gentle, and thoughtful voiceover delivery style.",
-        "The strategic use of background music to enhance the emotional atmosphere without competing with the narration.",
-        "Crafting a strong, memorable loopback line and pairing it with a potent closing visual."
+        "Empathetic, validating voiceover tone and delivery.",
+        "Clear, easy-to-read captions synced to the narration.",
+        "Consistent emotional pacing and subtle, supportive musical backing.",
+        "Strong, relatable, and specific hooks and signature lines that validate audience experiences."
       ],
       "video_audit_reduce_next": [
-        "Reliance on generic stock footage that does not directly or uniquely illustrate the specific emotional and psychological points of the script (e.g., the coffee cup, or overly generalized activities like moving boxes).",
-        "Overly slow, word-by-word caption reveals, especially in the critical opening seconds and for short words.",
-        "Initial visuals that are primarily atmospheric but lack an immediate, specific connection to the hook to grab attention more quickly.",
-        "Any moments of visual ambiguity that do not clearly support or enhance the spoken narrative, creating potential for viewer confusion."
+        "Visual overlays: Minimize or eliminate instances where one visual is semi-transparently overlaid on another, as it can detract from clarity and focus.",
+        "Generic stock footage: Prioritize more unique, specific, or powerfully metaphorical visuals that directly illustrate the script's nuances rather than relying on broadly melancholic scenes.",
+        "Repetitive visual themes: While the mood is consistent, aim for slightly more visual variety in depicting sadness or introspection to keep the viewer engaged."
       ],
       "video_audit_tags": {
-        "hook_type": "Problem/Internal Conflict",
-        "thumbnail_type": "Emotional/Reflective",
-        "visual_style_mix": "Cinematic/Symbolic + Social Media Overlay",
-        "narrative_format": "Truth Drop/Insight",
-        "character_used": "Solitary/Introspective"
+        "hook_type": "Emotional Validation",
+        "thumbnail_type": "Text Overlay (Concept)",
+        "visual_style_mix": "Cinematic Melancholy",
+        "narrative_format": "Deep Dive (Emotional)",
+        "character_used": "N/A"
       },
       "metrics": {},
       "composite_score": 0.0,
@@ -3736,165 +4069,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-25T17:21:37Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260523_222914",
-      "published_date": "2026-05-23",
-      "status": "uploaded",
-      "topic": "They didn't 'shut down.' Their nervous system just went offline.",
-      "category": "Psychology Drops",
-      "angle_type": "psychology_drop",
-      "total_score": 18,
-      "source_name": "Stephen Porges, et al.",
-      "source_basis": "Polyvagal Theory; Autonomic Nervous System's fight-flight-freeze responses",
-      "source_url": "",
-      "confidence_level": "peer_reviewed",
-      "content_format": "reframe",
-      "emotional_trigger": "Feeling dismissed or disrespected when a partner 'shuts down' during an argument.",
-      "psych_concept": "Freeze response / Nervous system overwhelm",
-      "core_claim": "When someone 'shuts down,' it's often a physiological freeze response to perceived threat or emotional overwhelm, not necessarily a conscious choice to be avoidant or disrespectful.",
-      "editorial_seed": "It's easy to interpret 'shutting down' as a personal slight or disinterest, but often it's a primal, automatic response. Understanding this doesn't excuse behavior, but it can shift the conversation from blame to regulation and repair.",
-      "only_soft_reset_line": "They went blank. That's not indifference. That's a body hitting its limit.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Their silence isn't coldness. Their brain literally went offline.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 69,
-      "estimated_duration_sec": 22,
-      "thumbnail_text": "They didn't check out. They shut down.",
-      "content_fingerprint": "they didn t shut down their nervous system just went offline their silence isn t coldness their brain literally went offline feeling dismissed or disrespected when a partner shuts down during an argument freeze response nervous system overwhelm when someone shuts down it s often a physiological freeze response to perceived threat or emotional overwhelm not necessarily a conscious choice to be avoidant or disrespectful they went blank that s not indifference that s a body hitting its limit",
-      "title": "You didn't shut down. Your brain went OFFLINE",
-      "youtube_video_id": "o2dP_RYLNtY",
-      "youtube_url": "https://youtube.com/shorts/o2dP_RYLNtY",
-      "fallback_count": 0,
-      "video_count": 10,
-      "total_scenes": 14,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W21",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "psychology_drop",
-        "category": "Psychology Drops",
-        "topic_cluster": "They didn't 'shut down.' Their nervous system just went offl",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 14
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Intriguing and directly addresses a common relational experience with a surprising explanation."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and clearly explains the concept of the brain going 'offline' as a safety mechanism."
-        },
-        "editorial_pov": {
-          "score": 7,
-          "reason": "The POV is empathetic and educational, fitting the channel's self-growth niche. Could be slightly more distinctive."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "Effectively names the 'villain' (brain going offline) and its mechanism (safety response to overwhelm)."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no CTA present in the provided details. This is a critical omission for engagement."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title is highly accurate to the hook and script's core message. 'Shut down' is a strong synonym for 'offline'."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Provides a concise, engaging summary that accurately reflects the video's content and offers a clear benefit."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Stock videos and brand images are generally suitable for psychology drops, but synchronization effectiveness is not fully assessable without the actual video."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "The mix of stock and brand images is typical. Strength depends heavily on execution and relevance, which is hard to judge here."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "A strong thumbnail would likely feature a visual metaphor for 'offline' or 'brain shutdown' paired with an evocative image. Concept is strong, execution is key."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script and clear message suggest good pacing potential. The 39s duration is ideal for this format."
-        },
-        "brand_consistency": {
-          "score": 7,
-          "reason": "The psychology drop angle and empathetic tone align with a self-growth channel. The brand images contribute to this."
-        },
-        "policy_factual_risk": {
-          "score": 9,
-          "reason": "The explanation is a simplified psychological concept, but generally accepted and presented as a potential experience, not a diagnostic tool. Low risk."
-        }
-      },
-      "judge_composite_score": 7.08,
-      "strongest_element": "Script Clarity",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 7,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively conveys its empathetic message through a strong textual hook, clear voiceover, and perfectly chosen background music, all aligning well with the brand's emotional tone. While the audio quality and emotional resonance are exemplary, the visual storytelling could benefit from more cohesive transitions and less generic imagery. Occasional fast caption pacing also presents a minor hurdle to full viewer comprehension. Future videos should aim for a more integrated visual narrative and refined caption timing, building upon the solid foundation of audio and emotional delivery.",
-      "video_audit_strengths": [
-        "The voiceover delivery is exceptionally calm, empathetic, and engaging, perfectly embodying the brand's intended tone.",
-        "The background music is masterfully selected, subtly enhancing the emotional depth and introspective mood of the content without distraction.",
-        "The strategic use of single-word or short-phrase text overlays effectively highlights key concepts and reinforces the message, even when visuals are varied."
-      ],
-      "video_audit_dropoff_causes": [
-        "Abrupt visual transitions between disparate stock footage clips can be jarring and may disrupt viewer engagement.",
-        "Occasional fast pacing of multi-word captions might cause some viewers to miss key information or feel rushed.",
-        "The lack of a direct, spoken call to action or a more visually engaging closing segment before the end card could lead to a passive viewer experience at the end."
-      ],
-      "video_audit_repeat_next": [
-        "Continue to prioritize high-quality voiceover and audio mixing for clear and pleasant listening.",
-        "Maintain the empathetic and understanding emotional tone in both script and delivery.",
-        "Utilize short, impactful text overlays to emphasize core messages and key psychological concepts."
-      ],
-      "video_audit_reduce_next": [
-        "Minimize abrupt visual cuts between unrelated scenes or individuals to create a more fluid and continuous visual narrative.",
-        "Avoid generic stock footage when more metaphoric or specific imagery could reinforce the message more powerfully.",
-        "Reduce instances of rapid, multi-word caption displays to ensure all text is easily readable by viewers."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Reframe/Intrigue",
-        "thumbnail_type": "Text-on-Image/Conceptual",
-        "visual_style_mix": "Emotional/Abstract/Stock",
-        "narrative_format": "Explainer/Insight",
-        "character_used": "Relatable Everyperson"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-25T17:21:37Z",
-      "analytics_days_old": 2,
+      "analytics_fetched_at": "2026-06-01T01:40:13Z",
+      "analytics_days_old": 10,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
     },
@@ -4506,164 +4682,6 @@
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-05-27T01:36:48Z",
       "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
-    },
-    {
-      "video_id": "20260522_013246",
-      "published_date": "2026-05-22",
-      "status": "uploaded",
-      "topic": "Dating app burnout isn't one big event. It's 100 tiny losses.",
-      "category": "Identity and Growth",
-      "angle_type": "truth_drop",
-      "total_score": 18,
-      "source_name": "General psychology consensus",
-      "source_basis": "Psychological principles of cumulative stress, micro-grief, and rejection sensitivity.",
-      "source_url": "",
-      "confidence_level": "observational",
-      "content_format": "truth_drop",
-      "emotional_trigger": "The feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps.",
-      "psych_concept": "Cumulative stress, unacknowledged grief, rejection sensitivity",
-      "core_claim": "The emotional weight of modern dating comes from the small, unacknowledged disappointments that add up, rather than just dramatic breakups.",
-      "editorial_seed": "We don't acknowledge the little losses on dating apps: the hopeful first messages, the almost-connections, the slow fade-outs. Each one is a tiny grief, and they stack up until you feel completely drained, even without a big, dramatic ending.",
-      "only_soft_reset_line": "Nobody ghosted you dramatically. They just quietly never became anyone.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Every unmatched conversation cost you something. You just never counted it.",
-      "hook_quality": "weak",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 62,
-      "estimated_duration_sec": 30,
-      "thumbnail_text": "100 tiny losses",
-      "content_fingerprint": "dating app burnout isn t one big event it s 100 tiny losses every unmatched conversation cost you something you just never counted it the feeling of emotional drain and heaviness from repeated small disappointments and rejections on dating apps cumulative stress unacknowledged grief rejection sensitivity the emotional weight of modern dating comes from the small unacknowledged disappointments that add up rather than just dramatic breakups nobody ghosted you dramatically they just quietly never became anyone",
-      "title": "Every unmatched chat quietly drains you",
-      "youtube_video_id": "yL7ckEhDVpQ",
-      "youtube_url": "https://youtube.com/shorts/yL7ckEhDVpQ",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 12,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W21",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "truth_drop",
-        "category": "Identity and Growth",
-        "topic_cluster": "Dating app burnout isn't one big event. It's 100 tiny losses",
-        "visual_style_mix": "balanced",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 12
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "The hook is strong and introduces an intriguing concept by quantifying the unquantified cost of unmatched conversations."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and directly addresses the core idea of dating burnout stemming from multiple small losses."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The POV is clearly about the emotional toll of dating and the concept of burnout, fitting the channel's identity."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' is 'unmatched conversations' and the mechanism is 'draining' or 'tiny losses'. It's specific enough to be relatable but could be more detailed."
-        },
-        "cta_quality": {
-          "score": 3,
-          "reason": "There is no explicit Call to Action (CTA) present in the provided details. This is a significant omission."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the core message of the hook and the script's theme of being drained by unmatched chats."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description is useful as it expands on the hook and title, introducing the concept of 'dating burnout' and '100 tiny losses'."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming stock videos and brand images are chosen to match the themes of dating, frustration, and introspection, sync should be adequate. However, without seeing the actual video, it's an assumption."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The use of brand images (4) and stock videos (8) suggests an effort to visually support the narrative. Strength depends on execution, but the balance is reasonable for a short video."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The concept likely revolves around the title and hook's theme (drained, unmatched). A strong thumbnail would visually represent the emotional cost of dating."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "Given the short script (62 words) and duration (36s), pacing should be manageable for a clear and deliberate narration, fitting a 'truth drop' style."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The identity and growth category, truth drop angle, and focus on self-perception align well with a channel like Soft Reset With Me."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is subjective and discusses emotional experiences, posing no apparent factual risk or policy violation."
-        }
-      },
-      "judge_composite_score": 7.3,
-      "strongest_element": "script_clarity",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This video masterfully uses an empathetic voiceover, melancholic music, and well-paced captions to deliver its 'truth drop' on dating app burnout, making a strong emotional connection with its audience from the hook. While the visual aesthetic is largely cohesive and reinforces the mood, some generic stock footage and occasional visual overlays slightly reduce specificity and could contribute to viewer drop-off. The poignant delivery of the signature line and the consistent, validating tone are key strengths to replicate, while future videos could benefit from increased visual variety and fewer distracting overlays to enhance engagement.",
-      "video_audit_strengths": [
-        "Voiceover performance: The narrator's tone is perfectly empathetic, gentle, and reflective, crucial for a 'truth drop' format, making the emotional message deeply resonant.",
-        "Powerful signature line delivery: The loopback line, 'They just quietly never became anyone,' is delivered with a subtle emotional weight that elevates its impact and makes it highly memorable.",
-        "Cohesive aesthetic: Despite some minor issues with visual specificity, the overall dark, moody, and contemplative visual aesthetic is consistently maintained, effectively supporting the narrative's emotional depth."
-      ],
-      "video_audit_dropoff_causes": [
-        "Pacing of visual changes: While captions are well-timed, the visual cuts and scene progression can sometimes feel slightly slow for a rapidly consumed Short, potentially leading to disengagement.",
-        "Generic or overlaid visuals: Some stock footage choices are less specific to the narration, and the use of visual overlays occasionally makes scenes busy or less clear, which could cause viewers to lose focus.",
-        "Solely introspective/validating content: As a 'truth drop,' the video is purely observational. Viewers seeking immediate actionable advice or a lighter tone might drop off once the core insight is delivered."
-      ],
-      "video_audit_repeat_next": [
-        "Empathetic, validating voiceover tone and delivery.",
-        "Clear, easy-to-read captions synced to the narration.",
-        "Consistent emotional pacing and subtle, supportive musical backing.",
-        "Strong, relatable, and specific hooks and signature lines that validate audience experiences."
-      ],
-      "video_audit_reduce_next": [
-        "Visual overlays: Minimize or eliminate instances where one visual is semi-transparently overlaid on another, as it can detract from clarity and focus.",
-        "Generic stock footage: Prioritize more unique, specific, or powerfully metaphorical visuals that directly illustrate the script's nuances rather than relying on broadly melancholic scenes.",
-        "Repetitive visual themes: While the mood is consistent, aim for slightly more visual variety in depicting sadness or introspection to keep the viewer engaged."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Emotional Validation",
-        "thumbnail_type": "Text Overlay (Concept)",
-        "visual_style_mix": "Cinematic Melancholy",
-        "narrative_format": "Deep Dive (Emotional)",
-        "character_used": "N/A"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-06-01T01:40:13Z",
-      "analytics_days_old": 10,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
     }

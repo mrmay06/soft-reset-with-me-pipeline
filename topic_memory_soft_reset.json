@@ -1,145 +1,5 @@
 [
   {
-    "video_id": "20260513_012611",
-    "published_date": "2026-05-13",
-    "status": "uploaded",
-    "topic": "Some people leave because they were never ready to stay",
-    "category": "healing arcs",
-    "angle_type": "truth drop",
-    "total_score": 18,
-    "source_name": "John Bowlby, Cindy Hazan & Phillip Shaver (Adult Attachment Theory)",
-    "source_basis": "Attachment theory, specifically concepts of commitment avoidance and fear of intimacy often associated with avoidant attachment styles.",
-    "source_url": "https://www.simplypsychology.org/attachment.html",
-    "confidence_level": "therapist_consensus",
-    "content_format": "truth_drop",
-    "emotional_trigger": "feeling unworthy after being left, confusion about a breakup, questions about 'what went wrong'",
-    "psych_concept": "readiness for intimacy/commitment, avoidant attachment",
-    "core_claim": "Their leaving says more about their readiness than your worth",
-    "editorial_seed": "When someone leaves, it's natural to internalize it and question your worth. But often, their departure isn't a reflection of you, but of their own unresolved issues or inability to commit. Understanding this truth can be a powerful step in reclaiming your self-worth and healing.",
-    "only_soft_reset_line": "Some people leave not because you weren't enough, but because closeness itself scared them.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "You think you did something wrong. You might have just gotten close.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 70,
-    "estimated_duration_sec": 24,
-    "thumbnail_text": "They left. It wasn't about you.",
-    "content_fingerprint": "some people leave because they were never ready to stay you think you did something wrong you might have just gotten close feeling unworthy after being left confusion about a breakup questions about what went wrong readiness for intimacy commitment avoidant attachment their leaving says more about their readiness than your worth some people leave not because you weren t enough but because closeness itself scared them",
-    "title": "You got close. They weren't ready to STAY",
-    "youtube_video_id": "Vk7hqFLivGs",
-    "youtube_url": "https://youtube.com/shorts/Vk7hqFLivGs",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 9,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W20",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "truth drop",
-      "category": "healing arcs",
-      "topic_cluster": "Some people leave because they were never ready to stay",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 9
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "Intriguing and relatable, immediately addresses a common feeling of self-blame in relationships."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "Concise and easy to understand, delivers the core message effectively within the short word count."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "Clear and empathetic perspective, aligning with the channel's focus on healing and self-growth."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "The 'villain' is the other person's unreadiness, which is somewhat specific but could be elaborated on slightly more."
-      },
-      "cta_quality": {
-        "score": 3,
-        "reason": "There is no explicit CTA in the provided details, which is a missed opportunity for engagement."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Accurately reflects the script's premise \u2013 getting close and the other person not being ready to stay."
-      },
-      "description_usefulness": {
-        "score": 9,
-        "reason": "Effectively summarizes the video's premise and targets the intended audience, encouraging them to watch."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assumed good sync, but without seeing the video, it's hard to judge precisely. Stock footage needs careful selection to match the emotional tone."
-      },
-      "image_direction_strength": {
-        "score": 8,
-        "reason": "The use of brand images suggests a focus on consistent branding, likely supporting the emotional message."
-      },
-      "thumbnail_concept": {
-        "score": 0,
-        "reason": "No thumbnail concept provided for scoring."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "Script is short and direct, suitable for a clear and measured delivery common in this niche."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The number of brand images suggests an effort to maintain brand identity, which is positive."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "No factual claims are made that carry significant policy risk; it's a subjective relationship interpretation."
-      }
-    },
-    "judge_composite_score": 7.38,
-    "strongest_element": "Script Clarity",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively conveys an empathetic message through its clear voiceover, well-paced captions, and reflective music. The hook strongly aligns with the title, immediately drawing viewers into the core message. However, the visual journey is undermined by a jarring, thematically inconsistent shot of a woman with retro phones, and some other visuals lack the specificity needed to deepen the emotional connection, potentially causing viewer drop-off. Refining visual choices to maintain a consistent introspective and healing aesthetic will significantly enhance future content.",
-    "video_audit_strengths": [
-      "The consistent, empathetic voiceover and carefully chosen background music create a strong, soothing auditory experience.",
-      "Excellent caption pacing and typography ensure high readability and message absorption.",
-      "The direct alignment between the hook, title, and core message provides immediate clarity and relevance for the target audience."
-    ],
-    "video_audit_dropoff_causes": [
-      "The jarring visual change at 0:09-0:12 (woman with retro phones) which completely breaks the emotional and thematic flow of the video.",
-      "Some overly generic stock footage choices (e.g., empty coffee cup) that don't deeply resonate with the specific emotional nuance of the message, potentially leading to disengagement."
-    ],
-    "video_audit_repeat_next": [
-      "Continue using the calm, empathetic voiceover and reflective background music.",
-      "Maintain the strong alignment between the video hook and title.",
-      "Keep the effective caption pacing and clear typography."
-    ],
-    "video_audit_reduce_next": [
-      "Reduce the use of visually jarring or thematically disconnected stock footage (e.g., the retro phones visual).",
-      "Minimize generic visuals that don't add specific emotional or metaphorical depth to the script.",
-      "Avoid extreme shifts in visual style or brightness within the same emotional arc of the video."
-    ],
-    "video_audit_tags": {
-      "hook_type": "reframe_self_blame",
-      "thumbnail_type": "text_overlay_melancholic",
-      "visual_style_mix": "introspective_moody_cinematic",
-      "narrative_format": "truth_drop_healing",
-      "character_used": "narrator_only"
-    }
-  },
-  {
     "video_id": "20260513_170132",
     "published_date": "2026-05-13",
     "status": "uploaded",
@@ -4172,6 +4032,151 @@
       "visual_style_mix": "Melancholic Aesthetic, Text-Driven",
       "narrative_format": "Psychology Drop, Explanatory",
       "character_used": "None"
+    }
+  },
+  {
+    "video_id": "20260602_020010",
+    "published_date": "2026-06-02",
+    "status": "uploaded",
+    "topic": "You keep explaining because part of you still wants permission",
+    "category": "self-worth shifts",
+    "angle_type": "truth_drop",
+    "total_score": 16,
+    "source_name": "Psychology of Self-Validation and Boundary Setting",
+    "source_basis": "Principles of healthy boundary setting, self-validation, and internal locus of control in psychology.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Over-explaining boundaries, feeling unheard, seeking external validation for personal choices",
+    "psych_concept": "Boundary setting, self-validation, internal locus of control, people-pleasing tendencies",
+    "core_claim": "A boundary does not need to win a debate to be real",
+    "editorial_seed": "When you find yourself repeatedly explaining a boundary or a personal choice, it often signals an unconscious desire for external approval. The soft reset here is recognizing that your truth, especially your boundaries, doesn't need to be debated or justified to be valid. Its reality comes from you, not from anyone else's acceptance.",
+    "only_soft_reset_line": "The moment you needed their agreement, you handed them the veto.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You're not explaining. You're still asking for permission.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 60,
+    "estimated_duration_sec": 30,
+    "thumbnail_text": "You don't need their permission.",
+    "content_fingerprint": "you keep explaining because part of you still wants permission you re not explaining you re still asking for permission over explaining boundaries feeling unheard seeking external validation for personal choices boundary setting self validation internal locus of control people pleasing tendencies a boundary does not need to win a debate to be real the moment you needed their agreement you handed them the veto",
+    "title": "You're still asking for permission to EXIST",
+    "youtube_video_id": "NjmKpIAuHqw",
+    "youtube_url": "https://youtube.com/shorts/NjmKpIAuHqw",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 10,
+    "validation_warnings": [
+      "tags_sanitized"
+    ],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W23",
+    "judge_traits": {
+      "hook_type": "direct_accusation",
+      "title_type": "declarative",
+      "angle_type": "truth_drop",
+      "category": "self-worth shifts",
+      "topic_cluster": "You keep explaining because part of you still wants permissi",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 10
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook is direct, challenging, and immediately sets up the core conflict of the video. It's relatable to anyone who feels they over-explain or seek external validation."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and impactful, delivering a clear message about the difference between explaining and stating one's truth or right to exist."
+      },
+      "editorial_pov": {
+        "score": 10,
+        "reason": "The channel's POV is strongly established: a direct, no-nonsense approach to identifying and overcoming self-sabotaging behaviors that stem from a lack of self-worth."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "The 'villain' is clearly identified as the internal need for permission, which manifests as over-explaining. This is specific enough to be actionable for the viewer."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no explicit or implicit CTA provided in the script details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is a slightly hyperbolic but accurate representation of the script's core message. It captures the essence of needing permission to simply exist, which is what the script addresses."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description efficiently summarizes the video's premise and hints at the underlying psychological mechanism, providing context and encouraging a click."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "With 8 stock videos and 2 brand images for 10 scenes, there's a good potential for sync. The effectiveness will depend on the specific stock footage chosen to match the direct, truth-drop tone."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The use of brand images alongside stock videos suggests a curated visual experience. Strength relies on the quality and relevance of the chosen stock footage."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "While not detailed, the concept of 'asking for permission' combined with the title's intensity offers strong potential for a compelling thumbnail that grabs attention."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The short script (60 words) and direct language are ideal for a confident, deliberate read. Pacing can emphasize the 'truth drop' nature effectively."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The direct, challenging, yet empathetic tone aligns perfectly with a self-worth-focused channel like Soft Reset With Me. The 'truth drop' angle is a signature."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is psychological and self-help oriented, offering an interpretation of behavior. There are no factual claims that could be easily disproven or that violate standard platform policies."
+      }
+    },
+    "judge_composite_score": 7.3,
+    "strongest_element": "Editorial POV",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively delivers a profound truth with exceptional audio clarity and a strong, empathetic voiceover, consistently aligning with the 'Soft Reset With Me' brand through its meditative visual style and introspective emotional tone. While the script's intellectual depth and structured delivery are standout strengths, the initial visuals could benefit from increased dynamism to immediately capture attention in the competitive Shorts feed, where a contemplative opening might lead to early viewer drop-off despite the overall high quality.",
+    "video_audit_strengths": [
+      "The voiceover quality and consistent delivery are exceptional, lending significant authority and sincerity to the message.",
+      "The script's intellectual depth and its ability to reframe complex psychological concepts into concise, impactful 'truth drops' are a core strength.",
+      "The carefully selected background music consistently establishes and maintains the brand's signature atmospheric and reflective mood.",
+      "The consistent visual aesthetic and subtle color grading across diverse stock footage maintain a unified brand feel despite varying subjects and settings."
+    ],
+    "video_audit_dropoff_causes": [
+      "The very calm and somewhat generic initial visuals might not be dynamic enough to capture and hold the attention of viewers accustomed to fast-paced, high-energy Shorts, potentially leading to early swipes.",
+      "The contemplative and low-energy pacing, while on-brand, could contribute to lower overall retention compared to videos with more immediate visual stimuli or faster narrative progression.",
+      "Some visual transitions are simple cuts that feel a bit abrupt, rather than seamless or thematically linked, which can momentarily break immersion."
+    ],
+    "video_audit_repeat_next": [
+      "High-quality, empathetic, and authoritative voiceover delivery.",
+      "The structured 'truth drop' script format, with its clear hook, tension, insight, and loopback.",
+      "The consistent brand aesthetic achieved through visual mood and music selection.",
+      "Direct, thought-provoking hooks that challenge common assumptions.",
+      "Effective use of on-screen captions for accessibility and emphasis."
+    ],
+    "video_audit_reduce_next": [
+      "Overly static or ambiguous initial visuals that do not immediately convey the hook's intensity or offer strong visual intrigue.",
+      "Potential for slow visual pacing in the very first few seconds; consider a slightly faster cut or more visually engaging opening to combat swipe behavior."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Challenging Statement",
+      "thumbnail_type": "Contemplative Figure with Text Overlay",
+      "visual_style_mix": "Meditative + Intimate",
+      "narrative_format": "Truth Drop / Insightful Revelation",
+      "character_used": "Empathetic Guide"
     }
   }
 ]
