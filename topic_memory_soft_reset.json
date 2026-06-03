@@ -1,147 +1,5 @@
 [
   {
-    "video_id": "20260513_170132",
-    "published_date": "2026-05-13",
-    "status": "uploaded",
-    "topic": "You are not clingy \u2014 you just have not had consistent people",
-    "category": "psychology drops",
-    "angle_type": "reframe",
-    "total_score": 18,
-    "source_name": "Attachment Theory (John Bowlby, Mary Ainsworth)",
-    "source_basis": "Attachment Theory principles detailing how inconsistent caregiving or relationship experiences can lead to anxious attachment and heightened needs for reassurance.",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "reframe",
-    "emotional_trigger": "Feeling 'too much' or anxious in relationships; self-labeling as 'clingy' or 'needy'.",
-    "psych_concept": "Attachment Theory (Anxious Attachment), Nervous System Regulation",
-    "core_claim": "Needing reassurance is not weakness when the people around you have been inconsistent.",
-    "editorial_seed": "It\u2019s easy to internalize the label of 'clingy' when you crave stability. But your desire for reassurance isn't a flaw; it\u2019s a learned response to inconsistent patterns from past relationships. It's your nervous system trying to protect you.",
-    "only_soft_reset_line": "Your nervous system learned to panic because people kept making panic reasonable.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If one unanswered text can ruin your entire evening, this is for you.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 61,
-    "estimated_duration_sec": 24,
-    "thumbnail_text": "You're not clingy. You're under-consistencied.",
-    "content_fingerprint": "you are not clingy you just have not had consistent people if one unanswered text can ruin your entire evening this is for you feeling too much or anxious in relationships self labeling as clingy or needy attachment theory anxious attachment nervous system regulation needing reassurance is not weakness when the people around you have been inconsistent your nervous system learned to panic because people kept making panic reasonable",
-    "title": "Silence still feels like abandonment",
-    "youtube_video_id": "lrksCVdUGpY",
-    "youtube_url": "https://youtube.com/shorts/lrksCVdUGpY",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 9,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W20",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "fragment",
-      "angle_type": "reframe",
-      "category": "psychology drops",
-      "topic_cluster": "You are not clingy \u2014 you just have not had consistent people",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 9
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 9,
-        "reason": "Directly addresses a common anxiety and targets a specific emotional state, making it highly relatable."
-      },
-      "script_clarity": {
-        "score": 10,
-        "reason": "Extremely concise and clear. Every word serves a purpose in delivering the core message within a very short timeframe."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "The reframe angle is present, shifting the perspective from personal failing to unmet needs, which aligns with the channel's typical approach."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "The 'unanswered text' is a specific mechanism, but the core villain is 'overthinking' or 'abandonment fear', which could be slightly more defined."
-      },
-      "cta_quality": {
-        "score": 3,
-        "reason": "There is no explicit CTA in the provided details, which is a missed opportunity for engagement."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title is evocative and accurately reflects the script's theme of interpreting silence as a sign of abandonment or unmet needs."
-      },
-      "description_usefulness": {
-        "score": 9,
-        "reason": "Effectively summarizes the video's premise, hooks the target audience ('quiet overthinkers'), and sets the reframe context."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assuming stock videos and brand images will complement the short, impactful script, sync should be decent, but needs careful execution to enhance the message."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "With 3 brand images and 6 stock videos, there's potential for strong visual storytelling if chosen strategically to match the emotional tone."
-      },
-      "thumbnail_concept": {
-        "score": 8,
-        "reason": "Likely a strong concept that will convey the mood and topic (e.g., a phone with an unanswered message, a pensive expression) effectively."
-      },
-      "voice_pacing_readiness": {
-        "score": 9,
-        "reason": "The script is very short (61 words), allowing for a deliberate, impactful pace that suits the reflective, psychological nature of the content."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The reframe angle and focus on psychological insights fit the 'psychology drops' category and the channel's typical content."
-      },
-      "policy_factual_risk": {
-        "score": 9,
-        "reason": "The content reframes a common emotional response rather than making objective factual claims about relationships or psychology, thus posing minimal risk."
-      }
-    },
-    "judge_composite_score": 8,
-    "strongest_element": "Hook and Script Clarity",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8,
-    "video_audit_status": "ok",
-    "video_audit_summary": "The Short excels at hooking viewers with a relatable emotional pain point, supported by an immediate, empathetic voiceover and perfectly aligned initial visuals. Its audio mix and consistent emotional tone are outstanding, establishing a strong 'Soft Reset With Me' brand identity. However, the video's visual specificity diminishes towards the end, utilizing more generic footage that fails to fully amplify the powerful psychological reframe, potentially leading to a slight drop-off in viewer engagement during the resolution of the message.",
-    "video_audit_strengths": [
-      "The exceptional quality and empathetic delivery of the voiceover, which consistently carries the brand's tone and message.",
-      "The strong initial visual storytelling that immediately captures the viewer's emotional state and sets a compelling mood.",
-      "The seamless integration of music and voiceover, creating a consistently high-quality and branded auditory experience.",
-      "Effective word-by-word captioning, which enhances accessibility and allows for deeper engagement with the spoken words."
-    ],
-    "video_audit_dropoff_causes": [
-      "Decreased visual specificity in the latter half, particularly for abstract concepts like 'adaptation' and 'you just have not had enough,' which might lead to visual disengagement.",
-      "Lack of a strong visual resolution or powerful imagery for the reframe, making the end less impactful visually than the initial problem setup.",
-      "The absence of a clear visual call-to-action to 'Save this if it landed' from the script, which could reduce immediate engagement post-watch."
-    ],
-    "video_audit_repeat_next": [
-      "The use of emotionally resonant and metaphorical visuals for the problem statement (e.g., the dilapidated hallway for 'disappears without warning').",
-      "The consistent, empathetic, and clear voiceover delivery.",
-      "The thoughtful choice and subtle mixing of background music that reinforces the brand's gentle and reflective tone.",
-      "The clear and well-paced word-by-word captioning."
-    ],
-    "video_audit_reduce_next": [
-      "Reliance on generic 'cozy' or 'lifestyle' stock footage for the resolution or insight portions of the script, as these clips often lack the specificity needed to visually amplify complex psychological concepts.",
-      "Visuals that are merely aesthetically pleasing but don't add specific contextual or emotional depth to the accompanying spoken text, especially during critical reframe moments."
-    ],
-    "video_audit_tags": {
-      "hook_type": "Problem/Pain Point",
-      "thumbnail_type": "Mood/Atmospheric",
-      "visual_style_mix": "Moody Cinematic, Introspective Lifestyle",
-      "narrative_format": "Reframe, Validation, Insight",
-      "character_used": "Everyperson, Thoughtful Individual"
-    }
-  },
-  {
     "video_id": "20260513_234005",
     "published_date": "2026-05-13",
     "status": "uploaded",
@@ -4177,6 +4035,147 @@
       "visual_style_mix": "Meditative + Intimate",
       "narrative_format": "Truth Drop / Insightful Revelation",
       "character_used": "Empathetic Guide"
+    }
+  },
+  {
+    "video_id": "20260603_021227",
+    "published_date": "2026-06-03",
+    "status": "uploaded",
+    "topic": "Some people leave because they were never ready to stay",
+    "category": "healing arcs",
+    "angle_type": "truth_drop",
+    "total_score": 16,
+    "source_name": "General relationship psychology consensus",
+    "source_basis": "Relationship psychology principles on emotional readiness and self-worth",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Feeling unworthy or confused after someone leaves a relationship, leading to self-blame",
+    "psych_concept": "Emotional readiness, self-worth, attachment styles",
+    "core_claim": "Their leaving says more about their readiness than your worth",
+    "editorial_seed": "When someone walks away, it's easy to internalize the blame and question your own value. This truth helps viewers understand that another person's actions often reflect their own internal state and readiness for commitment, not a deficit in the viewer's worth. It encourages a shift from self-blame to self-compassion.",
+    "only_soft_reset_line": "They didn't leave because of who you are. They left because of where they weren't.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "They were not pulled away. They were never fully there.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 71,
+    "estimated_duration_sec": 28,
+    "thumbnail_text": "They left. That's about them.",
+    "content_fingerprint": "some people leave because they were never ready to stay they were not pulled away they were never fully there feeling unworthy or confused after someone leaves a relationship leading to self blame emotional readiness self worth attachment styles their leaving says more about their readiness than your worth they didn t leave because of who you are they left because of where they weren t",
+    "title": "They were never fully THERE to begin with",
+    "youtube_video_id": "XrphfyNCUR0",
+    "youtube_url": "https://youtube.com/shorts/XrphfyNCUR0",
+    "fallback_count": 0,
+    "video_count": 10,
+    "total_scenes": 13,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W23",
+    "judge_traits": {
+      "hook_type": "direct_accusation",
+      "title_type": "accusation",
+      "angle_type": "truth_drop",
+      "category": "healing arcs",
+      "topic_cluster": "Some people leave because they were never ready to stay",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 13
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "Intriguing and emotional, hints at a specific type of relationship pain without being overly dramatic."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and directly addresses the core theme of emotional absence versus active withdrawal. Very clear."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Consistent with the channel's focus on nuanced relationship dynamics and emotional healing."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Clearly defines the 'villain' as a lack of presence, not an active wrongdoing, which is a specific point of insight."
+      },
+      "cta_quality": {
+        "score": 0,
+        "reason": "No CTA present in the provided details. This is a critical omission."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurately reflects the script's message about someone never being fully invested or present."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Effectively expands on the hook and title, clearly defining the scenario for potential viewers and highlighting the unique pain point."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed to be adequate given the stock video usage and brand images, but specific sync details aren't provided. Needs confirmation during edit review."
+      },
+      "image_direction_strength": {
+        "score": 8,
+        "reason": "Brand images likely reinforce the emotional tone, and stock videos should illustrate the concept of absence/quietness effectively."
+      },
+      "thumbnail_concept": {
+        "score": 0,
+        "reason": "No thumbnail concept provided for evaluation."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The script is short and direct, lending itself well to a deliberate and empathetic pacing suitable for the channel's style."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of emotional absence and quiet healing arcs aligns perfectly with the channel's established identity."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No factual claims are made that could be disputed or violate policies. Focuses on subjective emotional experiences."
+      }
+    },
+    "judge_composite_score": 7.1,
+    "strongest_element": "Script Clarity & Title/Description Accuracy",
+    "weakest_element": "CTA Quality & Thumbnail Concept (missing)",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively delivers an empathetic and profound message through a soothing voiceover and a well-structured script that moves from initial confusion to empowering insight. While the chosen visuals support the emotional arc and the audio mix is excellent, the pacing could be tightened for some less dynamic shots, and integrating an explicit call to action within the video itself would likely enhance viewer engagement, helping to prevent early drop-offs stemming from prolonged visuals or a lack of clear next steps.",
+    "video_audit_strengths": [
+      "**Voiceover Delivery:** The consistent, gentle, and empathetic delivery of the voiceover is a significant asset, creating a safe and trustworthy space for the viewer to receive the message.",
+      "**Effective Emotional Arc:** The video skillfully guides the viewer through an emotional journey from confusion and self-blame to understanding and self-compassion within a very short timeframe.",
+      "**Concise & Profound Scriptwriting:** The ability to distill complex psychological concepts into clear, impactful, and re-framing statements is a core strength that resonates deeply with the target audience."
+    ],
+    "video_audit_dropoff_causes": [
+      "**Pacing:** Some of the visual transitions, especially between static shots like the empty coffee shop or the single candle flame, linger slightly too long for the fast-paced Shorts environment, which might cause viewers to swipe away before reaching the core insight.",
+      "**Generic Visuals:** While emotionally relevant, the reliance on generic stock footage throughout the video might prevent a deeper connection for viewers seeking more unique or personal visual storytelling, potentially leading to lower retention.",
+      "**Missing In-Video CTA:** The video ends abruptly with the brand card after the final line, lacking an explicit on-screen call to action (e.g., 'Save it,' 'Follow for more'). This could reduce immediate engagement like saves or follows from viewers who don't read the description."
+    ],
+    "video_audit_repeat_next": [
+      "Maintain the consistently empathetic and soothing voiceover delivery.",
+      "Continue to craft clear, concise, and emotionally resonant scripts that offer valuable reframes.",
+      "Utilize thematic visuals that align with the emotional beats of the narrative, even if stock footage."
+    ],
+    "video_audit_reduce_next": [
+      "Reduce the holding time for less dynamic or static visual shots to improve overall pacing for Shorts.",
+      "Lessen reliance on overly generic stock footage by seeking out more unique or subtly branded visual elements.",
+      "Minimize any slight pauses in the voiceover that could slow down the momentum of the Short."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Reframe",
+      "thumbnail_type": "Text Overlay",
+      "visual_style_mix": "Calming, Reflective, Aesthetic Stock",
+      "narrative_format": "Truth Drop, Reframe",
+      "character_used": "Voiceover Only"
     }
   }
 ]
