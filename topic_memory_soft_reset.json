@@ -1,148 +1,5 @@
 [
   {
-    "video_id": "20260513_234005",
-    "published_date": "2026-05-13",
-    "status": "uploaded",
-    "topic": "Silence in a relationship is not always neutral",
-    "category": "conversation truths",
-    "angle_type": "truth_drop",
-    "total_score": 20,
-    "source_name": "Gottman Institute / Relationship Psychology",
-    "source_basis": "The concept of stonewalling as a destructive communication pattern (Gottman Institute), and emotional withdrawal as a form of non-verbal communication that impacts perceived self-worth.",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "truth_drop",
-    "emotional_trigger": "Being ignored, stonewalled, or ghosted in a relationship; feeling unimportant when a partner withdraws without explanation.",
-    "psych_concept": "Emotional withdrawal, stonewalling, passive communication, rejection sensitivity",
-    "core_claim": "Withdrawal without explanation is still a communication \u2014 it says you do not matter enough",
-    "editorial_seed": "When someone pulls away without a word, it's not a mystery for you to solve. It's a statement about their emotional capacity and how they value your connection. You deserve clear communication, not the burden of interpreting absence.",
-    "only_soft_reset_line": "Their silence was not a gap. It was a sentence.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "When someone goes quiet, that silence is already telling you something.",
-    "hook_quality": "weak",
-    "script_version": "2",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 68,
-    "estimated_duration_sec": 22,
-    "thumbnail_text": "Their silence was already an answer.",
-    "content_fingerprint": "silence in a relationship is not always neutral when someone goes quiet that silence is already telling you something being ignored stonewalled or ghosted in a relationship feeling unimportant when a partner withdraws without explanation emotional withdrawal stonewalling passive communication rejection sensitivity withdrawal without explanation is still a communication it says you do not matter enough their silence was not a gap it was a sentence",
-    "title": "When they go quiet, it's NOT just quiet",
-    "youtube_video_id": "GIcxZYZ6p8s",
-    "youtube_url": "https://youtube.com/shorts/GIcxZYZ6p8s",
-    "fallback_count": 0,
-    "video_count": 7,
-    "total_scenes": 11,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W20",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "truth_drop",
-      "category": "conversation truths",
-      "topic_cluster": "Silence in a relationship is not always neutral",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 11
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "Intriguing and relatable, immediately grabs attention by highlighting a common relationship dynamic."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "Concise and direct, the message about the meaning of silence is clearly articulated within the word count."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "Establishes a clear perspective that silence in relationships is not passive but an active form of communication."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "While the 'villain' isn't explicit, the concept of 'going quiet' as a negative mechanism impacting connection is clear."
-      },
-      "cta_quality": {
-        "score": 3,
-        "reason": "No explicit CTA present in the script or description provided."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Accurately reflects the hook and the core message of the video \u2013 that silence has deeper implications."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "Effectively expands on the hook, posing a question that invites viewer engagement and clarifies the video's topic."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assumed to be adequate as stock videos and brand images are mentioned, but direct sync cannot be fully assessed without seeing the video."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "Brand images and stock videos suggest a curated visual experience, likely supporting the narrative, but strength is medium."
-      },
-      "thumbnail_concept": {
-        "score": 8,
-        "reason": "The concept is strong given the title and hook, implying a visual that represents the 'unspoken' or a significant silence."
-      },
-      "voice_pacing_readiness": {
-        "score": 9,
-        "reason": "The short script (68 words) is easily manageable for a 40s video, suggesting good pacing potential."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The topic and angle type ('conversation truths', 'truth_drop') align well with a relationship/self-growth channel focused on insights."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content discusses relationship dynamics and communication, which carries no apparent factual or policy risk. It's subjective advice."
-      }
-    },
-    "judge_composite_score": 7.5,
-    "strongest_element": "script_clarity",
-    "weakest_element": "cta_quality",
-    "only_soft_reset_score": 8,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short excels in its audio production, script delivery, and captioning, all of which contribute to a powerful and engaging message about relationship dynamics. The hook and title alignment are also outstanding, immediately drawing the viewer in. However, the video suffers significantly from inconsistent visual choices; several clips are completely unrelated to the topic or contradict the emotional tone, creating jarring interruptions that are likely to cause viewer drop-off. Refining the visual curation to ensure every clip supports the overarching theme is crucial for future videos.",
-    "video_audit_strengths": [
-      "The clarity and impact of the voiceover delivery.",
-      "The effective use of a melancholic instrumental track to establish mood.",
-      "The perfect synchronization and pacing of on-screen captions.",
-      "The strong, direct, and relatable core message delivered by the script."
-    ],
-    "video_audit_dropoff_causes": [
-      "Jarring and irrelevant visual clips that break thematic consistency (e.g., the hand counting clip, the smiling woman, the 'TEAM WORK' clipboard).",
-      "Visuals that contradict the emotional tone and message of the voiceover, causing confusion or disengagement."
-    ],
-    "video_audit_repeat_next": [
-      "Maintain the high quality of voiceover delivery and script clarity.",
-      "Continue with a well-balanced audio mix of voice and background music.",
-      "Utilize precise, word-by-word caption pacing.",
-      "Employ direct and engaging hooks that align seamlessly with the title.",
-      "Select abstract, moody, or reflective visuals that consistently support the emotional theme."
-    ],
-    "video_audit_reduce_next": [
-      "Eliminate stock footage clips that are visually or thematically irrelevant to the core message.",
-      "Avoid visuals that contradict the emotional tone or specific words being spoken in the script.",
-      "Minimize abrupt changes in visual style that disrupt viewer immersion."
-    ],
-    "video_audit_tags": {
-      "hook_type": "truth_drop",
-      "thumbnail_type": "text_overlay",
-      "visual_style_mix": "abstract_moody_reflective",
-      "narrative_format": "insight_sharing",
-      "character_used": "female_narrator"
-    }
-  },
-  {
     "video_id": "20260514_172143",
     "published_date": "2026-05-14",
     "status": "uploaded",
@@ -4176,6 +4033,149 @@
       "visual_style_mix": "Calming, Reflective, Aesthetic Stock",
       "narrative_format": "Truth Drop, Reframe",
       "character_used": "Voiceover Only"
+    }
+  },
+  {
+    "video_id": "20260604_020643",
+    "published_date": "2026-06-04",
+    "status": "uploaded",
+    "topic": "Projecting past betrayals onto new, innocent actions",
+    "category": "relationship patterns",
+    "angle_type": "specific_scenario",
+    "total_score": 20,
+    "source_name": "Psychoanalytic theory, Attachment theory, Trauma-informed care principles",
+    "source_basis": "Psychological projection and the impact of past relational trauma on present perception, as discussed in attachment theory.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "specific_scenario",
+    "emotional_trigger": "Misinterpreting an innocent text/action as betrayal due to past relational trauma.",
+    "psych_concept": "Psychological projection, hypervigilance from past relational trauma",
+    "core_claim": "Our past hurts can create a powerful filter, making us see red flags where there are none, based on old patterns of disappointment.",
+    "editorial_seed": "It's not always about 'gut feelings.' Sometimes, we're so primed by past disappointments that we actively scan new relationships for the same signs of betrayal, even when they're not there. This isn't protecting ourselves; it's punishing a new connection for old wounds.",
+    "only_soft_reset_line": "That's not intuition. That's a wound doing surveillance.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You're not reading the room. You're reading your past.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 65,
+    "estimated_duration_sec": 27,
+    "thumbnail_text": "That's not intuition. That's old pain.",
+    "content_fingerprint": "projecting past betrayals onto new innocent actions you re not reading the room you re reading your past misinterpreting an innocent text action as betrayal due to past relational trauma psychological projection hypervigilance from past relational trauma our past hurts can create a powerful filter making us see red flags where there are none based on old patterns of disappointment that s not intuition that s a wound doing surveillance",
+    "title": "You're reading your past, not this moment",
+    "youtube_video_id": "MgyHSZzhFgc",
+    "youtube_url": "https://youtube.com/shorts/MgyHSZzhFgc",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 11,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W23",
+    "judge_traits": {
+      "hook_type": "direct_accusation",
+      "title_type": "declarative",
+      "angle_type": "specific_scenario",
+      "category": "relationship patterns",
+      "topic_cluster": "Projecting past betrayals onto new, innocent actions",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "45_60s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 11
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Intriguing and thought-provoking, immediately sets up the core conflict."
+      },
+      "script_clarity": {
+        "score": 10,
+        "reason": "Concise and directly addresses the core concept of projecting past experiences onto current situations."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Clear and empathetic, aligns with the channel's self-growth focus."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "Effectively identifies the subconscious pattern of 'reading the past' as the antagonist in relationships."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "No CTA present in the script or description. This is a major oversight for engagement."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "Perfectly reflects the hook and the core message of the video."
+      },
+      "description_usefulness": {
+        "score": 9,
+        "reason": "Provides a clear, concise summary of the video's premise and hints at the emotional impact."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed good sync. Without seeing the video, it's hard to judge, but the topic lends itself well to visual interpretation."
+      },
+      "image_direction_strength": {
+        "score": 8,
+        "reason": "The use of brand images and stock videos is likely to support the narrative of past vs. present, assuming good selection."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "Likely effective, the core concept is strong enough to be visually represented in a compelling thumbnail."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The short script suggests a pace that can be delivered clearly and effectively, allowing for emphasis."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of relationship patterns and self-growth is highly consistent with the channel's niche."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content is psychological and relational, with no factual claims that could pose a policy risk."
+      }
+    },
+    "judge_composite_score": 7.9,
+    "strongest_element": "Script Clarity & Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "The video effectively delivers a deeply empathetic and introspective message, driven by an exceptional voiceover and a perfectly matched melancholic audio mix, creating a strong 'Soft Reset With Me' brand identity. The hook is well-aligned with the script and title, drawing viewers into a relatable emotional scenario. However, the video's extended length, slow visual pacing, and reliance on generic stock footage that often lacks specific connection to the narrative, are likely contributors to potential viewer drop-off. Future videos would benefit from tighter editing and more visually distinctive, purposeful imagery to enhance engagement within the Shorts format.",
+    "video_audit_strengths": [
+      "The voiceover performance is exceptional, conveying empathy and authority in a comforting, non-judgmental way that perfectly suits the brand.",
+      "The carefully chosen background music consistently supports the reflective and introspective emotional tone, enhancing the overall viewing experience.",
+      "The signature line, 'That's not intuition. That's a wound doing surveillance,' is delivered with powerful emphasis and makes a strong, memorable impact."
+    ],
+    "video_audit_dropoff_causes": [
+      "The video's total length (52 seconds) is quite long for a YouTube Short, especially considering the script's estimated 27 seconds. This extended duration, combined with slow visual pacing and atmospheric but not always dynamic visuals, can lead to viewers losing interest and scrolling away.",
+      "The reliance on generic stock footage, particularly in longer cuts, may not provide enough visual stimulation or direct relevance to hold the attention of a fast-scrolling Shorts audience.",
+      "Some visual transitions (e.g., between cityscapes) feel less purposeful and more like padding, which can disrupt the flow and perceived value for the viewer."
+    ],
+    "video_audit_repeat_next": [
+      "The calm, empathetic, and clear voiceover delivery.",
+      "The selection of melancholic and reflective background music.",
+      "The strong, thought-provoking script writing, particularly the impactful 'loopback' lines.",
+      "Consistent brand aesthetic and emotional tone that supports self-reflection."
+    ],
+    "video_audit_reduce_next": [
+      "Overall video length for Shorts; aim for tighter editing closer to the script's estimated duration.",
+      "Reliance on generic stock footage that doesn't add specific meaning to the narrative; prioritize more conceptual or visually unique imagery.",
+      "Extended lingering shots that can slow down the pacing too much for the Shorts format.",
+      "Visuals that are too dark and reduce caption legibility."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Scenario / Bold Claim",
+      "thumbnail_type": "Emotional Face / Text Overlay",
+      "visual_style_mix": "Cinematic / Emotional / Abstract",
+      "narrative_format": "Direct Address / Explainer",
+      "character_used": "Archetype / Relatable"
     }
   }
 ]
