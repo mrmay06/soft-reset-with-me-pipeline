@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-04T02:06:44Z",
+  "generated_at": "2026-06-06T01:30:54Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-19",
-  "end_date": "2026-06-03",
+  "start_date": "2026-04-21",
+  "end_date": "2026-06-05",
   "videos": [
     {
       "video_id": "20260521_173815",
@@ -960,173 +960,6 @@
       "data_available": true
     },
     {
-      "video_id": "20260513_234005",
-      "published_date": "2026-05-13",
-      "status": "uploaded",
-      "topic": "Silence in a relationship is not always neutral",
-      "category": "conversation truths",
-      "angle_type": "truth_drop",
-      "total_score": 20,
-      "source_name": "Gottman Institute / Relationship Psychology",
-      "source_basis": "The concept of stonewalling as a destructive communication pattern (Gottman Institute), and emotional withdrawal as a form of non-verbal communication that impacts perceived self-worth.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "truth_drop",
-      "emotional_trigger": "Being ignored, stonewalled, or ghosted in a relationship; feeling unimportant when a partner withdraws without explanation.",
-      "psych_concept": "Emotional withdrawal, stonewalling, passive communication, rejection sensitivity",
-      "core_claim": "Withdrawal without explanation is still a communication \u2014 it says you do not matter enough",
-      "editorial_seed": "When someone pulls away without a word, it's not a mystery for you to solve. It's a statement about their emotional capacity and how they value your connection. You deserve clear communication, not the burden of interpreting absence.",
-      "only_soft_reset_line": "Their silence was not a gap. It was a sentence.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "When someone goes quiet, that silence is already telling you something.",
-      "hook_quality": "weak",
-      "script_version": "2",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 68,
-      "estimated_duration_sec": 22,
-      "thumbnail_text": "Their silence was already an answer.",
-      "content_fingerprint": "silence in a relationship is not always neutral when someone goes quiet that silence is already telling you something being ignored stonewalled or ghosted in a relationship feeling unimportant when a partner withdraws without explanation emotional withdrawal stonewalling passive communication rejection sensitivity withdrawal without explanation is still a communication it says you do not matter enough their silence was not a gap it was a sentence",
-      "title": "When they go quiet, it's NOT just quiet",
-      "youtube_video_id": "GIcxZYZ6p8s",
-      "youtube_url": "https://youtube.com/shorts/GIcxZYZ6p8s",
-      "fallback_count": 0,
-      "video_count": 7,
-      "total_scenes": 11,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "truth_drop",
-        "category": "conversation truths",
-        "topic_cluster": "Silence in a relationship is not always neutral",
-        "visual_style_mix": "balanced",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 11
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Intriguing and relatable, immediately grabs attention by highlighting a common relationship dynamic."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "Concise and direct, the message about the meaning of silence is clearly articulated within the word count."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "Establishes a clear perspective that silence in relationships is not passive but an active form of communication."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "While the 'villain' isn't explicit, the concept of 'going quiet' as a negative mechanism impacting connection is clear."
-        },
-        "cta_quality": {
-          "score": 3,
-          "reason": "No explicit CTA present in the script or description provided."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "Accurately reflects the hook and the core message of the video \u2013 that silence has deeper implications."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Effectively expands on the hook, posing a question that invites viewer engagement and clarifies the video's topic."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assumed to be adequate as stock videos and brand images are mentioned, but direct sync cannot be fully assessed without seeing the video."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "Brand images and stock videos suggest a curated visual experience, likely supporting the narrative, but strength is medium."
-        },
-        "thumbnail_concept": {
-          "score": 8,
-          "reason": "The concept is strong given the title and hook, implying a visual that represents the 'unspoken' or a significant silence."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "The short script (68 words) is easily manageable for a 40s video, suggesting good pacing potential."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The topic and angle type ('conversation truths', 'truth_drop') align well with a relationship/self-growth channel focused on insights."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content discusses relationship dynamics and communication, which carries no apparent factual or policy risk. It's subjective advice."
-        }
-      },
-      "judge_composite_score": 7.5,
-      "strongest_element": "script_clarity",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short excels in its audio production, script delivery, and captioning, all of which contribute to a powerful and engaging message about relationship dynamics. The hook and title alignment are also outstanding, immediately drawing the viewer in. However, the video suffers significantly from inconsistent visual choices; several clips are completely unrelated to the topic or contradict the emotional tone, creating jarring interruptions that are likely to cause viewer drop-off. Refining the visual curation to ensure every clip supports the overarching theme is crucial for future videos.",
-      "video_audit_strengths": [
-        "The clarity and impact of the voiceover delivery.",
-        "The effective use of a melancholic instrumental track to establish mood.",
-        "The perfect synchronization and pacing of on-screen captions.",
-        "The strong, direct, and relatable core message delivered by the script."
-      ],
-      "video_audit_dropoff_causes": [
-        "Jarring and irrelevant visual clips that break thematic consistency (e.g., the hand counting clip, the smiling woman, the 'TEAM WORK' clipboard).",
-        "Visuals that contradict the emotional tone and message of the voiceover, causing confusion or disengagement."
-      ],
-      "video_audit_repeat_next": [
-        "Maintain the high quality of voiceover delivery and script clarity.",
-        "Continue with a well-balanced audio mix of voice and background music.",
-        "Utilize precise, word-by-word caption pacing.",
-        "Employ direct and engaging hooks that align seamlessly with the title.",
-        "Select abstract, moody, or reflective visuals that consistently support the emotional theme."
-      ],
-      "video_audit_reduce_next": [
-        "Eliminate stock footage clips that are visually or thematically irrelevant to the core message.",
-        "Avoid visuals that contradict the emotional tone or specific words being spoken in the script.",
-        "Minimize abrupt changes in visual style that disrupt viewer immersion."
-      ],
-      "video_audit_tags": {
-        "hook_type": "truth_drop",
-        "thumbnail_type": "text_overlay",
-        "visual_style_mix": "abstract_moody_reflective",
-        "narrative_format": "insight_sharing",
-        "character_used": "female_narrator"
-      },
-      "metrics": {
-        "views": 36,
-        "engagedViews": 17,
-        "averageViewDuration": 19,
-        "averageViewPercentage": 46.46,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 31.86,
-      "performance_score": 31.86,
-      "score_version": 1,
-      "hook_score": 47.22,
-      "hold_score": 46.46,
-      "resonance_score": 5.88,
-      "resonance_per_engaged": 0.0588,
-      "resonance_per_view": 0.0278,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 52.27,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 16,
-      "data_available": true
-    },
-    {
       "video_id": "20260515_012406",
       "published_date": "2026-05-15",
       "status": "uploaded",
@@ -1788,8 +1621,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 41.84,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 11,
+      "analytics_fetched_at": "2026-06-06T01:30:54Z",
+      "analytics_days_old": 19,
       "data_available": true
     },
     {
@@ -2931,28 +2764,28 @@
         "character_used": "Empathic Narrator"
       },
       "metrics": {
-        "views": 3,
-        "engagedViews": 1,
-        "averageViewDuration": 13,
-        "averageViewPercentage": 36.76,
+        "views": 8,
+        "engagedViews": 4,
+        "averageViewDuration": 8,
+        "averageViewPercentage": 22.89,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "subscribersGained": 0
       },
-      "composite_score": 22.2,
-      "performance_score": 22.2,
+      "composite_score": 22.1,
+      "performance_score": 22.1,
       "score_version": 1,
-      "hook_score": 33.33,
-      "hold_score": 36.76,
+      "hook_score": 50.0,
+      "hold_score": 22.89,
       "resonance_score": 0.0,
       "resonance_per_engaged": 0.0,
       "resonance_per_view": 0.0,
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
-      "reach_score": 20.07,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 3,
+      "reach_score": 31.8,
+      "analytics_fetched_at": "2026-06-06T01:30:54Z",
+      "analytics_days_old": 11,
       "data_available": true
     },
     {
@@ -3284,8 +3117,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 41.84,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 10,
+      "analytics_fetched_at": "2026-06-06T01:30:54Z",
+      "analytics_days_old": 18,
       "data_available": true
     },
     {
@@ -3762,8 +3595,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 50.16,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 11,
+      "analytics_fetched_at": "2026-06-06T01:30:54Z",
+      "analytics_days_old": 19,
       "data_available": true
     },
     {
@@ -4266,6 +4099,171 @@
       "data_available": true
     },
     {
+      "video_id": "20260603_021227",
+      "published_date": "2026-06-03",
+      "status": "uploaded",
+      "topic": "Some people leave because they were never ready to stay",
+      "category": "healing arcs",
+      "angle_type": "truth_drop",
+      "total_score": 16,
+      "source_name": "General relationship psychology consensus",
+      "source_basis": "Relationship psychology principles on emotional readiness and self-worth",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "truth_drop",
+      "emotional_trigger": "Feeling unworthy or confused after someone leaves a relationship, leading to self-blame",
+      "psych_concept": "Emotional readiness, self-worth, attachment styles",
+      "core_claim": "Their leaving says more about their readiness than your worth",
+      "editorial_seed": "When someone walks away, it's easy to internalize the blame and question your own value. This truth helps viewers understand that another person's actions often reflect their own internal state and readiness for commitment, not a deficit in the viewer's worth. It encourages a shift from self-blame to self-compassion.",
+      "only_soft_reset_line": "They didn't leave because of who you are. They left because of where they weren't.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "They were not pulled away. They were never fully there.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 71,
+      "estimated_duration_sec": 28,
+      "thumbnail_text": "They left. That's about them.",
+      "content_fingerprint": "some people leave because they were never ready to stay they were not pulled away they were never fully there feeling unworthy or confused after someone leaves a relationship leading to self blame emotional readiness self worth attachment styles their leaving says more about their readiness than your worth they didn t leave because of who you are they left because of where they weren t",
+      "title": "They were never fully THERE to begin with",
+      "youtube_video_id": "XrphfyNCUR0",
+      "youtube_url": "https://youtube.com/shorts/XrphfyNCUR0",
+      "fallback_count": 0,
+      "video_count": 10,
+      "total_scenes": 13,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "judge_traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "accusation",
+        "angle_type": "truth_drop",
+        "category": "healing arcs",
+        "topic_cluster": "Some people leave because they were never ready to stay",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "Intriguing and emotional, hints at a specific type of relationship pain without being overly dramatic."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and directly addresses the core theme of emotional absence versus active withdrawal. Very clear."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "Consistent with the channel's focus on nuanced relationship dynamics and emotional healing."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Clearly defines the 'villain' as a lack of presence, not an active wrongdoing, which is a specific point of insight."
+        },
+        "cta_quality": {
+          "score": 0,
+          "reason": "No CTA present in the provided details. This is a critical omission."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the script's message about someone never being fully invested or present."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively expands on the hook and title, clearly defining the scenario for potential viewers and highlighting the unique pain point."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumed to be adequate given the stock video usage and brand images, but specific sync details aren't provided. Needs confirmation during edit review."
+        },
+        "image_direction_strength": {
+          "score": 8,
+          "reason": "Brand images likely reinforce the emotional tone, and stock videos should illustrate the concept of absence/quietness effectively."
+        },
+        "thumbnail_concept": {
+          "score": 0,
+          "reason": "No thumbnail concept provided for evaluation."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The script is short and direct, lending itself well to a deliberate and empathetic pacing suitable for the channel's style."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The theme of emotional absence and quiet healing arcs aligns perfectly with the channel's established identity."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No factual claims are made that could be disputed or violate policies. Focuses on subjective emotional experiences."
+        }
+      },
+      "judge_composite_score": 7.1,
+      "strongest_element": "Script Clarity & Title/Description Accuracy",
+      "weakest_element": "CTA Quality & Thumbnail Concept (missing)",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively delivers an empathetic and profound message through a soothing voiceover and a well-structured script that moves from initial confusion to empowering insight. While the chosen visuals support the emotional arc and the audio mix is excellent, the pacing could be tightened for some less dynamic shots, and integrating an explicit call to action within the video itself would likely enhance viewer engagement, helping to prevent early drop-offs stemming from prolonged visuals or a lack of clear next steps.",
+      "video_audit_strengths": [
+        "**Voiceover Delivery:** The consistent, gentle, and empathetic delivery of the voiceover is a significant asset, creating a safe and trustworthy space for the viewer to receive the message.",
+        "**Effective Emotional Arc:** The video skillfully guides the viewer through an emotional journey from confusion and self-blame to understanding and self-compassion within a very short timeframe.",
+        "**Concise & Profound Scriptwriting:** The ability to distill complex psychological concepts into clear, impactful, and re-framing statements is a core strength that resonates deeply with the target audience."
+      ],
+      "video_audit_dropoff_causes": [
+        "**Pacing:** Some of the visual transitions, especially between static shots like the empty coffee shop or the single candle flame, linger slightly too long for the fast-paced Shorts environment, which might cause viewers to swipe away before reaching the core insight.",
+        "**Generic Visuals:** While emotionally relevant, the reliance on generic stock footage throughout the video might prevent a deeper connection for viewers seeking more unique or personal visual storytelling, potentially leading to lower retention.",
+        "**Missing In-Video CTA:** The video ends abruptly with the brand card after the final line, lacking an explicit on-screen call to action (e.g., 'Save it,' 'Follow for more'). This could reduce immediate engagement like saves or follows from viewers who don't read the description."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the consistently empathetic and soothing voiceover delivery.",
+        "Continue to craft clear, concise, and emotionally resonant scripts that offer valuable reframes.",
+        "Utilize thematic visuals that align with the emotional beats of the narrative, even if stock footage."
+      ],
+      "video_audit_reduce_next": [
+        "Reduce the holding time for less dynamic or static visual shots to improve overall pacing for Shorts.",
+        "Lessen reliance on overly generic stock footage by seeking out more unique or subtly branded visual elements.",
+        "Minimize any slight pauses in the voiceover that could slow down the momentum of the Short."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Reframe",
+        "thumbnail_type": "Text Overlay",
+        "visual_style_mix": "Calming, Reflective, Aesthetic Stock",
+        "narrative_format": "Truth Drop, Reframe",
+        "character_used": "Voiceover Only"
+      },
+      "metrics": {
+        "views": 34,
+        "engagedViews": 3,
+        "averageViewDuration": 4,
+        "averageViewPercentage": 14.46,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 9.84,
+      "performance_score": 9.84,
+      "score_version": 1,
+      "hook_score": 8.82,
+      "hold_score": 14.46,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 51.46,
+      "analytics_fetched_at": "2026-06-06T01:30:54Z",
+      "analytics_days_old": 3,
+      "data_available": true
+    },
+    {
       "video_id": "20260529_013405",
       "published_date": "2026-05-29",
       "status": "uploaded",
@@ -4407,164 +4405,6 @@
       "analytics_fetched_at": "2026-05-31T01:37:10Z",
       "analytics_days_old": 2,
       "data_available": true
-    },
-    {
-      "video_id": "20260520_235208",
-      "published_date": "2026-05-20",
-      "status": "uploaded",
-      "topic": "When your constant effort to 'fix' the relationship is actually avoiding the truth.",
-      "category": "Healing Arcs",
-      "angle_type": "reframe",
-      "total_score": 19,
-      "source_name": "Psychological principles (e.g., CBT, ACT insights on avoidance)",
-      "source_basis": "Avoidance coping mechanisms, cognitive dissonance in relationships, and the distinction between productive effort and futile 'fixing'.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "reframe",
-      "emotional_trigger": "Feeling exhausted from constantly trying to 'fix' a relationship, realizing it might be futile or one-sided, and dreading a deeper, harder truth.",
-      "psych_concept": "Avoidance coping, cognitive dissonance, relationship maintenance vs. dissolution",
-      "core_claim": "Obsessively trying to 'fix' a struggling relationship can be a form of avoidance, preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone.",
-      "editorial_seed": "We\u2019re taught to fight for relationships, to work on them. But sometimes, that relentless 'fixing' isn't productive work \u2013 it's a way to avoid admitting something deeper isn't right. It\u2019s easier to try and mend a broken vase endlessly than to accept it\u2019s shattered.",
-      "only_soft_reset_line": "You're not fixing the relationship. You're fixing around the truth.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "You think all that effort means you're trying. It might mean you're hiding.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 71,
-      "estimated_duration_sec": 21,
-      "thumbnail_text": "You're not fixing it. You're avoiding it.",
-      "content_fingerprint": "when your constant effort to fix the relationship is actually avoiding the truth you think all that effort means you re trying it might mean you re hiding feeling exhausted from constantly trying to fix a relationship realizing it might be futile or one sided and dreading a deeper harder truth avoidance coping cognitive dissonance relationship maintenance vs dissolution obsessively trying to fix a struggling relationship can be a form of avoidance preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone you re not fixing the relationship you re fixing around the truth",
-      "title": "You're not fixing, you're just HIDING",
-      "youtube_video_id": "QMDWhbyhg3I",
-      "youtube_url": "https://youtube.com/shorts/QMDWhbyhg3I",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 11,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W21",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "reframe",
-        "category": "Healing Arcs",
-        "topic_cluster": "When your constant effort to 'fix' the relationship is actua",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 11
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Intriguing premise that challenges a common assumption about effort in relationships."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise and directly conveys the core message of the reframe."
-        },
-        "editorial_pov": {
-          "score": 7,
-          "reason": "The POV is clear, offering a new perspective on relationship 'fixing'."
-        },
-        "villain_mechanism_specificity": {
-          "score": 6,
-          "reason": "While the mechanism ('hiding') is named, it could be more specific about what is being hidden."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no call to action present in the provided details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the video's core message and hook."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description effectively summarizes the video's premise and targets the intended audience."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming standard stock video usage, there's potential for good sync, but it relies heavily on execution."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "The brand images should ideally reinforce the message, but their specific impact is unknown without seeing them."
-        },
-        "thumbnail_concept": {
-          "score": 6,
-          "reason": "The concept needs to visually represent 'hiding' versus 'fixing' effectively to be strong."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script suggests it can be delivered with excellent pacing."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The reframe angle aligns well with typical Soft Reset With Me content."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is opinion-based and reframes a common behavior, posing no significant factual risk."
-        }
-      },
-      "judge_composite_score": 6.3,
-      "strongest_element": "Script Clarity",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short masterfully delivers a poignant reframe about 'fixing' as a form of avoidance, leveraging an exceptionally clear voiceover, precise caption pacing, and a cohesive, melancholic aesthetic. While the initial hook and several visual metaphors are highly impactful, a couple of slightly generic shots and one potentially ambiguous facial expression momentarily dilute the otherwise powerful emotional resonance. The video's strong brand identity and insightful message are consistently maintained throughout.",
-      "video_audit_strengths": [
-        "The creative and strategic use of visual metaphors to translate abstract psychological concepts into relatable imagery (e.g., washing face, drawing lines, rain overlay).",
-        "The consistent, empathetic, and direct voiceover delivery that builds trust and authority.",
-        "The excellent caption pacing and style (word-by-word/phrase-by-phrase) significantly enhance message comprehension and retention in a short format.",
-        "The overall cohesive aesthetic, including the subtle film grain and color grading, contributes to a distinct and thoughtful brand identity."
-      ],
-      "video_audit_dropoff_causes": [
-        "A few slightly generic or less specific visual choices (e.g., empty coffee cup, man looking bored) could momentarily reduce engagement.",
-        "The visual of the stern-faced woman at 0:27, while possibly intended as self-reflection, could be perceived as judgmental by some viewers, potentially causing a brief disconnect from the empathetic tone."
-      ],
-      "video_audit_repeat_next": [
-        "The impactful and emotionally resonant visual hooks in the first few seconds.",
-        "The strategic use of visual metaphors that directly illustrate complex verbal concepts.",
-        "The precise and engaging caption pacing (word-by-word/short phrase).",
-        "The effective use of visual overlays and transitions to add depth to the message (e.g., rain/lights overlay).",
-        "The consistent quality and emotional tone of the voiceover."
-      ],
-      "video_audit_reduce_next": [
-        "Reliance on overly generic stock footage that lacks specific metaphorical connection to the script.",
-        "Visuals that could be ambiguously interpreted as accusatory or judgmental, ensuring all imagery maintains an empathetic and self-reflective tone."
-      ],
-      "video_audit_tags": {
-        "hook_type": "reframe-statement",
-        "thumbnail_type": "emotional-face-closeup",
-        "visual_style_mix": "aesthetic-stock-footage-with-text-overlay",
-        "narrative_format": "reframe",
-        "character_used": "stock-actors"
-      },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
-      "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-05-29T01:34:05Z",
-      "analytics_days_old": 9,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
     },
     {
       "video_id": "20260522_013246",
@@ -4721,6 +4561,323 @@
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-06-01T01:40:13Z",
       "analytics_days_old": 10,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260520_235208",
+      "published_date": "2026-05-20",
+      "status": "uploaded",
+      "topic": "When your constant effort to 'fix' the relationship is actually avoiding the truth.",
+      "category": "Healing Arcs",
+      "angle_type": "reframe",
+      "total_score": 19,
+      "source_name": "Psychological principles (e.g., CBT, ACT insights on avoidance)",
+      "source_basis": "Avoidance coping mechanisms, cognitive dissonance in relationships, and the distinction between productive effort and futile 'fixing'.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "reframe",
+      "emotional_trigger": "Feeling exhausted from constantly trying to 'fix' a relationship, realizing it might be futile or one-sided, and dreading a deeper, harder truth.",
+      "psych_concept": "Avoidance coping, cognitive dissonance, relationship maintenance vs. dissolution",
+      "core_claim": "Obsessively trying to 'fix' a struggling relationship can be a form of avoidance, preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone.",
+      "editorial_seed": "We\u2019re taught to fight for relationships, to work on them. But sometimes, that relentless 'fixing' isn't productive work \u2013 it's a way to avoid admitting something deeper isn't right. It\u2019s easier to try and mend a broken vase endlessly than to accept it\u2019s shattered.",
+      "only_soft_reset_line": "You're not fixing the relationship. You're fixing around the truth.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You think all that effort means you're trying. It might mean you're hiding.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 71,
+      "estimated_duration_sec": 21,
+      "thumbnail_text": "You're not fixing it. You're avoiding it.",
+      "content_fingerprint": "when your constant effort to fix the relationship is actually avoiding the truth you think all that effort means you re trying it might mean you re hiding feeling exhausted from constantly trying to fix a relationship realizing it might be futile or one sided and dreading a deeper harder truth avoidance coping cognitive dissonance relationship maintenance vs dissolution obsessively trying to fix a struggling relationship can be a form of avoidance preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone you re not fixing the relationship you re fixing around the truth",
+      "title": "You're not fixing, you're just HIDING",
+      "youtube_video_id": "QMDWhbyhg3I",
+      "youtube_url": "https://youtube.com/shorts/QMDWhbyhg3I",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "Healing Arcs",
+        "topic_cluster": "When your constant effort to 'fix' the relationship is actua",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing premise that challenges a common assumption about effort in relationships."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise and directly conveys the core message of the reframe."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is clear, offering a new perspective on relationship 'fixing'."
+        },
+        "villain_mechanism_specificity": {
+          "score": 6,
+          "reason": "While the mechanism ('hiding') is named, it could be more specific about what is being hidden."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no call to action present in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the video's core message and hook."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description effectively summarizes the video's premise and targets the intended audience."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming standard stock video usage, there's potential for good sync, but it relies heavily on execution."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "The brand images should ideally reinforce the message, but their specific impact is unknown without seeing them."
+        },
+        "thumbnail_concept": {
+          "score": 6,
+          "reason": "The concept needs to visually represent 'hiding' versus 'fixing' effectively to be strong."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script suggests it can be delivered with excellent pacing."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The reframe angle aligns well with typical Soft Reset With Me content."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is opinion-based and reframes a common behavior, posing no significant factual risk."
+        }
+      },
+      "judge_composite_score": 6.3,
+      "strongest_element": "Script Clarity",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short masterfully delivers a poignant reframe about 'fixing' as a form of avoidance, leveraging an exceptionally clear voiceover, precise caption pacing, and a cohesive, melancholic aesthetic. While the initial hook and several visual metaphors are highly impactful, a couple of slightly generic shots and one potentially ambiguous facial expression momentarily dilute the otherwise powerful emotional resonance. The video's strong brand identity and insightful message are consistently maintained throughout.",
+      "video_audit_strengths": [
+        "The creative and strategic use of visual metaphors to translate abstract psychological concepts into relatable imagery (e.g., washing face, drawing lines, rain overlay).",
+        "The consistent, empathetic, and direct voiceover delivery that builds trust and authority.",
+        "The excellent caption pacing and style (word-by-word/phrase-by-phrase) significantly enhance message comprehension and retention in a short format.",
+        "The overall cohesive aesthetic, including the subtle film grain and color grading, contributes to a distinct and thoughtful brand identity."
+      ],
+      "video_audit_dropoff_causes": [
+        "A few slightly generic or less specific visual choices (e.g., empty coffee cup, man looking bored) could momentarily reduce engagement.",
+        "The visual of the stern-faced woman at 0:27, while possibly intended as self-reflection, could be perceived as judgmental by some viewers, potentially causing a brief disconnect from the empathetic tone."
+      ],
+      "video_audit_repeat_next": [
+        "The impactful and emotionally resonant visual hooks in the first few seconds.",
+        "The strategic use of visual metaphors that directly illustrate complex verbal concepts.",
+        "The precise and engaging caption pacing (word-by-word/short phrase).",
+        "The effective use of visual overlays and transitions to add depth to the message (e.g., rain/lights overlay).",
+        "The consistent quality and emotional tone of the voiceover."
+      ],
+      "video_audit_reduce_next": [
+        "Reliance on overly generic stock footage that lacks specific metaphorical connection to the script.",
+        "Visuals that could be ambiguously interpreted as accusatory or judgmental, ensuring all imagery maintains an empathetic and self-reflective tone."
+      ],
+      "video_audit_tags": {
+        "hook_type": "reframe-statement",
+        "thumbnail_type": "emotional-face-closeup",
+        "visual_style_mix": "aesthetic-stock-footage-with-text-overlay",
+        "narrative_format": "reframe",
+        "character_used": "stock-actors"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-06-06T01:30:54Z",
+      "analytics_days_old": 17,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20260604_020643",
+      "published_date": "2026-06-04",
+      "status": "uploaded",
+      "topic": "Projecting past betrayals onto new, innocent actions",
+      "category": "relationship patterns",
+      "angle_type": "specific_scenario",
+      "total_score": 20,
+      "source_name": "Psychoanalytic theory, Attachment theory, Trauma-informed care principles",
+      "source_basis": "Psychological projection and the impact of past relational trauma on present perception, as discussed in attachment theory.",
+      "source_url": "",
+      "confidence_level": "therapist_consensus",
+      "content_format": "specific_scenario",
+      "emotional_trigger": "Misinterpreting an innocent text/action as betrayal due to past relational trauma.",
+      "psych_concept": "Psychological projection, hypervigilance from past relational trauma",
+      "core_claim": "Our past hurts can create a powerful filter, making us see red flags where there are none, based on old patterns of disappointment.",
+      "editorial_seed": "It's not always about 'gut feelings.' Sometimes, we're so primed by past disappointments that we actively scan new relationships for the same signs of betrayal, even when they're not there. This isn't protecting ourselves; it's punishing a new connection for old wounds.",
+      "only_soft_reset_line": "That's not intuition. That's a wound doing surveillance.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You're not reading the room. You're reading your past.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 65,
+      "estimated_duration_sec": 27,
+      "thumbnail_text": "That's not intuition. That's old pain.",
+      "content_fingerprint": "projecting past betrayals onto new innocent actions you re not reading the room you re reading your past misinterpreting an innocent text action as betrayal due to past relational trauma psychological projection hypervigilance from past relational trauma our past hurts can create a powerful filter making us see red flags where there are none based on old patterns of disappointment that s not intuition that s a wound doing surveillance",
+      "title": "You're reading your past, not this moment",
+      "youtube_video_id": "MgyHSZzhFgc",
+      "youtube_url": "https://youtube.com/shorts/MgyHSZzhFgc",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "judge_traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "declarative",
+        "angle_type": "specific_scenario",
+        "category": "relationship patterns",
+        "topic_cluster": "Projecting past betrayals onto new, innocent actions",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "45_60s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Intriguing and thought-provoking, immediately sets up the core conflict."
+        },
+        "script_clarity": {
+          "score": 10,
+          "reason": "Concise and directly addresses the core concept of projecting past experiences onto current situations."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "Clear and empathetic, aligns with the channel's self-growth focus."
+        },
+        "villain_mechanism_specificity": {
+          "score": 9,
+          "reason": "Effectively identifies the subconscious pattern of 'reading the past' as the antagonist in relationships."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "No CTA present in the script or description. This is a major oversight for engagement."
+        },
+        "title_accuracy": {
+          "score": 10,
+          "reason": "Perfectly reflects the hook and the core message of the video."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Provides a clear, concise summary of the video's premise and hints at the emotional impact."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assumed good sync. Without seeing the video, it's hard to judge, but the topic lends itself well to visual interpretation."
+        },
+        "image_direction_strength": {
+          "score": 8,
+          "reason": "The use of brand images and stock videos is likely to support the narrative of past vs. present, assuming good selection."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "Likely effective, the core concept is strong enough to be visually represented in a compelling thumbnail."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The short script suggests a pace that can be delivered clearly and effectively, allowing for emphasis."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The theme of relationship patterns and self-growth is highly consistent with the channel's niche."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is psychological and relational, with no factual claims that could pose a policy risk."
+        }
+      },
+      "judge_composite_score": 7.9,
+      "strongest_element": "Script Clarity & Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "The video effectively delivers a deeply empathetic and introspective message, driven by an exceptional voiceover and a perfectly matched melancholic audio mix, creating a strong 'Soft Reset With Me' brand identity. The hook is well-aligned with the script and title, drawing viewers into a relatable emotional scenario. However, the video's extended length, slow visual pacing, and reliance on generic stock footage that often lacks specific connection to the narrative, are likely contributors to potential viewer drop-off. Future videos would benefit from tighter editing and more visually distinctive, purposeful imagery to enhance engagement within the Shorts format.",
+      "video_audit_strengths": [
+        "The voiceover performance is exceptional, conveying empathy and authority in a comforting, non-judgmental way that perfectly suits the brand.",
+        "The carefully chosen background music consistently supports the reflective and introspective emotional tone, enhancing the overall viewing experience.",
+        "The signature line, 'That's not intuition. That's a wound doing surveillance,' is delivered with powerful emphasis and makes a strong, memorable impact."
+      ],
+      "video_audit_dropoff_causes": [
+        "The video's total length (52 seconds) is quite long for a YouTube Short, especially considering the script's estimated 27 seconds. This extended duration, combined with slow visual pacing and atmospheric but not always dynamic visuals, can lead to viewers losing interest and scrolling away.",
+        "The reliance on generic stock footage, particularly in longer cuts, may not provide enough visual stimulation or direct relevance to hold the attention of a fast-scrolling Shorts audience.",
+        "Some visual transitions (e.g., between cityscapes) feel less purposeful and more like padding, which can disrupt the flow and perceived value for the viewer."
+      ],
+      "video_audit_repeat_next": [
+        "The calm, empathetic, and clear voiceover delivery.",
+        "The selection of melancholic and reflective background music.",
+        "The strong, thought-provoking script writing, particularly the impactful 'loopback' lines.",
+        "Consistent brand aesthetic and emotional tone that supports self-reflection."
+      ],
+      "video_audit_reduce_next": [
+        "Overall video length for Shorts; aim for tighter editing closer to the script's estimated duration.",
+        "Reliance on generic stock footage that doesn't add specific meaning to the narrative; prioritize more conceptual or visually unique imagery.",
+        "Extended lingering shots that can slow down the pacing too much for the Shorts format.",
+        "Visuals that are too dark and reduce caption legibility."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Scenario / Bold Claim",
+        "thumbnail_type": "Emotional Face / Text Overlay",
+        "visual_style_mix": "Cinematic / Emotional / Abstract",
+        "narrative_format": "Direct Address / Explainer",
+        "character_used": "Archetype / Relatable"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-06-06T01:30:54Z",
+      "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"
     }
