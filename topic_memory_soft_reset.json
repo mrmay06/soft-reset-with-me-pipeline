@@ -1,149 +1,5 @@
 [
   {
-    "video_id": "20260514_172143",
-    "published_date": "2026-05-14",
-    "status": "uploaded",
-    "topic": "You are not too much \u2014 you were just around people with too little",
-    "category": "self-worth shifts",
-    "angle_type": "reframe",
-    "total_score": 18,
-    "source_name": "Therapist consensus and observational psychology",
-    "source_basis": "Psychological principle of projection and individual differences in emotional regulation capacity in interpersonal relationships.",
-    "source_url": "",
-    "confidence_level": "therapist_consensus",
-    "content_format": "reframe",
-    "emotional_trigger": "Feeling inherently flawed or overwhelming after being told you are 'too much' in a relationship or social setting.",
-    "psych_concept": "Projection, emotional regulation capacity",
-    "core_claim": "Being called 'too much' is often a reflection of someone else's emotional limits, not a flaw in your authentic self.",
-    "editorial_seed": "This topic validates a painful and common experience: being labeled 'too much' in relationships. It offers a powerful reframe, shifting the perspective from self-blame to understanding that the issue lies with the other person's capacity and comfort levels, not one's inherent value or expression. This empowers the audience to embrace their authentic self without shame.",
-    "only_soft_reset_line": "They didn't have the capacity. They just handed you the bill.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If you shrank yourself because someone called you too much, this is for you.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 75,
-    "estimated_duration_sec": 21,
-    "thumbnail_text": "you weren't too much",
-    "content_fingerprint": "you are not too much you were just around people with too little if you shrank yourself because someone called you too much this is for you feeling inherently flawed or overwhelming after being told you are too much in a relationship or social setting projection emotional regulation capacity being called too much is often a reflection of someone else s emotional limits not a flaw in your authentic self they didn t have the capacity they just handed you the bill",
-    "title": "You weren't too much, they were just SMALL",
-    "youtube_video_id": "I-8SRp8D7PM",
-    "youtube_url": "https://youtube.com/shorts/I-8SRp8D7PM",
-    "fallback_count": 0,
-    "video_count": 9,
-    "total_scenes": 13,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W20",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "reframe",
-      "category": "self-worth shifts",
-      "topic_cluster": "You are not too much \u2014 you were just around people with too ",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 13
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "The hook is relatable and directly addresses a common emotional experience, drawing viewers in by promising a solution."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "The script is concise and effectively conveys a powerful reframe in a short word count."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "The POV is clear: validating the viewer's feelings and reframing perceived 'too-muchness' as emotional depth."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "While the 'villain' mechanism (making someone feel 'too much') is implied, it could be slightly more specific about *how* this happens."
-      },
-      "cta_quality": {
-        "score": 1,
-        "reason": "There is no explicit or implicit CTA present in the provided details."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title is creative, uses a compelling metaphor, and accurately reflects the script's core message of validating the viewer's magnitude."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "The description is concise, reinforces the hook, and clearly states the video's benefit to the viewer."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "With stock footage and brand images, sync is likely adequate but not guaranteed to be perfectly tailored without seeing the edit. Assumed moderate sync."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "Assuming brand images are relevant and stock videos support the narrative, the direction is functional. Lacks explicit detail for higher score."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "The title is strong enough to suggest a compelling thumbnail concept, likely focusing on scale or emotional expression. Needs confirmation."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "The script's brevity suggests good pacing potential. Assumed voiceover would align with the brand's calm, reflective tone."
-      },
-      "brand_consistency": {
-        "score": 9,
-        "reason": "The topic (self-worth shifts, emotional depth) and reframe angle align perfectly with the channel's established identity."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content is subjective and focuses on emotional reframing, posing no factual or policy risks."
-      }
-    },
-    "judge_composite_score": 7.2,
-    "strongest_element": "Brand consistency",
-    "weakest_element": "CTA quality",
-    "only_soft_reset_score": 9,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively delivers a powerful message of self-worth through strong narrative alignment, empathetic narration, and visually specific metaphors. While the pacing could be slightly optimized for the Shorts format and a minor visual filter choice was jarring, the overall production quality, emotional resonance, and precise captioning create a compelling and validating experience for the viewer, effectively embodying the channel's purpose.",
-    "video_audit_strengths": [
-      "The consistent use of a subtle 'film grain' overlay acts as an effective stylistic unifier for the diverse stock footage, adding a cohesive and polished feel.",
-      "The clever and impactful use of visual metaphors, such as the hand drawing a circle to represent 'their limit' and the folded paper for 'the bill', significantly strengthens the narrative's core message.",
-      "The narrator's consistent empathetic and reassuring vocal delivery is a cornerstone of the video's emotional effectiveness.",
-      "The precise word-by-word captioning not only enhances accessibility but also controls the reader's pace, ensuring the narrative unfolds deliberately."
-    ],
-    "video_audit_dropoff_causes": [
-      "The overall pacing of the video is quite slow for a short, which might lead some viewers to swipe away if they prefer more dynamic content.",
-      "The transition from the 'plant as growth' visual (0:10) to the contrasting statement 'You thought that was growth' could cause a momentary disconnect if the viewer isn't reading the captions quickly or processing the reframe.",
-      "The strong purple filter on the visual of men playing cards (0:29) creates a sudden aesthetic shift that feels slightly jarring compared to the otherwise natural and muted tones."
-    ],
-    "video_audit_repeat_next": [
-      "Maintain the high quality, empathetic voiceover and narration style.",
-      "Continue with precise, well-timed captioning that aids comprehension and pacing.",
-      "Utilize thoughtful and specific visual metaphors to illustrate abstract psychological concepts.",
-      "Apply consistent aesthetic filters or overlays to unify disparate stock footage into a cohesive visual style.",
-      "Keep background music subtle and perfectly matched to the emotional tone."
-    ],
-    "video_audit_reduce_next": [
-      "Minimize or avoid jarring color filters that deviate significantly from the video's established aesthetic.",
-      "Consider optimizing visual pacing in certain sections to be slightly more dynamic for the Shorts format, without sacrificing emotional depth.",
-      "Review transitions between highly abstract visuals to ensure a smoother, more seamless flow."
-    ],
-    "video_audit_tags": {
-      "hook_type": "Relatable Problem / Vulnerability Hook",
-      "thumbnail_type": "Text-Overlay",
-      "visual_style_mix": "Muted, Reflective, Cinematic, Metaphorical",
-      "narrative_format": "Voiceover Monologue / Reframe Narrative",
-      "character_used": "Empathetic Guide / Mentor"
-    }
-  },
-  {
     "video_id": "20260515_012406",
     "published_date": "2026-05-15",
     "status": "uploaded",
@@ -4176,6 +4032,150 @@
       "visual_style_mix": "Cinematic / Emotional / Abstract",
       "narrative_format": "Direct Address / Explainer",
       "character_used": "Archetype / Relatable"
+    }
+  },
+  {
+    "video_id": "20260608_014131",
+    "published_date": "2026-06-08",
+    "status": "uploaded",
+    "topic": "The quiet comfort of predictable disappointment",
+    "category": "psychology drops",
+    "angle_type": "truth_drop",
+    "total_score": 18,
+    "source_name": "Behavioral Psychology / Neuroscience (general principles)",
+    "source_basis": "Humans' natural preference for predictable outcomes (even negative ones) over uncertain ones, linked to nervous system threat response and comfort zones.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Feeling stuck in a cycle of unhealthy patterns, or contemplating returning to a familiar but damaging relationship/situation.",
+    "psych_concept": "Fear of the unknown, nervous system threat response",
+    "core_claim": "We often return to unhealthy patterns not out of love, but because the unknown future feels scarier than the known disappointment.",
+    "editorial_seed": "It's not about being weak or stupid. It's about your nervous system preferring a familiar, even if damaging, pattern over the truly unpredictable path of healing and new connection. It feels like 'this is just how things are.'",
+    "only_soft_reset_line": "Your body would rather be disappointed on schedule than hopeful with no guarantee.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You don't miss them. You miss knowing what to expect.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 61,
+    "estimated_duration_sec": 19,
+    "thumbnail_text": "Going back isn't love. It's fear.",
+    "content_fingerprint": "the quiet comfort of predictable disappointment you don t miss them you miss knowing what to expect feeling stuck in a cycle of unhealthy patterns or contemplating returning to a familiar but damaging relationship situation fear of the unknown nervous system threat response we often return to unhealthy patterns not out of love but because the unknown future feels scarier than the known disappointment your body would rather be disappointed on schedule than hopeful with no guarantee",
+    "title": "Predictable pain can feel like comfort",
+    "youtube_video_id": "8Q2XL4EIU5Y",
+    "youtube_url": "https://youtube.com/shorts/8Q2XL4EIU5Y",
+    "fallback_count": 0,
+    "video_count": 6,
+    "total_scenes": 9,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W24",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "truth_drop",
+      "category": "psychology drops",
+      "topic_cluster": "The quiet comfort of predictable disappointment",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 9
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "Intriguing and relatable, directly addresses a common emotional paradox."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Concise and easy to understand, gets straight to the point with a clear message."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "The 'truth drop' angle is present, but could be more distinctly channeled through a unique perspective."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Clearly identifies the 'villain' as the comfort of predictability in painful situations."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no CTA present in the script or provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Accurately reflects the core message of the video and the hook."
+      },
+      "description_usefulness": {
+        "score": 7,
+        "reason": "The initial part is strong and echoes the hook, but the truncation cuts off the useful continuation."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assumed good sync based on typical channel style, but not explicitly detailed."
+      },
+      "image_direction_strength": {
+        "score": 6,
+        "reason": "Brand images are mentioned, but their conceptual strength or alignment isn't detailed."
+      },
+      "thumbnail_concept": {
+        "score": 0,
+        "reason": "Thumbnail concept was not provided."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The short script length suggests pacing will be manageable and effective for a 'drop'."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The theme and angle align well with the channel's established style."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No apparent policy or factual risks; the content is psychological and subjective."
+      }
+    },
+    "judge_composite_score": 6.0,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 7,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short excels in delivering a profound psychological insight with exceptional brand consistency. The calm, introspective aesthetic, empathetic voiceover, and well-chosen music create a powerful emotional tone that perfectly aligns with the 'Soft Reset With Me' identity. While the rapid caption pacing and visual repetition could be refined for broader appeal, the video's strong script, metaphorical visuals, and consistent mood make it a highly effective and impactful 'truth drop' for its target audience.",
+    "video_audit_strengths": [
+      "Exceptional brand consistency: The video's aesthetic, tone, and message are perfectly aligned with the 'Soft Reset With Me' identity, building strong brand recognition and emotional connection.",
+      "Effective use of metaphorical visuals: The visuals, though abstract, deeply resonate with the emotional and psychological themes, enhancing the script's impact without being overtly literal.",
+      "High-quality voiceover delivery: The voice artist's tone, pacing, and emotional nuance significantly elevate the script, making the complex psychological concept accessible and empathetic.",
+      "Strong narrative arc in a short format: The script effectively builds from a relatable hook through tension and insight to a powerful loopback, delivering a complete thought within a brief duration."
+    ],
+    "video_audit_dropoff_causes": [
+      "The visual repetition of themes (candles, books, solitary figures, windows) might lead to visual fatigue for some viewers, despite the aesthetic quality, especially across multiple videos from the channel.",
+      "The deliberate slow pacing of scene changes, while aligning with the brand's meditative style, might not retain viewers accustomed to faster-cut, more dynamic short-form content.",
+      "The abstract nature of the visuals, while a strength for the brand's mood, could be perceived as too vague or disconnected from the specific psychological claims by viewers looking for more literal or direct visual representations of concepts."
+    ],
+    "video_audit_repeat_next": [
+      "The soft, introspective visual aesthetic (candles, books, muted lighting, contemplative settings).",
+      "The calm, empathetic, and clear voiceover delivery.",
+      "The use of piano-driven, ambient background music to set a reflective mood.",
+      "The structure of the script, delivering a 'truth drop' insight from a strong hook to a memorable closing statement.",
+      "The consistent brand identity across visual and auditory elements."
+    ],
+    "video_audit_reduce_next": [
+      "Visual repetition: Explore a slightly wider variety of contemplative or mood-setting shots to maintain visual freshness, while retaining the overall aesthetic.",
+      "Caption speed: Experiment with slightly slower caption delivery for certain segments to allow more comfortable reading and deeper absorption of the words, especially for complex ideas, without sacrificing engagement.",
+      "Length of static shots: Occasionally incorporate subtle movements or slightly more dynamic compositions within the contemplative shots to prevent them from feeling too static for extended periods."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Counter-Intuitive Truth Drop",
+      "thumbnail_type": "Symbolic Text Overlay",
+      "visual_style_mix": "Calmcore Aesthetic; Reflective B-Roll; Mood-Driven Storytelling",
+      "narrative_format": "Psychological Insight; Empathic Monologue",
+      "character_used": "Voiceover Only; Symbolic Human Presence"
     }
   }
 ]
