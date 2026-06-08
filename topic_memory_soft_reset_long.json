@@ -1109,5 +1109,161 @@
     "strongest_element": "script_clarity",
     "weakest_element": "visual_dialogue_sync",
     "only_soft_reset_score": 7
+  },
+  {
+    "video_id": "long_20260608_051657",
+    "published_date": "2026-06-08",
+    "status": "uploaded",
+    "topic": "The exhausting art of trying to be 'enough' for someone else, and how it disconnects you from yourself.",
+    "working_title": "When Connection Becomes a Performance: The Quiet Cost of Chasing Approval",
+    "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+    "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+    "angle_type": "emotional_deep_dive",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "Constantly seeking external approval in relationships is an exhausting performance that ultimately prevents true, authentic connection, both with others and with yourself.",
+    "editorial_seed": "This video explores the subtle, often subconscious ways we contort ourselves to fit a partner's perceived expectations, believing this will lead to deeper love. We dissect the specific moment of realization that this effort is actually creating distance, not intimacy. The narrative offers a path to reclaim self-worth not from external validation, but from an internal sense of alignment and truth, fostering relationships where you are loved for who you authentically are, not who you pretend to be.",
+    "only_soft_reset_line": "The move isn't about being less for someone \u2014 it's about bravely becoming more of yourself, even if it costs you the version of the relationship that only existed because you kept making yourself smaller to fit it.",
+    "word_count": 1018,
+    "estimated_duration_sec": 394.1,
+    "argument_quality": "strong",
+    "final_duration_sec": 338.3,
+    "render_validation": "passed",
+    "title": "What if 'enough' isn't something you perform for them?",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why you feel empty after trying to be enough for them"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You're not asking if you liked them, just if they liked you"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "What if 'enough' isn't something you perform for them?"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "pure_typography",
+        "structure": "typography",
+        "line1": "YOU'RE ALWAYS PERFORMING",
+        "line2": "and it's making you disappear",
+        "thumbnail_text": "YOU'RE ALWAYS PERFORMING / and it's making you disappear",
+        "visual_prompt": "Dark charcoal background, subtly textured, premium editorial book-cover aesthetic, minimalist, clean, cool-neutral cinematic color palette. No text."
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "face_right_text_left",
+        "structure": "face_text",
+        "line1": "ARE YOU LIKED",
+        "line2": "or just playing the part",
+        "thumbnail_text": "ARE YOU LIKED / or just playing the part",
+        "visual_prompt": "Cinematic portrait of a young woman, mid-twenties, on the right 58% of the frame. Her expression shows quiet, devastated recognition, heavy eyes, gaze slightly to the empty dark left 42% text zone. Soft diffused cool-neutral window light, real skin texture, subtle film grain, slightly desaturated prestige drama color grade. Cool-neutral colors only. No text.",
+        "subject_gender": "woman",
+        "portrait_scene": "cool-neutral portrait scene with empty dark left text zone, no text"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "split_screen",
+        "structure": "split",
+        "line1": "ENOUGH ISN'T A ROLE",
+        "line2": "it's just who you are",
+        "thumbnail_text": "ENOUGH ISN'T A ROLE / it's just who you are",
+        "visual_prompt": "Split screen composite, 16:9. Left side: a dimly lit, slightly blurred figure in a sterile, impersonal office setting, head slightly bowed, cool tones, conveys emptiness and performance, back to viewer. Right side: A clearer, more grounded shot of the same figure in a calm, cool-neutral, minimalist home environment, looking out a window with a steady, quiet self-assured expression, soft diffused light, sense of gentle presence. Prestige drama color grade, no warm tones. No text.",
+        "scene_left": "problem-state scene, cold dark, no text",
+        "scene_right": "resolution-state scene, cool-neutral clarity, no text"
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "fPGlQff7pvM",
+    "youtube_url": "https://www.youtube.com/watch?v=fPGlQff7pvM",
+    "privacy_status": "public",
+    "uploaded_at": "2026-06-08T05:33:30Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W24",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "question",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The exhausting art of trying to be 'enough' for someone else",
+      "visual_style_mix": "unknown",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 0
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook poses a thought-provoking question that directly challenges a common misconception about relationships and self-worth, making viewers curious to find the answer."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script effectively communicates the core message of authentic self-expression over performance, using clear language and relatable examples. The concept of 'enough' is explored with nuance."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The channel's perspective on self-growth and authentic relating is consistently present, advocating for internal validation and courage in self-expression, which aligns with the 'soft reset' philosophy."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "The script identifies the 'villain' as the external validation-seeking mindset and the performance-based approach to relationships, explaining how this mechanism leads to a lack of fulfillment."
+      },
+      "cta_quality": {
+        "score": 6,
+        "reason": "While the description implies a soft reset, a direct call-to-action within the video itself (e.g., asking viewers to share their thoughts or subscribe for more) is not specified, which is a missed opportunity for engagement."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title perfectly encapsulates the video's central theme: questioning the need to perform 'enoughness' for others and instead focusing on genuine self-acceptance."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description provides a concise and compelling summary of the video's core message, hinting at the 'soft reset' concept and the idea of embracing one's true self, even with temporary discomfort."
+      },
+      "visual_dialogue_sync": {
+        "score": 1,
+        "reason": "There are no visual elements (scenes, stock videos, brand images) specified, meaning there is no dialogue to sync with visuals. This is a critical missing component for a YouTube video."
+      },
+      "image_direction_strength": {
+        "score": 1,
+        "reason": "No images or brand visuals are mentioned, so their strength cannot be evaluated. This lack of visual strategy is a significant drawback."
+      },
+      "thumbnail_concept": {
+        "score": 3,
+        "reason": "No thumbnail concept is provided. A compelling thumbnail is crucial for click-through rate, and its absence is a major oversight."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "Assuming a typical faceless channel format, the script length (1018 words) is appropriate for a ~5.5-minute video (338s). The pacing would need to be natural and engaging, but the word count is suitable."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The core message of authenticity, self-acceptance, and internal validation aligns perfectly with the 'Soft Reset With Me' brand identity, focusing on personal growth and mindful relationship dynamics."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content discusses psychological and relational concepts in a general self-growth context. There are no claims that appear to be factually risky or violate platform policies."
+      }
+    },
+    "judge_composite_score": 6.1,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "Visual Dialogue Sync",
+    "only_soft_reset_score": 8
   }
 ]

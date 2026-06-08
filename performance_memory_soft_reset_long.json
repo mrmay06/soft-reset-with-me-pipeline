@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-01T05:28:52Z",
+  "generated_at": "2026-06-08T05:16:57Z",
   "lookback_days": 90,
   "min_video_age_days": 3,
   "refresh_interval_days": 7,
-  "start_date": "2026-03-02",
-  "end_date": "2026-05-31",
+  "start_date": "2026-03-09",
+  "end_date": "2026-06-07",
   "videos": [
     {
       "video_id": "long_20260507_164017",
@@ -704,6 +704,186 @@
       "reach_score": 40.13,
       "analytics_fetched_at": "2026-06-01T05:28:52Z",
       "analytics_days_old": 21,
+      "data_available": true
+    },
+    {
+      "video_id": "long_20260601_052851",
+      "published_date": "2026-06-01",
+      "status": "uploaded",
+      "topic": "The Silent Concession: Why we ask for 'less' than we truly want, before anyone has even said no.",
+      "working_title": "The Silent Concession: Why you ask for 'less' than you truly need (and how to unlearn it).",
+      "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
+      "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
+      "angle_type": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
+      "longform_format": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
+      "core_claim": "We often subconsciously dilute our own needs and desires when expressing them in relationships, due to past experiences of rejection or unmet expectations, inadvertently perpetuating a cycle of receiving less than we truly deserve.",
+      "editorial_seed": "Many of us have learned to shrink our desires down before we even voice them. We've been taught, implicitly or explicitly, that our full needs might be 'too much,' inconvenient, or will inevitably lead to disappointment. This video explores the subtle ways we preemptively compromise with ourselves, asking for a watered-down version of what we truly want, and how this quiet self-betrayal affects our relationships. It's time to understand why we do this, and how to start asking for our whole selves.",
+      "only_soft_reset_line": "The real heartbreak isn't being denied what you need. It's realizing you never fully asked for it in the first place.",
+      "word_count": 1039,
+      "estimated_duration_sec": 402.2,
+      "argument_quality": "strong",
+      "final_duration_sec": 372.4,
+      "render_validation": "passed",
+      "title": "That quiet ask for 'less'? You're already saying no to yourself",
+      "primary_variant_id": "C",
+      "title_variants": [
+        {
+          "id": "A",
+          "angle": "seo",
+          "formula": "specific scenario | specific number | named experience",
+          "title": "Why you ask for 70% of what you want from them"
+        },
+        {
+          "id": "B",
+          "angle": "emotional_hook",
+          "formula": "personal pronoun + viewer's private thought made visible",
+          "title": "You soften your needs before they can even say no"
+        },
+        {
+          "id": "C",
+          "angle": "counter_intuitive",
+          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+          "title": "That quiet ask for 'less'? You're already saying no to yourself"
+        }
+      ],
+      "thumbnail_variants": [
+        {
+          "id": "A",
+          "angle": "seo",
+          "pattern": "pure_typography",
+          "structure": "typography",
+          "line1": "YOU ASK FOR LESS",
+          "line2": "before anyone says no",
+          "thumbnail_text": "YOU ASK FOR LESS / before anyone says no",
+          "visual_prompt": "16:9 horizontal, 1920x1080. Minimalist, premium editorial book-cover aesthetic. Dark charcoal background with subtle texture. Abstract, elegant, cool-neutral gradient, very subtle film grain. No text, no warm colors, no UI elements. Deep Midnight #1C1C2B dominant with very subtle hints of Soft Cream #F5F0E8. Cinematic light."
+        },
+        {
+          "id": "B",
+          "angle": "emotional_hook",
+          "pattern": "face_right_text_left",
+          "structure": "face_text",
+          "line1": "YOU HELD BACK",
+          "line2": "why you always do this",
+          "thumbnail_text": "YOU HELD BACK / why you always do this",
+          "visual_prompt": "16:9 horizontal, 1920x1080. A woman, mid-twenties to early thirties, positioned on the right 58% of the frame. Her expression conveys quiet, devastated recognition, heavy eyes, gaze slightly to the left. No smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light on her face. Real skin texture, subtle film grain. Slightly desaturated prestige drama color grade. The left 42% of the frame is a clean, dark, empty zone for text. No text in the image. Cool-neutral cinematic color palette only. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks.",
+          "subject_gender": "woman",
+          "portrait_scene": "cool-neutral portrait scene with empty dark left text zone, no text"
+        },
+        {
+          "id": "C",
+          "angle": "counter_intuitive",
+          "pattern": "split_screen",
+          "structure": "split",
+          "line1": "YOU SAID NO FIRST",
+          "line2": "before anyone else could",
+          "thumbnail_text": "YOU SAID NO FIRST / before anyone else could",
+          "visual_prompt": "16:9 horizontal, 1920x1080. Two-plate split-screen composite. Left side (problem state): A person, indistinct, hunched over a dim phone screen in a cold, dark, sparse room, feeling isolated and unresolved. Dominant cool tones, deep shadows. Right side (resolution state): The same person, now clearer, cool-neutral lighting, looking out a window with a steady, contemplative expression. Calm, cool, diffused light, a sense of quiet clarity. No text in the image. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks. Subtle film grain.",
+          "scene_left": "problem-state scene, cold dark, no text",
+          "scene_right": "resolution-state scene, cool-neutral clarity, no text"
+        }
+      ],
+      "thumbnail": "07_longform_thumbnail.png",
+      "youtube_video_id": "lq1EnufJHSU",
+      "youtube_url": "https://www.youtube.com/watch?v=lq1EnufJHSU",
+      "privacy_status": "public",
+      "uploaded_at": "2026-06-01T05:45:17Z",
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "unknown",
+        "category": "unknown",
+        "topic_cluster": "The Silent Concession: Why we ask for 'less' than we truly w",
+        "visual_style_mix": "unknown",
+        "video_length_band": "3_7min",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 0
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook 'That quiet ask for 'less'?' is intriguing and directly relates to the title, posing a relatable question that invites viewers to explore their own experiences."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is well-structured, using clear language and relatable examples to explain the concept of self-denial and the importance of assertive communication in relationships."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The editorial point of view is consistent, offering a reflective and empowering perspective on personal agency within relationships, aligning with the channel's likely self-growth focus."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "The 'villain' is identified as the internal mechanism of self-silencing and fear of asking for needs, which is well-explained, though could be slightly more specific in its manifestation."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "A specific CTA is not present in the provided details, which is a missed opportunity for engagement and guiding viewer action."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the core message of the video, highlighting the internal struggle of not asking for what one needs and the resulting self-denial."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description is concise, engaging, and accurately previews the video's theme, setting a compelling tone and hinting at the emotional core of the content."
+        },
+        "visual_dialogue_sync": {
+          "score": 1,
+          "reason": "No visual elements (scenes, stock videos, brand images) were provided, making it impossible to assess sync. Assuming a typical faceless format, this will heavily rely on text overlays or abstract visuals."
+        },
+        "image_direction_strength": {
+          "score": 1,
+          "reason": "No visual elements were provided, therefore image direction cannot be assessed."
+        },
+        "thumbnail_concept": {
+          "score": 1,
+          "reason": "No thumbnail concept was provided, making assessment impossible."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The script is 1039 words, which at a typical narration pace (150 wpm) is under 7 minutes, fitting common YouTube attention spans. The density of the content suggests a thoughtful, deliberate pacing would be appropriate."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The theme of self-growth, introspection, and relationship dynamics strongly aligns with the presumed brand of a channel named 'Soft Reset With Me'."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content discusses psychological and relational concepts in a general, self-reflective manner. There are no claims that carry significant factual risk or violate platform policies."
+        }
+      },
+      "judge_composite_score": 7.15,
+      "strongest_element": "script_clarity",
+      "weakest_element": "visual_dialogue_sync",
+      "only_soft_reset_score": 7,
+      "metrics": {
+        "views": 3,
+        "engagedViews": 3,
+        "averageViewDuration": 111,
+        "averageViewPercentage": 29.84,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 36.45,
+      "performance_score": 36.45,
+      "score_version": 1,
+      "hook_score": 100.0,
+      "hold_score": 29.84,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 20.07,
+      "analytics_fetched_at": "2026-06-08T05:16:57Z",
+      "analytics_days_old": 7,
       "data_available": true
     },
     {
