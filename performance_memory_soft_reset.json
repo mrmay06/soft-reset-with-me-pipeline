@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-10T01:38:57Z",
+  "generated_at": "2026-06-11T02:01:09Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-25",
-  "end_date": "2026-06-09",
+  "start_date": "2026-04-26",
+  "end_date": "2026-06-10",
   "videos": [
     {
       "video_id": "20260521_173815",
@@ -602,28 +602,28 @@
         "character_used": "None"
       },
       "metrics": {
-        "views": 119,
-        "engagedViews": 22,
+        "views": 116,
+        "engagedViews": 23,
         "averageViewDuration": 16,
-        "averageViewPercentage": 45.11,
+        "averageViewPercentage": 44.09,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "subscribersGained": 1
       },
-      "composite_score": 46.15,
-      "performance_score": 46.15,
+      "composite_score": 45.79,
+      "performance_score": 45.79,
       "score_version": 1,
-      "hook_score": 18.49,
-      "hold_score": 45.11,
-      "resonance_score": 36.36,
-      "resonance_per_engaged": 0.3636,
-      "resonance_per_view": 0.0672,
+      "hook_score": 19.83,
+      "hold_score": 44.09,
+      "resonance_score": 34.78,
+      "resonance_per_engaged": 0.3478,
+      "resonance_per_view": 0.069,
       "conversion_score": 100.0,
-      "conversion_rate_per_1k": 8.4034,
-      "reach_score": 69.3,
-      "analytics_fetched_at": "2026-06-03T02:12:27Z",
-      "analytics_days_old": 2,
+      "conversion_rate_per_1k": 8.6207,
+      "reach_score": 68.93,
+      "analytics_fetched_at": "2026-06-11T02:01:09Z",
+      "analytics_days_old": 10,
       "data_available": true
     },
     {
@@ -1458,6 +1458,339 @@
       "data_available": true
     },
     {
+      "video_id": "20260525_234203",
+      "published_date": "2026-05-25",
+      "status": "uploaded",
+      "topic": "The lonely ache of being 'heard' but not understood.",
+      "category": "Conversation Truths",
+      "angle_type": "specific_scenario",
+      "total_score": 18,
+      "source_name": "Relationship Psychology, Communication Studies",
+      "source_basis": "Emotional Attunement and Validation in Interpersonal Communication",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "specific_scenario",
+      "emotional_trigger": "Feeling isolated despite communication; the pain of not being emotionally understood by a partner.",
+      "psych_concept": "Emotional Attunement, Validation Theory",
+      "core_claim": "Being heard factually is different from being understood emotionally, and the absence of the latter can lead to profound loneliness even within a committed relationship.",
+      "editorial_seed": "We think good communication is about hearing words, but it's really about being truly understood. This short explores the specific ache of being with someone who listens carefully to your words but seems to miss the underlying emotion or meaning, leaving you feeling isolated even when they're present. It's about the gap between processing information and truly resonating.",
+      "only_soft_reset_line": "They heard every word. They just never felt any of it.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If you leave conversations feeling more alone than before you started, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 72,
+      "estimated_duration_sec": 22,
+      "thumbnail_text": "heard. not understood.",
+      "content_fingerprint": "the lonely ache of being heard but not understood if you leave conversations feeling more alone than before you started this is for you feeling isolated despite communication the pain of not being emotionally understood by a partner emotional attunement validation theory being heard factually is different from being understood emotionally and the absence of the latter can lead to profound loneliness even within a committed relationship they heard every word they just never felt any of it",
+      "title": "When being heard makes you feel more ALONE",
+      "youtube_video_id": "azezhGIkjvE",
+      "youtube_url": "https://youtube.com/shorts/azezhGIkjvE",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 12,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "specific_scenario",
+        "category": "Conversation Truths",
+        "topic_cluster": "The lonely ache of being 'heard' but not understood.",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Directly addresses a relatable pain point and promises a solution."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and easy to understand, clearly articulates the core issue."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The 'quiet ache' and focus on being heard but not understood is a distinct SRWM perspective."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "The scenario of feeling alone after conversation is specific, but could be slightly more detailed."
+        },
+        "cta_quality": {
+          "score": 10,
+          "reason": "No explicit CTA, which is appropriate for this short, reflective content format."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the script's core message and hook."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Effectively expands on the title and hook, drawing viewers in with emotional language."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Relies heavily on stock video, which may not always perfectly sync with the nuanced script. Requires careful selection."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "Brand images are present but their specific impact on the narrative needs to be strong and deliberate."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "The concept is relevant but needs a compelling visual to capture the essence of the title."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The script is short and direct, allowing for a natural and well-paced delivery."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The topic and tone align well with the channel's relationship/self-growth focus."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No apparent factual claims that could pose a policy risk."
+        }
+      },
+      "judge_composite_score": 8.0,
+      "strongest_element": "CTA Quality",
+      "weakest_element": "Image Direction Strength",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively communicates a nuanced emotional truth about being heard but not understood, leveraging a strong, empathetic voiceover and a well-structured script. The initial visuals and hook immediately draw the viewer into a contemplative mood, reinforced by powerful metaphorical imagery. While the visual of tarot cards slightly deviates from the precise emotional context, the overall execution, especially the clear distinction between attention and contact, makes it a deeply resonant piece for its target audience.",
+      "video_audit_strengths": [
+        "The brilliant conceptual distinction between 'attention' and 'contact' provides a precise language for a commonly felt but often unnamed emotional experience.",
+        "The voiceover's empathetic and consistent delivery cultivates a strong sense of connection and validation for the viewer.",
+        "The use of metaphorical visuals (like explaining through glass) effectively translates abstract emotions into relatable imagery.",
+        "The 'loopback' line ('They heard every word. They just never felt any of it.') at the end provides powerful emotional closure and reinforces the core message memorably."
+      ],
+      "video_audit_dropoff_causes": [
+        "The tarot card visual (30-33s) momentarily breaks the focused emotional narrative, potentially causing a slight disconnect for viewers who might be searching for specific advice or deeper introspection rather than a symbolic activity.",
+        "The relatively slow and contemplative pacing, while intentional for the emotional depth, might lead to some viewers scrolling past if they are accustomed to faster-paced, higher-energy Shorts.",
+        "For new viewers, the abstract nature of the content might require a slightly longer engagement to fully grasp, which could be a challenge in the Shorts format."
+      ],
+      "video_audit_repeat_next": [
+        "Using emotionally resonant, specific hooks that directly name a common, often unarticulated emotional pain point.",
+        "Employing metaphorical visuals that clearly illustrate abstract psychological concepts.",
+        "Maintaining a consistent, empathetic, and reflective voiceover tone.",
+        "Developing clear distinctions between related concepts (e.g., 'attention vs. contact') to provide fresh insights.",
+        "Utilizing a strong 'loopback' sentence to reinforce the core message and create a lasting impact."
+      ],
+      "video_audit_reduce_next": [
+        "Visuals that introduce elements not directly tied to the core emotional concept of the script (e.g., the tarot cards) to maintain thematic cohesion.",
+        "Any visual sequences that might feel static or overly prolonged for the dynamic Shorts format, unless intentionally used for a dramatic pause."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Emotional Validation Hook",
+        "thumbnail_type": "Text Overlay (Abstract Concept)",
+        "visual_style_mix": "Cinematic Mood; Metaphorical Aesthetic",
+        "narrative_format": "Emotional Diagnosis; Relational Insight",
+        "character_used": "N/A"
+      },
+      "metrics": {
+        "views": 74,
+        "engagedViews": 9,
+        "averageViewDuration": 14,
+        "averageViewPercentage": 36.36,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 25.56,
+      "performance_score": 25.56,
+      "score_version": 1,
+      "hook_score": 12.16,
+      "hold_score": 36.36,
+      "resonance_score": 33.33,
+      "resonance_per_engaged": 0.3333,
+      "resonance_per_view": 0.0405,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 62.49,
+      "analytics_fetched_at": "2026-06-11T02:01:09Z",
+      "analytics_days_old": 17,
+      "data_available": true
+    },
+    {
+      "video_id": "20260525_172136",
+      "published_date": "2026-05-25",
+      "status": "uploaded",
+      "topic": "If calm feels boring it might be because you are used to anxiety not love",
+      "category": "psychology drops",
+      "angle_type": "reframe",
+      "total_score": 18,
+      "source_name": "Therapist consensus on attachment theory and trauma-informed care",
+      "source_basis": "Conditioned emotional responses and nervous system regulation in the context of attachment styles.",
+      "source_url": null,
+      "confidence_level": "therapist_consensus",
+      "content_format": "reframe",
+      "emotional_trigger": "Feeling restless or 'bored' in a stable, peaceful relationship after experiencing turbulent ones.",
+      "psych_concept": "Conditioned emotional responses, nervous system regulation, trauma bonding, attachment patterns",
+      "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
+      "editorial_seed": "This channel helps you see patterns in your emotional responses that might be holding you back from stable love. It redefines what true love feels like, moving beyond intense highs and lows to a more sustainable, gentle connection.",
+      "only_soft_reset_line": "You were never bored. You were finally safe, and it scared you.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "If calm feels boring in a relationship, this is for you.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 72,
+      "estimated_duration_sec": 21,
+      "thumbnail_text": "calm feels boring?",
+      "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring in a relationship this is for you feeling restless or bored in a stable peaceful relationship after experiencing turbulent ones conditioned emotional responses nervous system regulation trauma bonding attachment patterns you learned to read anxiety as excitement calm reads as indifference you were never bored you were finally safe and it scared you",
+      "title": "Calm only feels boring after chaos",
+      "youtube_video_id": "HK1vq_qUzAU",
+      "youtube_url": "https://youtube.com/shorts/HK1vq_qUzAU",
+      "fallback_count": 0,
+      "video_count": 5,
+      "total_scenes": 7,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "psychology drops",
+        "topic_cluster": "If calm feels boring it might be because you are used to anx",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 7
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Directly addresses a common feeling (calm feels boring) and promises a solution relevant to relationships."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise, easy to understand, and gets straight to the core message of the reframe."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The channel's signature reframe style (challenging the perception of 'boring' vs. 'anxious') is evident."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "Identifies the 'villain' as the body's 'conditioning' to anxiety, which is reasonably specific for a short format."
+        },
+        "cta_quality": {
+          "score": 3,
+          "reason": "There is no explicit or implicit CTA present in the script or details provided."
+        },
+        "title_accuracy": {
+          "score": 10,
+          "reason": "The title perfectly captures the essence of the reframe, implying that what feels like boredom is a residual effect of past chaos."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "The description is a clear, concise expansion of the hook and title, offering a compelling preview of the video's content."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "Assuming stock videos will align with the psychological theme, the sync should be decent, but potential for generic visuals exists."
+        },
+        "image_direction_strength": {
+          "score": 6,
+          "reason": "Brand images need to strongly convey the contrast between chaos and calm/anxiety and love to be effective."
+        },
+        "thumbnail_concept": {
+          "score": 7,
+          "reason": "Needs to visually represent the 'calm vs. boring' or 'anxiety vs. love' dichotomy effectively to draw viewers in."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The script is short and direct, making it easy for a voiceover artist to deliver with appropriate pacing and tone."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The psychological reframe angle is highly consistent with the channel's established niche."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is presented as a psychological observation/reframe, not medical advice, posing minimal policy risk."
+        }
+      },
+      "judge_composite_score": 7.7,
+      "strongest_element": "title_accuracy",
+      "weakest_element": "cta_quality",
+      "only_soft_reset_score": 9,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short masterfully delivers its powerful reframe with an consistently calm and empathetic tone, aligning perfectly with the 'Soft Reset With Me' brand. The voiceover and caption pacing are excellent, skillfully guiding viewers through the narrative. While some mid-video visuals could benefit from increased specificity to fully match the emotional nuances of the script, the overall aesthetic, balanced audio mix, and particularly the impactful closing visual create a highly engaging and thought-provoking experience that resonates deeply with the core message.",
+      "video_audit_strengths": [
+        "Consistent brand aesthetic: The use of film grain, muted color palettes, and reflective imagery establishes a strong, recognizable visual identity for 'Soft Reset With Me.'",
+        "Empathetic voiceover delivery: The narrator's tone is perfectly calibrated to the sensitive subject matter, fostering a sense of understanding and trust.",
+        "Powerful loopback visual: The final shot of the man looking out the window, paired with the 'You were never bored. You were finally safe, and it scared you' line, delivers a profound emotional punch and reinforces the core reframe.",
+        "Effective use of background music: The subtle, ambient soundtrack perfectly complements the narrative without competing for attention, enhancing the contemplative mood."
+      ],
+      "video_audit_dropoff_causes": [
+        "Inconsistent visual specificity: The visual of hands molding clay (17-21s) doesn't clearly convey the 'anxiety felt like passion' or 'pit in your stomach' concept, potentially causing momentary viewer disconnect.",
+        "Lack of immediate visual progression for the 'waiting' section: The shift from the woman on her phone to the man on his laptop (5-14s) is somewhat generic, and could be made more impactful to specifically illustrate the 'waiting for anxious text' and 'argument that proves they care' if possible."
+      ],
+      "video_audit_repeat_next": [
+        "Maintain the empathetic and calm voiceover tone and pacing.",
+        "Continue with the consistent brand visual filter and aesthetic (film grain, muted, warm tones).",
+        "Utilize word-by-word/phrase-by-phrase captioning for optimal text engagement.",
+        "Craft strong, emotionally resonant closing visuals that reinforce the core message and 'soft reset' feeling.",
+        "Begin videos with immediate, direct hooks that speak to a specific pain point or experience."
+      ],
+      "video_audit_reduce_next": [
+        "Avoid generic stock footage that doesn't specifically or abstractly align with the precise emotional or physiological sensations described in the script (e.g., the clay hands). Seek visuals that are more metaphorically or directly linked.",
+        "Minimize rapid shifts between disparate visual subjects in short succession without a very strong thematic or narrative link, especially in the middle section of the video."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Relatable Problem, Direct Address, Reframe Setup",
+        "thumbnail_type": "Symbolic, Text Overlay (Calm feels boring?)",
+        "visual_style_mix": "Aesthetic, Cinematic, Text-Focused, Lifestyle",
+        "narrative_format": "Reframe, Insight-Driven, Problem-Solution",
+        "character_used": "Introspective Seeker, Anxious Individual (implied)"
+      },
+      "metrics": {
+        "views": 51,
+        "engagedViews": 11,
+        "averageViewDuration": 17,
+        "averageViewPercentage": 49.09,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 25.43,
+      "performance_score": 25.43,
+      "score_version": 1,
+      "hook_score": 21.57,
+      "hold_score": 49.09,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 57.19,
+      "analytics_fetched_at": "2026-06-11T02:01:09Z",
+      "analytics_days_old": 17,
+      "data_available": true
+    },
+    {
       "video_id": "20260515_233150",
       "published_date": "2026-05-15",
       "status": "uploaded",
@@ -1791,339 +2124,6 @@
       "data_available": true
     },
     {
-      "video_id": "20260525_172136",
-      "published_date": "2026-05-25",
-      "status": "uploaded",
-      "topic": "If calm feels boring it might be because you are used to anxiety not love",
-      "category": "psychology drops",
-      "angle_type": "reframe",
-      "total_score": 18,
-      "source_name": "Therapist consensus on attachment theory and trauma-informed care",
-      "source_basis": "Conditioned emotional responses and nervous system regulation in the context of attachment styles.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "reframe",
-      "emotional_trigger": "Feeling restless or 'bored' in a stable, peaceful relationship after experiencing turbulent ones.",
-      "psych_concept": "Conditioned emotional responses, nervous system regulation, trauma bonding, attachment patterns",
-      "core_claim": "You learned to read anxiety as excitement \u2014 calm reads as indifference",
-      "editorial_seed": "This channel helps you see patterns in your emotional responses that might be holding you back from stable love. It redefines what true love feels like, moving beyond intense highs and lows to a more sustainable, gentle connection.",
-      "only_soft_reset_line": "You were never bored. You were finally safe, and it scared you.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If calm feels boring in a relationship, this is for you.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 72,
-      "estimated_duration_sec": 21,
-      "thumbnail_text": "calm feels boring?",
-      "content_fingerprint": "if calm feels boring it might be because you are used to anxiety not love if calm feels boring in a relationship this is for you feeling restless or bored in a stable peaceful relationship after experiencing turbulent ones conditioned emotional responses nervous system regulation trauma bonding attachment patterns you learned to read anxiety as excitement calm reads as indifference you were never bored you were finally safe and it scared you",
-      "title": "Calm only feels boring after chaos",
-      "youtube_video_id": "HK1vq_qUzAU",
-      "youtube_url": "https://youtube.com/shorts/HK1vq_qUzAU",
-      "fallback_count": 0,
-      "video_count": 5,
-      "total_scenes": 7,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W22",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "reframe",
-        "category": "psychology drops",
-        "topic_cluster": "If calm feels boring it might be because you are used to anx",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 7
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Directly addresses a common feeling (calm feels boring) and promises a solution relevant to relationships."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "Concise, easy to understand, and gets straight to the core message of the reframe."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The channel's signature reframe style (challenging the perception of 'boring' vs. 'anxious') is evident."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "Identifies the 'villain' as the body's 'conditioning' to anxiety, which is reasonably specific for a short format."
-        },
-        "cta_quality": {
-          "score": 3,
-          "reason": "There is no explicit or implicit CTA present in the script or details provided."
-        },
-        "title_accuracy": {
-          "score": 10,
-          "reason": "The title perfectly captures the essence of the reframe, implying that what feels like boredom is a residual effect of past chaos."
-        },
-        "description_usefulness": {
-          "score": 9,
-          "reason": "The description is a clear, concise expansion of the hook and title, offering a compelling preview of the video's content."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Assuming stock videos will align with the psychological theme, the sync should be decent, but potential for generic visuals exists."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "Brand images need to strongly convey the contrast between chaos and calm/anxiety and love to be effective."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "Needs to visually represent the 'calm vs. boring' or 'anxiety vs. love' dichotomy effectively to draw viewers in."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "The script is short and direct, making it easy for a voiceover artist to deliver with appropriate pacing and tone."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The psychological reframe angle is highly consistent with the channel's established niche."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is presented as a psychological observation/reframe, not medical advice, posing minimal policy risk."
-        }
-      },
-      "judge_composite_score": 7.7,
-      "strongest_element": "title_accuracy",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 9,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short masterfully delivers its powerful reframe with an consistently calm and empathetic tone, aligning perfectly with the 'Soft Reset With Me' brand. The voiceover and caption pacing are excellent, skillfully guiding viewers through the narrative. While some mid-video visuals could benefit from increased specificity to fully match the emotional nuances of the script, the overall aesthetic, balanced audio mix, and particularly the impactful closing visual create a highly engaging and thought-provoking experience that resonates deeply with the core message.",
-      "video_audit_strengths": [
-        "Consistent brand aesthetic: The use of film grain, muted color palettes, and reflective imagery establishes a strong, recognizable visual identity for 'Soft Reset With Me.'",
-        "Empathetic voiceover delivery: The narrator's tone is perfectly calibrated to the sensitive subject matter, fostering a sense of understanding and trust.",
-        "Powerful loopback visual: The final shot of the man looking out the window, paired with the 'You were never bored. You were finally safe, and it scared you' line, delivers a profound emotional punch and reinforces the core reframe.",
-        "Effective use of background music: The subtle, ambient soundtrack perfectly complements the narrative without competing for attention, enhancing the contemplative mood."
-      ],
-      "video_audit_dropoff_causes": [
-        "Inconsistent visual specificity: The visual of hands molding clay (17-21s) doesn't clearly convey the 'anxiety felt like passion' or 'pit in your stomach' concept, potentially causing momentary viewer disconnect.",
-        "Lack of immediate visual progression for the 'waiting' section: The shift from the woman on her phone to the man on his laptop (5-14s) is somewhat generic, and could be made more impactful to specifically illustrate the 'waiting for anxious text' and 'argument that proves they care' if possible."
-      ],
-      "video_audit_repeat_next": [
-        "Maintain the empathetic and calm voiceover tone and pacing.",
-        "Continue with the consistent brand visual filter and aesthetic (film grain, muted, warm tones).",
-        "Utilize word-by-word/phrase-by-phrase captioning for optimal text engagement.",
-        "Craft strong, emotionally resonant closing visuals that reinforce the core message and 'soft reset' feeling.",
-        "Begin videos with immediate, direct hooks that speak to a specific pain point or experience."
-      ],
-      "video_audit_reduce_next": [
-        "Avoid generic stock footage that doesn't specifically or abstractly align with the precise emotional or physiological sensations described in the script (e.g., the clay hands). Seek visuals that are more metaphorically or directly linked.",
-        "Minimize rapid shifts between disparate visual subjects in short succession without a very strong thematic or narrative link, especially in the middle section of the video."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Relatable Problem, Direct Address, Reframe Setup",
-        "thumbnail_type": "Symbolic, Text Overlay (Calm feels boring?)",
-        "visual_style_mix": "Aesthetic, Cinematic, Text-Focused, Lifestyle",
-        "narrative_format": "Reframe, Insight-Driven, Problem-Solution",
-        "character_used": "Introspective Seeker, Anxious Individual (implied)"
-      },
-      "metrics": {
-        "views": 50,
-        "engagedViews": 10,
-        "averageViewDuration": 16,
-        "averageViewPercentage": 45.89,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 23.91,
-      "performance_score": 23.91,
-      "score_version": 1,
-      "hook_score": 20.0,
-      "hold_score": 45.89,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 56.91,
-      "analytics_fetched_at": "2026-06-03T02:12:27Z",
-      "analytics_days_old": 9,
-      "data_available": true
-    },
-    {
-      "video_id": "20260525_234203",
-      "published_date": "2026-05-25",
-      "status": "uploaded",
-      "topic": "The lonely ache of being 'heard' but not understood.",
-      "category": "Conversation Truths",
-      "angle_type": "specific_scenario",
-      "total_score": 18,
-      "source_name": "Relationship Psychology, Communication Studies",
-      "source_basis": "Emotional Attunement and Validation in Interpersonal Communication",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "specific_scenario",
-      "emotional_trigger": "Feeling isolated despite communication; the pain of not being emotionally understood by a partner.",
-      "psych_concept": "Emotional Attunement, Validation Theory",
-      "core_claim": "Being heard factually is different from being understood emotionally, and the absence of the latter can lead to profound loneliness even within a committed relationship.",
-      "editorial_seed": "We think good communication is about hearing words, but it's really about being truly understood. This short explores the specific ache of being with someone who listens carefully to your words but seems to miss the underlying emotion or meaning, leaving you feeling isolated even when they're present. It's about the gap between processing information and truly resonating.",
-      "only_soft_reset_line": "They heard every word. They just never felt any of it.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "If you leave conversations feeling more alone than before you started, this is for you.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 72,
-      "estimated_duration_sec": 22,
-      "thumbnail_text": "heard. not understood.",
-      "content_fingerprint": "the lonely ache of being heard but not understood if you leave conversations feeling more alone than before you started this is for you feeling isolated despite communication the pain of not being emotionally understood by a partner emotional attunement validation theory being heard factually is different from being understood emotionally and the absence of the latter can lead to profound loneliness even within a committed relationship they heard every word they just never felt any of it",
-      "title": "When being heard makes you feel more ALONE",
-      "youtube_video_id": "azezhGIkjvE",
-      "youtube_url": "https://youtube.com/shorts/azezhGIkjvE",
-      "fallback_count": 0,
-      "video_count": 7,
-      "total_scenes": 12,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W22",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "specific_scenario",
-        "category": "Conversation Truths",
-        "topic_cluster": "The lonely ache of being 'heard' but not understood.",
-        "visual_style_mix": "brand_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 12
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "Directly addresses a relatable pain point and promises a solution."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "Concise and easy to understand, clearly articulates the core issue."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The 'quiet ache' and focus on being heard but not understood is a distinct SRWM perspective."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The scenario of feeling alone after conversation is specific, but could be slightly more detailed."
-        },
-        "cta_quality": {
-          "score": 10,
-          "reason": "No explicit CTA, which is appropriate for this short, reflective content format."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "Accurately reflects the script's core message and hook."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "Effectively expands on the title and hook, drawing viewers in with emotional language."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "Relies heavily on stock video, which may not always perfectly sync with the nuanced script. Requires careful selection."
-        },
-        "image_direction_strength": {
-          "score": 6,
-          "reason": "Brand images are present but their specific impact on the narrative needs to be strong and deliberate."
-        },
-        "thumbnail_concept": {
-          "score": 7,
-          "reason": "The concept is relevant but needs a compelling visual to capture the essence of the title."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "The script is short and direct, allowing for a natural and well-paced delivery."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The topic and tone align well with the channel's relationship/self-growth focus."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "No apparent factual claims that could pose a policy risk."
-        }
-      },
-      "judge_composite_score": 8.0,
-      "strongest_element": "CTA Quality",
-      "weakest_element": "Image Direction Strength",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively communicates a nuanced emotional truth about being heard but not understood, leveraging a strong, empathetic voiceover and a well-structured script. The initial visuals and hook immediately draw the viewer into a contemplative mood, reinforced by powerful metaphorical imagery. While the visual of tarot cards slightly deviates from the precise emotional context, the overall execution, especially the clear distinction between attention and contact, makes it a deeply resonant piece for its target audience.",
-      "video_audit_strengths": [
-        "The brilliant conceptual distinction between 'attention' and 'contact' provides a precise language for a commonly felt but often unnamed emotional experience.",
-        "The voiceover's empathetic and consistent delivery cultivates a strong sense of connection and validation for the viewer.",
-        "The use of metaphorical visuals (like explaining through glass) effectively translates abstract emotions into relatable imagery.",
-        "The 'loopback' line ('They heard every word. They just never felt any of it.') at the end provides powerful emotional closure and reinforces the core message memorably."
-      ],
-      "video_audit_dropoff_causes": [
-        "The tarot card visual (30-33s) momentarily breaks the focused emotional narrative, potentially causing a slight disconnect for viewers who might be searching for specific advice or deeper introspection rather than a symbolic activity.",
-        "The relatively slow and contemplative pacing, while intentional for the emotional depth, might lead to some viewers scrolling past if they are accustomed to faster-paced, higher-energy Shorts.",
-        "For new viewers, the abstract nature of the content might require a slightly longer engagement to fully grasp, which could be a challenge in the Shorts format."
-      ],
-      "video_audit_repeat_next": [
-        "Using emotionally resonant, specific hooks that directly name a common, often unarticulated emotional pain point.",
-        "Employing metaphorical visuals that clearly illustrate abstract psychological concepts.",
-        "Maintaining a consistent, empathetic, and reflective voiceover tone.",
-        "Developing clear distinctions between related concepts (e.g., 'attention vs. contact') to provide fresh insights.",
-        "Utilizing a strong 'loopback' sentence to reinforce the core message and create a lasting impact."
-      ],
-      "video_audit_reduce_next": [
-        "Visuals that introduce elements not directly tied to the core emotional concept of the script (e.g., the tarot cards) to maintain thematic cohesion.",
-        "Any visual sequences that might feel static or overly prolonged for the dynamic Shorts format, unless intentionally used for a dramatic pause."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Emotional Validation Hook",
-        "thumbnail_type": "Text Overlay (Abstract Concept)",
-        "visual_style_mix": "Cinematic Mood; Metaphorical Aesthetic",
-        "narrative_format": "Emotional Diagnosis; Relational Insight",
-        "character_used": "N/A"
-      },
-      "metrics": {
-        "views": 72,
-        "engagedViews": 8,
-        "averageViewDuration": 13,
-        "averageViewPercentage": 34.55,
-        "likes": 2,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 22.98,
-      "performance_score": 22.98,
-      "score_version": 1,
-      "hook_score": 11.11,
-      "hold_score": 34.55,
-      "resonance_score": 25.0,
-      "resonance_per_engaged": 0.25,
-      "resonance_per_view": 0.0278,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 62.1,
-      "analytics_fetched_at": "2026-06-03T02:12:27Z",
-      "analytics_days_old": 9,
-      "data_available": true
-    },
-    {
       "video_id": "20260517_233728",
       "published_date": "2026-05-17",
       "status": "uploaded",
@@ -2287,8 +2287,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 59.74,
-      "analytics_fetched_at": "2026-06-03T02:12:27Z",
-      "analytics_days_old": 17,
+      "analytics_fetched_at": "2026-06-11T02:01:09Z",
+      "analytics_days_old": 25,
       "data_available": true
     },
     {
@@ -2783,8 +2783,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 43.36,
-      "analytics_fetched_at": "2026-06-03T02:12:27Z",
-      "analytics_days_old": 10,
+      "analytics_fetched_at": "2026-06-11T02:01:09Z",
+      "analytics_days_old": 18,
       "data_available": true
     },
     {
@@ -3258,8 +3258,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 30.1,
-      "analytics_fetched_at": "2026-06-03T02:12:27Z",
-      "analytics_days_old": 10,
+      "analytics_fetched_at": "2026-06-11T02:01:09Z",
+      "analytics_days_old": 18,
       "data_available": true
     },
     {
@@ -3591,8 +3591,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 68.3,
-      "analytics_fetched_at": "2026-06-03T02:12:27Z",
-      "analytics_days_old": 17,
+      "analytics_fetched_at": "2026-06-11T02:01:09Z",
+      "analytics_days_old": 25,
       "data_available": true
     },
     {
