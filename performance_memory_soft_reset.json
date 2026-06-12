@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-11T02:01:09Z",
+  "generated_at": "2026-06-12T01:59:05Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-04-26",
-  "end_date": "2026-06-10",
+  "start_date": "2026-04-27",
+  "end_date": "2026-06-11",
   "videos": [
     {
       "video_id": "20260521_173815",
@@ -3740,28 +3740,28 @@
         "character_used": "Empathetic Guide"
       },
       "metrics": {
-        "views": 66,
-        "engagedViews": 9,
-        "averageViewDuration": 8,
-        "averageViewPercentage": 26.32,
+        "views": 67,
+        "engagedViews": 10,
+        "averageViewDuration": 9,
+        "averageViewPercentage": 30.099999999999998,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "subscribersGained": 0
       },
-      "composite_score": 15.66,
-      "performance_score": 15.66,
+      "composite_score": 17.32,
+      "performance_score": 17.32,
       "score_version": 1,
-      "hook_score": 13.64,
-      "hold_score": 26.32,
+      "hook_score": 14.93,
+      "hold_score": 30.1,
       "resonance_score": 0.0,
       "resonance_per_engaged": 0.0,
       "resonance_per_view": 0.0,
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
-      "reach_score": 60.86,
-      "analytics_fetched_at": "2026-06-04T02:06:44Z",
-      "analytics_days_old": 2,
+      "reach_score": 61.07,
+      "analytics_fetched_at": "2026-06-12T01:59:05Z",
+      "analytics_days_old": 10,
       "data_available": true
     },
     {
