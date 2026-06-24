@@ -1,149 +1,5 @@
 [
   {
-    "video_id": "20260515_200605",
-    "published_date": "2026-05-15",
-    "status": "uploaded",
-    "topic": "Moving on fast does not mean you did not care",
-    "category": "healing arcs",
-    "angle_type": "reframe",
-    "total_score": 17,
-    "source_name": "Therapist consensus on self-compassion and healthy healing processes.",
-    "source_basis": "Emotional regulation and self-compassion facilitate healing, and breaking patterns of self-abandonment can lead to a quicker return to well-being.",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "truth_drop",
-    "emotional_trigger": "Guilt or judgment for moving on 'too fast' after a breakup or difficult emotional situation.",
-    "psych_concept": "Self-compassion, emotional regulation, breaking cycles of self-abandonment.",
-    "core_claim": "It can mean you finally stopped abandoning yourself",
-    "editorial_seed": "This topic validates individuals who feel guilt or face judgment for processing breakups or difficult experiences quickly. It reframes 'moving on fast' as a sign of personal growth and self-respect, rather than a lack of care, connecting it to a positive shift in self-relationship.",
-    "only_soft_reset_line": "You stayed loyal to the loss, not to yourself.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "Moving on fast doesn't mean you didn't care. It might mean the opposite.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 71,
-    "estimated_duration_sec": 22,
-    "thumbnail_text": "Moving on fast doesn't mean you didn't care.",
-    "content_fingerprint": "moving on fast does not mean you did not care moving on fast doesn t mean you didn t care it might mean the opposite guilt or judgment for moving on too fast after a breakup or difficult emotional situation self compassion emotional regulation breaking cycles of self abandonment it can mean you finally stopped abandoning yourself you stayed loyal to the loss not to yourself",
-    "title": "Moving on fast meant you cared DEEPLY",
-    "youtube_video_id": "jqW9J8mW-Uw",
-    "youtube_url": "https://youtube.com/shorts/jqW9J8mW-Uw",
-    "fallback_count": 0,
-    "video_count": 8,
-    "total_scenes": 11,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W20",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "declarative",
-      "angle_type": "reframe",
-      "category": "healing arcs",
-      "topic_cluster": "Moving on fast does not mean you did not care",
-      "visual_style_mix": "stock_heavy",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 11
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "The hook is strong and immediately challenges a common perception, promising a unique perspective."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "The script is concise, easy to understand, and directly conveys the intended message."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "The reframe angle is clear and consistent with the channel's focus on self-growth and healing."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "While the reframed idea is clear, the 'villain' (societal expectation or self-judgment) is implied rather than explicitly defined, leaving room for greater specificity."
-      },
-      "cta_quality": {
-        "score": 0,
-        "reason": "No CTA was provided in the script or details."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title is highly accurate to the hook and the core message of the video, creating strong curiosity."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "The description quickly reiterates the core message and clearly identifies the target audience."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "The balance of stock videos and brand images suggests potential for good sync, but actual sync depends on execution."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "Brand images (3) are present, suggesting an intention for visual branding, but their strength depends on their actual content and integration."
-      },
-      "thumbnail_concept": {
-        "score": 0,
-        "reason": "Thumbnail concept not provided."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "The short script length (71 words) indicates it can be delivered at a thoughtful, effective pace within 35 seconds."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The angle type (reframe) and category (healing arcs) align well with a self-growth channel. Use of brand images further supports this."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content is subjective advice focused on emotional reframing and has no factual claims that could pose a policy risk."
-      }
-    },
-    "judge_composite_score": 7.2,
-    "strongest_element": "Title Accuracy",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively delivers a validating message with a consistent, empathetic tone and clear voiceover, supported by a well-structured narrative and suitable background music. While the video hook strongly aligns with the title, the initial pacing of captions and some generic opening visuals could be improved to more immediately capture viewer attention, leveraging more specific and impactful imagery from the outset to prevent early drop-offs.",
-    "video_audit_strengths": [
-      "The exceptional quality and empathetic delivery of the voiceover, which truly elevates the message.",
-      "The robust narrative structure that takes viewers from tension to insight and a powerful loopback within a short timeframe.",
-      "The consistent brand identity, ensuring the video feels authentically 'Soft Reset With Me' in both tone and message.",
-      "The strong alignment between the video's hook and its title, promising and delivering a clear reframe."
-    ],
-    "video_audit_dropoff_causes": [
-      "Slow caption pacing, particularly within the first few seconds, which delays the delivery of the hook's full message.",
-      "The initial visuals are somewhat generic and dark, lacking the immediate visual impact needed to stand out in a rapidly scrolling Shorts feed.",
-      "The overall low-energy start might not compete effectively for attention against more dynamic or quickly revealing content."
-    ],
-    "video_audit_repeat_next": [
-      "The use of a high-quality, empathetic voiceover.",
-      "The clear and concise narrative arc (hook, tension, insight, loopback) for delivering psychological insights.",
-      "The strong alignment between the video's initial hook and its title.",
-      "Thoughtful selection of background music that enhances, rather than distracts from, the message.",
-      "Integrating symbolic visuals that directly reinforce the core message, especially towards the resolution."
-    ],
-    "video_audit_reduce_next": [
-      "Slow caption pacing, particularly in the critical first 5 seconds, to deliver the hook more rapidly.",
-      "Reliance on overly generic or static opening visuals; aim for more immediate visual intrigue.",
-      "Any delays in presenting the core idea within the very beginning of the Short."
-    ],
-    "video_audit_tags": {
-      "hook_type": "Contrarian Take",
-      "thumbnail_type": "Text Overlay & Symbolic Image",
-      "visual_style_mix": "Evocative B-roll",
-      "narrative_format": "Reframe / Truth Drop",
-      "character_used": "Narrator (VO only)"
-    }
-  },
-  {
     "video_id": "20260515_233150",
     "published_date": "2026-05-15",
     "status": "uploaded",
@@ -4181,6 +4037,150 @@
       "visual_style_mix": "Melancholic, Reflective, Aesthetic, Cinematic",
       "narrative_format": "Empathetic Statement, Relatable Scenario, Insight-Driven",
       "character_used": "Narrator (off-screen, empathetic voice)"
+    }
+  },
+  {
+    "video_id": "20260624_012831",
+    "published_date": "2026-06-24",
+    "status": "uploaded",
+    "topic": "Silence in a relationship is not always neutral",
+    "category": "conversation truths",
+    "angle_type": "truth drop",
+    "total_score": 18,
+    "source_name": "Paul Watzlawick (communication theory), John Gottman (relationship research), attachment theory (Hazan & Shaver)",
+    "source_basis": "Communication theory ('one cannot not communicate'), psychological impact of stonewalling/withdrawal in relationships, principles of attachment theory.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "truth_drop",
+    "emotional_trigger": "Feeling dismissed, confused, or devalued by a partner's unexplained silence or withdrawal.",
+    "psych_concept": "Passive communication, emotional unavailability, attachment theory (avoidant attachment styles), stonewalling",
+    "core_claim": "Withdrawal without explanation is still a communication \u2014 it says you do not matter enough.",
+    "editorial_seed": "Silence isn't always peace. Sometimes, it's a deliberate act of emotional distance. Understanding that withdrawal is a form of communication, even an unkind one, can help you stop blaming yourself for someone else's inability to engage.",
+    "only_soft_reset_line": "Their silence is not a question for you to answer.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "When they go quiet, why does it feel like the end?",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 65,
+    "estimated_duration_sec": 18,
+    "thumbnail_text": "Silence is still a message.",
+    "content_fingerprint": "silence in a relationship is not always neutral when they go quiet why does it feel like the end feeling dismissed confused or devalued by a partner s unexplained silence or withdrawal passive communication emotional unavailability attachment theory avoidant attachment styles stonewalling withdrawal without explanation is still a communication it says you do not matter enough their silence is not a question for you to answer",
+    "title": "Quiet only feels like an END",
+    "youtube_video_id": "NTJeIOr2pTg",
+    "youtube_url": "https://youtube.com/shorts/NTJeIOr2pTg",
+    "fallback_count": 0,
+    "video_count": 4,
+    "total_scenes": 6,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W26",
+    "judge_traits": {
+      "hook_type": "question",
+      "title_type": "declarative",
+      "angle_type": "truth drop",
+      "category": "conversation truths",
+      "topic_cluster": "Silence in a relationship is not always neutral",
+      "visual_style_mix": "balanced",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "brand_still",
+      "total_scenes": 6
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook effectively taps into a common emotional experience related to communication breakdown, creating immediate relatability and intrigue."
+      },
+      "script_clarity": {
+        "score": 7,
+        "reason": "The script is concise, but the core message could be slightly more defined. It touches on the feeling of finality but doesn't fully elaborate on the 'why' or the 'what next'."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The POV is clearly established, offering a specific interpretation of silence in relationships that aligns with the channel's typical reflective and insightful tone."
+      },
+      "villain_mechanism_specificity": {
+        "score": 6,
+        "reason": "While 'silence' is the villain, its mechanism (feeling like an 'END') is presented broadly. More specific examples of how this silence operates or its root causes would enhance specificity."
+      },
+      "cta_quality": {
+        "score": 3,
+        "reason": "There is no explicit or implicit CTA present in the video details provided. A CTA is crucial for engagement."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is a good, slightly more nuanced echo of the hook, accurately reflecting the emotional weight of silence without being overly sensational. It's honest to the video's core sentiment."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description expands on the hook and title, offering further context and hinting at the video's subject matter. It's a good primer for potential viewers."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming the stock videos and brand images align thematically with the emotional weight of silence and its impact, sync should be decent. However, without seeing the actual visuals, it's hard to score higher."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The choice of stock videos and brand images will be key. The provided details suggest a focus on emotional resonance, which fits the channel. The strength depends on the execution of this theme."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "The concept implied by the title and hook (emotional impact of silence) has strong potential for a compelling thumbnail. It needs to visually convey a sense of quiet dread or thoughtful introspection."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "At 38 seconds and 65 words, the pacing should be deliberate and allow for reflection, suitable for a channel focused on relationship truths. The short length suggests a punchy delivery."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of internal emotional responses to relationship dynamics ('when they go quiet') strongly aligns with the Soft Reset With Me brand identity."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content appears to be subjective emotional interpretation and self-growth advice, carrying minimal to no factual risk or policy violation potential."
+      }
+    },
+    "judge_composite_score": 7.5,
+    "strongest_element": "Hook Strength",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys a powerful message about the meaning of silence in relationships, leveraging a strong, empathetic voiceover and atmospheric music to set a reflective tone. The hook is well-aligned with the title, and captions are clear and well-paced. While the video successfully uses diverse visuals to illustrate its points, one scene with a bright, quirky aesthetic briefly disrupts the otherwise consistent melancholic mood. Future content could benefit from ensuring visual consistency and universal relatability to maintain viewer immersion throughout.",
+    "video_audit_strengths": [
+      "The consistent, empathetic, and clear voiceover performance is a major strength, delivering the core message with authentic feeling.",
+      "The choice of melancholic, atmospheric background music perfectly sets and maintains the emotional mood, enhancing viewer immersion.",
+      "The powerful and re-framing closing line ('Their silence is not a question for you to answer') provides a strong, memorable takeaway.",
+      "The use of diverse illustrative visuals, even with some minor incongruities, successfully avoids a monotonous presentation style."
+    ],
+    "video_audit_dropoff_causes": [
+      "The sudden shift in visual tone and aesthetic at the 0:15 mark (from dark, contemplative to bright, quirky) could be jarring for some viewers, potentially causing a brief disconnect.",
+      "The visual of writing in a non-English script (0:10-0:15) might subtly disengage or distract English-speaking viewers who expect visual cues to reinforce the textual message.",
+      "The deliberate, contemplative pacing, while appropriate for the topic, might be too slow for some viewers accustomed to faster-cut, high-energy Shorts."
+    ],
+    "video_audit_repeat_next": [
+      "Empathetic and clear voiceover delivery.",
+      "Atmospheric and mood-setting background music.",
+      "Addressing relatable emotional pain points and offering re-frames.",
+      "Using a strong, memorable closing line to summarize or empower.",
+      "High-quality, easy-to-read captions."
+    ],
+    "video_audit_reduce_next": [
+      "Visuals that create jarring tonal or aesthetic shifts within the video.",
+      "Visual elements that might not be universally understood or relatable to the target audience (e.g., text in a non-primary language).",
+      "Overly abstract visuals that require significant mental effort to connect to the narrative, unless they are clearly introduced or sustained."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Question-based, Relatable Feeling",
+      "thumbnail_type": "Text Overlay, Moody Visual, Symbolic Visual",
+      "visual_style_mix": "Melancholic Aesthetic, Introspective Visuals, Symbolic Imagery",
+      "narrative_format": "Truth Drop, Reframe, Relational Insight",
+      "character_used": "None (illustrative visuals only)"
     }
   }
 ]
