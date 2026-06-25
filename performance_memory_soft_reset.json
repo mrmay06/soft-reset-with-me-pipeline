@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-24T01:28:31Z",
+  "generated_at": "2026-06-25T01:32:15Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-05-09",
-  "end_date": "2026-06-23",
+  "start_date": "2026-05-10",
+  "end_date": "2026-06-24",
   "videos": [
     {
       "video_id": "20260521_173815",
@@ -957,174 +957,6 @@
       "reach_score": 52.27,
       "analytics_fetched_at": "2026-06-23T01:32:12Z",
       "analytics_days_old": 31,
-      "data_available": true
-    },
-    {
-      "video_id": "20260515_200605",
-      "published_date": "2026-05-15",
-      "status": "uploaded",
-      "topic": "Moving on fast does not mean you did not care",
-      "category": "healing arcs",
-      "angle_type": "reframe",
-      "total_score": 17,
-      "source_name": "Therapist consensus on self-compassion and healthy healing processes.",
-      "source_basis": "Emotional regulation and self-compassion facilitate healing, and breaking patterns of self-abandonment can lead to a quicker return to well-being.",
-      "source_url": null,
-      "confidence_level": "therapist_consensus",
-      "content_format": "truth_drop",
-      "emotional_trigger": "Guilt or judgment for moving on 'too fast' after a breakup or difficult emotional situation.",
-      "psych_concept": "Self-compassion, emotional regulation, breaking cycles of self-abandonment.",
-      "core_claim": "It can mean you finally stopped abandoning yourself",
-      "editorial_seed": "This topic validates individuals who feel guilt or face judgment for processing breakups or difficult experiences quickly. It reframes 'moving on fast' as a sign of personal growth and self-respect, rather than a lack of care, connecting it to a positive shift in self-relationship.",
-      "only_soft_reset_line": "You stayed loyal to the loss, not to yourself.",
-      "editorial_quality": "strong",
-      "argument_quality": "strong",
-      "hook": "Moving on fast doesn't mean you didn't care. It might mean the opposite.",
-      "hook_quality": "strong",
-      "script_version": "1",
-      "prompt_version": "soft-reset-script-v2.4",
-      "script_validation": "passed",
-      "script_validation_notes": "",
-      "word_count": 71,
-      "estimated_duration_sec": 22,
-      "thumbnail_text": "Moving on fast doesn't mean you didn't care.",
-      "content_fingerprint": "moving on fast does not mean you did not care moving on fast doesn t mean you didn t care it might mean the opposite guilt or judgment for moving on too fast after a breakup or difficult emotional situation self compassion emotional regulation breaking cycles of self abandonment it can mean you finally stopped abandoning yourself you stayed loyal to the loss not to yourself",
-      "title": "Moving on fast meant you cared DEEPLY",
-      "youtube_video_id": "jqW9J8mW-Uw",
-      "youtube_url": "https://youtube.com/shorts/jqW9J8mW-Uw",
-      "fallback_count": 0,
-      "video_count": 8,
-      "total_scenes": 11,
-      "validation_warnings": [],
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "reframe",
-        "category": "healing arcs",
-        "topic_cluster": "Moving on fast does not mean you did not care",
-        "visual_style_mix": "stock_heavy",
-        "video_length_band": "30_45s",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "brand_still",
-        "total_scenes": 11
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "The hook is strong and immediately challenges a common perception, promising a unique perspective."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script is concise, easy to understand, and directly conveys the intended message."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The reframe angle is clear and consistent with the channel's focus on self-growth and healing."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "While the reframed idea is clear, the 'villain' (societal expectation or self-judgment) is implied rather than explicitly defined, leaving room for greater specificity."
-        },
-        "cta_quality": {
-          "score": 0,
-          "reason": "No CTA was provided in the script or details."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title is highly accurate to the hook and the core message of the video, creating strong curiosity."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description quickly reiterates the core message and clearly identifies the target audience."
-        },
-        "visual_dialogue_sync": {
-          "score": 7,
-          "reason": "The balance of stock videos and brand images suggests potential for good sync, but actual sync depends on execution."
-        },
-        "image_direction_strength": {
-          "score": 7,
-          "reason": "Brand images (3) are present, suggesting an intention for visual branding, but their strength depends on their actual content and integration."
-        },
-        "thumbnail_concept": {
-          "score": 0,
-          "reason": "Thumbnail concept not provided."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The short script length (71 words) indicates it can be delivered at a thoughtful, effective pace within 35 seconds."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The angle type (reframe) and category (healing arcs) align well with a self-growth channel. Use of brand images further supports this."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is subjective advice focused on emotional reframing and has no factual claims that could pose a policy risk."
-        }
-      },
-      "judge_composite_score": 7.2,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "video_audit_status": "ok",
-      "video_audit_summary": "This Short effectively delivers a validating message with a consistent, empathetic tone and clear voiceover, supported by a well-structured narrative and suitable background music. While the video hook strongly aligns with the title, the initial pacing of captions and some generic opening visuals could be improved to more immediately capture viewer attention, leveraging more specific and impactful imagery from the outset to prevent early drop-offs.",
-      "video_audit_strengths": [
-        "The exceptional quality and empathetic delivery of the voiceover, which truly elevates the message.",
-        "The robust narrative structure that takes viewers from tension to insight and a powerful loopback within a short timeframe.",
-        "The consistent brand identity, ensuring the video feels authentically 'Soft Reset With Me' in both tone and message.",
-        "The strong alignment between the video's hook and its title, promising and delivering a clear reframe."
-      ],
-      "video_audit_dropoff_causes": [
-        "Slow caption pacing, particularly within the first few seconds, which delays the delivery of the hook's full message.",
-        "The initial visuals are somewhat generic and dark, lacking the immediate visual impact needed to stand out in a rapidly scrolling Shorts feed.",
-        "The overall low-energy start might not compete effectively for attention against more dynamic or quickly revealing content."
-      ],
-      "video_audit_repeat_next": [
-        "The use of a high-quality, empathetic voiceover.",
-        "The clear and concise narrative arc (hook, tension, insight, loopback) for delivering psychological insights.",
-        "The strong alignment between the video's initial hook and its title.",
-        "Thoughtful selection of background music that enhances, rather than distracts from, the message.",
-        "Integrating symbolic visuals that directly reinforce the core message, especially towards the resolution."
-      ],
-      "video_audit_reduce_next": [
-        "Slow caption pacing, particularly in the critical first 5 seconds, to deliver the hook more rapidly.",
-        "Reliance on overly generic or static opening visuals; aim for more immediate visual intrigue.",
-        "Any delays in presenting the core idea within the very beginning of the Short."
-      ],
-      "video_audit_tags": {
-        "hook_type": "Contrarian Take",
-        "thumbnail_type": "Text Overlay & Symbolic Image",
-        "visual_style_mix": "Evocative B-roll",
-        "narrative_format": "Reframe / Truth Drop",
-        "character_used": "Narrator (VO only)"
-      },
-      "metrics": {
-        "views": 101,
-        "engagedViews": 23,
-        "averageViewDuration": 19,
-        "averageViewPercentage": 53.75,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 28.72,
-      "performance_score": 28.72,
-      "score_version": 1,
-      "hook_score": 22.77,
-      "hold_score": 53.75,
-      "resonance_score": 4.35,
-      "resonance_per_engaged": 0.0435,
-      "resonance_per_view": 0.0099,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 66.94,
-      "analytics_fetched_at": "2026-06-23T01:32:12Z",
-      "analytics_days_old": 39,
       "data_available": true
     },
     {
@@ -3598,6 +3430,175 @@
       "reach_score": 61.07,
       "analytics_fetched_at": "2026-06-23T01:32:12Z",
       "analytics_days_old": 21,
+      "data_available": true
+    },
+    {
+      "video_id": "20260623_013212",
+      "published_date": "2026-06-23",
+      "status": "uploaded",
+      "topic": "The pressure of having your 'internet history' analyzed before a first date",
+      "category": "identity and growth",
+      "angle_type": "specific scenario",
+      "total_score": 19,
+      "source_name": "Goffman's theory of self-presentation, contemporary research on online identity",
+      "source_basis": "Impression management in digital contexts and social anxiety regarding online self-presentation",
+      "source_url": null,
+      "confidence_level": "observational",
+      "content_format": "specific_scenario",
+      "emotional_trigger": "Anxiety and pressure from feeling pre-judged based on online history before a first date, losing the chance for a fresh start.",
+      "psych_concept": "Impression management and social anxiety related to digital identity",
+      "core_claim": "The 'internet background check' creates a false sense of knowing, leading to pre-judgment or a pressure to perform a curated identity.",
+      "editorial_seed": "In the age of digital footprints, every potential date comes with an unspoken 'internet background check.' This means someone has already formed opinions about you based on curated images and old posts, before you've even had a real conversation. It strips away the fresh start of getting to know someone authentically.",
+      "only_soft_reset_line": "They think they know you. They just know your archive.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "They already Googled you before you said hello.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 60,
+      "estimated_duration_sec": 27,
+      "thumbnail_text": "They already Googled you.",
+      "content_fingerprint": "the pressure of having your internet history analyzed before a first date they already googled you before you said hello anxiety and pressure from feeling pre judged based on online history before a first date losing the chance for a fresh start impression management and social anxiety related to digital identity the internet background check creates a false sense of knowing leading to pre judgment or a pressure to perform a curated identity they think they know you they just know your archive",
+      "title": "They Googled you. Now you feel seen *wrong*",
+      "youtube_video_id": "-2pWeKg6ewI",
+      "youtube_url": "https://youtube.com/shorts/-2pWeKg6ewI",
+      "fallback_count": 0,
+      "video_count": 4,
+      "total_scenes": 7,
+      "validation_warnings": [
+        "tags_sanitized"
+      ],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "judge_traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "accusation",
+        "angle_type": "specific scenario",
+        "category": "identity and growth",
+        "topic_cluster": "The pressure of having your 'internet history' analyzed befo",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "under_30s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 7
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "Intriguing and relatable scenario that immediately grabs attention."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Concise and easy to understand, directly addresses the core theme."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "Clear perspective on the impact of pre-judgment and the importance of self-perception."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "The 'villain' (pre-judgment via Google) is specific, but the explanation of *how* it makes one feel seen wrong could be slightly deeper."
+        },
+        "cta_quality": {
+          "score": 0,
+          "reason": "No explicit CTA included in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Accurately reflects the hook and the core message of feeling misunderstood."
+        },
+        "description_usefulness": {
+          "score": 9,
+          "reason": "Effectively summarizes the video's premise and value proposition."
+        },
+        "visual_dialogue_sync": {
+          "score": 8,
+          "reason": "The visual elements (stock videos, brand images) are likely to complement the narrative, assuming good editing."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images need to be carefully selected to reinforce the message of identity and perception."
+        },
+        "thumbnail_concept": {
+          "score": 8,
+          "reason": "The concept is strong, but the execution in the thumbnail will be key to conveying the 'seen wrong' aspect."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "With a short script, pacing is manageable, assuming a natural delivery."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The theme aligns well with identity and self-growth, fitting the channel's likely persona."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No apparent policy or factual risks; it's a subjective experience based on social interaction."
+        }
+      },
+      "judge_composite_score": 8.1,
+      "strongest_element": "Hook Strength",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively addresses a relatable modern dating anxiety using a strong, empathetic script and a consistently calming voiceover, perfectly aligning with the Soft Reset With Me brand. While the audio clarity and the most specific visual metaphors are excellent, the inclusion of some generic stock footage and occasionally static visuals might dilute engagement in a fast-paced Shorts environment, slightly hindering the overall impact despite the powerful message.",
+      "video_audit_strengths": [
+        "The precise and empathetic scripting, which articulates a common yet often unacknowledged modern anxiety with exceptional clarity and relatability.",
+        "The flawless voiceover delivery, which perfectly matches the brand's empathetic and calm tone, establishing immediate trust and connection with the audience.",
+        "The seamless integration of the 'Soft Reset With Me' branding and outro, reinforcing brand identity and consistency.",
+        "The creative use of specific visual metaphors (search bar on the book, stack of papers as an 'archive') that effectively translate abstract digital concepts into relatable imagery."
+      ],
+      "video_audit_dropoff_causes": [
+        "Overly generic stock footage in the middle section (e.g., woman at window, pouring coffee) that doesn't add specific visual meaning to the script, potentially leading to visual disinterest.",
+        "The pacing of some visual changes is a bit slow or static, especially the blank book page (0:14-0:17), which can feel less engaging in a rapid-scroll Short format.",
+        "Lack of a consistent human face or direct visual engagement with the narrator, which for an emotionally resonant topic, can sometimes make it harder for viewers to maintain a strong connection throughout the video."
+      ],
+      "video_audit_repeat_next": [
+        "Continue with the highly specific and empathetic script writing that resonates deeply with target anxieties, paired with a consistent, calming voiceover.",
+        "Maintain the clear, word-by-word captioning, which significantly enhances accessibility and pacing.",
+        "Utilize creative and direct visual metaphors that strongly tie into the spoken message, as seen with the phone typing and the 'archive' imagery.",
+        "Keep the audio mix clean and balanced, ensuring the voiceover is always prominent and the music supportive."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize the use of generic, mood-setting stock footage that lacks a specific, direct connection to the script's words or concepts.",
+        "Reduce the duration of static or less dynamic visuals, particularly in the middle of the video where viewer attention might naturally wane.",
+        "Avoid relying solely on metaphorical visuals without periodically grounding them in more literal or directly relatable human experiences, especially for emotionally charged topics."
+      ],
+      "video_audit_tags": {
+        "hook_type": "Problem/Pain Point, Direct Statement",
+        "thumbnail_type": "Text-Overlay, Object-Focused",
+        "visual_style_mix": "Melancholic, Reflective, Aesthetic, Cinematic",
+        "narrative_format": "Empathetic Statement, Relatable Scenario, Insight-Driven",
+        "character_used": "Narrator (off-screen, empathetic voice)"
+      },
+      "metrics": {
+        "views": 71,
+        "engagedViews": 9,
+        "averageViewDuration": 9,
+        "averageViewPercentage": 30.92,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 17.09,
+      "performance_score": 17.09,
+      "score_version": 1,
+      "hook_score": 12.68,
+      "hold_score": 30.92,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 61.9,
+      "analytics_fetched_at": "2026-06-25T01:32:15Z",
+      "analytics_days_old": 2,
       "data_available": true
     },
     {
