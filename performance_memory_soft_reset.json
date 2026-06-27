@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T01:49:59Z",
+  "generated_at": "2026-06-27T01:30:54Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-05-11",
-  "end_date": "2026-06-25",
+  "start_date": "2026-05-12",
+  "end_date": "2026-06-26",
   "videos": [
     {
       "video_id": "20260521_173815",
@@ -3265,6 +3265,172 @@
       "reach_score": 68.3,
       "analytics_fetched_at": "2026-06-23T01:32:12Z",
       "analytics_days_old": 37,
+      "data_available": true
+    },
+    {
+      "video_id": "20260625_013214",
+      "published_date": "2026-06-25",
+      "status": "uploaded",
+      "topic": "Reframe what 'bare minimum' means: it's not demanding more, it's realizing you've been accepting less.",
+      "category": "self-worth shifts",
+      "angle_type": "reframe",
+      "total_score": 17,
+      "source_name": "General psychological consensus",
+      "source_basis": "Psychological principles of self-worth, boundary setting, and relationship expectations.",
+      "source_url": "",
+      "confidence_level": "observational",
+      "content_format": "reframe",
+      "emotional_trigger": "The realization of having compromised personal standards in relationships.",
+      "psych_concept": "Self-worth, boundary setting, internal locus of control",
+      "core_claim": "The 'bare minimum' trend is a mirror, showing you where you've compromised your own standards.",
+      "editorial_seed": "Many people frame 'bare minimum' as demanding more from a partner. We believe it's actually about recognizing your own worth and stopping the internal negotiation where you accept less than you deserve, often out of fear or habit.",
+      "only_soft_reset_line": "You didn't lower your standards because you forgot them. You lowered them because keeping them felt risky.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You didn't raise your standards. You just stopped lowering them.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.4",
+      "script_validation": "passed",
+      "script_validation_notes": "",
+      "word_count": 72,
+      "estimated_duration_sec": 26,
+      "thumbnail_text": "it was never about them",
+      "content_fingerprint": "reframe what bare minimum means it s not demanding more it s realizing you ve been accepting less you didn t raise your standards you just stopped lowering them the realization of having compromised personal standards in relationships self worth boundary setting internal locus of control the bare minimum trend is a mirror showing you where you ve compromised your own standards you didn t lower your standards because you forgot them you lowered them because keeping them felt risky",
+      "title": "Finally, you stopped lowering your standards",
+      "youtube_video_id": "E7oz94mCyHc",
+      "youtube_url": "https://youtube.com/shorts/E7oz94mCyHc",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 11,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "Reframe what 'bare minimum' means: it's not demanding more, ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook is a strong, memorable reframe of a common concept, making it highly engaging."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is concise, clear, and directly conveys the core message of self-worth."
+        },
+        "editorial_pov": {
+          "score": 7,
+          "reason": "The POV is consistent with the channel's self-growth focus, though the reframe is a common one."
+        },
+        "villain_mechanism_specificity": {
+          "score": 6,
+          "reason": "The 'villain' (accepting less than deserved) is identified, but the mechanism could be slightly more specific."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no discernible Call to Action in the provided details."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the hook and the video's core message. It is honest and enticing."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description expands effectively on the hook and title, setting clear expectations for the video's content."
+        },
+        "visual_dialogue_sync": {
+          "score": 7,
+          "reason": "The concept implies a sync, but without seeing the video, it's hard to judge the execution. Assumed moderate sync."
+        },
+        "image_direction_strength": {
+          "score": 7,
+          "reason": "Brand images are noted, suggesting an effort towards consistent branding, but specific strength is hard to gauge."
+        },
+        "thumbnail_concept": {
+          "score": 6,
+          "reason": "A thumbnail concept is not provided, making this score speculative based on typical channel practices."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The short script length and clear message suggest good potential for natural, effective pacing."
+        },
+        "brand_consistency": {
+          "score": 7,
+          "reason": "The topic and reframe angle align with the channel's brand, but uniqueness could be higher."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content is about self-perception and worth, with no factual claims that pose a policy risk."
+        }
+      },
+      "judge_composite_score": 6.5,
+      "strongest_element": "Hook & Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 6,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short expertly reframes a common concept with a powerful, introspective script, delivered by an empathetic voiceover and supported by a perfectly balanced audio mix and well-timed captions. While the emotional tone is strong and consistent, the visual specificity often falls short, relying on generic stock footage that, despite setting a mood, doesn't always directly enhance the script's nuanced message. Enhancing visual narrative to directly align with the specific emotional beats would further elevate viewer engagement and retention for this impactful content.",
+      "video_audit_strengths": [
+        "The compelling and empathetic voiceover delivery is a significant asset for connecting with the audience on a sensitive topic.",
+        "The robust and consistent emotional resonance achieved through the synergistic use of music, voiceover, and visual mood.",
+        "The powerful and memorable loopback line, 'You didn't lower your standards because you forgot them. You lowered them because keeping them felt risky,' provides deep insight and encourages re-watching or saving."
+      ],
+      "video_audit_dropoff_causes": [
+        "Overly generic visual transitions that lack specific narrative connection to the script's emotional beats, making some moments feel less engaging.",
+        "The overall slow, contemplative pace and lack of high-energy visual changes might not retain viewers accustomed to faster-cut Shorts content.",
+        "The initial visual hook, while pleasant, may not be dynamic enough to immediately capture every scroller's attention, leading to early exits."
+      ],
+      "video_audit_repeat_next": [
+        "Utilize a clear, empathetic, and consistently paced voiceover style for future sensitive topics.",
+        "Employ strong, concise script hooks and loopback statements that reframe perspectives effectively.",
+        "Maintain the high quality and balance of the audio mix between voiceover and background music.",
+        "Continue to use well-timed and easily readable captions to enhance accessibility and message comprehension."
+      ],
+      "video_audit_reduce_next": [
+        "Minimize the use of overly generic stock footage that does not add specific visual narrative or metaphoric depth to the script.",
+        "Avoid abrupt visual transitions where new scenes lack a clear visual or thematic link to the preceding content, aiming for smoother, more purposeful storytelling.",
+        "Lessen visual repetition of similar pensive or looking-away shots, instead seeking more varied imagery that still conveys introspection."
+      ],
+      "video_audit_tags": {
+        "hook_type": "reframe",
+        "thumbnail_type": "text_overlay",
+        "visual_style_mix": "moody_cinematic",
+        "narrative_format": "personal_reflection",
+        "character_used": "no_presenter"
+      },
+      "metrics": {
+        "views": 22,
+        "engagedViews": 3,
+        "averageViewDuration": 16,
+        "averageViewPercentage": 39.28,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 19.43,
+      "performance_score": 19.43,
+      "score_version": 1,
+      "hook_score": 13.64,
+      "hold_score": 39.28,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 45.38,
+      "analytics_fetched_at": "2026-06-27T01:30:54Z",
+      "analytics_days_old": 2,
       "data_available": true
     },
     {
