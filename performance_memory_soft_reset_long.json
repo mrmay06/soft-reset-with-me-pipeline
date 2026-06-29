@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-08T05:16:57Z",
+  "generated_at": "2026-06-29T05:16:42Z",
   "lookback_days": 90,
   "min_video_age_days": 3,
   "refresh_interval_days": 7,
-  "start_date": "2026-03-09",
-  "end_date": "2026-06-07",
+  "start_date": "2026-03-30",
+  "end_date": "2026-06-28",
   "videos": [
     {
       "video_id": "long_20260507_164017",
@@ -169,188 +169,8 @@
       "conversion_score": 100.0,
       "conversion_rate_per_1k": 166.6667,
       "reach_score": 28.17,
-      "analytics_fetched_at": "2026-06-01T05:28:52Z",
-      "analytics_days_old": 25,
-      "data_available": true
-    },
-    {
-      "video_id": "long_20260525_050930",
-      "published_date": "2026-05-25",
-      "status": "uploaded",
-      "topic": "The invisible emotional labor of always being the one who initiates relationship repair.",
-      "working_title": "When You're Always the One Drawing the Emotional Map",
-      "content_pillar": "relationship patterns | psychology drops | conversation truths | healing arcs",
-      "category": "relationship patterns | psychology drops | conversation truths | healing arcs",
-      "angle_type": "emotional_deep_dive | pattern_breakdown",
-      "longform_format": "emotional_deep_dive | pattern_breakdown",
-      "core_claim": "Always being the one to initiate deep emotional conversations or repair efforts in a relationship silently erodes connection and can leave you feeling profoundly alone, even when partnered.",
-      "editorial_seed": "Many of us find ourselves in relationships where we're constantly the ones pushing for emotional honesty, vulnerability, or conflict resolution. This isn't about being strong; it's about carrying an unseen burden. We'll explore why this pattern develops, how it impacts your sense of self and the relationship, and how to gently shift or acknowledge this imbalance.",
-      "only_soft_reset_line": "It's not resilience if you're the only one doing the heavy emotional lifting \u2014 it's a quiet isolation disguised as love.",
-      "word_count": 905,
-      "estimated_duration_sec": 350.3,
-      "argument_quality": "strong",
-      "final_duration_sec": 360.4,
-      "render_validation": "passed",
-      "title": "You think you\u2019re fixing it, but you\u2019re just staying alone",
-      "primary_variant_id": "C",
-      "title_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "formula": "specific scenario | specific number | named experience",
-          "title": "Why always initiating repair leaves you feeling so alone"
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "You\u2019re tired of being the only one to break the silence"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "You think you\u2019re fixing it, but you\u2019re just staying alone"
-        }
-      ],
-      "thumbnail_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "pattern": "pure_typography",
-          "structure": "typography",
-          "line1": "YOU START FIRST",
-          "line2": "and it feels heavy",
-          "thumbnail_text": "YOU START FIRST / and it feels heavy",
-          "visual_prompt": "Pure typography on a dark charcoal background, premium editorial book-cover aesthetic, elegant minimalist font, no photo, no text generated. Cool-neutral cinematic color palette, no warm tones. Aspect ratio 16:9, high resolution, no logos, borders, UI, or watermarks."
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "pattern": "face_right_text_left",
-          "structure": "face_text",
-          "line1": "ALWAYS YOUR JOB",
-          "line2": "this is why you're tired",
-          "thumbnail_text": "ALWAYS YOUR JOB / this is why you're tired",
-          "visual_prompt": "A cinematic portrait of a young woman, mid-twenties, on the right 58% of the frame. She has heavy, tired eyes and a quiet expression of devastated recognition, looking subtly towards the empty dark left 42% of the frame. No smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light from the right. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. The left 42% of the frame is a clean, dark charcoal text zone. 16:9 aspect ratio, no text generated, no logos, borders, UI, or watermarks.",
-          "subject_gender": "woman",
-          "portrait_scene": "A young woman, mid-twenties to early thirties, looking slightly to the left with an expression of quiet, knowing devastation and heavy eyes. Her gaze is thoughtful and resigned, not crying or shocked. Soft, diffused cool-neutral window light illuminates her face from the right. Real skin texture, subtle film grain, desaturated prestige drama color grade. The left 42% of the canvas is an empty, dark charcoal zone for text. 16:9 aspect ratio, no text generated."
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "pattern": "split_screen",
-          "structure": "split",
-          "line1": "THAT'S NOT LOVE",
-          "line2": "it's just quiet isolation",
-          "thumbnail_text": "THAT'S NOT LOVE / it's just quiet isolation",
-          "visual_prompt": "A split-screen composite image, 16:9 aspect ratio. The left plate (50%) depicts an unresolved, cold, and dark scene: a dimly lit room, perhaps a silhouette of a person sitting alone, conveying stagnation and tension. Color palette leans towards cool blues and grays, low saturation. The right plate (50%) depicts a clearer, cool-neutral, steady resolution state: an uncluttered, calm space, soft cool light filtering in, a sense of quiet internal clarity and peace. No warmth, no bright happiness, just steady composure. No figures on the right side. No text generated, no logos, borders, UI, or watermarks.",
-          "scene_left": "A dimly lit, slightly messy room, a lone figure (back to camera or indistinct) looking at a phone screen, cold blue light, feeling of stagnation and tension.",
-          "scene_right": "A clear, uncluttered space, gentle cool-neutral light filtering through, perhaps a hand resting calmly on a surface, no figure, feeling of quiet resolve, internal clarity."
-        }
-      ],
-      "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "eP__l295ZLI",
-      "youtube_url": "https://www.youtube.com/watch?v=eP__l295ZLI",
-      "privacy_status": "public",
-      "uploaded_at": "2026-05-25T05:24:40Z",
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W22",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "accusation",
-        "angle_type": "unknown",
-        "category": "unknown",
-        "topic_cluster": "The invisible emotional labor of always being the one who in",
-        "visual_style_mix": "unknown",
-        "video_length_band": "3_7min",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "none",
-        "total_scenes": 0
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook sets up a relatable scenario of trying to fix a relationship and hints at a deeper, negative truth, creating intrigue."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script effectively communicates the core message about one-sided emotional effort in relationships and its isolating effect."
-        },
-        "editorial_pov": {
-          "score": 9,
-          "reason": "The perspective is clearly defined, offering a specific, insightful take on relationship dynamics that aligns with the channel's likely ethos."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' mechanism (one-sided emotional lifting disguised as love) is clearly identified and explained, though could be even more nuanced."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no CTA provided in the video details. This is a critical omission for a YouTube video."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title is provocative and accurately reflects the script's central theme of self-deception in relationship repair leading to isolation."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description clearly encapsulates the video's theme and draws the viewer in with relatable phrasing and a strong emotional hook."
-        },
-        "visual_dialogue_sync": {
-          "score": 1,
-          "reason": "No visual elements or script are provided to assess sync. Assuming a faceless channel, this score reflects the lack of provided information."
-        },
-        "image_direction_strength": {
-          "score": 1,
-          "reason": "No visual elements or script are provided to assess image direction. Assuming a faceless channel, this score reflects the lack of provided information."
-        },
-        "thumbnail_concept": {
-          "score": 1,
-          "reason": "No thumbnail concept is provided. This is a crucial element for viewer engagement."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The script's word count suggests a reasonable pace for a 360s video (approx. 150 words/min), likely allowing for clear articulation."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The theme of emotional isolation disguised as love aligns strongly with the self-growth and relationship recovery niche implied by the channel name."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content focuses on emotional relationship dynamics and self-perception, posing no apparent factual or policy risks."
-        }
-      },
-      "judge_composite_score": 6.2,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "metrics": {
-        "views": 12,
-        "engagedViews": 12,
-        "averageViewDuration": 118,
-        "averageViewPercentage": 32.83,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 1
-      },
-      "composite_score": 66.68,
-      "performance_score": 66.68,
-      "score_version": 1,
-      "hook_score": 100.0,
-      "hold_score": 32.83,
-      "resonance_score": 66.67,
-      "resonance_per_engaged": 0.6667,
-      "resonance_per_view": 0.6667,
-      "conversion_score": 100.0,
-      "conversion_rate_per_1k": 83.3333,
-      "reach_score": 37.13,
-      "analytics_fetched_at": "2026-06-01T05:28:52Z",
-      "analytics_days_old": 7,
+      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "analytics_days_old": 53,
       "data_available": true
     },
     {
@@ -529,8 +349,368 @@
       "conversion_score": 100.0,
       "conversion_rate_per_1k": 52.6316,
       "reach_score": 43.36,
-      "analytics_fetched_at": "2026-06-01T05:28:52Z",
-      "analytics_days_old": 14,
+      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "analytics_days_old": 42,
+      "data_available": true
+    },
+    {
+      "video_id": "long_20260525_050930",
+      "published_date": "2026-05-25",
+      "status": "uploaded",
+      "topic": "The invisible emotional labor of always being the one who initiates relationship repair.",
+      "working_title": "When You're Always the One Drawing the Emotional Map",
+      "content_pillar": "relationship patterns | psychology drops | conversation truths | healing arcs",
+      "category": "relationship patterns | psychology drops | conversation truths | healing arcs",
+      "angle_type": "emotional_deep_dive | pattern_breakdown",
+      "longform_format": "emotional_deep_dive | pattern_breakdown",
+      "core_claim": "Always being the one to initiate deep emotional conversations or repair efforts in a relationship silently erodes connection and can leave you feeling profoundly alone, even when partnered.",
+      "editorial_seed": "Many of us find ourselves in relationships where we're constantly the ones pushing for emotional honesty, vulnerability, or conflict resolution. This isn't about being strong; it's about carrying an unseen burden. We'll explore why this pattern develops, how it impacts your sense of self and the relationship, and how to gently shift or acknowledge this imbalance.",
+      "only_soft_reset_line": "It's not resilience if you're the only one doing the heavy emotional lifting \u2014 it's a quiet isolation disguised as love.",
+      "word_count": 905,
+      "estimated_duration_sec": 350.3,
+      "argument_quality": "strong",
+      "final_duration_sec": 360.4,
+      "render_validation": "passed",
+      "title": "You think you\u2019re fixing it, but you\u2019re just staying alone",
+      "primary_variant_id": "C",
+      "title_variants": [
+        {
+          "id": "A",
+          "angle": "seo",
+          "formula": "specific scenario | specific number | named experience",
+          "title": "Why always initiating repair leaves you feeling so alone"
+        },
+        {
+          "id": "B",
+          "angle": "emotional_hook",
+          "formula": "personal pronoun + viewer's private thought made visible",
+          "title": "You\u2019re tired of being the only one to break the silence"
+        },
+        {
+          "id": "C",
+          "angle": "counter_intuitive",
+          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+          "title": "You think you\u2019re fixing it, but you\u2019re just staying alone"
+        }
+      ],
+      "thumbnail_variants": [
+        {
+          "id": "A",
+          "angle": "seo",
+          "pattern": "pure_typography",
+          "structure": "typography",
+          "line1": "YOU START FIRST",
+          "line2": "and it feels heavy",
+          "thumbnail_text": "YOU START FIRST / and it feels heavy",
+          "visual_prompt": "Pure typography on a dark charcoal background, premium editorial book-cover aesthetic, elegant minimalist font, no photo, no text generated. Cool-neutral cinematic color palette, no warm tones. Aspect ratio 16:9, high resolution, no logos, borders, UI, or watermarks."
+        },
+        {
+          "id": "B",
+          "angle": "emotional_hook",
+          "pattern": "face_right_text_left",
+          "structure": "face_text",
+          "line1": "ALWAYS YOUR JOB",
+          "line2": "this is why you're tired",
+          "thumbnail_text": "ALWAYS YOUR JOB / this is why you're tired",
+          "visual_prompt": "A cinematic portrait of a young woman, mid-twenties, on the right 58% of the frame. She has heavy, tired eyes and a quiet expression of devastated recognition, looking subtly towards the empty dark left 42% of the frame. No smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light from the right. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. The left 42% of the frame is a clean, dark charcoal text zone. 16:9 aspect ratio, no text generated, no logos, borders, UI, or watermarks.",
+          "subject_gender": "woman",
+          "portrait_scene": "A young woman, mid-twenties to early thirties, looking slightly to the left with an expression of quiet, knowing devastation and heavy eyes. Her gaze is thoughtful and resigned, not crying or shocked. Soft, diffused cool-neutral window light illuminates her face from the right. Real skin texture, subtle film grain, desaturated prestige drama color grade. The left 42% of the canvas is an empty, dark charcoal zone for text. 16:9 aspect ratio, no text generated."
+        },
+        {
+          "id": "C",
+          "angle": "counter_intuitive",
+          "pattern": "split_screen",
+          "structure": "split",
+          "line1": "THAT'S NOT LOVE",
+          "line2": "it's just quiet isolation",
+          "thumbnail_text": "THAT'S NOT LOVE / it's just quiet isolation",
+          "visual_prompt": "A split-screen composite image, 16:9 aspect ratio. The left plate (50%) depicts an unresolved, cold, and dark scene: a dimly lit room, perhaps a silhouette of a person sitting alone, conveying stagnation and tension. Color palette leans towards cool blues and grays, low saturation. The right plate (50%) depicts a clearer, cool-neutral, steady resolution state: an uncluttered, calm space, soft cool light filtering in, a sense of quiet internal clarity and peace. No warmth, no bright happiness, just steady composure. No figures on the right side. No text generated, no logos, borders, UI, or watermarks.",
+          "scene_left": "A dimly lit, slightly messy room, a lone figure (back to camera or indistinct) looking at a phone screen, cold blue light, feeling of stagnation and tension.",
+          "scene_right": "A clear, uncluttered space, gentle cool-neutral light filtering through, perhaps a hand resting calmly on a surface, no figure, feeling of quiet resolve, internal clarity."
+        }
+      ],
+      "thumbnail": "07_longform_thumbnail.png",
+      "youtube_video_id": "eP__l295ZLI",
+      "youtube_url": "https://www.youtube.com/watch?v=eP__l295ZLI",
+      "privacy_status": "public",
+      "uploaded_at": "2026-05-25T05:24:40Z",
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "unknown",
+        "category": "unknown",
+        "topic_cluster": "The invisible emotional labor of always being the one who in",
+        "visual_style_mix": "unknown",
+        "video_length_band": "3_7min",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 0
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 7,
+          "reason": "The hook sets up a relatable scenario of trying to fix a relationship and hints at a deeper, negative truth, creating intrigue."
+        },
+        "script_clarity": {
+          "score": 8,
+          "reason": "The script effectively communicates the core message about one-sided emotional effort in relationships and its isolating effect."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "The perspective is clearly defined, offering a specific, insightful take on relationship dynamics that aligns with the channel's likely ethos."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "The 'villain' mechanism (one-sided emotional lifting disguised as love) is clearly identified and explained, though could be even more nuanced."
+        },
+        "cta_quality": {
+          "score": 1,
+          "reason": "There is no CTA provided in the video details. This is a critical omission for a YouTube video."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title is provocative and accurately reflects the script's central theme of self-deception in relationship repair leading to isolation."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description clearly encapsulates the video's theme and draws the viewer in with relatable phrasing and a strong emotional hook."
+        },
+        "visual_dialogue_sync": {
+          "score": 1,
+          "reason": "No visual elements or script are provided to assess sync. Assuming a faceless channel, this score reflects the lack of provided information."
+        },
+        "image_direction_strength": {
+          "score": 1,
+          "reason": "No visual elements or script are provided to assess image direction. Assuming a faceless channel, this score reflects the lack of provided information."
+        },
+        "thumbnail_concept": {
+          "score": 1,
+          "reason": "No thumbnail concept is provided. This is a crucial element for viewer engagement."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "The script's word count suggests a reasonable pace for a 360s video (approx. 150 words/min), likely allowing for clear articulation."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "The theme of emotional isolation disguised as love aligns strongly with the self-growth and relationship recovery niche implied by the channel name."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content focuses on emotional relationship dynamics and self-perception, posing no apparent factual or policy risks."
+        }
+      },
+      "judge_composite_score": 6.2,
+      "strongest_element": "Title Accuracy",
+      "weakest_element": "CTA Quality",
+      "only_soft_reset_score": 8,
+      "metrics": {
+        "views": 24,
+        "engagedViews": 24,
+        "averageViewDuration": 77,
+        "averageViewPercentage": 21.4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1
+      },
+      "composite_score": 56.49,
+      "performance_score": 56.49,
+      "score_version": 1,
+      "hook_score": 100.0,
+      "hold_score": 21.4,
+      "resonance_score": 33.33,
+      "resonance_per_engaged": 0.3333,
+      "resonance_per_view": 0.3333,
+      "conversion_score": 100.0,
+      "conversion_rate_per_1k": 41.6667,
+      "reach_score": 46.59,
+      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "analytics_days_old": 35,
+      "data_available": true
+    },
+    {
+      "video_id": "long_20260601_052851",
+      "published_date": "2026-06-01",
+      "status": "uploaded",
+      "topic": "The Silent Concession: Why we ask for 'less' than we truly want, before anyone has even said no.",
+      "working_title": "The Silent Concession: Why you ask for 'less' than you truly need (and how to unlearn it).",
+      "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
+      "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
+      "angle_type": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
+      "longform_format": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
+      "core_claim": "We often subconsciously dilute our own needs and desires when expressing them in relationships, due to past experiences of rejection or unmet expectations, inadvertently perpetuating a cycle of receiving less than we truly deserve.",
+      "editorial_seed": "Many of us have learned to shrink our desires down before we even voice them. We've been taught, implicitly or explicitly, that our full needs might be 'too much,' inconvenient, or will inevitably lead to disappointment. This video explores the subtle ways we preemptively compromise with ourselves, asking for a watered-down version of what we truly want, and how this quiet self-betrayal affects our relationships. It's time to understand why we do this, and how to start asking for our whole selves.",
+      "only_soft_reset_line": "The real heartbreak isn't being denied what you need. It's realizing you never fully asked for it in the first place.",
+      "word_count": 1039,
+      "estimated_duration_sec": 402.2,
+      "argument_quality": "strong",
+      "final_duration_sec": 372.4,
+      "render_validation": "passed",
+      "title": "That quiet ask for 'less'? You're already saying no to yourself",
+      "primary_variant_id": "C",
+      "title_variants": [
+        {
+          "id": "A",
+          "angle": "seo",
+          "formula": "specific scenario | specific number | named experience",
+          "title": "Why you ask for 70% of what you want from them"
+        },
+        {
+          "id": "B",
+          "angle": "emotional_hook",
+          "formula": "personal pronoun + viewer's private thought made visible",
+          "title": "You soften your needs before they can even say no"
+        },
+        {
+          "id": "C",
+          "angle": "counter_intuitive",
+          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+          "title": "That quiet ask for 'less'? You're already saying no to yourself"
+        }
+      ],
+      "thumbnail_variants": [
+        {
+          "id": "A",
+          "angle": "seo",
+          "pattern": "pure_typography",
+          "structure": "typography",
+          "line1": "YOU ASK FOR LESS",
+          "line2": "before anyone says no",
+          "thumbnail_text": "YOU ASK FOR LESS / before anyone says no",
+          "visual_prompt": "16:9 horizontal, 1920x1080. Minimalist, premium editorial book-cover aesthetic. Dark charcoal background with subtle texture. Abstract, elegant, cool-neutral gradient, very subtle film grain. No text, no warm colors, no UI elements. Deep Midnight #1C1C2B dominant with very subtle hints of Soft Cream #F5F0E8. Cinematic light."
+        },
+        {
+          "id": "B",
+          "angle": "emotional_hook",
+          "pattern": "face_right_text_left",
+          "structure": "face_text",
+          "line1": "YOU HELD BACK",
+          "line2": "why you always do this",
+          "thumbnail_text": "YOU HELD BACK / why you always do this",
+          "visual_prompt": "16:9 horizontal, 1920x1080. A woman, mid-twenties to early thirties, positioned on the right 58% of the frame. Her expression conveys quiet, devastated recognition, heavy eyes, gaze slightly to the left. No smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light on her face. Real skin texture, subtle film grain. Slightly desaturated prestige drama color grade. The left 42% of the frame is a clean, dark, empty zone for text. No text in the image. Cool-neutral cinematic color palette only. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks.",
+          "subject_gender": "woman",
+          "portrait_scene": "cool-neutral portrait scene with empty dark left text zone, no text"
+        },
+        {
+          "id": "C",
+          "angle": "counter_intuitive",
+          "pattern": "split_screen",
+          "structure": "split",
+          "line1": "YOU SAID NO FIRST",
+          "line2": "before anyone else could",
+          "thumbnail_text": "YOU SAID NO FIRST / before anyone else could",
+          "visual_prompt": "16:9 horizontal, 1920x1080. Two-plate split-screen composite. Left side (problem state): A person, indistinct, hunched over a dim phone screen in a cold, dark, sparse room, feeling isolated and unresolved. Dominant cool tones, deep shadows. Right side (resolution state): The same person, now clearer, cool-neutral lighting, looking out a window with a steady, contemplative expression. Calm, cool, diffused light, a sense of quiet clarity. No text in the image. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks. Subtle film grain.",
+          "scene_left": "problem-state scene, cold dark, no text",
+          "scene_right": "resolution-state scene, cool-neutral clarity, no text"
+        }
+      ],
+      "thumbnail": "07_longform_thumbnail.png",
+      "youtube_video_id": "lq1EnufJHSU",
+      "youtube_url": "https://www.youtube.com/watch?v=lq1EnufJHSU",
+      "privacy_status": "public",
+      "uploaded_at": "2026-06-01T05:45:17Z",
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "unknown",
+        "category": "unknown",
+        "topic_cluster": "The Silent Concession: Why we ask for 'less' than we truly w",
+        "visual_style_mix": "unknown",
+        "video_length_band": "3_7min",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 0
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 8,
+          "reason": "The hook 'That quiet ask for 'less'?' is intriguing and directly relates to the title, posing a relatable question that invites viewers to explore their own experiences."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The script is well-structured, using clear language and relatable examples to explain the concept of self-denial and the importance of assertive communication in relationships."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "The editorial point of view is consistent, offering a reflective and empowering perspective on personal agency within relationships, aligning with the channel's likely self-growth focus."
+        },
+        "villain_mechanism_specificity": {
+          "score": 7,
+          "reason": "The 'villain' is identified as the internal mechanism of self-silencing and fear of asking for needs, which is well-explained, though could be slightly more specific in its manifestation."
+        },
+        "cta_quality": {
+          "score": 5,
+          "reason": "A specific CTA is not present in the provided details, which is a missed opportunity for engagement and guiding viewer action."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title accurately reflects the core message of the video, highlighting the internal struggle of not asking for what one needs and the resulting self-denial."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "The description is concise, engaging, and accurately previews the video's theme, setting a compelling tone and hinting at the emotional core of the content."
+        },
+        "visual_dialogue_sync": {
+          "score": 1,
+          "reason": "No visual elements (scenes, stock videos, brand images) were provided, making it impossible to assess sync. Assuming a typical faceless format, this will heavily rely on text overlays or abstract visuals."
+        },
+        "image_direction_strength": {
+          "score": 1,
+          "reason": "No visual elements were provided, therefore image direction cannot be assessed."
+        },
+        "thumbnail_concept": {
+          "score": 1,
+          "reason": "No thumbnail concept was provided, making assessment impossible."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "The script is 1039 words, which at a typical narration pace (150 wpm) is under 7 minutes, fitting common YouTube attention spans. The density of the content suggests a thoughtful, deliberate pacing would be appropriate."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "The theme of self-growth, introspection, and relationship dynamics strongly aligns with the presumed brand of a channel named 'Soft Reset With Me'."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "The content discusses psychological and relational concepts in a general, self-reflective manner. There are no claims that carry significant factual risk or violate platform policies."
+        }
+      },
+      "judge_composite_score": 7.15,
+      "strongest_element": "script_clarity",
+      "weakest_element": "visual_dialogue_sync",
+      "only_soft_reset_score": 7,
+      "metrics": {
+        "views": 5,
+        "engagedViews": 5,
+        "averageViewDuration": 175,
+        "averageViewPercentage": 47.01,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 42.75,
+      "performance_score": 42.75,
+      "score_version": 1,
+      "hook_score": 100.0,
+      "hold_score": 47.01,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 25.93,
+      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "analytics_days_old": 28,
       "data_available": true
     },
     {
@@ -702,48 +882,48 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 40.13,
-      "analytics_fetched_at": "2026-06-01T05:28:52Z",
-      "analytics_days_old": 21,
+      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "analytics_days_old": 49,
       "data_available": true
     },
     {
-      "video_id": "long_20260601_052851",
-      "published_date": "2026-06-01",
+      "video_id": "long_20260608_051657",
+      "published_date": "2026-06-08",
       "status": "uploaded",
-      "topic": "The Silent Concession: Why we ask for 'less' than we truly want, before anyone has even said no.",
-      "working_title": "The Silent Concession: Why you ask for 'less' than you truly need (and how to unlearn it).",
-      "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
-      "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
-      "angle_type": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
-      "longform_format": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
-      "core_claim": "We often subconsciously dilute our own needs and desires when expressing them in relationships, due to past experiences of rejection or unmet expectations, inadvertently perpetuating a cycle of receiving less than we truly deserve.",
-      "editorial_seed": "Many of us have learned to shrink our desires down before we even voice them. We've been taught, implicitly or explicitly, that our full needs might be 'too much,' inconvenient, or will inevitably lead to disappointment. This video explores the subtle ways we preemptively compromise with ourselves, asking for a watered-down version of what we truly want, and how this quiet self-betrayal affects our relationships. It's time to understand why we do this, and how to start asking for our whole selves.",
-      "only_soft_reset_line": "The real heartbreak isn't being denied what you need. It's realizing you never fully asked for it in the first place.",
-      "word_count": 1039,
-      "estimated_duration_sec": 402.2,
+      "topic": "The exhausting art of trying to be 'enough' for someone else, and how it disconnects you from yourself.",
+      "working_title": "When Connection Becomes a Performance: The Quiet Cost of Chasing Approval",
+      "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+      "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+      "angle_type": "emotional_deep_dive",
+      "longform_format": "emotional_deep_dive",
+      "core_claim": "Constantly seeking external approval in relationships is an exhausting performance that ultimately prevents true, authentic connection, both with others and with yourself.",
+      "editorial_seed": "This video explores the subtle, often subconscious ways we contort ourselves to fit a partner's perceived expectations, believing this will lead to deeper love. We dissect the specific moment of realization that this effort is actually creating distance, not intimacy. The narrative offers a path to reclaim self-worth not from external validation, but from an internal sense of alignment and truth, fostering relationships where you are loved for who you authentically are, not who you pretend to be.",
+      "only_soft_reset_line": "The move isn't about being less for someone \u2014 it's about bravely becoming more of yourself, even if it costs you the version of the relationship that only existed because you kept making yourself smaller to fit it.",
+      "word_count": 1018,
+      "estimated_duration_sec": 394.1,
       "argument_quality": "strong",
-      "final_duration_sec": 372.4,
+      "final_duration_sec": 338.3,
       "render_validation": "passed",
-      "title": "That quiet ask for 'less'? You're already saying no to yourself",
+      "title": "What if 'enough' isn't something you perform for them?",
       "primary_variant_id": "C",
       "title_variants": [
         {
           "id": "A",
           "angle": "seo",
           "formula": "specific scenario | specific number | named experience",
-          "title": "Why you ask for 70% of what you want from them"
+          "title": "Why you feel empty after trying to be enough for them"
         },
         {
           "id": "B",
           "angle": "emotional_hook",
           "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "You soften your needs before they can even say no"
+          "title": "You're not asking if you liked them, just if they liked you"
         },
         {
           "id": "C",
           "angle": "counter_intuitive",
           "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "That quiet ask for 'less'? You're already saying no to yourself"
+          "title": "What if 'enough' isn't something you perform for them?"
         }
       ],
       "thumbnail_variants": [
@@ -752,20 +932,20 @@
           "angle": "seo",
           "pattern": "pure_typography",
           "structure": "typography",
-          "line1": "YOU ASK FOR LESS",
-          "line2": "before anyone says no",
-          "thumbnail_text": "YOU ASK FOR LESS / before anyone says no",
-          "visual_prompt": "16:9 horizontal, 1920x1080. Minimalist, premium editorial book-cover aesthetic. Dark charcoal background with subtle texture. Abstract, elegant, cool-neutral gradient, very subtle film grain. No text, no warm colors, no UI elements. Deep Midnight #1C1C2B dominant with very subtle hints of Soft Cream #F5F0E8. Cinematic light."
+          "line1": "YOU'RE ALWAYS PERFORMING",
+          "line2": "and it's making you disappear",
+          "thumbnail_text": "YOU'RE ALWAYS PERFORMING / and it's making you disappear",
+          "visual_prompt": "Dark charcoal background, subtly textured, premium editorial book-cover aesthetic, minimalist, clean, cool-neutral cinematic color palette. No text."
         },
         {
           "id": "B",
           "angle": "emotional_hook",
           "pattern": "face_right_text_left",
           "structure": "face_text",
-          "line1": "YOU HELD BACK",
-          "line2": "why you always do this",
-          "thumbnail_text": "YOU HELD BACK / why you always do this",
-          "visual_prompt": "16:9 horizontal, 1920x1080. A woman, mid-twenties to early thirties, positioned on the right 58% of the frame. Her expression conveys quiet, devastated recognition, heavy eyes, gaze slightly to the left. No smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light on her face. Real skin texture, subtle film grain. Slightly desaturated prestige drama color grade. The left 42% of the frame is a clean, dark, empty zone for text. No text in the image. Cool-neutral cinematic color palette only. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks.",
+          "line1": "ARE YOU LIKED",
+          "line2": "or just playing the part",
+          "thumbnail_text": "ARE YOU LIKED / or just playing the part",
+          "visual_prompt": "Cinematic portrait of a young woman, mid-twenties, on the right 58% of the frame. Her expression shows quiet, devastated recognition, heavy eyes, gaze slightly to the empty dark left 42% text zone. Soft diffused cool-neutral window light, real skin texture, subtle film grain, slightly desaturated prestige drama color grade. Cool-neutral colors only. No text.",
           "subject_gender": "woman",
           "portrait_scene": "cool-neutral portrait scene with empty dark left text zone, no text"
         },
@@ -774,28 +954,28 @@
           "angle": "counter_intuitive",
           "pattern": "split_screen",
           "structure": "split",
-          "line1": "YOU SAID NO FIRST",
-          "line2": "before anyone else could",
-          "thumbnail_text": "YOU SAID NO FIRST / before anyone else could",
-          "visual_prompt": "16:9 horizontal, 1920x1080. Two-plate split-screen composite. Left side (problem state): A person, indistinct, hunched over a dim phone screen in a cold, dark, sparse room, feeling isolated and unresolved. Dominant cool tones, deep shadows. Right side (resolution state): The same person, now clearer, cool-neutral lighting, looking out a window with a steady, contemplative expression. Calm, cool, diffused light, a sense of quiet clarity. No text in the image. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks. Subtle film grain.",
+          "line1": "ENOUGH ISN'T A ROLE",
+          "line2": "it's just who you are",
+          "thumbnail_text": "ENOUGH ISN'T A ROLE / it's just who you are",
+          "visual_prompt": "Split screen composite, 16:9. Left side: a dimly lit, slightly blurred figure in a sterile, impersonal office setting, head slightly bowed, cool tones, conveys emptiness and performance, back to viewer. Right side: A clearer, more grounded shot of the same figure in a calm, cool-neutral, minimalist home environment, looking out a window with a steady, quiet self-assured expression, soft diffused light, sense of gentle presence. Prestige drama color grade, no warm tones. No text.",
           "scene_left": "problem-state scene, cold dark, no text",
           "scene_right": "resolution-state scene, cool-neutral clarity, no text"
         }
       ],
       "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "lq1EnufJHSU",
-      "youtube_url": "https://www.youtube.com/watch?v=lq1EnufJHSU",
+      "youtube_video_id": "fPGlQff7pvM",
+      "youtube_url": "https://www.youtube.com/watch?v=fPGlQff7pvM",
       "privacy_status": "public",
-      "uploaded_at": "2026-06-01T05:45:17Z",
+      "uploaded_at": "2026-06-08T05:33:30Z",
       "experiment_label": "baseline",
       "experiment_id": null,
-      "strategy_version": "2026-W23",
+      "strategy_version": "2026-W24",
       "judge_traits": {
         "hook_type": "statement",
-        "title_type": "declarative",
+        "title_type": "question",
         "angle_type": "unknown",
         "category": "unknown",
-        "topic_cluster": "The Silent Concession: Why we ask for 'less' than we truly w",
+        "topic_cluster": "The exhausting art of trying to be 'enough' for someone else",
         "visual_style_mix": "unknown",
         "video_length_band": "3_7min",
         "narrative_format": "unknown",
@@ -805,85 +985,85 @@
       },
       "judge_scores": {
         "hook_strength": {
-          "score": 8,
-          "reason": "The hook 'That quiet ask for 'less'?' is intriguing and directly relates to the title, posing a relatable question that invites viewers to explore their own experiences."
+          "score": 7,
+          "reason": "The hook poses a thought-provoking question that directly challenges a common misconception about relationships and self-worth, making viewers curious to find the answer."
         },
         "script_clarity": {
           "score": 9,
-          "reason": "The script is well-structured, using clear language and relatable examples to explain the concept of self-denial and the importance of assertive communication in relationships."
+          "reason": "The script effectively communicates the core message of authentic self-expression over performance, using clear language and relatable examples. The concept of 'enough' is explored with nuance."
         },
         "editorial_pov": {
-          "score": 8,
-          "reason": "The editorial point of view is consistent, offering a reflective and empowering perspective on personal agency within relationships, aligning with the channel's likely self-growth focus."
+          "score": 9,
+          "reason": "The channel's perspective on self-growth and authentic relating is consistently present, advocating for internal validation and courage in self-expression, which aligns with the 'soft reset' philosophy."
         },
         "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' is identified as the internal mechanism of self-silencing and fear of asking for needs, which is well-explained, though could be slightly more specific in its manifestation."
+          "score": 8,
+          "reason": "The script identifies the 'villain' as the external validation-seeking mindset and the performance-based approach to relationships, explaining how this mechanism leads to a lack of fulfillment."
         },
         "cta_quality": {
-          "score": 5,
-          "reason": "A specific CTA is not present in the provided details, which is a missed opportunity for engagement and guiding viewer action."
+          "score": 6,
+          "reason": "While the description implies a soft reset, a direct call-to-action within the video itself (e.g., asking viewers to share their thoughts or subscribe for more) is not specified, which is a missed opportunity for engagement."
         },
         "title_accuracy": {
           "score": 9,
-          "reason": "The title accurately reflects the core message of the video, highlighting the internal struggle of not asking for what one needs and the resulting self-denial."
+          "reason": "The title perfectly encapsulates the video's central theme: questioning the need to perform 'enoughness' for others and instead focusing on genuine self-acceptance."
         },
         "description_usefulness": {
           "score": 8,
-          "reason": "The description is concise, engaging, and accurately previews the video's theme, setting a compelling tone and hinting at the emotional core of the content."
+          "reason": "The description provides a concise and compelling summary of the video's core message, hinting at the 'soft reset' concept and the idea of embracing one's true self, even with temporary discomfort."
         },
         "visual_dialogue_sync": {
           "score": 1,
-          "reason": "No visual elements (scenes, stock videos, brand images) were provided, making it impossible to assess sync. Assuming a typical faceless format, this will heavily rely on text overlays or abstract visuals."
+          "reason": "There are no visual elements (scenes, stock videos, brand images) specified, meaning there is no dialogue to sync with visuals. This is a critical missing component for a YouTube video."
         },
         "image_direction_strength": {
           "score": 1,
-          "reason": "No visual elements were provided, therefore image direction cannot be assessed."
+          "reason": "No images or brand visuals are mentioned, so their strength cannot be evaluated. This lack of visual strategy is a significant drawback."
         },
         "thumbnail_concept": {
-          "score": 1,
-          "reason": "No thumbnail concept was provided, making assessment impossible."
+          "score": 3,
+          "reason": "No thumbnail concept is provided. A compelling thumbnail is crucial for click-through rate, and its absence is a major oversight."
         },
         "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "The script is 1039 words, which at a typical narration pace (150 wpm) is under 7 minutes, fitting common YouTube attention spans. The density of the content suggests a thoughtful, deliberate pacing would be appropriate."
+          "score": 8,
+          "reason": "Assuming a typical faceless channel format, the script length (1018 words) is appropriate for a ~5.5-minute video (338s). The pacing would need to be natural and engaging, but the word count is suitable."
         },
         "brand_consistency": {
           "score": 8,
-          "reason": "The theme of self-growth, introspection, and relationship dynamics strongly aligns with the presumed brand of a channel named 'Soft Reset With Me'."
+          "reason": "The core message of authenticity, self-acceptance, and internal validation aligns perfectly with the 'Soft Reset With Me' brand identity, focusing on personal growth and mindful relationship dynamics."
         },
         "policy_factual_risk": {
           "score": 10,
-          "reason": "The content discusses psychological and relational concepts in a general, self-reflective manner. There are no claims that carry significant factual risk or violate platform policies."
+          "reason": "The content discusses psychological and relational concepts in a general self-growth context. There are no claims that appear to be factually risky or violate platform policies."
         }
       },
-      "judge_composite_score": 7.15,
-      "strongest_element": "script_clarity",
-      "weakest_element": "visual_dialogue_sync",
-      "only_soft_reset_score": 7,
+      "judge_composite_score": 6.1,
+      "strongest_element": "Title Accuracy",
+      "weakest_element": "Visual Dialogue Sync",
+      "only_soft_reset_score": 8,
       "metrics": {
         "views": 3,
         "engagedViews": 3,
-        "averageViewDuration": 111,
-        "averageViewPercentage": 29.84,
+        "averageViewDuration": 121,
+        "averageViewPercentage": 35.73,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "subscribersGained": 0
       },
-      "composite_score": 36.45,
-      "performance_score": 36.45,
+      "composite_score": 38.51,
+      "performance_score": 38.51,
       "score_version": 1,
       "hook_score": 100.0,
-      "hold_score": 29.84,
+      "hold_score": 35.73,
       "resonance_score": 0.0,
       "resonance_per_engaged": 0.0,
       "resonance_per_view": 0.0,
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 20.07,
-      "analytics_fetched_at": "2026-06-08T05:16:57Z",
-      "analytics_days_old": 7,
+      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "analytics_days_old": 21,
       "data_available": true
     },
     {
@@ -1049,8 +1229,8 @@
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
       "reach_score": 30.1,
-      "analytics_fetched_at": "2026-06-01T05:28:52Z",
-      "analytics_days_old": 21,
+      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "analytics_days_old": 49,
       "data_available": true
     }
   ]

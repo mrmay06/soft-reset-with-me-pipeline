@@ -1265,5 +1265,161 @@
     "strongest_element": "Title Accuracy",
     "weakest_element": "Visual Dialogue Sync",
     "only_soft_reset_score": 8
+  },
+  {
+    "video_id": "long_20260629_051642",
+    "published_date": "2026-06-29",
+    "status": "uploaded",
+    "topic": "Self-sabotage in new, healthy relationships driven by fear of intimacy or past trauma",
+    "working_title": "The Quiet Art of Ghosting Yourself: Why Healthy Love Feels Too Good to Be True",
+    "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+    "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
+    "angle_type": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
+    "longform_format": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
+    "core_claim": "Many of us subtly sabotage new, promising connections not out of malice, but from a deep-seated, protective fear of future pain, often by emotionally or physically withdrawing before things get 'too real.'",
+    "editorial_seed": "We think we want a healthy, loving relationship, but often, when one appears, an internal alarm goes off. It's not always a grand exit; sometimes, it's a slow fade, a subtle withdrawal, an emotional ghosting from within our own potential happiness. This video explores the quiet, unconscious ways we pull back and how to recognize and reset this pattern.",
+    "only_soft_reset_line": "You didn't ghost them. You ghosted the version of yourself that was finally about to be known.",
+    "word_count": 1034,
+    "estimated_duration_sec": 400.3,
+    "argument_quality": "strong",
+    "final_duration_sec": 352.53,
+    "render_validation": "passed",
+    "title": "That 'too good to be true' feeling? That's when you run",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why steady love feels wrong (and why you pull away)"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You keep running from the very love you ask for"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "That 'too good to be true' feeling? That's when you run"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "pure_typography",
+        "structure": "typography",
+        "line1": "WHY DO I RUN",
+        "line2": "when it feels so right",
+        "thumbnail_text": "WHY DO I RUN / when it feels so right",
+        "visual_prompt": "typography, minimal, editorial book cover, bold sans-serif text on a deep charcoal background, subtle texture, elegant, cool-neutral cinematic color, no warm tones, 1920x1080, 16:9, safe zone bottom-right 20% and bottom-left 15%, no text generated"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "face_right_text_left",
+        "structure": "face_text",
+        "line1": "YOU PULLED AWAY",
+        "line2": "when it felt too good",
+        "thumbnail_text": "YOU PULLED AWAY / when it felt too good",
+        "visual_prompt": "photorealistic portrait of a young adult woman, mid-twenties to early thirties, soft diffused cool-neutral window light, quiet devastated recognition, heavy eyes, gaze slightly towards the empty dark left 42% text zone, no smile, no open crying, real skin texture, subtle film grain, slightly desaturated prestige drama color grade, 1920x1080, 16:9, safe zone bottom-right 20% and bottom-left 15%, no text generated",
+        "subject_gender": "woman",
+        "portrait_scene": "photorealistic portrait of a young adult woman, mid-twenties to early thirties, soft diffused cool-neutral window light, quiet devastated recognition, heavy eyes, gaze slightly towards the empty dark left 42% text zone, no smile, no open crying, real skin texture, subtle film grain, slightly desaturated prestige drama color grade"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "split_screen",
+        "structure": "split",
+        "line1": "CALM FEELS WRONG",
+        "line2": "and that's why you left",
+        "thumbnail_text": "CALM FEELS WRONG / and that's why you left",
+        "visual_prompt": "two-plate composite image, 1920x1080, 16:9. Left scene: isolated figure in a cool, dark, slightly blurred, chaotic environment (e.g., city lights at night from a distance, or a lonely, dimly lit room corner), conveying unresolved conflict. Right scene: serene, steady, cool-neutral environment (e.g., clear, calm open landscape with soft light, or a quietly organized, clean space), conveying clarity and resolution without being overly bright or happy. Seamless transition, cinematic color, no warm tones, 1920x1080, 16:9, safe zone bottom-right 20% and bottom-left 15%, no text generated",
+        "scene_left": "isolated figure in a cool, dark, slightly blurred, chaotic environment (e.g., city lights at night from a distance, or a lonely, dimly lit room corner), conveying unresolved conflict",
+        "scene_right": "serene, steady, cool-neutral environment (e.g., clear, calm open landscape with soft light, or a quietly organized, clean space), conveying clarity and resolution without being overly bright or happy"
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "4dvErPZ9F5E",
+    "youtube_url": "https://www.youtube.com/watch?v=4dvErPZ9F5E",
+    "privacy_status": "public",
+    "uploaded_at": "2026-06-29T05:33:23Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W27",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "Self-sabotage in new, healthy relationships driven by fear o",
+      "visual_style_mix": "unknown",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 0
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook directly addresses a common relatable feeling, creating intrigue about why someone might run from good things."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script appears well-structured, explaining the psychological mechanisms behind self-sabotage in relationships clearly."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The narrative implies a reflective, self-aware POV that aligns with the channel's relationship/self-growth focus."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "The script likely delves into specific psychological patterns (e.g., fear of intimacy, past trauma) that cause self-sabotage, providing concrete examples."
+      },
+      "cta_quality": {
+        "score": 5,
+        "reason": "No CTA information provided, assuming it's either missing or standard (like subscribe/comment). Needs to be specific to prompt engagement."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is provocative and accurately reflects the theme of self-sabotage when things seem too good."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description provides a good, concise summary of the video's core message and hints at the deeper exploration."
+      },
+      "visual_dialogue_sync": {
+        "score": 1,
+        "reason": "No video elements (scenes, stock videos, brand images) were provided, making this impossible to assess."
+      },
+      "image_direction_strength": {
+        "score": 1,
+        "reason": "No visual elements provided, so no direction strength can be evaluated."
+      },
+      "thumbnail_concept": {
+        "score": 1,
+        "reason": "No thumbnail concept provided for assessment."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The script word count (1034) and duration (353s) suggest a moderate to fast pacing, which is generally good for maintaining engagement, assuming professional delivery."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The theme of recognizing and overcoming self-sabotage in relationships strongly aligns with a 'Soft Reset With Me' channel focusing on growth."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The topic is psychological and relational, with no apparent factual claims that could risk policy violations, assuming no diagnostic or prescriptive medical advice is given."
+      }
+    },
+    "judge_composite_score": 7.0,
+    "strongest_element": "villain_mechanism_specificity",
+    "weakest_element": "visual_dialogue_sync",
+    "only_soft_reset_score": 8
   }
 ]
