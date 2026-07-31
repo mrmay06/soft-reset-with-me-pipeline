@@ -5,6 +5,7 @@ and blocks upload on hard quality/safety failures.
 """
 from __future__ import annotations
 
+import json
 import os
 
 from utils.helpers import load_json, save_json, now_iso
@@ -128,7 +129,9 @@ def _hard_failures(raw: dict, script: dict, config: dict) -> list[str]:
     if isinstance(words, int) and not (hard_min_w <= words <= hard_max_w):
         failures.append("word_count_hard_limit")
 
-    if script.get("validation") in {"forced", "needs_review"} or script.get("human_review_required"):
+    # A target-range warning ("forced") is already governed by the explicit
+    # hard word limits above. Only an actual review requirement blocks upload.
+    if script.get("validation") == "needs_review" or script.get("human_review_required"):
         failures.append("script_validation_passed")
 
     composite_min = float(config.get("creative_judge_min_composite", 5.5))
@@ -186,18 +189,23 @@ def run_creative_judge(video_id: str, run_dir: str, config: dict) -> dict:
     upload_meta = _load(run_dir, "08_upload_meta.json", "09_longform_upload_meta.json")
     scene_manifest = _load(run_dir, "03b_scene_manifest.json")
 
-    scenes = scene_manifest.get("scenes", [])
+    scenes = scene_manifest.get("scenes", []) or render_meta.get("visual_assets", [])
     brand_image_count = sum(
         1
         for s in scenes
         if s.get("visual_type", s.get("type")) == "image"
         and s.get("image_style", s.get("style")) == "brand"
     )
-    stock_video_count = sum(1 for s in scenes if s.get("visual_type", s.get("type")) == "video")
+    stock_video_count = sum(
+        1 for s in scenes
+        if s.get("visual_type", s.get("type")) == "video"
+        or s.get("provider") in {"pexels", "coverr"}
+    )
 
     hook = script.get("hook", "")
     title = metadata.get("title", "")
     description = metadata.get("description", "")
+    thumbnail_variants = metadata.get("thumbnail_variants", [])
     duration = render_meta.get("duration_seconds", render_meta.get("duration_sec", render_meta.get("final_duration_sec", 0)))
 
     prompt = f"""You are a creative quality judge for Soft Reset With Me, a faceless YouTube relationship/self-growth channel.
@@ -213,6 +221,7 @@ Category: {research.get("category", "unknown")}
 Angle type: {research.get("angle_type", research.get("angle", "unknown"))}
 Total scenes: {len(scenes)}  |  Brand images: {brand_image_count}  |  Stock videos: {stock_video_count}
 Video duration: {round(duration)}s
+Thumbnail concepts: {json.dumps(thumbnail_variants, ensure_ascii=True)[:1800]}
 
 SCORING RULES:
 - policy_factual_risk: score 1 = serious risk, 10 = no risk (inverted scale)

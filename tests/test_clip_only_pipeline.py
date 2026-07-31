@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from modules.image_gen import _assign_globally, _hash_distance
+from modules.creative_judge import _hard_failures
 from modules.visual_director import _validate_manifest
 from utils.weekly_direction import load_weekly_direction, weekly_direction_prompt
 from utils.publish_schedule import youtube_publish_at
@@ -68,6 +69,27 @@ class ClipSelectionTests(unittest.TestCase):
         self.assertEqual(manifest["scenes"][0]["visual_type"], "video")
         self.assertIsNone(manifest["scenes"][0]["image_prompt"])
         self.assertEqual(manifest["thumbnail"], {"source": "selected_footage"})
+
+    def test_soft_word_target_warning_is_not_a_hard_failure(self):
+        config = {
+            "longform_target_words_min": 260,
+            "longform_target_words_max": 390,
+            "longform_hard_words_min": 200,
+            "longform_hard_words_max": 430,
+            "creative_judge_min_composite": 5.5,
+            "creative_judge_min_policy_risk": 7,
+            "creative_judge_min_script_clarity": 6,
+            "creative_judge_min_title_accuracy": 6,
+        }
+        raw = {
+            "composite_score": 7,
+            "scores": {
+                "policy_factual_risk": {"score": 10},
+                "script_clarity": {"score": 9},
+                "title_accuracy": {"score": 9},
+            },
+        }
+        self.assertEqual(_hard_failures(raw, {"word_count": 381, "validation": "forced"}, config), [])
 
 
 class WeeklyDirectionTests(unittest.TestCase):

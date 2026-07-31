@@ -106,10 +106,12 @@ def _apply_test_2min_overrides(config: dict) -> dict:
     config.update({
         "longform_duration_label": "about 2-minute test",
         "longform_target_min_sec": 95,
-        "longform_target_max_sec": 125,
+        "longform_target_max_sec": 135,
         "longform_validation_min_sec": 90,
-        "longform_target_words_min": 220,
-        "longform_target_words_max": 300,
+        "longform_target_words_min": 260,
+        "longform_target_words_max": 390,
+        "longform_hard_words_min": 200,
+        "longform_hard_words_max": 430,
         "longform_visual_max_beats": 42,
         "topic_memory_file": "topic_memory_soft_reset_long_test.json",
         "performance_memory_file": "performance_memory_soft_reset_long_test.json",
@@ -224,7 +226,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
                 "07_longform_thumbnail_meta.json",
             ],
         )
-        if not mock:
+        if not mock and not resume_id:
             send_longform_upload_confirmation(
                 video_id=video_id,
                 title=load_json(os.path.join(run_dir, "03_longform_metadata.json"))["title"],
@@ -233,7 +235,13 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
                 thumbnail_meta=load_json(os.path.join(run_dir, "07_longform_thumbnail_meta.json")),
                 run_dir=run_dir,
             )
-        _run("Module 8A — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
+        judge_checkpoint = ["10_judge_report.json"]
+        judge_path = os.path.join(run_dir, "10_judge_report.json")
+        if os.path.exists(judge_path):
+            existing_judge = load_json(judge_path)
+            if isinstance(existing_judge, dict) and existing_judge.get("passed") is False:
+                judge_checkpoint = None
+        _run("Module 8A — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=judge_checkpoint)
         if not mock:
             _enforce_creative_judge_gate(run_dir)
         _run("Module 8B — Long Upload", upload_fn, video_id, run_dir, config, checkpoint_files=["09_longform_upload_meta.json"])
