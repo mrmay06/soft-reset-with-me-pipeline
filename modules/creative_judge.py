@@ -116,13 +116,13 @@ def _hard_failures(raw: dict, script: dict, config: dict) -> list[str]:
 
     is_longform = config.get("longform_target_words_min") is not None
     if is_longform:
-        min_w = int(config.get("longform_target_words_min", 750))
-        max_w = int(config.get("longform_target_words_max", 1050))
+        min_w = int(config.get("longform_target_words_min", 700))
+        max_w = int(config.get("longform_target_words_max", 950))
         hard_min_w = int(config.get("longform_hard_words_min", max(1, min_w - 100)))
         hard_max_w = int(config.get("longform_hard_words_max", max_w + 150))
     else:
-        min_w = int(config.get("script_min_words", 45))
-        max_w = int(config.get("script_max_words", 75))
+        min_w = int(config.get("script_min_words", 60))
+        max_w = int(config.get("script_max_words", 90))
         hard_min_w = int(config.get("script_hard_min_words", max(1, min_w - 10)))
         hard_max_w = int(config.get("script_hard_max_words", max_w + 20))
     words = script.get("word_count", 0)
@@ -160,11 +160,11 @@ def _soft_warnings(script: dict, config: dict) -> list[str]:
     warnings = []
     is_longform = config.get("longform_target_words_min") is not None
     if is_longform:
-        min_w = int(config.get("longform_target_words_min", 750))
-        max_w = int(config.get("longform_target_words_max", 1050))
+        min_w = int(config.get("longform_target_words_min", 700))
+        max_w = int(config.get("longform_target_words_max", 950))
     else:
-        min_w = int(config.get("script_min_words", 45))
-        max_w = int(config.get("script_max_words", 75))
+        min_w = int(config.get("script_min_words", 60))
+        max_w = int(config.get("script_max_words", 90))
     words = script.get("word_count", 0)
     if isinstance(words, int) and not (min_w <= words <= max_w):
         warnings.append("word_count_in_range")

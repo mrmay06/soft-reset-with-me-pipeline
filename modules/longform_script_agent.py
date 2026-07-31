@@ -53,8 +53,13 @@ Check if this long-form script is a coherent emotional essay, not generic advice
 Core claim:
 {research.get("core_claim", "")}
 
-Script:
-{json.dumps(script.get("chapters", []), indent=2)}
+Script contract and chapters:
+{json.dumps({
+    "insufficient_story_capacity": script.get("insufficient_story_capacity"),
+    "capacity_reason": script.get("capacity_reason", ""),
+    "counterpoint": script.get("counterpoint", ""),
+    "chapters": script.get("chapters", []),
+}, indent=2)}
 
 Review rules:
 - The first chapter must clearly open the emotional loop.
@@ -62,10 +67,19 @@ Review rules:
 - The middle must deepen the idea, not repeat the same point.
 - The ending must land a soft reset, not a motivational slogan.
 - Flag generic advice, therapy-speak bloat, or section drift.
+- Flag announced-but-delayed value such as "stay with me" or "what comes next".
+- Psychological explanations must be calibrated as possibilities, not diagnoses or invented personal history.
+- The script must contain a genuine counterpoint and preserve viewer agency.
+- The ending must answer the opening promise.
 
 Return ONLY valid JSON:
 {{
   "passes": true,
+  "psychological_claims_calibrated": true,
+  "counterpoint_present": true,
+  "viewer_agency_preserved": true,
+  "opening_promise_resolved": true,
+  "retention_filler_present": false,
   "issue_summary": "",
   "drift_chapters": [],
   "rewrite_instruction": ""
@@ -78,7 +92,15 @@ def _review_script(script: dict, research: dict, config: dict) -> dict:
         return {"passes": True, "status": "disabled"}
     try:
         review = _call_model(_review_prompt(script, research), config["script_model"])
-        review["passes"] = bool(review.get("passes") and not review.get("drift_chapters"))
+        review["passes"] = bool(
+            review.get("passes")
+            and review.get("psychological_claims_calibrated")
+            and review.get("counterpoint_present")
+            and review.get("viewer_agency_preserved")
+            and review.get("opening_promise_resolved")
+            and not review.get("retention_filler_present")
+            and not review.get("drift_chapters")
+        )
         review["status"] = "passed" if review["passes"] else "failed"
         return review
     except Exception as exc:
@@ -88,8 +110,10 @@ def _review_script(script: dict, research: dict, config: dict) -> dict:
 def _validate_script(script: dict, config: dict) -> dict:
     words = word_count(_spoken_text(script))
     script["word_count"] = words
-    min_words = int(config.get("longform_target_words_min", 750))
-    max_words = int(config.get("longform_target_words_max", 1050))
+    min_words = int(config.get("longform_target_words_min", 700))
+    max_words = int(config.get("longform_target_words_max", 950))
+    hard_min_words = int(config.get("longform_hard_words_min", max(1, min_words - 100)))
+    hard_max_words = int(config.get("longform_hard_words_max", max_words + 150))
     estimated_duration = round(words / 155 * 60, 1) if words else 0
     script["estimated_duration_sec"] = estimated_duration
     warnings = []
@@ -97,11 +121,31 @@ def _validate_script(script: dict, config: dict) -> dict:
         warnings.append("too_short")
     if words > max_words:
         warnings.append("too_long")
-    if len(script.get("chapters", [])) < 4:
+    if len(script.get("chapters", [])) < 5:
         warnings.append("too_few_chapters")
+    failures = []
+    if not hard_min_words <= words <= hard_max_words:
+        failures.append("word_count_hard")
+    if not isinstance(script.get("insufficient_story_capacity"), bool):
+        failures.append("missing_story_capacity_assessment")
+    if script.get("insufficient_story_capacity") is True:
+        failures.append("insufficient_story_capacity")
     script["validation"] = "passed" if not warnings else "forced"
+    if failures:
+        script["validation"] = "needs_review"
+        script["human_review_required"] = True
     script["validation_warnings"] = warnings
+    script["validation_failures"] = failures
+    script["word_count_in_range"] = min_words <= words <= max_words
+    script["word_count_hard_limit"] = hard_min_words <= words <= hard_max_words
     return script
+
+
+def _blocking_script_issues(script: dict, review: dict) -> list[str]:
+    issues = list(script.get("validation_failures", []))
+    if not review.get("passes"):
+        issues.append("argument_review_failed")
+    return issues
 
 
 def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
@@ -118,9 +162,9 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
     prompt = template.format(
         topic=research.get("topic", ""),
         working_title=research.get("working_title", ""),
-        duration_label=config.get("longform_duration_label", "5-7 minute"),
-        target_words_min=int(config.get("longform_target_words_min", 750)),
-        target_words_max=int(config.get("longform_target_words_max", 1050)),
+        duration_label=config.get("longform_duration_label", "4.5-6.5 minute"),
+        target_words_min=int(config.get("longform_target_words_min", 700)),
+        target_words_max=int(config.get("longform_target_words_max", 950)),
         longform_format=research.get("longform_format", ""),
         content_pillar=research.get("content_pillar", ""),
         core_claim=research.get("core_claim", ""),
@@ -142,14 +186,17 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
     script["argument_quality"] = "strong" if review.get("passes") else "weak"
 
     if script["validation"] != "passed" or not review.get("passes"):
-        min_words = int(config.get("longform_target_words_min", 750))
-        max_words = int(config.get("longform_target_words_max", 1050))
+        min_words = int(config.get("longform_target_words_min", 700))
+        max_words = int(config.get("longform_target_words_max", 950))
         retry_prompt = (
             prompt
             + "\n\nRewrite because validation/review failed.\n"
             + f"Validation warnings: {script.get('validation_warnings', [])}\n"
+            + f"Validation failures: {script.get('validation_failures', [])}\n"
             + f"Review: {review}\n"
-            + f"Keep {min_words}-{max_words} spoken words and make every chapter support the core claim."
+            + f"Keep {min_words}-{max_words} spoken words when the story has capacity. "
+            + "If capacity was weak, deepen the angle with distinct manifestations and a genuine counterpoint; never pad. "
+            + "Make every chapter support the core claim."
         )
         script = _call_model(retry_prompt, config["script_model"])
         script["video_id"] = video_id
@@ -157,6 +204,16 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
         review = _review_script(script, research, config)
         script["argument_review"] = review
         script["argument_quality"] = "strong" if review.get("passes") else "weak"
+
+    blocking_issues = _blocking_script_issues(script, review)
+    if blocking_issues:
+        script["generated_at"] = now_iso()
+        save_json(script, os.path.join(run_dir, "02_longform_script.json"))
+        raise RuntimeError(
+            "Long-form script blocked before media generation: "
+            + ", ".join(blocking_issues)
+            + ". Review the saved research angle or regenerate with enough distinct story capacity."
+        )
 
     script["generated_at"] = now_iso()
     save_json(script, os.path.join(run_dir, "02_longform_script.json"))
@@ -252,23 +309,26 @@ def run_longform_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
         },
     ]
     script = {
+        "insufficient_story_capacity": False,
+        "capacity_reason": "The topic supports a recurring scene, multiple manifestations, a counterpoint, and a decision tool.",
         "video_id": video_id,
         "topic": research["topic"],
         "working_title": research["working_title"],
         "content_pillar": research["content_pillar"],
         "longform_format": research["longform_format"],
         "core_claim": research["core_claim"],
+        "counterpoint": "Missing potential can be real grief without proving the relationship itself was sustainable.",
         "editorial_pov": research["editorial_seed"],
         "only_soft_reset_line": research["only_soft_reset_line"],
         "chapters": chapters,
         "visual_brief": [
-            {"chapter_id": 1, "scene_role": "hook", "stock_queries": ["rainy window night", "person alone window", "city night apartment"], "image_prompt": ""},
-            {"chapter_id": 2, "scene_role": "tension", "stock_queries": ["empty chair room", "person sitting alone", "quiet bedroom"], "image_prompt": ""},
-            {"chapter_id": 3, "scene_role": "pattern", "stock_queries": ["hands journal", "walking city night", "train window night"], "image_prompt": ""},
-            {"chapter_id": 4, "scene_role": "reframe", "stock_queries": ["candlelit room", "closing journal", "morning window"], "image_prompt": ""},
-            {"chapter_id": 5, "scene_role": "reset", "stock_queries": ["city walk evening", "open window curtains", "quiet sunrise room"], "image_prompt": ""},
-            {"chapter_id": 6, "scene_role": "practice", "stock_queries": ["hands writing journal", "person walking alone", "apartment window"], "image_prompt": ""},
-            {"chapter_id": 7, "scene_role": "closing", "stock_queries": ["quiet sunrise room", "city walk evening", "open window curtains"], "image_prompt": ""}
+            {"chapter_id": 1, "scene_role": "hook", "stock_queries": ["rainy window night", "person alone window", "city night apartment"]},
+            {"chapter_id": 2, "scene_role": "tension", "stock_queries": ["empty chair room", "person sitting alone", "quiet bedroom"]},
+            {"chapter_id": 3, "scene_role": "pattern", "stock_queries": ["hands journal", "walking city night", "train window night"]},
+            {"chapter_id": 4, "scene_role": "reframe", "stock_queries": ["candlelit room", "closing journal", "morning window"]},
+            {"chapter_id": 5, "scene_role": "reset", "stock_queries": ["city walk evening", "open window curtains", "quiet sunrise room"]},
+            {"chapter_id": 6, "scene_role": "practice", "stock_queries": ["hands writing journal", "person walking alone", "apartment window"]},
+            {"chapter_id": 7, "scene_role": "closing", "stock_queries": ["quiet sunrise room", "city walk evening", "open window curtains"]}
         ],
         "cta": "Subscribe for softer resets.",
         "argument_review": {"passes": True, "status": "mock"},

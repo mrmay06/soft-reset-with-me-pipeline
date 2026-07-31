@@ -29,7 +29,13 @@ PERFORMANCE FEEDBACK:
 
 WRITING RULES:
 
-WORD COUNT: {target_words_min}-{target_words_max} spoken words. Every chapter must support the core claim.
+WORD COUNT: prefer {target_words_min}-{target_words_max} spoken words. Every chapter must support the core claim. Duration follows story capacity; never repeat an idea merely to reach the preferred range.
+
+STORY CAPACITY CHECK (mandatory, before drafting):
+- One observation belongs in a Short.
+- One scene, one mechanism, and one reframe may support a focused 3-4 minute essay.
+- The default {duration_label} requires a recurring scene, multiple manifestations, a genuine counterpoint, a decision tool, and a resolved ending.
+- If this topic cannot sustain the requested essay without repetition, return `insufficient_story_capacity: true` and explain why in `capacity_reason`. Do not pad it.
 
 NARRATIVE SPINE (mandatory):
 This is not a floating essay. Build the video around one recurring lived scene the viewer can picture.
@@ -40,7 +46,7 @@ Return to this spine at least 3 times:
 - in the ending
 The viewer should feel like they are moving through a miniature emotional film, not listening to a lecture.
 
-HOOK (first 20 seconds):
+HOOK (first 25 seconds):
 The first sentence must make the viewer think "wait, that's me" — not "interesting topic."
 Name a specific behavior, moment, or physical sensation — not a broad theme.
 Good: "You finally meet someone who texts back. Who doesn't disappear for three days. Who is just... steady. And somehow that steadiness makes you want to run."
@@ -51,17 +57,11 @@ BANNED LANGUAGE:
 - Clinical: "pattern interrupt", "nervous system activation", "regulate", "dysregulate", "co-regulate", "validate your feelings", "trauma response", "window of tolerance"
 - Preachy closings: any sentence that sounds like a motivational poster
 
-RETENTION RE-HOOKS (mandatory):
-Open chapters 2, 3, and 4 with a single sentence (under 10 words) that reopens the emotional loop or pivots the angle.
-Use them to create emotional altitude changes every 60-90 seconds.
-Good examples: "But here's what makes this harder." / "This is where it gets darker." / "Here's the part most people skip." / "But there is something underneath that."
-Bad: Starting a chapter directly with explanation or information.
+MEANINGFUL NARRATIVE TURNS:
+Introduce a genuine turn roughly every 35-60 seconds. A turn must add a new event, consequence, contradiction, interpretation, or decision. It is not merely a new clip, emphatic sentence, or chapter label.
 
-MID-VIDEO DIRECT ADDRESS (mandatory — exactly once):
-Between chapters 2 and 3, insert ONE sentence of direct viewer address that arrests the drop. Format:
-"If that's familiar — stay with me. Because what comes next is the part that actually explains it."
-Or: "If you've felt that before, don't leave yet. This next part is for you specifically."
-This is NOT part of the chapter voiceover. It is a single line inserted between chapters.
+Never announce that value is coming. Deliver it immediately.
+Banned retention filler includes: "stay with me", "do not leave yet", "what comes next changes everything", "here is the part nobody tells you", and equivalent promises of delayed value.
 
 HUMAN PSYCHOLOGY LAYER (mandatory, but translate it):
 Use the psych concept as the hidden engine, not as spoken textbook language.
@@ -69,6 +69,8 @@ You may use ideas like intermittent reinforcement, ambiguous loss, cognitive dis
 But do NOT say them clinically unless the wording is simple and lived-in.
 Bad: "This is intermittent reinforcement caused by anxious attachment."
 Good: "If they were cold all the time, you would leave faster. But they are warm just often enough to make leaving feel like giving up too soon."
+
+Treat the mechanism as a plausible lens, not a diagnosis or a known personal history. Use calibrated language such as "might", "sometimes", and "can" where the cause cannot be known. Do not attribute every reaction to trauma, attachment, childhood, or a previous relationship.
 
 ESCALATING COST (mandatory):
 The middle must get heavier before it gets clearer.
@@ -81,6 +83,12 @@ Examples:
 "Be honest. If they texted you right now, you would still answer fast."
 "You are not just waiting for clarity. You are helping the fog stay useful."
 It must be emotionally confronting, not cruel.
+
+COUNTERPOINT AND AGENCY (mandatory):
+Include one genuine sentence or short passage that challenges the script's first interpretation. Distinguish possibilities instead of forcing one explanation.
+Example: "Sometimes you deleted the message because it needed editing. The question is whether you edited for kindness — or invisibility."
+Preserve both context and agency. Do not blame the viewer for adapting, and do not solve every pattern by blaming another person or an allegedly wrong relationship.
+Avoid guarantees such as "the right person will", "the problem was never you", "nobody", "always", and "never" unless literally justified.
 
 DECISION TOOL (mandatory):
 Before the soft ending, give the viewer one concrete question, test, sentence, or framework they can use tonight.
@@ -97,7 +105,7 @@ ONLY SOFT RESET LINE:
 This is the most important field in the output. It is the single sentence the viewer would screenshot and send to a friend. It must feel like something no one has ever said exactly that way before. If it sounds like it could be a generic quote on Pinterest, it fails. Rewrite it until it is specific, sharp, and slightly uncomfortable. It belongs inside the script — ideally in the final chapter or the reframe.
 
 ENDING:
-End with a soft emotional reset, not a motivational speech. Bring back the narrative spine from the opening so the viewer feels the loop close.
+End with a soft emotional reset, not a motivational speech. Answer the opening question and bring back the narrative spine so the viewer feels the loop close.
 The final line should feel like a quiet exhale — permission, not instruction. Not "you've got this." Not "you deserve better." Something true and small and specific.
 
 ENGAGEMENT QUESTION:
@@ -112,11 +120,15 @@ VISUAL BRIEF:
 Use grounded relationship/self-reflection B-roll only: rainy windows, apartments, hands, journals, phones, city walking, quiet bedrooms, empty chairs, candlelit rooms, coffee cups, unmade beds.
 Do NOT use: trees, forests, storms, oceans, animals, mountains, abstract landscapes, sunsets (unless the topic literally requires them).
 Stock queries must be 2-6 words and searchable on Pexels. Avoid: hotel, motel, crowd, gym, office, beach, forest, wedding, drone, baby, children, casino, bar, sports.
+This is clip-only direction. Do not request or describe generated still images.
+Long-form clips normally hold 4-8 seconds. A strong human expression may hold 8-12 seconds. Use larger subject, location, or composition changes at meaningful narrative boundaries.
 
 ---
 
 Return ONLY valid JSON:
 {{
+  "insufficient_story_capacity": false,
+  "capacity_reason": "why this topic can or cannot sustain the configured duration without repetition",
   "topic": "{topic}",
   "working_title": "{working_title}",
   "content_pillar": "{content_pillar}",
@@ -125,6 +137,7 @@ Return ONLY valid JSON:
   "editorial_pov": "the specific angle this script argues — one sentence",
   "narrative_spine": "the recurring lived scene this video returns to at least 3 times",
   "psychology_engine": "the human psychology mechanism translated into plain lived language",
+  "counterpoint": "the genuine alternative interpretation that prevents psychological certainty",
   "decision_tool": "one concrete question, test, sentence, or framework the viewer can use tonight",
   "mirror_moment": "the single gently confronting sentence that makes the viewer feel caught",
   "only_soft_reset_line": "the single most screenshot-worthy line in the script — sharp, specific, not a Pinterest quote",
@@ -143,8 +156,7 @@ Return ONLY valid JSON:
     {{
       "chapter_id": 1,
       "scene_role": "hook | tension | pattern | reframe | reset",
-      "stock_queries": ["rainy apartment window", "city night walking"],
-      "image_prompt": "no text, moody editorial cinematic still — tight framing, specific emotional scenario"
+      "stock_queries": ["rainy apartment window", "city night walking"]
     }}
   ],
   "cta": "short CTA tied to the emotional state at the end of this specific video",

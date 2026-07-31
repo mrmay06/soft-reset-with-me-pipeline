@@ -188,6 +188,8 @@ Rules:
 - One scene covers one or two adjacent sentences, in exact script order.
 - Every spoken word must appear exactly once across covers_dialogue.
 - Maximum 20 scenes.
+- Aim for visual beats that will normally hold 2.5-4.5 seconds after timing assignment. A strong human expression may breathe longer when the meaning has not changed.
+- A visual cut is not a narrative turn. Change footage to support meaning, not to manufacture stimulation.
 - Set visual_type="video", image_style=null, image_prompt=null for every scene.
 - Give every scene a unique, concrete 2-5 word pexels_query.
 - Match the exact action/emotion: phone face down, hands closing journal, person leaving room, rainy apartment window, city evening walk.

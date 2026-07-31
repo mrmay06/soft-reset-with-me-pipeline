@@ -53,8 +53,8 @@ def run_longform_audio(video_id: str, run_dir: str, config: dict) -> dict:
     _stabilize_longform_voice(output_path)
     validation = _validate_audio(output_path, {
         **config,
-        "audio_min_duration_sec": config.get("longform_target_min_sec", 300),
-        "audio_max_duration_sec": config.get("longform_target_max_sec", 420),
+        "audio_min_duration_sec": config.get("longform_target_min_sec", 270),
+        "audio_max_duration_sec": config.get("longform_target_max_sec", 390),
     })
     meta = {
         "video_id": video_id,
@@ -78,7 +78,7 @@ def run_longform_audio_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_audio][MOCK] Generating mock long-form audio")
     script = load_json(os.path.join(run_dir, "02_longform_script.json"))
     duration_sec = max(
-        float(config.get("longform_target_min_sec", 300)),
+        float(config.get("longform_target_min_sec", 270)),
         round(float(script.get("word_count", 780)) / 155 * 60, 1),
     )
     output_path = os.path.join(run_dir, "04_longform_voice.mp3")

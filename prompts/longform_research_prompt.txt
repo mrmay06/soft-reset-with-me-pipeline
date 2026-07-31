@@ -8,7 +8,7 @@ Long-form performance feedback:
 {performance_insights}
 
 Goal:
-Pick one 5-7 minute video topic that can build trust, not just reach.
+Pick one 4.5-6.5 minute video topic that can build trust, not just reach.
 Long-form is different from Shorts:
 - Shorts win with one emotional hit.
 - Long-form wins with one emotional thesis that deepens over several minutes.
@@ -19,7 +19,8 @@ Strong long-form topics:
 - Start from one painfully specific lived moment.
 - Explain the emotional mechanism without sounding clinical.
 - Offer a reframe that feels like an honest friend, not a therapist.
-- Have a natural retention arc: scene -> tension -> pattern -> reframe -> reset.
+- Have enough distinct story capacity for: recognition -> pattern -> mechanism -> cost -> nuance/agency -> decision/reset.
+- Include a genuine alternative interpretation so the psychology remains a plausible lens rather than a diagnosis.
 - Work for US and Australian English-speaking audiences without forced slang.
 
 Return ONLY valid JSON:
@@ -33,13 +34,14 @@ Return ONLY valid JSON:
   "only_soft_reset_line": "one emotionally precise sentence that makes this non-generic",
   "viewer_pain": "the exact lived moment the viewer recognizes",
   "psych_concept": "simple emotional or psychological concept",
-  "retention_hook": "first 20 seconds, written as a direct hook",
+  "retention_hook": "first 25 seconds, written as a direct observable hook",
   "chapter_arc": [
-    {{"chapter": "hook", "purpose": "...", "duration_sec": 25}},
-    {{"chapter": "name the pain", "purpose": "...", "duration_sec": 55}},
-    {{"chapter": "hidden pattern", "purpose": "...", "duration_sec": 95}},
-    {{"chapter": "reframe", "purpose": "...", "duration_sec": 120}},
-    {{"chapter": "soft reset", "purpose": "...", "duration_sec": 80}}
+    {{"chapter": "recognition", "purpose": "specific scene and emotional question", "duration_sec": 25}},
+    {{"chapter": "pattern", "purpose": "distinct manifestations without premature explanation", "duration_sec": 55}},
+    {{"chapter": "mechanism", "purpose": "plausible plain-language explanation", "duration_sec": 80}},
+    {{"chapter": "cost", "purpose": "effect on self-trust, decisions, or expectations", "duration_sec": 70}},
+    {{"chapter": "nuance and agency", "purpose": "counterpoint and viewer-controlled distinction", "duration_sec": 60}},
+    {{"chapter": "decision and reset", "purpose": "concrete tool and resolved opening scene", "duration_sec": 60}}
   ],
   "visual_mood": "moody editorial visual direction for the episode",
   "why_now": "why this is timely for this audience in 2026"

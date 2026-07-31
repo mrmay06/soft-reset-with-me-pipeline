@@ -108,6 +108,23 @@ _WEAK_ABSTRACT_HOOK_PATTERNS = [
 ]
 
 
+_OBSERVABLE_HOOK_SIGNALS = [
+    "type the",
+    "delete the",
+    "replace it",
+    "late reply",
+    "rereading",
+    "checking",
+    "last-seen",
+    "last seen",
+    "rehearse the",
+    "say nothing",
+    "ask for space",
+    "phone",
+    "message",
+]
+
+
 _GENERIC_EDITORIAL_PATTERNS = [
     "love yourself",
     "you are enough",
@@ -145,11 +162,36 @@ _BANNED_LOOPBACK_PHRASES = [
 ]
 
 
+_BANNED_RETENTION_FILLER = [
+    "stay with me",
+    "don't leave yet",
+    "do not leave yet",
+    "what comes next changes everything",
+    "the next part changes everything",
+]
+
+
+_UNSUPPORTED_GUARANTEE_PATTERNS = [
+    "the right person will",
+    "the right person won't",
+    "the problem was never you",
+    "nobody falls for",
+    "they were never going to",
+]
+
+
+_GENERIC_CTA_PATTERNS = [
+    "save this one",
+    "send this to someone who",
+    "share this with someone who",
+]
+
+
 def _hook_has_ego_bait(hook: str) -> bool:
     h = hook.lower()
     if any(pattern in h for pattern in _WEAK_ABSTRACT_HOOK_PATTERNS):
         return False
-    return any(sig in h for sig in _EGO_BAIT_SIGNALS)
+    return any(sig in h for sig in _EGO_BAIT_SIGNALS + _OBSERVABLE_HOOK_SIGNALS)
 
 
 def _contains_any(text: str, phrases: list[str]) -> list[str]:
@@ -170,7 +212,7 @@ def _validate_script(script: dict, config: dict) -> dict:
     script = normalize_script_contract(script)
     incoming_validation = str(script.get("validation", "") or "").strip().lower()
     script.setdefault("script_version", "1")
-    script.setdefault("prompt_version", "soft-reset-script-v2.4")
+    script.setdefault("prompt_version", "soft-reset-script-v2.5")
     script.setdefault("validation_notes", "")
 
     full_text = build_spoken_script_text(script)
@@ -215,6 +257,31 @@ def _validate_script(script: dict, config: dict) -> dict:
         validation_failures.append("banned_loopback")
         validation_notes.append(f"banned loopback: {', '.join(loopback_hits)}")
 
+    retention_hits = _contains_any(full_text, _BANNED_RETENTION_FILLER)
+    if retention_hits:
+        print(f"[script] ⚠ Retention filler phrase(s): {retention_hits}")
+        script["validation"] = "forced"
+        validation_failures.append("retention_filler")
+        validation_notes.append(f"retention filler: {', '.join(retention_hits)}")
+
+    guarantee_hits = _contains_any(full_text, _UNSUPPORTED_GUARANTEE_PATTERNS)
+    if guarantee_hits:
+        print(f"[script] ⚠ Unsupported guarantee phrase(s): {guarantee_hits}")
+        script["validation"] = "forced"
+        validation_failures.append("unsupported_guarantee")
+        validation_notes.append(f"unsupported guarantees: {', '.join(guarantee_hits)}")
+
+    cta_text = " ".join(
+        str(script.get(key, "") or "")
+        for key in ("engagement_question", "like_cta", "cta")
+    )
+    generic_cta_hits = _contains_any(cta_text, _GENERIC_CTA_PATTERNS)
+    if generic_cta_hits:
+        print(f"[script] ⚠ Generic or call-out CTA phrase(s): {generic_cta_hits}")
+        script["validation"] = "forced"
+        validation_failures.append("generic_cta")
+        validation_notes.append(f"generic CTA: {', '.join(generic_cta_hits)}")
+
     if not _validate_editorial_layer(script):
         print("[script] ⚠ Weak editorial layer: missing POV or signature Soft Reset line")
         script["editorial_quality"] = "weak"
@@ -254,7 +321,15 @@ def _validate_script(script: dict, config: dict) -> dict:
 def _needs_script_retry(script: dict) -> bool:
     return bool(
         set(script.get("validation_failures", []))
-        & {"word_count_hard", "banned_script_phrase", "banned_loopback", "weak_editorial_layer"}
+        & {
+            "word_count_hard",
+            "banned_script_phrase",
+            "banned_loopback",
+            "retention_filler",
+            "unsupported_guarantee",
+            "generic_cta",
+            "weak_editorial_layer",
+        }
     )
 
 
@@ -265,7 +340,7 @@ def _retry_instruction(script: dict, config: dict, attempt: int) -> str:
     return (
         "\n\nCRITICAL REWRITE REQUIRED.\n"
         f"Previous attempt failed: {failures}.\n"
-        f"Write {min_w}-{max_w} spoken words TOTAL, no exceptions. Aim for 58-68 words.\n"
+        f"Write {min_w}-{max_w} spoken words TOTAL, no exceptions. Aim for the middle of that range.\n"
         "Keep `editorial_pov` and `only_soft_reset_line` specific, non-generic, and unmistakably on-brand.\n"
         "Do not use banned therapy-speak, hype-coach language, or generic self-help phrasing.\n"
         f"Rewrite attempt: {attempt}.\n"
@@ -281,7 +356,7 @@ def _word_count_repair_prompt(script: dict, config: dict, attempt: int) -> str:
         "\n\nWORD COUNT REPAIR REQUIRED.\n"
         f"Current script is {current_words} words. Target range is {min_w}-{max_w} spoken words.\n"
         "Return the SAME JSON schema, corrected. No markdown. No explanation.\n"
-        "Aim for 58-68 spoken words across hook, tension, insight, loopback, engagement_question, and like_cta.\n"
+        f"Aim for the middle of {min_w}-{max_w} spoken words across hook, tension, insight, and loopback.\n"
         f"Your job: {direction} the existing script while preserving the same core claim and emotional truth.\n"
         "Keep `editorial_pov` and `only_soft_reset_line` specific, non-generic, and unmistakably on-brand.\n"
         "Do not add therapy-speak, hype-coach language, diagnosis, or generic self-help phrasing.\n"
@@ -350,6 +425,8 @@ Review rules:
 - Every spoken section must actively support the core claim.
 - Flag any section that becomes neutral explainer mode, generic advice, or filler.
 - The signature line must feel specific to Soft Reset With Me, not a generic self-help phrase.
+- Psychological causes must be calibrated as possibilities unless the script has direct evidence.
+- The script must preserve viewer agency without blaming the viewer or guaranteeing how another person will behave.
 - Be strict, but do not fail a script just because it is simple.
 
 Return ONLY valid JSON:
@@ -359,6 +436,8 @@ Return ONLY valid JSON:
   "sections_support_core_claim": true,
   "generic_drift_sections": [],
   "signature_line_distinctive": true,
+  "psychological_claims_calibrated": true,
+  "viewer_agency_preserved": true,
   "issue_summary": "",
   "rewrite_instruction": ""
 }}
@@ -382,6 +461,8 @@ def _check_argument_coherence(script: dict, research: dict, config: dict) -> dic
             and review.get("hook_promise_matches") is True
             and review.get("sections_support_core_claim") is True
             and review.get("signature_line_distinctive") is True
+            and review.get("psychological_claims_calibrated") is True
+            and review.get("viewer_agency_preserved") is True
             and not review.get("generic_drift_sections")
         )
         review["passes"] = bool(passes)
@@ -476,7 +557,7 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
             + "\n\nEDITORIAL REVIEW FAILED. Rewrite the full JSON script so every section supports the core claim.\n"
             + f"Issue summary: {review.get('issue_summary', '')}\n"
             + f"Rewrite instruction: {review.get('rewrite_instruction', '')}\n"
-            + "Keep 45-75 spoken words, preserve the Soft Reset voice, and do not drift into generic advice."
+            + f"Keep {config['script_min_words']}-{config['script_max_words']} spoken words, preserve the Soft Reset voice, and do not drift into generic advice."
         )
         script = _call_script_model(retry_prompt, config["script_model"])
         script = _validate_script(script, config)
@@ -492,11 +573,10 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
             f"Write ONE new scroll-stopping hook under 12 words in the Soft Reset With Me voice.\n"
             f"Use plain words, not poetic phrasing. The viewer should instantly think, 'wait, is this about me?'\n"
             f"Best patterns:\n"
-            f"- 'You think it is intuition. It might be trauma.'\n"
-            f"- 'If one late reply ruins your mood, this is for you.'\n"
-            f"- 'You might be triggered, not intuitive.'\n"
-            f"- 'That panic might not be a red flag.'\n"
-            f"- 'If silence makes you feel abandoned, listen to this.'\n"
+            f"- 'You type the honest message, then replace it with I'm fine.'\n"
+            f"- 'One late reply, and suddenly you are rereading everything.'\n"
+            f"- 'You ask for space right after someone gets close.'\n"
+            f"- 'You rehearse the conversation, then say nothing when they ask.'\n"
             f"No warmup. No diagnosis. No hype coach language.\n"
             f"Return ONLY the hook text, no quotes, no explanation."
         )
@@ -525,10 +605,11 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         print(f"[script] Retrying engagement question for stronger polarizer...")
         eq_prompt = (
             f"Write ONE polarizing engagement question for a YouTube Short on: {research['topic']}.\n"
-            f"Rules: must fit Soft Reset With Me. Ask for a save, share, comment, or honest confession.\n"
+            f"Rules: must fit Soft Reset With Me. Ask for a contextual save, comment, or honest confession.\n"
             f"Examples: 'Which one hit hardest?'\n"
             f"         'Save this for when you start missing their potential.'\n"
-            f"         'Agree or disagree?'\n"
+            f"         'When do you notice yourself doing this?'\n"
+            f"Do not write 'Save this one' or 'Send this to someone who...'.\n"
             f"NOT acceptable: 'What do you think?' 'Let me know below.' 'Comment your thoughts.'\n"
             f"Return ONLY the question text, no quotes, no explanation."
         )
@@ -571,6 +652,8 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
 def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[script][MOCK] Generating mock script for {video_id}")
     result = {
+        "script_version": "1",
+        "prompt_version": "soft-reset-script-v2.5",
         "video_id": video_id,
         "topic": "You did not lose them, you lost who you imagined they would be",
         "category": "healing arcs",
@@ -581,19 +664,19 @@ def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "editorial_pov": "Missing someone is not always proof they were right for you. Sometimes it proves how much hope you built around them.",
         "only_soft_reset_line": "You are allowed to grieve the version they never became.",
         "hook": "You did not lose them. You lost who you imagined.",
-        "tension": "That is why it still hurts. You are grieving a version that never arrived.",
+        "tension": "That is why it still hurts. You are grieving a version that never arrived. You keep returning to moments that only existed in possibility.",
         "insight": "You miss the apology they almost gave. The effort they almost made. That was not love. That was hope with someone else's face on it.",
         "loopback": "Grieve the dream. Do not chase the person.",
         "cta": "Save this for when you start missing their potential.",
         "engagement_question": "Which hurts more: missing them, or missing who you imagined?",
         "like_cta": "Save this for when you start missing their potential.",
         "thumbnail_text": "YOU LOST THE DREAM",
-        "word_count": 67,
+        "word_count": 0,
         "estimated_duration_sec": 25,
         "validation": "passed",
         "generated_at": now_iso(),
     }
-    result = normalize_script_contract(result)
+    result = _validate_script(result, config)
     output_path = os.path.join(run_dir, "02_script.json")
     save_json(result, output_path)
     print(f"[script][MOCK] Done.")

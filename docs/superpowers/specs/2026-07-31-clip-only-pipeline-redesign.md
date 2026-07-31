@@ -94,23 +94,31 @@ The seven Shorts must not all use the same narrative formula. The slate should d
 
 ### 6.2 Short structure
 
-Shorts should normally last 30-45 seconds. Duration follows the idea rather than a fixed word target.
+Shorts should normally last 25-40 seconds and prefer 60-90 spoken words. The hard range is 45-110 words, and duration follows the idea rather than a fixed target.
 
-1. **0-2 seconds:** recognizable tension or contradiction.
+1. **0-2 seconds:** observable tension or contradiction.
 2. **2-10 seconds:** one concrete situation.
-3. **10-23 seconds:** escalation or cost.
-4. **23-35 seconds:** reframe.
-5. **35-45 seconds:** resolution or action.
+3. **10-23 seconds:** escalation or hidden cost.
+4. **23-32 seconds:** fair reframe.
+5. **Final beat:** resolved landing or action.
 
-Every hook creates a clear promise that the ending must satisfy. Exaggeration may intensify the expression of a real emotional experience, but the script cannot fabricate facts, certainty, urgency, or outcomes.
+Every hook creates a clear promise that the ending must satisfy. Psychological explanations are calibrated possibilities, not diagnoses or invented histories. Exaggeration may intensify the expression of a real emotional experience, but the script cannot fabricate facts, certainty, urgency, or outcomes.
 
-### 6.3 Originality gate
+### 6.3 Long-form structure
+
+Weekly essays prefer 4.5-6.5 minutes and 700-950 spoken words, with a hard range of 600-1,100 words. The structure progresses through recognition, pattern, mechanism, cost, nuance/agency, and decision/reset. Each script includes a genuine counterpoint and resolves its opening scene.
+
+Before drafting, the model assesses story capacity. A topic that cannot sustain the configured duration without repetition is repaired once with a richer or narrower angle, then blocked before audio and rendering if capacity remains insufficient. Eight-minute scripts are not a default monetization target.
+
+Formulaic retention lines such as `stay with me` are prohibited. A meaningful narrative turn adds an event, consequence, contradiction, interpretation, or decision; a new clip alone is not a narrative turn.
+
+### 6.4 Originality gate
 
 The system stores normalized fingerprints for the hook, central claim, example, resolution, title, and thumbnail copy. A new script is rejected or regenerated when its substantive similarity to recent work exceeds configured limits. Word substitution alone does not establish originality.
 
 ## 7. Visual beat plan
 
-The visual director converts the approved script into 8-14 beats for a Short and a proportionate number for long-form. Every beat contains:
+The visual director converts the approved script into 8-14 beats for a Short and a proportionate number for long-form. Shorts clips normally hold 2.5-4.5 seconds; long-form clips normally hold 4-8 seconds, while a strong human expression may hold 8-12 seconds. Every beat contains:
 
 ```json
 {

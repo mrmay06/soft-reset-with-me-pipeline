@@ -9,7 +9,10 @@ from pathlib import Path
 from modules.image_gen import _assign_globally, _hash_distance
 from modules.creative_judge import _hard_failures
 from modules.longform_thumbnail_agent import _pick_thumbnail_frames
+from modules.longform_script_agent import _blocking_script_issues, _validate_script as validate_longform_script
+from modules.script_agent import _validate_script as validate_short_script
 from modules.visual_director import _validate_manifest
+from main_long import _enforce_longform_script_gate
 from utils.weekly_direction import load_weekly_direction, weekly_direction_prompt
 from utils.publish_schedule import youtube_publish_at
 
@@ -39,6 +42,85 @@ class SafetyConfigTests(unittest.TestCase):
         )
         self.assertEqual(short, "2026-08-01T00:00:00Z")
         self.assertEqual(longform, "2026-08-02T16:00:00Z")
+
+    def test_research_grounded_duration_configuration(self):
+        shorts = json.loads((ROOT / "config/pipeline_config.json").read_text())
+        longform = json.loads((ROOT / "config/longform_config.json").read_text())
+        self.assertEqual(
+            (shorts["script_min_words"], shorts["script_max_words"]),
+            (60, 90),
+        )
+        self.assertEqual(
+            (shorts["script_hard_min_words"], shorts["script_hard_max_words"]),
+            (45, 110),
+        )
+        self.assertEqual(
+            (longform["longform_target_words_min"], longform["longform_target_words_max"]),
+            (700, 950),
+        )
+        self.assertEqual(
+            (longform["longform_hard_words_min"], longform["longform_hard_words_max"]),
+            (600, 1100),
+        )
+        self.assertEqual(longform["longform_duration_label"], "4.5-6.5 minute")
+
+
+class ScriptGuardrailTests(unittest.TestCase):
+    def test_short_rejects_generic_callout_cta(self):
+        config = json.loads((ROOT / "config/pipeline_config.json").read_text())
+        script = {
+            "editorial_pov": "Editing every honest message can quietly turn connection into a performance you must maintain.",
+            "only_soft_reset_line": "You were not asking for too much; you were deleting the evidence.",
+            "hook": "You type the honest message, then replace it with I'm fine.",
+            "tension": "You call it keeping things easy. But they only meet the edited version. You keep measuring each sentence until nothing vulnerable remains visible.",
+            "insight": "Sometimes the edit protects you from rejection while also hiding what connection needs.",
+            "loopback": "The message was not too honest. It showed how visible you wanted to be.",
+            "engagement_question": "Send this to someone who keeps hiding.",
+            "like_cta": "Save this one.",
+        }
+        validated = validate_short_script(script, config)
+        self.assertIn("generic_cta", validated["validation_failures"])
+        self.assertEqual(validated["validation"], "forced")
+        self.assertEqual(validated["hook_quality"], "strong")
+
+    def test_longform_insufficient_capacity_is_a_hard_block(self):
+        config = json.loads((ROOT / "config/longform_config.json").read_text())
+        script = {
+            "insufficient_story_capacity": True,
+            "capacity_reason": "Only one observation is available.",
+            "chapters": [
+                {"voiceover": "word " * 140}
+                for _ in range(5)
+            ],
+        }
+        validated = validate_longform_script(script, config)
+        self.assertIn("insufficient_story_capacity", validated["validation_failures"])
+        self.assertEqual(validated["validation"], "needs_review")
+        self.assertIn(
+            "insufficient_story_capacity",
+            _blocking_script_issues(validated, {"passes": True}),
+        )
+
+    def test_cached_blocked_longform_cannot_resume_into_media(self):
+        with tempfile.TemporaryDirectory() as temp:
+            script_path = Path(temp) / "02_longform_script.json"
+            script_path.write_text(json.dumps({
+                "validation": "needs_review",
+                "human_review_required": True,
+                "validation_failures": ["insufficient_story_capacity"],
+                "argument_quality": "strong",
+            }))
+            with self.assertRaisesRegex(RuntimeError, "blocked before media generation"):
+                _enforce_longform_script_gate(temp)
+
+    def test_prompt_contract_contains_research_grounded_rules(self):
+        short_prompt = (ROOT / "prompts/script_prompt.txt").read_text().lower()
+        long_prompt = (ROOT / "prompts/longform_script_prompt.txt").read_text().lower()
+        self.assertIn("observable moment", short_prompt)
+        self.assertIn("silent quality check", short_prompt)
+        self.assertIn("insufficient_story_capacity", long_prompt)
+        self.assertIn("counterpoint and agency", long_prompt)
+        self.assertIn("never announce that value is coming", long_prompt)
 
 
 class ClipSelectionTests(unittest.TestCase):

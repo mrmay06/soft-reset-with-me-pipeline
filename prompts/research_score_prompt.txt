@@ -2,7 +2,7 @@ You are scoring one topic candidate for Soft Reset With Me, a US relationship an
 Current year: 2026. Audience: US 18-35.
 
 Channel scoring goal:
-Reward topics that are emotionally specific, safe, saveable/commentable, easy to script in 15-35 seconds, and clearly in the Soft Reset With Me voice.
+Reward topics that are emotionally specific, safe, saveable/commentable, easy to script in 25-40 seconds, and clearly in the Soft Reset With Me voice.
 Do not reward generic self-help just because it sounds positive.
 
 TOPIC: {topic}
@@ -34,8 +34,8 @@ Scoring discipline:
    1 = generic
 
 3. Script-ability:
-   4 = one idea fits 15-35 seconds with a clean loop
-   3 = works in under 45 seconds
+   4 = one idea naturally supports 25-40 seconds with a clean, useful resolution
+   3 = works outside that preferred range without padding or rushing
    2 = needs too much explanation
    1 = too broad or multi-part
 

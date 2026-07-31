@@ -510,7 +510,7 @@ def _validate_video(path: str, config: dict) -> dict:
     assert stream["codec_name"] == "h264", f"Wrong codec: {stream['codec_name']}"
     assert stream["width"] == int(config.get("longform_width", 1920))
     assert stream["height"] == int(config.get("longform_height", 1080))
-    min_duration = float(config.get("longform_validation_min_sec", max(60, float(config.get("longform_target_min_sec", 300)) * 0.85)))
+    min_duration = float(config.get("longform_validation_min_sec", max(60, float(config.get("longform_target_min_sec", 270)) * 0.85)))
     assert duration >= min_duration, f"Long-form render too short: {duration}"
     return {
         "duration_sec": round(duration, 2),

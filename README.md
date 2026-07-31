@@ -49,17 +49,17 @@ The workflow starts each run at `:35` in the matching local hour, roughly 25 min
 
 1. **Performance Sync** - Fetches recent YouTube Analytics into `performance_memory_soft_reset.json`.
 2. **Research** - Uses pytrends, YouTube, and Reddit signals, then asks Gemini for topic candidates.
-3. **Script** - Uses Claude Sonnet to write a 45-75 word script with the Soft Reset editorial layer. The script agent enforces banned therapy-speak checks, landing-line quality, argument coherence, prompt/script version fields, and validation notes.
+3. **Script** - Uses Claude Sonnet to write a preferred 60-90 spoken-word script, normally 25-40 seconds, with capacity-based exceptions. The script agent enforces observable hooks, calibrated psychology, resolved promises, contextual CTAs, argument coherence, and hard safety limits.
 4. **TTS** - Uses Gemini TTS with the `Aoede` voice.
-5. **Visual Director** - Builds a scene manifest with `visual_type` and `image_style`.
-6. **Image/Video Assets** - Uses Pexels video, generated images, and Pexels image fallback.
+5. **Visual Director** - Builds a clip-only scene manifest synchronized to the narration.
+6. **Video Assets** - Selects unique Pexels stock-video clips; generated and fallback still images are disabled.
 7. **Captions** - Generates centered kinetic ASS captions.
 8. **Thumbnail** - Builds `05_thumbnail.png`.
 9. **Video Assembly** - Renders `06_final_video.mp4` with captions, music, film overlay, and CTA card.
 10. **Metadata** - Generates title, description, and tags.
 11. **Creative Judge** - Runs as a pre-upload gate, blocks hard quality/safety failures, and writes learning traits to `10_judge_report.json`.
 12. **Video Audit** - Gemini watches the finished Short and stores video-specific creative observations.
-13. **Upload** - Uploads directly to YouTube as public only after the gate passes.
+13. **Upload** - Uploads only after the gate passes, using the configured privacy status. The current test configuration is private.
 14. **Logger** - Appends topic, metadata, judge traits, video-audit signals, experiment slot, and upload info to `topic_memory_soft_reset.json`.
 
 Shorts can run with `--skip-upload` for local generation without publishing. If `log_skip_upload_to_memory` is true, skip-upload runs can still write memory for testing.
@@ -70,14 +70,14 @@ Shorts can run with `--skip-upload` for local generation without publishing. If 
 
 1. **Long Performance Sync** - Uses longform memory and analytics thresholds.
 2. **Long Research** - Generates the longform topic and angle.
-3. **Long Script** - Uses Claude Sonnet to write a 750-1050 word essay script.
+3. **Long Script** - Uses Claude Sonnet to write a preferred 700-950 word, 4.5-6.5 minute essay. A capacity check blocks padding; the review gate requires calibrated psychology, a genuine counterpoint, viewer agency, and a resolved opening promise.
 4. **Long Metadata** - Creates packaging for the longform upload.
 5. **Long Audio** - Generates the full Gemini TTS voiceover.
 6. **Long Captions** - Generates phrase-level captions.
-7. **Long Video** - Renders `06_longform_video.mp4` from short visual beats, Pexels/Coverr footage, fallback cards, music, and film overlay.
+7. **Long Video** - Renders `06_longform_video.mp4` from short visual beats, unique Pexels/Coverr footage, music, and film overlay. Static fallback cards are disabled.
 8. **Long Thumbnail** - Creates `07_longform_thumbnail.png` and A/B/C thumbnail variants.
 9. **Creative Judge** - Runs as a pre-upload gate with the shared judge module.
-10. **Long Upload** - Uploads directly to YouTube as public only after the gate passes.
+10. **Long Upload** - Uploads only after the gate passes, using the configured privacy status. The current test configuration is private.
 11. **Long Logger** - Writes upload status, YouTube URL, thumbnail variant, judge traits, experiment metadata, and topic data to `topic_memory_soft_reset_long.json`.
 
 Longform uses separate memory files:
@@ -101,9 +101,9 @@ The Shorts track is designed to avoid generic relationship advice. Topic researc
 - `confidence_level`
 - `standout_line` in the finished script, mirrored to legacy `only_soft_reset_line` for validator compatibility
 
-The script agent checks argument coherence so the hook promise, emotional mechanism, and final insight all support the same core claim. Weak or drifting scripts are retried before rendering.
+The script agent checks argument coherence so the hook promise, emotional mechanism, counterpoint, viewer agency, and final insight support the same core claim. Psychological mechanisms are hypotheses rather than diagnoses. Weak, padded, or drifting scripts are repaired once and blocked before media generation if hard failures remain.
 
-The prompt layer favors emotionally precise, plain-language insight over therapy-speak, hype-coach phrasing, or generic inspirational advice. `psych_concept` is treated as an internal lens only; it should be translated into lived moments instead of spoken as clinical jargon. Shorts end on a landing sentence rather than a forced callback; the JSON still uses the legacy `loopback` key for downstream compatibility.
+The prompt layer favors emotionally precise, plain-language insight over therapy-speak, hype-coach phrasing, generic inspiration, or artificial retention lines. `psych_concept` is treated as a plausible internal lens and translated into lived moments. Shorts end by resolving the opening promise; the JSON still uses the legacy `loopback` key for downstream compatibility. Long-form scripts create meaningful narrative turns by adding events, consequences, contradictions, interpretations, or decisions rather than announcing delayed value.
 
 Every Shorts script includes `script_version`, `prompt_version`, `validation`, and `validation_notes` so future analytics can trace performance shifts back to prompt rules. `cta` remains a legacy alias for `like_cta`; `utils/script_contract.py` normalizes it before downstream modules read the script.
 
@@ -120,7 +120,6 @@ Shorts defaults in `config/pipeline_config.json`:
 | Visual director | `visual_model` | `gemini-2.5-flash` |
 | TTS | `tts_model` | `gemini-2.5-flash-preview-tts` |
 | TTS voice | `tts_voice` | `Aoede` |
-| Image model | `image_model` | `zimage` |
 
 Longform defaults in `config/longform_config.json`:
 

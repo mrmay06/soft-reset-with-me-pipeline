@@ -73,7 +73,7 @@ Rules:
 - No therapy-speak bloat: avoid "validate your feelings" and stiff clinical phrasing
 - No diagnosis, no manipulation tactics, no "make them chase you"
 - No revenge framing, no pickup advice, no fake certainty about another person's intentions
-- Prioritize topics that can be 15-35 seconds and loop cleanly
+- Prioritize topics that naturally support 25-40 seconds and resolve their opening promise without padding
 
 Return ONLY a valid JSON array with no extra text:
 [

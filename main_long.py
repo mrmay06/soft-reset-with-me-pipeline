@@ -70,6 +70,18 @@ def _find_latest_longform_run(test_2min: bool | None = None) -> tuple[str, str] 
     terminal = ["06_longform_video.mp4", "09_longform_upload_meta.json", "11_longform_logger_meta.json"]
     dirs = sorted(glob.glob("workspace/run_long_*"))
     for d in reversed(dirs):
+        script_path = os.path.join(d, "02_longform_script.json")
+        if os.path.exists(script_path):
+            try:
+                script = load_json(script_path)
+                if isinstance(script, dict) and (
+                    script.get("validation") == "needs_review"
+                    or script.get("human_review_required")
+                    or script.get("argument_quality") == "weak"
+                ):
+                    continue
+            except Exception:
+                pass
         judge_path = os.path.join(d, "10_judge_report.json")
         if os.path.exists(judge_path):
             try:
@@ -100,6 +112,23 @@ def _enforce_creative_judge_gate(run_dir: str):
             "Creative judge blocked upload. "
             f"Hard failures: {failures}. Review {judge_path}, fix the issue, then rerun."
         )
+
+
+def _enforce_longform_script_gate(run_dir: str):
+    script_path = os.path.join(run_dir, "02_longform_script.json")
+    if not os.path.exists(script_path):
+        raise RuntimeError(f"Long-form script missing before media generation: {script_path}")
+    script = load_json(script_path)
+    if not isinstance(script, dict):
+        raise RuntimeError(f"Long-form script is invalid: {script_path}")
+    failures = list(script.get("validation_failures", []))
+    if script.get("validation") == "needs_review" or script.get("human_review_required"):
+        raise RuntimeError(
+            "Long-form script blocked before media generation. "
+            f"Failures: {failures or ['human_review_required']}. Review {script_path}."
+        )
+    if script.get("argument_quality") == "weak":
+        raise RuntimeError(f"Long-form argument review failed. Review {script_path}.")
 
 
 def _apply_test_2min_overrides(config: dict) -> dict:
@@ -208,6 +237,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
         _run("Module 0 — Long Performance", performance_fn, video_id, run_dir, config, checkpoint_files=["00_performance_sync.json"])
         _run("Module 1 — Long Research", research_fn, video_id, run_dir, config, checkpoint_files=["01_longform_research.json"])
         _run("Module 2 — Long Script", script_fn, video_id, run_dir, config, checkpoint_files=["02_longform_script.json"])
+        _enforce_longform_script_gate(run_dir)
         _run("Module 3 — Long Metadata", metadata_fn, video_id, run_dir, config, checkpoint_files=["03_longform_metadata.json"])
         _run("Module 4 — Long Audio", audio_fn, video_id, run_dir, config, checkpoint_files=["04_longform_voice.mp3", "04_longform_voice_meta.json"])
         _run("Module 5 — Long Captions", captions_fn, video_id, run_dir, config, checkpoint_files=["04_longform_captions.ass"])
