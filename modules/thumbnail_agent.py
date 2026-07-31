@@ -13,15 +13,7 @@ except ImportError:
 def _prepare_base_image(asset_meta: dict, run_dir: str) -> "Image.Image":
     images_dir = os.path.join(run_dir, "03_images")
 
-    # Prefer AI-generated thumbnail image from visual director
-    ai_thumb = os.path.join(images_dir, "thumbnail.png")
-    if os.path.exists(ai_thumb):
-        base = Image.open(ai_thumb).convert("RGB")
-        if base.size != (1080, 1920):
-            base = base.resize((1080, 1920), Image.LANCZOS)
-        return base
-
-    # Fallback: use the first generated scene asset.
+    # Shorts posters are always derived from the first selected video clip.
     assets = asset_meta.get("assets", {})
     first_key = "scene_1" if "scene_1" in assets else None
     if first_key:
@@ -36,17 +28,14 @@ def _prepare_base_image(asset_meta: dict, run_dir: str) -> "Image.Image":
                 )
                 base = Image.open(frame_path).convert("RGB")
             except Exception as e:
-                print(f"[thumbnail] FFmpeg frame extract failed ({e}) — gradient fallback")
-                base = _make_gradient_fallback()
+                raise RuntimeError(f"Clip-derived thumbnail frame extraction failed: {e}") from e
         else:
-            img_path = os.path.join(run_dir, asset["path"])
-            base = Image.open(img_path).convert("RGB")
+            raise RuntimeError("Clip-only thumbnail received a non-video asset")
         if base.size != (1080, 1920):
             base = base.resize((1080, 1920), Image.LANCZOS)
         return base
 
-    print("[thumbnail] No base image found — using gradient fallback")
-    return _make_gradient_fallback()
+    raise RuntimeError("Clip-only thumbnail requires at least one selected video asset")
 
 
 def _make_gradient_fallback() -> "Image.Image":

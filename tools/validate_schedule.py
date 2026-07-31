@@ -14,12 +14,8 @@ def main() -> int:
     weekly_slots = config.get("weekly_slots_et")
     if isinstance(weekly_slots, dict):
         short_slots = sum(len(v) for v in weekly_slots.values() if isinstance(v, list))
-        longform_slots = sum(
-            len(v) for v in config.get("longform_weekly_slots_et", {}).values()
-            if isinstance(v, list)
-        )
-        expected = short_slots + longform_slots
-        label = "weekly_slots_et + longform_weekly_slots_et"
+        expected = short_slots
+        label = "weekly_slots_et"
     else:
         expected = int(config.get("output_frequency_per_day", 0))
         label = "output_frequency_per_day"

@@ -170,7 +170,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
             _enforce_script_review_gate(run_dir)
         _run("Module 3A — TTS",              tts_fn,       video_id, run_dir, config, checkpoint_files=["03_voice.mp3", "03_voice_meta.json"])
         _run("Module 3B — Visual Director",  director_fn,  video_id, run_dir, config, checkpoint_files=["03b_scene_manifest.json"])
-        _run("Module 3C — Images",           image_fn,     video_id, run_dir, config, checkpoint_files=["03_asset_meta.json"])
+        _run("Module 3C — Clip Selection",   image_fn,     video_id, run_dir, config, checkpoint_files=["03_asset_meta.json"])
         _run("Module 4  — Captions",         captions_fn,  video_id, run_dir, config, checkpoint_files=["04_captions.ass"])
         _run("Module 5  — Thumbnail",        thumbnail_fn, video_id, run_dir, config, checkpoint_files=["05_thumbnail.png"])
         _run("Module 6  — Video Assembly",   assembler_fn, video_id, run_dir, config, checkpoint_files=["06_final_video.mp4", "06_render_meta.json"])

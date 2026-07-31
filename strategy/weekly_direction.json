@@ -1,0 +1,7 @@
+{
+  "active": false,
+  "expires_on": "",
+  "priorities": [],
+  "avoid": [],
+  "notes": "Optional. Leave active=false or omit this file and both pipelines continue normally."
+}

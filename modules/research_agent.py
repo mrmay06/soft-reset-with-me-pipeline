@@ -12,6 +12,7 @@ from utils.retry import retry
 from utils.gemini_client import generate_json
 from utils.performance_insights import summarize_performance_for_prompt
 from utils.experiment import inject_experiment_slot
+from utils.weekly_direction import weekly_direction_prompt
 
 try:
     from pytrends.request import TrendReq
@@ -364,6 +365,9 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         target_audience=config.get("target_audience", "US"),
         niche=config.get("niche", "relationship self-improvement"),
     )
+    direction = weekly_direction_prompt()
+    if direction:
+        prompt += f"\n\n{direction}"
 
     prompt = inject_experiment_slot(
         prompt,

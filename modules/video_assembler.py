@@ -529,22 +529,15 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
         seg_path = os.path.join(segments_dir, f"seg_scene_{sid}.mp4")
 
         if asset is None:
-            print(f"[assembler] {key}: no asset found — using thumbnail fallback")
-            _static_image_to_segment(thumbnail_path, duration, seg_path, fps)
+            raise RuntimeError(f"Clip-only render blocked: {key} has no asset")
         elif asset["type"] == "video":
             clip_path = os.path.join(run_dir, asset["path"])
             try:
                 _clip_to_segment(clip_path, duration, seg_path, fps)
             except Exception as e:
-                print(f"[assembler] {key} clip failed ({e}) — static fallback")
-                _static_image_to_segment(thumbnail_path, duration, seg_path, fps)
+                raise RuntimeError(f"Clip-only render blocked: {key} failed: {e}") from e
         else:
-            img_path = os.path.join(run_dir, asset["path"])
-            try:
-                _image_to_segment(img_path, duration, i, seg_path, fps)
-            except Exception as e:
-                print(f"[assembler] {key} Ken Burns failed ({e}) — static fallback")
-                _static_image_to_segment(img_path, duration, seg_path, fps)
+            raise RuntimeError(f"Clip-only render blocked: {key} is {asset['type']}, expected video")
 
         scene_segs.append((seg_path, duration))
         print(f"[assembler] scene_{sid} done ({duration:.2f}s)")

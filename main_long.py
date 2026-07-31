@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore", category=FutureWarning, module="google")
 load_dotenv(override=True)
 
 from utils.helpers import create_run_dir, load_config, load_json, make_video_id, save_json
-from utils.notify import send_failure_alert
+from utils.notify import send_failure_alert, send_longform_upload_confirmation
 from modules.performance_agent import run_performance_sync, run_performance_sync_mock
 from modules.longform_research_agent import run_longform_research, run_longform_research_mock
 from modules.longform_script_agent import run_longform_script, run_longform_script_mock
@@ -224,6 +224,15 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
                 "07_longform_thumbnail_meta.json",
             ],
         )
+        if not mock:
+            send_longform_upload_confirmation(
+                video_id=video_id,
+                title=load_json(os.path.join(run_dir, "03_longform_metadata.json"))["title"],
+                youtube_url="Not uploaded yet — private-test upload follows automatically",
+                metadata=load_json(os.path.join(run_dir, "03_longform_metadata.json")),
+                thumbnail_meta=load_json(os.path.join(run_dir, "07_longform_thumbnail_meta.json")),
+                run_dir=run_dir,
+            )
         _run("Module 8A — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=["10_judge_report.json"])
         if not mock:
             _enforce_creative_judge_gate(run_dir)

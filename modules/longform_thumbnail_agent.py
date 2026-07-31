@@ -3,10 +3,7 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
-import urllib.parse
-
-import requests
-from PIL import Image, ImageDraw, ImageFont  # noqa: F401 — ImageDraw/ImageFont used in _draw_text_overlay
+from PIL import Image, ImageDraw, ImageFont, ImageStat  # noqa: F401
 
 from utils.helpers import load_json, save_json, now_iso
 
@@ -48,6 +45,16 @@ def _extract_frame(video_path: str, output_path: str, at_sec: float):
 
 def _resize_to_target(path_in: str, path_out: str, width: int, height: int):
     image = Image.open(path_in).convert("RGB")
+    source_ratio = image.width / image.height
+    target_ratio = width / height
+    if source_ratio > target_ratio:
+        crop_width = int(image.height * target_ratio)
+        left = (image.width - crop_width) // 2
+        image = image.crop((left, 0, left + crop_width, image.height))
+    else:
+        crop_height = int(image.width / target_ratio)
+        top = (image.height - crop_height) // 2
+        image = image.crop((0, top, image.width, top + crop_height))
     image = image.resize((width, height), Image.LANCZOS)
     image.save(path_out)
 
@@ -354,51 +361,6 @@ def _build_generation_prompt(research: dict, variant: dict, structure: str) -> s
     return _build_face_text_prompt(research, variant)
 
 
-def _generate_gemini_thumbnail(prompt: str, output_path: str) -> bool:
-    """Try Gemini imagen as secondary image source. Returns True on success."""
-    api_key = os.environ.get("GEMINI_API_KEY", "")
-    if not api_key:
-        return False
-    try:
-        from google import genai as _genai
-        from google.genai import types as _genai_types
-        client = _genai.Client(api_key=api_key)
-        response = client.models.generate_content(
-            model="gemini-2.0-flash-preview-image-generation",
-            contents=prompt,
-            config=_genai_types.GenerateContentConfig(
-                response_modalities=["IMAGE", "TEXT"],
-            ),
-        )
-        for part in response.candidates[0].content.parts:
-            if part.inline_data and part.inline_data.data:
-                with open(output_path, "wb") as f:
-                    f.write(part.inline_data.data)
-                return True
-    except Exception as exc:
-        print(f"[longform_thumbnail] Gemini imagen failed: {exc}")
-    return False
-
-
-def _generate_pollinations_thumbnail(prompt: str, output_path: str, width: int, height: int) -> bool:
-    api_key = os.environ.get("POLLINATIONS_API_KEY", "")
-    encoded = urllib.parse.quote(prompt, safe="")
-    url = (
-        f"https://gen.pollinations.ai/image/{encoded}"
-        f"?model=gptimage&width={width}&height={height}&seed=0&enhance=false&key={api_key}"
-    )
-    try:
-        response = requests.get(url, timeout=90)
-        if response.status_code == 200 and len(response.content) > 10000:
-            with open(output_path, "wb") as f:
-                f.write(response.content)
-            return True
-        print(f"[longform_thumbnail] Pollinations failed: status={response.status_code} size={len(response.content)}")
-    except Exception as exc:
-        print(f"[longform_thumbnail] Pollinations failed: {exc}")
-    return False
-
-
 def _create_typography_base(output_path: str, width: int, height: int) -> str:
     image = Image.new("RGB", (width, height), _hex_to_rgb(COLORS["background"]))
     image = _add_grain(image, 0.045)
@@ -406,27 +368,40 @@ def _create_typography_base(output_path: str, width: int, height: int) -> str:
     return "local_typography"
 
 
-def _create_split_composite(research: dict, variant: dict, output_path: str, run_dir: str, variant_id: str, width: int, height: int) -> tuple[bool, str, list[str]]:
-    plate_w = width // 2
-    left_prompt = _build_split_plate_prompt(research, variant, "left")
-    right_prompt = _build_split_plate_prompt(research, variant, "right")
-    left_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_left_plate.png")
-    right_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_right_plate.png")
-    left_ok = _generate_pollinations_thumbnail(left_prompt, left_path, plate_w, height)
-    right_ok = _generate_pollinations_thumbnail(right_prompt, right_path, plate_w, height)
-    if not (left_ok and right_ok):
-        return False, "split_plate_generation_failed", [left_prompt, right_prompt]
-    left = Image.open(left_path).convert("RGB").resize((plate_w, height), Image.LANCZOS)
-    right = Image.open(right_path).convert("RGB").resize((width - plate_w, height), Image.LANCZOS)
+def _frame_score(path: str) -> float:
+    image = Image.open(path).convert("L").resize((320, 180))
+    stat = ImageStat.Stat(image)
+    contrast = float(stat.stddev[0])
+    mean = float(stat.mean[0])
+    exposure = max(0.0, 45.0 - abs(mean - 115.0) * 0.25)
+    return contrast + exposure
+
+
+def _extract_ranked_frames(video_path: str, run_dir: str, duration: float) -> list[str]:
+    frames = []
+    for index, fraction in enumerate((0.10, 0.22, 0.36, 0.50, 0.64, 0.78, 0.90)):
+        path = os.path.join(run_dir, f"07_longform_footage_frame_{index}.jpg")
+        _extract_frame(video_path, path, max(1.0, duration * fraction))
+        frames.append(path)
+    return sorted(frames, key=_frame_score, reverse=True)
+
+
+def _create_split_from_frames(left_path: str, right_path: str, output_path: str, width: int, height: int) -> None:
+    plate_width = width // 2
+    temp_left = output_path + ".left.png"
+    temp_right = output_path + ".right.png"
+    _resize_to_target(left_path, temp_left, plate_width, height)
+    _resize_to_target(right_path, temp_right, width - plate_width, height)
     composite = Image.new("RGB", (width, height), _hex_to_rgb(COLORS["background"]))
-    composite.paste(left, (0, 0))
-    composite.paste(right, (plate_w, 0))
+    composite.paste(Image.open(temp_left).convert("RGB"), (0, 0))
+    composite.paste(Image.open(temp_right).convert("RGB"), (plate_width, 0))
     _save_png_under_limit(composite, output_path)
-    return True, "pollinations_split_plates", [left_prompt, right_prompt]
+    os.remove(temp_left)
+    os.remove(temp_right)
 
 
 def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
-    print(f"[longform_thumbnail] Creating A/B/C thumbnails for {video_id}")
+    print(f"[longform_thumbnail] Creating footage-derived A/B/C thumbnails for {video_id}")
     research = load_json(os.path.join(run_dir, "01_longform_research.json"))
     metadata = load_json(os.path.join(run_dir, "03_longform_metadata.json"))
     render_meta = load_json(os.path.join(run_dir, "06_longform_render_meta.json"))
@@ -434,6 +409,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
     width = int(config.get("longform_thumbnail_width", 1280))
     height = int(config.get("longform_thumbnail_height", 720))
     primary_id = str(metadata.get("primary_variant_id", "B")).upper()
+    duration = float(render_meta.get("duration_sec", 300))
+    ranked_frames = _extract_ranked_frames(video_path, run_dir, duration)
 
     generated_variants = []
     for variant in metadata.get("thumbnail_variants", []):
@@ -444,59 +421,26 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
         structure = _variant_structure(variant)
         prompt = _build_generation_prompt(research, variant, structure)
         prompt_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_prompt.txt")
-        generated_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_generated.png")
         output_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}.png")
-        frame_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_frame.jpg")
         with open(prompt_path, "w", encoding="utf-8") as f:
-            f.write(prompt)
+            f.write(
+                "FOOTAGE-DERIVED THUMBNAIL EDIT BRIEF — do not generate an image.\n"
+                "Use a frame from the finished video, preserve photographic realism, and apply only local crop, grade, and typography.\n\n"
+                + prompt
+            )
 
-        # Image source priority: local typography/split composite -> Pollinations -> Gemini imagen -> video frame
-        gemini_generated_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_gemini.png")
         if structure == "typography":
             source = _create_typography_base(output_path, width, height)
         elif structure == "split":
-            split_ok, source, split_prompts = _create_split_composite(research, variant, output_path, run_dir, variant_id, width, height)
-            if split_prompts:
-                with open(prompt_path, "a", encoding="utf-8") as f:
-                    f.write("\n\n--- LEFT PLATE PROMPT ---\n")
-                    f.write(split_prompts[0])
-                    f.write("\n\n--- RIGHT PLATE PROMPT ---\n")
-                    f.write(split_prompts[1])
-            if not split_ok:
-                generated = _generate_pollinations_thumbnail(prompt, generated_path, width, height)
-                if generated:
-                    _resize_to_target(generated_path, output_path, width, height)
-                    source = "pollinations_gptimage"
-                elif _generate_gemini_thumbnail(prompt, gemini_generated_path):
-                    _resize_to_target(gemini_generated_path, output_path, width, height)
-                    source = "gemini_imagen"
-                else:
-                    duration = float(render_meta.get("duration_sec", 300))
-                    _extract_frame(video_path, frame_path, at_sec=max(8, duration * 0.18))
-                    _resize_to_target(frame_path, output_path, width, height)
-                    source = "video_frame_fallback"
+            _create_split_from_frames(ranked_frames[0], ranked_frames[1], output_path, width, height)
+            source = "two_footage_frames"
         else:
-            generated = _generate_pollinations_thumbnail(prompt, generated_path, width, height)
-            if generated:
-                _resize_to_target(generated_path, output_path, width, height)
-                source = "pollinations_gptimage"
-            elif _generate_gemini_thumbnail(prompt, gemini_generated_path):
-                _resize_to_target(gemini_generated_path, output_path, width, height)
-                source = "gemini_imagen"
-            else:
-                duration = float(render_meta.get("duration_sec", 300))
-                _extract_frame(video_path, frame_path, at_sec=max(8, duration * 0.18))
-                _resize_to_target(frame_path, output_path, width, height)
-                source = "video_frame_fallback"
+            _resize_to_target(ranked_frames[0], output_path, width, height)
+            source = "ranked_footage_frame"
 
         # Always bake text via PIL — guarantees legibility regardless of image source
         _draw_text_overlay(output_path, line1, line2, variant_id, width, height, structure)
 
-        raw_generated = (
-            generated_path if source == "pollinations_gptimage" else
-            gemini_generated_path if source == "gemini_imagen" else
-            frame_path if os.path.exists(frame_path) else ""
-        )
         generated_variants.append({
             "id": variant_id,
             "angle": variant.get("angle", ""),
@@ -506,11 +450,11 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
             "line2": line2,
             "thumbnail_text": thumb_text,
             "prompt_file": os.path.basename(prompt_path),
-            "generated_file": os.path.basename(raw_generated) if raw_generated and os.path.exists(raw_generated) else "",
+            "generated_file": "",
             "output_file": os.path.basename(output_path),
             "background_source": source,
             "final_output_size": f"{width}x{height}",
-            "degraded_fallback": source == "video_frame_fallback",
+            "degraded_fallback": False,
         })
         print(f"[longform_thumbnail] Variant {variant_id} ready ({source})")
 
@@ -526,7 +470,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
         "output": "07_longform_thumbnail.png",
         "primary_variant_id": primary["id"],
         "primary_output_file": primary["output_file"],
-        "thumbnail_strategy": "longform_ab_packaging_v2",
+        "thumbnail_strategy": "footage_derived_ab_packaging_v3",
+        "generated_images_used": False,
         "variants": generated_variants,
         "generated_at": now_iso(),
     }, meta_path)

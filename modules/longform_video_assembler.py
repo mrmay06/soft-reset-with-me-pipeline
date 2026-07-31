@@ -346,8 +346,7 @@ def _fetch_pexels_clip(
 ) -> dict | None:
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
-        print("[longform_video] PEXELS_API_KEY missing; using fallback card")
-        return None
+        raise RuntimeError("Clip-only longform requires PEXELS_API_KEY; static fallback cards are disabled")
     headers = {"Authorization": api_key}
     per_page = int(config.get("longform_stock_video_per_page", 10))
     for query in queries:
@@ -627,7 +626,6 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     for idx, beat in enumerate(beats):
         beat_words = max(1, word_count(beat.get("voiceover", "")))
         duration = max(3.2, total_duration * beat_words / total_words)
-        card = os.path.join(card_dir, f"beat_{idx + 1:02d}.png")
         seg = os.path.join(segment_dir, f"beat_{idx + 1:02d}.mp4")
         asset_info = None
         if stock_enabled:
@@ -638,13 +636,10 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
                 _clip_segment(clip_path, duration, seg, config)
                 asset_info["path"] = os.path.relpath(clip_path, run_dir)
         if not asset_info:
-            _chapter_card(beat, idx, len(beats), metadata, research, card, config)
-            _image_segment(card, duration, seg, config)
-            asset_info = {
-                "provider": "fallback_card",
-                "query": "",
-                "path": os.path.relpath(card, run_dir),
-            }
+            raise RuntimeError(
+                f"Clip-only longform failed: no unique stock video for beat {idx + 1}. "
+                "No generated-image or static-card fallback is allowed."
+            )
         visual_assets.append({
             "beat_id": beat.get("id", idx + 1),
             "chapter_id": beat.get("chapter_id"),
@@ -693,7 +688,7 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         "stock_video_count": sum(1 for item in visual_assets if item.get("provider") in {"pexels", "coverr"}),
         "pexels_video_count": sum(1 for item in visual_assets if item.get("provider") == "pexels"),
         "coverr_video_count": sum(1 for item in visual_assets if item.get("provider") == "coverr"),
-        "fallback_card_count": sum(1 for item in visual_assets if item.get("provider") == "fallback_card"),
+        "fallback_card_count": 0,
         **final_features,
         "validation": "passed",
         "generated_at": now_iso(),

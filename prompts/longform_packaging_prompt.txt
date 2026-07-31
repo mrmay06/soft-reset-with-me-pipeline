@@ -79,8 +79,8 @@ Bad:
 - line1: "NERVOUS SYSTEM" / line2: "attachment patterns explained"
 - line1: "SITUATIONSHIP ADVICE" / line2: "relationship tips for you"
 
-VISUAL PROMPT RULES (for AI image generation — text is baked on by PIL post-generation):
-- The generated image must contain NO TEXT. The pipeline adds text later.
+FOOTAGE EDIT BRIEF RULES (for selecting and editing frames already present in the video):
+- Never request AI image generation. The pipeline extracts frames and adds text locally.
 - Canvas is 1920x1080, 16:9 horizontal. Final output must stay under 2MB.
 - Safe zone: no important elements in the bottom-right 20% or bottom-left 15%.
 - Use cool-neutral cinematic color. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, or watermarks.

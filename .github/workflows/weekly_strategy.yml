@@ -2,8 +2,8 @@ name: Weekly Shorts Self-Improvement Strategy
 
 on:
   schedule:
-    - cron: '0 10 * * 1'  # Monday 6:00 AM New York during EDT
-    - cron: '0 11 * * 1'  # Monday 6:00 AM New York during EST
+    - cron: '0 8 * * 1'  # Monday 4:00 AM New York during EDT
+    - cron: '0 9 * * 1'  # Monday 4:00 AM New York during EST
   workflow_dispatch:
     inputs:
       skip_video_watch:
@@ -33,16 +33,17 @@ jobs:
         id: window
         shell: python
         run: |
-          import os
+          import json, os
           from datetime import datetime, timedelta
           from zoneinfo import ZoneInfo
 
           event = os.environ.get("GITHUB_EVENT_NAME", "")
+          enabled = bool(json.load(open("config/pipeline_config.json")).get("automation_enabled", False))
           should_run = event != "schedule"
           if event == "schedule":
               now = datetime.now(ZoneInfo("America/New_York"))
-              start = now.replace(hour=6, minute=0, second=0, microsecond=0)
-              should_run = now.weekday() == 0 and start <= now < start + timedelta(minutes=45)
+              start = now.replace(hour=4, minute=0, second=0, microsecond=0)
+              should_run = enabled and now.weekday() == 0 and start <= now < start + timedelta(minutes=45)
 
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
               out.write(f"should_run={str(should_run).lower()}\n")

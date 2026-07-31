@@ -4,7 +4,8 @@ import os
 import time
 
 from utils.helpers import load_json, save_json, now_iso
-from utils.notify import send_auth_expiry_alert, send_longform_upload_confirmation
+from utils.notify import send_auth_expiry_alert
+from utils.publish_schedule import youtube_publish_at
 from utils.youtube_tags import sanitize_youtube_tags
 
 try:
@@ -97,6 +98,13 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
     )
     print(f"[longform_uploader] {len(tags)} tags, {sum(len(t) for t in tags)} chars")
 
+    publish_at = youtube_publish_at(config, "longform")
+    privacy_status = "private"
+    if not publish_at:
+        print("[longform_uploader] Safety gate active: upload will remain private")
+    status_body = {"privacyStatus": privacy_status, "selfDeclaredMadeForKids": False}
+    if publish_at:
+        status_body["publishAt"] = publish_at
     body = {
         "snippet": {
             "title": metadata["title"],
@@ -106,10 +114,7 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
             "defaultAudioLanguage": "en",
             "defaultLanguage": "en",
         },
-        "status": {
-            "privacyStatus": metadata.get("privacy_status", config.get("privacy_status", "private")),
-            "selfDeclaredMadeForKids": False,
-        },
+        "status": status_body,
     }
 
     media = MediaFileUpload(video_path, mimetype="video/mp4", resumable=True, chunksize=10 * 1024 * 1024)
@@ -131,7 +136,7 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
         print(f"[longform_uploader] Thumbnail not found at {thumbnail_path} — skipping")
 
     engagement_question = script.get("engagement_question", "")
-    comment_id = _post_engagement_comment(youtube, youtube_video_id, engagement_question)
+    comment_id = None
 
     thumbnail_meta = {}
     thumbnail_meta_path = os.path.join(run_dir, "07_longform_thumbnail_meta.json")
@@ -157,20 +162,13 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
         "youtube_url": youtube_url,
         "title": metadata["title"],
         "primary_variant_id": metadata.get("primary_variant_id", ""),
-        "privacy_status": metadata.get("privacy_status", config.get("privacy_status", "private")),
+        "privacy_status": privacy_status,
+        "publish_at": publish_at,
         "thumbnail_set": thumbnail_set,
         "engagement_comment_id": comment_id,
         "uploaded_at": now_iso(),
     }
     save_json(result, os.path.join(run_dir, "09_longform_upload_meta.json"))
-    send_longform_upload_confirmation(
-        video_id=video_id,
-        title=metadata["title"],
-        youtube_url=youtube_url,
-        metadata=metadata,
-        thumbnail_meta=thumbnail_meta,
-        run_dir=run_dir,
-    )
     print(f"[longform_uploader] Done. URL: {youtube_url}")
     return result
 

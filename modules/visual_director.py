@@ -23,6 +23,14 @@ except ImportError:
 DIRECTOR_PROMPT = """You are the visual director for Soft Reset With Me, a faceless US relationship/self-growth YouTube Shorts channel.
 The channel uses cinematic stock footage plus kinetic typography. It should feel like a short film, not a productivity reel.
 
+NON-NEGOTIABLE CLIP-ONLY MODE:
+- Every scene must use real stock video. Set visual_type to "video".
+- Never request or propose generated images, still images, illustrations, or image prompts.
+- Give every scene a distinct, concrete 2-5 word Pexels search query.
+- When the same emotion returns, vary the person, action, framing, object, and location.
+- The downstream selector evaluates multiple candidates globally and will reject exact and near-duplicate clips.
+- The thumbnail is derived from selected footage; do not create a thumbnail image prompt.
+
 SCRIPT (plain spoken dialogue, grouped into synced asset beats):
 "{raw_dialogue}"
 
@@ -164,6 +172,39 @@ Return valid JSON only - no explanation, no markdown:
   ]
 }}"""
 
+# Runtime prompt for the clip-only pipeline. The older prompt above remains only
+# to make historical manifests resumable; it is never sent to a model.
+CLIP_ONLY_DIRECTOR_PROMPT = """You are the visual director for Soft Reset With Me, a faceless relationship/self-growth YouTube Shorts channel.
+
+SCRIPT (grouped into synchronized visual beats):
+"{raw_dialogue}"
+
+BRAND CONTEXT:
+{brand_context}
+
+Create a clip-only scene manifest. Every visual is real stock video from Pexels.
+
+Rules:
+- One scene covers one or two adjacent sentences, in exact script order.
+- Every spoken word must appear exactly once across covers_dialogue.
+- Maximum 20 scenes.
+- Set visual_type="video", image_style=null, image_prompt=null for every scene.
+- Give every scene a unique, concrete 2-5 word pexels_query.
+- Match the exact action/emotion: phone face down, hands closing journal, person leaving room, rainy apartment window, city evening walk.
+- Do not use generic smiling couples, offices, fitness, neon, fantasy, cartoons, or staged influencer poses.
+- If an emotion repeats, change the person, action, framing, object, and location; never solve six sad moments with one repeated composition.
+- Build an emotional progression: tension -> recognition -> reframe -> boundary/action -> release.
+- Thumbnail source is selected footage, never an image prompt.
+
+Return JSON only:
+{{
+  "palette": {{"base":"#1C1C2B","accent":"#C4785A","text":"#F5F0E8","healing":"#7BAE8A"}},
+  "thumbnail": {{"source":"selected_footage"}},
+  "scenes": [
+    {{"id":1,"covers_dialogue":"exact script words","visual_type":"video","image_style":null,"scene_type":"reaction","image_prompt":null,"pexels_query":"person checking phone"}}
+  ]
+}}"""
+
 
 # ── Validation ───────────────────────────────────────────────────────────────
 
@@ -179,8 +220,7 @@ def _split_dialogue_sentences(text: str) -> list[str]:
 def _validate_manifest(manifest: dict, raw_dialogue: str | None = None) -> tuple[bool, str]:
     if not isinstance(manifest, dict):
         return False, "Not a dict"
-    if not manifest.get("thumbnail", {}).get("image_prompt"):
-        return False, "Missing thumbnail.image_prompt"
+    manifest["thumbnail"] = {"source": "selected_footage"}
     scenes = manifest.get("scenes", [])
     if not isinstance(scenes, list):
         return False, "scenes is not a list"
@@ -193,52 +233,28 @@ def _validate_manifest(manifest: dict, raw_dialogue: str | None = None) -> tuple
             return False, f"Too few scenes: {len(scenes)} (need at least {min_scenes} for 1-2 sentences per scene)"
         if len(scenes) > len(expected_sentences):
             return False, f"Too many scenes: {len(scenes)} for {len(expected_sentences)} sentences"
-    if len(scenes) >= 6:
-        video_count = sum(1 for s in scenes if s.get("visual_type") == "video")
-        if video_count < len(scenes) // 2:
-            return False, f"Too few stock video scenes: {video_count}/{len(scenes)}"
     seen_queries: set[str] = set()
-    consecutive_images = 0
     for i, s in enumerate(scenes):
         if not s.get("covers_dialogue", "").strip():
             return False, f"Scene {i+1} missing covers_dialogue"
         if len(_split_dialogue_sentences(s["covers_dialogue"])) > 2:
             return False, f"Scene {i+1} covers more than 2 dialogue sentences"
-        if s.get("visual_type") not in ("image", "video"):
-            return False, f"Scene {i+1} invalid visual_type"
-        if s["visual_type"] == "image":
-            consecutive_images += 1
-            if consecutive_images > 2:
-                return False, f"Scene {i+1} creates more than 2 generated stills in a row"
-        else:
-            consecutive_images = 0
-        if s["visual_type"] == "image" and not s.get("image_prompt"):
-            return False, f"Scene {i+1} is 'image' but missing image_prompt"
-        if s["visual_type"] == "video" and not s.get("pexels_query"):
+        # Normalize legacy model responses into the clip-only contract. This
+        # makes image generation impossible even if a model echoes old prompt examples.
+        s["visual_type"] = "video"
+        s["image_style"] = None
+        s["image_prompt"] = None
+        if not s.get("pexels_query"):
             return False, f"Scene {i+1} is 'video' but missing pexels_query"
-        if s["visual_type"] == "video":
-            query = re.sub(r"\s+", " ", s.get("pexels_query", "").strip().lower())
-            if query in seen_queries:
-                return False, f"Scene {i+1} repeats Pexels query '{query}'"
-            seen_queries.add(query)
-        # Default image_style to "brand" if not set
-        if s["visual_type"] == "image" and not s.get("image_style"):
-            s["image_style"] = "brand"
-        # For brand images only: ensure the cinematic style suffix is present
-        if s["visual_type"] == "image" and s.get("image_style") == "brand" and s.get("image_prompt"):
-            if re.search(r"\b(maybe|confusion|possibility)\b", s["image_prompt"], flags=re.IGNORECASE):
-                return False, f"Scene {i+1} image_prompt contains literal dialogue text"
-            if "moody editorial cinematic" not in s["image_prompt"].lower():
-                s["image_prompt"] += ", real-world photographic scene only, continuous natural background surfaces, window glass, candlelight, furniture, closed journal, hands, and shadows only, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"
+        query = re.sub(r"\s+", " ", s.get("pexels_query", "").strip().lower())
+        if query in seen_queries:
+            return False, f"Scene {i+1} repeats Pexels query '{query}'"
+        seen_queries.add(query)
     if raw_dialogue:
         expected = _dialogue_words(raw_dialogue)
         covered = _dialogue_words(" ".join(s.get("covers_dialogue", "") for s in scenes))
         if covered != expected:
             return False, "Scene dialogue coverage does not match script exactly"
-    # Thumbnail always brand — ensure cinematic style
-    thumb_prompt = manifest["thumbnail"]["image_prompt"]
-    if "moody editorial cinematic" not in thumb_prompt.lower():
-        manifest["thumbnail"]["image_prompt"] += ", real-world photographic scene only, continuous natural background surfaces, window glass, candlelight, furniture, closed journal, hands, and shadows only, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"
     return True, ""
 
 
@@ -306,32 +322,20 @@ def _build_fallback_manifest(script: dict) -> dict:
 
     scenes = []
     for idx, dialogue in enumerate(groups):
-        use_image = idx in (0, 4, len(groups) - 1)
-        stype = "reaction" if idx == 0 else ("object" if use_image else "establishing")
-        img_prompt = None
+        stype = "reaction" if idx == 0 else "establishing"
         query = fallback_query_for(dialogue, idx)
-        if use_image:
-            img_prompt = (
-                f"Editorial shot: faceless person in a candlelit apartment, "
-                f"{'closed journal and hand resting beside it' if idx == 0 else 'closed journal, empty chair, and warm practical lamp in frame'}, "
-                f"quiet intimate room, real photographed environment, continuous walls and shadows, no graphic overlay. "
-                f"{BRAND_STYLE}"
-            )
         scenes.append({
             "id": idx + 1,
             "covers_dialogue": dialogue,
-            "visual_type": "image" if use_image else "video",
-            "image_style": "brand" if use_image else None,
+            "visual_type": "video",
+            "image_style": None,
             "scene_type": stype,
-            "image_prompt": img_prompt,
+            "image_prompt": None,
             "pexels_query": query,
         })
 
     return {
-        "thumbnail": {"image_prompt":
-            f"Editorial hook frame: faceless person sitting beside a rainy window, closed journal on the table, "
-            f"empty chair in background, candlelit room, real photographed environment, continuous walls and shadows, no graphic overlay. "
-            f"{BRAND_STYLE}"},
+        "thumbnail": {"source": "selected_footage"},
         "palette": {
             "base": "#1C1C2B",
             "accent": "#C4785A",
@@ -443,7 +447,7 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
 
     raw_dialogue = build_spoken_script_text(script)
 
-    prompt = inject_strategy(DIRECTOR_PROMPT, "visuals").format(
+    prompt = inject_strategy(CLIP_ONLY_DIRECTOR_PROMPT, "visuals").format(
         raw_dialogue=raw_dialogue,
         brand_context=_load_brand_context(),
     )
@@ -492,7 +496,7 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
     img_n = sum(1 for s in manifest["scenes"] if s["visual_type"] == "image")
     vid_n = n - img_n
     fb = " [FALLBACK]" if manifest.get("fallback") else ""
-    print(f"[visual_director] Done. {n} scenes — {img_n} images, {vid_n} videos{fb}")
+    print(f"[visual_director] Done. {n} clip-only scenes{fb}")
     return manifest
 
 
@@ -513,7 +517,6 @@ def run_visual_director_mock(video_id: str, run_dir: str, config: dict) -> dict:
         groups.append(" ".join(sentences[i:i + take]))
         i += take
 
-    vtypes = ["image", "video", "video", "image", "video", "video"]
     mock_queries = [
         "phone face down",
         "rainy apartment window",
@@ -524,23 +527,14 @@ def run_visual_director_mock(video_id: str, run_dir: str, config: dict) -> dict:
     ]
     scenes = []
     for i, dialogue in enumerate(groups):
-        vtype = vtypes[i % len(vtypes)]
-        image_prompt = (
-            f"Mock cinematic stock-style relationship scene: faceless person near a rainy apartment window, "
-            f"closed journal, candlelit room, empty chair, real photographed environment, continuous walls and shadows, "
-            f"moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, "
-            f"Warm Terracotta practical light accent, unedited camera frame, no graphic overlay, "
-            f"no captions, no signage, no readable screens, "
-            f"intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"
-        )
         scenes.append({
             "id": i + 1,
             "covers_dialogue": dialogue,
-            "visual_type": vtype,
-            "image_style": "brand" if vtype == "image" else None,
+            "visual_type": "video",
+            "image_style": None,
             "scene_type": "reaction" if i == 0 else "object",
-            "image_prompt": image_prompt if vtype == "image" else None,
-            "pexels_query": mock_queries[i % len(mock_queries)] if vtype == "video" else None,
+            "image_prompt": None,
+            "pexels_query": mock_queries[i % len(mock_queries)],
             "label": f"SCENE {i + 1}",
         })
 
@@ -552,7 +546,7 @@ def run_visual_director_mock(video_id: str, run_dir: str, config: dict) -> dict:
             "text": "#F5F0E8",
             "healing": "#7BAE8A",
         },
-        "thumbnail": {"image_prompt": "Faceless person sitting beside rainy window, closed journal, candlelit room, empty chair, real photographed environment, continuous walls and shadows, unedited camera frame, no graphic overlay, no captions, no signage, no readable screens, moody editorial cinematic still, slightly desaturated warm tones, Deep Midnight base, Warm Terracotta practical light accent, intimate close-up, shallow depth of field, faceless composition, 9:16 vertical"},
+        "thumbnail": {"source": "selected_footage"},
         "scenes": scenes,
         "total_scenes": len(scenes),
         "voice_duration": voice_duration,

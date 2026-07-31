@@ -4,6 +4,7 @@ import time
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.notify import send_auth_expiry_alert
+from utils.publish_schedule import youtube_publish_at
 from utils.youtube_tags import sanitize_youtube_tags
 
 try:
@@ -84,7 +85,8 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
     metadata = load_json(os.path.join(run_dir, "07_metadata.json"))
     script = load_json(os.path.join(run_dir, "02_script.json"))
     video_path = os.path.join(run_dir, "06_final_video.mp4")
-    thumbnail_path = os.path.join(run_dir, "05_thumbnail.png")
+    if not config.get("public_release_enabled", False):
+        print("[uploader] Safety gate active: upload will remain private")
 
     youtube = _get_youtube_client()
 
@@ -95,6 +97,11 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
     )
     print(f"[uploader] {len(tags)} tags, {sum(len(t) for t in tags)} chars")
 
+    publish_at = youtube_publish_at(config, "shorts")
+    privacy_status = "private"
+    status_body = {"privacyStatus": privacy_status, "selfDeclaredMadeForKids": False}
+    if publish_at:
+        status_body["publishAt"] = publish_at
     body = {
         "snippet": {
             "title": metadata["title"],
@@ -104,10 +111,7 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
             "defaultAudioLanguage": "en",
             "defaultLanguage": "en",
         },
-        "status": {
-            "privacyStatus": metadata.get("privacy_status", config.get("privacy_status", "private")),
-            "selfDeclaredMadeForKids": False,
-        },
+        "status": status_body,
     }
 
     media = MediaFileUpload(video_path, mimetype="video/mp4", resumable=True, chunksize=10 * 1024 * 1024)
@@ -122,19 +126,19 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
     youtube_video_id = response["id"]
     youtube_url = f"https://youtube.com/shorts/{youtube_video_id}"
 
+    # YouTube does not support normal custom-thumbnail upload for Shorts.
     thumbnail_set = False
-    if os.path.exists(thumbnail_path):
-        thumbnail_set = _set_thumbnail_with_retry(youtube, youtube_video_id, thumbnail_path)
 
     engagement_question = script.get("engagement_question", "")
-    comment_id = _post_engagement_comment(youtube, youtube_video_id, engagement_question)
+    comment_id = None
 
     result = {
         "video_id": video_id,
         "youtube_video_id": youtube_video_id,
         "youtube_url": youtube_url,
         "title": metadata["title"],
-        "privacy_status": metadata.get("privacy_status", config.get("privacy_status", "private")),
+        "privacy_status": privacy_status,
+        "publish_at": publish_at,
         "thumbnail_set": thumbnail_set,
         "engagement_comment_id": comment_id,
         "uploaded_at": now_iso(),

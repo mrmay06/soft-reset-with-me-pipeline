@@ -8,6 +8,7 @@ from utils.gemini_client import generate_json
 from utils.helpers import load_json, save_json, now_iso
 from utils.performance_insights import summarize_performance_for_prompt
 from utils.retry import retry
+from utils.weekly_direction import weekly_direction_prompt
 
 
 def _is_too_similar(topic: str, recent_topics: list[str], threshold: float) -> tuple[bool, str]:
@@ -130,6 +131,9 @@ def run_longform_research(video_id: str, run_dir: str, config: dict) -> dict:
         recent_topics=_recent_topics(config.get("topic_memory_file", "topic_memory_soft_reset_long.json")),
         performance_insights=performance_insights,
     )
+    direction = weekly_direction_prompt()
+    if direction:
+        prompt += f"\n\n{direction}"
     try:
         result = _generate_longform_topic(prompt, config["research_model"])
     except Exception as exc:

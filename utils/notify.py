@@ -127,17 +127,17 @@ Prompt preview:
         )
 
     body = f"""
-Longform Video Published — {video_id}
+Longform Thumbnail Package Ready — {video_id}
 {'='*48}
 Title:       {title}
-URL:         {youtube_url}
+Upload:      {youtube_url}
 Primary:     Variant {primary_id}
 Time:        {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}
 
 YouTube Studio Test & Compare package:
 Upload the attached A/B/C thumbnails in this order if you want to run native thumbnail testing.
-The exact image-generation prompt files are attached beside the thumbnail PNGs.
-YouTube's public API only sets one thumbnail, so the pipeline uploaded the primary variant and attached all variants here for manual Studio testing.
+The exact footage-edit brief files are attached beside the thumbnail PNGs.
+No response is required; the private-test pipeline continues automatically.
 
 {'='*48}
 Title + thumbnail variants:
@@ -146,7 +146,7 @@ Title + thumbnail variants:
 Description preview:
 {str(metadata.get("description", ""))[:700]}
 """
-    _send_email_with_attachments(f"{SUBJECT_PREFIX} Longform Published: {title[:50]}", body, attachments)
+    _send_email_with_attachments(f"{SUBJECT_PREFIX} Thumbnail package ready: {title[:50]}", body, attachments)
 
 
 def send_auth_expiry_alert(service: str):

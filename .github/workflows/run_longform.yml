@@ -1,21 +1,9 @@
-name: Soft Reset Daily Shorts
+name: Soft Reset Weekly Long Video
 
 on:
   schedule:
-    # 6:00 AM America/New_York, with a timezone gate for DST.
-    - cron: '0 10 * * 0'
-    - cron: '0 10 * * 1'
-    - cron: '0 10 * * 2'
-    - cron: '0 10 * * 3'
-    - cron: '0 10 * * 4'
-    - cron: '0 10 * * 5'
+    # Saturday 6:00 AM America/New_York, with a timezone gate for DST.
     - cron: '0 10 * * 6'
-    - cron: '0 11 * * 0'
-    - cron: '0 11 * * 1'
-    - cron: '0 11 * * 2'
-    - cron: '0 11 * * 3'
-    - cron: '0 11 * * 4'
-    - cron: '0 11 * * 5'
     - cron: '0 11 * * 6'
   workflow_dispatch:
     inputs:
@@ -26,15 +14,15 @@ on:
         type: boolean
 
 concurrency:
-  group: soft-reset-daily-shorts
+  group: soft-reset-weekly-longform
   cancel-in-progress: false
 
 jobs:
-  run-shorts:
+  run-longform:
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 180
     permissions:
-      contents: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - name: Check automation and DST gate
@@ -45,10 +33,10 @@ jobs:
           from datetime import datetime
           from zoneinfo import ZoneInfo
           event = os.environ.get('GITHUB_EVENT_NAME', '')
-          config = json.load(open('config/pipeline_config.json'))
+          config = json.load(open('config/longform_config.json'))
           now = datetime.now(ZoneInfo('America/New_York'))
           enabled = bool(config.get('automation_enabled', False))
-          should_run = event != 'schedule' or (enabled and now.hour == 6)
+          should_run = event != 'schedule' or (enabled and now.weekday() == 5 and now.hour == 6)
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               out.write(f"should_run={str(should_run).lower()}\n")
           print(f"should_run={should_run} automation_enabled={enabled} local={now.isoformat()}")
@@ -60,21 +48,19 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - if: steps.gate.outputs.should_run == 'true'
         run: pip install -r requirements.txt
-      - name: Validate configuration
-        if: steps.gate.outputs.should_run == 'true'
-        run: python tools/validate_schedule.py && python tools/validate_memory_files.py
-      - name: Generate private-test Short
+      - name: Generate private-test long video
         if: steps.gate.outputs.should_run == 'true'
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mock }}" = "true" ]; then
-            python main.py --mock --fresh --skip-upload
+            python main_long.py --mock --fresh
           else
-            python main.py --fresh
+            python main_long.py --fresh
           fi
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          COVERR_API_KEY: ${{ secrets.COVERR_API_KEY }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
@@ -85,7 +71,7 @@ jobs:
         if: always() && steps.gate.outputs.should_run == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: soft-reset-short-${{ github.run_id }}
-          path: workspace/run_*/
+          name: soft-reset-long-${{ github.run_id }}
+          path: workspace/run_long_*/
           if-no-files-found: warn
           retention-days: 7
