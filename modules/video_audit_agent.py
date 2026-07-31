@@ -8,6 +8,8 @@ from utils.helpers import load_json, save_json, now_iso
 
 
 AUDIT_FILE = "09_video_audit.json"
+AUDIT_VERSION = 2
+BLOCKING_SEVERITIES = {"high", "critical"}
 
 
 def _load_optional(path: str, default):
@@ -62,13 +64,14 @@ def _prompt(context: dict) -> str:
         "that YouTube Analytics cannot show.\n\n"
         "Return ONLY valid JSON with this schema:\n"
         "{\n"
-        '  "audit_version": 1,\n'
+        '  "audit_version": 2,\n'
         '  "first_2_seconds": {"score": 0-10, "notes": "..."},\n'
         '  "hook_title_alignment": {"score": 0-10, "notes": "..."},\n'
         '  "caption_pacing": {"score": 0-10, "notes": "..."},\n'
         '  "visual_specificity": {"score": 0-10, "notes": "..."},\n'
         '  "emotional_tone": {"score": 0-10, "notes": "..."},\n'
         '  "audio_mix": {"score": 0-10, "notes": "..."},\n'
+        '  "blocking_visual_mismatches": [{"scene_id": 1, "timestamp": "00:00-00:03", "narration": "...", "observed_visual": "...", "severity": "high|critical", "confidence": "high", "reason": "..."}],\n'
         '  "likely_dropoff_causes": ["..."],\n'
         '  "underrated_strengths": ["..."],\n'
         '  "repeat_next": ["..."],\n'
@@ -77,9 +80,45 @@ def _prompt(context: dict) -> str:
         '  "summary": "one concise paragraph",\n'
         '  "confidence": "low|medium|high"\n'
         "}\n\n"
+        "A blocking visual mismatch must reverse or materially undermine the narration. "
+        "Generic but emotionally compatible footage is not blocking. Include only high-confidence "
+        "high/critical mismatches, and use scene_id values from SCENE MAP. Return an empty list when none exist.\n\n"
         "Pipeline context:\n"
-        f"{json.dumps(context, indent=2)[:6000]}"
+        f"{json.dumps(context, indent=2)[:12000]}"
     )
+
+
+def public_release_blockers(audit: dict, valid_scene_ids: set[int]) -> list[dict]:
+    """Validate a public-release audit and return its actionable contradictions."""
+    if not isinstance(audit, dict) or audit.get("status") != "ok":
+        status = audit.get("status", "invalid") if isinstance(audit, dict) else "invalid"
+        raise RuntimeError(f"Video audit is not usable for public release (status={status})")
+    if int(audit.get("audit_version", 0) or 0) < AUDIT_VERSION:
+        raise RuntimeError("Video audit uses an obsolete schema; rerun the audit before public release")
+    raw = audit.get("blocking_visual_mismatches")
+    if not isinstance(raw, list):
+        raise RuntimeError("Video audit is missing blocking_visual_mismatches")
+
+    blockers: list[dict] = []
+    for item in raw:
+        if not isinstance(item, dict):
+            raise RuntimeError("Video audit returned a malformed visual mismatch")
+        try:
+            scene_id = int(item.get("scene_id"))
+        except (TypeError, ValueError) as exc:
+            raise RuntimeError("Video audit returned a mismatch without a valid scene_id") from exc
+        severity = str(item.get("severity", "")).lower()
+        confidence = str(item.get("confidence", "")).lower()
+        if scene_id not in valid_scene_ids:
+            raise RuntimeError(f"Video audit referenced unknown scene_id={scene_id}")
+        if severity not in BLOCKING_SEVERITIES or confidence != "high":
+            raise RuntimeError(
+                "blocking_visual_mismatches may contain only high-confidence high/critical items"
+            )
+        normalized = dict(item)
+        normalized.update({"scene_id": scene_id, "severity": severity, "confidence": confidence})
+        blockers.append(normalized)
+    return blockers
 
 
 def _empty_result(video_id: str, status: str, reason: str) -> dict:
@@ -112,6 +151,19 @@ def run_video_audit(video_id: str, run_dir: str, config: dict) -> dict:
         model = genai.GenerativeModel(model_name)
         context = {
             "video_id": video_id,
+            "scene_map": [
+                {
+                    "scene_id": int(scene.get("id")),
+                    "covers_dialogue": scene.get("covers_dialogue", ""),
+                    "requested_query": scene.get("pexels_query", ""),
+                    "selected_clip": (
+                        _load_optional(os.path.join(run_dir, "03_asset_meta.json"), {})
+                        .get("assets", {})
+                        .get(f"scene_{scene.get('id')}", {})
+                    ),
+                }
+                for scene in _load_optional(os.path.join(run_dir, "03b_scene_manifest.json"), {}).get("scenes", [])
+            ],
             "research": _load_optional(os.path.join(run_dir, "01_research.json"), {}),
             "script": _load_optional(os.path.join(run_dir, "02_script.json"), {}),
             "metadata": _load_optional(os.path.join(run_dir, "07_metadata.json"), {}),
@@ -143,7 +195,8 @@ def run_video_audit_mock(video_id: str, run_dir: str, config: dict) -> dict:
     result = {
         "video_id": video_id,
         "status": "mock",
-        "audit_version": 1,
+        "audit_version": AUDIT_VERSION,
+        "blocking_visual_mismatches": [],
         "summary": "Mock video audit skipped.",
         "generated_at": now_iso(),
     }

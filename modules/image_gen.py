@@ -301,6 +301,132 @@ def run_image_gen(video_id: str, run_dir: str, config: dict) -> dict:
     return meta
 
 
+def repair_scene_clips(
+    video_id: str,
+    run_dir: str,
+    config: dict,
+    scene_ids: list[int],
+    attempt: int,
+) -> dict:
+    """Replace only rejected scenes while excluding every previously selected clip."""
+    manifest = load_json(os.path.join(run_dir, "03b_scene_manifest.json"))
+    all_scenes = manifest.get("scenes", [])
+    wanted = {int(scene_id) for scene_id in scene_ids}
+    scenes = [scene for scene in all_scenes if int(scene.get("id", -1)) in wanted]
+    if not scenes or {int(scene["id"]) for scene in scenes} != wanted:
+        raise RuntimeError(f"Cannot repair unknown scene IDs: {sorted(wanted)}")
+
+    meta_path = os.path.join(run_dir, "03_asset_meta.json")
+    meta = load_json(meta_path)
+    assets = meta.get("assets", {})
+    memory_path = config.get("clip_memory_file", CLIP_MEMORY_FILE)
+    memory = _load_clip_memory(memory_path)
+    hard_days = int(config.get("clip_reuse_hard_block_days", HARD_REUSE_DAYS))
+    remembered_hashes = {
+        str(item.get("file_hash")) for item in memory
+        if item.get("file_hash") and _age_days(str(item.get("used_at", ""))) <= hard_days
+    }
+    remembered_frame_hashes = [
+        str(item.get("perceptual_hash")) for item in memory
+        if item.get("perceptual_hash") and _age_days(str(item.get("used_at", ""))) <= hard_days
+    ]
+    rejected_ids = set(str(item) for item in meta.get("rejected_provider_ids", []))
+    for scene_id in wanted:
+        current = assets.get(f"scene_{scene_id}", {})
+        if current.get("provider_id"):
+            rejected_ids.add(str(current["provider_id"]))
+
+    used_provider_ids = {
+        str(asset.get("provider_id"))
+        for key, asset in assets.items()
+        if int(key.replace("scene_", "")) not in wanted and asset.get("provider_id")
+    }
+    used_hashes = {
+        str(asset.get("file_hash"))
+        for key, asset in assets.items()
+        if int(key.replace("scene_", "")) not in wanted and asset.get("file_hash")
+    }
+    used_frame_hashes = [
+        str(asset.get("perceptual_hash"))
+        for key, asset in assets.items()
+        if int(key.replace("scene_", "")) not in wanted and asset.get("perceptual_hash")
+    ]
+
+    pools = _build_pools(scenes, memory, config)
+    for scene_id, candidates in pools.items():
+        pools[scene_id] = [
+            candidate for candidate in candidates
+            if str(candidate.get("provider_id")) not in rejected_ids | used_provider_ids
+        ]
+    ranked = _assign_globally(scenes, pools, memory, config)
+    assets_dir = os.path.join(run_dir, "03_images")
+    os.makedirs(assets_dir, exist_ok=True)
+    hash_distance = int(config.get("clip_perceptual_hash_distance", 5))
+    new_memory: list[dict] = []
+
+    for scene in scenes:
+        scene_id = int(scene["id"])
+        output_path = os.path.join(assets_dir, f"scene_{scene_id}.mp4")
+        selected = None
+        for candidate in ranked[scene_id]:
+            if str(candidate["provider_id"]) in used_provider_ids:
+                continue
+            file_hash = _download(candidate, output_path)
+            frame_path = os.path.join(assets_dir, f"scene_{scene_id}_preview.jpg")
+            perceptual_hash = _frame_hash(output_path, frame_path)
+            if file_hash in used_hashes or file_hash in remembered_hashes or any(
+                _hash_distance(perceptual_hash, prior) <= hash_distance
+                for prior in used_frame_hashes + remembered_frame_hashes
+            ):
+                rejected_ids.add(str(candidate["provider_id"]))
+                continue
+            selected = candidate
+            used_provider_ids.add(str(candidate["provider_id"]))
+            used_hashes.add(file_hash)
+            used_frame_hashes.append(perceptual_hash)
+            break
+        if selected is None:
+            raise RuntimeError(f"Visual repair failed: no distinct replacement for scene {scene_id}")
+
+        assets[f"scene_{scene_id}"] = {
+            "type": "video",
+            "source": selected["provider"],
+            "path": os.path.relpath(output_path, start=run_dir),
+            "provider_id": selected["provider_id"],
+            "source_url": selected["source_url"],
+            "query": selected["query"],
+            "file_hash": file_hash,
+            "perceptual_hash": perceptual_hash,
+            "selection_score": _candidate_score(selected, set(), set()),
+            "repair_attempt": attempt,
+        }
+        new_memory.append({
+            "provider": selected["provider"],
+            "provider_id": selected["provider_id"],
+            "source_url": selected["source_url"],
+            "file_hash": file_hash,
+            "perceptual_hash": perceptual_hash,
+            "query": selected["query"],
+            "video_id": video_id,
+            "scene_id": scene_id,
+            "used_at": now_iso(),
+            "repair_attempt": attempt,
+        })
+        print(f"[clip_selector] repaired scene_{scene_id}: Pexels {selected['provider_id']}")
+
+    meta["assets"] = assets
+    meta["rejected_provider_ids"] = sorted(rejected_ids)
+    meta.setdefault("repair_history", []).append({
+        "attempt": attempt,
+        "scene_ids": sorted(wanted),
+        "generated_at": now_iso(),
+    })
+    meta["selection_strategy"] = "global_clip_only_v1_with_visual_repair"
+    save_json(meta, meta_path)
+    save_json((memory + new_memory)[-1000:], memory_path)
+    return meta
+
+
 def _make_mock_clip(path: str, label: str, duration: float = 4.0) -> None:
     safe_label = re.sub(r"[^A-Za-z0-9 _-]", "", label)[:30] or "SCENE"
     subprocess.run(

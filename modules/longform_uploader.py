@@ -100,6 +100,7 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
 
     publish_at = youtube_publish_at(config, "longform")
     privacy_status = "private"
+    release_status = "scheduled_public" if publish_at else "private"
     if not publish_at:
         print("[longform_uploader] Safety gate active: upload will remain private")
     status_body = {"privacyStatus": privacy_status, "selfDeclaredMadeForKids": False}
@@ -163,6 +164,7 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
         "title": metadata["title"],
         "primary_variant_id": metadata.get("primary_variant_id", ""),
         "privacy_status": privacy_status,
+        "release_status": release_status,
         "publish_at": publish_at,
         "thumbnail_set": thumbnail_set,
         "engagement_comment_id": comment_id,

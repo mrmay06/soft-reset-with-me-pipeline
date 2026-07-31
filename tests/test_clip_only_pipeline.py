@@ -8,12 +8,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from modules.image_gen import _assign_globally, _hash_distance
+from modules.video_audit_agent import public_release_blockers
 from modules.creative_judge import _hard_failures, _script_evidence, run_creative_judge
 from modules.longform_thumbnail_agent import _pick_thumbnail_frames, _select_primary_variant, _variant_copy
 from modules.longform_video_assembler import _planned_final_duration
 from modules.longform_script_agent import _blocking_script_issues, _validate_script as validate_longform_script
 from modules.script_agent import _validate_script as validate_short_script
 from modules.visual_director import _validate_manifest
+from main import _run_public_visual_gate
 from main_long import _enforce_longform_script_gate
 from utils.weekly_direction import load_weekly_direction, weekly_direction_prompt
 from utils.publish_schedule import youtube_publish_at
@@ -23,11 +25,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SafetyConfigTests(unittest.TestCase):
-    def test_both_tracks_are_paused_and_private(self):
+    def test_both_tracks_are_automated_scheduled_public(self):
         for relative in ("config/pipeline_config.json", "config/longform_config.json"):
             config = json.loads((ROOT / relative).read_text())
-            self.assertFalse(config["automation_enabled"])
-            self.assertFalse(config["public_release_enabled"])
+            self.assertTrue(config["automation_enabled"])
+            self.assertTrue(config["public_release_enabled"])
+            self.assertEqual(config["publish_mode"], "scheduled_public")
+            # YouTube requires scheduled videos to be private at insertion time.
             self.assertEqual(config["privacy_status"], "private")
 
     def test_release_schedule_uses_configured_et_times(self):
@@ -191,6 +195,106 @@ class ClipSelectionTests(unittest.TestCase):
     def test_perceptual_hash_distance(self):
         self.assertEqual(_hash_distance("0000000000000000", "0000000000000000"), 0)
         self.assertEqual(_hash_distance("0000000000000000", "000000000000000f"), 4)
+
+    def test_public_video_audit_accepts_empty_blocker_list(self):
+        audit = {"status": "ok", "audit_version": 2, "blocking_visual_mismatches": []}
+        self.assertEqual(public_release_blockers(audit, {1, 2}), [])
+
+    def test_public_video_audit_returns_scene_addressable_blocker(self):
+        mismatch = {
+            "scene_id": 2,
+            "severity": "high",
+            "confidence": "high",
+            "reason": "The smiling celebration reverses the narration.",
+        }
+        audit = {"status": "ok", "audit_version": 2, "blocking_visual_mismatches": [mismatch]}
+        self.assertEqual(public_release_blockers(audit, {1, 2})[0]["scene_id"], 2)
+
+    def test_public_video_audit_fails_closed_on_soft_failure(self):
+        with self.assertRaisesRegex(RuntimeError, "not usable"):
+            public_release_blockers({"status": "soft_failed"}, {1})
+
+    def test_public_video_audit_rejects_unknown_scene(self):
+        audit = {
+            "status": "ok",
+            "audit_version": 2,
+            "blocking_visual_mismatches": [{
+                "scene_id": 99,
+                "severity": "critical",
+                "confidence": "high",
+            }],
+        }
+        with self.assertRaisesRegex(RuntimeError, "unknown scene"):
+            public_release_blockers(audit, {1})
+
+    def test_public_visual_gate_repairs_then_passes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run_dir = Path(temp)
+            (run_dir / "03b_scene_manifest.json").write_text(json.dumps({"scenes": [{"id": 2}]}))
+            (run_dir / "09_video_audit.json").write_text(json.dumps({
+                "status": "ok",
+                "audit_version": 2,
+                "blocking_visual_mismatches": [{
+                    "scene_id": 2,
+                    "severity": "high",
+                    "confidence": "high",
+                    "reason": "Contradictory expression",
+                }],
+            }))
+            calls = []
+
+            def repair(*args):
+                calls.append(args[3:])
+
+            def audit(*args):
+                (run_dir / "09_video_audit.json").write_text(json.dumps({
+                    "status": "ok",
+                    "audit_version": 2,
+                    "blocking_visual_mismatches": [],
+                }))
+
+            _run_public_visual_gate(
+                "test",
+                temp,
+                {"public_release_enabled": True, "video_audit_max_visual_repairs": 2, "creative_judge_enabled": False},
+                audit,
+                repair,
+                lambda *args: None,
+                lambda *args: None,
+                lambda *args: None,
+            )
+            self.assertEqual(calls, [([2], 1)])
+
+    def test_public_visual_gate_stops_after_bounded_repairs(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run_dir = Path(temp)
+            (run_dir / "03b_scene_manifest.json").write_text(json.dumps({"scenes": [{"id": 1}]}))
+            audit = {
+                "status": "ok",
+                "audit_version": 2,
+                "blocking_visual_mismatches": [{
+                    "scene_id": 1,
+                    "severity": "critical",
+                    "confidence": "high",
+                    "reason": "Opposite action",
+                }],
+            }
+            (run_dir / "09_video_audit.json").write_text(json.dumps(audit))
+
+            def rerun_audit(*args):
+                (run_dir / "09_video_audit.json").write_text(json.dumps(audit))
+
+            with self.assertRaisesRegex(RuntimeError, "after 1 repairs"):
+                _run_public_visual_gate(
+                    "test",
+                    temp,
+                    {"public_release_enabled": True, "video_audit_max_visual_repairs": 1, "creative_judge_enabled": False},
+                    rerun_audit,
+                    lambda *args: None,
+                    lambda *args: None,
+                    lambda *args: None,
+                    lambda *args: None,
+                )
 
     def test_manifest_normalizes_legacy_image_response_to_video(self):
         manifest = {

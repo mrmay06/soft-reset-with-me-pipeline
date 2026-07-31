@@ -63,7 +63,7 @@ jobs:
       - name: Validate configuration
         if: steps.gate.outputs.should_run == 'true'
         run: python tools/validate_schedule.py && python tools/validate_memory_files.py
-      - name: Generate private-test Short
+      - name: Generate scheduled-public Short
         if: steps.gate.outputs.should_run == 'true'
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mock }}" = "true" ]; then
@@ -81,7 +81,7 @@ jobs:
           ALERT_EMAIL_FROM: ${{ secrets.ALERT_EMAIL_FROM }}
           ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
           ALERT_EMAIL_PASSWORD: ${{ secrets.ALERT_EMAIL_PASSWORD }}
-      - name: Upload test artifacts
+      - name: Upload run artifacts
         if: always() && steps.gate.outputs.should_run == 'true'
         uses: actions/upload-artifact@v4
         with:

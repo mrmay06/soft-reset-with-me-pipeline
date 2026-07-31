@@ -48,7 +48,7 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - if: steps.gate.outputs.should_run == 'true'
         run: pip install -r requirements.txt
-      - name: Generate private-test long video
+      - name: Generate scheduled-public long video
         if: steps.gate.outputs.should_run == 'true'
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mock }}" = "true" ]; then
@@ -67,7 +67,7 @@ jobs:
           ALERT_EMAIL_FROM: ${{ secrets.ALERT_EMAIL_FROM }}
           ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
           ALERT_EMAIL_PASSWORD: ${{ secrets.ALERT_EMAIL_PASSWORD }}
-      - name: Upload test artifacts
+      - name: Upload run artifacts
         if: always() && steps.gate.outputs.should_run == 'true'
         uses: actions/upload-artifact@v4
         with:

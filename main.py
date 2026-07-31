@@ -22,7 +22,7 @@ from modules.research_agent import run_research, run_research_mock
 from modules.script_agent import run_script, run_script_mock
 from modules.tts import run_tts, run_tts_mock
 from modules.visual_director import run_visual_director, run_visual_director_mock
-from modules.image_gen import run_image_gen, run_image_gen_mock
+from modules.image_gen import repair_scene_clips, run_image_gen, run_image_gen_mock
 from modules.caption_agent import run_captions, run_captions_mock
 from modules.thumbnail_agent import run_thumbnail, run_thumbnail_mock
 from modules.video_assembler import run_assembler, run_assembler_mock
@@ -30,7 +30,7 @@ from modules.metadata_agent import run_metadata, run_metadata_mock
 from modules.uploader import run_upload, run_upload_mock
 from modules.logger import run_logger, run_logger_mock
 from modules.creative_judge import run_creative_judge, run_creative_judge_mock
-from modules.video_audit_agent import run_video_audit, run_video_audit_mock
+from modules.video_audit_agent import public_release_blockers, run_video_audit, run_video_audit_mock
 from utils.youtube_preflight import check_youtube_refresh_token
 
 
@@ -89,6 +89,47 @@ def _enforce_creative_judge_gate(run_dir: str):
             "Creative judge blocked upload. "
             f"Hard failures: {failures}. Review {judge_path}, fix the issue, then rerun."
         )
+
+
+def _run_public_visual_gate(
+    video_id: str,
+    run_dir: str,
+    config: dict,
+    audit_fn,
+    repair_fn,
+    thumbnail_fn,
+    assembler_fn,
+    judge_fn,
+):
+    """Repair high-confidence narration/visual contradictions before public upload."""
+    if not config.get("public_release_enabled", False):
+        return
+    manifest = load_json(os.path.join(run_dir, "03b_scene_manifest.json"))
+    valid_scene_ids = {int(scene["id"]) for scene in manifest.get("scenes", [])}
+    max_repairs = max(0, int(config.get("video_audit_max_visual_repairs", 2)))
+
+    for attempt in range(max_repairs + 1):
+        audit = load_json(os.path.join(run_dir, "09_video_audit.json"))
+        blockers = public_release_blockers(audit, valid_scene_ids)
+        if not blockers:
+            print("[video_audit] Public release gate passed")
+            return
+        if attempt >= max_repairs:
+            reasons = [item.get("reason", "visual contradiction") for item in blockers]
+            raise RuntimeError(
+                f"Video audit blocked public upload after {max_repairs} repairs: {reasons}"
+            )
+
+        scene_ids = sorted({int(item["scene_id"]) for item in blockers})
+        repair_number = attempt + 1
+        print(f"[video_audit] Repair {repair_number}/{max_repairs} for scenes {scene_ids}")
+        repair_fn(video_id, run_dir, config, scene_ids, repair_number)
+        thumbnail_fn(video_id, run_dir, config)
+        assembler_fn(video_id, run_dir, config)
+        if config.get("creative_judge_enabled", True):
+            judge_fn(video_id, run_dir, config)
+            _enforce_creative_judge_gate(run_dir)
+        audit_fn(video_id, run_dir, config)
 
 
 # ── Main ────────────────────────────────────────────────────────────────────
@@ -184,6 +225,19 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
 
         if config.get("video_audit_enabled", True):
             _run("Module 8B — Video Audit", audit_fn, video_id, run_dir, config, checkpoint_files=["09_video_audit.json"])
+            if not mock:
+                _run_public_visual_gate(
+                    video_id,
+                    run_dir,
+                    config,
+                    audit_fn,
+                    repair_scene_clips,
+                    thumbnail_fn,
+                    assembler_fn,
+                    judge_fn,
+                )
+        elif not mock and config.get("public_release_enabled", False):
+            raise RuntimeError("Public release requires video_audit_enabled=true")
 
         if skip_upload:
             run_upload_mock(video_id, run_dir, config)

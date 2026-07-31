@@ -260,7 +260,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
             send_longform_upload_confirmation(
                 video_id=video_id,
                 title=load_json(os.path.join(run_dir, "03_longform_metadata.json"))["title"],
-                youtube_url="Not uploaded yet — private-test upload follows automatically",
+                youtube_url="Not uploaded yet — scheduled-public upload follows automatically",
                 metadata=load_json(os.path.join(run_dir, "03_longform_metadata.json")),
                 thumbnail_meta=load_json(os.path.join(run_dir, "07_longform_thumbnail_meta.json")),
                 run_dir=run_dir,

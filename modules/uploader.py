@@ -99,6 +99,7 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
 
     publish_at = youtube_publish_at(config, "shorts")
     privacy_status = "private"
+    release_status = "scheduled_public" if publish_at else "private"
     status_body = {"privacyStatus": privacy_status, "selfDeclaredMadeForKids": False}
     if publish_at:
         status_body["publishAt"] = publish_at
@@ -138,6 +139,7 @@ def run_upload(video_id: str, run_dir: str, config: dict) -> dict:
         "youtube_url": youtube_url,
         "title": metadata["title"],
         "privacy_status": privacy_status,
+        "release_status": release_status,
         "publish_at": publish_at,
         "thumbnail_set": thumbnail_set,
         "engagement_comment_id": comment_id,
