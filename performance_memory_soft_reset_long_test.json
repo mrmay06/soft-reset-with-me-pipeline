@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-07-31T12:51:29Z",
+  "lookback_days": 90,
+  "min_video_age_days": 3,
+  "refresh_interval_days": 7,
+  "start_date": "2026-05-01",
+  "end_date": "2026-07-30",
+  "videos": []
+}

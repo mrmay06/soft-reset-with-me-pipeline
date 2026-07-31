@@ -61,5 +61,317 @@
     "thumbnail": "07_longform_thumbnail.png",
     "youtube_video_id": "",
     "youtube_url": ""
+  },
+  {
+    "video_id": "long_20260731_111704",
+    "published_date": "2026-07-31",
+    "status": "uploaded",
+    "topic": "The Silent Cost of Self-Editing: When You're Afraid to Be 'Too Much' in Love",
+    "working_title": "When You're Afraid to Be 'Too Much': The Silent Cost of Self-Editing for Love",
+    "content_pillar": "relationship patterns",
+    "category": "relationship patterns",
+    "angle_type": "emotional_deep_dive",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "The fear of being 'too much' often leads us to quietly self-edit our authentic selves in relationships, sacrificing true intimacy out of a learned pattern of protection, but finding the right connection means finding someone who makes that fear irrelevant.",
+    "editorial_seed": "This video explores the subtle, often subconscious ways we trim down our true selves in relationships, convinced we're protecting others from our intensity or complexity. It dives into the quiet moments we hold back a thought, a feeling, or an experience, not because it's inappropriate, but because we fear being a burden. We'll uncover why this pattern emerges and how it hinders genuine connection, offering a path to gently unlearn it.",
+    "only_soft_reset_line": "The right person won't make you feel like you passed a test by being less \u2014 they'll make you forget you were ever keeping score.",
+    "word_count": 381,
+    "estimated_duration_sec": 147.5,
+    "argument_quality": "strong",
+    "final_duration_sec": 126.77,
+    "render_validation": "passed",
+    "title": "Your 'too much' isn't the problem. Your silence is",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why sharing less leaves you feeling more alone in love"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You're afraid to be 'too much', so you feel quietly empty"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "Your 'too much' isn't the problem. Your silence is"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "pure_typography",
+        "structure": "typography",
+        "line1": "WHY DO I HIDE",
+        "line2": "when i want connection",
+        "thumbnail_text": "WHY DO I HIDE / when i want connection",
+        "visual_prompt": "Premium editorial book-cover typography on a dark charcoal background. Minimalist, clean, cool-neutral color palette. No photographic elements. Focus on elegant, subdued aesthetic."
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "face_right_text_left",
+        "structure": "face_text",
+        "line1": "IT FEELS SAFER",
+        "line2": "to not be yourself",
+        "thumbnail_text": "IT FEELS SAFER / to not be yourself",
+        "visual_prompt": "A close-up portrait of a young adult woman, mid-twenties to early thirties, with a quiet, introspective and slightly devastated expression. Her heavy eyes are gazing slightly towards the left. Soft, diffused cool-neutral window light illuminates her face, revealing real skin texture with subtle film grain. The color grade is desaturated, like a prestige drama. Her head and shoulders fill the right 58% of the 16:9 frame. The left 42% of the frame is a clean, deep charcoal text zone, free of any visual elements.",
+        "subject_gender": "woman",
+        "portrait_scene": "A close-up portrait of a young adult woman, mid-twenties to early thirties, with a quiet, introspective and slightly devastated expression. Her heavy eyes are gazing slightly towards the left. Soft, diffused cool-neutral window light illuminates her face, revealing real skin texture with subtle film grain. The color grade is desaturated, like a prestige drama. Her head and shoulders fill the right 58% of the 16:9 frame. The left 42% of the frame is a clean, deep charcoal text zone, free of any visual elements."
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "split_screen",
+        "structure": "split",
+        "line1": "YOU'RE NOT TOO MUCH",
+        "line2": "it's your quiet fear",
+        "thumbnail_text": "YOU'RE NOT TOO MUCH / it's your quiet fear",
+        "visual_prompt": "A split-screen composite image, 16:9 aspect ratio. Left side: A solitary figure, gender neutral, viewed from behind or side, sitting in a dimly lit, cold room, hunched slightly, looking distant and isolated. The scene is dark, desaturated, evoking unresolved emotional state. Right side: A close-up of hands, gently holding a simple, warm-toned ceramic mug, suggesting comfort. The lighting is cool-neutral, steady, and clear, with a subtle film grain, indicating quiet peace and clarity, not overly bright or overtly happy.",
+        "scene_left": "A solitary figure (gender neutral) sitting alone in a dimly lit room, hunched slightly, looking distant. Cold, dark, desaturated tones, evoking isolation and unresolved emotional state.",
+        "scene_right": "A close-up of hands gently holding a warm, but not bright, mug. The light is cool-neutral, steady, and clear, suggesting a moment of quiet peace or clarity. Not overly bright or happy, but calm and resolved."
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "pJ8iVIou16g",
+    "youtube_url": "https://www.youtube.com/watch?v=pJ8iVIou16g",
+    "privacy_status": "private",
+    "uploaded_at": "2026-07-31T11:27:21Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W31",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The Silent Cost of Self-Editing: When You're Afraid to Be 'T",
+      "visual_style_mix": "balanced",
+      "video_length_band": "60s_3min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 29
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook challenges a common internal belief ('too much') and offers a direct counterpoint ('your silence is'), immediately creating intrigue. It's a good entry point but could be slightly more direct in its initial question or statement."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script is generally clear and easy to follow, articulating the idea that expressing one's true self, even if perceived as 'too much,' is more conducive to deep connection than suppressing it. The language is accessible and relatable."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The POV is strong and consistent, advocating for authentic self-expression and challenging the fear of being a burden. It aligns well with a self-growth channel's perspective on relationships and personal development."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'villain' is identified as the fear of being 'too much' leading to silence. While relatable, the mechanism could be slightly more fleshed out in terms of how this fear manifests specifically in interactions or relationships beyond just internal anxiety."
+      },
+      "cta_quality": {
+        "score": 0,
+        "reason": "No CTA was provided or evident in the script details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the core message: the problem isn't the 'too muchness' itself, but the lack of open expression. It's concise and intriguing."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description provides a good continuation of the hook and title, setting the stage for the video's theme of finding compatible partners who embrace, rather than diminish, one's full self."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "With 29 stock video scenes for a 127-second video, there's a high potential for visual coverage. Assuming the stock footage is thoughtfully chosen, it should generally support the dialogue. However, the lack of unique brand imagery might limit deeper resonance."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "The use of 29 stock videos suggests an effort to visually illustrate points. The strength lies in providing visual support. However, the absence of brand images means it lacks a distinct visual identity, relying on generic visuals."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "Thumbnail concepts A and B are strong. Concept A uses typography effectively for SEO. Concept B offers a powerful emotional hook with a clear visual and textual contrast, very aligned with the channel's likely emotional resonance goal. Concept C was cut off, preventing full evaluation."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "A script of 381 words for 127 seconds indicates a speaking rate of roughly 181 words per minute, which is within a comfortable and engaging range for a YouTube video. This suggests good pacing readiness."
+      },
+      "brand_consistency": {
+        "score": 7,
+        "reason": "The core message about authentic self-expression and connection aligns well with a self-growth/relationship channel. However, the reliance on 100% stock video without any custom brand elements (graphics, B-roll) slightly dilutes the channel's unique brand presence."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content deals with personal growth and relationship dynamics, presenting opinions and advice. There are no factual claims that appear to carry significant risk of being inaccurate or violating platform policies."
+      }
+    },
+    "judge_composite_score": 7.3,
+    "strongest_element": "Title Accuracy",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 7
+  },
+  {
+    "video_id": "long_20260731_125129",
+    "published_date": "2026-07-31",
+    "status": "uploaded",
+    "topic": "The Quiet Hum of Too-Easy Love: When Comfort Masks Connection",
+    "working_title": "The Quiet Hum: When 'Comfortable' Is Actually Keeping You Small",
+    "content_pillar": "relationship patterns",
+    "category": "relationship patterns",
+    "angle_type": "emotional_deep_dive",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "True compatibility isn't just the absence of friction; it's a specific kind of comfort that expands you, and mistaking low-effort familiarity for this can quietly shrink your life.",
+    "editorial_seed": "Many relationships feel 'easy' not because they're a perfect fit, but because they avoid real depth. We often mistake the absence of friction for true compatibility, settling into a comfortable routine that quietly stunts our growth and keeps us from the vibrant connection we truly crave. This video explores the subtle difference, offering a lens to recognize when 'comfort' is actually a cage.",
+    "only_soft_reset_line": "The deepest connections aren't always loud, but they never ask you to shrink.",
+    "word_count": 409,
+    "estimated_duration_sec": 158.3,
+    "argument_quality": "strong",
+    "final_duration_sec": 167.6,
+    "render_validation": "passed",
+    "title": "That 'easy' connection might be slowly shrinking your life",
+    "primary_variant_id": "C",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why easy relationships can quietly keep you small"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You feel settled, but still wonder: is this all there is?"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "That 'easy' connection might be slowly shrinking your life"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "pure_typography",
+        "structure": "typography",
+        "line1": "IS THIS ALL",
+        "line2": "or just really comfortable",
+        "thumbnail_text": "IS THIS ALL / or just really comfortable",
+        "visual_prompt": "typography on dark charcoal background, cool-neutral tones, premium editorial book-cover feel, no specific photo"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "face_right_text_left",
+        "structure": "face_text",
+        "line1": "WHY AM I BORED",
+        "line2": "when everything is fine",
+        "thumbnail_text": "WHY AM I BORED / when everything is fine",
+        "visual_prompt": "portrait of a young adult woman, mid-twenties to early thirties, with an expression of quiet devastated recognition, heavy eyes, gaze slightly toward the left, no smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light, real skin texture, subtle film grain, slightly desaturated prestige drama color grade. Subject on the right 58%, dark charcoal empty text zone on the left 42%.",
+        "subject_gender": "woman",
+        "portrait_scene": "young adult woman, mid-twenties to early thirties, quiet devastated recognition, heavy eyes, gaze slightly toward the left text zone, no smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light, real skin texture, subtle film grain, slightly desaturated prestige drama color grade, positioned on the right 58% of the canvas with a clean dark text zone on the left 42%."
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "split_screen",
+        "structure": "split",
+        "line1": "YOU'RE TOO COMFORTABLE",
+        "line2": "and it's costing you more",
+        "thumbnail_text": "YOU'RE TOO COMFORTABLE / and it's costing you more",
+        "visual_prompt": "two-plate composite, left side showing a subtly unsettling scene of quiet stagnation, perhaps a dimly lit, slightly cluttered room, solitary figure in cool, muted tones, reflecting a sense of being unresolved and cold. Right side showing a scene of clearer, calm resolution, perhaps an uncluttered, minimalist space with soft, cool-neutral light, a steady, focused figure, not overtly happy or bright, but with a sense of quiet clarity and gentle purpose.",
+        "scene_left": "left side: a subtly unsettling scene of quiet stagnation, perhaps a dimly lit, slightly cluttered room, solitary figure in cool, muted tones, reflecting a sense of being unresolved and cold.",
+        "scene_right": "right side: a scene of clearer, calm resolution, perhaps an uncluttered, minimalist space with soft, cool-neutral light, a steady, focused figure, not overtly happy or bright, but with a sense of quiet clarity and gentle purpose."
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "jhqzryVq3SM",
+    "youtube_url": "https://www.youtube.com/watch?v=jhqzryVq3SM",
+    "privacy_status": "private",
+    "uploaded_at": "2026-07-31T13:00:34Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W31",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The Quiet Hum of Too-Easy Love: When Comfort Masks Connectio",
+      "visual_style_mix": "balanced",
+      "video_length_band": "60s_3min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 37
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 7,
+        "reason": "The hook sets up an intriguing paradox about comfortable connections potentially being detrimental, which aligns with the channel's focus."
+      },
+      "script_clarity": {
+        "score": 8,
+        "reason": "The script clearly articulates the concept that excessive comfort and lack of friction can indicate a stagnating relationship, not true compatibility. The language is accessible and direct."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "The POV is strongly established, focusing on the subtle dangers of relationships that require no effort or challenge, framing it as a potential 'shrinking' of one's life and growth."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "The 'villain' is clearly defined as complacency and the mistaken interpretation of comfort for true connection. The mechanism is the gradual erosion of individual growth and personal evolution within such a relationship."
+      },
+      "cta_quality": {
+        "score": 5,
+        "reason": "There is no explicit CTA in the provided details. A clear call to action (e.g., reflect, comment, subscribe) would strengthen the video."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is highly accurate and intriguing, directly reflecting the core message that an 'easy' connection can lead to personal stagnation or 'shrinking'."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description provides a concise summary of the video's theme and hints at the deeper message, effectively setting expectations and drawing viewers in."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming the 37 stock videos are chosen to visually support the script's narrative of comfort, stagnation, and the contrast with personal growth, the sync should be good. Needs confirmation during review."
+      },
+      "image_direction_strength": {
+        "score": 8,
+        "reason": "The descriptions for the stock videos (implied by '37 stock videos') need to align with the script's narrative of subtle dissatisfaction and potential growth. The concepts suggest a good visual direction."
+      },
+      "thumbnail_concept": {
+        "score": 9,
+        "reason": "Thumbnail B, in particular, is very strong. It uses an emotional hook with a relatable expression ('quiet devastated recognition') and a clear text overlay that poses a compelling question directly related to the video's theme."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "A 409-word script at a moderate pace (150-160 wpm) would result in a video duration around 160-170 seconds, matching the 168s duration. This suggests good pacing, but requires actual audio review."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "The theme of questioning conventional relationship dynamics and focusing on individual growth within relationships is a strong fit for Soft Reset With Me's established brand identity."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content appears to be opinion-based relationship advice and self-reflection, with no apparent factual claims that could be easily disproven or controversial policy risks."
+      }
+    },
+    "judge_composite_score": 8.1,
+    "strongest_element": "Title Accuracy & Thumbnail Concept (B)",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 9
   }
 ]

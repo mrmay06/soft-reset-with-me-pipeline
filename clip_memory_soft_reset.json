@@ -1,0 +1,189 @@
+[
+  {
+    "provider": "pexels",
+    "provider_id": "8395239",
+    "source_url": "https://videos.pexels.com/video-files/8395239/8395239-hd_1080_1920_24fps.mp4",
+    "file_hash": "30a8e463db9c0b60c7288da98d53106805f928d39b1c2f15a5e4effe698541b0",
+    "perceptual_hash": "00ffffe7e3818000",
+    "query": "person looking out window",
+    "video_id": "20260731_111207",
+    "scene_id": 1,
+    "used_at": "2026-07-31T11:14:46Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "19588352",
+    "source_url": "https://videos.pexels.com/video-files/19588352/19588352-hd_1080_1920_30fps.mp4",
+    "file_hash": "1c861b8cc898d603eb5e865433047b6be8611c20533b703c618471bb04255959",
+    "perceptual_hash": "7e491482878707fc",
+    "query": "empty park bench",
+    "video_id": "20260731_111207",
+    "scene_id": 2,
+    "used_at": "2026-07-31T11:14:47Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "10251165",
+    "source_url": "https://videos.pexels.com/video-files/10251165/10251165-hd_1080_2048_25fps.mp4",
+    "file_hash": "5394338d5f870799532b0bf15d28a6dbeb8c41c12f99b66525f2cf9ba491c868",
+    "perceptual_hash": "e0c0c0e0f0f8feff",
+    "query": "person checking watch",
+    "video_id": "20260731_111207",
+    "scene_id": 3,
+    "used_at": "2026-07-31T11:14:49Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7756985",
+    "source_url": "https://videos.pexels.com/video-files/7756985/7756985-hd_1080_2048_25fps.mp4",
+    "file_hash": "d2b462dafd9c6d508cd72204a8a1ee898703f3447bf165c2d1dcdada0f023d89",
+    "perceptual_hash": "80ff8d808fffec5c",
+    "query": "neatly arranged desk",
+    "video_id": "20260731_111207",
+    "scene_id": 4,
+    "used_at": "2026-07-31T11:14:50Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "34796462",
+    "source_url": "https://videos.pexels.com/video-files/34796462/14752762_1080_1920_30fps.mp4",
+    "file_hash": "c4900c7548d00374dfbeac59b6528fe2fef6075e4847199344ef75cf9bbaf549",
+    "perceptual_hash": "00200000e7fcffff",
+    "query": "hands reaching almost touching",
+    "video_id": "20260731_111207",
+    "scene_id": 5,
+    "used_at": "2026-07-31T11:14:51Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "34374466",
+    "source_url": "https://videos.pexels.com/video-files/34374466/14562355_1080_1920_50fps.mp4",
+    "file_hash": "810fc3b5c90397dd4c5e35ea955b5196c12abe3ea2bc7cf6754e09444b3772c1",
+    "perceptual_hash": "0000ffffcfcfcf00",
+    "query": "person looking empty space",
+    "video_id": "20260731_111207",
+    "scene_id": 6,
+    "used_at": "2026-07-31T11:14:53Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6974138",
+    "source_url": "https://videos.pexels.com/video-files/6974138/6974138-hd_1080_1920_25fps.mp4",
+    "file_hash": "73421549e908c87d3321a9c7066a261d2eaf5c03049a582a5c5a62eb6d06a43d",
+    "perceptual_hash": "003c0200c3ffffff",
+    "query": "hands covering face",
+    "video_id": "20260731_111207",
+    "scene_id": 7,
+    "used_at": "2026-07-31T11:14:55Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5801269",
+    "source_url": "https://videos.pexels.com/video-files/5801269/5801269-hd_1080_2048_25fps.mp4",
+    "file_hash": "7ed741f9b50cf31f82f706ad152cb99ce72a40f1a29fd8bbfa1ab3b39cb20f93",
+    "perceptual_hash": "3f7f1e183f1f0000",
+    "query": "closed apartment door",
+    "video_id": "20260731_111207",
+    "scene_id": 8,
+    "used_at": "2026-07-31T11:14:55Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6944158",
+    "source_url": "https://videos.pexels.com/video-files/6944158/6944158-hd_1080_1920_24fps.mp4",
+    "file_hash": "6538dff0d2001e458be4a0ae992c5e51589155d734f62ae6c410c1b20394e0a2",
+    "perceptual_hash": "fff3f1e0e0606000",
+    "query": "person applying makeup mirror",
+    "video_id": "20260731_111207",
+    "scene_id": 9,
+    "used_at": "2026-07-31T11:14:56Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6382081",
+    "source_url": "https://videos.pexels.com/video-files/6382081/6382081-hd_1080_1920_24fps.mp4",
+    "file_hash": "af3611b8b1bcc9cc0224778c5dd406a32e17f456805ecffe159304f761be07b6",
+    "perceptual_hash": "0f1737370f07c0c0",
+    "query": "person staring into distance",
+    "video_id": "20260731_111207",
+    "scene_id": 10,
+    "used_at": "2026-07-31T11:14:56Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6391735",
+    "source_url": "https://videos.pexels.com/video-files/6391735/6391735-hd_1080_1920_24fps.mp4",
+    "file_hash": "1dac784d1075baeb6c04b93d1038c3d6fb667fb2d5e49950b1d786ba5d10e1be",
+    "perceptual_hash": "0707ffffffe7c101",
+    "query": "hands writing journal messy",
+    "video_id": "20260731_111207",
+    "scene_id": 11,
+    "used_at": "2026-07-31T11:14:57Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7576118",
+    "source_url": "https://videos.pexels.com/video-files/7576118/7576118-hd_1080_1902_24fps.mp4",
+    "file_hash": "1354385998de11e8cb284c0533e8b95eb788375c8c8b3cfd456b9504125abcc1",
+    "perceptual_hash": "ffff0300387c7e7a",
+    "query": "person turning away camera",
+    "video_id": "20260731_111207",
+    "scene_id": 12,
+    "used_at": "2026-07-31T11:14:59Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6601299",
+    "source_url": "https://videos.pexels.com/video-files/6601299/6601299-hd_1080_1920_25fps.mp4",
+    "file_hash": "ba11b8bd074cb29dc24648c8cbb1069bbd37562a387a4c18d64b8cc9b9dfba5a",
+    "perceptual_hash": "ffffffffe1410347",
+    "query": "person sitting small",
+    "video_id": "20260731_124546",
+    "scene_id": 1,
+    "used_at": "2026-07-31T12:48:54Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "19157961",
+    "source_url": "https://videos.pexels.com/video-files/19157961/19157961-hd_1080_1920_30fps.mp4",
+    "file_hash": "1eafdff771fcac98d7ec180948e37eea2fcbcba3f7e58b9bed752b78f6350f9c",
+    "perceptual_hash": "f0f8f87060e00000",
+    "query": "solitary figure turning head",
+    "video_id": "20260731_124546",
+    "scene_id": 2,
+    "used_at": "2026-07-31T12:48:55Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "19359221",
+    "source_url": "https://videos.pexels.com/video-files/19359221/19359221-hd_1080_1920_60fps.mp4",
+    "file_hash": "e0284a647cb58ebdb8424ecb62b84b612b05a20bb77427ac63a666ae2386e6e4",
+    "perceptual_hash": "ffffffff00000000",
+    "query": "pensive gaze city lights",
+    "video_id": "20260731_124546",
+    "scene_id": 3,
+    "used_at": "2026-07-31T12:48:55Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "10639959",
+    "source_url": "https://videos.pexels.com/video-files/10639959/10639959-hd_1080_2048_25fps.mp4",
+    "file_hash": "f1f617e9225e6ae2e41228a313e99b313b91dc6bf2e88932fe616dcaa4236fe0",
+    "perceptual_hash": "031f7f7f070f0f00",
+    "query": "empty room contemplation",
+    "video_id": "20260731_124546",
+    "scene_id": 4,
+    "used_at": "2026-07-31T12:48:57Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6186657",
+    "source_url": "https://videos.pexels.com/video-files/6186657/6186657-hd_1080_2048_30fps.mp4",
+    "file_hash": "e1c601c2c8d3e534436a953b2af67721227f5faf9e0d993ed52f73b1836f361a",
+    "perceptual_hash": "ffc3830787ffffff",
+    "query": "hand closing journal firmly",
+    "video_id": "20260731_124546",
+    "scene_id": 5,
+    "used_at": "2026-07-31T12:48:59Z"
+  }
+]

@@ -1,291 +1,5 @@
 [
   {
-    "video_id": "20260517_233728",
-    "published_date": "2026-05-17",
-    "status": "uploaded",
-    "topic": "The difference between a 'cute fight' and actual relationship repair.",
-    "category": "Conversation Truths",
-    "angle_type": "reframe",
-    "total_score": 18,
-    "source_name": "The Gottman Institute (John Gottman)",
-    "source_basis": "Gottman Institute research on conflict resolution and the importance of genuine repair attempts vs. superficial reconciliation.",
-    "source_url": "https://www.gottman.com/blog/the-seven-principles-for-making-marriage-work/",
-    "confidence_level": "peer_reviewed",
-    "content_format": "reframe",
-    "emotional_trigger": "recurring arguments, feeling unheard after reconciliation, superficial make-ups, eroding trust.",
-    "psych_concept": "effective conflict resolution, emotional validation, superficial repair vs. genuine understanding.",
-    "core_claim": "True repair after a fight goes beyond affection; it requires addressing the underlying issue and genuine understanding.",
-    "editorial_seed": "Many couples fall into the pattern of quickly patching up arguments with affection, making them seem 'cute' or easily resolved. However, true resolution requires addressing the underlying issue, feeling heard, and making a change. Without genuine repair, these 'cute' fights become repetitive wounds that slowly erode trust and intimacy over time.",
-    "only_soft_reset_line": "Affection ends the discomfort. It doesn't touch the wound.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "You made up but nothing actually feels different.",
-    "hook_quality": "weak",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 74,
-    "estimated_duration_sec": 15,
-    "thumbnail_text": "You made up. It's not fixed.",
-    "content_fingerprint": "the difference between a cute fight and actual relationship repair you made up but nothing actually feels different recurring arguments feeling unheard after reconciliation superficial make ups eroding trust effective conflict resolution emotional validation superficial repair vs genuine understanding true repair after a fight goes beyond affection it requires addressing the underlying issue and genuine understanding affection ends the discomfort it doesn t touch the wound",
-    "title": "You made up, but it's still UNSETTLED",
-    "youtube_video_id": "X9aBCyu2aIY",
-    "youtube_url": "https://youtube.com/shorts/X9aBCyu2aIY",
-    "fallback_count": 0,
-    "video_count": 7,
-    "total_scenes": 10,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W20",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "reframe",
-      "category": "Conversation Truths",
-      "topic_cluster": "The difference between a 'cute fight' and actual relationshi",
-      "visual_style_mix": "stock_heavy",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 10
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 7,
-        "reason": "The hook is relatable to many relationship conflicts, posing a common scenario. It could be stronger by hinting at the 'why' behind the lack of change."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "The script is concise and directly addresses the core issue of superficial resolution after conflict."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "The POV is clear, focusing on the need for deeper repair beyond superficial peace, which aligns with the channel's niche."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "The 'villain' is the pattern of making up without true resolution. It's specific enough for this context but could be more vividly named or described."
-      },
-      "cta_quality": {
-        "score": 5,
-        "reason": "There is no explicit CTA in the provided details. This needs to be addressed."
-      },
-      "title_accuracy": {
-        "score": 8,
-        "reason": "The title is mostly accurate, capturing the essence of making up but leaving underlying issues unresolved. 'UNSETTLED' is a strong word choice."
-      },
-      "description_usefulness": {
-        "score": 9,
-        "reason": "The description clearly defines the target audience and the video's purpose, highlighting the need for genuine repair."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assuming the stock videos and brand images will align with the conversation themes, it's likely to be good. Needs actual visual review."
-      },
-      "image_direction_strength": {
-        "score": 6,
-        "reason": "Brand images need to be consistently aligned with the channel's tone and the video's message of introspection and growth."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "The concept of a superficial 'make up' versus underlying issues is strong. Visual execution is key for impact."
-      },
-      "voice_pacing_readiness": {
-        "score": 9,
-        "reason": "With a word count of 74, pacing is likely to be good, allowing for a deliberate and impactful delivery suitable for the channel's style."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The theme aligns well with the channel's focus on relationship repair and self-growth beyond surface-level fixes."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content discusses common relationship dynamics and emotional states, posing no discernible factual or policy risks."
-      }
-    },
-    "judge_composite_score": 7,
-    "strongest_element": "Description Usefulness",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 9,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively communicates a nuanced emotional truth about relationship repair through a clear voiceover, well-paced captions, and a strong hook that aligns perfectly with its title. The emotional tone and audio mix are excellent, creating an introspective and empathetic brand experience. However, the visual pacing is somewhat slow, with some static or repetitive clips and abstract imagery that could lead to viewer drop-off, suggesting future iterations could benefit from more dynamic or consistently specific visuals to maintain engagement in the short-form format.",
-    "video_audit_strengths": [
-      "Consistent and well-defined brand aesthetic: The video's visual style, voiceover, and music immediately communicate the thoughtful and introspective 'Soft Reset With Me' brand.",
-      "Powerful signature line: 'Affection ends the discomfort. It doesn't touch the wound' is a highly memorable and impactful statement, effectively illustrated visually.",
-      "Exceptional clarity and readability of captions: The large, well-timed text makes the message accessible even without sound.",
-      "Relatable and nuanced emotional core: The topic addresses a subtle but common relationship pain point that many experience but struggle to articulate, fostering strong audience connection."
-    ],
-    "video_audit_dropoff_causes": [
-      "Visual pacing is generally slow; viewers accustomed to faster-paced Shorts might swipe away due to a lack of dynamic visual progression.",
-      "Repetitive use of similar static, contemplative shots (e.g., person looking out window) can lead to visual fatigue and a sense of stagnation.",
-      "The final visual of a group setting might be too abstract or less directly relevant to 'relationship repair' compared to earlier, more intimate couple-focused shots, potentially causing disengagement at the end."
-    ],
-    "video_audit_repeat_next": [
-      "The calm, empathetic, and clear voiceover delivery.",
-      "The clean, readable, and well-timed caption presentation.",
-      "The strong alignment between the video's hook, script, and title.",
-      "The use of subtle, atmospheric background music to enhance emotional tone.",
-      "The inclusion of highly specific visual metaphors (like the cracked hands) that directly illustrate complex emotional concepts."
-    ],
-    "video_audit_reduce_next": [
-      "Over-reliance on static or visually repetitive clips, particularly at key transition points in the narrative.",
-      "The duration of individual clips that lack internal movement or progression, as this can slow down the overall pacing for a Short.",
-      "Including visuals that are too abstract or indirectly related to the specific core claim of the script, especially in the latter half of the video."
-    ],
-    "video_audit_tags": {
-      "hook_type": "Emotional Pain Point",
-      "thumbnail_type": "Text-Overlay",
-      "visual_style_mix": "Ambient & Abstract",
-      "narrative_format": "Reframe",
-      "character_used": "Relatable Archetype"
-    }
-  },
-  {
-    "video_id": "20260518_174052",
-    "published_date": "2026-05-18",
-    "status": "uploaded",
-    "topic": "The 'dating rule' you still follow that came straight from your parents.",
-    "category": "psychology drops",
-    "angle_type": "psychology_drop",
-    "total_score": 19,
-    "source_name": "Family Systems Theory, Attachment Theory",
-    "source_basis": "Intergenerational transmission of relationship patterns and schemas; influence of early family experiences on adult romantic relationships.",
-    "source_url": "",
-    "confidence_level": "therapist_consensus",
-    "content_format": "psychology_drop",
-    "emotional_trigger": "Realizing an unconscious 'rule' you follow in dating isn't your own, but inherited.",
-    "psych_concept": "Intergenerational transmission of relationship patterns and schemas",
-    "core_claim": "Many unspoken rules about relationships come from childhood observations or direct parental advice, shaping our adult dating behavior unconsciously.",
-    "editorial_seed": "We often adopt 'rules' about relationships, love, or conflict from our parents without realizing it. These can be helpful or incredibly limiting, influencing who we choose and how we show up, even when we consciously disagree with our parents. It's about recognizing the invisible scripts we're running.",
-    "only_soft_reset_line": "You didn't choose that. You absorbed it.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "Your dating standards might actually be your parents' fears.",
-    "hook_quality": "weak",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 72,
-    "estimated_duration_sec": 22,
-    "thumbnail_text": "It's not your rule.",
-    "content_fingerprint": "the dating rule you still follow that came straight from your parents your dating standards might actually be your parents fears realizing an unconscious rule you follow in dating isn t your own but inherited intergenerational transmission of relationship patterns and schemas many unspoken rules about relationships come from childhood observations or direct parental advice shaping our adult dating behavior unconsciously you didn t choose that you absorbed it",
-    "title": "Your dating standards are your parents' FEARS",
-    "youtube_video_id": "QW9-xpVhJNs",
-    "youtube_url": "https://youtube.com/shorts/QW9-xpVhJNs",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 9,
-    "validation_warnings": [
-      "tags_sanitized"
-    ],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W21",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "psychology_drop",
-      "category": "psychology drops",
-      "topic_cluster": "The 'dating rule' you still follow that came straight from y",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 9
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "Intriguing and directly challenges a common perception about dating standards."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "Concise and easy to understand, the core message is delivered effectively within the word count."
-      },
-      "editorial_pov": {
-        "score": 7,
-        "reason": "The POV is implied through the framing of standards as inherited fears, which is a psychological take. Could be slightly more pronounced."
-      },
-      "villain_mechanism_specificity": {
-        "score": 7,
-        "reason": "Identifies parents' fears as the 'villain' mechanism, which is specific, but the 'how' could be elaborated slightly more if space allowed."
-      },
-      "cta_quality": {
-        "score": 3,
-        "reason": "No explicit CTA is present in the provided details. This is a significant omission for a YouTube video."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Directly reflects the core message of the hook and script, accurately representing the video's premise."
-      },
-      "description_usefulness": {
-        "score": 9,
-        "reason": "Effectively expands on the title and hook, creating curiosity and setting expectations for the viewer."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assumed good sync based on provided scene breakdown, but without the actual video, this is an estimation. The prompt implies a focus on content over visual storytelling here."
-      },
-      "image_direction_strength": {
-        "score": 6,
-        "reason": "Brand images are mentioned but their specific direction and impact on the narrative aren't detailed. A neutral score as it's not a primary focus of the provided text."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "The concept is implied by the title/hook. A strong visual based on 'parents' fears' impacting dating would be key, but is not explicitly described."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "The script is short and punchy, suitable for a measured but engaging read. Assumes a professional VO."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The psychological angle aligns well with a relationship/self-growth channel. The framing is fitting for the brand."
-      },
-      "policy_factual_risk": {
-        "score": 9,
-        "reason": "The claim is a psychological interpretation, not a hard scientific fact. Presented as an interpretation, it carries low factual risk. The risk is low as it's framed as a perspective."
-      }
-    },
-    "judge_composite_score": 7.38,
-    "strongest_element": "Script Clarity",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively delivers a psychology drop with a compelling emotional tone and high production quality, fostering an introspective atmosphere. While the hook's visual delivery could be more immediate to maximize early engagement, the strong alignment between the hook and title, excellent audio mix, and well-paced captions ensure the core message is clear and resonant throughout. The consistent emotional tone and choice of evocative visuals are significant strengths to replicate.",
-    "video_audit_strengths": [
-      "The exceptional consistency in emotional atmosphere, created through a harmonious blend of music, voiceover, and visuals, draws the viewer into a reflective state.",
-      "The clarity and conciseness of the script, delivered with empathy, make complex psychological concepts accessible and relatable.",
-      "The high overall production quality, from the crisp voiceover to the aesthetically pleasing B-roll footage, elevates the professional feel of the content."
-    ],
-    "video_audit_dropoff_causes": [
-      "The initial visual engagement could be stronger. The opening shot of the person by the rainy window, while aesthetically pleasing, is static and takes several seconds to convey the full hook text visually, which might cause some viewers to swipe before the core message fully registers.",
-      "While the visuals are emotionally appropriate, some shots are quite static (e.g., empty chair, rain on window) which, without more dynamic movement or rapid cuts, can lead to decreased retention for viewers seeking constant visual stimulation in a Shorts format."
-    ],
-    "video_audit_repeat_next": [
-      "Maintain the strong, empathetic, and introspective voiceover style.",
-      "Continue with the high-quality, mood-setting background music.",
-      "Utilize visuals that, even if not literal, powerfully convey the emotional subtext of the script.",
-      "Ensure caption readability and generally good pacing with the spoken word."
-    ],
-    "video_audit_reduce_next": [
-      "Minimize static, slow-reveal visuals in the first 2-3 seconds; aim for more immediate visual impact or a quicker text reveal for the hook.",
-      "Avoid overly long shots of unchanging scenes unless there's a specific, dynamic element introduced."
-    ],
-    "video_audit_tags": {
-      "hook_type": "provocative statement",
-      "thumbnail_type": "text only",
-      "visual_style_mix": "cinematic b-roll & text",
-      "narrative_format": "explainer with personal reflection",
-      "character_used": "none"
-    }
-  },
-  {
     "video_id": "20260518_234049",
     "published_date": "2026-05-18",
     "status": "uploaded",
@@ -4163,5 +3877,288 @@
     "video_audit_repeat_next": [],
     "video_audit_reduce_next": [],
     "video_audit_tags": {}
+  },
+  {
+    "video_id": "20260731_111207",
+    "published_date": "2026-07-31",
+    "status": "uploaded",
+    "topic": "Why your need for perfectionism kills relationships.",
+    "category": "psychology drops",
+    "angle_type": "truth_drop",
+    "total_score": 19,
+    "source_name": "Relationship Psychology / Vulnerability Research",
+    "source_basis": "The psychological impact of perfectionism on relational intimacy and the necessity of vulnerability for genuine connection.",
+    "source_url": null,
+    "confidence_level": "therapist_consensus",
+    "content_format": "psychology_drop",
+    "emotional_trigger": "The internal conflict of striving for perfection and feeling disconnected in relationships.",
+    "psych_concept": "Perfectionism's impact on intimacy and vulnerability",
+    "core_claim": "Your drive for flawlessness, while seemingly protective, is actively preventing genuine, deep connection.",
+    "editorial_seed": "We often think being perfect will make us loved, but it creates a wall. True intimacy requires showing up as you are, messiness included. The fear of being imperfect is often a deeper fear of not being enough.",
+    "only_soft_reset_line": "You're not afraid of being imperfect. You're afraid of being known.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You think being perfect will make them stay. It might be exactly why they can't get close.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.4",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 73,
+    "estimated_duration_sec": 21,
+    "thumbnail_text": "Your perfection is the wall.",
+    "content_fingerprint": "why your need for perfectionism kills relationships you think being perfect will make them stay it might be exactly why they can t get close the internal conflict of striving for perfection and feeling disconnected in relationships perfectionism s impact on intimacy and vulnerability your drive for flawlessness while seemingly protective is actively preventing genuine deep connection you re not afraid of being imperfect you re afraid of being known",
+    "title": "You thought perfect would make them STAY",
+    "youtube_video_id": "x1G1-5ywNg0",
+    "youtube_url": "https://youtube.com/shorts/x1G1-5ywNg0",
+    "fallback_count": 0,
+    "video_count": 12,
+    "total_scenes": 12,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W31",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "truth_drop",
+      "category": "psychology drops",
+      "topic_cluster": "Why your need for perfectionism kills relationships.",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 12
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook presents a compelling paradox that directly addresses a common relationship insecurity, making it immediately engaging."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise and delivers its core message clearly within the limited word count. The concept of perfection driving people away is easy to grasp."
+      },
+      "editorial_pov": {
+        "score": 7,
+        "reason": "The POV is established as a relatable 'truth drop' from psychology, fitting the channel's niche, but could be slightly more distinct."
+      },
+      "villain_mechanism_specificity": {
+        "score": 6,
+        "reason": "The 'villain' is perfectionism, and the mechanism is driving people away due to perceived inaccessibility. It's understandable but could be more specific about *how* perfection manifests this way."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "There is no Call to Action present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title accurately reflects the core premise of the hook and the video's message. It's intriguing and hints at the central theme."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description effectively expands on the title and hook, reinforcing the core message and validating the viewer's potential feelings."
+      },
+      "visual_dialogue_sync": {
+        "score": 8,
+        "reason": "Assuming stock videos align with the psychological themes, the visual dialogue sync should be strong, enhancing the message delivery."
+      },
+      "image_direction_strength": {
+        "score": 7,
+        "reason": "With 100% stock videos, the strength depends heavily on the quality and relevance of the chosen clips. The direction needs to ensure they support the narrative effectively."
+      },
+      "thumbnail_concept": {
+        "score": 7,
+        "reason": "A strong thumbnail concept would likely involve imagery representing a person trying to achieve perfection or a couple drifting apart. The prompt doesn't specify, so this is an assumption. It needs to visually convey the paradox."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "A 39-second video with 73 words suggests a deliberate and potentially slower, impactful pacing, suitable for a 'truth drop' and 'psychology drops' category."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The 'psychology drops' and 'truth drop' angle aligns well with a self-growth channel. The topic of relationship dynamics and self-perception is consistent."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "The content discusses psychological concepts in relationships. While subjective, the claim is framed as a common observation rather than a strict scientific diagnosis, posing minimal factual risk."
+      }
+    },
+    "judge_composite_score": 7.0,
+    "strongest_element": "Script Clarity",
+    "weakest_element": "CTA Quality",
+    "only_soft_reset_score": 7,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively conveys its message about perfectionism hindering relationships through a thoughtful script and well-aligned visual metaphors, supported by a strong voiceover and consistent emotional tone. However, the pacing for a Shorts format could be more dynamic, with quicker cuts and less static imagery to minimize potential drop-offs. Leveraging its strengths in visual specificity for key concepts and powerful emotional delivery will be key for future improvements.",
+    "video_audit_strengths": [
+      "The clarity and emotional resonance of the voiceover narration.",
+      "Highly effective visual metaphors, such as the organized desk and the makeup application, that concretely illustrate abstract concepts.",
+      "The powerful and memorable 'You're afraid of being known' loopback line, strongly supported by the accompanying visual.",
+      "A consistent and recognizable brand aesthetic maintained throughout the video."
+    ],
+    "video_audit_dropoff_causes": [
+      "Overall slow visual pacing, with some shots lingering too long for a Shorts audience.",
+      "Lack of dynamic visual movement; many shots are static or feature slow camera pans/zooms, which might not hold attention on a scroll-heavy platform.",
+      "Some visuals are conceptually weaker or repetitive (e.g., multiple 'looking out window' shots), which could lead to viewer fatigue."
+    ],
+    "video_audit_repeat_next": [
+      "The strong script-to-visual metaphorical alignment for key lines (e.g., 'no messy edges', 'polished version').",
+      "The impactful and resonant 'soft reset' core message and loopback.",
+      "The professional quality of the voiceover and audio mix.",
+      "The cohesive emotional tone that aligns with the brand identity."
+    ],
+    "video_audit_reduce_next": [
+      "The overall visual hold time for individual shots; aim for quicker transitions to maintain momentum.",
+      "Reliance on less dynamic or repetitive visual themes (e.g., limit similar 'looking out window' shots).",
+      "Any visuals that are less directly impactful or feel slightly generic to the specific script point."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Truth Drop",
+      "thumbnail_type": "Introspective Portrait",
+      "visual_style_mix": "Cinematic Metaphor / Aesthetic Voiceover",
+      "narrative_format": "Psychological Insight / Explainer",
+      "character_used": "Symbolic Figures / Anonymous Archetypes"
+    }
+  },
+  {
+    "video_id": "20260731_124546",
+    "published_date": "2026-07-31",
+    "status": "uploaded",
+    "topic": "You are not too much \u2014 you were just around people with too little",
+    "category": "self-worth shifts",
+    "angle_type": "reframe",
+    "total_score": 20,
+    "source_name": "Psychological principles of self-esteem and interpersonal boundaries",
+    "source_basis": "Psychological principles of self-worth development, emotional regulation, and projection in interpersonal dynamics. The idea that one person's perception of 'too much' often reflects their own capacity or comfort levels, rather than an objective assessment of another's traits.",
+    "source_url": "",
+    "confidence_level": "therapist_consensus",
+    "content_format": "reframe",
+    "emotional_trigger": "Feeling insecure or diminished after being told you are 'too much' in a relationship, friendship, or social context.",
+    "psych_concept": "Self-worth, emotional capacity, projection, attachment styles (specifically related to fear of intimacy or overwhelm)",
+    "core_claim": "Being told you're 'too much' often reflects the other person's emotional limits or insecurity, not a flaw in your essential self.",
+    "editorial_seed": "Many of us shrink ourselves down because someone else couldn't handle our intensity or depth. This isn't about blaming them, but about reclaiming your full self and understanding that their 'too much' was really their 'too little' to meet you.",
+    "only_soft_reset_line": "Someone else's low ceiling isn't your diagnosis.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You shrink yourself down so other people feel big enough.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.5",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 74,
+    "estimated_duration_sec": 32,
+    "thumbnail_text": "you were not too much",
+    "content_fingerprint": "you are not too much you were just around people with too little you shrink yourself down so other people feel big enough feeling insecure or diminished after being told you are too much in a relationship friendship or social context self worth emotional capacity projection attachment styles specifically related to fear of intimacy or overwhelm being told you re too much often reflects the other person s emotional limits or insecurity not a flaw in your essential self someone else s low ceiling isn t your diagnosis",
+    "title": "You are not too much, they just had TOO little",
+    "youtube_video_id": "hbhNDYOtBKc",
+    "youtube_url": "https://youtube.com/shorts/hbhNDYOtBKc",
+    "fallback_count": 0,
+    "video_count": 5,
+    "total_scenes": 5,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W31",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "reframe",
+      "category": "self-worth shifts",
+      "topic_cluster": "You are not too much \u2014 you were just around people with too ",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 5
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 8,
+        "reason": "The hook is intriguing and directly addresses a common feeling of inadequacy."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The script is concise, clear, and effectively conveys the intended message within the word count."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "The POV is consistent with self-growth and reframing negative experiences, aligning with the channel's likely niche."
+      },
+      "villain_mechanism_specificity": {
+        "score": 7,
+        "reason": "The 'villain' is the other person's 'little capacity,' which is a bit abstract but understandable in context."
+      },
+      "cta_quality": {
+        "score": 1,
+        "reason": "No CTA present in the provided details."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title is honest and accurately reflects the core message of the script and hook."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The description is concise, reinforces the hook and title, and provides a good initial summary."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Assuming stock videos will be used to illustrate the concept, sync can be good but depends on execution."
+      },
+      "image_direction_strength": {
+        "score": 5,
+        "reason": "No specific direction or brand images provided for scoring."
+      },
+      "thumbnail_concept": {
+        "score": 1,
+        "reason": "No thumbnail concepts were provided."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "The script length and clarity suggest good pacing potential for a 35s video."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "The message about self-worth and reframing aligns well with a self-growth channel."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No factual claims are made that would pose a policy risk. It's a subjective reframing of an emotional experience."
+      }
+    },
+    "judge_composite_score": 6.3,
+    "strongest_element": "script_clarity",
+    "weakest_element": "cta_quality",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This video effectively communicates a validating message through an excellent, empathetic voiceover, clear captions, and strong bookend visual metaphors. The initial 'shrinking' and final 'notebook flip' are particularly powerful in illustrating complex emotional concepts. However, the mid-section's use of generic visuals and the specific 'New Year New Me' prop, despite its effective usage, slightly dilute the core message's specificity, potentially causing minor thematic confusion for viewers. Overall, it's a strong piece that aligns well with the Soft Reset brand's tone.",
+    "video_audit_strengths": [
+      "The empathetic and calming quality of the voiceover is a significant strength, perfectly aligning with the brand's 'Soft Reset' identity.",
+      "The consistent and clear captioning style, with well-timed single-word appearances, enhances comprehension and viewer engagement.",
+      "The use of a tangible visual metaphor for the hook (shrinking into a chair) and the conclusion (flipping the notebook) provides powerful, memorable imagery for abstract concepts."
+    ],
+    "video_audit_dropoff_causes": [
+      "The middle section's reliance on generic, albeit emotionally resonant, stock footage might lead to a slight dip in engagement as it doesn't offer specific visual reinforcement for the unique 'too much' reframe.",
+      "The specific 'New Year New Me' prop, while used cleverly, could momentarily disorient viewers who are focused on the 'too much' self-worth topic rather than resolutions, creating a slight thematic disconnect."
+    ],
+    "video_audit_repeat_next": [
+      "The warm, validating tone and clear delivery of the voiceover.",
+      "The impactful and well-executed opening and closing visual metaphors.",
+      "The style and pacing of the on-screen captions for maximum readability and emotional impact.",
+      "The selection of background music that subtly enhances the emotional tone without distracting from the message."
+    ],
+    "video_audit_reduce_next": [
+      "Reliance on overly generic stock footage for core conceptual points in the middle of the video; aim for more specific or creative visual metaphors throughout.",
+      "Introducing props or themes (like 'New Year New Me') that, while related to self-improvement, might be too specific and slightly diverge from the primary, broader psychological concept being addressed."
+    ],
+    "video_audit_tags": {
+      "hook_type": "Reframe, Emotional Validation, Direct Statement",
+      "thumbnail_type": "Conceptual Metaphor, Text Overlay, Human Element",
+      "visual_style_mix": "Introspective, Minimalist, Metaphorical, Soft Aesthetic",
+      "narrative_format": "Self-Acceptance, Empowerment, Psychological Insight",
+      "character_used": "Solitary Figure, Reflective Person"
+    }
   }
 ]
