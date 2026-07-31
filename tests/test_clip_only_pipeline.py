@@ -8,6 +8,8 @@ from pathlib import Path
 
 from modules.image_gen import _assign_globally, _hash_distance
 from modules.creative_judge import _hard_failures
+from modules.longform_audio_agent import _build_tts_chunks
+from modules.longform_thumbnail_agent import _pick_thumbnail_frames
 from modules.visual_director import _validate_manifest
 from utils.weekly_direction import load_weekly_direction, weekly_direction_prompt
 from utils.publish_schedule import youtube_publish_at
@@ -90,6 +92,28 @@ class ClipSelectionTests(unittest.TestCase):
             },
         }
         self.assertEqual(_hard_failures(raw, {"word_count": 381, "validation": "forced"}, config), [])
+
+    def test_long_tts_splits_only_at_chapter_boundaries(self):
+        script = {"chapters": [
+            {"voiceover": "one " * 120},
+            {"voiceover": "two " * 120},
+            {"voiceover": "three " * 80},
+        ]}
+        chunks = _build_tts_chunks(script, 220)
+        self.assertEqual(len(chunks), 2)
+        self.assertTrue(chunks[0].startswith("one"))
+        self.assertTrue(chunks[1].startswith("two"))
+
+    def test_thumbnail_frames_use_semantic_source_queries(self):
+        frames = [
+            {"path": "object.jpg", "query": "quiet morning room", "score": 99},
+            {"path": "person.jpg", "query": "woman sitting alone night", "score": 50},
+            {"path": "release.jpg", "query": "open window curtains", "score": 40},
+        ]
+        face, left, right = _pick_thumbnail_frames(frames)
+        self.assertEqual(face, "person.jpg")
+        self.assertEqual(left, "person.jpg")
+        self.assertEqual(right, "object.jpg")
 
 
 class WeeklyDirectionTests(unittest.TestCase):

@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+from typing import Optional
 from PIL import Image, ImageDraw, ImageFont, ImageStat  # noqa: F401
 
 from utils.helpers import load_json, save_json, now_iso
@@ -198,6 +199,12 @@ def _draw_typography_thumbnail(output_path: str, line1: str, line2: str, width: 
 def _draw_face_text_overlay(image_path: str, line1: str, line2: str, width: int, height: int) -> None:
     img = Image.open(image_path).convert("RGB")
     img = _add_grain(img, 0.025)
+    # Guarantee legibility even when the selected source frame has a bright
+    # left side. Keep the subject side untouched.
+    scrim = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    scrim_draw = ImageDraw.Draw(scrim)
+    scrim_draw.rectangle((0, 0, int(width * 0.50), height), fill=(0, 0, 0, 150))
+    img = Image.alpha_composite(img.convert("RGBA"), scrim).convert("RGB")
     draw = ImageDraw.Draw(img)  # noqa: F821
     serif = "assets/fonts/DMSerifDisplay-Regular.ttf"
     sans = "assets/fonts/Inter-Bold.ttf"
@@ -230,9 +237,15 @@ def _draw_split_overlay(image_path: str, line1: str, line2: str, width: int, hei
     outline = _hex_to_rgb(COLORS["text_outline"])
     divider_x = width // 2
     draw.line((divider_x, 0, divider_x, height), fill=terracotta, width=6)
-    label_font, _ = _fit_font(draw, "BEFORE", serif, int(height * 0.09), int(width * 0.40), int(height * 0.055), 4)
-    draw.text((SAFE_ZONE["padding_left"], SAFE_ZONE["padding_top"]), "BEFORE", font=label_font, fill=headline_fill, stroke_width=4, stroke_fill=outline)
-    draw.text((divider_x + SAFE_ZONE["padding_left"], SAFE_ZONE["padding_top"]), "AFTER", font=label_font, fill=headline_fill, stroke_width=4, stroke_fill=outline)
+    top_scrim = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    top_draw = ImageDraw.Draw(top_scrim)
+    top_draw.rectangle((0, 0, width, int(height * 0.28)), fill=(0, 0, 0, 145))
+    img = Image.alpha_composite(img.convert("RGBA"), top_scrim).convert("RGB")
+    draw = ImageDraw.Draw(img)
+    headline_font, _ = _fit_font(draw, line1, serif, int(height * 0.105), int(width * 0.80), int(height * 0.06), 4)
+    headline_box = draw.textbbox((0, 0), line1, font=headline_font, stroke_width=4)
+    headline_x = (width - (headline_box[2] - headline_box[0])) // 2
+    draw.text((headline_x, SAFE_ZONE["padding_top"]), line1, font=headline_font, fill=headline_fill, stroke_width=4, stroke_fill=outline)
     secondary = line2 or line1
     secondary_font, _ = _fit_font(draw, secondary, sans, int(height * 0.052), width - 216, int(height * 0.036))
     sec_bbox = draw.textbbox((0, 0), secondary, font=secondary_font)
@@ -377,13 +390,67 @@ def _frame_score(path: str) -> float:
     return contrast + exposure
 
 
-def _extract_ranked_frames(video_path: str, run_dir: str, duration: float) -> list[str]:
+def _extract_ranked_source_frames(render_meta: dict, run_dir: str) -> list[dict]:
+    """Extract clean frames from source clips, before captions are burned in."""
     frames = []
-    for index, fraction in enumerate((0.10, 0.22, 0.36, 0.50, 0.64, 0.78, 0.90)):
-        path = os.path.join(run_dir, f"07_longform_footage_frame_{index}.jpg")
-        _extract_frame(video_path, path, max(1.0, duration * fraction))
-        frames.append(path)
-    return sorted(frames, key=_frame_score, reverse=True)
+    for index, asset in enumerate(render_meta.get("visual_assets", [])):
+        relative = str(asset.get("path", ""))
+        source_path = os.path.join(run_dir, relative)
+        if not relative or not os.path.exists(source_path):
+            continue
+        path = os.path.join(run_dir, f"07_longform_source_frame_{index:02d}.jpg")
+        _extract_frame(source_path, path, 1.0)
+        query = str(asset.get("query", "")).lower()
+        frames.append({"path": path, "query": query, "score": _frame_score(path)})
+    if len(frames) < 2:
+        raise RuntimeError("Footage-derived thumbnails require at least two clean source clips")
+    return sorted(frames, key=lambda item: item["score"], reverse=True)
+
+
+def _pick_thumbnail_frames(frames: list[dict]) -> tuple[str, str, str]:
+    people_terms = ("person", "woman", "man", "people", "couple", "face")
+    tension_terms = ("alone", "rain", "night", "phone", "empty")
+    release_terms = ("morning", "open", "calm", "walk", "curtains")
+
+    def best_with(terms: tuple[str, ...], excluded: Optional[set[str]] = None) -> dict:
+        excluded = excluded or set()
+        matching = [
+            item for item in frames
+            if item["path"] not in excluded and any(term in item["query"] for term in terms)
+        ]
+        return (matching or [item for item in frames if item["path"] not in excluded])[0]
+
+    face = best_with(people_terms)
+    left = best_with(tension_terms)
+    right = best_with(release_terms, {left["path"]})
+    return face["path"], left["path"], right["path"]
+
+
+def _build_edit_brief(research: dict, variant: dict, structure: str) -> str:
+    line1, line2, _ = _variant_copy(variant)
+    topic = str(research.get("topic", "relationship healing"))
+    common = (
+        "Use only a clean frame extracted from this video's original stock clips. "
+        "Do not generate imagery and do not use a frame containing captions, logos, UI, or watermarks. "
+        "Preserve photographic realism; only crop, grade, darken, and add local typography."
+    )
+    if structure == "typography":
+        return (
+            f"LOCAL TYPOGRAPHY THUMBNAIL for: {topic}. {common} "
+            f"Use a deep charcoal field with subtle grain. Headline: '{line1}'. Supporting line: '{line2}'. "
+            "Keep the hierarchy readable at phone size and leave the bottom-right timestamp area empty."
+        )
+    if structure == "split":
+        return (
+            f"TWO-SOURCE-FRAME SPLIT THUMBNAIL for: {topic}. {common} "
+            "Choose two visually distinct source frames that communicate tension and release without claiming a literal before/after. "
+            f"Headline: '{line1}'. Supporting line: '{line2}'. Use one restrained divider."
+        )
+    return (
+        f"SINGLE-SOURCE-FRAME THUMBNAIL for: {topic}. {common} "
+        "Prefer a clear emotional subject with usable negative space on the left; if unavailable, choose the strongest uncluttered frame. "
+        f"Headline: '{line1}'. Supporting line: '{line2}'."
+    )
 
 
 def _create_split_from_frames(left_path: str, right_path: str, output_path: str, width: int, height: int) -> None:
@@ -409,8 +476,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
     width = int(config.get("longform_thumbnail_width", 1280))
     height = int(config.get("longform_thumbnail_height", 720))
     primary_id = str(metadata.get("primary_variant_id", "B")).upper()
-    duration = float(render_meta.get("duration_sec", 300))
-    ranked_frames = _extract_ranked_frames(video_path, run_dir, duration)
+    ranked_frames = _extract_ranked_source_frames(render_meta, run_dir)
+    face_frame, split_left_frame, split_right_frame = _pick_thumbnail_frames(ranked_frames)
 
     generated_variants = []
     for variant in metadata.get("thumbnail_variants", []):
@@ -419,23 +486,19 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
             continue
         line1, line2, thumb_text = _variant_copy(variant)
         structure = _variant_structure(variant)
-        prompt = _build_generation_prompt(research, variant, structure)
+        prompt = _build_edit_brief(research, variant, structure)
         prompt_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}_prompt.txt")
         output_path = os.path.join(run_dir, f"07_longform_thumbnail_{variant_id}.png")
         with open(prompt_path, "w", encoding="utf-8") as f:
-            f.write(
-                "FOOTAGE-DERIVED THUMBNAIL EDIT BRIEF — do not generate an image.\n"
-                "Use a frame from the finished video, preserve photographic realism, and apply only local crop, grade, and typography.\n\n"
-                + prompt
-            )
+            f.write(prompt)
 
         if structure == "typography":
             source = _create_typography_base(output_path, width, height)
         elif structure == "split":
-            _create_split_from_frames(ranked_frames[0], ranked_frames[1], output_path, width, height)
+            _create_split_from_frames(split_left_frame, split_right_frame, output_path, width, height)
             source = "two_footage_frames"
         else:
-            _resize_to_target(ranked_frames[0], output_path, width, height)
+            _resize_to_target(face_frame, output_path, width, height)
             source = "ranked_footage_frame"
 
         # Always bake text via PIL — guarantees legibility regardless of image source

@@ -549,6 +549,8 @@ def _finalize_longform(
     overlay_path, overlay_enabled, blend_mode, opacity = _film_overlay_settings(config)
     captions_enabled = bool(captions_path and os.path.exists(captions_path))
     caption_method = "none"
+    end_hold_sec = max(0.0, float(config.get("longform_end_hold_sec", 2.0)))
+    final_duration = total_duration + end_hold_sec
 
     cmd = ["ffmpeg", "-i", concat_path, "-i", audio_source]
     if overlay_enabled:
@@ -567,27 +569,38 @@ def _finalize_longform(
     if captions_enabled:
         caption, caption_method = _caption_filter(captions_path)
         if caption_method == "ass":
-            filter_complex += f";[{video_label}]{caption}[vout]"
+            filter_complex += f";[{video_label}]{caption}[vcontent]"
         else:
-            filter_complex += f";[{video_label}]null[vout]"
+            filter_complex += f";[{video_label}]null[vcontent]"
     else:
-        filter_complex += f";[{video_label}]null[vout]"
+        filter_complex += f";[{video_label}]null[vcontent]"
+
+    if end_hold_sec > 0:
+        filter_complex += (
+            f";[vcontent]tpad=stop_mode=clone:stop_duration={end_hold_sec}[vout]"
+            f";[1:a]apad=pad_dur={end_hold_sec}[aout]"
+        )
+        audio_map = "[aout]"
+    else:
+        filter_complex += ";[vcontent]null[vout]"
+        audio_map = "1:a"
 
     print(f"[longform_video] Captions: {caption_method}")
     _run_ffmpeg([
         *cmd,
         "-filter_complex", filter_complex,
-        "-map", "[vout]", "-map", "1:a",
+        "-map", "[vout]", "-map", audio_map,
         "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
         "-c:a", "aac", "-ar", "44100",
         "-pix_fmt", "yuv420p", "-r", str(fps),
         "-movflags", "+faststart",
-        "-t", str(total_duration),
+        "-t", str(final_duration),
         output_path, "-y",
     ], "finalize_longform")
     return {
         "captions": captions_enabled,
         "caption_method": caption_method,
+        "end_hold_sec": end_hold_sec,
         "film_overlay": {
             "requested": bool(config.get("film_overlay_enabled", False)),
             "applied": overlay_enabled,
