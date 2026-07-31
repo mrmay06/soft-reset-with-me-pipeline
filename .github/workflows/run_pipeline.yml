@@ -36,7 +36,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check automation and DST gate
         id: gate
         shell: python
@@ -53,7 +53,7 @@ jobs:
               out.write(f"should_run={str(should_run).lower()}\n")
           print(f"should_run={should_run} automation_enabled={enabled} local={now.isoformat()}")
       - if: steps.gate.outputs.should_run == 'true'
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
       - if: steps.gate.outputs.should_run == 'true'
@@ -83,7 +83,7 @@ jobs:
           ALERT_EMAIL_PASSWORD: ${{ secrets.ALERT_EMAIL_PASSWORD }}
       - name: Upload run artifacts
         if: always() && steps.gate.outputs.should_run == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: soft-reset-short-${{ github.run_id }}
           path: workspace/run_*/
