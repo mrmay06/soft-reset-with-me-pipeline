@@ -498,6 +498,12 @@ def _pick_music_track() -> str | None:
     return random.choice(tracks) if tracks else None
 
 
+def _planned_final_duration(voice_duration: float, config: dict) -> float:
+    """Return the complete visual duration, including the silent narration hold."""
+    end_hold_sec = max(0.0, float(config.get("longform_end_hold_sec", 2.0)))
+    return float(voice_duration) + end_hold_sec
+
+
 def _validate_video(path: str, config: dict) -> dict:
     result = subprocess.run([
         "ffprobe", "-v", "error",
@@ -550,7 +556,7 @@ def _finalize_longform(
     captions_enabled = bool(captions_path and os.path.exists(captions_path))
     caption_method = "none"
     end_hold_sec = max(0.0, float(config.get("longform_end_hold_sec", 2.0)))
-    final_duration = total_duration + end_hold_sec
+    final_duration = _planned_final_duration(total_duration, config)
 
     cmd = ["ffmpeg", "-i", concat_path, "-i", audio_source]
     if overlay_enabled:
@@ -623,6 +629,7 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
     beats = _build_visual_beats(script, config)
     total_words = max(1, sum(word_count(beat.get("voiceover", "")) for beat in beats))
     total_duration = float(voice_meta["duration_sec"])
+    final_duration = _planned_final_duration(total_duration, config)
 
     render_dir = os.path.join(run_dir, "longform_render")
     source_dir = os.path.join(render_dir, "source_clips")
@@ -672,11 +679,11 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         _mix_audio(
             voice_path,
             music,
-            total_duration,
+            final_duration,
             mixed_audio,
             voice_vol=float(config.get("voice_volume", 1.0)),
             music_vol=float(config.get("bg_music_volume", 0.10)),
-            fade_out_sec=4.0,
+            fade_out_sec=float(config.get("longform_music_fade_out_sec", 1.5)),
             target_lufs=float(config.get("final_audio_lufs", -16)),
             true_peak=float(config.get("final_audio_true_peak", -1.5)),
             lra=float(config.get("final_audio_lra", 11)),
@@ -697,6 +704,11 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         "chapters": len(chapters),
         "visual_beats": len(beats),
         "music_track": os.path.basename(music) if music else "none",
+        "voice_duration_sec": round(total_duration, 3),
+        "planned_final_duration_sec": round(final_duration, 3),
+        "music_fade_out_sec": (
+            float(config.get("longform_music_fade_out_sec", 1.5)) if music else 0.0
+        ),
         "visual_assets": visual_assets,
         "stock_video_count": sum(1 for item in visual_assets if item.get("provider") in {"pexels", "coverr"}),
         "pexels_video_count": sum(1 for item in visual_assets if item.get("provider") == "pexels"),

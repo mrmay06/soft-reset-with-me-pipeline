@@ -97,6 +97,33 @@ def _load(run_dir: str, *paths: str) -> dict:
     return {}
 
 
+def _script_evidence(script: dict) -> dict:
+    """Return the narrative and CTA fields the judge is expected to score."""
+    if script.get("chapters"):
+        return {
+            "chapters": [
+                {
+                    "id": chapter.get("id"),
+                    "label": chapter.get("label", ""),
+                    "voiceover": chapter.get("voiceover", ""),
+                }
+                for chapter in script.get("chapters", [])
+            ],
+            "counterpoint": script.get("counterpoint", ""),
+            "engagement_question": script.get("engagement_question", ""),
+            "cta": script.get("cta", ""),
+        }
+    return {
+        "hook": script.get("hook", ""),
+        "tension": script.get("tension", ""),
+        "insight": script.get("insight", ""),
+        "loopback": script.get("loopback", ""),
+        "engagement_question": script.get("engagement_question", ""),
+        "like_cta": script.get("like_cta", ""),
+        "cta": script.get("cta", ""),
+    }
+
+
 def _score_value(scores: dict, name: str) -> int:
     item = scores.get(name, {})
     if isinstance(item, dict):
@@ -188,6 +215,7 @@ def run_creative_judge(video_id: str, run_dir: str, config: dict) -> dict:
     render_meta = _load(run_dir, "06_render_meta.json", "06_longform_render_meta.json")
     upload_meta = _load(run_dir, "08_upload_meta.json", "09_longform_upload_meta.json")
     scene_manifest = _load(run_dir, "03b_scene_manifest.json")
+    thumbnail_meta = _load(run_dir, "07_longform_thumbnail_meta.json")
 
     scenes = scene_manifest.get("scenes", []) or render_meta.get("visual_assets", [])
     brand_image_count = sum(
@@ -206,6 +234,10 @@ def run_creative_judge(video_id: str, run_dir: str, config: dict) -> dict:
     title = metadata.get("title", "")
     description = metadata.get("description", "")
     thumbnail_variants = metadata.get("thumbnail_variants", [])
+    rendered_primary_thumbnail = thumbnail_meta.get(
+        "primary_variant_id", metadata.get("primary_variant_id", "unknown")
+    )
+    script_evidence = _script_evidence(script)
     duration = render_meta.get("duration_seconds", render_meta.get("duration_sec", render_meta.get("final_duration_sec", 0)))
 
     prompt = f"""You are a creative quality judge for Soft Reset With Me, a faceless YouTube relationship/self-growth channel.
@@ -222,10 +254,16 @@ Angle type: {research.get("angle_type", research.get("angle", "unknown"))}
 Total scenes: {len(scenes)}  |  Brand images: {brand_image_count}  |  Stock videos: {stock_video_count}
 Video duration: {round(duration)}s
 Thumbnail concepts: {json.dumps(thumbnail_variants, ensure_ascii=True)[:1800]}
+Rendered primary thumbnail: {rendered_primary_thumbnail}
+Thumbnail validation: {json.dumps(thumbnail_meta.get("variants", []), ensure_ascii=True)[:2200]}
+
+SCRIPT AND CTA EVIDENCE:
+{json.dumps(script_evidence, ensure_ascii=True)[:12000]}
 
 SCORING RULES:
 - policy_factual_risk: score 1 = serious risk, 10 = no risk (inverted scale)
 - only_soft_reset_score: how uniquely could only this channel say this? 1 = anyone could say this, 10 = unmistakably ours
+- Score only the supplied evidence. If any CTA field above is populated, do not claim that the video has no CTA; judge its specificity and fit instead.
 
 Return ONLY valid JSON:
 {{
@@ -255,15 +293,12 @@ Return ONLY valid JSON:
     try:
         raw = _call_judge(prompt, model)
     except Exception as e:
-        print(f"[creative_judge] Gemini failed ({e}) — using null scores")
-        raw = {
-            "scores": {dim: {"score": 0, "reason": "judge_unavailable"} for dim in JUDGE_DIMENSIONS},
-            "composite_score": 0,
-            "strongest_element": "",
-            "weakest_element": "",
-            "only_soft_reset_score": 0,
-            "only_soft_reset_reason": "judge_unavailable",
-        }
+        # Fail closed without destroying an earlier valid report. A temporary
+        # provider outage is not a creative score and must never be persisted
+        # as one.
+        raise RuntimeError(
+            f"Creative judge unavailable; existing report preserved: {e}"
+        ) from e
 
     hard_failures = _hard_failures(raw, script, config)
     soft_warnings = _soft_warnings(script, config)

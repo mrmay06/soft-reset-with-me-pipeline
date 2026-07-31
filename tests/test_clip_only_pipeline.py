@@ -3,12 +3,14 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from datetime import datetime, timezone
 from pathlib import Path
 
 from modules.image_gen import _assign_globally, _hash_distance
-from modules.creative_judge import _hard_failures
-from modules.longform_thumbnail_agent import _pick_thumbnail_frames
+from modules.creative_judge import _hard_failures, _script_evidence, run_creative_judge
+from modules.longform_thumbnail_agent import _pick_thumbnail_frames, _select_primary_variant, _variant_copy
+from modules.longform_video_assembler import _planned_final_duration
 from modules.longform_script_agent import _blocking_script_issues, _validate_script as validate_longform_script
 from modules.script_agent import _validate_script as validate_short_script
 from modules.visual_director import _validate_manifest
@@ -82,6 +84,60 @@ class ScriptGuardrailTests(unittest.TestCase):
         self.assertIn("generic_cta", validated["validation_failures"])
         self.assertEqual(validated["validation"], "forced")
         self.assertEqual(validated["hook_quality"], "strong")
+
+    def test_concrete_contradiction_hook_passes_without_literal_signal(self):
+        config = json.loads((ROOT / "config/pipeline_config.json").read_text())
+        script = {
+            "editorial_pov": "Shrinking can turn connection into a performance where honesty is always negotiated away.",
+            "only_soft_reset_line": "Being easier to hold is not the same as being known.",
+            "hook": "You shrink yourself down so other people feel big enough.",
+            "tension": "You edit the honest need before anyone can reject it. Eventually they only know the smaller version you prepared.",
+            "insight": "Sometimes this is incompatibility. Sometimes it is how the need was expressed. Neither answer requires disappearing.",
+            "loopback": "The useful question is not who was too much. It is where honesty can remain visible.",
+            "engagement_question": "When do you notice yourself editing what you need?",
+            "like_cta": "Save this before you make your needs smaller again.",
+        }
+        validated = validate_short_script(script, config)
+        self.assertEqual(validated["hook_quality"], "strong")
+
+    def test_short_flags_viewer_superiority_framing(self):
+        config = json.loads((ROOT / "config/pipeline_config.json").read_text())
+        script = {
+            "editorial_pov": "Protecting your needs should not require inventing a hierarchy between two people.",
+            "only_soft_reset_line": "Compatibility is not proof that one person has a higher ceiling.",
+            "hook": "You shrink yourself down so other people feel big enough.",
+            "tension": "You keep editing every honest request before saying it.",
+            "insight": "Some people can't hold depth. That is about their own capacity.",
+            "loopback": "Someone else's low ceiling isn't your diagnosis.",
+            "engagement_question": "When do you notice yourself becoming smaller?",
+            "like_cta": "Save this before you edit the honest sentence.",
+        }
+        validated = validate_short_script(script, config)
+        self.assertIn("superiority_framing", validated["validation_failures"])
+
+    def test_judge_evidence_contains_real_ctas_and_longform_narration(self):
+        short = _script_evidence({
+            "hook": "Hook",
+            "engagement_question": "Which moment felt familiar?",
+            "like_cta": "Save this before the next conversation.",
+        })
+        self.assertEqual(short["like_cta"], "Save this before the next conversation.")
+        longform = _script_evidence({
+            "chapters": [{"id": 1, "label": "recognition", "voiceover": "Saturday night."}],
+            "cta": "Subscribe for more.",
+        })
+        self.assertEqual(longform["chapters"][0]["voiceover"], "Saturday night.")
+        self.assertEqual(longform["cta"], "Subscribe for more.")
+
+    def test_judge_outage_preserves_existing_report(self):
+        with tempfile.TemporaryDirectory() as temp:
+            report_path = Path(temp) / "10_judge_report.json"
+            original = {"passed": True, "composite_score": 8.1}
+            report_path.write_text(json.dumps(original))
+            with patch("modules.creative_judge._call_judge", side_effect=OSError("offline")):
+                with self.assertRaisesRegex(RuntimeError, "existing report preserved"):
+                    run_creative_judge("test", temp, {})
+            self.assertEqual(json.loads(report_path.read_text()), original)
 
     def test_longform_insufficient_capacity_is_a_hard_block(self):
         config = json.loads((ROOT / "config/longform_config.json").read_text())
@@ -184,6 +240,32 @@ class ClipSelectionTests(unittest.TestCase):
         self.assertEqual(face, "person.jpg")
         self.assertEqual(left, "person.jpg")
         self.assertEqual(right, "object.jpg")
+
+    def test_thumbnail_copy_is_fitted_not_truncated(self):
+        line1, line2, combined = _variant_copy({
+            "line1": "YOU'RE TOO COMFORTABLE",
+            "line2": "and it's costing you more",
+        })
+        self.assertEqual(line1, "YOU'RE TOO COMFORTABLE")
+        self.assertEqual(line2, "and it's costing you more")
+        self.assertEqual(combined, "YOU'RE TOO COMFORTABLE / and it's costing you more")
+
+    def test_post_render_thumbnail_selector_prefers_valid_b(self):
+        selected, reason = _select_primary_variant([
+            {"id": "A", "valid": True},
+            {"id": "B", "valid": True},
+            {"id": "C", "valid": True},
+        ])
+        self.assertEqual(selected["id"], "B")
+        self.assertEqual(reason, "post_render_valid_b_preference")
+
+    def test_longform_music_fade_finishes_on_final_frame(self):
+        config = {"longform_end_hold_sec": 2.0, "longform_music_fade_out_sec": 1.5}
+        voice_duration = 165.6
+        final_duration = _planned_final_duration(voice_duration, config)
+        fade_start = final_duration - config["longform_music_fade_out_sec"]
+        self.assertEqual(final_duration, 167.6)
+        self.assertGreater(fade_start, voice_duration)
 
 
 class WeeklyDirectionTests(unittest.TestCase):

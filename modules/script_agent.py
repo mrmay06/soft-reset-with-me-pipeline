@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import json
+import re
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.gemini_client import generate_json, generate_text
@@ -46,58 +47,6 @@ def _call_script_model(prompt: str, model: str) -> dict:
     return result
 
 
-_EGO_BAIT_SIGNALS = [
-    "nobody tells you",
-    "nobody told me",
-    "most people",
-    "99%",
-    "i lost",
-    "i paid",
-    "i missed",
-    "you've never heard",
-    "quietly",
-    "secretly",
-    "they don't want you",
-    "no one talks about",
-    "most americans",
-    "average person",
-    "you're probably",
-    "getting this wrong",
-    "you didn't know",
-    "left you on read",
-    "watched your story",
-    "text again",
-    "double text",
-    "calmest reply",
-    "strongest boundary",
-    "overexplaining",
-    "not love",
-    "not communication",
-    "you did not lose",
-    "you didn't lose",
-    "moving on fast",
-    "soft does not mean weak",
-    "talking every day",
-    "if you've ever",
-    "if you",
-    "this is for you",
-    "most people think",
-    "you think",
-    "might be",
-    "might not be",
-    "not intuitive",
-    "not intuition",
-    "triggered",
-    "late reply",
-    "ruins your mood",
-    "silence makes you",
-    "red flag",
-    "old pain",
-    "old wound",
-    "gut feeling",
-]
-
-
 _WEAK_ABSTRACT_HOOK_PATTERNS = [
     "nervous system remembers",
     "mind calls intuition",
@@ -123,6 +72,19 @@ _OBSERVABLE_HOOK_SIGNALS = [
     "phone",
     "message",
 ]
+
+
+_HOOK_ACTION_WORDS = {
+    "ask", "apologize", "call", "check", "choose", "delete", "disappear", "edit",
+    "feel", "hide", "keep", "lose", "make", "pretend", "pull", "read", "rehearse",
+    "replace", "reread", "say", "scroll", "shrink", "text", "think", "type", "wait",
+}
+
+
+_HOOK_CONTRADICTION_SIGNALS = (
+    " but ", " so ", " then ", " when ", " after ", " because ", " until ",
+    " instead ", " not ",
+)
 
 
 _GENERIC_EDITORIAL_PATTERNS = [
@@ -180,6 +142,21 @@ _UNSUPPORTED_GUARANTEE_PATTERNS = [
 ]
 
 
+_SUPERIORITY_FRAMING_PATTERNS = [
+    "can't hold depth",
+    "cannot hold depth",
+    "couldn't handle you",
+    "could not handle you",
+    "someone else's low ceiling",
+    "their low ceiling",
+    "not on your level",
+    "beneath you",
+    "too deep for them",
+    "they lack capacity",
+    "their limited capacity",
+]
+
+
 _GENERIC_CTA_PATTERNS = [
     "save this one",
     "send this to someone who",
@@ -187,11 +164,22 @@ _GENERIC_CTA_PATTERNS = [
 ]
 
 
-def _hook_has_ego_bait(hook: str) -> bool:
+def _hook_is_specific(hook: str) -> bool:
     h = hook.lower()
     if any(pattern in h for pattern in _WEAK_ABSTRACT_HOOK_PATTERNS):
         return False
-    return any(sig in h for sig in _EGO_BAIT_SIGNALS + _OBSERVABLE_HOOK_SIGNALS)
+    if any(sig in h for sig in _OBSERVABLE_HOOK_SIGNALS):
+        return True
+    words = re.findall(r"[a-z']+", h)
+    has_viewer = "you" in words or "your" in words
+    has_action = bool(set(words) & _HOOK_ACTION_WORDS)
+    has_contradiction = any(signal in f" {h} " for signal in _HOOK_CONTRADICTION_SIGNALS)
+    return 4 <= len(words) <= 22 and has_viewer and has_action and has_contradiction
+
+
+def _hook_has_ego_bait(hook: str) -> bool:
+    """Backward-compatible alias for the former keyword-only hook check."""
+    return _hook_is_specific(hook)
 
 
 def _contains_any(text: str, phrases: list[str]) -> list[str]:
@@ -212,7 +200,7 @@ def _validate_script(script: dict, config: dict) -> dict:
     script = normalize_script_contract(script)
     incoming_validation = str(script.get("validation", "") or "").strip().lower()
     script.setdefault("script_version", "1")
-    script.setdefault("prompt_version", "soft-reset-script-v2.5")
+    script.setdefault("prompt_version", "soft-reset-script-v2.6")
     script.setdefault("validation_notes", "")
 
     full_text = build_spoken_script_text(script)
@@ -271,6 +259,13 @@ def _validate_script(script: dict, config: dict) -> dict:
         validation_failures.append("unsupported_guarantee")
         validation_notes.append(f"unsupported guarantees: {', '.join(guarantee_hits)}")
 
+    superiority_hits = _contains_any(full_text, _SUPERIORITY_FRAMING_PATTERNS)
+    if superiority_hits:
+        print(f"[script] ⚠ Superiority framing phrase(s): {superiority_hits}")
+        script["validation"] = "forced"
+        validation_failures.append("superiority_framing")
+        validation_notes.append(f"superiority framing: {', '.join(superiority_hits)}")
+
     cta_text = " ".join(
         str(script.get(key, "") or "")
         for key in ("engagement_question", "like_cta", "cta")
@@ -294,8 +289,8 @@ def _validate_script(script: dict, config: dict) -> dict:
 
     # Hook quality check
     hook = script.get("hook", "")
-    if not _hook_has_ego_bait(hook):
-        print(f"[script] ⚠ Weak hook (no ego-bait pattern): '{hook}'")
+    if not _hook_is_specific(hook):
+        print(f"[script] ⚠ Weak hook (not concrete or structurally specific): '{hook}'")
         script["hook_quality"] = "weak"
     else:
         script["hook_quality"] = "strong"
@@ -327,6 +322,7 @@ def _needs_script_retry(script: dict) -> bool:
             "banned_loopback",
             "retention_filler",
             "unsupported_guarantee",
+            "superiority_framing",
             "generic_cta",
             "weak_editorial_layer",
         }
@@ -343,6 +339,7 @@ def _retry_instruction(script: dict, config: dict, attempt: int) -> str:
         f"Write {min_w}-{max_w} spoken words TOTAL, no exceptions. Aim for the middle of that range.\n"
         "Keep `editorial_pov` and `only_soft_reset_line` specific, non-generic, and unmistakably on-brand.\n"
         "Do not use banned therapy-speak, hype-coach language, or generic self-help phrasing.\n"
+        "Do not flatter the viewer by declaring another person shallow, incapable, beneath them, or unable to handle their depth.\n"
         f"Rewrite attempt: {attempt}.\n"
     )
 
@@ -427,6 +424,7 @@ Review rules:
 - The signature line must feel specific to Soft Reset With Me, not a generic self-help phrase.
 - Psychological causes must be calibrated as possibilities unless the script has direct evidence.
 - The script must preserve viewer agency without blaming the viewer or guaranteeing how another person will behave.
+- Do not preserve agency by flattering the viewer as deeper, wiser, or more capable while declaring the other person shallow, incapable, or beneath them.
 - Be strict, but do not fail a script just because it is simple.
 
 Return ONLY valid JSON:
@@ -438,6 +436,7 @@ Return ONLY valid JSON:
   "signature_line_distinctive": true,
   "psychological_claims_calibrated": true,
   "viewer_agency_preserved": true,
+  "fairness_preserved": true,
   "issue_summary": "",
   "rewrite_instruction": ""
 }}
@@ -463,6 +462,7 @@ def _check_argument_coherence(script: dict, research: dict, config: dict) -> dic
             and review.get("signature_line_distinctive") is True
             and review.get("psychological_claims_calibrated") is True
             and review.get("viewer_agency_preserved") is True
+            and review.get("fairness_preserved") is True
             and not review.get("generic_drift_sections")
         )
         review["passes"] = bool(passes)
@@ -653,7 +653,7 @@ def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[script][MOCK] Generating mock script for {video_id}")
     result = {
         "script_version": "1",
-        "prompt_version": "soft-reset-script-v2.5",
+        "prompt_version": "soft-reset-script-v2.6",
         "video_id": video_id,
         "topic": "You did not lose them, you lost who you imagined they would be",
         "category": "healing arcs",

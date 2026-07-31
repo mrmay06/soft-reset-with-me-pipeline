@@ -38,6 +38,7 @@ VOICE RULES:
 - Gender-neutral by default. Use direct address: "you".
 - Create one clear promise in the hook. The loopback must answer that exact promise.
 - Preserve context and agency. Do not blame the viewer for adapting, and do not solve every pattern by blaming another person.
+- Do not flatter the viewer by making them inherently deeper, wiser, or more capable while declaring another person shallow, incapable, beneath them, or unable to "handle" them. If responsibility is uncertain, describe observable behavior, compatibility, communication, or capacity in context.
 - Treat psychological explanations as plausible lenses, not known causes. Use "might", "sometimes", or "can" where certainty is not supported.
 - Avoid guarantees and absolutes such as "the right person will", "the problem was never you", "nobody", "always", and "never" unless literally justified.
 
@@ -109,13 +110,14 @@ SILENT QUALITY CHECK BEFORE OUTPUT:
 - Does every spoken sentence advance that claim?
 - Are uncertain psychological causes written with calibrated language?
 - Does the script avoid unfairly blaming the viewer or another person?
+- Does the reframe avoid superiority language such as "they could not handle your depth" or "their low ceiling"?
 - Does the ending answer the opening promise?
 - Could any sentence be removed without losing meaning? If yes, tighten the script.
 
 Return ONLY valid JSON, no extra text:
 {{
   "script_version": "1",
-  "prompt_version": "soft-reset-script-v2.5",
+  "prompt_version": "soft-reset-script-v2.6",
   "video_id": "{video_id}",
   "topic": "{topic}",
   "category": "{category}",

@@ -117,6 +117,7 @@
   "duplicate_similarity_threshold": 0.78,
   "topic_memory_overused_lookback_days": 60,
   "bg_music_volume": 0.10,
+  "longform_music_fade_out_sec": 1.5,
   "voice_volume": 1.0,
   "final_audio_lufs": -16,
   "final_audio_true_peak": -1.5,

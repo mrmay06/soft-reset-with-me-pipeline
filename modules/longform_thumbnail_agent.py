@@ -98,17 +98,16 @@ def _sanitize_thumb_text(text: str, max_words: int = 5, uppercase: bool = True, 
     words = text.split()
     cleaned = " ".join(words[:max_words]).strip()
     cleaned = cleaned.upper() if uppercase else cleaned.lower()
-    if max_chars and len(cleaned) > max_chars:
-        clipped = cleaned[:max_chars].rsplit(" ", 1)[0].strip()
-        cleaned = clipped or cleaned[:max_chars].strip()
+    # `max_chars` is retained for call-site compatibility only. Approved copy
+    # must be fitted by typography, never silently shortened here.
     return cleaned
 
 
 def _variant_copy(variant: dict) -> tuple[str, str, str]:
-    line1 = _sanitize_thumb_text(variant.get("line1", ""), max_words=4, uppercase=True, max_chars=18)
-    line2 = _sanitize_thumb_text(variant.get("line2", ""), max_words=7, uppercase=False, max_chars=35)
+    line1 = _sanitize_thumb_text(variant.get("line1", ""), max_words=4, uppercase=True)
+    line2 = _sanitize_thumb_text(variant.get("line2", ""), max_words=7, uppercase=False)
     if not line1:
-        legacy = _sanitize_thumb_text(variant.get("thumbnail_text", ""), max_words=4, uppercase=True, max_chars=18)
+        legacy = _sanitize_thumb_text(variant.get("thumbnail_text", ""), max_words=4, uppercase=True)
         line1 = legacy or "YOU ALREADY KNOW"
     if not line2:
         line2 = "this is why it hurts"
@@ -149,7 +148,30 @@ def _wrap_text(draw: ImageDraw.ImageDraw, text: str, font, max_width: int, strok
             lines.append(current)
             current = word
     lines.append(current)
-    return lines[:2]
+    return lines
+
+
+def _fit_wrapped_font(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    font_path: str,
+    start_size: int,
+    max_width: int,
+    min_size: int,
+    max_lines: int = 2,
+    stroke_width: int = 0,
+):
+    """Fit every word inside a bounded number of lines or fail explicitly."""
+    for size in range(max(start_size, min_size), min_size - 1, -4):
+        font = _font(font_path, size)
+        lines = _wrap_text(draw, text, font, max_width, stroke_width)
+        widths = [
+            draw.textbbox((0, 0), line, font=font, stroke_width=stroke_width)[2]
+            for line in lines
+        ]
+        if lines and len(lines) <= max_lines and all(width <= max_width for width in widths):
+            return font, size, lines
+    raise ValueError(f"Thumbnail copy cannot fit without truncation: {text!r}")
 
 
 def _text_block_size(draw: ImageDraw.ImageDraw, lines: list[str], font, line_gap: int, stroke_width: int = 0) -> tuple[int, int]:
@@ -173,10 +195,9 @@ def _draw_typography_thumbnail(output_path: str, line1: str, line2: str, width: 
     outline = _hex_to_rgb(COLORS["text_outline"])
     max_width = width - SAFE_ZONE["padding_left"] - SAFE_ZONE["padding_right"]
     stroke = 6 if width >= 1920 else 4
-    headline_font, headline_size = _fit_font(
-        draw, line1, serif, int(height * 0.13), max_width, int(height * 0.07), stroke
+    headline_font, headline_size, headline_lines = _fit_wrapped_font(
+        draw, line1, serif, int(height * 0.13), max_width, int(height * 0.07), 2, stroke
     )
-    headline_lines = _wrap_text(draw, line1, headline_font, max_width, stroke)
     line_gap = int(headline_size * 0.10)
     block_w, block_h = _text_block_size(draw, headline_lines, headline_font, line_gap, stroke)
     headline_y = int(height * 0.42) - block_h // 2
@@ -215,12 +236,25 @@ def _draw_face_text_overlay(image_path: str, line1: str, line2: str, width: int,
     top = SAFE_ZONE["padding_top"]
     max_width = int(width * 0.42) - left
     stroke = 6 if width >= 1920 else 4
-    line1_font, line1_size = _fit_font(draw, line1, serif, int(height * 0.166), max_width, int(height * 0.08), stroke)
-    line2_font, _ = _fit_font(draw, line2, sans, int(height * 0.048), max_width, int(height * 0.034))
-    draw.text((left, top), line1, font=line1_font, fill=headline_fill, stroke_width=stroke, stroke_fill=outline)
-    line1_box = draw.textbbox((left, top), line1, font=line1_font, stroke_width=stroke)
-    line2_y = line1_box[3] + 36
-    draw.text((left, line2_y), line2, font=line2_font, fill=secondary_fill)
+    line1_font, line1_size, headline_lines = _fit_wrapped_font(
+        draw, line1, serif, int(height * 0.166), max_width, int(height * 0.065), 2, stroke
+    )
+    line2_font, line2_size, secondary_lines = _fit_wrapped_font(
+        draw, line2, sans, int(height * 0.048), max_width, int(height * 0.030), 2
+    )
+    headline_gap = int(line1_size * 0.08)
+    for idx, line in enumerate(headline_lines):
+        draw.text(
+            (left, top + idx * (line1_size + headline_gap)),
+            line,
+            font=line1_font,
+            fill=headline_fill,
+            stroke_width=stroke,
+            stroke_fill=outline,
+        )
+    line2_y = top + len(headline_lines) * (line1_size + headline_gap) + 24
+    for idx, line in enumerate(secondary_lines):
+        draw.text((left, line2_y + idx * (line2_size + 8)), line, font=line2_font, fill=secondary_fill)
     compressed = _save_png_under_limit(img, image_path)
     if compressed:
         print("[longform_thumbnail] Face/text thumbnail PNG optimized under 2MB")
@@ -467,6 +501,41 @@ def _create_split_from_frames(left_path: str, right_path: str, output_path: str,
     os.remove(temp_right)
 
 
+def _validate_rendered_variant(item: dict, output_path: str, width: int, height: int) -> dict:
+    errors = []
+    if not item.get("line1") or not item.get("line2"):
+        errors.append("missing_copy")
+    expected_copy = f"{item.get('line1', '')} / {item.get('line2', '')}"
+    if item.get("thumbnail_text") != expected_copy:
+        errors.append("copy_mismatch")
+    if not os.path.exists(output_path):
+        errors.append("missing_file")
+    else:
+        try:
+            with Image.open(output_path) as rendered:
+                if rendered.size != (width, height):
+                    errors.append("wrong_dimensions")
+        except Exception:
+            errors.append("unreadable_file")
+        if os.path.getsize(output_path) > MAX_THUMBNAIL_BYTES:
+            errors.append("file_too_large")
+    item["valid"] = not errors
+    item["validation_errors"] = errors
+    return item
+
+
+def _select_primary_variant(variants: list[dict]) -> tuple[dict, str]:
+    """Select only a valid rendered variant; B is the production-safe default."""
+    for variant_id in ("B", "C", "A"):
+        candidate = next(
+            (item for item in variants if item.get("id") == variant_id and item.get("valid") is True),
+            None,
+        )
+        if candidate:
+            return candidate, f"post_render_valid_{variant_id.lower()}_preference"
+    raise RuntimeError("No rendered thumbnail variant passed deterministic validation")
+
+
 def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
     print(f"[longform_thumbnail] Creating footage-derived A/B/C thumbnails for {video_id}")
     research = load_json(os.path.join(run_dir, "01_longform_research.json"))
@@ -504,7 +573,7 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
         # Always bake text via PIL — guarantees legibility regardless of image source
         _draw_text_overlay(output_path, line1, line2, variant_id, width, height, structure)
 
-        generated_variants.append({
+        rendered_variant = {
             "id": variant_id,
             "angle": variant.get("angle", ""),
             "pattern": variant.get("pattern", ""),
@@ -518,10 +587,13 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
             "background_source": source,
             "final_output_size": f"{width}x{height}",
             "degraded_fallback": False,
-        })
+        }
+        generated_variants.append(
+            _validate_rendered_variant(rendered_variant, output_path, width, height)
+        )
         print(f"[longform_thumbnail] Variant {variant_id} ready ({source})")
 
-    primary = next((item for item in generated_variants if item["id"] == primary_id), generated_variants[0])
+    primary, selection_reason = _select_primary_variant(generated_variants)
     primary_output = os.path.join(run_dir, primary["output_file"])
     final_output = os.path.join(run_dir, "07_longform_thumbnail.png")
     if os.path.abspath(primary_output) != os.path.abspath(final_output):
@@ -532,6 +604,8 @@ def run_longform_thumbnail(video_id: str, run_dir: str, config: dict) -> str:
         "video_id": video_id,
         "output": "07_longform_thumbnail.png",
         "primary_variant_id": primary["id"],
+        "requested_primary_variant_id": primary_id,
+        "selection_reason": selection_reason,
         "primary_output_file": primary["output_file"],
         "thumbnail_strategy": "footage_derived_ab_packaging_v3",
         "generated_images_used": False,
