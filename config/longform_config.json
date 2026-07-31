@@ -33,7 +33,6 @@
   "tts_voice": "Puck",
   "tts_model": "gemini-2.5-flash-preview-tts",
   "tts_speed": 1.0,
-  "longform_tts_chunk_words": 220,
   "longform_end_hold_sec": 2.0,
   "longform_target_min_sec": 300,
   "longform_target_max_sec": 420,

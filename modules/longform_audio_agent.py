@@ -27,55 +27,30 @@ def _build_longform_tts_input(script: dict) -> str:
     return _longform_tts_style() + text
 
 
-def _build_tts_chunks(script: dict, max_words: int) -> list[str]:
-    chunks: list[str] = []
-    current: list[str] = []
-    current_words = 0
-    for chapter in script.get("chapters", []):
-        text = str(chapter.get("voiceover", "")).strip().replace("—", ",").replace("--", ",")
-        words = len(text.split())
-        if current and current_words + words > max_words:
-            chunks.append(" ".join(current))
-            current, current_words = [], 0
-        if text:
-            current.append(text)
-            current_words += words
-    if current:
-        chunks.append(" ".join(current))
-    return chunks or [_spoken_text(script)]
-
-
-def _concat_tts_chunks(paths: list[str], output_path: str, run_dir: str) -> None:
-    list_path = os.path.join(run_dir, "04_longform_tts_concat.txt")
-    with open(list_path, "w", encoding="utf-8") as handle:
-        for path in paths:
-            handle.write(f"file '{os.path.abspath(path)}'\n")
+def _stabilize_longform_voice(output_path: str) -> None:
+    """Reduce gradual loudness drift without pitch-shifting the narration."""
+    stabilized = output_path.replace(".mp3", "_stabilized.mp3")
     subprocess.run(
         [
-            "ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", list_path,
-            "-acodec", "libmp3lame", "-q:a", "2", output_path,
+            "ffmpeg", "-y", "-i", output_path,
+            "-af",
+            "highpass=f=70,lowpass=f=8500,"
+            "dynaudnorm=f=500:g=7:p=0.85:m=4,"
+            "acompressor=threshold=0.1:ratio=2:attack=20:release=250:makeup=1",
+            "-acodec", "libmp3lame", "-q:a", "2", stabilized,
         ],
         check=True,
         capture_output=True,
     )
+    os.replace(stabilized, output_path)
 
 
 def run_longform_audio(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_audio] Generating voiceover for {video_id}")
     script = load_json(os.path.join(run_dir, "02_longform_script.json"))
     output_path = os.path.join(run_dir, "04_longform_voice.mp3")
-    chunks = _build_tts_chunks(script, int(config.get("longform_tts_chunk_words", 220)))
-    if len(chunks) == 1:
-        _call_gemini_tts(_longform_tts_style() + chunks[0], config, output_path)
-    else:
-        chunks_dir = os.path.join(run_dir, "04_longform_tts_chunks")
-        os.makedirs(chunks_dir, exist_ok=True)
-        chunk_paths = []
-        for index, text in enumerate(chunks, start=1):
-            chunk_path = os.path.join(chunks_dir, f"chunk_{index:02d}.mp3")
-            _call_gemini_tts(_longform_tts_style() + text, config, chunk_path)
-            chunk_paths.append(chunk_path)
-        _concat_tts_chunks(chunk_paths, output_path, run_dir)
+    _call_gemini_tts(_build_longform_tts_input(script), config, output_path)
+    _stabilize_longform_voice(output_path)
     validation = _validate_audio(output_path, {
         **config,
         "audio_min_duration_sec": config.get("longform_target_min_sec", 300),
@@ -86,8 +61,9 @@ def run_longform_audio(video_id: str, run_dir: str, config: dict) -> dict:
         "voice": config["tts_voice"],
         "model": config["tts_model"],
         "duration_sec": validation["duration_sec"],
-        "tts_chunks": len(chunks),
+        "tts_chunks": 1,
         "continuity_lock": True,
+        "continuity_strategy": "single_call_dynamic_stabilization",
         "validation": validation["validation"],
         "generated_at": now_iso(),
     }
