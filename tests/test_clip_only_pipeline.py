@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import patch
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from modules.image_gen import _assign_globally, _hash_distance
 from modules.video_audit_agent import public_release_blockers
@@ -19,6 +20,7 @@ from main import _run_public_visual_gate
 from main_long import _enforce_longform_script_gate
 from utils.weekly_direction import load_weekly_direction, weekly_direction_prompt
 from utils.publish_schedule import youtube_publish_at
+from utils.github_schedule import scheduled_cron_matches_et, should_run
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,6 +50,34 @@ class SafetyConfigTests(unittest.TestCase):
         )
         self.assertEqual(short, "2026-08-01T00:00:00Z")
         self.assertEqual(longform, "2026-08-02T16:00:00Z")
+
+    def test_delayed_summer_cron_matches_without_exact_runner_hour(self):
+        now = datetime(2026, 8, 4, 8, 2, tzinfo=ZoneInfo("America/New_York"))
+        self.assertTrue(scheduled_cron_matches_et("0 10 * * 2", now))
+        self.assertFalse(scheduled_cron_matches_et("0 11 * * 2", now))
+
+    def test_winter_cron_matches_eastern_standard_time(self):
+        now = datetime(2026, 1, 6, 8, 2, tzinfo=ZoneInfo("America/New_York"))
+        self.assertFalse(scheduled_cron_matches_et("0 10 * * 2", now))
+        self.assertTrue(scheduled_cron_matches_et("0 11 * * 2", now))
+
+    def test_schedule_gate_manual_dispatch_bypasses_cron(self):
+        now = datetime(2026, 8, 4, 8, 2, tzinfo=ZoneInfo("America/New_York"))
+        self.assertEqual(
+            should_run("workflow_dispatch", "", now, True),
+            (True, "manual_or_non_schedule_event"),
+        )
+
+    def test_schedule_gate_fails_closed_for_missing_or_disabled_schedule(self):
+        now = datetime(2026, 8, 4, 8, 2, tzinfo=ZoneInfo("America/New_York"))
+        self.assertEqual(
+            should_run("schedule", "", now, True),
+            (False, "missing_schedule_expression"),
+        )
+        self.assertEqual(
+            should_run("schedule", "0 10 * * 2", now, False),
+            (False, "automation_disabled"),
+        )
 
     def test_research_grounded_duration_configuration(self):
         shorts = json.loads((ROOT / "config/pipeline_config.json").read_text())

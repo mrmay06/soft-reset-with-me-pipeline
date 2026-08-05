@@ -28,18 +28,22 @@ jobs:
       - name: Check automation and DST gate
         id: gate
         shell: python
+        env:
+          GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
         run: |
           import json, os
           from datetime import datetime
           from zoneinfo import ZoneInfo
+          from utils.github_schedule import should_run as evaluate_schedule
           event = os.environ.get('GITHUB_EVENT_NAME', '')
+          schedule = os.environ.get('GITHUB_EVENT_SCHEDULE', '')
           config = json.load(open('config/longform_config.json'))
           now = datetime.now(ZoneInfo('America/New_York'))
           enabled = bool(config.get('automation_enabled', False))
-          should_run = event != 'schedule' or (enabled and now.weekday() == 5 and now.hour == 6)
+          should_run, reason = evaluate_schedule(event, schedule, now, enabled, target_hour_et=6)
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               out.write(f"should_run={str(should_run).lower()}\n")
-          print(f"should_run={should_run} automation_enabled={enabled} local={now.isoformat()}")
+          print(f"should_run={should_run} reason={reason} automation_enabled={enabled} schedule={schedule!r} local={now.isoformat()}")
       - if: steps.gate.outputs.should_run == 'true'
         uses: actions/setup-python@v6
         with:
