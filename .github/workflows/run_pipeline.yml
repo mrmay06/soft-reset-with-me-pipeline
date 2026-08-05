@@ -42,6 +42,7 @@ jobs:
         shell: python
         env:
           GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           import json, os
           from datetime import datetime
