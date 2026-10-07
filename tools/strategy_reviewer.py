@@ -56,7 +56,7 @@ def review_strategy(
     proposed_path: str = PROPOSED_FILE,
     reviewed_path: str = REVIEWED_FILE,
     comparison_path: str | None = None,
-    model: str = "claude-sonnet-4-6",
+    model: str = "claude-sonnet-5-5",
 ) -> str:
     if not os.path.exists(proposed_path) and os.path.exists("strategy/strategy_memory.json"):
         proposed_path = "strategy/strategy_memory.json"
@@ -75,12 +75,14 @@ def review_strategy(
     brand = load_json("strategy/brand_bible.json") if os.path.exists("strategy/brand_bible.json") else {}
 
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    from utils.claude_response import request_options, response_text
     message = client.messages.create(
         model=model,
         max_tokens=4096,
         messages=[{"role": "user", "content": _review_prompt(proposed, comparison, brand)}],
+        **request_options(model),
     )
-    reviewed = json.loads(_strip_json(message.content[0].text))
+    reviewed = json.loads(_strip_json(response_text(message)))
     reviewed["reviewed_at"] = now_iso()
     reviewed["review_model"] = model
     reviewed["review_source"] = "sonnet"

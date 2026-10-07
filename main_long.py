@@ -1,4 +1,5 @@
 from __future__ import annotations
+from utils.ai_usage import configure_usage, usage_stage
 
 import argparse
 import glob
@@ -27,6 +28,11 @@ from modules.longform_uploader import run_longform_upload, run_longform_upload_m
 from modules.longform_logger import run_longform_logger, run_longform_logger_mock
 from modules.creative_judge import run_creative_judge, run_creative_judge_mock
 from utils.youtube_preflight import check_youtube_refresh_token
+from utils.longform_packaging import synchronize_longform_packaging
+from modules.video_audit_agent import (
+    run_video_audit, run_video_audit_mock, longform_audit_is_current,
+    enforce_longform_visual_gate,
+)
 
 
 def _checkpoint(run_dir: str, *paths: str) -> bool:
@@ -106,7 +112,7 @@ def _enforce_creative_judge_gate(run_dir: str):
     judge = load_json(judge_path)
     if not isinstance(judge, dict):
         raise RuntimeError(f"Creative judge report is invalid: {judge_path}")
-    if judge.get("passed") is False:
+    if judge.get("passed") is not True or judge.get("gate") != "passed" or judge.get("hard_failures"):
         failures = judge.get("hard_failures") or []
         raise RuntimeError(
             "Creative judge blocked upload. "
@@ -115,6 +121,8 @@ def _enforce_creative_judge_gate(run_dir: str):
 
 
 def _enforce_longform_script_gate(run_dir: str):
+    from utils.script_contract import spoken_text_hash
+    from modules.longform_script_agent import _spoken_text
     script_path = os.path.join(run_dir, "02_longform_script.json")
     if not os.path.exists(script_path):
         raise RuntimeError(f"Long-form script missing before media generation: {script_path}")
@@ -127,8 +135,11 @@ def _enforce_longform_script_gate(run_dir: str):
             "Long-form script blocked before media generation. "
             f"Failures: {failures or ['human_review_required']}. Review {script_path}."
         )
-    if script.get("argument_quality") == "weak":
-        raise RuntimeError(f"Long-form argument review failed. Review {script_path}.")
+    review = script.get("argument_review")
+    if (not isinstance(review, dict) or review.get("passes") is not True
+            or review.get("status") not in {"passed", "disabled"}
+            or review.get("spoken_text_sha256") != spoken_text_hash(_spoken_text(script))):
+        raise RuntimeError(f"Long-form argument review missing, failed, unavailable, or stale. Review {script_path}.")
 
 
 def _apply_test_2min_overrides(config: dict) -> dict:
@@ -219,8 +230,10 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
     upload_fn = run_longform_upload_mock if mock else run_longform_upload
     logger_fn = run_longform_logger_mock if mock else run_longform_logger
     judge_fn  = run_creative_judge_mock  if mock else run_creative_judge
+    audit_fn = run_video_audit_mock if mock else run_video_audit
 
     timings = {}
+    configure_usage(run_dir)
     pipeline_start = time.time()
 
     def _run(label: str, fn, *args, checkpoint_files: list[str] | None = None):
@@ -228,7 +241,8 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
             print(f"  {label:<32} SKIPPED (cached)\n")
             return
         t0 = time.time()
-        fn(*args)
+        with usage_stage(label):
+            fn(*args)
         elapsed = round(time.time() - t0, 1)
         timings[label.strip()] = elapsed
         print(f"  {label:<32} OK  ({elapsed}s)\n")
@@ -237,11 +251,20 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
         _run("Module 0 — Long Performance", performance_fn, video_id, run_dir, config, checkpoint_files=["00_performance_sync.json"])
         _run("Module 1 — Long Research", research_fn, video_id, run_dir, config, checkpoint_files=["01_longform_research.json"])
         _run("Module 2 — Long Script", script_fn, video_id, run_dir, config, checkpoint_files=["02_longform_script.json"])
-        _enforce_longform_script_gate(run_dir)
+        if not mock:
+            _enforce_longform_script_gate(run_dir)
         _run("Module 3 — Long Metadata", metadata_fn, video_id, run_dir, config, checkpoint_files=["03_longform_metadata.json"])
         _run("Module 4 — Long Audio", audio_fn, video_id, run_dir, config, checkpoint_files=["04_longform_voice.mp3", "04_longform_voice_meta.json"])
-        _run("Module 5 — Long Captions", captions_fn, video_id, run_dir, config, checkpoint_files=["04_longform_captions.ass"])
-        _run("Module 6 — Long Video", video_fn, video_id, run_dir, config, checkpoint_files=["06_longform_video.mp4", "06_longform_render_meta.json"])
+        from utils.caption_validation import captions_are_current
+        from modules.longform_audio_agent import _spoken_text
+        captions_changed = not mock and not captions_are_current(
+            os.path.join(run_dir, "04_longform_captions.ass"), os.path.join(run_dir, "04_longform_voice.mp3"),
+            _spoken_text(load_json(os.path.join(run_dir, "02_longform_script.json"))),
+        )
+        _run("Module 5 — Long Captions", captions_fn, video_id, run_dir, config,
+             checkpoint_files=None if captions_changed else ["04_longform_captions.ass"])
+        _run("Module 6 — Long Video", video_fn, video_id, run_dir, config,
+             checkpoint_files=None if captions_changed else ["06_longform_video.mp4", "06_longform_render_meta.json"])
         _run(
             "Module 7 — Long Thumbnail",
             thumbnail_fn,
@@ -256,6 +279,7 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
                 "07_longform_thumbnail_meta.json",
             ],
         )
+        packaging_changed = synchronize_longform_packaging(run_dir) if not mock else False
         if not mock and not resume_id:
             send_longform_upload_confirmation(
                 video_id=video_id,
@@ -266,6 +290,8 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
                 run_dir=run_dir,
             )
         judge_checkpoint = ["10_judge_report.json"]
+        if packaging_changed:
+            judge_checkpoint = None
         judge_path = os.path.join(run_dir, "10_judge_report.json")
         if os.path.exists(judge_path):
             existing_judge = load_json(judge_path)
@@ -274,6 +300,11 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
         _run("Module 8A — Creative Judge", judge_fn, video_id, run_dir, config, checkpoint_files=judge_checkpoint)
         if not mock:
             _enforce_creative_judge_gate(run_dir)
+        if config.get("video_audit_enabled", True):
+            audit_checkpoint = ["09_video_audit.json"] if mock or longform_audit_is_current(run_dir) else None
+            _run("Module 8A — Video Audit", audit_fn, video_id, run_dir, config, checkpoint_files=audit_checkpoint)
+        if not mock:
+            enforce_longform_visual_gate(run_dir, config)
         _run("Module 8B — Long Upload", upload_fn, video_id, run_dir, config, checkpoint_files=["09_longform_upload_meta.json"])
         _run("Module 10 — Long Logger", logger_fn, video_id, run_dir, config, checkpoint_files=["11_longform_logger_meta.json"])
 

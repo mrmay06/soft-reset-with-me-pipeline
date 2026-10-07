@@ -370,6 +370,8 @@ def run_longform_metadata(video_id: str, run_dir: str, config: dict) -> dict:
         only_soft_reset_line=research.get("only_soft_reset_line", ""),
         hook=hook,
     )
+    import json
+    prompt += "\n\nAPPROVED FULL SCRIPT (source of truth):\n" + json.dumps(script, ensure_ascii=False)
     try:
         raw = _generate_packaging(prompt, config["metadata_model"])
     except Exception as exc:

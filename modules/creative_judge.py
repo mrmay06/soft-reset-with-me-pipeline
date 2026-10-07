@@ -261,6 +261,7 @@ SCRIPT AND CTA EVIDENCE:
 {json.dumps(script_evidence, ensure_ascii=True)[:12000]}
 
 SCORING RULES:
+- Compare title, description, and the selected thumbnail against the script's counterpoint and final resolution, not just its opening emotion. Packaging that reverses the ending's advice, promotes a fear the script challenges, or asserts a motive the script leaves uncertain must receive title_accuracy <= 3 and explain the exact contradiction. Apply this even when the wording is emotionally compelling.
 - policy_factual_risk: score 1 = serious risk, 10 = no risk (inverted scale)
 - only_soft_reset_score: how uniquely could only this channel say this? 1 = anyone could say this, 10 = unmistakably ours
 - Score only the supplied evidence. If any CTA field above is populated, do not claim that the video has no CTA; judge its specificity and fit instead.

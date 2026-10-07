@@ -9,6 +9,7 @@ from utils.helpers import load_json, save_json, now_iso
 from utils.performance_insights import summarize_performance_for_prompt
 from utils.retry import retry
 from utils.weekly_direction import weekly_direction_prompt
+from utils.research_evidence import normalize_research_basis
 
 
 def _is_too_similar(topic: str, recent_topics: list[str], threshold: float) -> tuple[bool, str]:
@@ -86,12 +87,12 @@ def _fallback_longform_topics() -> list[dict]:
             "working_title": "When Peace Feels Boring After Chaos",
             "content_pillar": "psychology drops",
             "longform_format": "pattern_breakdown",
-            "core_claim": "Peace can feel boring when your nervous system has learned to mistake inconsistency for chemistry.",
-            "editorial_seed": "A calm relationship can feel strange after you have been trained by uncertainty. The absence of anxiety may feel like the absence of passion at first. This video reframes calm as unfamiliar, not empty.",
-            "only_soft_reset_line": "Sometimes the spark you miss was just your body waiting for the next problem.",
+            "core_claim": "After an inconsistent relationship, steadiness can feel unfamiliar; that does not automatically mean there is no connection.",
+            "editorial_seed": "A calm relationship can feel strange after months of uncertainty. A quiet evening may seem less exciting than waiting for a reply. Explore that possible interpretation while allowing that calm alone does not prove compatibility.",
+            "only_soft_reset_line": "Unfamiliar calm is worth noticing, but you do not have to call every quiet relationship the right one.",
             "viewer_pain": "pulling away from steady people because they do not create the same rush",
-            "psych_concept": "intermittent reinforcement and nervous system familiarity",
-            "retention_hook": "If healthy love feels boring, it might not be boredom. It might be withdrawal from chaos.",
+            "psych_concept": "familiarity with uncertainty as a possible emotional lens",
+            "retention_hook": "A steady reply can feel surprisingly quiet after months of waiting for one.",
             "chapter_arc": [
                 {"chapter": "hook", "purpose": "challenge the boredom story", "duration_sec": 25},
                 {"chapter": "name the pain", "purpose": "describe the calm-person discomfort", "duration_sec": 60},
@@ -100,25 +101,29 @@ def _fallback_longform_topics() -> list[dict]:
                 {"chapter": "soft reset", "purpose": "offer a slow trust practice", "duration_sec": 80},
             ],
             "visual_mood": "soft morning rooms, quiet streets, hands journaling, slow windows, warm lamps",
-            "why_now": "Gen Z and Millennials are talking more openly about nervous system regulation and dating patterns.",
+            "why_now": "Evergreen: noticing whether unfamiliar calm is being confused with lack of interest.",
         },
     ]
 
 
-def _fallback_longform_topic(memory_file: str) -> dict:
-    recent = _recent_topics(memory_file).lower()
-    candidates = [item for item in _fallback_longform_topics() if item["topic"].lower() not in recent]
+def _fallback_longform_topic(memory_file: str, reason: str = "primary research model unavailable", threshold: float = 0.78) -> dict:
+    memory = load_json(memory_file) if os.path.exists(memory_file) else []
+    recent = [item.get("topic", "") for item in memory[-24:]] if isinstance(memory, list) else []
+    candidates = [item for item in _fallback_longform_topics()
+                  if not _is_too_similar(item["topic"], recent, threshold)[0]]
     if not candidates:
-        candidates = _fallback_longform_topics()
+        raise RuntimeError("No unused long-form evergreen topic available; refusing a repeated topic")
     result = random.choice(candidates).copy()
-    result["research_fallback_reason"] = "primary research model unavailable"
+    result["research_fallback_reason"] = reason
+    result["topic_origin"] = "evergreen_fallback"
     return result
 
 
 def run_longform_research(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_research] Selecting topic for {video_id}")
     from utils.strategy import inject_strategy
-    template = inject_strategy(open("prompts/longform_research_prompt.txt").read(), "research")
+    with open("prompts/longform_research_prompt.txt") as source:
+        template = inject_strategy(source.read(), "research")
     performance_insights = summarize_performance_for_prompt(
         config.get("performance_memory_file", "performance_memory_soft_reset_long.json"),
         min_videos=int(config.get("performance_min_videos_for_prompt", 4)),
@@ -126,6 +131,7 @@ def run_longform_research(video_id: str, run_dir: str, config: dict) -> dict:
         min_views=int(config.get("performance_min_views", 100)),
     )
     prompt = template.format(
+        duration_label=config.get("longform_duration_label", "4.5-6.5 minute"),
         target_audience=config.get("target_audience", ""),
         niche=config.get("niche", ""),
         recent_topics=_recent_topics(config.get("topic_memory_file", "topic_memory_soft_reset_long.json")),
@@ -136,9 +142,12 @@ def run_longform_research(video_id: str, run_dir: str, config: dict) -> dict:
         prompt += f"\n\n{direction}"
     try:
         result = _generate_longform_topic(prompt, config["research_model"])
+        result["topic_origin"] = "model_ideation"
     except Exception as exc:
-        print(f"[longform_research] Primary research failed ({exc}) — using deterministic fallback")
-        result = _fallback_longform_topic(config.get("topic_memory_file", "topic_memory_soft_reset_long.json"))
+        print(f"[longform_research] Primary research failed ({exc}) — using evergreen fallback")
+        result = _fallback_longform_topic(config.get("topic_memory_file", "topic_memory_soft_reset_long.json"),
+                                         threshold=float(config.get("duplicate_similarity_threshold", 0.78)))
+        result["topic_origin"] = "evergreen_fallback"
 
     # Reject topic if too similar to a recently used one
     threshold = float(config.get("duplicate_similarity_threshold", 0.78))
@@ -150,13 +159,28 @@ def run_longform_research(video_id: str, run_dir: str, config: dict) -> dict:
             too_similar, matched = _is_too_similar(result.get("topic", ""), recent_list, threshold)
             if too_similar:
                 print(f"[longform_research] Topic too similar to recent ('{matched}') — regenerating with fallback")
-                result = _fallback_longform_topic(memory_file)
+                result = _fallback_longform_topic(memory_file, "primary topic duplicated a recent topic", threshold)
+                result["topic_origin"] = "evergreen_fallback"
 
     result["video_id"] = video_id
+    result["research_context"] = {"mode": result["topic_origin"], "signals_presented": [],
+                                  "external_signals_fetched": False, "claim_verification": "none"}
     result["generated_at"] = now_iso()
+    _remove_chapter_timings(result)
+    result = normalize_research_basis(result)
+    if result["content_basis"] == "factual_claim":
+        raise RuntimeError("Long-form topic needs factual verification; choose an emotional observation instead")
     save_json(result, os.path.join(run_dir, "01_longform_research.json"))
     print(f"[longform_research] Done. Topic: {result.get('topic', '')}")
     return result
+
+
+def _remove_chapter_timings(result: dict) -> None:
+    # Also remove legacy timings from deterministic fallback outlines so they
+    # cannot reintroduce a fixed template into the writer's input.
+    for chapter in result.get("chapter_arc", []):
+        if isinstance(chapter, dict):
+            chapter.pop("duration_sec", None)
 
 
 def run_longform_research_mock(video_id: str, run_dir: str, config: dict) -> dict:
@@ -183,6 +207,11 @@ def run_longform_research_mock(video_id: str, run_dir: str, config: dict) -> dic
         "why_now": "Situationship grief is common in dating app culture where almost-relationships can feel emotionally complete.",
         "generated_at": now_iso(),
     }
+    _remove_chapter_timings(result)
+    result = normalize_research_basis(result)
+    result["topic_origin"] = "mock_fixture"
+    result["research_context"] = {"mode": "mock_fixture", "signals_presented": [],
+                                  "external_signals_fetched": False, "claim_verification": "none"}
     save_json(result, os.path.join(run_dir, "01_longform_research.json"))
     print(f"[longform_research][MOCK] Done. Topic: {result['topic']}")
     return result

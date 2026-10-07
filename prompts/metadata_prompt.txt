@@ -6,12 +6,22 @@ SCRIPT HOOK: {hook}
 TOPIC: {topic}
 CATEGORY: {category}
 ANGLE: {angle}
-SOURCE BASIS: {source_fact}
+EMOTIONAL PREMISE (not scientific evidence): {source_fact}
+Emotional observations do not need citations. Do not add claims about studies,
+statistics, diagnoses, or biological causes to make the title sound authoritative.
 
 ---
 
 CORE JOB:
 Create Shorts metadata that reinforces the first 1-2 seconds of the video, helps YouTube understand the emotional/relationship pattern, and makes the viewer feel privately seen.
+
+SCRIPT FIDELITY:
+Read the appended approved full script, including its counterpoint and ending.
+It overrides the research premise. The title and description must not turn a
+possible interpretation into a certain motive or diagnosis. Do not reverse the
+ending's advice. If the script encourages speaking honestly, do not package it
+as proof that silence or withdrawing is the answer. Curiosity is welcome;
+inventing certainty or a different payoff is not.
 
 Use natural semantic language. Do not keyword-stuff. The title and description should sound like a real thought someone would pause on at 11pm.
 

@@ -29,25 +29,27 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check local strategy window
+      - name: Check automation and DST strategy gate
         id: window
         shell: python
+        env:
+          GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           import json, os
-          from datetime import datetime, timedelta
+          from datetime import datetime
           from zoneinfo import ZoneInfo
+          from utils.github_schedule import should_run as evaluate_schedule
 
           event = os.environ.get("GITHUB_EVENT_NAME", "")
+          schedule = os.environ.get("GITHUB_EVENT_SCHEDULE", "")
           enabled = bool(json.load(open("config/pipeline_config.json")).get("automation_enabled", False))
-          should_run = event != "schedule"
-          if event == "schedule":
-              now = datetime.now(ZoneInfo("America/New_York"))
-              start = now.replace(hour=4, minute=0, second=0, microsecond=0)
-              should_run = enabled and now.weekday() == 0 and start <= now < start + timedelta(minutes=45)
+          now = datetime.now(ZoneInfo("America/New_York"))
+          should_run, reason = evaluate_schedule(event, schedule, now, enabled, target_hour_et=4)
 
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
               out.write(f"should_run={str(should_run).lower()}\n")
-          print(f"should_run={should_run}")
+          print(f"should_run={should_run} reason={reason} automation_enabled={enabled} schedule={schedule!r} local={now.isoformat()}")
 
       - name: Set up Python
         if: steps.window.outputs.should_run == 'true'

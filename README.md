@@ -21,10 +21,10 @@ All active publishing is **public-now**. The pipeline does not schedule future Y
 - Shorts visual priority: Pexels video -> generated AI image -> Pexels image fallback
 - Shorts Coverr setting: disabled by default
 - Longform stock footage: Pexels + Coverr
-- Shorts TTS: Gemini `gemini-2.5-flash-preview-tts`, `Aoede` voice
-- Longform TTS: Gemini `gemini-2.5-flash-preview-tts`, `Puck` voice
+- Shorts TTS: Gemini `gemini-3.8-flash-tts`, `Aoede` voice
+- Longform TTS: Gemini `gemini-3.8-flash-tts`, `Puck` voice
 - Script model: Claude Sonnet
-- Creative judge model: `gemini-2.5-flash-lite`
+- Creative judge model: `gemini-3.8-flash`
 - Weekly learning: Shorts-only analytics + creative judge traits -> Gemini draft -> Sonnet review -> human-approved promotion
 
 ## Publishing Schedule
@@ -113,23 +113,23 @@ Shorts defaults in `config/pipeline_config.json`:
 
 | Purpose | Setting | Current value |
 | --- | --- | --- |
-| Research | `research_model` | `gemini-2.5-flash` |
-| Script | `script_model` | `claude-sonnet-4-6` |
-| Metadata | `metadata_model` | `gemini-2.5-flash` |
-| Creative judge | `creative_judge_model` | `gemini-2.5-flash-lite` |
-| Visual director | `visual_model` | `gemini-2.5-flash` |
-| TTS | `tts_model` | `gemini-2.5-flash-preview-tts` |
+| Research | `research_model` | `gemini-3.8-flash` |
+| Script | `script_model` | `claude-sonnet-5-5` |
+| Metadata | `metadata_model` | `gemini-3.8-flash` |
+| Creative judge | `creative_judge_model` | `gemini-3.8-flash` |
+| Visual director | `visual_model` | `gemini-3.8-flash` |
+| TTS | `tts_model` | `gemini-3.8-flash-tts` |
 | TTS voice | `tts_voice` | `Aoede` |
 
 Longform defaults in `config/longform_config.json`:
 
 | Purpose | Setting | Current value |
 | --- | --- | --- |
-| Research | `research_model` | `gemini-2.5-flash` |
-| Script | `script_model` | `claude-sonnet-4-6` |
-| Metadata | `metadata_model` | `gemini-2.5-flash` |
-| Creative judge | `creative_judge_model` | `gemini-2.5-flash-lite` |
-| TTS | `tts_model` | `gemini-2.5-flash-preview-tts` |
+| Research | `research_model` | `gemini-3.8-flash` |
+| Script | `script_model` | `claude-sonnet-5-5` |
+| Metadata | `metadata_model` | `gemini-3.8-flash` |
+| Creative judge | `creative_judge_model` | `gemini-3.8-flash` |
+| TTS | `tts_model` | `gemini-3.8-flash-tts` |
 | TTS voice | `tts_voice` | `Puck` |
 
 ## Running Locally

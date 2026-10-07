@@ -1,7 +1,8 @@
 import os
 import re
 
-from utils.helpers import load_json, now_iso
+from utils.helpers import load_json, save_json, now_iso
+from utils.caption_validation import validate_words, save_caption_report, caption_report_path
 from utils.script_contract import build_spoken_script_text
 
 
@@ -29,7 +30,7 @@ def _build_transcript(script: dict) -> str:
 def _get_word_timestamps(audio_path: str, transcript: str) -> list:
     """
     Use faster-whisper directly for word-level timestamps — no VAD model needed.
-    Falls back to evenly-spaced timestamps if transcription returns nothing.
+    Empty transcription blocks production rather than inventing timestamps.
     """
     try:
         from faster_whisper import WhisperModel
@@ -64,8 +65,7 @@ def _get_word_timestamps(audio_path: str, transcript: str) -> list:
             })
 
     if not raw_words:
-        print("[captions] faster-whisper returned 0 words — using evenly-spaced fallback")
-        return _evenly_spaced(transcript, _audio_duration(audio_path))
+        raise RuntimeError("Caption audio alignment returned no words; estimated timing is mock-only")
 
     return raw_words
 
@@ -138,8 +138,11 @@ def run_captions(video_id: str, run_dir: str, config: dict) -> str:
     output_path = os.path.join(run_dir, "04_captions.ass")
 
     transcript = _build_transcript(script)
+    save_json({"status": "pending"}, caption_report_path(output_path))
     words = _get_word_timestamps(audio_path, transcript)
+    evidence = validate_words(words, transcript, _audio_duration(audio_path))
     _write_ass_file(words, output_path)
+    save_caption_report(output_path, audio_path, transcript, evidence)
 
     print(f"[captions] Done. {len(words)} words aligned.")
     return output_path

@@ -244,7 +244,7 @@ ANALYSE and give:
 
 Be direct and specific. Reference actual video titles from the data. No fluff."""
 
-    return generate_text(prompt, "gemini-2.5-flash")
+    return generate_text(prompt, "gemini-3.8-flash")
 
 
 # ── Report formatting ─────────────────────────────────────────────────────────

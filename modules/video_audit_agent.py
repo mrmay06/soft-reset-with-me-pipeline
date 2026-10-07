@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import time
 
 from utils.helpers import load_json, save_json, now_iso
+from utils.ai_usage import measured_call
 
 
 AUDIT_FILE = "09_video_audit.json"
@@ -57,10 +59,65 @@ def _upload_video(genai, video_path: str):
     raise RuntimeError("Gemini video file processing timed out")
 
 
+def _video_fingerprint(path: str) -> str:
+    digest = hashlib.sha256()
+    with open(path, "rb") as video:
+        for chunk in iter(lambda: video.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def longform_audit_is_current(run_dir: str) -> bool:
+    try:
+        audit = load_json(os.path.join(run_dir, AUDIT_FILE))
+        return (audit.get("status") == "ok" and audit.get("track") == "longform"
+                and audit.get("audit_version") == AUDIT_VERSION
+                and audit.get("render_sha256") == _video_fingerprint(os.path.join(run_dir, "06_longform_video.mp4")))
+    except (OSError, ValueError, AttributeError):
+        return False
+
+
+def enforce_longform_visual_gate(run_dir: str, config: dict):
+    if not config.get("public_release_enabled", False):
+        return
+    if not config.get("video_audit_enabled", True):
+        raise RuntimeError("Public long-form release requires video_audit_enabled=true")
+    if not longform_audit_is_current(run_dir):
+        raise RuntimeError("Long-form video audit is missing, unavailable, or stale; recheck the current render")
+    render = load_json(os.path.join(run_dir, "06_longform_render_meta.json"))
+    valid_ids = {int(asset["beat_id"]) for asset in render.get("visual_assets", [])}
+    if not valid_ids:
+        raise RuntimeError("Long-form video audit requires a visual beat map")
+    blockers = public_release_blockers(load_json(os.path.join(run_dir, AUDIT_FILE)), valid_ids)
+    if blockers:
+        raise RuntimeError(f"Long-form video audit blocked public upload: {blockers}")
+
+
+def _longform_context(video_id: str, run_dir: str, config: dict) -> dict:
+    from modules.longform_video_assembler import _build_visual_beats
+    script = load_json(os.path.join(run_dir, "02_longform_script.json"))
+    render = load_json(os.path.join(run_dir, "06_longform_render_meta.json"))
+    beats = {int(beat["id"]): beat for beat in _build_visual_beats(script, config)}
+    scene_map = []
+    elapsed = 0.0
+    for asset in render.get("visual_assets", []):
+        beat_id = int(asset["beat_id"])
+        beat = beats[beat_id]
+        duration = float(asset["duration_sec"])
+        scene_map.append({"scene_id": beat_id, "start_sec": round(elapsed, 3),
+                          "end_sec": round(elapsed + duration, 3),
+                          "covers_dialogue": beat["voiceover"], "selected_clip": asset})
+        elapsed += duration
+    return {"video_id": video_id, "track": "longform", "scene_map": scene_map,
+            "metadata": load_json(os.path.join(run_dir, "03_longform_metadata.json")),
+            "end_hold_sec": render.get("end_hold_sec", 2.0)}
+
+
 def _prompt(context: dict) -> str:
+    format_name = "long-form video" if context.get("track") == "longform" else "Short"
     return (
         "You are Channel Strategist's video-audit specialist for Soft Reset With Me.\n"
-        "Watch the attached finished Short. Do not judge topic performance from analytics; focus on video-specific causes "
+        f"Watch the attached finished {format_name}. Do not judge topic performance from analytics; focus on video-specific causes "
         "that YouTube Analytics cannot show.\n\n"
         "Return ONLY valid JSON with this schema:\n"
         "{\n"
@@ -83,8 +140,10 @@ def _prompt(context: dict) -> str:
         "A blocking visual mismatch must reverse or materially undermine the narration. "
         "Generic but emotionally compatible footage is not blocking. Include only high-confidence "
         "high/critical mismatches, and use scene_id values from SCENE MAP. Return an empty list when none exist.\n\n"
+        "Different people and locations across clips are allowed. Do not infer that every clip depicts the same person. "
+        "An intentional final narration-free hold is not a broken ending; music may continue through it.\n\n"
         "Pipeline context:\n"
-        f"{json.dumps(context, indent=2)[:12000]}"
+        f"{json.dumps(context, indent=2) if context.get('track') == 'longform' else json.dumps(context, indent=2)[:12000]}"
     )
 
 
@@ -131,23 +190,25 @@ def _empty_result(video_id: str, status: str, reason: str) -> dict:
 
 
 def run_video_audit(video_id: str, run_dir: str, config: dict) -> dict:
-    """Watch the rendered Short with Gemini and save video-specific creative observations."""
+    """Watch the rendered video with Gemini and save creative observations."""
     output_path = os.path.join(run_dir, AUDIT_FILE)
     if not config.get("video_audit_enabled", True):
         result = _empty_result(video_id, "skipped", "video_audit_disabled")
         save_json(result, output_path)
         return result
 
-    video_path = os.path.join(run_dir, "06_final_video.mp4")
+    is_longform = config.get("longform_target_words_min") is not None
+    video_path = os.path.join(run_dir, "06_longform_video.mp4" if is_longform else "06_final_video.mp4")
     if not os.path.exists(video_path):
         result = _empty_result(video_id, "skipped", "final_video_missing")
         save_json(result, output_path)
         return result
 
     try:
+        render_hash = _video_fingerprint(video_path)
         genai = _get_gemini_client()
         uploaded = _upload_video(genai, video_path)
-        model_name = config.get("video_audit_model") or config.get("weekly_analysis_model") or config.get("metadata_model", "gemini-2.5-flash")
+        model_name = config.get("video_audit_model") or config.get("weekly_analysis_model") or config.get("metadata_model", "gemini-3.8-flash")
         model = genai.GenerativeModel(model_name)
         context = {
             "video_id": video_id,
@@ -170,16 +231,22 @@ def run_video_audit(video_id: str, run_dir: str, config: dict) -> dict:
             "render_meta": _load_optional(os.path.join(run_dir, "06_render_meta.json"), {}),
             "creative_judge": _load_optional(os.path.join(run_dir, "10_judge_report.json"), {}),
         }
-        response = model.generate_content([
+        if is_longform:
+            context = _longform_context(video_id, run_dir, config)
+        response = measured_call("google", model_name, "video_audit", model.generate_content, [
             _prompt(context),
             {"file_data": {"file_uri": uploaded.uri, "mime_type": "video/mp4"}},
         ])
         audit = _extract_json(response.text)
+        if _video_fingerprint(video_path) != render_hash:
+            raise RuntimeError("Rendered video changed during audit; recheck it")
         audit.update({
             "video_id": video_id,
             "status": "ok",
             "model": model_name,
             "generated_at": now_iso(),
+            "track": "longform" if is_longform else "short",
+            "render_sha256": render_hash,
         })
         save_json(audit, output_path)
         print(f"[video_audit] Done. Saved {output_path}")

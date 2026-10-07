@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+from utils.ai_usage import measured_call
 
 
 try:
@@ -23,7 +24,7 @@ def generate_json(prompt: str, model: str) -> dict | list:
 
     if _genai is not None:
         client = _genai.Client(api_key=api_key)
-        response = client.models.generate_content(
+        response = measured_call("google", model, "json", client.models.generate_content,
             model=model,
             contents=prompt,
             config=_genai_types.GenerateContentConfig(response_mime_type="application/json"),
@@ -33,7 +34,7 @@ def generate_json(prompt: str, model: str) -> dict | list:
     import google.generativeai as genai
     genai.configure(api_key=api_key)
     client = genai.GenerativeModel(model)
-    response = client.generate_content(
+    response = measured_call("google", model, "json", client.generate_content,
         prompt,
         generation_config={"response_mime_type": "application/json"},
     )
@@ -45,10 +46,10 @@ def generate_text(prompt: str, model: str) -> str:
 
     if _genai is not None:
         client = _genai.Client(api_key=api_key)
-        response = client.models.generate_content(model=model, contents=prompt)
+        response = measured_call("google", model, "text", client.models.generate_content, model=model, contents=prompt)
         return (response.text or "").strip()
 
     import google.generativeai as genai
     genai.configure(api_key=api_key)
-    response = genai.GenerativeModel(model).generate_content(prompt)
+    response = measured_call("google", model, "text", genai.GenerativeModel(model).generate_content, prompt)
     return (response.text or "").strip()

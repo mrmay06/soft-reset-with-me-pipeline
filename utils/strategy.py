@@ -58,6 +58,10 @@ def get_strategy_context(section: str) -> str:
     section_data = strategy.get(section)
     if not section_data:
         return ""
+    if section == "script" and isinstance(section_data, dict):
+        # Shared strategy cannot set one numeric contract for both tracks.
+        # Word-count limits belong to each run's configuration.
+        section_data = {key: value for key, value in section_data.items() if key != "word_count_signal"}
     if section == "research" and isinstance(section_data, dict):
         cooldowns = active_cooldowns(strategy)
         if cooldowns:

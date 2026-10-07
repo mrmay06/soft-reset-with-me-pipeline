@@ -1,4 +1,5 @@
 workspace/
+.audit-backups/
 .env
 *.env
 __pycache__/

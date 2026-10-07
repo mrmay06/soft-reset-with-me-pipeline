@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import hashlib
 
 
 SPOKEN_SECTION_KEYS = (
@@ -43,3 +44,13 @@ def build_spoken_script_text(script: dict) -> str:
 
 def word_count(text: str) -> int:
     return len(re.findall(r"\b[\w'$%.-]+\b", text))
+
+
+def spoken_text_hash(text: str) -> str:
+    return hashlib.sha256(" ".join(text.split()).encode("utf-8")).hexdigest()
+
+
+def quote_is_spoken(quote: object, text: str) -> bool:
+    if not isinstance(quote, str) or not quote.strip():
+        return False
+    return " ".join(quote.split()) in " ".join(text.split())

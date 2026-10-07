@@ -4,10 +4,12 @@ import json
 import os
 
 from utils.gemini_client import generate_json
+from utils.ai_usage import measured_call
+from utils.claude_response import request_options, response_text
 from utils.helpers import load_json, save_json, now_iso
 from utils.performance_insights import summarize_performance_for_prompt
 from utils.retry import retry
-from utils.script_contract import word_count
+from utils.script_contract import word_count, spoken_text_hash, quote_is_spoken
 
 try:
     import anthropic as _anthropic
@@ -28,12 +30,13 @@ def _call_model(prompt: str, model: str) -> dict:
         if not api_key:
             raise RuntimeError("ANTHROPIC_API_KEY not set")
         client = _anthropic.Anthropic(api_key=api_key)
-        msg = client.messages.create(
+        msg = measured_call("anthropic", model, "script_or_review", client.messages.create,
             model=model,
-            max_tokens=4096,
+            max_tokens=8192,
             messages=[{"role": "user", "content": prompt}],
+            **request_options(model),
         )
-        text = msg.content[0].text.strip()
+        text = response_text(msg)
         if text.startswith("```"):
             text = text.split("```")[1]
             if text.startswith("json"):
@@ -53,13 +56,9 @@ Check if this long-form script is a coherent emotional essay, not generic advice
 Core claim:
 {research.get("core_claim", "")}
 
-Script contract and chapters:
-{json.dumps({
-    "insufficient_story_capacity": script.get("insufficient_story_capacity"),
-    "capacity_reason": script.get("capacity_reason", ""),
-    "counterpoint": script.get("counterpoint", ""),
-    "chapters": script.get("chapters", []),
-}, indent=2)}
+Spoken chapters (only voiceover is heard; labels identify sections):
+{json.dumps([{"id": chapter.get("id"), "label": chapter.get("label", ""),
+              "voiceover": chapter.get("voiceover", "")} for chapter in script.get("chapters", [])], indent=2)}
 
 Review rules:
 - The first chapter must clearly open the emotional loop.
@@ -69,7 +68,9 @@ Review rules:
 - Flag generic advice, therapy-speak bloat, or section drift.
 - Flag announced-but-delayed value such as "stay with me" or "what comes next".
 - Psychological explanations must be calibrated as possibilities, not diagnoses or invented personal history.
+- Ordinary feelings, illustrative scenes, and emotional interpretations do not need citations. Do not fail them for lacking a source. Reject invented research, statistics, diagnoses, and unsupported biological explanations.
 - The script must contain a genuine counterpoint and preserve viewer agency.
+- The narration must include a usable decision tool. Return exact spoken quotes for both the counterpoint and decision tool. Do not credit top-level summaries or intentions that the viewer never hears.
 - The ending must answer the opening promise.
 
 Return ONLY valid JSON:
@@ -77,6 +78,9 @@ Return ONLY valid JSON:
   "passes": true,
   "psychological_claims_calibrated": true,
   "counterpoint_present": true,
+  "counterpoint_quote": "exact quote from chapter voiceover",
+  "decision_tool_present": true,
+  "decision_tool_quote": "exact quote from chapter voiceover",
   "viewer_agency_preserved": true,
   "opening_promise_resolved": true,
   "retention_filler_present": false,
@@ -89,22 +93,36 @@ Return ONLY valid JSON:
 
 def _review_script(script: dict, research: dict, config: dict) -> dict:
     if not config.get("script_argument_review_enabled", True):
-        return {"passes": True, "status": "disabled"}
+        return {"passes": True, "status": "disabled", "spoken_text_sha256": spoken_text_hash(_spoken_text(script))}
     try:
         review = _call_model(_review_prompt(script, research), config["script_model"])
+        if not isinstance(review, dict):
+            raise ValueError("argument review returned non-object JSON")
         review["passes"] = bool(
-            review.get("passes")
-            and review.get("psychological_claims_calibrated")
-            and review.get("counterpoint_present")
-            and review.get("viewer_agency_preserved")
-            and review.get("opening_promise_resolved")
-            and not review.get("retention_filler_present")
-            and not review.get("drift_chapters")
+            review.get("passes") is True
+            and review.get("psychological_claims_calibrated") is True
+            and review.get("counterpoint_present") is True
+            and quote_is_spoken(review.get("counterpoint_quote"), _spoken_text(script))
+            and review.get("decision_tool_present") is True
+            and quote_is_spoken(review.get("decision_tool_quote"), _spoken_text(script))
+            and review.get("viewer_agency_preserved") is True
+            and review.get("opening_promise_resolved") is True
+            and review.get("retention_filler_present") is False
+            and review.get("drift_chapters") == []
         )
         review["status"] = "passed" if review["passes"] else "failed"
+        review["spoken_text_sha256"] = spoken_text_hash(_spoken_text(script))
         return review
     except Exception as exc:
-        return {"passes": True, "status": "soft_failed", "issue_summary": str(exc), "drift_chapters": []}
+        return {"passes": False, "status": "unavailable", "issue_summary": str(exc), "drift_chapters": []}
+
+
+def _require_available_argument_review(script: dict, run_dir: str) -> None:
+    if script.get("argument_review", {}).get("status") == "unavailable":
+        script["validation"] = "needs_review"
+        script["human_review_required"] = True
+        save_json(script, os.path.join(run_dir, "02_longform_script.json"))
+        raise RuntimeError("Long-form argument review unavailable; saved script for review retry.")
 
 
 def _validate_script(script: dict, config: dict) -> dict:
@@ -121,9 +139,9 @@ def _validate_script(script: dict, config: dict) -> dict:
         warnings.append("too_short")
     if words > max_words:
         warnings.append("too_long")
-    if len(script.get("chapters", [])) < 5:
-        warnings.append("too_few_chapters")
     failures = []
+    if not script.get("chapters") or not _spoken_text(script):
+        failures.append("missing_spoken_chapters")
     if not hard_min_words <= words <= hard_max_words:
         failures.append("word_count_hard")
     if not isinstance(script.get("insufficient_story_capacity"), bool):
@@ -165,6 +183,8 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
         duration_label=config.get("longform_duration_label", "4.5-6.5 minute"),
         target_words_min=int(config.get("longform_target_words_min", 700)),
         target_words_max=int(config.get("longform_target_words_max", 950)),
+        hard_words_min=int(config.get("longform_hard_words_min", max(1, int(config.get("longform_target_words_min", 700)) - 100))),
+        hard_words_max=int(config.get("longform_hard_words_max", int(config.get("longform_target_words_max", 950)) + 150)),
         longform_format=research.get("longform_format", ""),
         content_pillar=research.get("content_pillar", ""),
         core_claim=research.get("core_claim", ""),
@@ -172,8 +192,10 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
         only_soft_reset_line=research.get("only_soft_reset_line", ""),
         viewer_pain=research.get("viewer_pain", ""),
         psych_concept=research.get("psych_concept", ""),
+        content_basis=research.get("content_basis", "emotional_observation"),
         retention_hook=research.get("retention_hook", ""),
-        chapter_arc=json.dumps(research.get("chapter_arc", [])),
+        chapter_arc=json.dumps([{key: value for key, value in chapter.items() if key != "duration_sec"}
+                                for chapter in research.get("chapter_arc", [])]),
         visual_mood=research.get("visual_mood", ""),
         performance_insights=performance_insights,
         generated_at=now_iso(),
@@ -184,6 +206,7 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
     review = _review_script(script, research, config)
     script["argument_review"] = review
     script["argument_quality"] = "strong" if review.get("passes") else "weak"
+    _require_available_argument_review(script, run_dir)
 
     if script["validation"] != "passed" or not review.get("passes"):
         min_words = int(config.get("longform_target_words_min", 700))
@@ -204,6 +227,7 @@ def run_longform_script(video_id: str, run_dir: str, config: dict) -> dict:
         review = _review_script(script, research, config)
         script["argument_review"] = review
         script["argument_quality"] = "strong" if review.get("passes") else "weak"
+        _require_available_argument_review(script, run_dir)
 
     blocking_issues = _blocking_script_issues(script, review)
     if blocking_issues:
@@ -308,6 +332,21 @@ def run_longform_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
             ),
         },
     ]
+    minimum = int(config.get("longform_target_words_min", 700))
+    maximum = int(config.get("longform_target_words_max", 950))
+    if not minimum <= word_count(" ".join(ch["voiceover"] for ch in chapters)) <= maximum:
+        # Keep complete opening/closing chapters, then add whole middle units.
+        # This is a test fixture, never a production length-repair strategy.
+        selected = [chapters[0], chapters[-1]]
+        for chapter in chapters[1:-1]:
+            count = word_count(" ".join(ch["voiceover"] for ch in selected))
+            if count >= minimum:
+                break
+            if count + word_count(chapter["voiceover"]) <= maximum:
+                selected.insert(-1, chapter)
+        chapters = selected
+        if not minimum <= word_count(" ".join(ch["voiceover"] for ch in chapters)) <= maximum:
+            raise RuntimeError("Mock chapter fixture cannot fit configured word range")
     script = {
         "insufficient_story_capacity": False,
         "capacity_reason": "The topic supports a recurring scene, multiple manifestations, a counterpoint, and a decision tool.",

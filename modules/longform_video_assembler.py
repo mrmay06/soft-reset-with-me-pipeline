@@ -3,13 +3,14 @@ from __future__ import annotations
 import glob
 import hashlib
 import json
+import math
 import os
 import random
 import re
 import subprocess
+from datetime import datetime, timezone
 
 import requests
-from PIL import Image, ImageDraw, ImageFont
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.script_contract import word_count
@@ -31,101 +32,6 @@ def _filter_path(path: str) -> str:
     return os.path.abspath(path).replace("'", "\\'").replace("\\", "/")
 
 
-def _font(path: str, size: int):
-    try:
-        return ImageFont.truetype(path, size)
-    except OSError:
-        return ImageFont.load_default()
-
-
-def _wrap_text(draw: ImageDraw.ImageDraw, text: str, font, max_width: int) -> list[str]:
-    words = text.split()
-    lines = []
-    current = ""
-    for word in words:
-        candidate = f"{current} {word}".strip()
-        box = draw.textbbox((0, 0), candidate, font=font)
-        if box[2] - box[0] <= max_width:
-            current = candidate
-        else:
-            if current:
-                lines.append(current)
-            current = word
-    if current:
-        lines.append(current)
-    return lines
-
-
-def _draw_wrapped(draw: ImageDraw.ImageDraw, text: str, font, fill, x: int, y: int, max_width: int, line_gap: int = 18) -> int:
-    for line in _wrap_text(draw, text, font, max_width):
-        draw.text((x, y), line, font=font, fill=fill)
-        box = draw.textbbox((0, 0), line, font=font)
-        y += (box[3] - box[1]) + line_gap
-    return y
-
-
-def _chapter_card(chapter: dict, idx: int, total: int, metadata: dict, research: dict, output_path: str, config: dict):
-    width = int(config.get("longform_width", 1920))
-    height = int(config.get("longform_height", 1080))
-    midnight = (28, 28, 43)
-    cream = (245, 240, 232)
-    terracotta = (196, 120, 90)
-    sage = (123, 174, 138)
-
-    image = Image.new("RGB", (width, height), midnight)
-    draw = ImageDraw.Draw(image, "RGBA")
-
-    # Editorial, non-template-ish texture from simple translucent blocks.
-    draw.rectangle((0, 0, width, height), fill=midnight + (255,))
-    draw.rectangle((0, 0, width, 20), fill=terracotta + (255,))
-    draw.rectangle((0, height - 22, width, height), fill=sage + (190,))
-    draw.rectangle((118, 118, 138, height - 118), fill=terracotta + (210,))
-    draw.rectangle((width - 138, 118, width - 118, height - 118), fill=sage + (150,))
-    draw.ellipse((width - 560, -240, width + 180, 500), fill=(196, 120, 90, 34))
-    draw.ellipse((-260, height - 420, 430, height + 220), fill=(123, 174, 138, 26))
-
-    dm = "assets/fonts/DMSerifDisplay-Regular.ttf"
-    inter = "assets/fonts/Inter-Bold.ttf"
-    eyebrow_font = _font(inter, 30)
-    title_font = _font(dm, 72)
-    body_font = _font(dm, 54)
-    meta_font = _font(inter, 28)
-
-    draw.text((188, 146), f"SOFT RESET WITH ME  /  {idx + 1:02d}", font=eyebrow_font, fill=terracotta)
-    title = metadata.get("title") or research.get("working_title", "")
-    _draw_wrapped(draw, title, title_font, cream, 188, 220, 1220, line_gap=18)
-
-    quote = chapter.get("voiceover", "")
-    if len(quote) > 210:
-        quote = quote[:207].rsplit(" ", 1)[0] + "..."
-    _draw_wrapped(draw, quote, body_font, cream, 188, 520, 1300, line_gap=16)
-
-    label = str(chapter.get("label", "chapter")).upper()
-    draw.text((188, 900), label, font=meta_font, fill=sage)
-    draw.text((width - 420, 900), f"{idx + 1}/{total}", font=meta_font, fill=terracotta)
-
-    image.save(output_path)
-
-
-def _image_segment(image_path: str, duration: float, output_path: str, config: dict):
-    fps = int(config.get("longform_fps", 30))
-    width = int(config.get("longform_width", 1920))
-    height = int(config.get("longform_height", 1080))
-    frames = max(1, int(duration * fps))
-    zoompan = (
-        "zoompan="
-        "z='min(zoom+0.00018,1.08)':"
-        "x='iw/2-(iw/zoom/2)':"
-        "y='ih/2-(ih/zoom/2)':"
-        f"d={frames}:s={width}x{height}:fps={fps}"
-    )
-    _run_ffmpeg([
-        "ffmpeg", "-loop", "1", "-i", image_path,
-        "-t", str(duration),
-        "-vf", f"scale={width * 2}:-1,{zoompan},scale={width}:{height}",
-        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
-        "-r", str(fps), output_path, "-y"
-    ], f"image_segment:{output_path}")
 
 
 def _clip_segment(clip_path: str, duration: float, output_path: str, config: dict):
@@ -135,7 +41,7 @@ def _clip_segment(clip_path: str, duration: float, output_path: str, config: dic
     _run_ffmpeg([
         "ffmpeg", "-stream_loop", "-1", "-i", clip_path,
         "-t", str(duration),
-        "-vf", f"scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},eq=saturation=0.86:contrast=1.04:brightness=-0.025",
+        "-vf", f"scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},setsar=1,eq=saturation=0.86:contrast=1.04:brightness=-0.025",
         "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
         "-r", str(fps), "-an", output_path, "-y"
     ], f"clip_segment:{output_path}")
@@ -278,19 +184,26 @@ def _build_visual_beats(script: dict, config: dict) -> list[dict]:
     return beats
 
 
-def _queries_for_chapter(script: dict, chapter: dict, research: dict, idx: int) -> list[str]:
+def _script_queries_for_chapter(script: dict, chapter: dict, idx: int) -> list[str]:
     visual_brief = script.get("visual_brief", [])
+    chapter_id = chapter.get("chapter_id", chapter.get("id", idx + 1))
     for item in visual_brief:
-        if int(item.get("chapter_id", -1)) == int(chapter.get("id", idx + 1)):
+        if int(item.get("chapter_id", -1)) == int(chapter_id):
             queries = item.get("stock_queries") or []
             if queries:
-                return [_sanitize_query(q) for q in queries[:4]]
-    return _fallback_queries(chapter, research, idx)
+                return [_sanitize_query(q) for q in queries[:4] if str(q).strip()]
+    return []
+
+
+def _queries_for_chapter(script: dict, chapter: dict, research: dict, idx: int) -> list[str]:
+    return _script_queries_for_chapter(script, chapter, idx) or _fallback_queries(chapter, research, idx)
 
 
 def _queries_for_beat(script: dict, beat: dict, research: dict, idx: int) -> list[str]:
     text = str(beat.get("voiceover", "")).lower()
-    queries = []
+    # Preserve deliberate visual direction before broad keyword associations.
+    # Otherwise generic matches can fill the query limit and discard the brief.
+    queries = _script_queries_for_chapter(script, beat, idx)
     if any(term in text for term in ["phone", "text", "screen", "dm", "message", "scroll"]):
         queries.extend(["phone screen bed", "person looking at phone", "phone screen night"])
     if any(term in text for term in ["chaos", "anxiety", "inconsistent", "withdrawal", "rush"]):
@@ -301,7 +214,8 @@ def _queries_for_beat(script: dict, beat: dict, research: dict, idx: int) -> lis
         queries.extend(["hands journaling close up", "hands writing journal", "journal open pen"])
     if any(term in text for term in ["relationship", "love", "person", "people"]):
         queries.extend(["two people sitting couch calm", "person sitting alone room"])
-    queries.extend(_queries_for_chapter(script, beat, research, idx))
+    if not _script_queries_for_chapter(script, beat, idx):
+        queries.extend(_fallback_queries(beat, research, idx))
     deduped = []
     for query in queries:
         sanitized = _sanitize_query(query)
@@ -504,7 +418,33 @@ def _planned_final_duration(voice_duration: float, config: dict) -> float:
     return float(voice_duration) + end_hold_sec
 
 
-def _validate_video(path: str, config: dict) -> dict:
+def _plan_beat_durations(beats: list[dict], voice_duration: float, fps: int) -> list[float]:
+    """Fit all beats to one narration timeline, rounded at cumulative boundaries.
+
+    Independent minimum durations and rounding accumulate drift. Reserve just
+    one frame per beat and keep every boundary inside the measured voice track.
+    """
+    if not beats or fps <= 0 or not math.isfinite(voice_duration) or voice_duration <= 0:
+        raise ValueError("Visual timing requires beats, positive FPS, and a finite voice duration")
+    total_frames = math.ceil(voice_duration * fps)
+    if total_frames < len(beats):
+        raise ValueError("More visual beats than available narration frames")
+    weights = [max(1, word_count(beat.get("voiceover", ""))) for beat in beats]
+    total_words = sum(weights)
+    cumulative_words = 0
+    previous = 0
+    durations = []
+    for index, weight in enumerate(weights):
+        cumulative_words += weight
+        remaining = len(beats) - index - 1
+        boundary = min(total_frames - remaining,
+                       max(previous + 1, round(total_frames * cumulative_words / total_words)))
+        durations.append((boundary - previous) / fps)
+        previous = boundary
+    return durations
+
+
+def _validate_video(path: str, config: dict, expected_duration: float | None = None) -> dict:
     result = subprocess.run([
         "ffprobe", "-v", "error",
         "-show_entries", "stream=width,height,codec_name:format=duration",
@@ -518,6 +458,10 @@ def _validate_video(path: str, config: dict) -> dict:
     assert stream["height"] == int(config.get("longform_height", 1080))
     min_duration = float(config.get("longform_validation_min_sec", max(60, float(config.get("longform_target_min_sec", 270)) * 0.85)))
     assert duration >= min_duration, f"Long-form render too short: {duration}"
+    if expected_duration is not None:
+        tolerance = 1 / int(config.get("longform_fps", 30)) + 0.05
+        if abs(duration - expected_duration) > tolerance:
+            raise RuntimeError(f"Long-form timing mismatch: rendered {duration}s; expected {expected_duration}s")
     return {
         "duration_sec": round(duration, 2),
         "width": stream["width"],
@@ -557,20 +501,30 @@ def _finalize_longform(
     caption_method = "none"
     end_hold_sec = max(0.0, float(config.get("longform_end_hold_sec", 2.0)))
     final_duration = _planned_final_duration(total_duration, config)
+    moving_tail = bool(config.get("longform_moving_tail", False))
 
-    cmd = ["ffmpeg", "-i", concat_path, "-i", audio_source]
+    # Joined stock encodes may switch between unspecified and square-pixel SAR.
+    # Their dimensions/pixel format are already fixed. Do not let metadata-only
+    # changes reset the looping blend/subtitle timeline midway through the film.
+    cmd = ["ffmpeg", "-reinit_filter", "0", "-i", concat_path, "-i", audio_source]
     if overlay_enabled:
         cmd += ["-stream_loop", "-1", "-i", overlay_path]
         filter_complex = (
-            "[0:v]format=gbrp[base];"
+            "[0:v]setsar=1,format=gbrp[base];"
             f"[2:v]scale={width}:{height},format=gbrp[film];"
             f"[base][film]blend=all_mode='{blend_mode}':all_opacity={opacity}[vfilm]"
         )
         video_label = "vfilm"
         print(f"[longform_video] Film overlay: {overlay_path} ({blend_mode}, opacity={opacity})")
     else:
-        filter_complex = "[0:v]null[vfilm]"
+        filter_complex = "[0:v]setsar=1[vfilm]"
         video_label = "vfilm"
+
+    # Bound frame-rounding excess and a looping overlay to the planned timeline.
+    # Moving-tail mode already extends the final stock segment before concat.
+    visual_duration = final_duration if moving_tail else total_duration
+    filter_complex += f";[{video_label}]trim=duration={visual_duration},setpts=PTS-STARTPTS[vbase]"
+    video_label = "vbase"
 
     if captions_enabled:
         caption, caption_method = _caption_filter(captions_path)
@@ -582,20 +536,24 @@ def _finalize_longform(
         filter_complex += f";[{video_label}]null[vcontent]"
 
     if end_hold_sec > 0:
-        filter_complex += (
-            f";[vcontent]tpad=stop_mode=clone:stop_duration={end_hold_sec}[vout]"
-            f";[1:a]apad=pad_dur={end_hold_sec}[aout]"
-        )
+        padding = "null" if moving_tail else f"tpad=stop_mode=clone:stop_duration={end_hold_sec}"
+        filter_complex += f";[vcontent]{padding}[vout];[1:a]apad=pad_dur={end_hold_sec}[aout]"
         audio_map = "[aout]"
     else:
         filter_complex += ";[vcontent]null[vout]"
         audio_map = "1:a"
 
+    fade_sec = min(end_hold_sec, max(0.0, float(config.get("longform_end_fade_sec", 0))))
+    if fade_sec > 0:
+        filter_complex += f";[vout]fade=t=out:st={final_duration - fade_sec:.3f}:d={fade_sec}[vfinal]"
+    else:
+        filter_complex += ";[vout]null[vfinal]"
+
     print(f"[longform_video] Captions: {caption_method}")
     _run_ffmpeg([
         *cmd,
         "-filter_complex", filter_complex,
-        "-map", "[vout]", "-map", audio_map,
+        "-map", "[vfinal]", "-map", audio_map,
         "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
         "-c:a", "aac", "-ar", "44100",
         "-pix_fmt", "yuv420p", "-r", str(fps),
@@ -607,6 +565,8 @@ def _finalize_longform(
         "captions": captions_enabled,
         "caption_method": caption_method,
         "end_hold_sec": end_hold_sec,
+        "moving_tail": moving_tail,
+        "ending_fade_sec": fade_sec,
         "film_overlay": {
             "requested": bool(config.get("film_overlay_enabled", False)),
             "applied": overlay_enabled,
@@ -615,6 +575,48 @@ def _finalize_longform(
             "opacity": opacity,
         },
     }
+
+
+def _longform_clip_history(config: dict) -> tuple[str, list[dict], set[str], set[str]]:
+    path = config.get("longform_clip_memory_file", "clip_memory_soft_reset_long.json")
+    memory = load_json(path) if os.path.exists(path) else []
+    if not isinstance(memory, list) or any(not isinstance(item, dict) for item in memory):
+        raise RuntimeError("Long-form clip memory is invalid; restore it instead of silently losing repeat protection")
+    days = max(0, int(config.get("longform_clip_reuse_hard_block_days", 30)))
+    now = datetime.now(timezone.utc)
+    hashes, source_ids = set(), set()
+    for item in memory:
+        try:
+            used = datetime.fromisoformat(str(item.get("used_at", "")).replace("Z", "+00:00"))
+            if used.tzinfo is None:
+                raise ValueError("timestamp must include timezone")
+            recent = max(0, (now - used).total_seconds()) <= days * 86400
+        except (TypeError, ValueError):
+            # Incomplete dates must not accidentally make a remembered clip
+            # eligible. Such entries remain blocked until repaired or removed.
+            recent = True
+        if recent:
+            if item.get("file_hash"):
+                hashes.add(str(item["file_hash"]))
+            if item.get("provider") and item.get("provider_id"):
+                source_ids.add(f"{item['provider']}:{item['provider_id']}")
+    return path, memory, hashes, source_ids
+
+
+def _remember_longform_clip(path: str, memory: list[dict], asset: dict, video_id: str, beat_id: int) -> list[dict]:
+    provider = asset["provider"]
+    record = {
+        "provider": provider,
+        "provider_id": str(asset[f"{provider}_id"]),
+        "file_hash": asset["hash"],
+        "query": asset.get("query", ""),
+        "video_id": video_id,
+        "beat_id": beat_id,
+        "used_at": now_iso(),
+    }
+    memory = (memory + [record])[-1000:]
+    save_json(memory, path)
+    return memory
 
 
 def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
@@ -627,25 +629,24 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
 
     chapters = script.get("chapters", [])
     beats = _build_visual_beats(script, config)
-    total_words = max(1, sum(word_count(beat.get("voiceover", "")) for beat in beats))
     total_duration = float(voice_meta["duration_sec"])
     final_duration = _planned_final_duration(total_duration, config)
+    beat_durations = _plan_beat_durations(beats, total_duration, int(config.get("longform_fps", 30)))
+    if config.get("longform_moving_tail", False):
+        beat_durations[-1] += max(0.0, final_duration - total_duration)
 
     render_dir = os.path.join(run_dir, "longform_render")
     source_dir = os.path.join(render_dir, "source_clips")
     segment_dir = os.path.join(render_dir, "segments")
-    card_dir = os.path.join(render_dir, "cards")
-    for path in (render_dir, source_dir, segment_dir, card_dir):
+    for path in (render_dir, source_dir, segment_dir):
         os.makedirs(path, exist_ok=True)
 
     segments = []
     visual_assets = []
-    used_stock_hashes: set[str] = set()
-    used_source_ids: set[str] = set()
+    memory_path, clip_memory, used_stock_hashes, used_source_ids = _longform_clip_history(config)
     stock_enabled = bool(config.get("longform_stock_video_enabled", True))
     for idx, beat in enumerate(beats):
-        beat_words = max(1, word_count(beat.get("voiceover", "")))
-        duration = max(3.2, total_duration * beat_words / total_words)
+        duration = beat_durations[idx]
         seg = os.path.join(segment_dir, f"beat_{idx + 1:02d}.mp4")
         asset_info = None
         if stock_enabled:
@@ -660,9 +661,13 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
                 f"Clip-only longform failed: no unique stock video for beat {idx + 1}. "
                 "No generated-image or static-card fallback is allowed."
             )
+        clip_memory = _remember_longform_clip(
+            memory_path, clip_memory, asset_info, video_id, beat.get("id", idx + 1)
+        )
         visual_assets.append({
             "beat_id": beat.get("id", idx + 1),
             "chapter_id": beat.get("chapter_id"),
+            "duration_sec": duration,
             **asset_info,
         })
         segments.append(seg)
@@ -697,7 +702,7 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         captions_path = None
     final_features = _finalize_longform(concat_path, audio_source, captions_path, output_path, config, total_duration)
 
-    validation = _validate_video(output_path, config)
+    validation = _validate_video(output_path, config, expected_duration=final_duration)
     meta = {
         "video_id": video_id,
         "output": "06_longform_video.mp4",
@@ -706,6 +711,7 @@ def run_longform_video(video_id: str, run_dir: str, config: dict) -> dict:
         "music_track": os.path.basename(music) if music else "none",
         "voice_duration_sec": round(total_duration, 3),
         "planned_final_duration_sec": round(final_duration, 3),
+        "planned_visual_duration_sec": round(sum(beat_durations), 3),
         "music_fade_out_sec": (
             float(config.get("longform_music_fade_out_sec", 1.5)) if music else 0.0
         ),
