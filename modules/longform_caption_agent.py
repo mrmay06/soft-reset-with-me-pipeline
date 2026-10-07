@@ -3,7 +3,8 @@ from __future__ import annotations
 import os
 import re
 
-from utils.helpers import load_json
+from utils.helpers import load_json, save_json
+from utils.caption_validation import validate_words, save_caption_report, caption_report_path, merge_collapsed_words
 from utils.script_contract import word_count
 
 
@@ -69,7 +70,7 @@ def _words_from_audio(audio_path: str) -> list[dict]:
     try:
         from faster_whisper import WhisperModel
     except ImportError:
-        return []
+        raise RuntimeError("Long-form caption audio alignment requires faster-whisper")
 
     print("[longform_captions] Loading faster-whisper base model...")
     model = WhisperModel("base", device="cpu", compute_type="int8")
@@ -90,7 +91,7 @@ def _words_from_audio(audio_path: str) -> list[dict]:
                 "start": float(item.start),
                 "end": float(item.end),
             })
-    return words
+    return merge_collapsed_words(words)
 
 
 def _caption_events_from_words(words: list[dict]) -> list[tuple[float, float, str]]:
@@ -136,14 +137,14 @@ def run_longform_captions(video_id: str, run_dir: str, config: dict) -> str:
     voice_meta = load_json(os.path.join(run_dir, "04_longform_voice_meta.json"))
     audio_path = os.path.join(run_dir, "04_longform_voice.mp3")
     output_path = os.path.join(run_dir, "04_longform_captions.ass")
+    save_json({"status": "pending"}, caption_report_path(output_path))
     words = _words_from_audio(audio_path)
-    if words:
-        events = _caption_events_from_words(words)
-        print(f"[longform_captions] Synced from audio. {len(words)} words aligned.")
-    else:
-        print("[longform_captions] Audio alignment unavailable; using script timing fallback")
-        events = _caption_events(script, float(voice_meta["duration_sec"]))
+    transcript = " ".join(ch.get("voiceover", "") for ch in script.get("chapters", [])).strip()
+    evidence = validate_words(words, transcript, float(voice_meta["duration_sec"]))
+    events = _caption_events_from_words(words)
+    print(f"[longform_captions] Synced from audio. {len(words)} words aligned.")
     _write_ass(events, output_path)
+    save_caption_report(output_path, audio_path, transcript, evidence)
     print(f"[longform_captions] Done. {len(events)} word captions.")
     return output_path
 

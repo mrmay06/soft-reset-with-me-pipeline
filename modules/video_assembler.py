@@ -320,16 +320,26 @@ def _compensate_scene_durations_for_xfade(
     scenes: list[dict],
     static_segment_count: int,
     xfade_duration: float,
+    ending_sec: float = 0.0,
 ) -> list[float]:
     if not scenes:
         return []
     total_segments = len(scenes) + static_segment_count
     total_overlap = max(0, total_segments - 1) * xfade_duration
     extra_per_scene = total_overlap / len(scenes)
-    return [
+    durations = [
         max(0.1, scene.get("duration_sec", 3.0) + extra_per_scene)
         for scene in scenes
     ]
+    durations[-1] += max(0.0, ending_sec)
+    return durations
+
+
+def _ending_fade_filter(config: dict, total_duration: float) -> str:
+    duration = min(total_duration, max(0.0, float(config.get("end_fade_sec", 0))))
+    if not duration:
+        return "null"
+    return f"fade=t=out:st={total_duration - duration:.3f}:d={duration}"
 
 
 def _filter_path(path: str) -> str:
@@ -386,11 +396,12 @@ def _assemble_final(
             print(f"[assembler] Film overlay missing, skipping: {overlay_path}")
         filter_complex = f"[0:v]{caption_filter}[vout]"
 
+    filter_complex += f";[vout]{_ending_fade_filter(config, total_duration)}[vfinal]"
     print(f"[assembler] Caption method: {caption_method}")
     _run_ffmpeg([
         *base_cmd,
         "-filter_complex", filter_complex,
-        "-map", "[vout]", "-map", "1:a",
+        "-map", "[vfinal]", "-map", "1:a",
         "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
         "-c:a", "aac", "-ar", "44100",
         "-pix_fmt", "yuv420p",
@@ -434,6 +445,8 @@ def _assemble_without_captions(
         filter_complex = "[0:v]null[vout]"
         video_map = "[vout]"
 
+    filter_complex += f";[vout]{_ending_fade_filter(config, total_duration)}[vfinal]"
+    video_map = "[vfinal]"
     _run_ffmpeg([
         *cmd,
         "-filter_complex", filter_complex,
@@ -516,10 +529,9 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
     scene_segs = []
     static_segment_count = (
         len(opening_segments)
-        + (1 if end_hold > 0 else 0)
         + (1 if cta_duration > 0 else 0)
     )
-    scene_durations = _compensate_scene_durations_for_xfade(scenes, static_segment_count, xfade)
+    scene_durations = _compensate_scene_durations_for_xfade(scenes, static_segment_count, xfade, end_hold)
 
     for i, scene in enumerate(scenes):
         sid      = scene["id"]
@@ -541,24 +553,6 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
 
         scene_segs.append((seg_path, duration))
         print(f"[assembler] scene_{sid} done ({duration:.2f}s)")
-
-    # ── End hold: optional static freeze of last scene after voice ends ──────
-    if end_hold > 0 and scene_segs:
-        print(f"[assembler] Creating end-hold segment ({end_hold}s)")
-        # Use last scene's image as the hold frame
-        last_scene = scenes[-1]
-        last_key = f"scene_{last_scene['id']}"
-        last_asset = asset_meta["assets"].get(last_key)
-        hold_seg = os.path.join(segments_dir, "seg_hold.mp4")
-
-        if last_asset and last_asset["type"] == "image":
-            hold_src = os.path.join(run_dir, last_asset["path"])
-            _static_image_to_segment(hold_src, end_hold, hold_seg, fps)
-        else:
-            # Video scene or missing — use thumbnail as hold frame
-            _static_image_to_segment(thumbnail_path, end_hold, hold_seg, fps)
-
-        scene_segs.append((hold_seg, end_hold))
 
     # ── Branded CTA card: short final logo/action beat for Shorts ────────────
     cta_segment_added = False
@@ -588,6 +582,7 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
         mixed_audio_path = os.path.join(run_dir, "06_mixed_audio.aac")
         _mix_audio(voice_path, music_track, total_video_duration, mixed_audio_path,
                    config["voice_volume"], config["bg_music_volume"],
+                   fade_out_sec=float(config.get("end_fade_sec", 2.0)),
                    target_lufs=float(config.get("final_audio_lufs", -16)),
                    true_peak=float(config.get("final_audio_true_peak", -1.5)),
                    lra=float(config.get("final_audio_lra", 11)))
@@ -624,10 +619,11 @@ def run_assembler(video_id: str, run_dir: str, config: dict) -> dict:
         "segments": (
             (["thumbnail"] if opening_segments else [])
             + [f"scene_{s['id']}" for s in scenes]
-            + (["hold"] if end_hold > 0 else [])
             + (["cta_card"] if cta_segment_added else [])
         ),
         "planned_visual_duration_sec": round(total_video_duration, 3),
+        "ending_tail_sec": end_hold,
+        "ending_fade_sec": float(config.get("end_fade_sec", 0)),
         "audio_mix": {"voice": config["voice_volume"], "music": config["bg_music_volume"]},
         "captions": "04_captions.ass",
         "cta_card": {

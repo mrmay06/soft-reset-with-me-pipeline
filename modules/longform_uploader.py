@@ -7,6 +7,8 @@ from utils.helpers import load_json, save_json, now_iso
 from utils.notify import send_auth_expiry_alert
 from utils.publish_schedule import youtube_publish_at
 from utils.youtube_tags import sanitize_youtube_tags
+from utils.longform_packaging import require_synchronized_packaging
+from modules.video_audit_agent import enforce_longform_visual_gate
 
 try:
     from google.oauth2.credentials import Credentials
@@ -85,6 +87,8 @@ def run_longform_upload(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_uploader] Uploading {video_id} to YouTube")
 
     metadata = load_json(os.path.join(run_dir, "03_longform_metadata.json"))
+    require_synchronized_packaging(run_dir, metadata)
+    enforce_longform_visual_gate(run_dir, config)
     script = load_json(os.path.join(run_dir, "02_longform_script.json"))
     video_path = os.path.join(run_dir, "06_longform_video.mp4")
     thumbnail_path = os.path.join(run_dir, "07_longform_thumbnail.png")

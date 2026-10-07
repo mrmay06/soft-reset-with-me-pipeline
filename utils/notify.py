@@ -72,7 +72,7 @@ def send_longform_upload_confirmation(
     thumbnail_meta: dict,
     run_dir: str,
 ):
-    primary_id = str(metadata.get("primary_variant_id", "")).upper() or "unknown"
+    primary_id = str(thumbnail_meta.get("primary_variant_id", metadata.get("primary_variant_id", ""))).upper() or "unknown"
     title_by_id = {
         str(item.get("id", "")).upper(): item
         for item in metadata.get("title_variants", [])
@@ -88,6 +88,7 @@ def send_longform_upload_confirmation(
         for item in thumbnail_meta.get("variants", [])
         if isinstance(item, dict)
     }
+    title = title_by_id.get(primary_id, {}).get("title") or title
 
     variant_lines = []
     attachments = []
@@ -107,9 +108,9 @@ def send_longform_upload_confirmation(
             with open(prompt_path, "r", encoding="utf-8") as f:
                 prompt_preview = f.read().strip()[:1200]
         marker = "PRIMARY" if variant_id == primary_id else "ALT"
-        line1 = thumb_item.get("line1", "")
-        line2 = thumb_item.get("line2", "")
-        thumb_copy = thumb_item.get("thumbnail_text", "")
+        line1 = output_item.get("line1", thumb_item.get("line1", ""))
+        line2 = output_item.get("line2", thumb_item.get("line2", ""))
+        thumb_copy = output_item.get("thumbnail_text", thumb_item.get("thumbnail_text", ""))
         if line1 or line2:
             thumb_copy = f"{line1} / {line2}".strip(" /")
         variant_lines.append(
@@ -137,7 +138,7 @@ Time:        {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}
 YouTube Studio Test & Compare package:
 Upload the attached A/B/C thumbnails in this order if you want to run native thumbnail testing.
 The exact footage-edit brief files are attached beside the thumbnail PNGs.
-No response is required; the private-test pipeline continues automatically.
+No response is required; the pipeline continues automatically.
 
 {'='*48}
 Title + thumbnail variants:

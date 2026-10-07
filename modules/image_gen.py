@@ -151,7 +151,9 @@ def _build_pools(scenes: list[dict], memory: list[dict], config: dict) -> dict[i
         for alternate in _query_alternates(query)[:3]:
             if alternate not in cache:
                 cache[alternate] = _pexels_candidates(alternate, int(config.get("clip_candidate_pool_size", 20)))
-            candidates.extend(cache[alternate])
+            # Recently blocked results do not count toward a usable pool.
+            # Otherwise a full first page can prevent all alternate searches.
+            candidates.extend(item for item in cache[alternate] if item["provider_id"] not in hard_recent)
             if len({item["provider_id"] for item in candidates}) >= 12:
                 break
         deduped = {item["provider_id"]: item for item in candidates if item["provider_id"] not in hard_recent}

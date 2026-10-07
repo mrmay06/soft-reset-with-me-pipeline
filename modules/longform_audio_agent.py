@@ -2,9 +2,17 @@ from __future__ import annotations
 
 import os
 import subprocess
+import shutil
 
 from utils.helpers import load_json, save_json, now_iso
 from modules.tts import _call_gemini_tts, _generate_mock_mp3, _validate_audio
+
+
+STABILIZATION_FILTER = (
+    "highpass=f=70,lowpass=f=8500,"
+    "dynaudnorm=f=500:g=7:p=0.85:m=4,"
+    "acompressor=threshold=0.1:ratio=2:attack=20:release=250:makeup=1"
+)
 
 
 def _spoken_text(script: dict) -> str:
@@ -34,9 +42,7 @@ def _stabilize_longform_voice(output_path: str) -> None:
         [
             "ffmpeg", "-y", "-i", output_path,
             "-af",
-            "highpass=f=70,lowpass=f=8500,"
-            "dynaudnorm=f=500:g=7:p=0.85:m=4,"
-            "acompressor=threshold=0.1:ratio=2:attack=20:release=250:makeup=1",
+            STABILIZATION_FILTER,
             "-acodec", "libmp3lame", "-q:a", "2", stabilized,
         ],
         check=True,
@@ -49,7 +55,9 @@ def run_longform_audio(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[longform_audio] Generating voiceover for {video_id}")
     script = load_json(os.path.join(run_dir, "02_longform_script.json"))
     output_path = os.path.join(run_dir, "04_longform_voice.mp3")
-    _call_gemini_tts(_build_longform_tts_input(script), config, output_path)
+    audio_provenance = _call_gemini_tts(_build_longform_tts_input(script), config, output_path) or {}
+    comparison_path = os.path.join(run_dir, "04_longform_voice_pre_stabilization.mp3")
+    shutil.copyfile(output_path, comparison_path)
     _stabilize_longform_voice(output_path)
     validation = _validate_audio(output_path, {
         **config,
@@ -62,8 +70,13 @@ def run_longform_audio(video_id: str, run_dir: str, config: dict) -> dict:
         "model": config["tts_model"],
         "duration_sec": validation["duration_sec"],
         "tts_chunks": 1,
-        "continuity_lock": True,
+        "continuity_instruction_requested": True,
+        "continuity_verified": False,
         "continuity_strategy": "single_call_dynamic_stabilization",
+        **audio_provenance,
+        "pre_stabilization_audio": os.path.basename(comparison_path),
+        "processing": [*audio_provenance.get("processing", []),
+                       {"stage": "dynamic_stabilization", "filter": STABILIZATION_FILTER}],
         "validation": validation["validation"],
         "generated_at": now_iso(),
     }

@@ -1,4 +1,5 @@
 from __future__ import annotations
+from utils.ai_usage import measured_call
 
 import os
 import json
@@ -360,7 +361,7 @@ def _call_gemini(prompt: str, model: str) -> dict:
     # Prefer new SDK
     if _genai is not None:
         client = _genai.Client(api_key=api_key)
-        response = client.models.generate_content(
+        response = measured_call("google", model, "visual_direction", client.models.generate_content,
             model=model,
             contents=prompt,
             config=_genai_types.GenerateContentConfig(
@@ -378,7 +379,7 @@ def _call_gemini(prompt: str, model: str) -> dict:
     if _genai_old is not None:
         _genai_old.configure(api_key=api_key)
         client = _genai_old.GenerativeModel(model)
-        response = client.generate_content(
+        response = measured_call("google", model, "visual_direction", client.generate_content,
             prompt,
             generation_config={"response_mime_type": "application/json"},
         )
@@ -456,7 +457,7 @@ def run_visual_director(video_id: str, run_dir: str, config: dict) -> dict:
     manifest = None
 
     try:
-        visual_model = config.get("visual_model", config.get("research_model", "gemini-2.5-flash"))
+        visual_model = config.get("visual_model", config.get("research_model", "gemini-3.8-flash"))
         manifest = _call_gemini(prompt, visual_model)
         valid, err = _validate_manifest(manifest, raw_dialogue)
         if not valid:

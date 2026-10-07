@@ -7,8 +7,14 @@ The viewer should feel: "That is exactly what I could not explain."
 
 Inputs:
 
-Trending relationship/self-improvement signals from the US this week:
+Relationship/self-improvement inspiration signals (source-labelled; may be incomplete or unavailable):
 {signals}
+
+These signals are topic inspiration, not evidence that a psychological claim is true.
+No source retrieval or claim verification is available in this step. Treat concepts as
+possible lenses, not diagnoses. Do not invent studies, statistics, consensus, or trends.
+Prefer emotional observations and illustrative scenes, which do not need citations.
+If an idea depends on empirical claims, label its content_basis factual_claim instead.
 
 Recent published topics (last 90 days) - do NOT repeat or closely paraphrase these:
 {recent_topics}
@@ -32,13 +38,17 @@ Research goal:
 - Prefer one precise lived moment over broad advice; "checking if they watched your story" beats "how to move on"
 - Each candidate must be meaningfully different from recent topics in premise, hook, emotional trigger, and psychology concept
 - Every candidate must have a point of view. Do not pitch "5 facts about..." or neutral summaries; pitch an argument Soft Reset With Me would stand behind
+- Build the brief around an observable situation, a choice or tension, a meaningful consequence, and one earned payoff. An emotional slogan alone is not a story.
+- The opening should give recognition plus friction immediately: what is happening, and what feels unresolved? Do not promise a secret, diagnosis, or guaranteed result.
+- Keep one insight for a Short. Show what changes the viewer's understanding; do not repeat the hook in prettier words.
+- Exaggerated imagery is fine when clearly illustrative. Do not invent another person's motives or turn one behavior into a universal verdict about love.
 - Balance the board; do not cluster every candidate around breakup grief, ghosting, or situationships unless the signals strongly demand it
 - US 2026 context matters: DMs, screen-time anxiety, dating app burnout, boundaries, ghosting, emotional availability, self-worth, and quiet loneliness
 - Use performance feedback directionally: lean toward winning hook shapes, emotional triggers, and formats, but do not repeat exact topics or hooks
 
 Content pillars:
 1. Relationship Patterns - attachment styles, red flags, situationships, love bombing
-2. Psychology Drops - trauma bonding, nervous system, projection, self-awareness
+2. Psychology Drops - self-awareness and everyday patterns; clinical terminology is optional, not an authority shortcut
 3. Healing Arcs - breakup recovery, moving on, reclaiming yourself
 4. Self-Worth Shifts - standards, self-respect, setting limits, anti-settle content
 5. Conversation Truths - communication, conflict, the unsaid
@@ -47,16 +57,16 @@ Content pillars:
 Content formats:
 - truth_drop: one uncomfortable truth, fully explored
 - reframe: common belief dismantled, then a more nuanced truth
-- specific_scenario: one painfully specific emotional moment
+- scenario: one painfully specific emotional moment, with a choice and consequence
 - list: 3-5 signs/things, easy to batch, but still emotionally precise
-- hot_take: controversial opinion, once per week max
-- psychology_drop: digestible psychology concept without clinical heaviness
+- hot_take: fair, surprising opinion; never manufacture outrage or blame
+Use these format names exactly. An everyday psychological lens belongs inside a reframe or scenario, not a separate clinical format.
 
 Emotional specificity rules:
 - The emotional_trigger must be a scene the viewer has personally lived, not an abstract state
 - The psych_concept must be one simple idea, not a stack of therapy terms
 - The hook_seed should sound like the opening line of a Short, not a blog title
-- The only_soft_reset_line should feel too specific for a generic self-help account
+- The only_soft_reset_line is an optional draft of an earned ending, not a slogan the writer must force into the story. Specific and fair beats quotable and absolute.
 - If using Reddit/comment/forum signals, extract the emotional core only. Never copy wording
 
 Strong candidate checklist - each candidate should hit at least 4 of 5:
@@ -81,13 +91,14 @@ Return ONLY a valid JSON array with no extra text:
     "topic": "...",
     "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
     "angle_type": "truth drop | reframe | specific scenario | list | hot take | psychology drop",
-    "content_format": "truth_drop | reframe | specific_scenario | list | hot_take | psychology_drop",
+    "content_format": "truth_drop | reframe | scenario | list | hot_take",
     "emotional_trigger": "the exact emotional trigger, e.g. rereading a text, hearing a song at 2am, seeing them move on",
     "psych_concept": "simple psychology or emotional-growth concept behind the topic",
     "hook_seed": "one-line hook idea, max 15 words",
     "core_claim": "the one useful emotional truth or behavior change",
     "editorial_seed": "2-3 plain sentences with the channel's point of view",
     "only_soft_reset_line": "one emotionally precise sentence that makes this non-generic",
-    "confidence_level": "peer_reviewed | therapist_consensus | observational - is the psych_concept grounded in peer-reviewed research, widely held therapist consensus, or an observational pattern with no formal citation?"
+    "confidence_level": "observational",
+    "content_basis": "emotional_observation | factual_claim"
   }}
 ]

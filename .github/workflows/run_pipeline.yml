@@ -37,6 +37,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Check automation and DST gate
         id: gate
         shell: python
@@ -94,3 +96,18 @@ jobs:
           path: workspace/run_*/
           if-no-files-found: warn
           retention-days: 7
+      - name: Back up production memory
+        if: always() && steps.gate.outputs.should_run == 'true' && github.ref_name == github.event.repository.default_branch && (github.event_name != 'workflow_dispatch' || inputs.mock == false)
+        uses: actions/upload-artifact@v6
+        with:
+          name: soft-reset-short-memory-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            topic_memory_soft_reset.json
+            performance_memory_soft_reset.json
+            clip_memory_soft_reset.json
+          retention-days: 30
+      - name: Save production memory for the next run
+        if: always() && steps.gate.outputs.should_run == 'true' && github.ref_name == github.event.repository.default_branch && (github.event_name != 'workflow_dispatch' || inputs.mock == false)
+        env:
+          MEMORY_BRANCH: ${{ github.event.repository.default_branch }}
+        run: python tools/persist_pipeline_memory.py --track short --branch "$MEMORY_BRANCH"

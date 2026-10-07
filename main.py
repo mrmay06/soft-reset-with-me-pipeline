@@ -1,4 +1,5 @@
 from __future__ import annotations
+from utils.ai_usage import configure_usage, usage_stage
 import os
 import sys
 import glob
@@ -62,18 +63,24 @@ def _find_latest_run_dir() -> tuple[str, str] | None:
 
 
 def _enforce_script_review_gate(run_dir: str):
+    from utils.script_contract import build_spoken_script_text, spoken_text_hash
     script_path = os.path.join(run_dir, "02_script.json")
     if not os.path.exists(script_path):
-        return
+        raise RuntimeError(f"Script missing before media generation: {script_path}")
     script = load_json(script_path)
     if not isinstance(script, dict):
-        return
+        raise RuntimeError(f"Script is invalid: {script_path}")
     if script.get("human_review_required") or script.get("validation") == "needs_review":
         notes = script.get("validation_notes") or "script marked for human review"
         raise RuntimeError(
             "Script requires human review before upload. "
             f"Reason: {notes}. Review {script_path}, then rerun after clearing the flag."
         )
+    review = script.get("argument_review")
+    if (not isinstance(review, dict) or review.get("passes") is not True
+            or review.get("status") not in {"passed", "disabled"}
+            or review.get("spoken_text_sha256") != spoken_text_hash(build_spoken_script_text(script))):
+        raise RuntimeError(f"Script argument review missing, failed, unavailable, or stale. Review {script_path}.")
 
 
 def _enforce_creative_judge_gate(run_dir: str):
@@ -83,7 +90,7 @@ def _enforce_creative_judge_gate(run_dir: str):
     judge = load_json(judge_path)
     if not isinstance(judge, dict):
         raise RuntimeError(f"Creative judge report is invalid: {judge_path}")
-    if judge.get("passed") is False:
+    if judge.get("passed") is not True or judge.get("gate") != "passed" or judge.get("hard_failures"):
         failures = judge.get("hard_failures") or []
         raise RuntimeError(
             "Creative judge blocked upload. "
@@ -189,6 +196,7 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
     judge_fn      = run_creative_judge_mock   if mock else run_creative_judge
     audit_fn      = run_video_audit_mock      if mock else run_video_audit
 
+    configure_usage(run_dir)
     pipeline_start = time.time()
     timings = {}
 
@@ -198,7 +206,8 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
             print(f"  {label:<30} SKIPPED (cached)\n")
             return
         t0 = time.time()
-        fn(*args)
+        with usage_stage(label):
+            fn(*args)
         elapsed = round(time.time() - t0, 1)
         timings[label.strip()] = elapsed
         print(f"  {label:<30} OK  ({elapsed}s)\n")
@@ -212,9 +221,17 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
         _run("Module 3A — TTS",              tts_fn,       video_id, run_dir, config, checkpoint_files=["03_voice.mp3", "03_voice_meta.json"])
         _run("Module 3B — Visual Director",  director_fn,  video_id, run_dir, config, checkpoint_files=["03b_scene_manifest.json"])
         _run("Module 3C — Clip Selection",   image_fn,     video_id, run_dir, config, checkpoint_files=["03_asset_meta.json"])
-        _run("Module 4  — Captions",         captions_fn,  video_id, run_dir, config, checkpoint_files=["04_captions.ass"])
+        from utils.caption_validation import captions_are_current
+        from modules.caption_agent import _build_transcript
+        captions_changed = not mock and not captions_are_current(
+            os.path.join(run_dir, "04_captions.ass"), os.path.join(run_dir, "03_voice.mp3"),
+            _build_transcript(load_json(os.path.join(run_dir, "02_script.json"))),
+        )
+        _run("Module 4  — Captions", captions_fn, video_id, run_dir, config,
+             checkpoint_files=None if captions_changed else ["04_captions.ass"])
         _run("Module 5  — Thumbnail",        thumbnail_fn, video_id, run_dir, config, checkpoint_files=["05_thumbnail.png"])
-        _run("Module 6  — Video Assembly",   assembler_fn, video_id, run_dir, config, checkpoint_files=["06_final_video.mp4", "06_render_meta.json"])
+        _run("Module 6  — Video Assembly", assembler_fn, video_id, run_dir, config,
+             checkpoint_files=None if captions_changed else ["06_final_video.mp4", "06_render_meta.json"])
 
         _run("Module 7  — Metadata",          metadata_fn,  video_id, run_dir, config, checkpoint_files=["07_metadata.json"])
 
@@ -224,7 +241,8 @@ def main(mock: bool = False, resume_id: str | None = None, fresh: bool = False, 
                 _enforce_creative_judge_gate(run_dir)
 
         if config.get("video_audit_enabled", True):
-            _run("Module 8B — Video Audit", audit_fn, video_id, run_dir, config, checkpoint_files=["09_video_audit.json"])
+            _run("Module 8B — Video Audit", audit_fn, video_id, run_dir, config,
+                 checkpoint_files=None if captions_changed else ["09_video_audit.json"])
             if not mock:
                 _run_public_visual_gate(
                     video_id,

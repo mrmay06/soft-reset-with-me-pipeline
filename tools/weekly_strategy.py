@@ -50,7 +50,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Run analytics fetch only (no AI analysis)")
     parser.add_argument("--skip-fetch", action="store_true", help="Skip analytics fetch, use existing cache")
     parser.add_argument("--skip-video-watch", action="store_true", help="Skip Gemini video watching in analysis")
-    parser.add_argument("--review-model", default="claude-sonnet-4-6", help="Claude/Sonnet model for final strategy review")
+    parser.add_argument("--review-model", default="claude-sonnet-5-5", help="Claude/Sonnet model for final strategy review")
     args = parser.parse_args()
 
     week = args.week or _current_week()

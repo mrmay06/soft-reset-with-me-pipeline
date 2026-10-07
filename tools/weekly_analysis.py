@@ -37,7 +37,7 @@ BRAND_BIBLE_FILE = "strategy/brand_bible.json"
 WORKSPACE_DIR = "workspace"
 
 MAX_VIDEO_WATCH = 2  # top N and bottom N performers to watch
-DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+DEFAULT_GEMINI_MODEL = "gemini-3.8-flash"
 
 
 def _load_json(path: str) -> dict:

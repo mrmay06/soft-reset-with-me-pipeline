@@ -1,9 +1,13 @@
 import os
 import struct
 import math
+import base64
+import io
+from types import SimpleNamespace
 
 from utils.helpers import load_json, save_json, now_iso
 from utils.retry import retry
+from utils.ai_usage import measured_call
 from utils.script_contract import build_spoken_script_text
 
 try:
@@ -65,56 +69,99 @@ def _build_tts_input(script: dict) -> str:
     return style + script_text
 
 
+def _call_current_tts(api_key: str, tts_input: str, config: dict):
+    """Use documented REST schema so old installed SDKs cannot drop metadata."""
+    import requests
+
+    style, separator, transcript = tts_input.partition("\n\n")
+    if not separator:
+        style, transcript = "", tts_input
+    if not transcript.strip():
+        raise ValueError("TTS transcript is empty")
+    part = {"text": transcript}
+    if style:
+        part["speech_metadata"] = {"style": style}
+    response = requests.post(
+        f"https://generativelanguage.googleapis.com/v1beta/models/{config['tts_model']}:generateContent",
+        headers={"x-goog-api-key": api_key},
+        json={"contents": [{"role": "user", "parts": [part]}],
+              "generationConfig": {
+                  "responseModalities": ["AUDIO"],
+                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {
+                      "voiceName": config["tts_voice"]}}}}},
+        timeout=180,
+    )
+    if not response.ok:
+        # Do not include request headers, generated text, or response body.
+        raise RuntimeError(f"Gemini TTS request failed (HTTP {response.status_code})")
+    result = response.json()
+    parts = [part for candidate in result.get("candidates", [])
+             for part in candidate.get("content", {}).get("parts", [])]
+    audio = next((part["inlineData"] for part in parts
+                  if part.get("inlineData", {}).get("mimeType", "").startswith("audio/")), None)
+    if not audio or not audio.get("data"):
+        raise ValueError("TTS returned no audio")
+    usage = result.get("usageMetadata", {})
+    names = {"promptTokenCount": "prompt_token_count", "candidatesTokenCount": "candidates_token_count",
+             "totalTokenCount": "total_token_count", "thoughtsTokenCount": "thoughts_token_count",
+             "cachedContentTokenCount": "cached_content_token_count"}
+    return SimpleNamespace(
+        candidates=[SimpleNamespace(content=SimpleNamespace(parts=[SimpleNamespace(
+            inline_data=SimpleNamespace(data=base64.b64decode(audio["data"], validate=True),
+                                        mime_type=audio["mimeType"])
+        )]))],
+        usage_metadata={names[key]: value for key, value in usage.items() if key in names},
+    )
+
+
 @retry(max_attempts=3, wait_seconds=60, exceptions=(Exception,))
 def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
-    if _genai is None:
+    current_schema = config["tts_model"].startswith("gemini-3.8-")
+    if _genai is None and not current_schema:
         raise RuntimeError("google-genai not installed — run: pip install google-genai")
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY not set")
 
-    client = _genai.Client(api_key=api_key)
-    response = client.models.generate_content(
-        model=config["tts_model"],
-        contents=tts_input,
-        config=_genai_types.GenerateContentConfig(
-            response_modalities=["AUDIO"],
-            speech_config=_genai_types.SpeechConfig(
-                voice_config=_genai_types.VoiceConfig(
-                    prebuilt_voice_config=_genai_types.PrebuiltVoiceConfig(
-                        voice_name=config["tts_voice"]
-                    )
-                )
-            )
-        )
-    )
+    if current_schema:
+        response = measured_call("google", config["tts_model"], "tts", _call_current_tts,
+                                 api_key, tts_input, config)
+    else:
+        response = _call_legacy_tts(api_key, tts_input, config)
 
-    part = response.candidates[0].content.parts[0]
+    part = next((part for candidate in response.candidates for part in candidate.content.parts
+                 if getattr(part, "inline_data", None)
+                 and (part.inline_data.mime_type or "").lower().startswith("audio/")), None)
+    if part is None:
+        raise ValueError("TTS returned no audio part")
     audio_data = part.inline_data.data
-    mime_type  = part.inline_data.mime_type   # e.g. "audio/L16;rate=24000" (raw PCM)
-
+    mime_type = part.inline_data.mime_type or ""
     if not audio_data:
         raise ValueError("TTS returned empty audio data")
 
-    # Gemini TTS returns raw PCM (audio/L16) — wrap in WAV then convert to MP3
     import wave, subprocess
 
     wav_path = output_path.replace(".mp3", "_tts_raw.wav")
     sample_rate = 24000
-    # Extract rate from mime_type if present (e.g. "audio/L16;rate=24000")
-    if "rate=" in (mime_type or ""):
-        try:
+    if mime_type.lower().split(";")[0] in {"audio/wav", "audio/x-wav", "audio/wave"}:
+        # Inspect the returned header; never wrap an existing WAV in another header.
+        with wave.open(io.BytesIO(audio_data), "rb") as wf:
+            sample_rate = wf.getframerate()
+            if wf.getnframes() <= 0:
+                raise ValueError("TTS returned empty WAV")
+        with open(wav_path, "wb") as wf:
+            wf.write(audio_data)
+    elif mime_type.lower().startswith("audio/l16"):
+        if "rate=" in mime_type:
             sample_rate = int(mime_type.split("rate=")[1].split(";")[0])
-        except Exception:
-            pass
+        with wave.open(wav_path, "wb") as wf:
+            wf.setnchannels(1)
+            wf.setsampwidth(2)
+            wf.setframerate(sample_rate)
+            wf.writeframes(audio_data)
+    else:
+        raise ValueError(f"Unsupported TTS audio format: {mime_type}")
 
-    with wave.open(wav_path, "wb") as wf:
-        wf.setnchannels(1)
-        wf.setsampwidth(2)      # 16-bit
-        wf.setframerate(sample_rate)
-        wf.writeframes(audio_data)
-
-    # Convert WAV → MP3, trim any leading silence so voice hits frame zero
     trimmed_path = output_path.replace(".mp3", "_notrim.mp3")
     subprocess.run(
         ["ffmpeg", "-y", "-i", wav_path,
@@ -122,9 +169,6 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
          trimmed_path],
         check=True, capture_output=True
     )
-    os.remove(wav_path)
-
-    # Remove leading silence conservatively so hushed openings stay intact.
     subprocess.run(
         ["ffmpeg", "-y", "-i", trimmed_path,
          "-af", "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-45dB",
@@ -140,11 +184,42 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
         subprocess.run(
             ["ffmpeg", "-y", "-i", output_path,
              "-filter:a", f"atempo={max(0.5, min(2.0, speed))}",
-             "-acodec", "libmp3lame", "-q:a", "2",
-             sped_path],
+             "-acodec", "libmp3lame", "-q:a", "2", sped_path],
             check=True, capture_output=True
         )
         os.replace(sped_path, output_path)
+    return {
+        "raw_audio": os.path.basename(wav_path),
+        "raw_sample_rate_hz": sample_rate,
+        "source_mime_type": mime_type,
+        "delivery_metadata_separate": current_schema,
+        "processing": [
+            {"stage": "mp3_encoding", "quality": 2},
+            {"stage": "leading_silence_trim", "filter": "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-45dB"},
+            *([{"stage": "tempo", "factor": max(0.5, min(2.0, speed))}]
+              if speed and abs(speed - 1.0) > 0.01 else []),
+        ],
+    }
+
+
+def _call_legacy_tts(api_key: str, tts_input: str, config: dict):
+    """Retained for explicit rollback; never automatically switch voice models."""
+    client = _genai.Client(api_key=api_key)
+    return measured_call("google", config["tts_model"], "tts", client.models.generate_content,
+        model=config["tts_model"],
+        contents=tts_input,
+        config=_genai_types.GenerateContentConfig(
+            response_modalities=["AUDIO"],
+            speech_config=_genai_types.SpeechConfig(
+                voice_config=_genai_types.VoiceConfig(
+                    prebuilt_voice_config=_genai_types.PrebuiltVoiceConfig(
+                        voice_name=config["tts_voice"]
+                    )
+                )
+            )
+        )
+    )
+
 
 
 def _validate_audio(path: str, config: dict) -> dict:
@@ -184,7 +259,7 @@ def run_tts(video_id: str, run_dir: str, config: dict) -> dict:
     tts_input = _build_tts_input(script)
     output_path = os.path.join(run_dir, "03_voice.mp3")
 
-    _call_gemini_tts(tts_input, config, output_path)
+    audio_provenance = _call_gemini_tts(tts_input, config, output_path) or {}
     validation = _validate_audio(output_path, config)
 
     meta = {
@@ -194,6 +269,7 @@ def run_tts(video_id: str, run_dir: str, config: dict) -> dict:
         "duration_sec": validation["duration_sec"],
         "validation": validation["validation"],
         "generated_at": now_iso(),
+        **audio_provenance,
     }
     if "warning" in validation:
         meta["warning"] = validation["warning"]

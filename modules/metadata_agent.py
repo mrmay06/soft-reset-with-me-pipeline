@@ -129,6 +129,8 @@ def run_metadata(video_id: str, run_dir: str, config: dict) -> dict:
         angle=research.get("angle_type", research.get("angle", "")),
         source_fact=research["source_fact"],
     )
+    import json
+    prompt += "\n\nAPPROVED FULL SCRIPT (source of truth):\n" + json.dumps(script, ensure_ascii=False)
 
     try:
         raw = _call_gemini_metadata(prompt, config["metadata_model"])

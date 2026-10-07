@@ -5,9 +5,11 @@ import json
 import re
 
 from utils.helpers import load_json, save_json, now_iso
-from utils.gemini_client import generate_json, generate_text
+from utils.gemini_client import generate_json
+from utils.ai_usage import measured_call
+from utils.claude_response import request_options, response_text
 from utils.retry import retry
-from utils.script_contract import build_spoken_script_text, normalize_script_contract, word_count
+from utils.script_contract import build_spoken_script_text, normalize_script_contract, word_count, spoken_text_hash, quote_is_spoken
 from utils.performance_insights import summarize_performance_for_prompt
 from utils.strategy import inject_strategy
 
@@ -28,12 +30,13 @@ def _call_script_model(prompt: str, model: str) -> dict:
         if not api_key:
             raise RuntimeError("ANTHROPIC_API_KEY not set")
         client = _anthropic.Anthropic(api_key=api_key)
-        message = client.messages.create(
+        message = measured_call("anthropic", model, "script_or_review", client.messages.create,
             model=model,
-            max_tokens=1024,
+            max_tokens=2048,
             messages=[{"role": "user", "content": prompt}],
+            **request_options(model),
         )
-        text = message.content[0].text.strip()
+        text = response_text(message)
         # Strip markdown code fences if present
         if text.startswith("```"):
             text = text.split("```")[1]
@@ -71,6 +74,7 @@ _OBSERVABLE_HOOK_SIGNALS = [
     "ask for space",
     "phone",
     "message",
+    "backspace",
 ]
 
 
@@ -200,7 +204,7 @@ def _validate_script(script: dict, config: dict) -> dict:
     script = normalize_script_contract(script)
     incoming_validation = str(script.get("validation", "") or "").strip().lower()
     script.setdefault("script_version", "1")
-    script.setdefault("prompt_version", "soft-reset-script-v2.6")
+    script.setdefault("prompt_version", "soft-reset-script-v2.7")
     script.setdefault("validation_notes", "")
 
     full_text = build_spoken_script_text(script)
@@ -313,75 +317,6 @@ def _validate_script(script: dict, config: dict) -> dict:
     return script
 
 
-def _needs_script_retry(script: dict) -> bool:
-    return bool(
-        set(script.get("validation_failures", []))
-        & {
-            "word_count_hard",
-            "banned_script_phrase",
-            "banned_loopback",
-            "retention_filler",
-            "unsupported_guarantee",
-            "superiority_framing",
-            "generic_cta",
-            "weak_editorial_layer",
-        }
-    )
-
-
-def _retry_instruction(script: dict, config: dict, attempt: int) -> str:
-    failures = ", ".join(script.get("validation_failures", [])) or "validation failed"
-    min_w = config["script_min_words"]
-    max_w = config["script_max_words"]
-    return (
-        "\n\nCRITICAL REWRITE REQUIRED.\n"
-        f"Previous attempt failed: {failures}.\n"
-        f"Write {min_w}-{max_w} spoken words TOTAL, no exceptions. Aim for the middle of that range.\n"
-        "Keep `editorial_pov` and `only_soft_reset_line` specific, non-generic, and unmistakably on-brand.\n"
-        "Do not use banned therapy-speak, hype-coach language, or generic self-help phrasing.\n"
-        "Do not flatter the viewer by declaring another person shallow, incapable, beneath them, or unable to handle their depth.\n"
-        f"Rewrite attempt: {attempt}.\n"
-    )
-
-
-def _word_count_repair_prompt(script: dict, config: dict, attempt: int) -> str:
-    min_w = config["script_min_words"]
-    max_w = config["script_max_words"]
-    current_words = script.get("word_count", 0)
-    direction = "EXPAND" if current_words < min_w else "CUT"
-    return (
-        "\n\nWORD COUNT REPAIR REQUIRED.\n"
-        f"Current script is {current_words} words. Target range is {min_w}-{max_w} spoken words.\n"
-        "Return the SAME JSON schema, corrected. No markdown. No explanation.\n"
-        f"Aim for the middle of {min_w}-{max_w} spoken words across hook, tension, insight, and loopback.\n"
-        f"Your job: {direction} the existing script while preserving the same core claim and emotional truth.\n"
-        "Keep `editorial_pov` and `only_soft_reset_line` specific, non-generic, and unmistakably on-brand.\n"
-        "Do not add therapy-speak, hype-coach language, diagnosis, or generic self-help phrasing.\n"
-        "If expanding, add concrete emotional mechanism detail, not filler.\n"
-        "If cutting, remove repetition and generic CTA language first.\n"
-        f"Repair attempt: {attempt}\n\n"
-        "CURRENT SCRIPT JSON:\n"
-        f"{json.dumps(script, indent=2)}\n"
-    )
-
-
-def _repair_word_count(script: dict, config: dict) -> dict:
-    if script.get("word_count_in_range", True):
-        return script
-
-    for attempt in range(1, 4):
-        print(f"[script] Repairing word count ({script.get('word_count', 0)} words), attempt {attempt}")
-        try:
-            repaired = _call_script_model(_word_count_repair_prompt(script, config, attempt), config["script_model"])
-            repaired = _validate_script(repaired, config)
-            script = repaired
-            if script.get("word_count_in_range", False):
-                print(f"[script] ✓ Word count repaired: {script.get('word_count', 0)} words")
-                return script
-        except Exception as e:
-            print(f"[script] Word count repair failed ({e})")
-
-    return script
 
 
 def _mark_needs_review(script: dict, reason: str) -> dict:
@@ -398,8 +333,6 @@ def _argument_review_prompt(script: dict, research: dict) -> str:
         "tension": script.get("tension", ""),
         "insight": script.get("insight", ""),
         "loopback": script.get("loopback", ""),
-        "editorial_pov": script.get("editorial_pov", ""),
-        "only_soft_reset_line": script.get("only_soft_reset_line", ""),
     }
     return f"""
 You are the human editorial review layer for Soft Reset With Me.
@@ -411,18 +344,17 @@ Core claim:
 Editorial seed:
 {research.get("editorial_seed", "")}
 
-Research signature line:
-{research.get("only_soft_reset_line", "")}
-
-Script sections:
+Spoken script sections (the complete narration):
 {json.dumps(sections, indent=2)}
 
 Review rules:
 - The hook promise must match the payoff.
 - Every spoken section must actively support the core claim.
+- Judge only the narration. Research notes are intended direction, not evidence that the video delivers it. The signature line must be present in a spoken section; do not credit an unspoken annotation.
 - Flag any section that becomes neutral explainer mode, generic advice, or filler.
 - The signature line must feel specific to Soft Reset With Me, not a generic self-help phrase.
 - Psychological causes must be calibrated as possibilities unless the script has direct evidence.
+- Ordinary feelings, illustrative scenes, and emotional interpretations do not need citations. Do not fail them for lacking a source. Reject invented research, statistics, diagnoses, and unsupported biological explanations.
 - The script must preserve viewer agency without blaming the viewer or guaranteeing how another person will behave.
 - Do not preserve agency by flattering the viewer as deeper, wiser, or more capable while declaring the other person shallow, incapable, or beneath them.
 - Be strict, but do not fail a script just because it is simple.
@@ -434,6 +366,7 @@ Return ONLY valid JSON:
   "sections_support_core_claim": true,
   "generic_drift_sections": [],
   "signature_line_distinctive": true,
+  "signature_line_quote": "exact quote from a spoken section",
   "psychological_claims_calibrated": true,
   "viewer_agency_preserved": true,
   "fairness_preserved": true,
@@ -448,6 +381,7 @@ def _check_argument_coherence(script: dict, research: dict, config: dict) -> dic
         return {
             "passes": True,
             "status": "disabled",
+            "spoken_text_sha256": spoken_text_hash(build_spoken_script_text(script)),
             "issue_summary": "",
             "rewrite_instruction": "",
         }
@@ -460,18 +394,20 @@ def _check_argument_coherence(script: dict, research: dict, config: dict) -> dic
             and review.get("hook_promise_matches") is True
             and review.get("sections_support_core_claim") is True
             and review.get("signature_line_distinctive") is True
+            and quote_is_spoken(review.get("signature_line_quote"), build_spoken_script_text(script))
             and review.get("psychological_claims_calibrated") is True
             and review.get("viewer_agency_preserved") is True
             and review.get("fairness_preserved") is True
-            and not review.get("generic_drift_sections")
+            and review.get("generic_drift_sections") == []
         )
         review["passes"] = bool(passes)
         review["status"] = "passed" if passes else "failed"
+        review["spoken_text_sha256"] = spoken_text_hash(build_spoken_script_text(script))
         return review
     except Exception as exc:
         return {
-            "passes": True,
-            "status": "soft_failed",
+            "passes": False,
+            "status": "unavailable",
             "issue_summary": f"Argument review failed: {exc}",
             "rewrite_instruction": "",
         }
@@ -489,6 +425,13 @@ def _attach_argument_review(script: dict, review: dict) -> dict:
     return script
 
 
+def _require_available_argument_review(script: dict, run_dir: str) -> None:
+    if script.get("argument_review", {}).get("status") == "unavailable":
+        _mark_needs_review(script, "argument review unavailable; retry review before media generation")
+        save_json(script, os.path.join(run_dir, "02_script.json"))
+        raise RuntimeError("Script argument review unavailable; saved script for review retry.")
+
+
 def _log_final_state(script: dict) -> None:
     print(
         "[script] Final state — "
@@ -499,6 +442,50 @@ def _log_final_state(script: dict) -> None:
         f"engagement: {script.get('engagement_quality', '')} | "
         f"words: {script.get('word_count', 0)}"
     )
+
+
+def _bounded_script_generation(prompt: str, research: dict, config: dict, run_dir: str) -> dict:
+    """Three drafts, two editorial reviews; no post-approval edits."""
+    review_count = 0
+    revision_prompt = prompt
+    for draft_count in range(1, 4):
+        script = _validate_script(_call_script_model(revision_prompt, config["script_model"]), config)
+        script["generation_attempts"] = {"drafts": draft_count, "reviews": review_count}
+        issues = list(script.get("validation_failures", []))
+        if script.get("hook_quality") == "weak":
+            issues.append("weak_hook")
+        if script.get("engagement_quality") == "weak":
+            issues.append("weak_engagement_question")
+        if script.get("validation") == "needs_review" or script.get("human_review_required"):
+            issues.append("human_review_required")
+        target_warning = not script.get("word_count_in_range", True)
+        review = {}
+        # Target word range remains a preference; existing hard limits still
+        # block. Spend a correction on it only while a draft is available.
+        if not issues and (not target_warning or draft_count == 3):
+            review = _check_argument_coherence(script, research, config)
+            review_count += 1
+            script["generation_attempts"]["reviews"] = review_count
+            script = _attach_argument_review(script, review)
+            _require_available_argument_review(script, run_dir)
+            if review.get("passes") is True:
+                return script
+            issues.append("argument_review_failed")
+        if draft_count == 3 or review_count == 2:
+            script = _mark_needs_review(script, "bounded script correction budget exhausted: " + ", ".join(issues))
+            save_json(script, os.path.join(run_dir, "02_script.json"))
+            raise RuntimeError("Script correction budget exhausted; saved draft needs review before media generation")
+        revision_prompt = (
+            prompt + "\n\nCOMBINED CORRECTION: revise the whole JSON script once, addressing ALL issues together.\n"
+            + f"Issues: {issues}; target word range warning: {target_warning}.\n"
+            + f"Prefer {config['script_min_words']}-{config['script_max_words']} spoken words. Preserve the same core claim.\n"
+            + "Use a concrete, plain-language opening and a specific, natural engagement question. "
+            "No diagnosis, superiority framing, guarantees, filler, or generic CTA. "
+            "Do not add disconnected hook or question patches after the script is reviewed.\n"
+            + f"Editorial feedback: {review.get('issue_summary', '')} {review.get('rewrite_instruction', '')}\n"
+            + "CURRENT DRAFT:\n" + json.dumps(script)
+        )
+    raise AssertionError("Unreachable script budget state")
 
 
 def run_script(video_id: str, run_dir: str, config: dict) -> dict:
@@ -517,9 +504,7 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         category=research.get("category", ""),
         angle_type=research.get("angle_type", research.get("angle", "")),
         hook_seed=research.get("hook_seed", ""),
-        source_fact=research.get("source_fact", ""),
-        source_basis=research.get("source_basis", research.get("source_fact", "")),
-        source_name=research.get("source_name", ""),
+        content_basis=research.get("content_basis", "emotional_observation"),
         content_format=research.get("content_format", "scenario"),
         emotional_trigger=research.get("emotional_trigger", ""),
         psych_concept=research.get("psych_concept", ""),
@@ -529,119 +514,13 @@ def run_script(video_id: str, run_dir: str, config: dict) -> dict:
         performance_insights=performance_insights,
         video_id=video_id,
         generated_at=now_iso(),
+        target_words_min=config["script_min_words"],
+        target_words_max=config["script_max_words"],
+        hard_words_min=config.get("script_hard_min_words", max(1, config["script_min_words"] - 10)),
+        hard_words_max=config.get("script_hard_max_words", config["script_max_words"] + 20),
     )
 
-    script = _call_script_model(prompt, config["script_model"])
-    script = _validate_script(script, config)
-
-    for attempt in range(1, 4):
-        if not _needs_script_retry(script):
-            break
-        print(f"[script] Retrying hard validation failures: {script.get('validation_failures', [])}")
-        script = _call_script_model(prompt + _retry_instruction(script, config, attempt), config["script_model"])
-        script = _validate_script(script, config)
-
-    if _needs_script_retry(script) or not script.get("word_count_in_range", True):
-        script = _repair_word_count(script, config)
-
-    if _needs_script_retry(script):
-        print("[script] Hard validation still failing after retries — marking for review before media generation")
-        script = _mark_needs_review(script, "hard script validation failed after retries")
-
-    review = _check_argument_coherence(script, research, config)
-    script = _attach_argument_review(script, review)
-    if not review.get("passes"):
-        print("[script] Retrying due to argument drift...")
-        retry_prompt = (
-            prompt
-            + "\n\nEDITORIAL REVIEW FAILED. Rewrite the full JSON script so every section supports the core claim.\n"
-            + f"Issue summary: {review.get('issue_summary', '')}\n"
-            + f"Rewrite instruction: {review.get('rewrite_instruction', '')}\n"
-            + f"Keep {config['script_min_words']}-{config['script_max_words']} spoken words, preserve the Soft Reset voice, and do not drift into generic advice."
-        )
-        script = _call_script_model(retry_prompt, config["script_model"])
-        script = _validate_script(script, config)
-        review = _check_argument_coherence(script, research, config)
-        script = _attach_argument_review(script, review)
-
-    hook_changed = False
-    if script.get("hook_quality") == "weak":
-        print(f"[script] Retrying hook for stronger pattern interrupt...")
-        hook_prompt = (
-            f"Rewrite ONLY the hook for this relationship self-improvement Short. Topic: {research['topic']}.\n"
-            f"Current weak hook: '{script['hook']}'\n"
-            f"Write ONE new scroll-stopping hook under 12 words in the Soft Reset With Me voice.\n"
-            f"Use plain words, not poetic phrasing. The viewer should instantly think, 'wait, is this about me?'\n"
-            f"Best patterns:\n"
-            f"- 'You type the honest message, then replace it with I'm fine.'\n"
-            f"- 'One late reply, and suddenly you are rereading everything.'\n"
-            f"- 'You ask for space right after someone gets close.'\n"
-            f"- 'You rehearse the conversation, then say nothing when they ask.'\n"
-            f"No warmup. No diagnosis. No hype coach language.\n"
-            f"Return ONLY the hook text, no quotes, no explanation."
-        )
-        try:
-            if config["script_model"].startswith("claude-"):
-                if _anthropic is None:
-                    raise RuntimeError("anthropic not installed")
-                client = _anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
-                msg = client.messages.create(
-                    model=config["script_model"],
-                    max_tokens=64,
-                    messages=[{"role": "user", "content": hook_prompt}],
-                )
-                new_hook = msg.content[0].text.strip().strip('"').strip("'")
-            else:
-                new_hook = generate_text(hook_prompt, config["script_model"]).strip('"').strip("'")
-            if new_hook and len(new_hook.split()) <= 12:
-                script["hook"] = new_hook
-                script["hook_quality"] = "strong_retry"
-                hook_changed = True
-                print(f"[script] ✓ Hook updated: '{new_hook}'")
-        except Exception as e:
-            print(f"[script] Hook retry failed ({e}) — keeping original")
-
-    if script.get("engagement_quality") == "weak":
-        print(f"[script] Retrying engagement question for stronger polarizer...")
-        eq_prompt = (
-            f"Write ONE polarizing engagement question for a YouTube Short on: {research['topic']}.\n"
-            f"Rules: must fit Soft Reset With Me. Ask for a contextual save, comment, or honest confession.\n"
-            f"Examples: 'Which one hit hardest?'\n"
-            f"         'Save this for when you start missing their potential.'\n"
-            f"         'When do you notice yourself doing this?'\n"
-            f"Do not write 'Save this one' or 'Send this to someone who...'.\n"
-            f"NOT acceptable: 'What do you think?' 'Let me know below.' 'Comment your thoughts.'\n"
-            f"Return ONLY the question text, no quotes, no explanation."
-        )
-        try:
-            if config["script_model"].startswith("claude-"):
-                if _anthropic is None:
-                    raise RuntimeError("anthropic not installed")
-                client = _anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
-                msg = client.messages.create(
-                    model=config["script_model"],
-                    max_tokens=80,
-                    messages=[{"role": "user", "content": eq_prompt}],
-                )
-                new_eq = msg.content[0].text.strip().strip('"').strip("'")
-            else:
-                new_eq = generate_text(eq_prompt, config["script_model"]).strip('"').strip("'")
-            if new_eq and len(new_eq.split()) >= 5:
-                script["engagement_question"] = new_eq
-                script["engagement_quality"] = "strong_retry"
-                print(f"[script] ✓ Engagement question updated: '{new_eq}'")
-        except Exception as e:
-            print(f"[script] Engagement question retry failed ({e}) — keeping original")
-
-    script = _validate_script(script, config)
-    if not script.get("word_count_in_range", True):
-        script = _repair_word_count(script, config)
-    if hook_changed:
-        final_review = _check_argument_coherence(script, research, config)
-        script = _attach_argument_review(script, final_review)
-    elif script.get("argument_quality") == "weak":
-        script = _attach_argument_review(script, script.get("argument_review", {}))
-
+    script = _bounded_script_generation(prompt, research, config, run_dir)
     output_path = os.path.join(run_dir, "02_script.json")
     _log_final_state(script)
     save_json(script, output_path)
@@ -653,7 +532,7 @@ def run_script_mock(video_id: str, run_dir: str, config: dict) -> dict:
     print(f"[script][MOCK] Generating mock script for {video_id}")
     result = {
         "script_version": "1",
-        "prompt_version": "soft-reset-script-v2.6",
+        "prompt_version": "soft-reset-script-v2.7",
         "video_id": video_id,
         "topic": "You did not lose them, you lost who you imagined they would be",
         "category": "healing arcs",

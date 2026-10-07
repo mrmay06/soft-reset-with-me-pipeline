@@ -1,9 +1,9 @@
 from __future__ import annotations
 import os
 import time
+import json
 from difflib import SequenceMatcher
 from datetime import datetime, timedelta
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
@@ -13,6 +13,7 @@ from utils.gemini_client import generate_json
 from utils.performance_insights import summarize_performance_for_prompt
 from utils.experiment import inject_experiment_slot
 from utils.weekly_direction import weekly_direction_prompt
+from utils.research_evidence import normalize_research_basis
 
 try:
     from pytrends.request import TrendReq
@@ -177,7 +178,10 @@ def _load_evergreen_topics() -> list[dict]:
     path = "config/evergreen_topics.json"
     if not os.path.exists(path):
         return []
-    return load_json(path)
+    return [{**item, "topic_origin": "evergreen_fallback",
+             "research_context": {"mode": "evergreen", "signals_presented": [],
+                                  "claim_verification": "none"}}
+            for item in load_json(path)]
 
 
 def _normalise_categories(categories: list[str]) -> set[str]:
@@ -214,8 +218,11 @@ def _harvest_pytrends(timeframe: str = "now 7-d") -> list[str]:
             if rising is not None and not rising.empty:
                 signals.extend(rising["query"].tolist()[:5])
         # Also grab trending searches
-        trending = pytrends.trending_searches(pn="united_states")
-        signals.extend(trending[0].tolist()[:10])
+        try:
+            trending = pytrends.trending_searches(pn="united_states")
+            signals.extend(trending[0].tolist()[:10])
+        except Exception as e:
+            print(f"[research] General trends unavailable; retaining related queries ({type(e).__name__})")
         unique = list(dict.fromkeys(signals))  # dedupe, preserve order
         print(f"[research] pytrends ({timeframe}): {len(unique)} signals")
         return unique[:20]
@@ -224,7 +231,7 @@ def _harvest_pytrends(timeframe: str = "now 7-d") -> list[str]:
         return []
 
 
-def _harvest_youtube() -> list[str]:
+def _harvest_youtube(days: int = 7) -> list[str]:
     if _yt_build is None:
         return []
     try:
@@ -254,17 +261,21 @@ def _harvest_youtube() -> list[str]:
         ]
         titles = []
         for query in queries:
-            resp = youtube.search().list(
-                part="snippet",
-                q=query,
-                type="video",
-                videoDuration="short",
-                order="viewCount",
-                publishedAfter=(datetime.utcnow() - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                regionCode="US",
-                relevanceLanguage="en",
-                maxResults=10,
-            ).execute()
+            try:
+                resp = youtube.search().list(
+                    part="snippet",
+                    q=query,
+                    type="video",
+                    videoDuration="short",
+                    order="viewCount",
+                    publishedAfter=(datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    regionCode="US",
+                    relevanceLanguage="en",
+                    maxResults=10,
+                ).execute()
+            except Exception as e:
+                print(f"[research] YouTube query unavailable: {query} ({type(e).__name__})")
+                continue
             for item in resp.get("items", []):
                 title = item["snippet"]["title"].strip()
                 if len(title) > 10:
@@ -311,7 +322,7 @@ def _harvest_signals(timeframe: str = "now 7-d", config: dict | None = None) -> 
     config = config or {}
     sources = set(config.get("research_signal_sources", ["pytrends", "youtube", "reddit"]))
     pytrends_signals = _harvest_pytrends(timeframe) if "pytrends" in sources else []
-    youtube_titles   = _harvest_youtube() if "youtube" in sources else []
+    youtube_titles   = _harvest_youtube(days=30 if "30" in timeframe else 7) if "youtube" in sources else []
     reddit_titles    = (
         _harvest_reddit(
             config.get("reddit_signal_subreddits", ["relationship_advice", "dating_advice", "BreakUps", "ExNoContact", "self"]),
@@ -323,10 +334,34 @@ def _harvest_signals(timeframe: str = "now 7-d", config: dict | None = None) -> 
         "pytrends": pytrends_signals,
         "youtube":  youtube_titles,
         "reddit": reddit_titles,
+        "window_days": 30 if "30" in timeframe else 7,
     }
 
 
 # ── Step 2: Candidate Generation ─────────────────────────────────────────────
+
+def _signal_context(signals: dict, limit: int = 30) -> dict:
+    """Balance inspiration sources; do not imply a title verifies a claim."""
+    pools = {source: list(dict.fromkeys(_clean_signal(x) for x in signals.get(source, []) if _clean_signal(x)))
+             for source in ("pytrends", "youtube", "reddit")}
+    presented = []
+    seen = set()
+    for index in range(max((len(pool) for pool in pools.values()), default=0)):
+        for source, pool in pools.items():
+            if index < len(pool) and pool[index].casefold() not in seen:
+                presented.append({"source": source, "text": pool[index]})
+                seen.add(pool[index].casefold())
+                if len(presented) >= limit:
+                    break
+        if len(presented) >= limit:
+            break
+    return {"mode": "signal_informed_ideation" if presented else "evergreen_ideation",
+            "source_counts": {source: len(pool) for source, pool in pools.items()},
+            "source_status": {source: "signals_available" if pool else "empty_disabled_or_unavailable"
+                              for source, pool in pools.items()},
+            "signals_presented": presented, "claim_verification": "none",
+            "window_days": signals.get("window_days"),
+            "attribution": "Inputs presented to the model, not verified sources or proof of which inspired the winner"}
 
 @retry(max_attempts=2, wait_seconds=10, exceptions=(Exception,))
 def _generate_candidates(signals: dict, recent_topics: list[str],
@@ -336,11 +371,11 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     _assert_gemini_key()
 
     # Format signals block
-    all_signals = signals.get("pytrends", []) + signals.get("youtube", []) + signals.get("reddit", [])
-    if all_signals:
-        signals_str = "\n".join(f"- {s}" for s in all_signals[:30])
+    context = _signal_context(signals)
+    if context["signals_presented"]:
+        signals_str = "\n".join(f"- [{s['source']}] {s['text']}" for s in context["signals_presented"])
     else:
-        signals_str = "- No trending data available — use your knowledge of current US relationship self-improvement topics"
+        signals_str = "- EVERGREEN MODE: no live signals available. Propose timeless emotional scenes; do not claim current trends or timeliness."
 
     recent_str  = "\n".join(f"- {t}" for t in recent_topics)  if recent_topics  else "- None"
     cat_str     = "\n".join(f"- {c}" for c in recent_categories) if recent_categories else "- None"
@@ -354,7 +389,8 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     )
 
     from utils.strategy import inject_strategy, get_strategy_context
-    prompt_template = inject_strategy(open("prompts/research_candidates_prompt.txt").read(), "research")
+    with open("prompts/research_candidates_prompt.txt") as source:
+        prompt_template = inject_strategy(source.read(), "research")
     prompt = prompt_template.format(
         signals=signals_str,
         recent_topics=recent_str,
@@ -373,7 +409,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
         prompt,
         config,
         "[WILDCARD SLOT] Generate at least 2 candidates in content_format='hot_take' — "
-        "controversial, polarizing, will generate comments and shares. "
+        "a fair, surprising opinion supported by an observable scene, not outrage or motive-reading. "
         "One candidate must be a topic you would not normally pitch for this channel.",
     )
 
@@ -383,6 +419,8 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
     for rank, candidate in enumerate(candidates):
         if isinstance(candidate, dict):
             candidate["_candidate_rank"] = rank
+            candidate["topic_origin"] = context["mode"]
+            candidate["research_context"] = context
     print(f"[research] Generated {len(candidates)} candidates (target: 5–7)")
     return candidates
 
@@ -504,9 +542,26 @@ def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> d
         core_claim= candidate.get("core_claim", ""),
         editorial_seed= candidate.get("editorial_seed", ""),
         only_soft_reset_line= candidate.get("only_soft_reset_line", ""),
+        content_format=candidate.get("content_format", ""),
+        emotional_trigger=candidate.get("emotional_trigger", ""),
+        psych_concept=candidate.get("psych_concept", ""),
+        content_basis=candidate.get("content_basis", "emotional_observation"),
     )
 
     result = generate_json(prompt, model)
+    return _finalize_candidate_score(candidate, result)
+
+
+def _finalize_candidate_score(candidate: dict, result: dict) -> dict:
+    for field in ("topic_origin", "research_context"):
+        if field in candidate:
+            result[field] = candidate[field]
+    for field in ("content_format", "emotional_trigger", "psych_concept"):
+        result.setdefault(field, candidate.get(field, ""))
+    result.setdefault("content_basis", candidate.get("content_basis", "emotional_observation"))
+    if normalize_research_basis(candidate)["content_basis"] == "factual_claim":
+        result["content_basis"] = "factual_claim"
+    result = normalize_research_basis(result)
     result = _apply_scoring_penalties(result)
 
     # Enforce hard gate
@@ -551,17 +606,16 @@ def _score_one_candidate(candidate: dict, model: str, prompt_template: str) -> d
 
 
 def _apply_scoring_penalties(result: dict) -> dict:
-    """Make 20/20 genuinely rare by capping vague or weakly sourced candidates."""
+    """Cap vague ideas, not emotional observations that lack citations."""
     topic = _normalise_text(result.get("topic", ""))
     trigger = _normalise_text(result.get("emotional_trigger", ""))
-    source_url = str(result.get("source_url", "") or "").strip()
-    confidence_level = _normalise_text(result.get("confidence_level", ""))
     content_format = _normalise_text(result.get("content_format", ""))
     editorial_seed = _normalise_text(result.get("editorial_seed", ""))
     only_soft_reset_line = _normalise_text(result.get("only_soft_reset_line", ""))
 
-    if confidence_level == "observational" and not source_url:
-        result["share_save_score"] = min(int(result.get("share_save_score", 1)), 3)
+    if result.get("content_basis") == "factual_claim":
+        result["safety_brand_score"] = 1
+        result["total_score"] = 0
 
     scene_markers = (
         "text", "dm", "message", "reply", "read", "story", "song", "2am", "phone",
@@ -592,23 +646,62 @@ def _apply_scoring_penalties(result: dict) -> dict:
 
 
 def _score_candidates_parallel(candidates: list[dict], model: str) -> list[dict]:
+    """Retain the caller contract, but score the whole pool in one request."""
+    if not candidates:
+        return []
+    try:
+        return _score_candidate_batch(candidates, model)
+    except Exception as error:
+        print(f"[research] Batch scoring unavailable ({type(error).__name__}); using existing fallback")
+        return []
+
+
+@retry(max_attempts=2, wait_seconds=5, exceptions=(Exception,))
+def _score_candidate_batch(candidates: list[dict], model: str) -> list[dict]:
+    _assert_gemini_key()
+    with open("prompts/research_score_prompt.txt") as source:
+        template = source.read()
+    fields = ("topic", "category", "angle_type", "hook_seed", "core_claim", "editorial_seed",
+              "only_soft_reset_line", "content_format", "emotional_trigger", "psych_concept", "content_basis")
+    rubric = template.format(**{field: "See CANDIDATES below" for field in fields})
+    inputs = [{"candidate_id": index, **{field: candidate.get(field, "") for field in fields}}
+              for index, candidate in enumerate(candidates, 1)]
+    prompt = (
+        "Score every candidate independently using the same rubric. Do not compare scores by rank.\n"
+        + rubric
+        + "\nBATCH OUTPUT OVERRIDE: Return a JSON array, one score object per candidate. "
+        "Include its exact integer candidate_id in each object. No missing, duplicate, or extra IDs. "
+        "Do not change topic, category, angle, or factual/emotional basis. "
+        "All five dimension scores must be integers from 1 to 4.\nCANDIDATES:\n"
+        + json.dumps(inputs)
+    )
+    raw = generate_json(prompt, model)
+    if not isinstance(raw, list) or len(raw) != len(candidates):
+        raise ValueError("Batch scoring must return exactly one record per candidate")
+    by_id = {}
+    score_fields = ("audience_fit_score", "emotional_tension_score", "scriptability_score",
+                    "share_save_score", "safety_brand_score")
+    for result in raw:
+        if not isinstance(result, dict):
+            raise ValueError("Invalid batch scoring record")
+        candidate_id = result.get("candidate_id")
+        if type(candidate_id) is not int or not 1 <= candidate_id <= len(candidates) or candidate_id in by_id:
+            raise ValueError("Batch scoring IDs are missing, duplicated, or unknown")
+        if any(type(result.get(field)) is not int or not 1 <= result[field] <= 4 for field in score_fields):
+            raise ValueError("Invalid batch dimension score")
+        candidate = candidates[candidate_id - 1]
+        for field in ("topic", "category", "angle_type"):
+            if (field == "topic" or field in result) and result.get(field) != candidate.get(field, ""):
+                raise ValueError("Batch scoring changed candidate identity")
+        by_id[candidate_id] = result
     results = []
-    prompt_template = open("prompts/research_score_prompt.txt").read()
-    max_workers = min(len(candidates), 7)
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {
-            executor.submit(_score_one_candidate, c, model, prompt_template): c
-            for c in candidates
-        }
-        for future in as_completed(futures):
-            candidate = futures[future]
-            try:
-                scored = future.result()
-                results.append(scored)
-                safety = scored.get("safety_brand_score", scored.get("reliability_score", 0))
-                print(f"[research] Scored '{scored['topic'][:50]}' → {scored['total_score']}/20 (safety: {safety})")
-            except Exception as e:
-                print(f"[research] Scoring failed for '{candidate.get('topic', '?')}': {e} — skipped")
+    for index, candidate in enumerate(candidates, 1):
+        result = {**candidate, **by_id[index]}
+        for field in ("topic", "category", "angle_type"):
+            result[field] = candidate.get(field, "")
+        result = _finalize_candidate_score(candidate, result)
+        result["scoring_source"] = "ai_batch"
+        results.append(result)
     return results
 
 
@@ -624,20 +717,21 @@ def _fallback_score_candidate(candidate: dict, rank: int = 1) -> dict:
     only_line = candidate.get("only_soft_reset_line") or core_claim or candidate.get("hook_seed", topic)
     result = {
         **candidate,
-        "audience_fit_score": int(candidate.get("audience_fit_score", 4)),
-        "emotional_tension_score": int(candidate.get("emotional_tension_score", 4)),
-        "scriptability_score": int(candidate.get("scriptability_score", 4)),
-        "share_save_score": int(candidate.get("share_save_score", 4)),
-        "safety_brand_score": int(candidate.get("safety_brand_score", candidate.get("reliability_score", 3))),
+        "audience_fit_score": 2,
+        "emotional_tension_score": 2,
+        "scriptability_score": 2,
+        "share_save_score": 2,
+        "safety_brand_score": 3,
         "source_fact": candidate.get("source_fact", core_claim or topic),
         "source_basis": candidate.get("source_basis", candidate.get("psych_concept", "")),
-        "source_name": candidate.get("source_name", "relationship psychology principle"),
+        "source_name": candidate.get("source_name", "editorial topic, not verified research"),
         "source_url": candidate.get("source_url", ""),
         "fact_year": candidate.get("fact_year", 2026),
         "confidence_level": candidate.get("confidence_level", "observational"),
         "editorial_seed": editorial_seed,
         "only_soft_reset_line": only_line,
         "_candidate_rank": candidate.get("_candidate_rank", rank),
+        "scoring_source": "deterministic_fallback",
     }
     result["total_score"] = sum(
         result.get(key, 0)
@@ -649,7 +743,7 @@ def _fallback_score_candidate(candidate: dict, rank: int = 1) -> dict:
             "safety_brand_score",
         )
     )
-    return _apply_scoring_penalties(result)
+    return _finalize_candidate_score(candidate, result)
 
 
 def _score_candidates_fallback(candidates: list[dict]) -> list[dict]:
@@ -760,7 +854,7 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
 
     print(f"[research] Scoring {len(candidates)} candidates in parallel")
 
-    # ── Step 6: Parallel scoring + fact grounding ──
+    # ── Step 6: Editorial scoring (not factual verification) ──
     scored = _score_candidates_parallel(candidates, model)
     if not scored:
         print("[research] Model scoring unavailable — using deterministic fallback scoring")
@@ -802,6 +896,8 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         "source_url":          winner.get("source_url", ""),
         "fact_year":           winner.get("fact_year", ""),
         "confidence_level":    winner.get("confidence_level", ""),
+        "content_basis":       winner.get("content_basis", "emotional_observation"),
+        "suggested_source_url": winner.get("suggested_source_url", ""),
         "content_format":      winner.get("content_format", ""),
         "emotional_trigger":   winner.get("emotional_trigger", ""),
         "psych_concept":       winner.get("psych_concept", ""),
@@ -818,10 +914,15 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         "total_score":         winner.get("total_score", 0),
         "reasoning":           winner.get("reasoning", ""),
         "candidates_evaluated": len(scored),
+        "scoring_source":       winner.get("scoring_source", "unknown"),
+        "topic_origin":         winner.get("topic_origin", "unknown"),
+        "research_context":     winner.get("research_context", {"claim_verification": "none"}),
+        "evidence_warning":     winner.get("evidence_warning", ""),
         "generated_at":        now_iso(),
     }
 
     output_path = os.path.join(run_dir, "01_research.json")
+    result = normalize_research_basis(result)
     save_json(result, output_path)
     print(f"[research] Done. Topic: {result['topic']} | Score: {result['total_score']}/20 | Safety: {result['scores']['safety_brand']}")
     return result
@@ -859,6 +960,9 @@ def run_research_mock(video_id: str, run_dir: str, config: dict) -> dict:
         "generated_at":         now_iso(),
     }
     output_path = os.path.join(run_dir, "01_research.json")
+    result["topic_origin"] = "mock_fixture"
+    result["research_context"] = {"mode": "mock_fixture", "signals_presented": [], "claim_verification": "none"}
+    result = normalize_research_basis(result)
     save_json(result, output_path)
     print(f"[research][MOCK] Done. Topic: {result['topic']}")
     return result
