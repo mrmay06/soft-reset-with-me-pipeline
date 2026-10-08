@@ -185,5 +185,116 @@
     "video_id": "20260731_124546",
     "scene_id": 5,
     "used_at": "2026-07-31T12:48:59Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6279146",
+    "source_url": "https://videos.pexels.com/video-files/6279146/6279146-hd_1080_1920_30fps.mp4",
+    "file_hash": "1683e38cfa63952749c86b0c29f4d072cb3539e5f76e30daf1067492d452ff60",
+    "perceptual_hash": "e0033d3c3c3c0000",
+    "query": "holding smartphone screen glowing",
+    "video_id": "20261008_190127",
+    "scene_id": 1,
+    "used_at": "2026-10-08T19:03:52Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "28905349",
+    "source_url": "https://videos.pexels.com/video-files/28905349/12511802_1080_1920_24fps.mp4",
+    "file_hash": "c5dea7ed593e954ba441c39190b0507b5efef1cb3a27778c8fc92dc936caf207",
+    "perceptual_hash": "00c0c0fcfc300000",
+    "query": "wall clock ticking shadows",
+    "video_id": "20261008_190127",
+    "scene_id": 2,
+    "used_at": "2026-10-08T19:03:53Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6413916",
+    "source_url": "https://videos.pexels.com/video-files/6413916/6413916-hd_1080_1920_24fps.mp4",
+    "file_hash": "970f1ed10b27f08183c4183969b82481280107e60bca0b97c38d05899d21b49a",
+    "perceptual_hash": "ffffbf3f00000000",
+    "query": "putting phone face down",
+    "video_id": "20261008_190127",
+    "scene_id": 3,
+    "used_at": "2026-10-08T19:03:54Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "37201216",
+    "source_url": "https://videos.pexels.com/video-files/37201216/15758930_1080_1920_25fps.mp4",
+    "file_hash": "38ea3373d05994372d60852b9104f65ad5c8c6d4a27239238cd074a50afa3df2",
+    "perceptual_hash": "f8fc7f3f06000000",
+    "query": "rainy window pane night",
+    "video_id": "20261008_190127",
+    "scene_id": 4,
+    "used_at": "2026-10-08T19:03:54Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8705260",
+    "source_url": "https://videos.pexels.com/video-files/8705260/8705260-hd_1080_1920_30fps.mp4",
+    "file_hash": "5fddb700327e3c01905e26c50764dc4d1dd44a967f30c7ab2037ba354ffa9a15",
+    "perceptual_hash": "3198a0f1fffffe00",
+    "query": "hands closing notebook slowly",
+    "video_id": "20261008_190127",
+    "scene_id": 5,
+    "used_at": "2026-10-08T19:03:55Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5756149",
+    "source_url": "https://videos.pexels.com/video-files/5756149/5756149-hd_1080_1920_24fps.mp4",
+    "file_hash": "49b90c022b071dc6dd2e85aec2ae798adc40f199448fb3d1397eca450f8974a6",
+    "perceptual_hash": "07838fdcfcf8d8f0",
+    "query": "person looking into mirror",
+    "video_id": "20261008_190127",
+    "scene_id": 6,
+    "used_at": "2026-10-08T19:03:56Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6068298",
+    "source_url": "https://videos.pexels.com/video-files/6068298/6068298-hd_1080_1920_25fps.mp4",
+    "file_hash": "35e6f2d94a46b3d95e043ee402fb431126fd84ead373bf86ade8ec51a54b57b1",
+    "perceptual_hash": "0000181867ffff78",
+    "query": "empty chair dim room",
+    "video_id": "20261008_190127",
+    "scene_id": 7,
+    "used_at": "2026-10-08T19:03:56Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8296126",
+    "source_url": "https://videos.pexels.com/video-files/8296126/8296126-hd_1080_1920_30fps.mp4",
+    "file_hash": "8eb3f560421f73d4e7f435bcb31c1249160ac329c0de31d3efb0f50c13c5e447",
+    "perceptual_hash": "ffffffc707000070",
+    "query": "restless hands tea mug",
+    "video_id": "20261008_190127",
+    "scene_id": 8,
+    "used_at": "2026-10-08T19:03:57Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5450600",
+    "source_url": "https://videos.pexels.com/video-files/5450600/5450600-hd_1080_1920_30fps.mp4",
+    "file_hash": "9a22b07a132c8e7593dacc23f4ce4036aba88a531597a928dce531730e8ca886",
+    "perceptual_hash": "0040f7ffe6800000",
+    "query": "person looking city night",
+    "video_id": "20261008_190127",
+    "scene_id": 9,
+    "used_at": "2026-10-08T19:03:58Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7217603",
+    "source_url": "https://videos.pexels.com/video-files/7217603/7217603-hd_1080_1920_25fps.mp4",
+    "file_hash": "a7500332ea3466498fa94fbc0d4d5784fc2f9c4cdaad0170908f9001f5e06eb0",
+    "perceptual_hash": "fff7c18183c7ffff",
+    "query": "putting phone face down",
+    "video_id": "20261008_190127",
+    "scene_id": 3,
+    "used_at": "2026-10-08T19:06:34Z",
+    "repair_attempt": 1
   }
 ]
