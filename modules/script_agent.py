@@ -85,6 +85,24 @@ _HOOK_ACTION_WORDS = {
 }
 
 
+# A visible action + object is a concrete scene even without "but/because".
+# Include ordinary verb forms rather than requiring one exact stock phrase.
+_HOOK_SCENE_ACTION_WORDS = {
+    "open", "opens", "opened", "opening",
+    "zoom", "zooms", "zoomed", "zooming",
+    "look", "looks", "looked", "looking",
+    "study", "studies", "studied", "studying",
+    "hover", "hovers", "hovered", "hovering",
+    "scroll", "scrolls", "scrolled", "scrolling",
+    "tap", "taps", "tapped", "tapping",
+}
+_HOOK_SCENE_OBJECT_WORDS = {
+    "profile", "photo", "photos", "picture", "pictures", "smile",
+    "caption", "captions", "screen", "post", "posts", "feed",
+    "notification", "notifications", "conversation", "chat", "draft", "cursor",
+}
+
+
 _HOOK_CONTRADICTION_SIGNALS = (
     " but ", " so ", " then ", " when ", " after ", " because ", " until ",
     " instead ", " not ",
@@ -169,13 +187,17 @@ _GENERIC_CTA_PATTERNS = [
 
 
 def _hook_is_specific(hook: str) -> bool:
-    h = hook.lower()
+    h = hook.lower().replace("’", "'")
     if any(pattern in h for pattern in _WEAK_ABSTRACT_HOOK_PATTERNS):
         return False
     if any(sig in h for sig in _OBSERVABLE_HOOK_SIGNALS):
         return True
     words = re.findall(r"[a-z']+", h)
-    has_viewer = "you" in words or "your" in words
+    word_set = set(words)
+    has_viewer = bool(word_set & {"you", "your", "you're", "you've", "you'd", "you'll"})
+    if (has_viewer and word_set & _HOOK_SCENE_ACTION_WORDS
+            and word_set & _HOOK_SCENE_OBJECT_WORDS):
+        return True
     has_action = bool(set(words) & _HOOK_ACTION_WORDS)
     has_contradiction = any(signal in f" {h} " for signal in _HOOK_CONTRADICTION_SIGNALS)
     return 4 <= len(words) <= 22 and has_viewer and has_action and has_contradiction
