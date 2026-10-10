@@ -1421,5 +1421,161 @@
     "strongest_element": "villain_mechanism_specificity",
     "weakest_element": "visual_dialogue_sync",
     "only_soft_reset_score": 8
+  },
+  {
+    "video_id": "long_20261010_154248",
+    "published_date": "2026-10-10",
+    "status": "uploaded",
+    "topic": "The habit of intellectualizing your hurt so well that your partner never realizes you are actually hurting",
+    "working_title": "When Being 'Understanding' Becomes a Way to Hide",
+    "content_pillar": "relationship patterns",
+    "category": "relationship patterns",
+    "angle_type": "emotional_deep_dive",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "Explaining away someone's impact with mature logic can look like empathy, but it often functions as a defense mechanism to avoid the vulnerability of simply being hurt.",
+    "editorial_seed": "Many emotionally literate people respond to disappointment by instantly diagnosing it. They list their partner's stressors, excuse the oversight, and present their feelings like a calm, diplomatic case study. The conversation ends peacefully, but they go to sleep feeling completely unseen. This essay explores why we substitute understanding for honesty, and what happens when we finally allow our feelings to exist without a polite disclaimer.",
+    "only_soft_reset_line": "You traded the messy truth of your hurt for the safety of being reasonable, and now you are lonely in a room where no one even raised their voice.",
+    "word_count": 892,
+    "estimated_duration_sec": 345.3,
+    "argument_quality": "strong",
+    "final_duration_sec": 312.83,
+    "render_validation": "passed",
+    "title": "You Told Them You Understood, but You're Still Hurting",
+    "primary_variant_id": "B",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why Being the 'Understanding' Partner Leaves You Lonely"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You Told Them You Understood, but You're Still Hurting"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "Being the Reasonable One Is Quietly Making You Lonely"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "pure_typography",
+        "structure": "typography",
+        "line1": "THANKS FOR UNDERSTANDING",
+        "line2": "so why does it hurt",
+        "thumbnail_text": "THANKS FOR UNDERSTANDING / so why does it hurt",
+        "visual_prompt": "Minimalist editorial background in deep midnight charcoal, ultra-fine film grain texture, soft diffused cool light gradient, clean negative space designed for elegant typography overlay, no subjects, no graphics, no text"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "face_right_text_left",
+        "structure": "face_text",
+        "line1": "YOU DIDN'T FORGIVE",
+        "line2": "you just stopped saying it",
+        "thumbnail_text": "YOU DIDN'T FORGIVE / you just stopped saying it",
+        "visual_prompt": "Cinematic portrait of a young woman on the right 58% of the frame looking toward the left with quiet restrained recognition, heavy tired eyes, soft natural cool-toned side lighting, authentic skin texture, cinematic 35mm grain, deep midnight dark negative space covering the left 42%, no text",
+        "subject_gender": "woman",
+        "portrait_scene": "Young woman in her late twenties positioned on the right 58% of the frame, gazing softly toward the left with quiet devastated recognition, heavy eyes, subtle vulnerability, diffused cool-neutral window illumination, left 42% of the frame is clean dark midnight shadow, prestige drama grade, no text"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "split_screen",
+        "structure": "split",
+        "line1": "REASONABLE ISN'T KIND",
+        "line2": "it's just where you hide",
+        "thumbnail_text": "REASONABLE ISN'T KIND / it's just where you hide",
+        "visual_prompt": "Cinematic 16:9 two-plate horizontal split composite: left side shows an isolated figure wiping down a spotless counter alone in a cold dark twilight kitchen; right side shows a steady figure seated in calm direct dialogue under balanced cool-neutral evening light, desaturated cinematic grade, no text",
+        "scene_left": "Cold dim kitchen at dusk, single figure wiping an already clean counter in silence, isolated body language, heavy shadows and deep midnight tones, no text",
+        "scene_right": "Quiet grounded room, steady individual sitting in still conversation across an evening table, soft cool-neutral ambient lamp light, calm and present atmosphere, no text"
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "E7cHVXW8xfo",
+    "youtube_url": "https://www.youtube.com/watch?v=E7cHVXW8xfo",
+    "privacy_status": "private",
+    "uploaded_at": "2026-10-10T15:56:22Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W41",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The habit of intellectualizing your hurt so well that your p",
+      "visual_style_mix": "balanced",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 74
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "The sensory detail of wiping a clean kitchen counter perfectly grounds the psychological dissonance of being reasonable while internally hurting."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The progression from micro-behavior to psychological root, systemic consequence, counterpoint, and practical reframe is exceptionally lucid."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Clear, compassionate, and precise; it identifies the defense mechanism of over-intellectualizing hurt without shaming either partner."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "Names the exact subtle trap: turning an emotional sting into an intellectual 'case study' to avoid the vulnerability of being rejected."
+      },
+      "cta_quality": {
+        "score": 8,
+        "reason": "The engagement prompt is unusually sharp and reflective; the subscribe CTA is natural and tonally congruent."
+      },
+      "title_accuracy": {
+        "score": 8,
+        "reason": "The title matches the exact emotional dilemma explored in the script without clickbait distortion or advice contradiction."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The opening sentence carries immense emotional punch and cleanly summarizes the core thesis."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "Heavy reliance on 74 generic stock clips risks pacing visual drift if literal domestic beats aren't matched precisely to the script's quiet intimacy."
+      },
+      "image_direction_strength": {
+        "score": 8,
+        "reason": "Thumbnail prompts are well-directed with clear spatial composition, negative space, and evocative color grading."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "Rendered thumbnail B captures vulnerability well, though Thumbnail A's wording ('THANKS FOR UNDERSTANDING / so why does it hurt') mirrors the script vocabulary slightly closer than 'forgive'."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "Sentence structure uses varied lengths, natural pauses, and conversational cadence tailored for quiet, intimate voiceover."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "Exemplifies the Soft Reset aesthetic: restrained, emotionally perceptive, non-accusatory, and deeply grounded in everyday moments."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No medical claims, no interpersonal toxicity, no policy hazards whatsoever."
+      }
+    },
+    "judge_composite_score": 8.6,
+    "strongest_element": "Scriptwriting and mechanism diagnosis\u2014the metaphor of wiping a clean counter and filing a 'case study' instead of feeling hurt is brilliant.",
+    "weakest_element": "Visual execution rely solely on 74 stock footage cuts, which can feel disjointed or generic without careful curation.",
+    "only_soft_reset_score": 9
   }
 ]

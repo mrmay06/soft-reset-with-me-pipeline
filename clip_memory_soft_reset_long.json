@@ -1,1 +1,668 @@
-[]
+[
+  {
+    "provider": "pexels",
+    "provider_id": "5592518",
+    "file_hash": "bff912013a51c89b0a964f170996a48dff07cb4c072f8c7cfa703d8fb05fdc2a",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 1,
+    "used_at": "2026-10-10T15:45:27Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7551345",
+    "file_hash": "513d2420c2dce09c34bc6acb9946f465fba8ee0f704feaffca34754e89ea1b3b",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 2,
+    "used_at": "2026-10-10T15:45:30Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "4109498",
+    "file_hash": "7162bbee16d8338929e61a527331a763ff432622e8972b330cd6339b377eb05e",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 3,
+    "used_at": "2026-10-10T15:45:35Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5592522",
+    "file_hash": "4f55560c721a5f6baa7c7ca011564167d5696b4a166b968088f951a541e9c50f",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 4,
+    "used_at": "2026-10-10T15:45:38Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5592515",
+    "file_hash": "98aab30b12b1cfb5394949cd763e05716698e6c447b9224af5f87e951936adcb",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 5,
+    "used_at": "2026-10-10T15:45:42Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6264771",
+    "file_hash": "df54addcdf3d518c76338410b1b0ed8d7a64462453c9752e768112c35b56dfb4",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 6,
+    "used_at": "2026-10-10T15:45:45Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7394011",
+    "file_hash": "20bf20a00d1269b4fc24e1624c512d04dd284989d89643c0bef948922db7e747",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 7,
+    "used_at": "2026-10-10T15:45:47Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5592718",
+    "file_hash": "d92cb8c55c0acbe06db02820a7ee068e43bc9511337efb0e9c6d692f73a3c6b2",
+    "query": "woman wiping kitchen counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 8,
+    "used_at": "2026-10-10T15:45:52Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "2hL1H2Hec6",
+    "file_hash": "f13ef62a6c6adf03b3b29b0e18c45522131dbc7fc4c84b487b44d4153d9d651f",
+    "query": "hands holding coffee cup",
+    "video_id": "long_20261010_154248",
+    "beat_id": 9,
+    "used_at": "2026-10-10T15:45:56Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6900919",
+    "file_hash": "c01927bb540a2d95cb677cc8fbb5b86e7df044067a982fbd99767a0be16f12bf",
+    "query": "couple talking kitchen evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 10,
+    "used_at": "2026-10-10T15:46:01Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7641186",
+    "file_hash": "9125afcd5ec8e731037090b2460aaef64bcb5f8e98e78293c8c2abce9c2c43fa",
+    "query": "couple talking kitchen evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 11,
+    "used_at": "2026-10-10T15:46:05Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6900930",
+    "file_hash": "9d4db3adfdee410cbb4e7c422a9eee30843760b64422a955df5651dbbe076012",
+    "query": "couple talking kitchen evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 12,
+    "used_at": "2026-10-10T15:46:08Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6082948",
+    "file_hash": "503cefe6a08bfffe924e225e09238c9ace6125da63a28a73cf2884350122ff06",
+    "query": "hands holding coffee cup",
+    "video_id": "long_20261010_154248",
+    "beat_id": 13,
+    "used_at": "2026-10-10T15:46:11Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "4701511",
+    "file_hash": "9af8158496d506a0a8f2f0745efbca361a8c599888d49a3a5f5809b2ba89ff5a",
+    "query": "hands holding coffee cup",
+    "video_id": "long_20261010_154248",
+    "beat_id": 14,
+    "used_at": "2026-10-10T15:46:14Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6612154",
+    "file_hash": "2620d92b2f1ea9a0f0d691f14ae99e3136fc4d537e2a850eaf31b664c067383c",
+    "query": "hands holding coffee cup",
+    "video_id": "long_20261010_154248",
+    "beat_id": 15,
+    "used_at": "2026-10-10T15:46:16Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6245131",
+    "file_hash": "2d62cd0ec80fa00e60303b6a8b6018f476ddac64b49de9f160cd0d55709a0395",
+    "query": "hands holding coffee cup",
+    "video_id": "long_20261010_154248",
+    "beat_id": 16,
+    "used_at": "2026-10-10T15:46:21Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8151870",
+    "file_hash": "25dc97cc64aa1153eff7e51a9f0fa1a7f410259b260c2238dde17062fe554963",
+    "query": "hands holding coffee cup",
+    "video_id": "long_20261010_154248",
+    "beat_id": 17,
+    "used_at": "2026-10-10T15:46:25Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "1luDQuXzsm",
+    "file_hash": "7513665a5f770293a6ec4d15bb16b4f3f32b5ffe901e673f377d0582e0600156",
+    "query": "woman looking out window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 18,
+    "used_at": "2026-10-10T15:46:27Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "4973665",
+    "file_hash": "cffd88d690287e9b50107d2dfc580441923d76cb273da8b164892ee38d7b5d10",
+    "query": "woman looking out window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 19,
+    "used_at": "2026-10-10T15:46:29Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6160912",
+    "file_hash": "2da0606c79d472da0e42d6f939bfdfb81dcb4279a0fd81a012a8f9ea786a129b",
+    "query": "woman looking out window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 20,
+    "used_at": "2026-10-10T15:46:33Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "dnHsq34MgN",
+    "file_hash": "167195dea89d46343e1213311d9656be0d95f190268a47317ca0b67c6862b5aa",
+    "query": "woman looking out window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 21,
+    "used_at": "2026-10-10T15:46:36Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6326847",
+    "file_hash": "1e73344925354542aaa20b9a3068de71277b81fcb6000cca1f3f4a98d807b566",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 22,
+    "used_at": "2026-10-10T15:46:38Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "9683619",
+    "file_hash": "1ddae7f765907c4558886d530d410a7bde53dc3062c84156bb2ef926ababbde7",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 23,
+    "used_at": "2026-10-10T15:46:41Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "UrJr0bcZdk",
+    "file_hash": "8342d98988db9e2a9536c9b3c8e4b3699d6c954cc8cb19a0236895f20d061a3d",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 24,
+    "used_at": "2026-10-10T15:46:43Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8626583",
+    "file_hash": "c774e4de38079828229660c865359337c83655afc5e5249d5fa97d511f5ba999",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 25,
+    "used_at": "2026-10-10T15:46:47Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "33350914",
+    "file_hash": "9a7ff553d8f9df5ae30988d57fade392170057974202ad6d93072340b996728c",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 26,
+    "used_at": "2026-10-10T15:46:50Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "33350921",
+    "file_hash": "f6b6d8844cee856bcdcd13dff90eed6c64e600ca263d1dcc44c8012d2c24faf7",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 27,
+    "used_at": "2026-10-10T15:46:52Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "9683618",
+    "file_hash": "424bdb33ac934ac3fd5137ba46b041612b99d19a8df20725432a9d26313f62c0",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 28,
+    "used_at": "2026-10-10T15:46:55Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6929056",
+    "file_hash": "999c442761ae11a69b65437a77e6a9a19a0d06d3bfffd6a68ca7bf26b9d5edd8",
+    "query": "journal writing hands",
+    "video_id": "long_20261010_154248",
+    "beat_id": 29,
+    "used_at": "2026-10-10T15:46:58Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7702688",
+    "file_hash": "8732b5ea56f0d47529564b21c60be1c045b4917043f50103d6a35292d2238ba2",
+    "query": "spilled glass kitchen floor",
+    "video_id": "long_20261010_154248",
+    "beat_id": 30,
+    "used_at": "2026-10-10T15:47:00Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7705349",
+    "file_hash": "24ff8786a22eb25961877f5b65fca45aa544e7381eec4db599641db94c27af1e",
+    "query": "spilled glass kitchen floor",
+    "video_id": "long_20261010_154248",
+    "beat_id": 31,
+    "used_at": "2026-10-10T15:47:03Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "1585728",
+    "file_hash": "07715cbbb1e2ed6aa12c63b8f83c39a41542310a8bad876e826aa13d9a42abda",
+    "query": "spilled glass kitchen floor",
+    "video_id": "long_20261010_154248",
+    "beat_id": 32,
+    "used_at": "2026-10-10T15:47:07Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "30876061",
+    "file_hash": "cc88777043c11ae3049677119a59cbf8ec4fe9c335ff1271ddd19570e80a47ca",
+    "query": "spilled glass kitchen floor",
+    "video_id": "long_20261010_154248",
+    "beat_id": 33,
+    "used_at": "2026-10-10T15:47:11Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7255095",
+    "file_hash": "4c4d2d73a732280db62e0c8ce7c65ebda6737e810cb29db72a7df4ee3aa589b2",
+    "query": "spilled glass kitchen floor",
+    "video_id": "long_20261010_154248",
+    "beat_id": 34,
+    "used_at": "2026-10-10T15:47:14Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7702690",
+    "file_hash": "6baa664a0a739f2013539f17ef0aec9835bf8dca06fddc2ee7963359b3f82610",
+    "query": "spilled glass kitchen floor",
+    "video_id": "long_20261010_154248",
+    "beat_id": 35,
+    "used_at": "2026-10-10T15:47:18Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6891196",
+    "file_hash": "5145c070aad1e64e406f8949b87b513eaa8fd6d902dba7ef7f05a86f2b84b461",
+    "query": "spilled glass kitchen floor",
+    "video_id": "long_20261010_154248",
+    "beat_id": 36,
+    "used_at": "2026-10-10T15:47:20Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "4145167",
+    "file_hash": "2f945b33b64e1808f092e65c3e4524045417323ceb691ad6b9ad264da575545b",
+    "query": "hands cleaning counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 37,
+    "used_at": "2026-10-10T15:47:25Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "10574087",
+    "file_hash": "b3296ae712296401cd1066c4b82a50b696ca921c8f110205a2d99cc0b6ee283a",
+    "query": "hands cleaning counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 38,
+    "used_at": "2026-10-10T15:47:29Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "29795776",
+    "file_hash": "0167004c4141a5e441180e3f72626e9bce348536c775b1eaf10dbfd1e2713d34",
+    "query": "hands cleaning counter",
+    "video_id": "long_20261010_154248",
+    "beat_id": 39,
+    "used_at": "2026-10-10T15:47:31Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5983701",
+    "file_hash": "c74797d4c910dee81d635ad3e768dd9f23b68c15383405fd503572ce6115270a",
+    "query": "woman awake in bed",
+    "video_id": "long_20261010_154248",
+    "beat_id": 40,
+    "used_at": "2026-10-10T15:47:34Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8486623",
+    "file_hash": "ddbf1dfca56ec46c93072b0b63401cfaf1d22b585a6032d4db3ea21aef617afe",
+    "query": "woman awake in bed",
+    "video_id": "long_20261010_154248",
+    "beat_id": 41,
+    "used_at": "2026-10-10T15:47:37Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7196195",
+    "file_hash": "deadf81c9b05eff00c28d0fc8f39571ee6f533967e6b95e851b1c90e0cbc6842",
+    "query": "woman awake in bed",
+    "video_id": "long_20261010_154248",
+    "beat_id": 42,
+    "used_at": "2026-10-10T15:47:39Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6863737",
+    "file_hash": "7b57419ce138202a4aaf215c39292357995fbacaf99c3d15af63dfda7a04369e",
+    "query": "unmade bed morning",
+    "video_id": "long_20261010_154248",
+    "beat_id": 43,
+    "used_at": "2026-10-10T15:47:43Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "9615492",
+    "file_hash": "715d6a93c758f756532bb6c1a7bde0c89af3588b437ac44b34da3bf3a6329dff",
+    "query": "unmade bed morning",
+    "video_id": "long_20261010_154248",
+    "beat_id": 44,
+    "used_at": "2026-10-10T15:47:47Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5353257",
+    "file_hash": "d242c9591ac1f6753a6bc72bdc58faa2f06f12670b00d034c665904369b1cda6",
+    "query": "unmade bed morning",
+    "video_id": "long_20261010_154248",
+    "beat_id": 45,
+    "used_at": "2026-10-10T15:47:50Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8406464",
+    "file_hash": "b1c4febf2bed580bacf58797ab2a5f9845c5820c919c83f8a01086cc0a0a3f10",
+    "query": "unmade bed morning",
+    "video_id": "long_20261010_154248",
+    "beat_id": 46,
+    "used_at": "2026-10-10T15:47:53Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5644684",
+    "file_hash": "5fa00b7ba16a7169589820556f48c9decd602fe7ce33cbcfac3e00335f1fe0e9",
+    "query": "unmade bed morning",
+    "video_id": "long_20261010_154248",
+    "beat_id": 47,
+    "used_at": "2026-10-10T15:47:57Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7131833",
+    "file_hash": "df03d6ab35b29c4acf0ec69ca993e0f934c370dd13652715926da164a25f667c",
+    "query": "unmade bed morning",
+    "video_id": "long_20261010_154248",
+    "beat_id": 48,
+    "used_at": "2026-10-10T15:47:59Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "UdN3Bfo8a4",
+    "file_hash": "8b51db9c22fd7a423b0e49d4f15a69c9797dcc850e718dec6a8f0e88266b242d",
+    "query": "dishes in sink",
+    "video_id": "long_20261010_154248",
+    "beat_id": 49,
+    "used_at": "2026-10-10T15:48:02Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "ajFxuXbryE",
+    "file_hash": "c31b25bf25bfa5a67a1c9b613e5939e43bc818ef12662918d4c322aaf7dcdfbb",
+    "query": "dishes in sink",
+    "video_id": "long_20261010_154248",
+    "beat_id": 50,
+    "used_at": "2026-10-10T15:48:05Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "4440691",
+    "file_hash": "fea6b02b1328fb1027c516a453df973d87fb48946c1290f6d8bf3329b82213dd",
+    "query": "dishes in sink",
+    "video_id": "long_20261010_154248",
+    "beat_id": 51,
+    "used_at": "2026-10-10T15:48:09Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5592511",
+    "file_hash": "2f2c979fab202126992fe98632fdde7a412f8ee6417bbeb35b0ffe5285f5af7a",
+    "query": "dishes in sink",
+    "video_id": "long_20261010_154248",
+    "beat_id": 52,
+    "used_at": "2026-10-10T15:48:14Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "4319304",
+    "file_hash": "4456a7a567049e3411063da1f242c38dfc9d0392f782dcc2c449217a1505284d",
+    "query": "dishes in sink",
+    "video_id": "long_20261010_154248",
+    "beat_id": 53,
+    "used_at": "2026-10-10T15:48:18Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7641504",
+    "file_hash": "9aaa0428b4d286ee73623103cc4b2f794f20d75845eddb7118337485ade288de",
+    "query": "dishes in sink",
+    "video_id": "long_20261010_154248",
+    "beat_id": 54,
+    "used_at": "2026-10-10T15:48:22Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "H590Ih5kdT",
+    "file_hash": "6b871d20d63eb8796a2b05b322525afd679ca15bde6420cf9762bd49b45a35a1",
+    "query": "hands holding phone",
+    "video_id": "long_20261010_154248",
+    "beat_id": 55,
+    "used_at": "2026-10-10T15:48:27Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "34353479",
+    "file_hash": "72a661f3c3f4e0b3f6b3021d088204cd8c9378a2820813f7864a2f3afa3ba19b",
+    "query": "phone call apartment window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 56,
+    "used_at": "2026-10-10T15:48:30Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "35762539",
+    "file_hash": "ad4059d84f86ad1f207c6c55bd87643ec515500848c106abd5c632a031a7ecd2",
+    "query": "phone call apartment window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 57,
+    "used_at": "2026-10-10T15:48:33Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6715394",
+    "file_hash": "a72629212a1518626f23f6fa0b6a90ad9dba3c1c03f4cda15d049d9d15a9fd3c",
+    "query": "candlelit room evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 58,
+    "used_at": "2026-10-10T15:48:36Z"
+  },
+  {
+    "provider": "coverr",
+    "provider_id": "GbPUXbLrqX",
+    "file_hash": "98910c279c9acde7d31c3b3c895fe83b58f760f8a9a4e99c860640b0991dc145",
+    "query": "hands holding phone",
+    "video_id": "long_20261010_154248",
+    "beat_id": 59,
+    "used_at": "2026-10-10T15:48:38Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6813119",
+    "file_hash": "ea9cd48c654fb1cc4acce6a22f713d040a72cefa0eec46d01f1c6a76b7e039b2",
+    "query": "candlelit room evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 60,
+    "used_at": "2026-10-10T15:48:40Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7707323",
+    "file_hash": "0289c4453e184ac714d70d9f061b86430fc7c7ecbcf1565ff3aec182ec15beda",
+    "query": "candlelit room evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 61,
+    "used_at": "2026-10-10T15:48:43Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "34460938",
+    "file_hash": "297738ae08bdf2affb9845f21cb5f790f5340d5b797c1a5e1d5301b405224b6c",
+    "query": "candlelit room evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 62,
+    "used_at": "2026-10-10T15:48:46Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6840126",
+    "file_hash": "fd5b239dd05f85b1980c4d985d0a41df97538b3aa8d899c5b831615daaa16ee5",
+    "query": "candlelit room evening",
+    "video_id": "long_20261010_154248",
+    "beat_id": 63,
+    "used_at": "2026-10-10T15:48:49Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8516975",
+    "file_hash": "c446111dfd2ab37b28d3c14c2c90f8ace5423308221c79a6dbbc5a58b050af74",
+    "query": "woman exhaling by window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 64,
+    "used_at": "2026-10-10T15:48:51Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5991825",
+    "file_hash": "5eac132c3e818a81c5368b7ad5687602d79014a99ce3f1b8955dae6350d4e9d3",
+    "query": "woman exhaling by window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 65,
+    "used_at": "2026-10-10T15:48:55Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8516413",
+    "file_hash": "dd6532e02fe6793d9441031ee76f1eba80fb8a7a1fc70c5e62c4ecce3eeb6ffe",
+    "query": "woman exhaling by window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 66,
+    "used_at": "2026-10-10T15:48:59Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6443909",
+    "file_hash": "a8783b630e9a92c733cd8c3ff8bfb99ad24a33392809cbd0817299ee8fe75c21",
+    "query": "woman exhaling by window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 67,
+    "used_at": "2026-10-10T15:49:03Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6151505",
+    "file_hash": "c6802d821baba413b6192dd11da1a9941828a540fd6fb6b044bffdbeabce65ea",
+    "query": "woman exhaling by window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 68,
+    "used_at": "2026-10-10T15:49:06Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "5356941",
+    "file_hash": "fe9905e9bf256620d132f614384d93538162fdf438ffa6749b2c52a7a9f50eff",
+    "query": "woman exhaling by window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 69,
+    "used_at": "2026-10-10T15:49:10Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8516427",
+    "file_hash": "775296ef0dcdb0bdcca7ee30c397e08ab6f737e98f566b6521a03f61d7faed47",
+    "query": "woman exhaling by window",
+    "video_id": "long_20261010_154248",
+    "beat_id": 70,
+    "used_at": "2026-10-10T15:49:12Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "18483722",
+    "file_hash": "74bf00cbacba0b1cf053a9e017b8a3483bc7a24746f855daaa3009f4fab72f30",
+    "query": "warm lamp evening room",
+    "video_id": "long_20261010_154248",
+    "beat_id": 71,
+    "used_at": "2026-10-10T15:49:16Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6598397",
+    "file_hash": "4954c821e51647f9685391c5ab397f69f2f7c6f1f7d3416990a0d3561e24d606",
+    "query": "warm lamp evening room",
+    "video_id": "long_20261010_154248",
+    "beat_id": 72,
+    "used_at": "2026-10-10T15:49:18Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "36464761",
+    "file_hash": "9047c3a66e08733c9ce129a51c736c3c29b26583007df3d405b351710593167a",
+    "query": "warm lamp evening room",
+    "video_id": "long_20261010_154248",
+    "beat_id": 73,
+    "used_at": "2026-10-10T15:49:21Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "39425768",
+    "file_hash": "b06846290b1fd369661d6ef62d3f43772913b5ff7d2e2759e7e6c6cf506e7aa5",
+    "query": "warm lamp evening room",
+    "video_id": "long_20261010_154248",
+    "beat_id": 74,
+    "used_at": "2026-10-10T15:49:24Z"
+  }
+]
