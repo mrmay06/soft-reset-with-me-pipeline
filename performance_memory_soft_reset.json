@@ -1,9 +1,163 @@
 {
-  "generated_at": "2026-10-09T16:51:36Z",
+  "generated_at": "2026-10-10T15:36:15Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-08-24",
-  "end_date": "2026-10-08",
-  "videos": []
+  "start_date": "2026-08-25",
+  "end_date": "2026-10-09",
+  "videos": [
+    {
+      "video_id": "20261008_190127",
+      "published_date": "2026-10-08",
+      "status": "uploaded",
+      "topic": "The Secret Silence Test in Dating",
+      "category": "relationship patterns",
+      "angle_type": "truth drop",
+      "total_score": 18,
+      "source_name": "",
+      "source_basis": "",
+      "source_url": "",
+      "confidence_level": "observational",
+      "content_format": "truth_drop",
+      "emotional_trigger": "deliberately waiting hours to reply to see if they will notice your absence",
+      "psych_concept": "covert contracts",
+      "core_claim": "Withdrawing your effort to test whether someone notices never brings peace; it just confirms you already knew the relationship was one-sided.",
+      "editorial_seed": "When you stop texting first as a trap, you are secretly looking for proof to justify walking away. If you need someone to fail a silence test before you feel allowed to speak up, the answer is already in the room. Real safety comes from asking clearly, not staging your own disappearance.",
+      "only_soft_reset_line": "I was waiting for them to guess a question I could have just asked.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You read their text in two minutes. You answer it in four hours, so they can notice.",
+      "hook_quality": "strong",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.7",
+      "script_validation": "passed",
+      "script_validation_notes": "word_count outside target 60-90",
+      "word_count": 95,
+      "estimated_duration_sec": 30,
+      "thumbnail_text": "The test they never knew about",
+      "content_fingerprint": "the secret silence test in dating you read their text in two minutes you answer it in four hours so they can notice deliberately waiting hours to reply to see if they will notice your absence covert contracts withdrawing your effort to test whether someone notices never brings peace it just confirms you already knew the relationship was one sided i was waiting for them to guess a question i could have just asked",
+      "title": "You went quiet hoping they would notice",
+      "youtube_video_id": "LU2IjmjlJIY",
+      "youtube_url": "https://youtube.com/shorts/LU2IjmjlJIY",
+      "fallback_count": 0,
+      "video_count": 9,
+      "total_scenes": 9,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W41",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth drop",
+        "category": "relationship patterns",
+        "topic_cluster": "The Secret Silence Test in Dating",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 9
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Highly relatable, concrete behavioral contrast ('read in two minutes, answer in four hours') that immediately exposes silent protest behavior."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Clear narrative arc moving from specific behavior to the underlying psychological mechanism (invisible grading) to direct self-accountability."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "Direct, compassionate confrontation of covert testing without shaming, holding the mirror up to emotional self-sabotage."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Identifies the exact trap: staging an unspoken test to confirm a pre-existing fear of one-sidedness, which leaves the person agitated even if the other person checks in."
+        },
+        "cta_quality": {
+          "score": 8,
+          "reason": "The engagement prompt ('What's the plain sentence you'd text instead of going quiet?') directly reinforces the script's core lesson of direct communication."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "Matches the premise and emotional setup precisely, directly addressing the reader's hidden intention without sensationalism."
+        },
+        "description_usefulness": {
+          "score": 7,
+          "reason": "Good thematic alignment, though cut off mid-sentence at 150 characters ('already suspec')."
+        },
+        "visual_dialogue_sync": {
+          "score": 5,
+          "reason": "Relies entirely on generic stock videos (9 scenes) with zero brand assets, providing minimal visual intentionality."
+        },
+        "image_direction_strength": {
+          "score": 4,
+          "reason": "No specific visual direction or custom image prompts provided beyond generic stock video allocation."
+        },
+        "thumbnail_concept": {
+          "score": 2,
+          "reason": "No thumbnail concepts provided and primary thumbnail is unknown."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "At 95 words for 41 seconds (~139 wpm), the pacing allows sufficient breathing room for contemplative pauses."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "Fits the channel's reflective, grounded self-growth ethos with a quiet realization rather than generic relationship advice."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "Zero policy or factual risk; explores personal introspection and interpersonal communication."
+        }
+      },
+      "judge_composite_score": 7.4,
+      "strongest_element": "The insight and loopback line ('I was waiting for them to guess a question I could have just asked') deliver a piercing, memorable realization.",
+      "weakest_element": "Visual packaging is missing: thumbnail concepts are empty and visual strategy relies entirely on generic stock footage.",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "The short effectively targets a relatable modern dating habit with a clear psychological takeaway, though mid-video stock choices drift slightly from the interpersonal focus.",
+      "video_audit_strengths": [
+        "Strong closing line delivers genuine emotional self-accountability.",
+        "Night-time urban aesthetic in the final scene provides a resonant contemplative landing."
+      ],
+      "video_audit_dropoff_causes": [
+        "Mid-script shift to loosely related B-roll (tape crafting, makeup) softens narrative tension.",
+        "Deliberate, slow voiceover cadence may feel sluggish for fast scrollers."
+      ],
+      "video_audit_repeat_next": [
+        "Relatable behavioral callouts in opening lines",
+        "Contemplative final lingering shot to let the insight land"
+      ],
+      "video_audit_reduce_next": [
+        "Overly abstract domestic B-roll that weakens relationship context",
+        "Blank digital mockups lacking authentic visual details"
+      ],
+      "video_audit_tags": {
+        "hook_type": "relatable_behavior",
+        "thumbnail_type": "glowing_screen_minimal",
+        "visual_style_mix": "moody_cinematic_stock",
+        "narrative_format": "truth_drop",
+        "character_used": "multiple_stock"
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-10-10T15:36:15Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    }
+  ]
 }
