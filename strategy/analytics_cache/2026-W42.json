@@ -1,0 +1,1842 @@
+{
+  "week": "2026-W42",
+  "channel_id": "UCAvyIz8dPBm5s_MQvXlsBng",
+  "fetched_at": "2026-10-12T17:15:21.949228+00:00",
+  "total_videos": 27,
+  "skipped_low_views": 15,
+  "videos": [
+    {
+      "video_id": "20260519_175643",
+      "youtube_video_id": "-hnBAFRy28Q",
+      "youtube_url": "https://youtube.com/shorts/-hnBAFRy28Q",
+      "published_at": "2026-05-19",
+      "track": "shorts",
+      "title": "Self-sabotage was how you felt SAFE",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "Psychology Drops",
+        "topic_cluster": "The unspoken rule from your childhood that makes you self-sa",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "composite_score": 7,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers a powerful psychological insight with a strong, empathetic voiceover and well-paced captions. The hook immediately grabs attention by reframing self-sabotage as a learned safety mechanism, aligning perfectly with the video's title. While the emotional tone and audio mix are excellent, some visual choices are too abstract or disjointed, occasionally hindering the connection between the spoken word and the imagery. Focusing on more specific and stylistically consistent visuals would further enhance viewer engagement and reduce potential drop-offs.",
+        "strengths": [
+          "The voiceover's empathetic and non-judgmental delivery is a core strength, fostering trust and connection with the audience on a sensitive topic.",
+          "The script's ability to simplify complex psychological concepts (like attachment theory and internal working models) into relatable, concise statements is excellent.",
+          "The consistent brand identity, even with varied stock footage, is maintained through the mood, captions, and overall narrative tone, reinforcing Soft Reset With Me's unique voice."
+        ],
+        "dropoff_causes": [
+          "Abrupt shifts in visual style (e.g., sudden switch from color to black and white, then back again) can be jarring and momentarily pull the viewer out of the narrative flow.",
+          "Several abstract visuals (e.g., coffee cup, open notebook, old key) lack direct relevance to the specific psychological concepts being discussed, potentially leading to a disconnect between the visual and auditory experience.",
+          "Some viewers might find the overall slow, somber pacing of the visuals (even with quick caption changes) to be less engaging, especially if they prefer more dynamic or directly illustrative content for psychology topics."
+        ],
+        "repeat_next": [
+          "The clear, empathetic, and measured voiceover delivery.",
+          "The concise, impactful script that distills complex ideas into easily digestible insights.",
+          "The use of a strong emotional hook that immediately connects with a common struggle.",
+          "The effective use of music to establish and maintain a consistent emotional tone."
+        ],
+        "reduce_next": [
+          "Overly abstract stock footage that doesn't directly enhance the spoken message.",
+          "Sudden and jarring changes in visual style (e.g., frequent shifts between color and black & white imagery).",
+          "Reliance on visuals that could be used for many different topics, aiming for more unique and specific imagery where possible."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Bold Claim|Relatable Problem",
+          "thumbnail_type": "Text Overlay|Emotional Resonance",
+          "visual_style_mix": "Cinematic|Moody Stock",
+          "narrative_format": "Explainer|Insight",
+          "character_used": "Abstract|Stock Characters"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 17,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 12,
+        "averageViewPercentage": 33.66,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D-hnBAFRy28Q&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:14.637563+00:00"
+    },
+    {
+      "video_id": "20260521_173815",
+      "youtube_video_id": "tlTUvAm4kS8",
+      "youtube_url": "https://youtube.com/shorts/tlTUvAm4kS8",
+      "published_at": "2026-05-21",
+      "track": "shorts",
+      "title": "You were chosen until their OTHER quiet",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "specific_scenario",
+        "category": "Self-Worth Shifts",
+        "topic_cluster": "The specific ache of being the 'backup' option in a relation",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "composite_score": 8.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively hooks viewers by validating a specific emotional experience, delivered through a clear, empathetic voiceover and well-timed captions. The audio mix and overall emotional tone are exceptionally well-executed, reinforcing the 'Soft Reset With Me' brand identity. While the atmospheric visuals contribute to the mood, their generic nature occasionally misses the opportunity to specifically illustrate the nuanced aspects of the script, potentially limiting deeper viewer engagement with the visual story. Future content could benefit from more intentional visual specificity to fully match the precision of the script's emotional beats.",
+        "strengths": [
+          "The voiceover's consistent empathetic and understanding tone is a strong brand asset.",
+          "The script's ability to articulate a highly specific and often unspoken emotional pain point is a significant strength.",
+          "The impactful 'You weren't chosen. You were what was left.' line serves as a powerful and memorable core claim.",
+          "The music selection is consistently perfect for the mood, enhancing the emotional delivery without being intrusive."
+        ],
+        "dropoff_causes": [
+          "The generic nature of some visuals might lead to a slight disconnect for viewers expecting more direct visual storytelling to match the script's specific nuances (e.g., 'someone else went quiet').",
+          "The consistent use of a film grain/scratch overlay, while a stylistic choice, could be perceived as a mild visual distraction by some, slightly obscuring the footage rather than purely enhancing it."
+        ],
+        "repeat_next": [
+          "Maintaining the empathetic, clear voiceover and strong brand tone.",
+          "Ensuring excellent alignment between the title, hook, and core message.",
+          "Continuing to use well-paced and legible captions for accessibility and engagement.",
+          "Leveraging atmospheric and mood-setting background music.",
+          "Crafting sharp, impactful core claims or loopback lines that resonate deeply."
+        ],
+        "reduce_next": [
+          "Reliance on overly generic stock footage; aim for visuals that more specifically illustrate the unique scenarios described in the script.",
+          "The intensity or continuous presence of the film grain/scratch overlay, considering whether it always enhances or sometimes detracts from visual clarity."
+        ],
+        "tag_suggestions": {
+          "hook_type": "scenario_validation",
+          "thumbnail_type": "text_overlay",
+          "visual_style_mix": "moody_cinematic_stock",
+          "narrative_format": "emotional_diagnosis",
+          "character_used": "none"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 38,
+        "averageViewPercentage": 98.85,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DtlTUvAm4kS8&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:15.070856+00:00"
+    },
+    {
+      "video_id": "20260522_202418",
+      "youtube_video_id": "ypRLIoZP9O0",
+      "youtube_url": "https://youtube.com/shorts/ypRLIoZP9O0",
+      "published_at": "2026-05-22",
+      "track": "shorts",
+      "title": "The 2am song that quietly unravels you",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "healing arcs",
+        "topic_cluster": "That feeling when a song hits different at 2am",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "composite_score": 73,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 379,
+        "likes": 14,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 40,
+        "averageViewDuration": 15,
+        "averageViewPercentage": 46.1,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DypRLIoZP9O0&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:15.514769+00:00"
+    },
+    {
+      "video_id": "20260522_234228",
+      "youtube_video_id": "tvgtuZlTwzk",
+      "youtube_url": "https://youtube.com/shorts/tvgtuZlTwzk",
+      "published_at": "2026-05-22",
+      "track": "shorts",
+      "title": "You go quiet and wait to be left",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology drop",
+        "category": "psychology drops",
+        "topic_cluster": "What anxious attachment actually looks like in real life",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "composite_score": 6.8,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 130,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 3,
+        "averageViewDuration": 13,
+        "averageViewPercentage": 34.12,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DtvgtuZlTwzk&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:15.769448+00:00"
+    },
+    {
+      "video_id": "20260523_144914",
+      "youtube_video_id": "GQU-EIZoTZo",
+      "youtube_url": "https://youtube.com/shorts/GQU-EIZoTZo",
+      "published_at": "2026-05-23",
+      "track": "shorts",
+      "title": "You curate love better than you LIVE it",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "Relationship Patterns",
+        "topic_cluster": "When your 'perfect' relationship on social media feels empty",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "composite_score": 8.4,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a melancholic, introspective tone through its consistent voiceover and carefully chosen music, culminating in a powerful closing visual. While the hook aligns perfectly with the title, the initial visual's impact and the caption pacing are too slow, potentially causing early drop-off. The video excels with symbolic imagery like empty chairs but falters with generic stock footage (like the coffee cup) that lacks specific relevance, briefly disrupting the narrative flow. Focusing on dynamic, highly specific visuals from the outset and maintaining a more consistent, slightly faster caption pace would significantly improve viewer retention.",
+        "strengths": [
+          "The consistently gentle and reflective voiceover delivery, which is a hallmark of the brand's tone.",
+          "The impactful and symbolic visuals (e.g., arms through a wall, empty chairs, mirror reflection) that effectively communicate complex emotional states.",
+          "The cohesive emotional tone fostered by the audio and select visuals, reinforcing the brand's introspective identity.",
+          "The strong final visual and loopback line, which offer a powerful and memorable conclusion."
+        ],
+        "dropoff_causes": [
+          "The slow initial visual and the drawn-out word-by-word captions in the first few seconds of the hook may cause early viewer disengagement.",
+          "The inclusion of generic stock footage, especially the 'coffee time' shot (0:22-0:25), disrupts the narrative immersion and feels irrelevant to the specific message, creating a moment where viewers might swipe away.",
+          "Inconsistent caption pacing, with critical segments feeling too slow, can lead to viewer impatience and a desire to scroll past.",
+          "Some visuals are not specific enough to the nuanced emotional insights (e.g., couple moving boxes for vulnerability vs. presentability), potentially diluting the message's impact."
+        ],
+        "repeat_next": [
+          "The use of highly symbolic and evocative visuals that abstractly but powerfully convey complex emotional concepts (e.g., empty chairs for distance, mirror for self-perception).",
+          "Maintaining the consistent, gentle, and thoughtful voiceover delivery style.",
+          "The strategic use of background music to enhance the emotional atmosphere without competing with the narration.",
+          "Crafting a strong, memorable loopback line and pairing it with a potent closing visual."
+        ],
+        "reduce_next": [
+          "Reliance on generic stock footage that does not directly or uniquely illustrate the specific emotional and psychological points of the script (e.g., the coffee cup, or overly generalized activities like moving boxes).",
+          "Overly slow, word-by-word caption reveals, especially in the critical opening seconds and for short words.",
+          "Initial visuals that are primarily atmospheric but lack an immediate, specific connection to the hook to grab attention more quickly.",
+          "Any moments of visual ambiguity that do not clearly support or enhance the spoken narrative, creating potential for viewer confusion."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Problem/Internal Conflict",
+          "thumbnail_type": "Emotional/Reflective",
+          "visual_style_mix": "Cinematic/Symbolic + Social Media Overlay",
+          "narrative_format": "Truth Drop/Insight",
+          "character_used": "Solitary/Introspective"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 200,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 6,
+        "averageViewDuration": 12,
+        "averageViewPercentage": 37.73,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DGQU-EIZoTZo&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:16.007237+00:00"
+    },
+    {
+      "video_id": "20260523_222914",
+      "youtube_video_id": "o2dP_RYLNtY",
+      "youtube_url": "https://youtube.com/shorts/o2dP_RYLNtY",
+      "published_at": "2026-05-23",
+      "track": "shorts",
+      "title": "You didn't shut down. Your brain went OFFLINE",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology_drop",
+        "category": "Psychology Drops",
+        "topic_cluster": "They didn't 'shut down.' Their nervous system just went offl",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 14
+      },
+      "composite_score": 7.08,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys its empathetic message through a strong textual hook, clear voiceover, and perfectly chosen background music, all aligning well with the brand's emotional tone. While the audio quality and emotional resonance are exemplary, the visual storytelling could benefit from more cohesive transitions and less generic imagery. Occasional fast caption pacing also presents a minor hurdle to full viewer comprehension. Future videos should aim for a more integrated visual narrative and refined caption timing, building upon the solid foundation of audio and emotional delivery.",
+        "strengths": [
+          "The voiceover delivery is exceptionally calm, empathetic, and engaging, perfectly embodying the brand's intended tone.",
+          "The background music is masterfully selected, subtly enhancing the emotional depth and introspective mood of the content without distraction.",
+          "The strategic use of single-word or short-phrase text overlays effectively highlights key concepts and reinforces the message, even when visuals are varied."
+        ],
+        "dropoff_causes": [
+          "Abrupt visual transitions between disparate stock footage clips can be jarring and may disrupt viewer engagement.",
+          "Occasional fast pacing of multi-word captions might cause some viewers to miss key information or feel rushed.",
+          "The lack of a direct, spoken call to action or a more visually engaging closing segment before the end card could lead to a passive viewer experience at the end."
+        ],
+        "repeat_next": [
+          "Continue to prioritize high-quality voiceover and audio mixing for clear and pleasant listening.",
+          "Maintain the empathetic and understanding emotional tone in both script and delivery.",
+          "Utilize short, impactful text overlays to emphasize core messages and key psychological concepts."
+        ],
+        "reduce_next": [
+          "Minimize abrupt visual cuts between unrelated scenes or individuals to create a more fluid and continuous visual narrative.",
+          "Avoid generic stock footage when more metaphoric or specific imagery could reinforce the message more powerfully.",
+          "Reduce instances of rapid, multi-word caption displays to ensure all text is easily readable by viewers."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe/Intrigue",
+          "thumbnail_type": "Text-on-Image/Conceptual",
+          "visual_style_mix": "Emotional/Abstract/Stock",
+          "narrative_format": "Explainer/Insight",
+          "character_used": "Relatable Everyperson"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 37,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 5,
+        "averageViewDuration": 20,
+        "averageViewPercentage": 51.71,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3Do2dP_RYLNtY&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:16.295731+00:00"
+    },
+    {
+      "video_id": "20260524_154637",
+      "youtube_video_id": "i_Pp76KiYa8",
+      "youtube_url": "https://youtube.com/shorts/i_Pp76KiYa8",
+      "published_at": "2026-05-24",
+      "track": "shorts",
+      "title": "You talk daily but feel ALONE",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "hot take",
+        "category": "conversation truths",
+        "topic_cluster": "Talking every day does not make you close",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 7.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a profound 'hot take' through a perfectly aligned emotional tone, excellent voiceover, and meticulous captioning. While the overall mood is consistently strong, some visuals are too generic or static, particularly in the opening seconds and during longer B-roll segments, which could impact viewer retention. Refining visual specificity and pacing, especially at the start, would elevate an already strong foundation for the Soft Reset With Me brand.",
+        "strengths": [
+          "The clarity and empathetic tone of the voiceover are outstanding and a core strength of the brand.",
+          "The meticulous caption pacing and legibility significantly enhance accessibility and viewer comprehension.",
+          "The consistent emotional atmosphere created through the music and overall visual style effectively lands the brand's tone.",
+          "The script's hook is highly relatable and offers a provocative insight that resonates deeply with the target audience."
+        ],
+        "dropoff_causes": [
+          "Static visual at the very beginning (0:00-0:03) while the hook is being delivered; faster visual changes are usually more engaging for Shorts.",
+          "Extended duration of generic B-roll shots (e.g., cityscape from 0:11-0:16, window silhouette from 0:24-0:29) that don't specifically illustrate the spoken words, potentially causing visual fatigue.",
+          "Lack of direct visual representation for some concepts like 'memes,' 'voice notes about nothing,' or 'what you're actually carrying,' which could lead to viewers feeling a disconnect between the audio and visual narrative."
+        ],
+        "repeat_next": [
+          "The calm, empathetic, and clear voiceover delivery.",
+          "The word-by-word caption style with excellent timing and legibility.",
+          "The ability to create a consistent and intentional emotional atmosphere through audio and visual selection.",
+          "Crafting hooks that challenge common assumptions and tap into subtle emotional truths."
+        ],
+        "reduce_next": [
+          "Initial static visual duration; aim for immediate visual dynamism or a quicker hook delivery over a static shot.",
+          "Reliance on overly generic moody B-roll footage, especially for longer durations; strive for more specific or conceptually illustrative visuals.",
+          "Repetitive visual motifs (e.g., similar window shots); introduce more diverse scenarios to maintain visual interest."
+        ],
+        "tag_suggestions": {
+          "hook_type": "provocative claim",
+          "thumbnail_type": "mood shot",
+          "visual_style_mix": "cinematic B-roll",
+          "narrative_format": "hot take breakdown",
+          "character_used": "narrator voice"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 19,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 7,
+        "averageViewPercentage": 20.3,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3Di_Pp76KiYa8&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:16.538049+00:00"
+    },
+    {
+      "video_id": "20260524_234017",
+      "youtube_video_id": "XiknVG7dX0s",
+      "youtube_url": "https://youtube.com/shorts/XiknVG7dX0s",
+      "published_at": "2026-05-24",
+      "track": "shorts",
+      "title": "You deleted the app. Your body still knows",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "list",
+        "category": "healing arcs",
+        "topic_cluster": "Four signs you are not over them that have nothing to do wit",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "45_60s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "composite_score": 7.8,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 7,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 5,
+        "averageViewPercentage": 11.95,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DXiknVG7dX0s&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:16.797535+00:00"
+    },
+    {
+      "video_id": "20260525_172136",
+      "youtube_video_id": "HK1vq_qUzAU",
+      "youtube_url": "https://youtube.com/shorts/HK1vq_qUzAU",
+      "published_at": "2026-05-25",
+      "track": "shorts",
+      "title": "Calm only feels boring after chaos",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "psychology drops",
+        "topic_cluster": "If calm feels boring it might be because you are used to anx",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 7
+      },
+      "composite_score": 7.7,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short masterfully delivers its powerful reframe with an consistently calm and empathetic tone, aligning perfectly with the 'Soft Reset With Me' brand. The voiceover and caption pacing are excellent, skillfully guiding viewers through the narrative. While some mid-video visuals could benefit from increased specificity to fully match the emotional nuances of the script, the overall aesthetic, balanced audio mix, and particularly the impactful closing visual create a highly engaging and thought-provoking experience that resonates deeply with the core message.",
+        "strengths": [
+          "Consistent brand aesthetic: The use of film grain, muted color palettes, and reflective imagery establishes a strong, recognizable visual identity for 'Soft Reset With Me.'",
+          "Empathetic voiceover delivery: The narrator's tone is perfectly calibrated to the sensitive subject matter, fostering a sense of understanding and trust.",
+          "Powerful loopback visual: The final shot of the man looking out the window, paired with the 'You were never bored. You were finally safe, and it scared you' line, delivers a profound emotional punch and reinforces the core reframe.",
+          "Effective use of background music: The subtle, ambient soundtrack perfectly complements the narrative without competing for attention, enhancing the contemplative mood."
+        ],
+        "dropoff_causes": [
+          "Inconsistent visual specificity: The visual of hands molding clay (17-21s) doesn't clearly convey the 'anxiety felt like passion' or 'pit in your stomach' concept, potentially causing momentary viewer disconnect.",
+          "Lack of immediate visual progression for the 'waiting' section: The shift from the woman on her phone to the man on his laptop (5-14s) is somewhat generic, and could be made more impactful to specifically illustrate the 'waiting for anxious text' and 'argument that proves they care' if possible."
+        ],
+        "repeat_next": [
+          "Maintain the empathetic and calm voiceover tone and pacing.",
+          "Continue with the consistent brand visual filter and aesthetic (film grain, muted, warm tones).",
+          "Utilize word-by-word/phrase-by-phrase captioning for optimal text engagement.",
+          "Craft strong, emotionally resonant closing visuals that reinforce the core message and 'soft reset' feeling.",
+          "Begin videos with immediate, direct hooks that speak to a specific pain point or experience."
+        ],
+        "reduce_next": [
+          "Avoid generic stock footage that doesn't specifically or abstractly align with the precise emotional or physiological sensations described in the script (e.g., the clay hands). Seek visuals that are more metaphorically or directly linked.",
+          "Minimize rapid shifts between disparate visual subjects in short succession without a very strong thematic or narrative link, especially in the middle section of the video."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Relatable Problem, Direct Address, Reframe Setup",
+          "thumbnail_type": "Symbolic, Text Overlay (Calm feels boring?)",
+          "visual_style_mix": "Aesthetic, Cinematic, Text-Focused, Lifestyle",
+          "narrative_format": "Reframe, Insight-Driven, Problem-Solution",
+          "character_used": "Introspective Seeker, Anxious Individual (implied)"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 51,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 3,
+        "averageViewDuration": 17,
+        "averageViewPercentage": 49.09,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DHK1vq_qUzAU&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:17.101392+00:00"
+    },
+    {
+      "video_id": "20260525_234203",
+      "youtube_video_id": "azezhGIkjvE",
+      "youtube_url": "https://youtube.com/shorts/azezhGIkjvE",
+      "published_at": "2026-05-25",
+      "track": "shorts",
+      "title": "When being heard makes you feel more ALONE",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "specific_scenario",
+        "category": "Conversation Truths",
+        "topic_cluster": "The lonely ache of being 'heard' but not understood.",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "composite_score": 8.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively communicates a nuanced emotional truth about being heard but not understood, leveraging a strong, empathetic voiceover and a well-structured script. The initial visuals and hook immediately draw the viewer into a contemplative mood, reinforced by powerful metaphorical imagery. While the visual of tarot cards slightly deviates from the precise emotional context, the overall execution, especially the clear distinction between attention and contact, makes it a deeply resonant piece for its target audience.",
+        "strengths": [
+          "The brilliant conceptual distinction between 'attention' and 'contact' provides a precise language for a commonly felt but often unnamed emotional experience.",
+          "The voiceover's empathetic and consistent delivery cultivates a strong sense of connection and validation for the viewer.",
+          "The use of metaphorical visuals (like explaining through glass) effectively translates abstract emotions into relatable imagery.",
+          "The 'loopback' line ('They heard every word. They just never felt any of it.') at the end provides powerful emotional closure and reinforces the core message memorably."
+        ],
+        "dropoff_causes": [
+          "The tarot card visual (30-33s) momentarily breaks the focused emotional narrative, potentially causing a slight disconnect for viewers who might be searching for specific advice or deeper introspection rather than a symbolic activity.",
+          "The relatively slow and contemplative pacing, while intentional for the emotional depth, might lead to some viewers scrolling past if they are accustomed to faster-paced, higher-energy Shorts.",
+          "For new viewers, the abstract nature of the content might require a slightly longer engagement to fully grasp, which could be a challenge in the Shorts format."
+        ],
+        "repeat_next": [
+          "Using emotionally resonant, specific hooks that directly name a common, often unarticulated emotional pain point.",
+          "Employing metaphorical visuals that clearly illustrate abstract psychological concepts.",
+          "Maintaining a consistent, empathetic, and reflective voiceover tone.",
+          "Developing clear distinctions between related concepts (e.g., 'attention vs. contact') to provide fresh insights.",
+          "Utilizing a strong 'loopback' sentence to reinforce the core message and create a lasting impact."
+        ],
+        "reduce_next": [
+          "Visuals that introduce elements not directly tied to the core emotional concept of the script (e.g., the tarot cards) to maintain thematic cohesion.",
+          "Any visual sequences that might feel static or overly prolonged for the dynamic Shorts format, unless intentionally used for a dramatic pause."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Emotional Validation Hook",
+          "thumbnail_type": "Text Overlay (Abstract Concept)",
+          "visual_style_mix": "Cinematic Mood; Metaphorical Aesthetic",
+          "narrative_format": "Emotional Diagnosis; Relational Insight",
+          "character_used": "N/A"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 74,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 3,
+        "averageViewDuration": 14,
+        "averageViewPercentage": 36.36,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DazezhGIkjvE&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:17.357264+00:00"
+    },
+    {
+      "video_id": "20260526_181156",
+      "youtube_video_id": "vUi95JsUZH0",
+      "youtube_url": "https://youtube.com/shorts/vUi95JsUZH0",
+      "published_at": "2026-05-26",
+      "track": "shorts",
+      "title": "Your questions feel like a QUIET interrogation",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology_drop",
+        "category": "Conversation Truths",
+        "topic_cluster": "When your attempt to connect feels like an interrogation to ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 7.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short successfully delivers a poignant psychological insight through a beautifully crafted, empathetic voiceover and complementary background music, perfectly aligning with the 'Soft Reset With Me' brand's emotional tone. While the initial hook and overall message are clear and well-paced, some visual choices lean too abstractly into symbolism, occasionally detracting from the direct message. Refining visual specificity to more consistently match the spoken word and slightly adjusting caption pacing in denser segments could further enhance viewer retention and immersion.",
+        "strengths": [
+          "The voiceover's empathetic and gentle delivery is crucial for the brand's tone and makes complex emotional topics highly accessible and non-judgmental.",
+          "The consistent background music effectively sets and maintains a reflective and supportive mood throughout the Short.",
+          "The conciseness and emotional resonance of the script are exceptionally strong, making the message memorable and impactful."
+        ],
+        "dropoff_causes": [
+          "Overly abstract visual choices for specific lines (e.g., the multiple phones visual for explaining anxiety leakage might confuse some viewers who prefer more direct representation).",
+          "Pacing of captions in some denser sentences can feel slightly rushed, potentially frustrating viewers who prefer to read at a slower pace."
+        ],
+        "repeat_next": [
+          "Maintain the empathetic, soft-spoken voiceover style.",
+          "Continue using subtle, mood-enhancing background music.",
+          "Utilize direct, relatable visuals that clearly convey emotional states (e.g., stressed facial expressions, contemplative postures).",
+          "Employ short, punchy caption phrasing for maximum readability in the Short format."
+        ],
+        "reduce_next": [
+          "Minimize the use of highly abstract or ambiguous visuals that require significant interpretation, especially when tied to specific points in the narration.",
+          "Avoid overly rapid flashing of captions for longer phrases; ensure sufficient read time for all text segments.",
+          "Consider slightly reducing the intensity of the film grain overlay in some segments to enhance visual clarity."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Pain-point reframe",
+          "thumbnail_type": "Text overlay",
+          "visual_style_mix": "Stock footage & Symbolic",
+          "narrative_format": "Psychological Insight",
+          "character_used": "Empathic Narrator"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 8,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 8,
+        "averageViewPercentage": 22.89,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DvUi95JsUZH0&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:17.617191+00:00"
+    },
+    {
+      "video_id": "20260529_013405",
+      "youtube_video_id": "5DMe-lOk-UU",
+      "youtube_url": "https://youtube.com/shorts/5DMe-lOk-UU",
+      "published_at": "2026-05-29",
+      "track": "shorts",
+      "title": "Finally calm? It's not WRONG",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "fragment",
+        "angle_type": "truth_drop",
+        "category": "self-worth shifts",
+        "topic_cluster": "Peace as the most radical boundary you can set",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "composite_score": 8.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 41,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 5,
+        "averageViewPercentage": 13.58,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D5DMe-lOk-UU&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:17.857520+00:00"
+    },
+    {
+      "video_id": "20260530_012940",
+      "youtube_video_id": "N-ri5uKLvVU",
+      "youtube_url": "https://youtube.com/shorts/N-ri5uKLvVU",
+      "published_at": "2026-05-30",
+      "track": "shorts",
+      "title": "Still checking? You're STILL waiting for them",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "The \"I'll be back\" fantasy that keeps you stuck",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "composite_score": 8.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "The Short \"Still checking? You're STILL waiting for them\" effectively delivers a truth-drop message through a compelling blend of empathetic voiceover, melancholic music, and highly symbolic visuals. Its strong hook immediately draws in the audience, supported by precise, single-word captions that enhance readability and emotional impact. While most visuals are powerfully resonant, a few moments of abstract imagery could potentially cause minor, momentary disengagement. Overall, the video masterfully maintains a consistent, supportive tone, guiding viewers through a profound reframe of their emotional state towards self-worth.",
+        "strengths": [
+          "The empathetic yet firm delivery of the voiceover that establishes both understanding and authority.",
+          "The effective use of single-word, well-timed captions that enhance comprehension and impact without being distracting.",
+          "The subtle film grain overlay that adds a consistent, melancholic aesthetic throughout the video.",
+          "The powerful visual of hands reaching then retracting, perfectly symbolizing the core conflict."
+        ],
+        "dropoff_causes": [
+          "The abstract visual of stirring coffee (0:23-0:26) might briefly disengage viewers who prefer more direct or emotionally resonant imagery.",
+          "The metaphor of the person tied with red strings, while powerful, could be slightly ambiguous for some in a fast-paced Shorts feed, requiring a moment of interpretation."
+        ],
+        "repeat_next": [
+          "Maintain the high quality and emotional resonance of the voiceover delivery.",
+          "Continue the practice of precise, single-word or short-phrase captioning for maximum impact and readability.",
+          "Replicate the careful audio mixing that allows the music to support the message without overpowering the voice.",
+          "Utilize strong, symbolic visual metaphors that directly align with the script's emotional beats (e.g., the red strings, the hands).",
+          "Ensure the ending call-to-action is concise and clear."
+        ],
+        "reduce_next": [
+          "Minimize reliance on abstract or less directly relevant stock footage (e.g., the coffee stirring shot) unless its metaphorical connection is immediately obvious and integrated.",
+          "Avoid visuals that, while aesthetically pleasing, do not deepen the narrative or emotional connection to the script's specific claims."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Direct Address",
+          "thumbnail_type": "Text Overlay",
+          "visual_style_mix": "Reflective, Melancholic, Symbolic",
+          "narrative_format": "Truth Drop, Reframe",
+          "character_used": "None (Faceless Voiceover)"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 41,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 27.67,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DN-ri5uKLvVU&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:18.106228+00:00"
+    },
+    {
+      "video_id": "20260531_013710",
+      "youtube_video_id": "VteHlarKJjY",
+      "youtube_url": "https://youtube.com/shorts/VteHlarKJjY",
+      "published_at": "2026-05-31",
+      "track": "shorts",
+      "title": "You just miss the person you invented",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth drop",
+        "category": "healing arcs",
+        "topic_cluster": "You did not lose them, you lost who you imagined they would ",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "composite_score": 7.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a profound reframe of heartbreak by masterfully blending melancholic visuals, an empathetic voiceover, and a well-balanced audio mix. Its standout strength is the consistent emotional tone and the clever use of specific visual metaphors, like the ghostly reflection, which significantly amplify the core message. While some visual choices could be more distinct and the visual pacing slightly smoother, the video successfully establishes a strong brand aesthetic and delivers a powerful, introspective experience for viewers grappling with loss.",
+        "strengths": [
+          "The powerful visual metaphor of the ghostly reflection for 'who you needed them to become' is exceptionally well-executed and memorable.",
+          "The consistent brand aesthetic of thoughtful melancholy and introspection is strongly established through the visual style, voiceover, and music, building a distinct identity.",
+          "The signature line, 'That's not love. That's hope with someone else's face on it,' is delivered with strong emphasis and visual backing, making it highly impactful and quotable.",
+          "The overall cohesion of mood, message, and audio creates a deeply empathetic and resonant viewing experience."
+        ],
+        "dropoff_causes": [
+          "Some viewers might disengage due to the abstract nature of the core message ('grief for a story you wrote'), requiring more cognitive processing than some prefer for a short-form video.",
+          "A few transitions between highly distinct visual scenes (e.g., apartment to corridor to candle) feel slightly abrupt, which could momentarily break immersion.",
+          "The absence of a consistent on-screen presenter (beyond a brief appearance) or a face to connect with the empathetic voice might lead to lower emotional connection for some viewers who prefer a more direct human presence."
+        ],
+        "repeat_next": [
+          "Continue using a calm, empathetic female voiceover for consistent brand identity and emotional connection.",
+          "Prioritize highly specific and creative visual metaphors that directly illustrate abstract concepts (e.g., the ghostly reflection).",
+          "Maintain the consistently melancholic and introspective emotional tone, enhanced by appropriate background music.",
+          "Focus on crafting clear, reframe-oriented hooks that challenge common assumptions, as seen in the opening."
+        ],
+        "reduce_next": [
+          "Reduce reliance on overly generic stock footage that doesn't add unique meaning or specificity to the spoken words (e.g., generic silhouettes, routine objects like a coffee cup).",
+          "Minimize rapid, disjointed transitions between visually distinct scenes; aim for smoother visual storytelling or more deliberate scene pacing."
+        ],
+        "tag_suggestions": {
+          "hook_type": "truth_drop",
+          "thumbnail_type": "text_on_video_still",
+          "visual_style_mix": "emotional_aesthetic",
+          "narrative_format": "monologue_reframe",
+          "character_used": "archetypal_figures"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 77,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 4,
+        "averageViewDuration": 13,
+        "averageViewPercentage": 36.91,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DVteHlarKJjY&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:18.349038+00:00"
+    },
+    {
+      "video_id": "20260601_014013",
+      "youtube_video_id": "fRxg5HdYGnM",
+      "youtube_url": "https://youtube.com/shorts/fRxg5HdYGnM",
+      "published_at": "2026-06-01",
+      "track": "shorts",
+      "title": "You still miss the one who wasn't good",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology drop",
+        "category": "healing arcs",
+        "topic_cluster": "Why you miss them even when they were not even good for you",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "composite_score": 6.2,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "video_audit": {
+        "status": "ok",
+        "summary": "The Short successfully delivers a highly empathetic and validating message on a relatable psychological topic, consistent with the channel's brand through its tone, music, and strong script. However, the video's excessive length (36.7 seconds) and slow pacing, largely due to a very drawn-out voice-over and generic, slowly transitioning visuals, are significant drawbacks that will likely lead to early audience drop-off. Future videos should focus on drastically shortening the runtime and accelerating the pacing of both voice-over and visual changes to optimize for the Shorts format, while retaining the strong emotional connection and insightful content.",
+        "strengths": [
+          "The core message and script are incredibly insightful, validating, and address a deeply relatable emotional paradox for the target audience.",
+          "The voice-over's empathetic and gentle tone is a strong brand identifier and fosters a deep connection with the viewer.",
+          "The consistent brand aesthetic, including the choice of melancholic music and text style, reinforces the channel's identity.",
+          "The clear and direct call to action ('Save this.') is appropriate for the content's educational and self-help nature."
+        ],
+        "dropoff_causes": [
+          "Excessive video length for a Short (36.7 seconds vs. optimal 15-20 seconds), leading to a high abandonment rate.",
+          "Very slow pacing of both the voice-over delivery and visual transitions, making the video feel drawn out and unoptimized for short-form content.",
+          "Over-reliance on generic stock footage that doesn't consistently add specific visual meaning, causing viewer disengagement over the extended duration."
+        ],
+        "repeat_next": [
+          "The empathetic and validating tone of the voice-over and script.",
+          "Crafting hooks that immediately connect with a specific, painful emotional experience and offer a unique, psychologically-backed perspective.",
+          "The clear and understandable explanation of complex psychological concepts.",
+          "The consistent emotional atmosphere created by the blend of voice, music, and overall visual mood."
+        ],
+        "reduce_next": [
+          "Drastically reduce the overall video duration, aiming for 15-20 seconds to maximize Shorts retention.",
+          "Significantly increase the pacing and speed of the voice-over delivery.",
+          "Minimize the use of generic stock footage, opting for more specific, illustrative, or rapidly changing abstract visuals.",
+          "Accelerate visual transitions to maintain a dynamic flow and keep viewers engaged."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Statement/Psychological Insight",
+          "thumbnail_type": "Emotional/Text Overlay",
+          "visual_style_mix": "Melancholic Aesthetic, Text-Driven",
+          "narrative_format": "Psychology Drop, Explanatory",
+          "character_used": "None"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 116,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 8,
+        "averageViewDuration": 16,
+        "averageViewPercentage": 44.09,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DfRxg5HdYGnM&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:18.592538+00:00"
+    },
+    {
+      "video_id": "20260602_020010",
+      "youtube_video_id": "NjmKpIAuHqw",
+      "youtube_url": "https://youtube.com/shorts/NjmKpIAuHqw",
+      "published_at": "2026-06-02",
+      "track": "shorts",
+      "title": "You're still asking for permission to EXIST",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "self-worth shifts",
+        "topic_cluster": "You keep explaining because part of you still wants permissi",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "composite_score": 7.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers a profound truth with exceptional audio clarity and a strong, empathetic voiceover, consistently aligning with the 'Soft Reset With Me' brand through its meditative visual style and introspective emotional tone. While the script's intellectual depth and structured delivery are standout strengths, the initial visuals could benefit from increased dynamism to immediately capture attention in the competitive Shorts feed, where a contemplative opening might lead to early viewer drop-off despite the overall high quality.",
+        "strengths": [
+          "The voiceover quality and consistent delivery are exceptional, lending significant authority and sincerity to the message.",
+          "The script's intellectual depth and its ability to reframe complex psychological concepts into concise, impactful 'truth drops' are a core strength.",
+          "The carefully selected background music consistently establishes and maintains the brand's signature atmospheric and reflective mood.",
+          "The consistent visual aesthetic and subtle color grading across diverse stock footage maintain a unified brand feel despite varying subjects and settings."
+        ],
+        "dropoff_causes": [
+          "The very calm and somewhat generic initial visuals might not be dynamic enough to capture and hold the attention of viewers accustomed to fast-paced, high-energy Shorts, potentially leading to early swipes.",
+          "The contemplative and low-energy pacing, while on-brand, could contribute to lower overall retention compared to videos with more immediate visual stimuli or faster narrative progression.",
+          "Some visual transitions are simple cuts that feel a bit abrupt, rather than seamless or thematically linked, which can momentarily break immersion."
+        ],
+        "repeat_next": [
+          "High-quality, empathetic, and authoritative voiceover delivery.",
+          "The structured 'truth drop' script format, with its clear hook, tension, insight, and loopback.",
+          "The consistent brand aesthetic achieved through visual mood and music selection.",
+          "Direct, thought-provoking hooks that challenge common assumptions.",
+          "Effective use of on-screen captions for accessibility and emphasis."
+        ],
+        "reduce_next": [
+          "Overly static or ambiguous initial visuals that do not immediately convey the hook's intensity or offer strong visual intrigue.",
+          "Potential for slow visual pacing in the very first few seconds; consider a slightly faster cut or more visually engaging opening to combat swipe behavior."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Challenging Statement",
+          "thumbnail_type": "Contemplative Figure with Text Overlay",
+          "visual_style_mix": "Meditative + Intimate",
+          "narrative_format": "Truth Drop / Insightful Revelation",
+          "character_used": "Empathetic Guide"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 68,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 2,
+        "averageViewDuration": 9,
+        "averageViewPercentage": 30.099999999999998,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DNjmKpIAuHqw&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:18.829159+00:00"
+    },
+    {
+      "video_id": "20260603_021227",
+      "youtube_video_id": "XrphfyNCUR0",
+      "youtube_url": "https://youtube.com/shorts/XrphfyNCUR0",
+      "published_at": "2026-06-03",
+      "track": "shorts",
+      "title": "They were never fully THERE to begin with",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "accusation",
+        "angle_type": "truth_drop",
+        "category": "healing arcs",
+        "topic_cluster": "Some people leave because they were never ready to stay",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "composite_score": 7.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers an empathetic and profound message through a soothing voiceover and a well-structured script that moves from initial confusion to empowering insight. While the chosen visuals support the emotional arc and the audio mix is excellent, the pacing could be tightened for some less dynamic shots, and integrating an explicit call to action within the video itself would likely enhance viewer engagement, helping to prevent early drop-offs stemming from prolonged visuals or a lack of clear next steps.",
+        "strengths": [
+          "**Voiceover Delivery:** The consistent, gentle, and empathetic delivery of the voiceover is a significant asset, creating a safe and trustworthy space for the viewer to receive the message.",
+          "**Effective Emotional Arc:** The video skillfully guides the viewer through an emotional journey from confusion and self-blame to understanding and self-compassion within a very short timeframe.",
+          "**Concise & Profound Scriptwriting:** The ability to distill complex psychological concepts into clear, impactful, and re-framing statements is a core strength that resonates deeply with the target audience."
+        ],
+        "dropoff_causes": [
+          "**Pacing:** Some of the visual transitions, especially between static shots like the empty coffee shop or the single candle flame, linger slightly too long for the fast-paced Shorts environment, which might cause viewers to swipe away before reaching the core insight.",
+          "**Generic Visuals:** While emotionally relevant, the reliance on generic stock footage throughout the video might prevent a deeper connection for viewers seeking more unique or personal visual storytelling, potentially leading to lower retention.",
+          "**Missing In-Video CTA:** The video ends abruptly with the brand card after the final line, lacking an explicit on-screen call to action (e.g., 'Save it,' 'Follow for more'). This could reduce immediate engagement like saves or follows from viewers who don't read the description."
+        ],
+        "repeat_next": [
+          "Maintain the consistently empathetic and soothing voiceover delivery.",
+          "Continue to craft clear, concise, and emotionally resonant scripts that offer valuable reframes.",
+          "Utilize thematic visuals that align with the emotional beats of the narrative, even if stock footage."
+        ],
+        "reduce_next": [
+          "Reduce the holding time for less dynamic or static visual shots to improve overall pacing for Shorts.",
+          "Lessen reliance on overly generic stock footage by seeking out more unique or subtly branded visual elements.",
+          "Minimize any slight pauses in the voiceover that could slow down the momentum of the Short."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe",
+          "thumbnail_type": "Text Overlay",
+          "visual_style_mix": "Calming, Reflective, Aesthetic Stock",
+          "narrative_format": "Truth Drop, Reframe",
+          "character_used": "Voiceover Only"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 34,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 4,
+        "averageViewPercentage": 14.46,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DXrphfyNCUR0&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:19.082264+00:00"
+    },
+    {
+      "video_id": "20260608_014131",
+      "youtube_video_id": "8Q2XL4EIU5Y",
+      "youtube_url": "https://youtube.com/shorts/8Q2XL4EIU5Y",
+      "published_at": "2026-06-08",
+      "track": "shorts",
+      "title": "Predictable pain can feel like comfort",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "psychology drops",
+        "topic_cluster": "The quiet comfort of predictable disappointment",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 6.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W24",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short excels in delivering a profound psychological insight with exceptional brand consistency. The calm, introspective aesthetic, empathetic voiceover, and well-chosen music create a powerful emotional tone that perfectly aligns with the 'Soft Reset With Me' identity. While the rapid caption pacing and visual repetition could be refined for broader appeal, the video's strong script, metaphorical visuals, and consistent mood make it a highly effective and impactful 'truth drop' for its target audience.",
+        "strengths": [
+          "Exceptional brand consistency: The video's aesthetic, tone, and message are perfectly aligned with the 'Soft Reset With Me' identity, building strong brand recognition and emotional connection.",
+          "Effective use of metaphorical visuals: The visuals, though abstract, deeply resonate with the emotional and psychological themes, enhancing the script's impact without being overtly literal.",
+          "High-quality voiceover delivery: The voice artist's tone, pacing, and emotional nuance significantly elevate the script, making the complex psychological concept accessible and empathetic.",
+          "Strong narrative arc in a short format: The script effectively builds from a relatable hook through tension and insight to a powerful loopback, delivering a complete thought within a brief duration."
+        ],
+        "dropoff_causes": [
+          "The visual repetition of themes (candles, books, solitary figures, windows) might lead to visual fatigue for some viewers, despite the aesthetic quality, especially across multiple videos from the channel.",
+          "The deliberate slow pacing of scene changes, while aligning with the brand's meditative style, might not retain viewers accustomed to faster-cut, more dynamic short-form content.",
+          "The abstract nature of the visuals, while a strength for the brand's mood, could be perceived as too vague or disconnected from the specific psychological claims by viewers looking for more literal or direct visual representations of concepts."
+        ],
+        "repeat_next": [
+          "The soft, introspective visual aesthetic (candles, books, muted lighting, contemplative settings).",
+          "The calm, empathetic, and clear voiceover delivery.",
+          "The use of piano-driven, ambient background music to set a reflective mood.",
+          "The structure of the script, delivering a 'truth drop' insight from a strong hook to a memorable closing statement.",
+          "The consistent brand identity across visual and auditory elements."
+        ],
+        "reduce_next": [
+          "Visual repetition: Explore a slightly wider variety of contemplative or mood-setting shots to maintain visual freshness, while retaining the overall aesthetic.",
+          "Caption speed: Experiment with slightly slower caption delivery for certain segments to allow more comfortable reading and deeper absorption of the words, especially for complex ideas, without sacrificing engagement.",
+          "Length of static shots: Occasionally incorporate subtle movements or slightly more dynamic compositions within the contemplative shots to prevent them from feeling too static for extended periods."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Counter-Intuitive Truth Drop",
+          "thumbnail_type": "Symbolic Text Overlay",
+          "visual_style_mix": "Calmcore Aesthetic; Reflective B-Roll; Mood-Driven Storytelling",
+          "narrative_format": "Psychological Insight; Empathic Monologue",
+          "character_used": "Voiceover Only; Symbolic Human Presence"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 0,
+        "averageViewPercentage": 0,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D8Q2XL4EIU5Y&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:19.505824+00:00"
+    },
+    {
+      "video_id": "20260623_013212",
+      "youtube_video_id": "-2pWeKg6ewI",
+      "youtube_url": "https://youtube.com/shorts/-2pWeKg6ewI",
+      "published_at": "2026-06-23",
+      "track": "shorts",
+      "title": "They Googled you. Now you feel seen *wrong*",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "accusation",
+        "angle_type": "specific scenario",
+        "category": "identity and growth",
+        "topic_cluster": "The pressure of having your 'internet history' analyzed befo",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "under_30s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 7
+      },
+      "composite_score": 8.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively addresses a relatable modern dating anxiety using a strong, empathetic script and a consistently calming voiceover, perfectly aligning with the Soft Reset With Me brand. While the audio clarity and the most specific visual metaphors are excellent, the inclusion of some generic stock footage and occasionally static visuals might dilute engagement in a fast-paced Shorts environment, slightly hindering the overall impact despite the powerful message.",
+        "strengths": [
+          "The precise and empathetic scripting, which articulates a common yet often unacknowledged modern anxiety with exceptional clarity and relatability.",
+          "The flawless voiceover delivery, which perfectly matches the brand's empathetic and calm tone, establishing immediate trust and connection with the audience.",
+          "The seamless integration of the 'Soft Reset With Me' branding and outro, reinforcing brand identity and consistency.",
+          "The creative use of specific visual metaphors (search bar on the book, stack of papers as an 'archive') that effectively translate abstract digital concepts into relatable imagery."
+        ],
+        "dropoff_causes": [
+          "Overly generic stock footage in the middle section (e.g., woman at window, pouring coffee) that doesn't add specific visual meaning to the script, potentially leading to visual disinterest.",
+          "The pacing of some visual changes is a bit slow or static, especially the blank book page (0:14-0:17), which can feel less engaging in a rapid-scroll Short format.",
+          "Lack of a consistent human face or direct visual engagement with the narrator, which for an emotionally resonant topic, can sometimes make it harder for viewers to maintain a strong connection throughout the video."
+        ],
+        "repeat_next": [
+          "Continue with the highly specific and empathetic script writing that resonates deeply with target anxieties, paired with a consistent, calming voiceover.",
+          "Maintain the clear, word-by-word captioning, which significantly enhances accessibility and pacing.",
+          "Utilize creative and direct visual metaphors that strongly tie into the spoken message, as seen with the phone typing and the 'archive' imagery.",
+          "Keep the audio mix clean and balanced, ensuring the voiceover is always prominent and the music supportive."
+        ],
+        "reduce_next": [
+          "Minimize the use of generic, mood-setting stock footage that lacks a specific, direct connection to the script's words or concepts.",
+          "Reduce the duration of static or less dynamic visuals, particularly in the middle of the video where viewer attention might naturally wane.",
+          "Avoid relying solely on metaphorical visuals without periodically grounding them in more literal or directly relatable human experiences, especially for emotionally charged topics."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Problem/Pain Point, Direct Statement",
+          "thumbnail_type": "Text-Overlay, Object-Focused",
+          "visual_style_mix": "Melancholic, Reflective, Aesthetic, Cinematic",
+          "narrative_format": "Empathetic Statement, Relatable Scenario, Insight-Driven",
+          "character_used": "Narrator (off-screen, empathetic voice)"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 73,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 2,
+        "averageViewDuration": 9,
+        "averageViewPercentage": 30.92,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D-2pWeKg6ewI&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:19.873724+00:00"
+    },
+    {
+      "video_id": "20260624_012831",
+      "youtube_video_id": "NTJeIOr2pTg",
+      "youtube_url": "https://youtube.com/shorts/NTJeIOr2pTg",
+      "published_at": "2026-06-24",
+      "track": "shorts",
+      "title": "Quiet only feels like an END",
+      "traits": {
+        "hook_type": "question",
+        "title_type": "declarative",
+        "angle_type": "truth drop",
+        "category": "conversation truths",
+        "topic_cluster": "Silence in a relationship is not always neutral",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 6
+      },
+      "composite_score": 7.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a powerful message about the meaning of silence in relationships, leveraging a strong, empathetic voiceover and atmospheric music to set a reflective tone. The hook is well-aligned with the title, and captions are clear and well-paced. While the video successfully uses diverse visuals to illustrate its points, one scene with a bright, quirky aesthetic briefly disrupts the otherwise consistent melancholic mood. Future content could benefit from ensuring visual consistency and universal relatability to maintain viewer immersion throughout.",
+        "strengths": [
+          "The consistent, empathetic, and clear voiceover performance is a major strength, delivering the core message with authentic feeling.",
+          "The choice of melancholic, atmospheric background music perfectly sets and maintains the emotional mood, enhancing viewer immersion.",
+          "The powerful and re-framing closing line ('Their silence is not a question for you to answer') provides a strong, memorable takeaway.",
+          "The use of diverse illustrative visuals, even with some minor incongruities, successfully avoids a monotonous presentation style."
+        ],
+        "dropoff_causes": [
+          "The sudden shift in visual tone and aesthetic at the 0:15 mark (from dark, contemplative to bright, quirky) could be jarring for some viewers, potentially causing a brief disconnect.",
+          "The visual of writing in a non-English script (0:10-0:15) might subtly disengage or distract English-speaking viewers who expect visual cues to reinforce the textual message.",
+          "The deliberate, contemplative pacing, while appropriate for the topic, might be too slow for some viewers accustomed to faster-cut, high-energy Shorts."
+        ],
+        "repeat_next": [
+          "Empathetic and clear voiceover delivery.",
+          "Atmospheric and mood-setting background music.",
+          "Addressing relatable emotional pain points and offering re-frames.",
+          "Using a strong, memorable closing line to summarize or empower.",
+          "High-quality, easy-to-read captions."
+        ],
+        "reduce_next": [
+          "Visuals that create jarring tonal or aesthetic shifts within the video.",
+          "Visual elements that might not be universally understood or relatable to the target audience (e.g., text in a non-primary language).",
+          "Overly abstract visuals that require significant mental effort to connect to the narrative, unless they are clearly introduced or sustained."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Question-based, Relatable Feeling",
+          "thumbnail_type": "Text Overlay, Moody Visual, Symbolic Visual",
+          "visual_style_mix": "Melancholic Aesthetic, Introspective Visuals, Symbolic Imagery",
+          "narrative_format": "Truth Drop, Reframe, Relational Insight",
+          "character_used": "None (illustrative visuals only)"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 28,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 3,
+        "averageViewDuration": 22,
+        "averageViewPercentage": 58.77,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DNTJeIOr2pTg&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:20.130361+00:00"
+    },
+    {
+      "video_id": "20260625_013214",
+      "youtube_video_id": "E7oz94mCyHc",
+      "youtube_url": "https://youtube.com/shorts/E7oz94mCyHc",
+      "published_at": "2026-06-25",
+      "track": "shorts",
+      "title": "Finally, you stopped lowering your standards",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "Reframe what 'bare minimum' means: it's not demanding more, ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "composite_score": 6.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short expertly reframes a common concept with a powerful, introspective script, delivered by an empathetic voiceover and supported by a perfectly balanced audio mix and well-timed captions. While the emotional tone is strong and consistent, the visual specificity often falls short, relying on generic stock footage that, despite setting a mood, doesn't always directly enhance the script's nuanced message. Enhancing visual narrative to directly align with the specific emotional beats would further elevate viewer engagement and retention for this impactful content.",
+        "strengths": [
+          "The compelling and empathetic voiceover delivery is a significant asset for connecting with the audience on a sensitive topic.",
+          "The robust and consistent emotional resonance achieved through the synergistic use of music, voiceover, and visual mood.",
+          "The powerful and memorable loopback line, 'You didn't lower your standards because you forgot them. You lowered them because keeping them felt risky,' provides deep insight and encourages re-watching or saving."
+        ],
+        "dropoff_causes": [
+          "Overly generic visual transitions that lack specific narrative connection to the script's emotional beats, making some moments feel less engaging.",
+          "The overall slow, contemplative pace and lack of high-energy visual changes might not retain viewers accustomed to faster-cut Shorts content.",
+          "The initial visual hook, while pleasant, may not be dynamic enough to immediately capture every scroller's attention, leading to early exits."
+        ],
+        "repeat_next": [
+          "Utilize a clear, empathetic, and consistently paced voiceover style for future sensitive topics.",
+          "Employ strong, concise script hooks and loopback statements that reframe perspectives effectively.",
+          "Maintain the high quality and balance of the audio mix between voiceover and background music.",
+          "Continue to use well-timed and easily readable captions to enhance accessibility and message comprehension."
+        ],
+        "reduce_next": [
+          "Minimize the use of overly generic stock footage that does not add specific visual narrative or metaphoric depth to the script.",
+          "Avoid abrupt visual transitions where new scenes lack a clear visual or thematic link to the preceding content, aiming for smoother, more purposeful storytelling.",
+          "Lessen visual repetition of similar pensive or looking-away shots, instead seeking more varied imagery that still conveys introspection."
+        ],
+        "tag_suggestions": {
+          "hook_type": "reframe",
+          "thumbnail_type": "text_overlay",
+          "visual_style_mix": "moody_cinematic",
+          "narrative_format": "personal_reflection",
+          "character_used": "no_presenter"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 111,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 8,
+        "averageViewDuration": 24,
+        "averageViewPercentage": 56.34,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DE7oz94mCyHc&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:20.411747+00:00"
+    },
+    {
+      "video_id": "20260627_013054",
+      "youtube_video_id": "LBhyKeEmjYo",
+      "youtube_url": "https://youtube.com/shorts/LBhyKeEmjYo",
+      "published_at": "2026-06-27",
+      "track": "shorts",
+      "title": "Moving on fast means you cared QUIETLY",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "Moving on fast does not mean you did not care",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 8.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short successfully delivers a powerful reframe on the common misconception around fast healing, driven by a strong, empathetic voiceover and clear, well-paced on-screen text. While the opening visual and some mid-video imagery lean towards generic or abstract, key visuals like the social media scrolling and the final scene of applause effectively reinforce the script's core message of external judgment and self-reclamation, maintaining a consistent and reassuring emotional tone with excellent audio quality.",
+        "strengths": [
+          "The consistent, calming, and reassuring quality of the voiceover delivery is a major strength, effectively conveying the brand's empathetic tone.",
+          "The meticulous pacing and clear display of on-screen text greatly enhance comprehension and reinforce the spoken message.",
+          "The deliberate positive visual shift at the end (clapping) powerfully punctuates the message of self-acceptance and triumph, creating a strong emotional resolution."
+        ],
+        "dropoff_causes": [
+          "The initial visual, while thematic, lacks a strong, immediate hook to grab attention in a fast-scrolling feed, potentially leading to early swipe-aways.",
+          "Some of the mid-video visuals (e.g., chair in the ocean, padlock) are less directly illustrative of the script's nuanced points, which could cause momentary viewer disengagement if the visual storytelling doesn't feel precise."
+        ],
+        "repeat_next": [
+          "Maintain the high-quality, empathetic voiceover and professional audio mix.",
+          "Continue with the clear, well-paced on-screen captions that reinforce the spoken words.",
+          "Replicate the strong alignment between the script's hook, the video's title, and the opening on-screen text.",
+          "Prioritize visuals that directly and specifically illustrate the emotional or conceptual points being made, especially for moments of tension and resolution."
+        ],
+        "reduce_next": [
+          "Minimize the use of overly generic stock footage, particularly for the opening seconds where a more compelling visual is crucial for hook retention.",
+          "Avoid visuals that are too abstract or require significant mental effort to connect to the specific narrative point being conveyed."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe, Challenge Common Belief",
+          "thumbnail_type": "Emotional Landscape, Text-Driven",
+          "visual_style_mix": "Stock Footage, Evocative Imagery, Text Overlay",
+          "narrative_format": "Reframe, Psychological Insight, Self-Help",
+          "character_used": "Compassionate Narrator, Relatable Persona"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 201,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 21,
+        "averageViewDuration": 31,
+        "averageViewPercentage": 88.67,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DLBhyKeEmjYo&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:20.680122+00:00"
+    },
+    {
+      "video_id": "20260628_013728",
+      "youtube_video_id": "oclqNHP963E",
+      "youtube_url": "https://youtube.com/shorts/oclqNHP963E",
+      "published_at": "2026-06-28",
+      "track": "shorts",
+      "title": "Checking their location? It\u2019s not busyness, it\u2019s NOT you",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "conversation truths",
+        "topic_cluster": "The difference between someone who is busy and someone who d",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 7.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers a 'truth-drop' message with a strong, specific hook and a consistently empathetic yet firm emotional tone. The voiceover and audio mix are excellent, creating a reliable brand voice. While several visuals are highly impactful, some generic or slightly misaligned footage could be improved to maintain consistent visual specificity and dynamic engagement throughout the video, reducing potential moments of viewer drop-off. Overall, it leverages its strengths effectively for a 'Soft Reset' brand.",
+        "strengths": [
+          "The voiceover's gentle yet firm delivery creates a highly empathetic and trustworthy brand voice.",
+          "The strategic use of background music maintains a consistent emotional atmosphere throughout the video.",
+          "Specific visuals, such as the empty cafe table and the calendar with labels, are exceptionally effective in conveying the core message without needing explicit verbal explanation.",
+          "The punchy signature line ('Their calendar isn't the problem. Their answer is.') is delivered with perfect timing and visual reinforcement."
+        ],
+        "dropoff_causes": [
+          "Some visual transitions feel a bit slow or static, especially when a caption appears and then stays on screen for several seconds with no change in the visual, which can reduce dynamic engagement.",
+          "A few visuals are too generic (e.g., city traffic, person walking) and don't add specific emotional or contextual weight to the spoken words, potentially leading to mild visual disengagement.",
+          "The visual of editing a flower photo while the narrator talks about sending 'one text' is a slight disconnect that could break immersion for some viewers."
+        ],
+        "repeat_next": [
+          "Using highly specific, scenario-based hooks that directly address audience pain points.",
+          "Maintaining the consistent, calming, and empathetic voiceover tone.",
+          "Careful selection of background music that enhances the emotional tone without distracting.",
+          "Leveraging visually metaphorical or directly illustrative scenes (like the empty cafe or calendar) to reinforce key insights.",
+          "The clear, well-paced captioning style."
+        ],
+        "reduce_next": [
+          "Reliance on overly generic stock footage that lacks a direct, specific connection to the spoken words.",
+          "Instances where the visual remains static for too long after a caption change, impacting the dynamic flow of the Short.",
+          "Visuals that are only loosely related to the specific point being made (e.g., phone activity that isn't directly 'texting')."
+        ],
+        "tag_suggestions": {
+          "hook_type": "scenario-based direct address",
+          "thumbnail_type": "text-overlay & illustrative",
+          "visual_style_mix": "melancholic cinematic stock",
+          "narrative_format": "truth-drop",
+          "character_used": "narrator only"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 45,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 5,
+        "averageViewPercentage": 13.84,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DoclqNHP963E&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:20.911750+00:00"
+    },
+    {
+      "video_id": "20260629_013739",
+      "youtube_video_id": "5w4zup_rmOw",
+      "youtube_url": "https://youtube.com/shorts/5w4zup_rmOw",
+      "published_at": "2026-06-29",
+      "track": "shorts",
+      "title": "It's not just money, it's quiet POWER",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "relationship patterns",
+        "topic_cluster": "The quiet discomfort when your partner makes significantly l",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "composite_score": 8.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W27",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 17,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 2,
+        "averageViewDuration": 17,
+        "averageViewPercentage": 47.11,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D5w4zup_rmOw&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:21.177557+00:00"
+    },
+    {
+      "video_id": "20260731_111207",
+      "youtube_video_id": "x1G1-5ywNg0",
+      "youtube_url": "https://youtube.com/shorts/x1G1-5ywNg0",
+      "published_at": "2026-07-31",
+      "track": "shorts",
+      "title": "You thought perfect would make them STAY",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth_drop",
+        "category": "psychology drops",
+        "topic_cluster": "Why your need for perfectionism kills relationships.",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 12
+      },
+      "composite_score": 7.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W31",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys its message about perfectionism hindering relationships through a thoughtful script and well-aligned visual metaphors, supported by a strong voiceover and consistent emotional tone. However, the pacing for a Shorts format could be more dynamic, with quicker cuts and less static imagery to minimize potential drop-offs. Leveraging its strengths in visual specificity for key concepts and powerful emotional delivery will be key for future improvements.",
+        "strengths": [
+          "The clarity and emotional resonance of the voiceover narration.",
+          "Highly effective visual metaphors, such as the organized desk and the makeup application, that concretely illustrate abstract concepts.",
+          "The powerful and memorable 'You're afraid of being known' loopback line, strongly supported by the accompanying visual.",
+          "A consistent and recognizable brand aesthetic maintained throughout the video."
+        ],
+        "dropoff_causes": [
+          "Overall slow visual pacing, with some shots lingering too long for a Shorts audience.",
+          "Lack of dynamic visual movement; many shots are static or feature slow camera pans/zooms, which might not hold attention on a scroll-heavy platform.",
+          "Some visuals are conceptually weaker or repetitive (e.g., multiple 'looking out window' shots), which could lead to viewer fatigue."
+        ],
+        "repeat_next": [
+          "The strong script-to-visual metaphorical alignment for key lines (e.g., 'no messy edges', 'polished version').",
+          "The impactful and resonant 'soft reset' core message and loopback.",
+          "The professional quality of the voiceover and audio mix.",
+          "The cohesive emotional tone that aligns with the brand identity."
+        ],
+        "reduce_next": [
+          "The overall visual hold time for individual shots; aim for quicker transitions to maintain momentum.",
+          "Reliance on less dynamic or repetitive visual themes (e.g., limit similar 'looking out window' shots).",
+          "Any visuals that are less directly impactful or feel slightly generic to the specific script point."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Truth Drop",
+          "thumbnail_type": "Introspective Portrait",
+          "visual_style_mix": "Cinematic Metaphor / Aesthetic Voiceover",
+          "narrative_format": "Psychological Insight / Explainer",
+          "character_used": "Symbolic Figures / Anonymous Archetypes"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 78,
+        "averageViewPercentage": 200.14,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3Dx1G1-5ywNg0&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:21.435328+00:00"
+    },
+    {
+      "video_id": "20260731_124546",
+      "youtube_video_id": "hbhNDYOtBKc",
+      "youtube_url": "https://youtube.com/shorts/hbhNDYOtBKc",
+      "published_at": "2026-07-31",
+      "track": "shorts",
+      "title": "You are not too much, they just had TOO little",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "You are not too much \u2014 you were just around people with too ",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 5
+      },
+      "composite_score": 6.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W31",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This video effectively communicates a validating message through an excellent, empathetic voiceover, clear captions, and strong bookend visual metaphors. The initial 'shrinking' and final 'notebook flip' are particularly powerful in illustrating complex emotional concepts. However, the mid-section's use of generic visuals and the specific 'New Year New Me' prop, despite its effective usage, slightly dilute the core message's specificity, potentially causing minor thematic confusion for viewers. Overall, it's a strong piece that aligns well with the Soft Reset brand's tone.",
+        "strengths": [
+          "The empathetic and calming quality of the voiceover is a significant strength, perfectly aligning with the brand's 'Soft Reset' identity.",
+          "The consistent and clear captioning style, with well-timed single-word appearances, enhances comprehension and viewer engagement.",
+          "The use of a tangible visual metaphor for the hook (shrinking into a chair) and the conclusion (flipping the notebook) provides powerful, memorable imagery for abstract concepts."
+        ],
+        "dropoff_causes": [
+          "The middle section's reliance on generic, albeit emotionally resonant, stock footage might lead to a slight dip in engagement as it doesn't offer specific visual reinforcement for the unique 'too much' reframe.",
+          "The specific 'New Year New Me' prop, while used cleverly, could momentarily disorient viewers who are focused on the 'too much' self-worth topic rather than resolutions, creating a slight thematic disconnect."
+        ],
+        "repeat_next": [
+          "The warm, validating tone and clear delivery of the voiceover.",
+          "The impactful and well-executed opening and closing visual metaphors.",
+          "The style and pacing of the on-screen captions for maximum readability and emotional impact.",
+          "The selection of background music that subtly enhances the emotional tone without distracting from the message."
+        ],
+        "reduce_next": [
+          "Reliance on overly generic stock footage for core conceptual points in the middle of the video; aim for more specific or creative visual metaphors throughout.",
+          "Introducing props or themes (like 'New Year New Me') that, while related to self-improvement, might be too specific and slightly diverge from the primary, broader psychological concept being addressed."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe, Emotional Validation, Direct Statement",
+          "thumbnail_type": "Conceptual Metaphor, Text Overlay, Human Element",
+          "visual_style_mix": "Introspective, Minimalist, Metaphorical, Soft Aesthetic",
+          "narrative_format": "Self-Acceptance, Empowerment, Psychological Insight",
+          "character_used": "Solitary Figure, Reflective Person"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 40,
+        "averageViewPercentage": 116.14999999999999,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DhbhNDYOtBKc&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "fetched_at": "2026-10-12T17:15:21.720431+00:00"
+    },
+    {
+      "video_id": "20261008_190127",
+      "youtube_video_id": "LU2IjmjlJIY",
+      "youtube_url": "https://youtube.com/shorts/LU2IjmjlJIY",
+      "published_at": "2026-10-08",
+      "track": "shorts",
+      "title": "You went quiet hoping they would notice",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth drop",
+        "category": "relationship patterns",
+        "topic_cluster": "The Secret Silence Test in Dating",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 9
+      },
+      "composite_score": 7.4,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W41",
+      "video_audit": {
+        "status": "ok",
+        "summary": "The short effectively targets a relatable modern dating habit with a clear psychological takeaway, though mid-video stock choices drift slightly from the interpersonal focus.",
+        "strengths": [
+          "Strong closing line delivers genuine emotional self-accountability.",
+          "Night-time urban aesthetic in the final scene provides a resonant contemplative landing."
+        ],
+        "dropoff_causes": [
+          "Mid-script shift to loosely related B-roll (tape crafting, makeup) softens narrative tension.",
+          "Deliberate, slow voiceover cadence may feel sluggish for fast scrollers."
+        ],
+        "repeat_next": [
+          "Relatable behavioral callouts in opening lines",
+          "Contemplative final lingering shot to let the insight land"
+        ],
+        "reduce_next": [
+          "Overly abstract domestic B-roll that weakens relationship context",
+          "Blank digital mockups lacking authentic visual details"
+        ],
+        "tag_suggestions": {
+          "hook_type": "relatable_behavior",
+          "thumbnail_type": "glowing_screen_minimal",
+          "visual_style_mix": "moody_cinematic_stock",
+          "narrative_format": "truth_drop",
+          "character_used": "multiple_stock"
+        }
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 52,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 7,
+        "averageViewDuration": 21,
+        "averageViewPercentage": 51.85999999999999,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-10-12&endDate=2026-10-12&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DLU2IjmjlJIY&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "fetched_at": "2026-10-12T17:15:21.949199+00:00"
+    }
+  ]
+}

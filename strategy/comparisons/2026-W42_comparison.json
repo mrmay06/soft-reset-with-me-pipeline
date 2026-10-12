@@ -1,0 +1,856 @@
+{
+  "week": "2026-W42",
+  "processed_at": "2026-10-12T17:15:21.951986+00:00",
+  "total_videos": 27,
+  "strategy_eligible_videos": 12,
+  "channel_trend_4weeks": {
+    "2026-W22": {
+      "videos": 3,
+      "avg_retention": 40.7867,
+      "avg_ctr": null,
+      "avg_views": 67.3333
+    },
+    "2026-W23": {
+      "videos": 2,
+      "avg_retention": 37.095,
+      "avg_ctr": null,
+      "avg_views": 92.0
+    },
+    "2026-W26": {
+      "videos": 3,
+      "avg_retention": 58.6433,
+      "avg_ctr": null,
+      "avg_views": 128.3333
+    },
+    "2026-W41": {
+      "videos": 1,
+      "avg_retention": 51.86,
+      "avg_ctr": null,
+      "avg_views": 52.0
+    }
+  },
+  "channel_health_score": {
+    "score": null,
+    "status": "insufficient baseline",
+    "current_week": "2026-W41",
+    "current_retention": 51.86,
+    "current_ctr": null,
+    "comments_per_view": 0.0
+  },
+  "experiment_outcomes": [],
+  "active_cooldowns": [],
+  "top_performers": [
+    {
+      "youtube_video_id": "LBhyKeEmjYo",
+      "title": "Moving on fast means you cared QUIETLY",
+      "track": "shorts",
+      "video_id": "20260627_013054",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "Moving on fast does not mean you did not care",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short successfully delivers a powerful reframe on the common misconception around fast healing, driven by a strong, empathetic voiceover and clear, well-paced on-screen text. While the opening visual and some mid-video imagery lean towards generic or abstract, key visuals like the social media scrolling and the final scene of applause effectively reinforce the script's core message of external judgment and self-reclamation, maintaining a consistent and reassuring emotional tone with excellent audio quality.",
+        "strengths": [
+          "The consistent, calming, and reassuring quality of the voiceover delivery is a major strength, effectively conveying the brand's empathetic tone.",
+          "The meticulous pacing and clear display of on-screen text greatly enhance comprehension and reinforce the spoken message.",
+          "The deliberate positive visual shift at the end (clapping) powerfully punctuates the message of self-acceptance and triumph, creating a strong emotional resolution."
+        ],
+        "dropoff_causes": [
+          "The initial visual, while thematic, lacks a strong, immediate hook to grab attention in a fast-scrolling feed, potentially leading to early swipe-aways.",
+          "Some of the mid-video visuals (e.g., chair in the ocean, padlock) are less directly illustrative of the script's nuanced points, which could cause momentary viewer disengagement if the visual storytelling doesn't feel precise."
+        ],
+        "repeat_next": [
+          "Maintain the high-quality, empathetic voiceover and professional audio mix.",
+          "Continue with the clear, well-paced on-screen captions that reinforce the spoken words.",
+          "Replicate the strong alignment between the script's hook, the video's title, and the opening on-screen text.",
+          "Prioritize visuals that directly and specifically illustrate the emotional or conceptual points being made, especially for moments of tension and resolution."
+        ],
+        "reduce_next": [
+          "Minimize the use of overly generic stock footage, particularly for the opening seconds where a more compelling visual is crucial for hook retention.",
+          "Avoid visuals that are too abstract or require significant mental effort to connect to the specific narrative point being conveyed."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe, Challenge Common Belief",
+          "thumbnail_type": "Emotional Landscape, Text-Driven",
+          "visual_style_mix": "Stock Footage, Evocative Imagery, Text Overlay",
+          "narrative_format": "Reframe, Psychological Insight, Self-Help",
+          "character_used": "Compassionate Narrator, Relatable Persona"
+        }
+      },
+      "views": 201,
+      "retention": 88.67,
+      "ctr": null
+    },
+    {
+      "youtube_video_id": "E7oz94mCyHc",
+      "title": "Finally, you stopped lowering your standards",
+      "track": "shorts",
+      "video_id": "20260625_013214",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "Reframe what 'bare minimum' means: it's not demanding more, ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short expertly reframes a common concept with a powerful, introspective script, delivered by an empathetic voiceover and supported by a perfectly balanced audio mix and well-timed captions. While the emotional tone is strong and consistent, the visual specificity often falls short, relying on generic stock footage that, despite setting a mood, doesn't always directly enhance the script's nuanced message. Enhancing visual narrative to directly align with the specific emotional beats would further elevate viewer engagement and retention for this impactful content.",
+        "strengths": [
+          "The compelling and empathetic voiceover delivery is a significant asset for connecting with the audience on a sensitive topic.",
+          "The robust and consistent emotional resonance achieved through the synergistic use of music, voiceover, and visual mood.",
+          "The powerful and memorable loopback line, 'You didn't lower your standards because you forgot them. You lowered them because keeping them felt risky,' provides deep insight and encourages re-watching or saving."
+        ],
+        "dropoff_causes": [
+          "Overly generic visual transitions that lack specific narrative connection to the script's emotional beats, making some moments feel less engaging.",
+          "The overall slow, contemplative pace and lack of high-energy visual changes might not retain viewers accustomed to faster-cut Shorts content.",
+          "The initial visual hook, while pleasant, may not be dynamic enough to immediately capture every scroller's attention, leading to early exits."
+        ],
+        "repeat_next": [
+          "Utilize a clear, empathetic, and consistently paced voiceover style for future sensitive topics.",
+          "Employ strong, concise script hooks and loopback statements that reframe perspectives effectively.",
+          "Maintain the high quality and balance of the audio mix between voiceover and background music.",
+          "Continue to use well-timed and easily readable captions to enhance accessibility and message comprehension."
+        ],
+        "reduce_next": [
+          "Minimize the use of overly generic stock footage that does not add specific visual narrative or metaphoric depth to the script.",
+          "Avoid abrupt visual transitions where new scenes lack a clear visual or thematic link to the preceding content, aiming for smoother, more purposeful storytelling.",
+          "Lessen visual repetition of similar pensive or looking-away shots, instead seeking more varied imagery that still conveys introspection."
+        ],
+        "tag_suggestions": {
+          "hook_type": "reframe",
+          "thumbnail_type": "text_overlay",
+          "visual_style_mix": "moody_cinematic",
+          "narrative_format": "personal_reflection",
+          "character_used": "no_presenter"
+        }
+      },
+      "views": 111,
+      "retention": 56.34,
+      "ctr": null
+    }
+  ],
+  "bottom_performers": [
+    {
+      "youtube_video_id": "-2pWeKg6ewI",
+      "title": "They Googled you. Now you feel seen *wrong*",
+      "track": "shorts",
+      "video_id": "20260623_013212",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "accusation",
+        "angle_type": "specific scenario",
+        "category": "identity and growth",
+        "topic_cluster": "The pressure of having your 'internet history' analyzed befo",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "under_30s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 7
+      },
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively addresses a relatable modern dating anxiety using a strong, empathetic script and a consistently calming voiceover, perfectly aligning with the Soft Reset With Me brand. While the audio clarity and the most specific visual metaphors are excellent, the inclusion of some generic stock footage and occasionally static visuals might dilute engagement in a fast-paced Shorts environment, slightly hindering the overall impact despite the powerful message.",
+        "strengths": [
+          "The precise and empathetic scripting, which articulates a common yet often unacknowledged modern anxiety with exceptional clarity and relatability.",
+          "The flawless voiceover delivery, which perfectly matches the brand's empathetic and calm tone, establishing immediate trust and connection with the audience.",
+          "The seamless integration of the 'Soft Reset With Me' branding and outro, reinforcing brand identity and consistency.",
+          "The creative use of specific visual metaphors (search bar on the book, stack of papers as an 'archive') that effectively translate abstract digital concepts into relatable imagery."
+        ],
+        "dropoff_causes": [
+          "Overly generic stock footage in the middle section (e.g., woman at window, pouring coffee) that doesn't add specific visual meaning to the script, potentially leading to visual disinterest.",
+          "The pacing of some visual changes is a bit slow or static, especially the blank book page (0:14-0:17), which can feel less engaging in a rapid-scroll Short format.",
+          "Lack of a consistent human face or direct visual engagement with the narrator, which for an emotionally resonant topic, can sometimes make it harder for viewers to maintain a strong connection throughout the video."
+        ],
+        "repeat_next": [
+          "Continue with the highly specific and empathetic script writing that resonates deeply with target anxieties, paired with a consistent, calming voiceover.",
+          "Maintain the clear, word-by-word captioning, which significantly enhances accessibility and pacing.",
+          "Utilize creative and direct visual metaphors that strongly tie into the spoken message, as seen with the phone typing and the 'archive' imagery.",
+          "Keep the audio mix clean and balanced, ensuring the voiceover is always prominent and the music supportive."
+        ],
+        "reduce_next": [
+          "Minimize the use of generic, mood-setting stock footage that lacks a specific, direct connection to the script's words or concepts.",
+          "Reduce the duration of static or less dynamic visuals, particularly in the middle of the video where viewer attention might naturally wane.",
+          "Avoid relying solely on metaphorical visuals without periodically grounding them in more literal or directly relatable human experiences, especially for emotionally charged topics."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Problem/Pain Point, Direct Statement",
+          "thumbnail_type": "Text-Overlay, Object-Focused",
+          "visual_style_mix": "Melancholic, Reflective, Aesthetic, Cinematic",
+          "narrative_format": "Empathetic Statement, Relatable Scenario, Insight-Driven",
+          "character_used": "Narrator (off-screen, empathetic voice)"
+        }
+      },
+      "views": 73,
+      "retention": 30.92,
+      "ctr": null
+    },
+    {
+      "youtube_video_id": "NjmKpIAuHqw",
+      "title": "You're still asking for permission to EXIST",
+      "track": "shorts",
+      "video_id": "20260602_020010",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "self-worth shifts",
+        "topic_cluster": "You keep explaining because part of you still wants permissi",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers a profound truth with exceptional audio clarity and a strong, empathetic voiceover, consistently aligning with the 'Soft Reset With Me' brand through its meditative visual style and introspective emotional tone. While the script's intellectual depth and structured delivery are standout strengths, the initial visuals could benefit from increased dynamism to immediately capture attention in the competitive Shorts feed, where a contemplative opening might lead to early viewer drop-off despite the overall high quality.",
+        "strengths": [
+          "The voiceover quality and consistent delivery are exceptional, lending significant authority and sincerity to the message.",
+          "The script's intellectual depth and its ability to reframe complex psychological concepts into concise, impactful 'truth drops' are a core strength.",
+          "The carefully selected background music consistently establishes and maintains the brand's signature atmospheric and reflective mood.",
+          "The consistent visual aesthetic and subtle color grading across diverse stock footage maintain a unified brand feel despite varying subjects and settings."
+        ],
+        "dropoff_causes": [
+          "The very calm and somewhat generic initial visuals might not be dynamic enough to capture and hold the attention of viewers accustomed to fast-paced, high-energy Shorts, potentially leading to early swipes.",
+          "The contemplative and low-energy pacing, while on-brand, could contribute to lower overall retention compared to videos with more immediate visual stimuli or faster narrative progression.",
+          "Some visual transitions are simple cuts that feel a bit abrupt, rather than seamless or thematically linked, which can momentarily break immersion."
+        ],
+        "repeat_next": [
+          "High-quality, empathetic, and authoritative voiceover delivery.",
+          "The structured 'truth drop' script format, with its clear hook, tension, insight, and loopback.",
+          "The consistent brand aesthetic achieved through visual mood and music selection.",
+          "Direct, thought-provoking hooks that challenge common assumptions.",
+          "Effective use of on-screen captions for accessibility and emphasis."
+        ],
+        "reduce_next": [
+          "Overly static or ambiguous initial visuals that do not immediately convey the hook's intensity or offer strong visual intrigue.",
+          "Potential for slow visual pacing in the very first few seconds; consider a slightly faster cut or more visually engaging opening to combat swipe behavior."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Challenging Statement",
+          "thumbnail_type": "Contemplative Figure with Text Overlay",
+          "visual_style_mix": "Meditative + Intimate",
+          "narrative_format": "Truth Drop / Insightful Revelation",
+          "character_used": "Empathetic Guide"
+        }
+      },
+      "views": 68,
+      "retention": 30.099999999999998,
+      "ctr": null
+    }
+  ],
+  "comparisons_by_trait": {
+    "hook_type": {
+      "statement": {
+        "count": 10,
+        "avg_views": 139.1,
+        "avg_averageViewPercentage": 48.127,
+        "avg_averageViewDuration": 17.6,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.4,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.3,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0131,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0019,
+        "avg_judge_composite": 13.92,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it"
+        ]
+      },
+      "direct_accusation": {
+        "count": 2,
+        "avg_views": 70.5,
+        "avg_averageViewPercentage": 30.51,
+        "avg_averageViewDuration": 9.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.7,
+        "top_titles": [
+          "They Googled you. Now you feel seen *wrong*",
+          "You're still asking for permission to EXIST"
+        ]
+      }
+    },
+    "angle_type": {
+      "reframe": {
+        "count": 4,
+        "avg_views": 140.75,
+        "avg_averageViewPercentage": 57.9575,
+        "avg_averageViewDuration": 21.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 1.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0085,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.675,
+        "top_titles": [
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it",
+          "Finally, you stopped lowering your standards"
+        ]
+      },
+      "specific scenario": {
+        "count": 2,
+        "avg_views": 226.0,
+        "avg_averageViewPercentage": 38.51,
+        "avg_averageViewDuration": 12.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 7.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0185,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0013,
+        "avg_judge_composite": 40.55,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "They Googled you. Now you feel seen *wrong*"
+        ]
+      },
+      "psychology drop": {
+        "count": 2,
+        "avg_views": 123.0,
+        "avg_averageViewPercentage": 39.105,
+        "avg_averageViewDuration": 14.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 1.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0082,
+        "avg_judge_composite": 6.5,
+        "top_titles": [
+          "You go quiet and wait to be left",
+          "You still miss the one who wasn't good"
+        ]
+      },
+      "truth drop": {
+        "count": 2,
+        "avg_views": 64.5,
+        "avg_averageViewPercentage": 44.385,
+        "avg_averageViewDuration": 17.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0096,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.25,
+        "top_titles": [
+          "You just miss the person you invented",
+          "You went quiet hoping they would notice"
+        ]
+      },
+      "specific_scenario": {
+        "count": 1,
+        "avg_views": 74.0,
+        "avg_averageViewPercentage": 36.36,
+        "avg_averageViewDuration": 14.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 3.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0405,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 8.0,
+        "top_titles": [
+          "When being heard makes you feel more ALONE"
+        ]
+      },
+      "truth_drop": {
+        "count": 1,
+        "avg_views": 68.0,
+        "avg_averageViewPercentage": 30.1,
+        "avg_averageViewDuration": 9.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.3,
+        "top_titles": [
+          "You're still asking for permission to EXIST"
+        ]
+      }
+    },
+    "category": {
+      "healing arcs": {
+        "count": 4,
+        "avg_views": 193.25,
+        "avg_averageViewPercentage": 53.9425,
+        "avg_averageViewDuration": 18.75,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 3.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0092,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0028,
+        "avg_judge_composite": 23.6,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "You still miss the one who wasn't good"
+        ]
+      },
+      "psychology drops": {
+        "count": 2,
+        "avg_views": 90.5,
+        "avg_averageViewPercentage": 41.605,
+        "avg_averageViewDuration": 15.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0038,
+        "avg_judge_composite": 7.25,
+        "top_titles": [
+          "You go quiet and wait to be left",
+          "Calm only feels boring after chaos"
+        ]
+      },
+      "self-worth shifts": {
+        "count": 2,
+        "avg_views": 89.5,
+        "avg_averageViewPercentage": 43.22,
+        "avg_averageViewDuration": 16.5,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0045,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 6.9,
+        "top_titles": [
+          "Finally, you stopped lowering your standards",
+          "You're still asking for permission to EXIST"
+        ]
+      },
+      "Relationship Patterns": {
+        "count": 1,
+        "avg_views": 200.0,
+        "avg_averageViewPercentage": 37.73,
+        "avg_averageViewDuration": 12.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 5.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.025,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 8.4,
+        "top_titles": [
+          "You curate love better than you LIVE it"
+        ]
+      },
+      "Conversation Truths": {
+        "count": 1,
+        "avg_views": 74.0,
+        "avg_averageViewPercentage": 36.36,
+        "avg_averageViewDuration": 14.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 3.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0405,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 8.0,
+        "top_titles": [
+          "When being heard makes you feel more ALONE"
+        ]
+      },
+      "identity and growth": {
+        "count": 1,
+        "avg_views": 73.0,
+        "avg_averageViewPercentage": 30.92,
+        "avg_averageViewDuration": 9.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 8.1,
+        "top_titles": [
+          "They Googled you. Now you feel seen *wrong*"
+        ]
+      },
+      "relationship patterns": {
+        "count": 1,
+        "avg_views": 52.0,
+        "avg_averageViewPercentage": 51.86,
+        "avg_averageViewDuration": 21.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 1.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0192,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.4,
+        "top_titles": [
+          "You went quiet hoping they would notice"
+        ]
+      }
+    },
+    "title_type": {
+      "accusation": {
+        "count": 7,
+        "avg_views": 103.1429,
+        "avg_averageViewPercentage": 38.8557,
+        "avg_averageViewDuration": 14.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 1.2857,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.2857,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0121,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0023,
+        "avg_judge_composite": 7.4286,
+        "top_titles": [
+          "You curate love better than you LIVE it",
+          "You go quiet and wait to be left",
+          "You still miss the one who wasn't good"
+        ]
+      },
+      "declarative": {
+        "count": 5,
+        "avg_views": 162.0,
+        "avg_averageViewPercentage": 54.06,
+        "avg_averageViewDuration": 19.2,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 3.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.2,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0092,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0005,
+        "avg_judge_composite": 20.52,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "Finally, you stopped lowering your standards"
+        ]
+      }
+    },
+    "visual_style_mix": {
+      "stock_heavy": {
+        "count": 6,
+        "avg_views": 132.6667,
+        "avg_averageViewPercentage": 42.56,
+        "avg_averageViewDuration": 15.1667,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.5,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.5,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0094,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0032,
+        "avg_judge_composite": 18.0667,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "You go quiet and wait to be left",
+          "You still miss the one who wasn't good"
+        ]
+      },
+      "balanced": {
+        "count": 3,
+        "avg_views": 170.6667,
+        "avg_averageViewPercentage": 60.9133,
+        "avg_averageViewDuration": 22.3333,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0113,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.6667,
+        "top_titles": [
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it",
+          "Finally, you stopped lowering your standards"
+        ]
+      },
+      "brand_heavy": {
+        "count": 3,
+        "avg_views": 74.6667,
+        "avg_averageViewPercentage": 34.73,
+        "avg_averageViewDuration": 12.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 1.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0135,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.7333,
+        "top_titles": [
+          "You just miss the person you invented",
+          "When being heard makes you feel more ALONE",
+          "They Googled you. Now you feel seen *wrong*"
+        ]
+      }
+    },
+    "thumbnail_type": {
+      "text_only": {
+        "count": 12,
+        "avg_views": 127.6667,
+        "avg_averageViewPercentage": 45.1908,
+        "avg_averageViewDuration": 16.1667,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.25,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0109,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0016,
+        "avg_judge_composite": 12.8833,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it"
+        ]
+      }
+    },
+    "video_length_band": {
+      "30_45s": {
+        "count": 11,
+        "avg_views": 132.6364,
+        "avg_averageViewPercentage": 46.4882,
+        "avg_averageViewDuration": 16.8182,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.1818,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.2727,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0119,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0017,
+        "avg_judge_composite": 13.3182,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it"
+        ]
+      },
+      "under_30s": {
+        "count": 1,
+        "avg_views": 73.0,
+        "avg_averageViewPercentage": 30.92,
+        "avg_averageViewDuration": 9.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 0.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 8.1,
+        "top_titles": [
+          "They Googled you. Now you feel seen *wrong*"
+        ]
+      }
+    },
+    "narrative_format": {
+      "unknown": {
+        "count": 12,
+        "avg_views": 127.6667,
+        "avg_averageViewPercentage": 45.1908,
+        "avg_averageViewDuration": 16.1667,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.25,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0109,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0016,
+        "avg_judge_composite": 12.8833,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it"
+        ]
+      }
+    },
+    "character_used": {
+      "brand_still": {
+        "count": 11,
+        "avg_views": 134.5455,
+        "avg_averageViewPercentage": 44.5845,
+        "avg_averageViewDuration": 15.7273,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.0909,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.2727,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0101,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0017,
+        "avg_judge_composite": 13.3818,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it"
+        ]
+      },
+      "none": {
+        "count": 1,
+        "avg_views": 52.0,
+        "avg_averageViewPercentage": 51.86,
+        "avg_averageViewDuration": 21.0,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 1.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.0,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0192,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0,
+        "avg_judge_composite": 7.4,
+        "top_titles": [
+          "You went quiet hoping they would notice"
+        ]
+      }
+    },
+    "experiment_label": {
+      "baseline": {
+        "count": 12,
+        "avg_views": 127.6667,
+        "avg_averageViewPercentage": 45.1908,
+        "avg_averageViewDuration": 16.1667,
+        "avg_impressionClickThroughRate": null,
+        "avg_likes": 2.0,
+        "avg_comments": 0.0,
+        "avg_shares": 0.0,
+        "avg_subscribersGained": 0.25,
+        "avg_subscribersLost": 0.0,
+        "avg_likes_per_view": 0.0109,
+        "avg_comments_per_view": 0.0,
+        "avg_shares_per_view": 0.0,
+        "avg_subs_per_view": 0.0016,
+        "avg_judge_composite": 12.8833,
+        "top_titles": [
+          "The 2am song that quietly unravels you",
+          "Moving on fast means you cared QUIETLY",
+          "You curate love better than you LIVE it"
+        ]
+      }
+    }
+  }
+}

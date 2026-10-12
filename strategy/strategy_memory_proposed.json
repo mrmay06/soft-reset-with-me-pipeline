@@ -1,49 +1,122 @@
 {
-  "version": "2026-W19",
-  "generated_at": "2026-05-09T12:56:13.632209+00:00",
-  "analysis_window": "2026-W19 initial data",
-  "videos_analyzed": 2,
-  "videos_excluded": 2,
+  "version": "2026-W42",
+  "generated_at": "2026-10-12T17:15:22.065746+00:00",
+  "analysis_window": "up to 2026-W42",
+  "videos_analyzed": 12,
+  "videos_excluded": 15,
   "previous_version_reference": "2026-W19",
   "research": {
-    "prioritize": [],
-    "reduce": [],
-    "cooldowns": [],
-    "strong_angle_types": [],
-    "notes": "Insufficient data (2 videos) to draw meaningful conclusions or update research priorities. Maintaining initial strategy."
+    "prioritize": [
+      "Reframe angles that challenge unspoken assumptions (low confidence: n=4, 57.96% avg retention, top-performing format)",
+      "Declarative statement hooks centered on quiet emotional realities (medium confidence: n=10, 48.13% avg retention vs. direct accusation at 30.51%)",
+      "Observations exploring private emotional endurance, quiet grieving, and boundary shifts"
+    ],
+    "reduce": [
+      "Direct accusation hooks (underperforming: n=2, 30.51% retention, sharp early drop-off)",
+      "Abstract truth drops lacking concrete situational anchors (n=3 combined, ~39.6% avg retention)"
+    ],
+    "cooldowns": [
+      {
+        "topic": "direct accusation confronting viewer behavior",
+        "avoid_until": "2026-W45",
+        "reason": "Direct accusation hooks ('You're still asking...', 'They Googled you...') averaged 30.5% retention and 0 likes, causing viewer defensiveness or immediate swiping."
+      }
+    ],
+    "strong_angle_types": [
+      "reframe"
+    ],
+    "notes": "With 12 videos analyzed, a statistically reliable preference is emerging for contemplative, declarative statements over confrontational accusation hooks. Reframes demonstrate the highest retention (57.96% average, peaking at 88.67% on 'Moving on fast means you cared QUIETLY')."
   },
   "script": {
-    "prioritize": [],
-    "reduce": [],
-    "cta_patterns": [],
-    "word_count_signal": "Use existing 45-75 word contract until enough data supports a narrower range. Insufficient data to change."
+    "prioritize": [
+      "Declarative statement hooks that voice an internal conflict without assigning blame",
+      "Resonant loopback lines in the final 5 seconds to encourage completion and replay value",
+      "Tight 30-45 second narrative structures with clear psychological progression (tension -> reframe -> quiet resolution)"
+    ],
+    "reduce": [
+      "Confrontational opening lines targeting viewer insecurity directly",
+      "Broad existential statements that fail to introduce an identifiable everyday anchor in the first 3 seconds"
+    ],
+    "cta_patterns": [
+      "Soft observation loops ('Save this when you need the reminder') over aggressive engagement asks"
+    ],
+    "word_count_signal": "Maintain the 55-70 word target (optimizing for 30-45 second run time at deliberate, unhurried pacing)."
   },
   "visuals": {
-    "prioritize": [],
-    "reduce": [],
-    "thumbnail_signal": "Use existing Soft Reset With Me brand rules until enough data supports a change. Insufficient data to change."
+    "prioritize": [
+      "Grounded, specific visual metaphors tied directly to the spoken line (e.g., search queries, stacked documents, quiet physical boundaries)",
+      "Dynamic opening cuts (first 1.5-2 seconds) to counter fast-scroll swipe rates before easing into contemplative pacing",
+      "Subtle shifts toward warmer or resolving visuals on loopback statements"
+    ],
+    "reduce": [
+      "Overly generic stock b-roll (empty oceanic chairs, padlocks, ambiguous silhouettes gazing out windows) that disconnects from the voiceover",
+      "Static shots held longer than 3 seconds during the mid-video narrative bridge"
+    ],
+    "thumbnail_signal": "Text-driven, minimal imagery prioritizing emotional clarity; adhere strictly to default B or variant C without clinical diagnostic language."
   },
   "metadata": {
-    "title_signal": "Use existing title rules until enough data supports a change. Insufficient data to change.",
-    "description_signal": "Keep descriptions emotionally accurate and searchable. Insufficient data to change.",
-    "prioritize": [],
-    "reduce": []
+    "title_signal": "Declarative, observation-led titles ('Moving on fast means you cared QUIETLY') strongly outperform confrontational curiosity gaps.",
+    "description_signal": "Keep descriptions grounded in accurate, searchable reflections of the central reframe without clinical buzzwords.",
+    "prioritize": [
+      "Declarative reframe titles that articulate a recognizable private feeling",
+      "Capitalization of single pivotal pivot words (e.g., QUIETLY, WRONG) to anchor feed scanning"
+    ],
+    "reduce": [
+      "Second-person accusatory titles ('They Googled you', 'You're still asking for permission')"
+    ]
   },
   "voice": {
-    "prioritize": [],
-    "notes": "Encode pacing through sentence length and punctuation unless the TTS provider supports direct direction. Insufficient data to change."
+    "prioritize": [
+      "Empathetic, steady, contemplative cadence with distinct micro-pauses before reframe revelations",
+      "Consistent audio mix levels with clean separation between voiceover and ambient score"
+    ],
+    "notes": "Voiceover quality remains the channel's strongest audited asset across all performance tiers. Ensure pacing is dictated by punctuation in scripts rather than accelerated delivery."
   },
   "thumbnail": {
-    "prioritize": [],
-    "reduce": [],
+    "prioritize": [
+      "Variant B default layout with clean typography",
+      "Variant C when text is brief, punchy, and completely free of clinical terminology"
+    ],
+    "reduce": [
+      "Visual clutter or high-saturation backgrounds"
+    ],
     "clinical_word_block": "maintained"
   },
   "experiment_slots": {
-    "this_week": [],
-    "wildcard_slots": []
+    "this_week": [
+      {
+        "id": "exp_first_frame_specificity",
+        "hypothesis": "Opening with an immediate physical action or grounded object metaphor (rather than a solitary person gazing) will lift first-second retention above 50% on declarative hooks.",
+        "target_prompt": "visual_generation",
+        "run_count": 2,
+        "evaluate_after": "2026-W44"
+      },
+      {
+        "id": "exp_loopback_verbatim_hook",
+        "hypothesis": "Ending the script on an exact poetic inversion of the opening hook will increase replay rate and average view percentage by 10%.",
+        "target_prompt": "script_writing",
+        "run_count": 2,
+        "evaluate_after": "2026-W44"
+      }
+    ],
+    "wildcard_slots": [
+      {
+        "id": "wildcard_raccoon_observer_scene",
+        "hypothesis": "Featuring the raccoon mascot as a subtle environmental observer in scene 1 and scene 8 will anchor brand recognition without compromising contemplative tone.",
+        "target_prompt": "visual_generation",
+        "run_count": 1,
+        "evaluate_after": "2026-W44"
+      }
+    ]
   },
   "brand_bible_override_check": "no conflicts detected",
-  "channel_health_signal": "insufficient baseline data",
+  "channel_health_signal": "Retention is showing meaningful recovery into the 50-58% range in recent releases (peaking at 88.67% on top reframe content), though view counts remain in early testing volumes (50-200 views) and engagement (comments/shares) remains flat at 0.0.",
   "channel_health_score": null,
-  "cooldowns": []
+  "cooldowns": [
+    {
+      "topic": "direct accusation confronting viewer behavior",
+      "avoid_until": "2026-W45",
+      "reason": "Direct accusation hooks ('You're still asking...', 'They Googled you...') averaged 30.5% retention and 0 likes, causing viewer defensiveness or immediate swiping."
+    }
+  ]
 }
