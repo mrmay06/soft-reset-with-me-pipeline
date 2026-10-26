@@ -37,9 +37,19 @@ class BoundedScriptTests(unittest.TestCase):
         self.assertEqual(draft.call_count, 2)
         review.assert_called_once()
         correction = draft.call_args.args[0]
-        for issue in ("weak_hook", "weak_engagement_question", "superiority_framing"):
+        for issue in ("weak_engagement_question", "superiority_framing"):
             self.assertIn(issue, correction)
+        self.assertNotIn("weak_hook", correction)
         self.assertEqual(result["argument_review"]["spoken_text_sha256"], spoken_text_hash(build_spoken_script_text(result)))
+
+    def test_keyword_weak_hook_is_advisory_and_goes_to_review(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(short, "_validate_script", side_effect=lambda script, config: script), patch.object(
+            short, "_call_script_model", return_value=self.good(hook_quality="weak")
+        ) as draft, patch.object(short, "_check_argument_coherence", side_effect=self.approved) as review:
+            result = short._bounded_script_generation("prompt", {}, self.config, directory)
+        draft.assert_called_once()
+        review.assert_called_once()
+        self.assertEqual(result["hook_quality"], "weak")
 
     def test_three_bad_drafts_stop_and_save_without_paid_review(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(short, "_validate_script", side_effect=lambda script, config: script), patch.object(
@@ -73,7 +83,7 @@ class BoundedScriptTests(unittest.TestCase):
 
     def test_combined_path_never_exceeds_three_drafts_two_reviews(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(short, "_validate_script", side_effect=lambda script, config: script), patch.object(
-            short, "_call_script_model", side_effect=[self.good(hook_quality="weak"), self.good(), self.good()]
+            short, "_call_script_model", side_effect=[self.good(engagement_quality="weak"), self.good(), self.good()]
         ) as draft, patch.object(short, "_check_argument_coherence", side_effect=[{"passes": False, "status": "failed"}, self.approved(self.good())]) as review:
             result = short._bounded_script_generation("prompt", {}, self.config, directory)
         self.assertEqual(draft.call_count, 3)

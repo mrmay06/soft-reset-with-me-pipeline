@@ -128,7 +128,7 @@ def _watch_videos(genai, comparison: dict, skip_video_watch: bool) -> str:
             continue
         uri = _upload_video_to_gemini(genai, vid_path, f"{label} — {entry.get('title', '')[:30]}")
         if uri:
-            uploaded.append({"label": label, "uri": uri, "title": entry.get("title", ""), "traits": entry.get("traits", {}), "retention": entry.get("retention"), "ctr": entry.get("ctr")})
+            uploaded.append({"label": label, "uri": uri, "title": entry.get("title", ""), "traits": entry.get("traits", {}), "retention": entry.get("retention"), "ctr": entry.get("ctr"), "curve": entry.get("retention_curve") or {}})
 
     if not uploaded:
         return "Could not watch any videos (files not found or upload failed)."
@@ -137,15 +137,21 @@ def _watch_videos(genai, comparison: dict, skip_video_watch: bool) -> str:
         model = genai.GenerativeModel(DEFAULT_GEMINI_MODEL)
         parts = []
         for v in uploaded:
-            parts.append(f"\n{v['label']}: \"{v['title']}\" | retention={v['retention']}% | ctr={v['ctr']}%")
+            curve = v["curve"]
+            cliff_secs = ", ".join(f"{c.get('at_sec')}s" for c in curve.get("cliffs", []))
+            parts.append(
+                f"\n{v['label']}: \"{v['title']}\" | retention={v['retention']}% | ctr={v['ctr']}%"
+                f" | hook_leak={curve.get('hook_leak_pct', 'n/a')}% | cliffs_at={cliff_secs or 'none'}"
+            )
             parts.append({"file_data": {"file_uri": v["uri"], "mime_type": "video/mp4"}})
 
         observe_prompt = (
             "You are watching these YouTube videos for the channel Soft Reset With Me. "
             "For each video, briefly note: (1) thumbnail readability and concept sharpness, "
-            "(2) opening scene effectiveness for the first 3 seconds, "
-            "(3) caption pacing and visual-audio sync quality, "
-            "(4) any obvious reason this video might perform above or below average. "
+            "(2) opening scene effectiveness for the first 3 seconds (compare with the measured hook_leak), "
+            "(3) what is on screen at each measured cliff second, "
+            "(4) caption pacing and visual-audio sync quality, "
+            "(5) any obvious reason this video might perform above or below average. "
             "Keep observations factual and specific. Total response under 400 words."
         )
         response = model.generate_content([observe_prompt] + parts)
@@ -241,6 +247,7 @@ def run_analysis(week_label: str | None = None, skip_video_watch: bool = False) 
         active_experiments=experiment_str,
         experiment_outcomes=json.dumps(comparison.get("experiment_outcomes", []), indent=2),
         active_cooldowns=json.dumps(comparison.get("active_cooldowns", []), indent=2),
+        retention_insights=json.dumps(comparison.get("retention_insights", {}), separators=(",", ":"))[:7000],
         trend_history=json.dumps(verdict_history, indent=2)[:4000],
         week_label=week_label,
         generated_at=now_iso,

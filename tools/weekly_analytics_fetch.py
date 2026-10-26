@@ -23,6 +23,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 load_dotenv(override=True)
 
+from utils.retention_analysis import parse_curve_rows
+
 MATURITY_DAYS = 2
 DEFAULT_MIN_VIEWS = 200
 ANALYTICS_CACHE_DIR = "strategy/analytics_cache"
@@ -133,6 +135,7 @@ def _collect_video_ids() -> list[dict]:
                             "reduce_next": entry.get("video_audit_reduce_next", []),
                             "tag_suggestions": entry.get("video_audit_tags", {}),
                         },
+                        "spoken_timeline": entry.get("spoken_timeline") or {},
                         "min_views_for_strategy": int(track_config.get("performance_min_views", DEFAULT_MIN_VIEWS)),
                     })
         except Exception as e:
@@ -192,8 +195,8 @@ def _fetch_video_analytics(analytics_client, youtube_video_id: str, channel_id: 
     return result
 
 
-def _fetch_retention_curve(analytics_client, youtube_video_id: str, channel_id: str) -> dict | None:
-    """Fetch audience retention curve for a single video. Used for top/bottom performers only."""
+def _fetch_retention_curve(analytics_client, youtube_video_id: str, channel_id: str) -> list | None:
+    """Fetch the audience retention curve for one strategy-eligible video as compact points."""
     end_date = datetime.now(timezone.utc).date()
     start_date = end_date - timedelta(days=365)
     try:
@@ -205,7 +208,7 @@ def _fetch_retention_curve(analytics_client, youtube_video_id: str, channel_id: 
             filters=f"video=={youtube_video_id}",
             dimensions="elapsedVideoTimeRatio",
         ).execute()
-        return resp
+        return parse_curve_rows(resp) or None
     except Exception as e:
         print(f"[analytics_fetch] Retention curve unavailable for {youtube_video_id}: {e}")
         return None
@@ -258,6 +261,7 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
 
     results = []
     skipped_low_views = 0
+    curves_fetched = 0
 
     for entry in mature_entries:
         yt_id = entry["youtube_video_id"]
@@ -275,6 +279,13 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
         else:
             metrics["excluded_from_strategy"] = False
 
+        # Curves are only worth the quota once a video clears the strategy view floor.
+        retention_curve = None
+        if not metrics["excluded_from_strategy"]:
+            retention_curve = _fetch_retention_curve(analytics_client, yt_id, channel_id)
+            if retention_curve:
+                curves_fetched += 1
+
         judge = _get_judge_report(yt_id)
 
         record = {
@@ -286,6 +297,7 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
             "experiment_id": judge.get("experiment_id", entry.get("experiment_id")),
             "strategy_version": judge.get("strategy_version", entry.get("strategy_version", "untracked")),
             "video_audit": entry.get("video_audit", {}),
+            "retention_curve": retention_curve,
             "fetched_at": datetime.now(timezone.utc).isoformat(),
         }
         results.append(record)
@@ -298,13 +310,14 @@ def run_fetch(week_label: str | None = None, dry_run: bool = False) -> str:
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "total_videos": len(results),
         "skipped_low_views": skipped_low_views,
+        "retention_curves_fetched": curves_fetched,
         "videos": results,
     }
 
     with open(output_path, "w") as f:
         json.dump(cache, f, indent=2)
 
-    print(f"\n[analytics_fetch] Done. {len(results)} videos written to {output_path}")
+    print(f"\n[analytics_fetch] Done. {len(results)} videos ({curves_fetched} retention curves) written to {output_path}")
     return output_path
 
 

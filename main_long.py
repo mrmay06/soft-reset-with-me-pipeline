@@ -29,6 +29,7 @@ from modules.longform_logger import run_longform_logger, run_longform_logger_moc
 from modules.creative_judge import run_creative_judge, run_creative_judge_mock
 from utils.youtube_preflight import check_youtube_refresh_token
 from utils.longform_packaging import synchronize_longform_packaging
+from utils.longform_chapters import apply_longform_chapters
 from modules.video_audit_agent import (
     run_video_audit, run_video_audit_mock, longform_audit_is_current,
     enforce_longform_visual_gate,
@@ -280,6 +281,8 @@ def main(mock: bool = False, fresh: bool = False, test_2min: bool = False, resum
             ],
         )
         packaging_changed = synchronize_longform_packaging(run_dir) if not mock else False
+        # Captions are final here; rebuild chapters before the email, judge, and upload read the description.
+        packaging_changed = apply_longform_chapters(run_dir, config) or packaging_changed
         if not mock and not resume_id:
             send_longform_upload_confirmation(
                 video_id=video_id,

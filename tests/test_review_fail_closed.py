@@ -13,7 +13,7 @@ from utils.script_contract import spoken_text_hash
 
 class ReviewFailClosedTests(unittest.TestCase):
     def short_review(self):
-        return dict(passes=True, hook_promise_matches=True,
+        return dict(passes=True, hook_is_concrete=True, hook_promise_matches=True,
                     sections_support_core_claim=True, signature_line_distinctive=True,
                     signature_line_quote="Ask what you want to say.",
                     psychological_claims_calibrated=True, viewer_agency_preserved=True,

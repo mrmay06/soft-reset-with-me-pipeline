@@ -1,7 +1,10 @@
 from __future__ import annotations
 import os
+import re
 import time
 import json
+import math
+import statistics
 from difflib import SequenceMatcher
 from datetime import datetime, timedelta
 
@@ -231,60 +234,256 @@ def _harvest_pytrends(timeframe: str = "now 7-d") -> list[str]:
         return []
 
 
-def _harvest_youtube(days: int = 7) -> list[str]:
+# YouTube outlier scoring. Raw view counts mostly surface big channels, so each
+# searched Short is compared against the median views of its own channel's recent
+# Shorts instead. Shorts are compared to Shorts only (duration <= the configured
+# max, 180s by default since Shorts can run up to 3 minutes); long uploads are left
+# out of the baseline because their views are not comparable. A channel without
+# enough recent Shorts is skipped rather than scored on a thin or mixed baseline.
+_YOUTUBE_OUTLIER_DEFAULTS = {
+    "youtube_outlier_enabled": True,
+    "youtube_outlier_min_multiple": 2.0,
+    "youtube_outlier_min_channel_videos": 4,
+    "youtube_outlier_max_channels": 15,
+    "youtube_outlier_recent_uploads": 20,
+    "youtube_outlier_min_baseline_age_hours": 24,
+    "youtube_outlier_max_short_seconds": 180,
+    "youtube_outlier_max_list_calls": 30,
+    "youtube_outlier_max_signals": 20,
+}
+_YOUTUBE_SEARCH_QUERIES = [
+    "relationship advice",
+    "dating advice",
+    "breakup advice",
+    "situationship advice",
+    "self worth relationships",
+]
+_ISO_DURATION = re.compile(r"^P(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?)?$")
+
+
+class _YouTubeQuotaCap(RuntimeError):
+    pass
+
+
+class _YouTubeQuota:
+    """Approximate Data API cost: search.list = 100 units, each *.list read here = 1."""
+
+    def __init__(self, max_list_calls: int):
+        self.units = 0
+        self.list_calls = 0
+        self.max_list_calls = max_list_calls
+
+    def search(self, request) -> dict:
+        self.units += 100
+        return request.execute()
+
+    def list(self, request) -> dict:
+        if self.list_calls >= self.max_list_calls:
+            raise _YouTubeQuotaCap(f"YouTube list-call cap reached ({self.max_list_calls})")
+        self.list_calls += 1
+        self.units += 1
+        return request.execute()
+
+
+def _youtube_client():
     if _yt_build is None:
-        return []
-    try:
-        refresh_token  = os.environ.get("YOUTUBE_REFRESH_TOKEN")
-        client_id      = os.environ.get("YOUTUBE_CLIENT_ID")
-        client_secret  = os.environ.get("YOUTUBE_CLIENT_SECRET")
-        if not all([refresh_token, client_id, client_secret]):
-            return []
+        return None
+    refresh_token  = os.environ.get("YOUTUBE_REFRESH_TOKEN")
+    client_id      = os.environ.get("YOUTUBE_CLIENT_ID")
+    client_secret  = os.environ.get("YOUTUBE_CLIENT_SECRET")
+    if not all([refresh_token, client_id, client_secret]):
+        return None
+    creds = _YTCreds(
+        token=None,
+        refresh_token=refresh_token,
+        client_id=client_id,
+        client_secret=client_secret,
+        token_uri="https://oauth2.googleapis.com/token",
+        scopes=["https://www.googleapis.com/auth/youtube"],
+    )
+    creds.refresh(_YTRequest())
+    return _yt_build("youtube", "v3", credentials=creds)
 
-        creds = _YTCreds(
-            token=None,
-            refresh_token=refresh_token,
-            client_id=client_id,
-            client_secret=client_secret,
-            token_uri="https://oauth2.googleapis.com/token",
-            scopes=["https://www.googleapis.com/auth/youtube"],
-        )
-        creds.refresh(_YTRequest())
-        youtube = _yt_build("youtube", "v3", credentials=creds)
 
-        queries = [
-            "relationship advice",
-            "dating advice",
-            "breakup advice",
-            "situationship advice",
-            "self worth relationships",
-        ]
-        titles = []
-        for query in queries:
-            try:
-                resp = youtube.search().list(
-                    part="snippet",
-                    q=query,
-                    type="video",
-                    videoDuration="short",
-                    order="viewCount",
-                    publishedAfter=(datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                    regionCode="US",
-                    relevanceLanguage="en",
-                    maxResults=10,
-                ).execute()
-            except Exception as e:
-                print(f"[research] YouTube query unavailable: {query} ({type(e).__name__})")
+def _iso_duration_seconds(value: str) -> int | None:
+    match = _ISO_DURATION.match(str(value or ""))
+    if not match:
+        return None
+    days, hours, minutes, seconds = (int(part or 0) for part in match.groups())
+    return days * 86400 + hours * 3600 + minutes * 60 + seconds
+
+
+def _youtube_search(youtube, days: int, quota: _YouTubeQuota) -> list[dict]:
+    published_after = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    results, seen = [], set()
+    for query in _YOUTUBE_SEARCH_QUERIES:
+        try:
+            resp = quota.search(youtube.search().list(
+                part="snippet",
+                q=query,
+                type="video",
+                videoDuration="short",
+                order="viewCount",
+                publishedAfter=published_after,
+                regionCode="US",
+                relevanceLanguage="en",
+                maxResults=10,
+            ))
+        except Exception as e:
+            print(f"[research] YouTube query unavailable: {query} ({type(e).__name__})")
+            continue
+        for item in resp.get("items", []):
+            snippet = item.get("snippet", {})
+            title = str(snippet.get("title", "")).strip()
+            video_id = (item.get("id") or {}).get("videoId") if isinstance(item.get("id"), dict) else item.get("id")
+            if len(title) <= 10 or (video_id and video_id in seen):
                 continue
-            for item in resp.get("items", []):
-                title = item["snippet"]["title"].strip()
-                if len(title) > 10:
-                    titles.append(title)
+            if video_id:
+                seen.add(video_id)
+            results.append({"video_id": video_id, "channel_id": snippet.get("channelId"), "title": title})
+    return results
 
-        print(f"[research] YouTube: {len(titles)} title signals")
-        return titles[:20]
+
+def _youtube_video_stats(youtube, video_ids: list[str], quota: _YouTubeQuota) -> dict:
+    """views + duration per video id; videos with hidden view counts are left out."""
+    stats = {}
+    ids = list(dict.fromkeys(v for v in video_ids if v))
+    for start in range(0, len(ids), 50):
+        resp = quota.list(youtube.videos().list(
+            part="statistics,contentDetails", id=",".join(ids[start:start + 50]), maxResults=50))
+        for item in resp.get("items", []):
+            views = item.get("statistics", {}).get("viewCount")
+            if views is None:
+                continue
+            stats[item["id"]] = {
+                "views": int(views),
+                "seconds": _iso_duration_seconds(item.get("contentDetails", {}).get("duration")),
+            }
+    return stats
+
+
+def _youtube_channel_budget(channel_count: int, uploads_per_channel: int, quota: _YouTubeQuota) -> int:
+    """Largest channel count whose remaining list calls fit under the cap."""
+    for count in range(channel_count, 0, -1):
+        needed = math.ceil(count / 50) + count + math.ceil(count * uploads_per_channel / 50)
+        if quota.list_calls + needed <= quota.max_list_calls:
+            return count
+    return 0
+
+
+def _youtube_channel_outliers(youtube, items: list[dict], settings: dict,
+                              quota: _YouTubeQuota) -> tuple[list[dict], int]:
+    """Return (outliers ranked by multiple, number of videos with a usable baseline)."""
+    max_seconds = int(settings["youtube_outlier_max_short_seconds"])
+    min_videos  = int(settings["youtube_outlier_min_channel_videos"])
+    uploads_n   = max(1, min(50, int(settings["youtube_outlier_recent_uploads"])))
+    min_age     = timedelta(hours=float(settings["youtube_outlier_min_baseline_age_hours"]))
+
+    def is_short(stat: dict | None) -> bool:
+        return bool(stat) and stat["seconds"] is not None and 0 < stat["seconds"] <= max_seconds
+
+    stats = _youtube_video_stats(youtube, [i["video_id"] for i in items], quota)
+    targets = [i for i in items if i.get("channel_id") and is_short(stats.get(i["video_id"]))]
+    channel_ids = list(dict.fromkeys(i["channel_id"] for i in targets))
+    channel_ids = channel_ids[:int(settings["youtube_outlier_max_channels"])]
+    channel_ids = channel_ids[:_youtube_channel_budget(len(channel_ids), uploads_n, quota)]
+    if not channel_ids:
+        return [], 0
+
+    uploads_playlist = {}
+    for start in range(0, len(channel_ids), 50):
+        resp = quota.list(youtube.channels().list(
+            part="contentDetails", id=",".join(channel_ids[start:start + 50]), maxResults=50))
+        for item in resp.get("items", []):
+            playlist = item.get("contentDetails", {}).get("relatedPlaylists", {}).get("uploads")
+            if playlist:
+                uploads_playlist[item["id"]] = playlist
+
+    # Uploads from the last day have not had time to collect views and would drag
+    # the median down, inflating every multiple, so they stay out of the baseline.
+    cutoff = datetime.utcnow() - min_age
+    channel_uploads = {}
+    for channel_id, playlist in uploads_playlist.items():
+        try:
+            resp = quota.list(youtube.playlistItems().list(
+                part="contentDetails", playlistId=playlist, maxResults=uploads_n))
+        except _YouTubeQuotaCap:
+            raise
+        except Exception as e:
+            print(f"[research] YouTube uploads unavailable for channel {channel_id} ({type(e).__name__})")
+            continue
+        recent = []
+        for item in resp.get("items", []):
+            details = item.get("contentDetails", {})
+            published = str(details.get("videoPublishedAt", ""))
+            try:
+                if datetime.strptime(published[:19], "%Y-%m-%dT%H:%M:%S") > cutoff:
+                    continue
+            except ValueError:
+                pass
+            if details.get("videoId"):
+                recent.append(details["videoId"])
+        channel_uploads[channel_id] = recent
+
+    missing = [v for ids in channel_uploads.values() for v in ids if v not in stats]
+    stats.update(_youtube_video_stats(youtube, missing, quota))
+
+    scored = []
+    for item in targets:
+        uploads = channel_uploads.get(item["channel_id"])
+        if uploads is None:
+            continue
+        # The video being scored is excluded from its own baseline.
+        baseline = [stats[v]["views"] for v in uploads
+                    if v != item["video_id"] and is_short(stats.get(v))]
+        if len(baseline) < min_videos:
+            continue
+        median_views = statistics.median(baseline)
+        if median_views <= 0:
+            continue
+        scored.append({**item, "views": stats[item["video_id"]]["views"],
+                       "channel_median": median_views,
+                       "multiple": stats[item["video_id"]]["views"] / median_views})
+
+    threshold = float(settings["youtube_outlier_min_multiple"])
+    outliers = sorted((s for s in scored if s["multiple"] >= threshold),
+                      key=lambda s: s["multiple"], reverse=True)
+    return outliers, len(scored)
+
+
+def _harvest_youtube(days: int = 7, settings: dict | None = None) -> list[str]:
+    """Title signals; channel-relative outliers when possible, plain titles otherwise."""
+    settings = {**_YOUTUBE_OUTLIER_DEFAULTS, **(settings or {})}
+    quota = _YouTubeQuota(int(settings["youtube_outlier_max_list_calls"]))
+    try:
+        youtube = _youtube_client()
+        if youtube is None:
+            return []
+        items = _youtube_search(youtube, days, quota)
+        titles = [item["title"] for item in items][:20]
+        if not settings["youtube_outlier_enabled"] or not items:
+            print(f"[research] YouTube: {len(titles)} title signals (~{quota.units} quota units)")
+            return titles
+
+        try:
+            outliers, scored = _youtube_channel_outliers(youtube, items, settings, quota)
+        except Exception as e:
+            print(f"[research] YouTube outlier scoring failed ({type(e).__name__}: {e}); "
+                  f"using {len(titles)} plain titles (~{quota.units} quota units)")
+            return titles
+        if not scored:
+            print(f"[research] YouTube: no channel had {settings['youtube_outlier_min_channel_videos']}+ "
+                  f"recent Shorts to compare; using {len(titles)} plain titles (~{quota.units} quota units)")
+            return titles
+
+        signals = [f"{o['title']} ({o['multiple']:.1f}x channel median)"
+                   for o in outliers[:int(settings["youtube_outlier_max_signals"])]]
+        print(f"[research] YouTube: {len(outliers)}/{scored} scored Shorts at "
+              f"{float(settings['youtube_outlier_min_multiple']):g}x+ channel median "
+              f"(~{quota.units} quota units, {quota.list_calls} list calls)")
+        return signals
     except Exception as e:
-        print(f"[research] YouTube signal harvest failed: {e}")
+        print(f"[research] YouTube signal harvest failed: {e} (~{quota.units} quota units)")
         return []
 
 
@@ -322,7 +521,14 @@ def _harvest_signals(timeframe: str = "now 7-d", config: dict | None = None) -> 
     config = config or {}
     sources = set(config.get("research_signal_sources", ["pytrends", "youtube", "reddit"]))
     pytrends_signals = _harvest_pytrends(timeframe) if "pytrends" in sources else []
-    youtube_titles   = _harvest_youtube(days=30 if "30" in timeframe else 7) if "youtube" in sources else []
+    # Outlier settings are passed only when configured; otherwise the defaults apply.
+    youtube_settings = {key: value for key, value in config.items() if key.startswith("youtube_outlier_")}
+    youtube_days     = 30 if "30" in timeframe else 7
+    youtube_titles   = (
+        (_harvest_youtube(days=youtube_days, settings=youtube_settings) if youtube_settings
+         else _harvest_youtube(days=youtube_days))
+        if "youtube" in sources else []
+    )
     reddit_titles    = (
         _harvest_reddit(
             config.get("reddit_signal_subreddits", ["relationship_advice", "dating_advice", "BreakUps", "ExNoContact", "self"]),

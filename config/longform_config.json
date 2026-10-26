@@ -132,6 +132,7 @@
   "film_overlay_blend_mode": "screen",
   "film_overlay_opacity": 0.14,
   "longform_captions_enabled": true,
+  "longform_chapters_enabled": true,
   "longform_thumbnail_width": 1920,
   "longform_thumbnail_height": 1080,
   "longform_format": "faceless cinematic emotional essay",

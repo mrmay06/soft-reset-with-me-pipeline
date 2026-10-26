@@ -43,6 +43,9 @@ EXPERIMENT OUTCOMES FROM THIS WINDOW:
 ACTIVE COOLDOWNS:
 {active_cooldowns}
 
+AUDIENCE RETENTION CURVES (real YouTube viewer data, strategy-eligible Shorts, most-viewed first):
+{retention_insights}
+
 ---
 
 INSTRUCTIONS:
@@ -78,7 +81,15 @@ INSTRUCTIONS:
 
 11. For experiment_slots, evaluate existing experiment outcomes before proposing more. Close, continue, or revise experiments based on the data instead of stacking new experiments blindly.
 
-12. Use saved `video_audit` fields in top/bottom performers as qualitative evidence about first seconds, caption pacing, emotional tone, visual specificity, and likely drop-off causes. Treat these as explanatory clues, not proof, and combine them with YouTube Analytics before recommending changes.
+12. Read AUDIENCE RETENTION CURVES as the primary evidence for where viewers leave. All percentages are relative to each video's opening level, because Shorts loops and rewatches push audienceWatchRatio above 1.0; never read a value above 100% as an error, and do not compare raw watch ratios across videos.
+   - hook_leak_pct: share of the opening audience lost in the first hook_window_sec seconds (the swipe-away decision). line_at_hook_end is what was being said when the hook window closed.
+   - cliffs: the steepest drops after the hook, each with the spoken line and script section playing at that second. "[after voiceover: ending tail]" means viewers left during the silent visual tail, not during speech.
+   - mid_slide_pct_per_10s: steady loss through the body; end_retention_pct_of_opening: who is still there at the last frame (loops can lift it).
+   - patterns.cliff_count_by_section: which script section (hook/tension/insight/loopback) keeps losing people across videos.
+   - Curves from videos marked confidence "low" (below settings.noisy_views) are noisy: a single cliff there is an anecdote, not a pattern. Only act on a cliff or section pattern when it repeats across several videos, and weight normal-confidence curves more heavily.
+   - Use hook leak and cliff lines to make script and hook recommendations concrete (quote the line type that loses viewers), but keep them as patterns to reduce, not bans.
+
+13. Use saved `video_audit` fields in top/bottom performers as qualitative evidence about first seconds, caption pacing, emotional tone, visual specificity, and likely drop-off causes. Treat these as explanatory clues, not proof; where they disagree with the retention curves, trust the curves.
 
 Return ONLY valid JSON matching this exact structure:
 {{
