@@ -25,7 +25,7 @@ If an idea depends on empirical claims, label its content_basis factual_claim in
 Recent published topics (last 90 days) - do NOT repeat or closely paraphrase these:
 {recent_topics}
 
-Recent categories used (last 4 videos) - avoid these unless the emotional angle is clearly different:
+Recent categories (with how often each was used in the last few videos) - prefer categories used least; reuse a heavily used one only if the emotional angle is clearly different:
 {recent_categories}
 
 Blocked categories - NEVER use these categories:
