@@ -5,6 +5,7 @@ import time
 import json
 import math
 import statistics
+from collections import Counter
 from difflib import SequenceMatcher
 from datetime import datetime, timedelta
 
@@ -83,6 +84,43 @@ def _load_recent_categories(memory_file: str, last_n: int = 4) -> list[str]:
         if cat and cat not in seen:
             seen.append(cat)
     return seen
+
+
+def _load_category_history(memory_file: str, last_n: int = 6) -> list[str]:
+    """Categories of the last N published videos, most recent first, repeats kept."""
+    if not os.path.exists(memory_file):
+        return []
+    memory = load_json(memory_file)
+    if not isinstance(memory, list):
+        return []
+    dated = []
+    for entry in memory:
+        try:
+            pub_date = datetime.strptime(entry["published_date"], "%Y-%m-%d")
+            dated.append((pub_date, str(entry.get("category", "")).strip().lower()))
+        except (KeyError, ValueError):
+            continue
+    dated.sort(key=lambda x: x[0], reverse=True)
+    return [cat for _, cat in dated[:last_n] if cat]
+
+
+def _category_penalty(category: str, history: list[str]) -> int:
+    """0-3: one point per recent use, plus one if it was the latest video's category.
+
+    With six categories and a six-video window every category is usually "recent",
+    so a flat penalty hits all candidates equally; grading it by use keeps it useful.
+    """
+    category = category.strip().lower()
+    uses = history.count(category)
+    if not uses:
+        return 0
+    return min(3, uses + (1 if history[0] == category else 0))
+
+
+def _describe_category_history(history: list[str]) -> list[str]:
+    counts = Counter(history)
+    return [f"{cat} (used {counts[cat]} of last {len(history)}{', most recent' if cat == history[0] else ''})"
+            for cat in dict.fromkeys(history)]
 
 
 def _load_todays_categories(memory_file: str) -> list[str]:
@@ -208,29 +246,30 @@ def _harvest_pytrends(timeframe: str = "now 7-d") -> list[str]:
         return []
     try:
         pytrends = TrendReq(hl="en-US", tz=300)
+        # cat=0 (all categories): the keywords are already specific, and the old
+        # cat=7 is Google Trends' Finance category, which filtered these out.
+        # trending_searches() is no longer served by Google, so it is not called.
         pytrends.build_payload(
             kw_list=["relationship advice", "breakup advice", "situationship", "attachment style", "self worth"],
-            cat=7,
+            cat=0,
             timeframe=timeframe,
             geo="US",
         )
         related = pytrends.related_queries()
         signals = []
-        for kw_data in related.values():
-            rising = kw_data.get("rising")
+        for kw_data in (related or {}).values():
+            rising = (kw_data or {}).get("rising")
             if rising is not None and not rising.empty:
                 signals.extend(rising["query"].tolist()[:5])
-        # Also grab trending searches
-        try:
-            trending = pytrends.trending_searches(pn="united_states")
-            signals.extend(trending[0].tolist()[:10])
-        except Exception as e:
-            print(f"[research] General trends unavailable; retaining related queries ({type(e).__name__})")
         unique = list(dict.fromkeys(signals))  # dedupe, preserve order
-        print(f"[research] pytrends ({timeframe}): {len(unique)} signals")
+        if unique:
+            print(f"[research] pytrends ({timeframe}): {len(unique)} rising related queries")
+        else:
+            print(f"[research] pytrends ({timeframe}): 0 signals — Google returned no rising related queries")
         return unique[:20]
     except Exception as e:
-        print(f"[research] pytrends failed ({timeframe}): {e}")
+        reason = "rate-limited by Google (429)" if "429" in str(e) else f"{type(e).__name__}: {e}"
+        print(f"[research] pytrends ({timeframe}): 0 signals — FAILED, {reason}")
         return []
 
 
@@ -490,10 +529,13 @@ def _harvest_youtube(days: int = 7, settings: dict | None = None) -> list[str]:
 def _harvest_reddit(subreddits: list[str], timeframe: str = "week") -> list[str]:
     titles = []
     headers = {"User-Agent": "SoftResetWithMeResearch/1.0"}
+    failures = {}
+    attempted = 0
     for subreddit in subreddits:
         safe_sub = str(subreddit).strip().strip("/")
         if not safe_sub:
             continue
+        attempted += 1
         url = f"https://www.reddit.com/r/{safe_sub}/top.json"
         try:
             resp = requests.get(
@@ -503,6 +545,7 @@ def _harvest_reddit(subreddits: list[str], timeframe: str = "week") -> list[str]
                 timeout=12,
             )
             if resp.status_code != 200:
+                failures.setdefault(f"HTTP {resp.status_code}", []).append(safe_sub)
                 continue
             posts = resp.json().get("data", {}).get("children", [])
             for post in posts:
@@ -510,8 +553,14 @@ def _harvest_reddit(subreddits: list[str], timeframe: str = "week") -> list[str]
                 if 15 <= len(title) <= 180:
                     titles.append(title)
         except Exception as e:
-            print(f"[research] Reddit r/{safe_sub} failed: {e}")
+            failures.setdefault(type(e).__name__, []).append(safe_sub)
     unique = list(dict.fromkeys(titles))
+    if failures:
+        detail = "; ".join(f"{reason} on r/{', r/'.join(subs)}" for reason, subs in failures.items())
+        failed = sum(len(subs) for subs in failures.values())
+        hint = (" — Reddit blocks unauthenticated requests; a Reddit API app is needed"
+                if any(reason in ("HTTP 401", "HTTP 403") for reason in failures) else "")
+        print(f"[research] Reddit: {failed}/{attempted} subreddits FAILED ({detail}){hint}")
     print(f"[research] Reddit: {len(unique)} title signals")
     return unique[:30]
 
@@ -536,6 +585,16 @@ def _harvest_signals(timeframe: str = "now 7-d", config: dict | None = None) -> 
         )
         if "reddit" in sources else []
     )
+    counts = {"youtube": len(youtube_titles), "pytrends": len(pytrends_signals), "reddit": len(reddit_titles)}
+    enabled = [name for name in counts if name in sources]
+    live = [name for name in enabled if counts[name]]
+    summary = ", ".join(f"{name}={counts[name]}" for name in enabled)
+    if len(live) < len(enabled):
+        dead = [name for name in enabled if not counts[name]]
+        print(f"[research] Signal sources: {summary} — WARNING: {', '.join(dead)} returned nothing; "
+              f"topics are ideated from {', '.join(live) or 'no live signals'} only")
+    else:
+        print(f"[research] Signal sources: {summary}")
     return {
         "pytrends": pytrends_signals,
         "youtube":  youtube_titles,
@@ -636,7 +695,7 @@ def _generate_candidates(signals: dict, recent_topics: list[str],
 def _filter_candidates(candidates: list[dict], recent_topics: list[str], recent_entries: list[dict],
                        recent_categories: list[str], todays_categories: list[str],
                        blocked_categories: list[str], recent_angles: list[str],
-                       threshold: float) -> list[dict]:
+                       threshold: float, category_history: list[str] | None = None) -> list[dict]:
     blocked = _normalise_categories(blocked_categories)
     todays  = _normalise_categories(todays_categories)
     filtered = []
@@ -654,8 +713,16 @@ def _filter_candidates(candidates: list[dict], recent_topics: list[str], recent_
             print(f"[research] Dropped (same-day category — {category}): {topic[:60]}")
             continue
 
-        # Soft warn: category appeared in last N videos
-        if any(category == rc.lower() for rc in recent_categories):
+        # Soft penalty: graded by how often and how recently the category was used
+        if category_history:
+            penalty = _category_penalty(category, category_history)
+            if penalty:
+                uses = category_history.count(category)
+                print(f"[research] ⚠ Recent category ({category}) — used {uses} of last "
+                      f"{len(category_history)}, scoring penalty -{penalty}")
+                c["category_recent_warning"] = True
+                c["category_recent_penalty"] = penalty
+        elif any(category == rc.lower() for rc in recent_categories):
             print(f"[research] ⚠ Recent category ({category}) — keeping, scoring will penalise")
             c["category_recent_warning"] = True
 
@@ -803,10 +870,12 @@ def _finalize_candidate_score(candidate: dict, result: dict) -> dict:
         result["total_score"] = max(0, result.get("total_score", 0) - 1)
         result["angle_penalised"] = True
 
-    # Penalise recently-used category (-1)
+    # Penalise recently-used category (graded 1-3; legacy flag alone is -1)
     if candidate.get("category_recent_warning"):
-        result["total_score"] = max(0, result.get("total_score", 0) - 1)
+        penalty = int(candidate.get("category_recent_penalty", 1))
+        result["total_score"] = max(0, result.get("total_score", 0) - penalty)
         result["category_penalised"] = True
+        result["category_penalty"] = penalty
 
     return result
 
@@ -878,12 +947,20 @@ def _score_candidate_batch(candidates: list[dict], model: str) -> list[dict]:
         + "\nBATCH OUTPUT OVERRIDE: Return a JSON array, one score object per candidate. "
         "Include its exact integer candidate_id in each object. No missing, duplicate, or extra IDs. "
         "Do not change topic, category, angle, or factual/emotional basis. "
-        "All five dimension scores must be integers from 1 to 4.\nCANDIDATES:\n"
+        "All five dimension scores must be integers from 1 to 4.\n"
+        "AFTER scoring, also rank the pool against each other: give every object a unique integer "
+        f"pool_rank from 1 to {len(candidates)} (1 = the one the target viewer is most likely to stop "
+        "scrolling for and feel recognized by, and least like the others in this pool), plus a one-sentence "
+        "rank_reason naming what separates it. Ties are not allowed; absolute scores often tie, the rank must not.\n"
+        "CANDIDATES:\n"
         + json.dumps(inputs)
     )
     raw = generate_json(prompt, model)
     if not isinstance(raw, list) or len(raw) != len(candidates):
         raise ValueError("Batch scoring must return exactly one record per candidate")
+    ranks = [record.get("pool_rank") if isinstance(record, dict) else None for record in raw]
+    # The rank is a tiebreaker on top of the rubric; a malformed rank is dropped, not fatal.
+    ranks_valid = sorted(r for r in ranks if type(r) is int) == list(range(1, len(candidates) + 1))
     by_id = {}
     score_fields = ("audience_fit_score", "emotional_tension_score", "scriptability_score",
                     "share_save_score", "safety_brand_score")
@@ -905,8 +982,13 @@ def _score_candidate_batch(candidates: list[dict], model: str) -> list[dict]:
         result = {**candidate, **by_id[index]}
         for field in ("topic", "category", "angle_type"):
             result[field] = candidate.get(field, "")
+        if not ranks_valid:
+            result.pop("pool_rank", None)
+            result.pop("rank_reason", None)
         result = _finalize_candidate_score(candidate, result)
         result["scoring_source"] = "ai_batch"
+        if ranks_valid:
+            result["pool_size"] = len(candidates)
         results.append(result)
     return results
 
@@ -958,6 +1040,32 @@ def _score_candidates_fallback(candidates: list[dict]) -> list[dict]:
 
 # ── Step 6: Winner Selection ──────────────────────────────────────────────────
 
+def _rank_bonus(candidate: dict) -> float:
+    """0-2 points from the model's comparative pool rank (1 = best)."""
+    rank, size = candidate.get("pool_rank"), candidate.get("pool_size")
+    if type(rank) is not int or type(size) is not int or size < 2 or not 1 <= rank <= size:
+        return 0.0
+    return round(2 * (size - rank) / (size - 1), 2)
+
+
+def _selection_score(candidate: dict) -> float:
+    # The 1-4 rubric clusters at 18-19/20, so the comparative rank can overturn a
+    # 1-point gap but not a large one. total_score stays the rubric-plus-penalty value.
+    return candidate.get("total_score", 0) + _rank_bonus(candidate)
+
+
+def _log_candidate_ranking(scored: list[dict]) -> None:
+    for c in sorted(scored, key=_selection_score, reverse=True):
+        rank = f"rank {c['pool_rank']}/{c['pool_size']}" if c.get("pool_size") else "rank n/a"
+        penalties = []
+        if c.get("category_penalty"):
+            penalties.append(f"category -{c['category_penalty']}")
+        if c.get("angle_penalised"):
+            penalties.append("angle -1")
+        print(f"[research]   {_selection_score(c):5.2f} = score {c.get('total_score', 0)}"
+              f"{' (' + ', '.join(penalties) + ')' if penalties else ''} + {rank} | {c.get('topic', '?')[:70]}")
+
+
 def _pick_winner(scored: list[dict], min_score: int = 10) -> dict | None:
     valid = [c for c in scored if c.get("total_score", 0) >= min_score]
     if not valid:
@@ -965,9 +1073,11 @@ def _pick_winner(scored: list[dict], min_score: int = 10) -> dict | None:
         for t, s in rejected:
             print(f"[research] Rejected (score {s} < {min_score}): {t}")
         return None
+    _log_candidate_ranking(valid)
     return sorted(
         valid,
         key=lambda x: (
+            _selection_score(x),
             x.get("total_score", 0),
             x.get("emotional_tension_score", x.get("trending_score", 0)),
             x.get("share_save_score", x.get("us_specificity_score", 0)),
@@ -995,6 +1105,11 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
         memory_file,
         last_n=int(config.get("recent_category_block_count", 6)),
     )
+    category_history  = _load_category_history(
+        memory_file,
+        last_n=int(config.get("recent_category_block_count", 6)),
+    )
+    prompt_categories = _describe_category_history(category_history) or recent_categories
     todays_categories = _load_todays_categories(memory_file)
     angle_lookback    = int(config.get("angle_diversity_lookback_days", 3))
     recent_angles     = _load_recent_angles(memory_file, lookback_days=angle_lookback)
@@ -1009,24 +1124,24 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
 
     # ── Step 2: Generate candidates ──
     try:
-        candidates = _generate_candidates(signals, recent_topics, recent_categories, blocked_categories, config, model, recent_angles)
+        candidates = _generate_candidates(signals, recent_topics, prompt_categories, blocked_categories, config, model, recent_angles)
     except Exception as exc:
         print(f"[research] Candidate generation failed ({exc}) — using evergreen fallback")
         candidates = _load_evergreen_topics()
 
     # ── Step 3: Filter ──
-    candidates = _filter_candidates(candidates, recent_topics, recent_entries, recent_categories, todays_categories, blocked_categories, recent_angles, threshold)
+    candidates = _filter_candidates(candidates, recent_topics, recent_entries, recent_categories, todays_categories, blocked_categories, recent_angles, threshold, category_history)
 
     # ── Step 4: Expand to 30-day if too few ──
     if len(candidates) < 3:
         print(f"[research] Only {len(candidates)} candidates after filter — expanding to 30-day signals")
         signals_30d = _harvest_signals(timeframe="now 30-d", config=config)
         try:
-            candidates_30d = _generate_candidates(signals_30d, recent_topics, recent_categories, blocked_categories, config, model, recent_angles)
+            candidates_30d = _generate_candidates(signals_30d, recent_topics, prompt_categories, blocked_categories, config, model, recent_angles)
         except Exception as exc:
             print(f"[research] 30-day candidate generation failed ({exc}) — using evergreen fallback")
             candidates_30d = _load_evergreen_topics()
-        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_entries, recent_categories, todays_categories, blocked_categories, recent_angles, threshold)
+        candidates_30d = _filter_candidates(candidates_30d, recent_topics, recent_entries, recent_categories, todays_categories, blocked_categories, recent_angles, threshold, category_history)
         # Merge, dedupe by topic string
         existing_topics = {c["topic"] for c in candidates}
         for c in candidates_30d:
@@ -1118,6 +1233,10 @@ def run_research(video_id: str, run_dir: str, config: dict) -> dict:
             "safety_brand":        winner.get("safety_brand_score", winner.get("reliability_score", 0)),
         },
         "total_score":         winner.get("total_score", 0),
+        "selection_score":     _selection_score(winner),
+        "pool_rank":           winner.get("pool_rank"),
+        "rank_reason":         winner.get("rank_reason", ""),
+        "category_penalty":    winner.get("category_penalty", 0),
         "reasoning":           winner.get("reasoning", ""),
         "candidates_evaluated": len(scored),
         "scoring_source":       winner.get("scoring_source", "unknown"),
