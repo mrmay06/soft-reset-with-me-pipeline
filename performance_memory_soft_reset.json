@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-13T17:31:18Z",
+  "generated_at": "2026-10-26T20:53:46Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-08-28",
-  "end_date": "2026-10-12",
+  "start_date": "2026-09-10",
+  "end_date": "2026-10-25",
   "videos": [
     {
       "video_id": "20261008_190127",
@@ -142,22 +142,30 @@
         "narrative_format": "truth_drop",
         "character_used": "multiple_stock"
       },
-      "metrics": {},
-      "composite_score": 0.0,
-      "performance_score": 0.0,
+      "metrics": {
+        "views": 72,
+        "engagedViews": 29,
+        "averageViewDuration": 20,
+        "averageViewPercentage": 48.8,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0
+      },
+      "composite_score": 31.63,
+      "performance_score": 31.63,
       "score_version": 1,
-      "hook_score": 0.0,
-      "hold_score": 0.0,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
+      "hook_score": 40.28,
+      "hold_score": 48.8,
+      "resonance_score": 6.9,
+      "resonance_per_engaged": 0.069,
+      "resonance_per_view": 0.0278,
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
-      "reach_score": 0.0,
-      "analytics_fetched_at": "2026-10-10T15:36:15Z",
-      "analytics_days_old": 2,
-      "data_available": false,
-      "data_unavailable_reason": "youtube_analytics_no_row"
+      "reach_score": 62.1,
+      "analytics_fetched_at": "2026-10-26T20:53:46Z",
+      "analytics_days_old": 18,
+      "data_available": true
     }
   ]
 }

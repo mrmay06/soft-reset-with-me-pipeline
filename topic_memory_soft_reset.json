@@ -1,147 +1,5 @@
 [
   {
-    "video_id": "20260519_175643",
-    "published_date": "2026-05-19",
-    "status": "uploaded",
-    "topic": "The unspoken rule from your childhood that makes you self-sabotage intimacy.",
-    "category": "Psychology Drops",
-    "angle_type": "truth_drop",
-    "total_score": 18,
-    "source_name": "John Bowlby, Mary Ainsworth",
-    "source_basis": "Attachment Theory and its influence on adult relationship patterns",
-    "source_url": "",
-    "confidence_level": "peer_reviewed",
-    "content_format": "psychology_drop",
-    "emotional_trigger": "The recurring feeling of 'I've been here before' in unhealthy relationships, or choosing partners that feel familiar despite being unsafe.",
-    "psych_concept": "Attachment Theory, Internal Working Models",
-    "core_claim": "Your earliest relational dynamics create a subconscious template for 'love' or 'safety' that you unconsciously seek out, even if it's not healthy.",
-    "editorial_seed": "It's not about blaming your past, but recognizing how old patterns show up in new relationships. Understanding this can break the cycle of choosing what's familiar over what's actually good for you.",
-    "only_soft_reset_line": "Familiar isn't the same as safe. But your nervous system never got that memo.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "You don't self-sabotage on purpose. You learned it was safer.",
-    "hook_quality": "weak",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 69,
-    "estimated_duration_sec": 18,
-    "thumbnail_text": "You keep choosing 'home' \u2014 even when home hurt you.",
-    "content_fingerprint": "the unspoken rule from your childhood that makes you self sabotage intimacy you don t self sabotage on purpose you learned it was safer the recurring feeling of i ve been here before in unhealthy relationships or choosing partners that feel familiar despite being unsafe attachment theory internal working models your earliest relational dynamics create a subconscious template for love or safety that you unconsciously seek out even if it s not healthy familiar isn t the same as safe but your nervous system never got that memo",
-    "title": "Self-sabotage was how you felt SAFE",
-    "youtube_video_id": "-hnBAFRy28Q",
-    "youtube_url": "https://youtube.com/shorts/-hnBAFRy28Q",
-    "fallback_count": 0,
-    "video_count": 5,
-    "total_scenes": 8,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W21",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "declarative",
-      "angle_type": "truth_drop",
-      "category": "Psychology Drops",
-      "topic_cluster": "The unspoken rule from your childhood that makes you self-sa",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 8
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 7,
-        "reason": "Intriguing premise that challenges a common assumption about self-sabotage."
-      },
-      "script_clarity": {
-        "score": 8,
-        "reason": "The script is concise and delivers its core message effectively within the short word count."
-      },
-      "editorial_pov": {
-        "score": 7,
-        "reason": "The POV is clear, focusing on a psychological explanation rooted in learned safety behaviors."
-      },
-      "villain_mechanism_specificity": {
-        "score": 6,
-        "reason": "While it names 'learned safety' as the mechanism, it could be more specific on *how* this safety is achieved through self-sabotage."
-      },
-      "cta_quality": {
-        "score": 1,
-        "reason": "There is no Call To Action in the provided details."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title accurately reflects the core message of the hook and script, linking self-sabotage to feeling safe."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "The description effectively summarizes the video's premise and hints at the underlying psychological concept."
-      },
-      "visual_dialogue_sync": {
-        "score": 6,
-        "reason": "Assuming standard integration, sync is likely adequate but not explicitly detailed for a higher score. Visuals need to complement the psychological concepts."
-      },
-      "image_direction_strength": {
-        "score": 5,
-        "reason": "Brand images are present, but their strength in conveying the core message isn't detailed. They need to visually support the psychology."
-      },
-      "thumbnail_concept": {
-        "score": 6,
-        "reason": "A strong thumbnail concept would visually represent the tension between self-sabotage and safety. Needs to be compelling and relevant."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "With a short script, pacing is manageable. The text suggests a thoughtful, slightly slow pace which suits the topic."
-      },
-      "brand_consistency": {
-        "score": 7,
-        "reason": "The topic aligns with relationship/self-growth, fitting the channel's niche. The 'truth drop' angle is also consistent."
-      },
-      "policy_factual_risk": {
-        "score": 9,
-        "reason": "The claim is presented as a psychological interpretation, not a definitive scientific fact, minimizing factual risk. It avoids diagnostic language."
-      }
-    },
-    "judge_composite_score": 7,
-    "strongest_element": "Title Accuracy",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 7,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively delivers a powerful psychological insight with a strong, empathetic voiceover and well-paced captions. The hook immediately grabs attention by reframing self-sabotage as a learned safety mechanism, aligning perfectly with the video's title. While the emotional tone and audio mix are excellent, some visual choices are too abstract or disjointed, occasionally hindering the connection between the spoken word and the imagery. Focusing on more specific and stylistically consistent visuals would further enhance viewer engagement and reduce potential drop-offs.",
-    "video_audit_strengths": [
-      "The voiceover's empathetic and non-judgmental delivery is a core strength, fostering trust and connection with the audience on a sensitive topic.",
-      "The script's ability to simplify complex psychological concepts (like attachment theory and internal working models) into relatable, concise statements is excellent.",
-      "The consistent brand identity, even with varied stock footage, is maintained through the mood, captions, and overall narrative tone, reinforcing Soft Reset With Me's unique voice."
-    ],
-    "video_audit_dropoff_causes": [
-      "Abrupt shifts in visual style (e.g., sudden switch from color to black and white, then back again) can be jarring and momentarily pull the viewer out of the narrative flow.",
-      "Several abstract visuals (e.g., coffee cup, open notebook, old key) lack direct relevance to the specific psychological concepts being discussed, potentially leading to a disconnect between the visual and auditory experience.",
-      "Some viewers might find the overall slow, somber pacing of the visuals (even with quick caption changes) to be less engaging, especially if they prefer more dynamic or directly illustrative content for psychology topics."
-    ],
-    "video_audit_repeat_next": [
-      "The clear, empathetic, and measured voiceover delivery.",
-      "The concise, impactful script that distills complex ideas into easily digestible insights.",
-      "The use of a strong emotional hook that immediately connects with a common struggle.",
-      "The effective use of music to establish and maintain a consistent emotional tone."
-    ],
-    "video_audit_reduce_next": [
-      "Overly abstract stock footage that doesn't directly enhance the spoken message.",
-      "Sudden and jarring changes in visual style (e.g., frequent shifts between color and black & white imagery).",
-      "Reliance on visuals that could be used for many different topics, aiming for more unique and specific imagery where possible."
-    ],
-    "video_audit_tags": {
-      "hook_type": "Bold Claim|Relatable Problem",
-      "thumbnail_type": "Text Overlay|Emotional Resonance",
-      "visual_style_mix": "Cinematic|Moody Stock",
-      "narrative_format": "Explainer|Insight",
-      "character_used": "Abstract|Stock Characters"
-    }
-  },
-  {
     "video_id": "20260520_235208",
     "published_date": "2026-05-20",
     "status": "uploaded",
@@ -4151,6 +4009,192 @@
       "visual_style_mix": "moody_cinematic_stock",
       "narrative_format": "truth_drop",
       "character_used": "multiple_stock"
+    }
+  },
+  {
+    "video_id": "20261026_205346",
+    "published_date": "2026-10-26",
+    "status": "uploaded",
+    "topic": "The Friday Night Standby: Why Ambiguous Plans Are Quietly Costing You Your Weekend",
+    "category": "conversation truths",
+    "angle_type": "specific scenario",
+    "total_score": 18,
+    "source_name": "",
+    "source_basis": "",
+    "source_url": "",
+    "confidence_level": "observational",
+    "content_format": "scenario",
+    "emotional_trigger": "staring at your phone at 6 PM on a Friday waiting for someone to confirm the vague plans they floated on Tuesday",
+    "psych_concept": "boundary paralysis from ambiguous commitment",
+    "core_claim": "Waiting on unconfirmed plans turns your free time into an emotional waiting room you did not agree to sit in.",
+    "editorial_seed": "When someone leaves plans open-ended, we often freeze our entire evening hoping they follow through. Making alternate plans isn't playing games or giving an ultimatum; it's simply deciding your weekend belongs to you. If someone genuinely wants to spend time with you, they coordinate with you instead of leaving you on hold.",
+    "only_soft_reset_line": "A plan with no time attached isn't a plan yet, so your weekend is still yours.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "It's 6 PM Friday. You're showered, dressed, phone face up, waiting on a plan nobody actually made.",
+    "hook_quality": "strong",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.7",
+    "script_validation": "passed",
+    "script_validation_notes": "word_count outside target 60-90",
+    "word_count": 92,
+    "estimated_duration_sec": 30,
+    "thumbnail_text": "6 PM. No plan yet.",
+    "content_fingerprint": "the friday night standby why ambiguous plans are quietly costing you your weekend it s 6 pm friday you re showered dressed phone face up waiting on a plan nobody actually made staring at your phone at 6 pm on a friday waiting for someone to confirm the vague plans they floated on tuesday boundary paralysis from ambiguous commitment waiting on unconfirmed plans turns your free time into an emotional waiting room you did not agree to sit in a plan with no time attached isn t a plan yet so your weekend is still yours",
+    "title": "You're still waiting on a plan nobody made",
+    "youtube_video_id": "tcIJW0WHhYM",
+    "youtube_url": "https://youtube.com/shorts/tcIJW0WHhYM",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 8,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W44",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "specific scenario",
+      "category": "conversation truths",
+      "topic_cluster": "The Friday Night Standby: Why Ambiguous Plans Are Quietly Co",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 8
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Hyper-relatable, sensorially specific opening ('showered, dressed, phone face up') that immediately captures a common behavioral trap."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Flawless, punchy progression from the physical trap to the emotional reframe without unnecessary fluff or lecturing."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Refuses pettiness or gamesmanship ('isn't a game or an ultimatum'); models mature self-containment perfectly aligned with the channel."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "Isolates the exact micro-mechanism: putting life on hold for 'a sentence with no time in it.'"
+      },
+      "cta_quality": {
+        "score": 8,
+        "reason": "Both the like prompt and engagement question cleanly echo the core premise and invite natural storytelling in the comments."
+      },
+      "title_accuracy": {
+        "score": 8,
+        "reason": "Directly diagnoses the problem addressed in the video without clickbait or contradicting the resolution."
+      },
+      "description_usefulness": {
+        "score": 7,
+        "reason": "Provides a solid premise and reframes the issue well in the first two lines, though cut off slightly in the excerpt."
+      },
+      "visual_dialogue_sync": {
+        "score": 6,
+        "reason": "Stock footage count matches scene pacing, but no bespoke visual direction or scene mapping is documented."
+      },
+      "image_direction_strength": {
+        "score": 4,
+        "reason": "Relies entirely on generic stock video with 0 brand assets or defined visual anchors."
+      },
+      "thumbnail_concept": {
+        "score": 1,
+        "reason": "Thumbnail concepts are completely empty and primary thumbnail is unknown."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "At 92 words over 41 seconds (~135 wpm), the text allows for natural pauses and deliberate, grounded delivery."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "Captures the signature Soft Reset style: calm emotional clarity, observational humor without cruelty, and self-agency."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "Pure interpersonal lifestyle reflection with zero factual, medical, or platform policy risks."
+      }
+    },
+    "judge_composite_score": 7.5,
+    "strongest_element": "Hook and narrative specificity: captures an exact universal modern dating/social friction with pinpoint sensory detail.",
+    "weakest_element": "Packaging pipeline: thumbnail concepts are absent, leaving the visual click trigger entirely unaddressed.",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short features an exceptionally strong, emotionally resonant script anchored in relatable micro-moments of boundary paralysis, elevated by soft and reassuring vocal delivery. However, visual coherence is compromised by stock footage selections that drift from the narrative context\u2014specifically moving boxes in Scene 1, a midday cafe setting in Scene 2, and high-friction personal visuals in Scene 7 that momentarily pull the audience out of the experience.",
+    "video_audit_strengths": [
+      "The phrase 'all for a sentence with no time in it' is an exceptionally strong, memorable core insight.",
+      "Gentle, non-combative reframing of self-respect that perfectly aligns with channel positioning."
+    ],
+    "video_audit_dropoff_causes": [
+      "Scene 1 visuals (cardboard moving boxes) create immediate topical ambiguity in the first 2 seconds.",
+      "Scene 2 visually breaks immersion by showing daytime outdoor cafe freelance work while narrating waiting at home for evening plans.",
+      "Scene 7's unexpected medical post-surgery visuals introduce cognitive friction that distracts from the core advice."
+    ],
+    "video_audit_repeat_next": [
+      "Hyper-relatable micro-scenarios rooted in boundary paralysis and ambiguous communication.",
+      "Warm, low-tempo vocal pacing with an unhurried visual hold at the conclusion."
+    ],
+    "video_audit_reduce_next": [
+      "Literal keyword queries that pull tangentially related stock clips (e.g., 'empty apartment' yielding moving boxes; 'jacket mirror' yielding medical post-op dressing).",
+      "Incongruent lighting/setting shifts (jumping from evening interior to bright midday cafe)."
+    ],
+    "video_audit_tags": {
+      "hook_type": "specific micro-scenario",
+      "thumbnail_type": "cinematic evening interior",
+      "visual_style_mix": "b-roll lifestyle realism",
+      "narrative_format": "second-person observational reframe",
+      "character_used": "anonymous relatable archetype"
+    },
+    "spoken_timeline": {
+      "version": 1,
+      "source": "captions",
+      "duration_sec": 41.27,
+      "voice_end_sec": 37.24,
+      "lines": [
+        {
+          "start": 0.0,
+          "section": "hook",
+          "text": "It's 6 PM Friday."
+        },
+        {
+          "start": 2.39,
+          "section": "hook",
+          "text": "You're showered, dressed, phone face up, waiting on a plan nobody actually made."
+        },
+        {
+          "start": 9.09,
+          "section": "tension",
+          "text": "Tuesday they said, \"we should hang this weekend.\" You said \"definitely.\" Since then you've skipped a dinner and a gym class, all for a se..."
+        },
+        {
+          "start": 20.55,
+          "section": "insight",
+          "text": "Maybe they're busy."
+        },
+        {
+          "start": 21.98,
+          "section": "insight",
+          "text": "Maybe they forgot."
+        },
+        {
+          "start": 23.32,
+          "section": "insight",
+          "text": "You can't know."
+        },
+        {
+          "start": 25.1,
+          "section": "insight",
+          "text": "Booking something for yourself isn't a game or an ultimatum, and if they text at eight, you can still decide."
+        },
+        {
+          "start": 32.25,
+          "section": "loopback",
+          "text": "A plan with no time attached isn't a plan yet, so your weekend is still yours."
+        }
+      ]
     }
   }
 ]

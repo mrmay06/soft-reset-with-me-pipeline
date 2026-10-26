@@ -296,5 +296,93 @@
     "scene_id": 3,
     "used_at": "2026-10-08T19:06:34Z",
     "repair_attempt": 1
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "4553200",
+    "source_url": "https://videos.pexels.com/video-files/4553200/4553200-hd_1080_2048_25fps.mp4",
+    "file_hash": "c4889b9a95fc76932fa5ea8b9b0e86bf661edbeffb6ccf02ad3c302417a4d6a7",
+    "perceptual_hash": "0f9f9d0378f88080",
+    "query": "sunset light empty apartment",
+    "video_id": "20261026_205346",
+    "scene_id": 1,
+    "used_at": "2026-10-26T20:56:33Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "20246508",
+    "source_url": "https://videos.pexels.com/video-files/20246508/20246508-hd_1080_1920_60fps.mp4",
+    "file_hash": "61f3796ae56a13f21eefc1faac07dd0bf092ab881c0471943d92d7e45752fe90",
+    "perceptual_hash": "61fffff8f8f0e080",
+    "query": "smartphone screen coffee table",
+    "video_id": "20261026_205346",
+    "scene_id": 2,
+    "used_at": "2026-10-26T20:56:34Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "15689201",
+    "source_url": "https://videos.pexels.com/video-files/15689201/15689201-hd_1080_1920_24fps.mp4",
+    "file_hash": "002192d0d483c5644fdf8d2ac9f71c834b50c070e37a2e06c511af608df6ff57",
+    "perceptual_hash": "ffffbca480808080",
+    "query": "hands texting close up",
+    "video_id": "20261026_205346",
+    "scene_id": 3,
+    "used_at": "2026-10-26T20:56:34Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7698695",
+    "source_url": "https://videos.pexels.com/video-files/7698695/7698695-hd_1080_2048_25fps.mp4",
+    "file_hash": "cb9e9ba02fe10adbbe4c5fa6345647f0a1338c9f29f439706f44ebb488d6780d",
+    "perceptual_hash": "ffffef03c1880000",
+    "query": "person sitting bed dusk",
+    "video_id": "20261026_205346",
+    "scene_id": 4,
+    "used_at": "2026-10-26T20:56:35Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6381013",
+    "source_url": "https://videos.pexels.com/video-files/6381013/6381013-hd_1080_1920_24fps.mp4",
+    "file_hash": "e44b383b824bdc91091cf5d684b9daf39a2d52d3be28c64ee64cf5fd8d388fa8",
+    "perceptual_hash": "ffff818383000101",
+    "query": "silhouette looking out window",
+    "video_id": "20261026_205346",
+    "scene_id": 5,
+    "used_at": "2026-10-26T20:56:36Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8810534",
+    "source_url": "https://videos.pexels.com/video-files/8810534/8810534-hd_1080_1920_24fps.mp4",
+    "file_hash": "e3a244402ebb38e2de94f927c338199fd196c45ae9a76df9520d0688414eadc5",
+    "perceptual_hash": "f37b808000110703",
+    "query": "turning phone face down",
+    "video_id": "20261026_205346",
+    "scene_id": 6,
+    "used_at": "2026-10-26T20:56:36Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6808549",
+    "source_url": "https://videos.pexels.com/video-files/6808549/6808549-hd_1080_1920_25fps.mp4",
+    "file_hash": "82a0268a1eed3245365f58db29288092f721042a288aecbc838a70cda1432961",
+    "perceptual_hash": "ffe7efdbc1e0c0c0",
+    "query": "zipping leather jacket mirror",
+    "video_id": "20261026_205346",
+    "scene_id": 7,
+    "used_at": "2026-10-26T20:56:37Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "16538871",
+    "source_url": "https://videos.pexels.com/video-files/16538871/16538871-hd_1080_1920_24fps.mp4",
+    "file_hash": "d65da9d95ff5c50eb3124ae59e457c398fce0f2bc274d8633b603d159a4fccca",
+    "perceptual_hash": "1f1fef4726240000",
+    "query": "walking city evening alone",
+    "video_id": "20261026_205346",
+    "scene_id": 8,
+    "used_at": "2026-10-26T20:56:38Z"
   }
 ]
