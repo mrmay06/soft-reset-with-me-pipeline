@@ -109,10 +109,20 @@ DESCRIPTION RULES:
 - Para 1: OPEN with the `only_soft_reset_line` or the sharpest line from the script — the one that would make someone stop and read it twice. Make it a poetic statement, not a summary. NOT "In this video." The first sentence must earn the watch before the viewer even clicks play.
 - Para 2: Expand the feeling in 2-3 soft lines. Write what the viewer will walk away feeling, not what they will "learn". BANNED: "you'll learn", "you'll understand", "in this video we explore", "this video covers".
 - Para 3: Engagement question. Must be confessional or polarizing — the kind of question that makes someone type immediately. Use words the viewer would actually say at 2am, not therapy vocabulary. BANNED in the question: subconsciously, validate, dysregulate, process, attachment style (as a label). Good: "Have you ever pulled away from someone just because they were actually consistent? Drop it below." Bad: "Have you ever subconsciously avoided secure attachment? Share your thoughts."
-- Do not invent timestamps. If real timestamps are not provided, omit them.
+- Do not invent timestamps. If real timestamps are not provided, omit them. Never write timestamps or a chapter list into the description; the pipeline adds measured chapters after the voiceover is timed.
 - Do not invent music credits. If a track name and artist are not provided, omit the music credit block.
 - Blank line, then: "Subscribe for softer resets — @SoftResetWithMe"
 - Blank line, then 5-7 hashtags. Always include #SoftResetWithMe. Pick 4-6 from: #HealingJourney #EmotionalHealing #InnerHealing #RelationshipAdvice #DatingAdvice #Breakup #AttachmentStyle #AnxiousAttachment #SelfWorth #SelfRespect #PersonalGrowth #MentalHealth #Boundaries #HealthyRelationships #Situationship #MovingOn #BreakupAdvice #SelfHealing #EmotionalIntelligence #EmotionalStorytelling #QuietLife
+
+---
+
+CHAPTER TITLE RULES:
+- Return one chapter title for every chapter in the appended script, matched by that chapter's "id". These become YouTube chapter names; timestamps are added later from the real audio, so never include times or numbers for them.
+- 3-5 words each. Phrase each as the promise of that section in the channel voice: what the viewer will feel or finally see there, the way they would say it at 2am.
+- Script labels such as "hook", "name the pain", or "closing note" are internal. Never reuse them as titles.
+- No clinical or structural words: withdrawal, reinforcement, regulation, dysregulation, intermittent, subconscious, pattern, attachment, nervous system, trauma, process, journey, healing, toxic, growth, explained, intro, outro, conclusion, summary, takeaway, reframe, chapter.
+- Sentence case. No full stop, no emoji, no clickbait the section does not deliver.
+- Good: "Why it still replays", "The message you never sent", "What you were really missing", "Before you go". Bad: "Hook", "Name the pain", "Understanding the pattern", "Healing journey".
 
 ---
 
@@ -152,6 +162,9 @@ Return ONLY valid JSON:
   "primary_variant_id": "B or C — never A",
   "description": "full description per rules above — open with the sharpest script line",
   "tags": ["12-15 tags, no duplicates, includes 4 long-tail 2am searches"],
+  "chapter_titles": [
+    {{"id": "script chapter id", "title": "3-5 word promise of that section, no timestamp"}}
+  ],
   "title_variants": [
     {{
       "id": "A",

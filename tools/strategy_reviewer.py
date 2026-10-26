@@ -28,6 +28,9 @@ def _strip_json(text: str) -> str:
 
 
 def _review_prompt(proposed: dict, comparison: dict, brand: dict) -> str:
+    # Retention curves get their own compact section so they cannot crowd the trait comparisons out.
+    retention = comparison.get("retention_insights", {})
+    comparison = {k: v for k, v in comparison.items() if k != "retention_insights"}
     return f"""You are the final strategy reviewer for Soft Reset With Me Shorts.
 Gemini has already drafted a weekly strategy update from Shorts analytics.
 
@@ -37,6 +40,7 @@ Your job:
 - Preserve the same JSON schema and top-level keys.
 - Do not invent performance data.
 - Do not allow brand-bible conflicts.
+- Retention cliffs from "low" confidence curves are noisy; soften any change justified by a single such curve.
 - Prefer concise, operational guidance that future prompts can follow.
 - If the proposal is already good, make only small edits.
 
@@ -45,6 +49,9 @@ BRAND BIBLE:
 
 WEEKLY COMPARISON DATA:
 {json.dumps(comparison, indent=2)[:9000]}
+
+AUDIENCE RETENTION CURVES (percentages relative to each video's opening level):
+{json.dumps(retention, separators=(",", ":"))[:5000]}
 
 GEMINI PROPOSED STRATEGY:
 {json.dumps(proposed, indent=2)}

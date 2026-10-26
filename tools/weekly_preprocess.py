@@ -20,9 +20,20 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from utils.retention_analysis import (
+    DEFAULT_CLIFF_WINDOW_SEC,
+    DEFAULT_HOOK_WINDOW_SEC,
+    DEFAULT_MIN_CLIFF_PCT,
+    DEFAULT_NOISY_VIEWS,
+    aggregate_patterns,
+    analyze_curve,
+)
+
 ANALYTICS_CACHE_DIR = "strategy/analytics_cache"
 COMPARISONS_DIR = "strategy/comparisons"
 STRATEGY_FILE = "strategy/strategy_memory.json"
+PIPELINE_CONFIG_FILE = "config/pipeline_config.json"
+MAX_RETENTION_VIDEOS = 12
 
 TRAIT_DIMENSIONS = [
     "hook_type",
@@ -264,6 +275,96 @@ def _active_cooldowns(today: datetime) -> list[dict]:
     return active
 
 
+def _retention_settings() -> dict:
+    try:
+        with open(PIPELINE_CONFIG_FILE) as f:
+            config = json.load(f)
+    except Exception:
+        config = {}
+    return {
+        "hook_window_sec": float(config.get("retention_hook_window_sec", DEFAULT_HOOK_WINDOW_SEC)),
+        "cliff_window_sec": float(config.get("retention_cliff_window_sec", DEFAULT_CLIFF_WINDOW_SEC)),
+        "min_cliff_pct": float(config.get("retention_min_cliff_pct", DEFAULT_MIN_CLIFF_PCT)),
+        "noisy_views": int(config.get("retention_noisy_views", DEFAULT_NOISY_VIEWS)),
+    }
+
+
+def _video_duration(video: dict) -> float | None:
+    """Rendered duration from topic memory, else implied by YouTube's own averages."""
+    stored = _safe_float((video.get("spoken_timeline") or {}).get("duration_sec"))
+    if stored and stored > 0:
+        return stored
+    analytics = video.get("analytics", {})
+    avg_duration = _safe_float(analytics.get("averageViewDuration"))
+    avg_pct = _safe_float(analytics.get("averageViewPercentage"))
+    if avg_duration and avg_pct and avg_pct > 0:
+        return round(avg_duration / (avg_pct / 100), 1)
+    return None
+
+
+def _analyze_retention(video: dict, settings: dict) -> dict | None:
+    points = video.get("retention_curve") or []
+    if not points:
+        return None
+    views = int(_safe_float(video.get("analytics", {}).get("views")) or 0)
+    try:
+        analysis = analyze_curve(
+            points,
+            _video_duration(video) or 0,
+            timeline=video.get("spoken_timeline") or {},
+            views=views,
+            **settings,
+        )
+    except Exception as e:
+        # One malformed curve must not sink the weekly run.
+        return {"status": "error", "reason": str(e)[:200]}
+    if analysis.get("status") == "ok" and not (video.get("spoken_timeline") or {}).get("lines"):
+        analysis["timeline_source"] = "missing"
+    return analysis
+
+
+def _retention_insights(videos: list[dict], settings: dict) -> dict:
+    """Per-video hook leak and cliffs (most-viewed first) plus channel-level patterns."""
+    per_video = []
+    for video in videos:
+        analysis = video.get("retention_analysis")
+        if not analysis or analysis.get("status") != "ok":
+            continue
+        per_video.append({
+            "youtube_video_id": video.get("youtube_video_id"),
+            "title": video.get("title", "")[:60],
+            "views": int(_safe_float(video.get("analytics", {}).get("views")) or 0),
+            "confidence": analysis.get("confidence"),
+            "hook_leak_pct": analysis.get("hook_leak_pct"),
+            "line_at_hook_end": analysis.get("line_at_hook_end"),
+            "cliffs": analysis.get("cliffs", []),
+            "mid_slide_pct_per_10s": analysis.get("mid_slide_pct_per_10s"),
+            "end_retention_pct_of_opening": analysis.get("end_retention_pct_of_opening"),
+            "loop_inflated": analysis.get("loop_inflated"),
+            "avg_relative_retention": analysis.get("avg_relative_retention"),
+            "timeline_source": analysis.get("timeline_source", "missing"),
+        })
+    per_video.sort(key=lambda v: v["views"], reverse=True)
+    return {
+        "settings": settings,
+        "patterns": aggregate_patterns([v.get("retention_analysis") or {} for v in videos]),
+        "videos": per_video[:MAX_RETENTION_VIDEOS],
+    }
+
+
+def _retention_summary(video: dict) -> dict | None:
+    analysis = video.get("retention_analysis") or {}
+    if analysis.get("status") != "ok":
+        return None
+    return {
+        "hook_leak_pct": analysis.get("hook_leak_pct"),
+        "cliffs": analysis.get("cliffs", []),
+        "mid_slide_pct_per_10s": analysis.get("mid_slide_pct_per_10s"),
+        "end_retention_pct_of_opening": analysis.get("end_retention_pct_of_opening"),
+        "confidence": analysis.get("confidence"),
+    }
+
+
 def _identify_top_bottom(videos: list[dict], n: int = 2) -> tuple[list[dict], list[dict]]:
     """Return top N and bottom N videos by composite performance score."""
     eligible = [
@@ -305,6 +406,12 @@ def run_preprocess(week_label: str | None = None) -> str:
     print(f"\n[preprocess] Week: {week_label}")
     print(f"[preprocess] Total videos: {len(videos)} | Strategy-eligible: {len(strategy_eligible)}")
 
+    retention_settings = _retention_settings()
+    for video in strategy_eligible:
+        video["retention_analysis"] = _analyze_retention(video, retention_settings)
+    retention_insights = _retention_insights(strategy_eligible, retention_settings)
+    print(f"[preprocess] Retention curves analysed: {retention_insights['patterns'].get('videos_with_curves', 0)}")
+
     groups = _group_by_trait(strategy_eligible)
     comparisons: dict[str, dict] = {}
     for dim, dim_groups in groups.items():
@@ -327,6 +434,7 @@ def run_preprocess(week_label: str | None = None) -> str:
         "channel_health_score": channel_health,
         "experiment_outcomes": experiment_outcomes,
         "active_cooldowns": active_cooldowns,
+        "retention_insights": retention_insights,
         "top_performers": [
             {
                 "youtube_video_id": v.get("youtube_video_id"),
@@ -338,6 +446,7 @@ def run_preprocess(week_label: str | None = None) -> str:
                 "views": v.get("analytics", {}).get("views"),
                 "retention": v.get("analytics", {}).get("averageViewPercentage"),
                 "ctr": v.get("analytics", {}).get("impressionClickThroughRate"),
+                "retention_curve": _retention_summary(v),
             }
             for v in top_performers
         ],
@@ -352,6 +461,7 @@ def run_preprocess(week_label: str | None = None) -> str:
                 "views": v.get("analytics", {}).get("views"),
                 "retention": v.get("analytics", {}).get("averageViewPercentage"),
                 "ctr": v.get("analytics", {}).get("impressionClickThroughRate"),
+                "retention_curve": _retention_summary(v),
             }
             for v in bottom_performers
         ],

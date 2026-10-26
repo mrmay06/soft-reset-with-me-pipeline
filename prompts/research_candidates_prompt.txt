@@ -10,6 +10,12 @@ Inputs:
 Relationship/self-improvement inspiration signals (source-labelled; may be incomplete or unavailable):
 {signals}
 
+Some [youtube] signals end with "(Nx channel median)": that Short got N times the median views of
+its own channel's recent Shorts, and they are listed highest multiple first. The multiple suggests
+the title's topic or angle overperformed relative to that channel's usual audience. It is not proof
+of why it worked (timing, thumbnail, or luck can explain it) and not evidence that anything in the
+title is true. Use it to weigh which emotional territory resonates; never copy the title.
+
 These signals are topic inspiration, not evidence that a psychological claim is true.
 No source retrieval or claim verification is available in this step. Treat concepts as
 possible lenses, not diagnoses. Do not invent studies, statistics, consensus, or trends.

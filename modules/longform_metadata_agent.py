@@ -80,6 +80,68 @@ def _thumb_variant_is_clinical(item: dict) -> bool:
     )
 
 
+# Chapter titles are viewer-facing, so they share the thumbnail's clinical ban
+# plus the script's internal structure words.
+_CHAPTER_TITLE_BANNED_WORDS = _CLINICAL_THUMB_WORDS | {
+    "hook", "intro", "introduction", "outro", "conclusion", "summary", "takeaway",
+    "reframe", "chapter", "cta", "lesson", "framework",
+}
+
+# Deterministic viewer-facing titles for the labels the script prompt tends to reuse.
+_FALLBACK_CHAPTER_TITLES = {
+    "hook": "Where this begins",
+    "name the pain": "The part that hurts",
+    "hidden pattern": "What keeps pulling you back",
+    "reframe": "Seeing it differently",
+    "soft reset": "A softer question",
+    "what changes now": "What you can try",
+    "closing note": "Before you go",
+}
+
+
+def _clean_chapter_title(text: str) -> str:
+    """Return a 2-6 word sentence-case title, or "" if it is unusable."""
+    text = str(text or "").replace("—", " ").replace("–", " ").replace("--", " ").replace("’", "'")
+    text = re.sub(r"\b\d{1,2}:\d{2}(?::\d{2})?\b", " ", text)
+    text = re.sub(r"[^\w\s'?]", "", text)
+    text = re.sub(r"\s+", " ", text).strip(" '?") + ("?" if text.strip().endswith("?") else "")
+    words = text.split()
+    if not 2 <= len(words) <= 6:
+        return ""
+    if {re.sub(r"[^a-z]", "", word.lower()) for word in words} & _CHAPTER_TITLE_BANNED_WORDS:
+        return ""
+    return text[:1].upper() + text[1:]
+
+
+def _chapter_id(chapter: dict, index: int) -> str:
+    return str(chapter.get("id", index + 1))
+
+
+def fallback_chapter_titles(script: dict) -> list[dict]:
+    titles = []
+    for index, chapter in enumerate(script.get("chapters", [])):
+        label = str(chapter.get("label", "")).strip().lower()
+        first_clause = re.split(r"[.,;:!?]", str(chapter.get("voiceover", "")).strip(), maxsplit=1)[0]
+        title = (_FALLBACK_CHAPTER_TITLES.get(label) or _clean_chapter_title(label)
+                 or _clean_chapter_title(" ".join(first_clause.split()[:5])) or f"Part {index + 1}")
+        titles.append({"id": _chapter_id(chapter, index), "title": title, "source": "fallback"})
+    return titles
+
+
+def _validate_chapter_titles(raw_titles, script: dict) -> list[dict]:
+    model_by_id = {}
+    for item in raw_titles if isinstance(raw_titles, list) else []:
+        if isinstance(item, dict):
+            title = _clean_chapter_title(item.get("title", ""))
+            if title:
+                model_by_id[str(item.get("id", "")).strip()] = title
+    return [
+        {"id": item["id"], "title": model_by_id[item["id"]], "source": "model"}
+        if item["id"] in model_by_id else item
+        for item in fallback_chapter_titles(script)
+    ]
+
+
 def _pick_primary_variant(variants: list[dict], thumb_variants: list[dict]) -> str:
     """Pick B by default unless C is a genuine counter-intuitive and its thumb text is non-clinical.
     Never pick A as primary."""
@@ -400,6 +462,7 @@ def run_longform_metadata(video_id: str, run_dir: str, config: dict) -> dict:
         "primary_variant_id": primary_id,
         "title_variants": packaged["title_variants"],
         "thumbnail_variants": packaged["thumbnail_variants"],
+        "chapter_titles": _validate_chapter_titles(raw.get("chapter_titles"), script),
         "ab_test_ready": True,
         "category_id": config["youtube_category_id"],
         "privacy_status": config["privacy_status"],
@@ -424,6 +487,7 @@ def run_longform_metadata_mock(video_id: str, run_dir: str, config: dict) -> dic
         "primary_variant_id": primary_id,
         "title_variants": packaged["title_variants"],
         "thumbnail_variants": packaged["thumbnail_variants"],
+        "chapter_titles": fallback_chapter_titles(load_json(os.path.join(run_dir, "02_longform_script.json"))),
         "ab_test_ready": True,
         "category_id": config["youtube_category_id"],
         "privacy_status": config["privacy_status"],

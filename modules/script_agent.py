@@ -370,6 +370,7 @@ Spoken script sections (the complete narration):
 {json.dumps(sections, indent=2)}
 
 Review rules:
+- The hook must open on a concrete, recognizable moment or a specific contradiction in its first sentence, not an abstract topic statement, greeting, or announcement. Judge it as a viewer scrolling past, not against a word list.
 - The hook promise must match the payoff.
 - Every spoken section must actively support the core claim.
 - Judge only the narration. Research notes are intended direction, not evidence that the video delivers it. The signature line must be present in a spoken section; do not credit an unspoken annotation.
@@ -384,6 +385,7 @@ Review rules:
 Return ONLY valid JSON:
 {{
   "passes": true,
+  "hook_is_concrete": true,
   "hook_promise_matches": true,
   "sections_support_core_claim": true,
   "generic_drift_sections": [],
@@ -413,6 +415,7 @@ def _check_argument_coherence(script: dict, research: dict, config: dict) -> dic
             raise ValueError("argument review returned non-object JSON")
         passes = (
             review.get("passes") is True
+            and review.get("hook_is_concrete") is True
             and review.get("hook_promise_matches") is True
             and review.get("sections_support_core_claim") is True
             and review.get("signature_line_distinctive") is True
@@ -474,8 +477,8 @@ def _bounded_script_generation(prompt: str, research: dict, config: dict, run_di
         script = _validate_script(_call_script_model(revision_prompt, config["script_model"]), config)
         script["generation_attempts"] = {"drafts": draft_count, "reviews": review_count}
         issues = list(script.get("validation_failures", []))
-        if script.get("hook_quality") == "weak":
-            issues.append("weak_hook")
+        # hook_quality is a keyword heuristic and rejects many concrete hooks,
+        # so it stays advisory; the Sonnet review decides whether the hook lands.
         if script.get("engagement_quality") == "weak":
             issues.append("weak_engagement_question")
         if script.get("validation") == "needs_review" or script.get("human_review_required"):

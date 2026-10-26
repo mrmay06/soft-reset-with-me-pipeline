@@ -2,6 +2,7 @@ import os
 import re
 
 from utils.helpers import load_json, save_json, now_iso
+from utils.spoken_timeline import build_spoken_timeline
 
 DEFAULT_MEMORY_FILE = "topic_memory.json"
 
@@ -34,6 +35,15 @@ def _write_memory(entry: dict, memory_file: str, max_entries: int = 30):
     if max_entries > 0:
         memory = memory[-max_entries:]
     save_json(memory, memory_file)
+
+
+def _spoken_timeline(run_dir: str, script: dict) -> dict:
+    # Retention mapping is diagnostic only; it must never block logging an uploaded video.
+    try:
+        return build_spoken_timeline(run_dir, script)
+    except Exception as e:
+        print(f"[logger] WARNING: spoken timeline unavailable: {e}")
+        return {}
 
 
 def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
@@ -118,6 +128,7 @@ def run_logger(video_id: str, run_dir: str, config: dict) -> dict:
         "video_audit_repeat_next": video_audit.get("repeat_next", []),
         "video_audit_reduce_next": video_audit.get("reduce_next", []),
         "video_audit_tags": video_audit.get("tag_suggestions", {}),
+        "spoken_timeline": _spoken_timeline(run_dir, script),
     }
 
     try:

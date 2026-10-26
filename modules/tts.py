@@ -55,8 +55,8 @@ def _build_tts_input(script: dict) -> str:
     """
     style = (
         "Warm, slightly hushed, confident. "
-        "Speak at a calm but purposeful pace -- not slow, not rushed. "
-        "Let short sentences breathe. A natural pause after each thought. "
+        "Speak at a natural conversational pace that keeps moving -- not slow, not rushed. "
+        "Flow from one sentence into the next with only brief breaths; no long pauses. "
         "Intimate but not fragile. Like a close friend who noticed the thing "
         "you were trying to hide, and said it quietly. "
         "No performance. No uplift at the end of sentences. Grounded throughout.\n\n"
