@@ -114,6 +114,25 @@ def _call_current_tts(api_key: str, tts_input: str, config: dict):
     )
 
 
+_LEADING_SILENCE_TRIM ="silenceremove=start_periods=1:start_duration=0.03:start_threshold=-45dB"
+
+
+def _silence_filter(config: dict) -> str:
+    """Trim leading silence and, when configured, shorten long pauses between sentences.
+
+    Gemini TTS pauses 0.6-1.2s at most sentence ends regardless of the style prompt,
+    which left ~30% of a Short silent. Any pause longer than pause_trim_after_sec is cut
+    down to about trim_after + keep seconds; words are untouched.
+    """
+    trim_after = config.get("tts_pause_trim_after_sec")
+    if trim_after is None:
+        return _LEADING_SILENCE_TRIM
+    keep = float(config.get("tts_pause_keep_sec", 0.2))
+    threshold = config.get("tts_pause_threshold_db", -40)
+    return (f"{_LEADING_SILENCE_TRIM}:stop_periods=-1:stop_duration={float(trim_after)}"
+            f":stop_threshold={threshold}dB:stop_silence={keep}")
+
+
 @retry(max_attempts=3, wait_seconds=60, exceptions=(Exception,))
 def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
     current_schema = config["tts_model"].startswith("gemini-3.8-")
@@ -169,9 +188,10 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
          trimmed_path],
         check=True, capture_output=True
     )
+    silence_filter = _silence_filter(config)
     subprocess.run(
         ["ffmpeg", "-y", "-i", trimmed_path,
-         "-af", "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-45dB",
+         "-af", silence_filter,
          "-acodec", "libmp3lame", "-q:a", "2",
          output_path],
         check=True, capture_output=True
@@ -195,7 +215,9 @@ def _call_gemini_tts(tts_input: str, config: dict, output_path: str):
         "delivery_metadata_separate": current_schema,
         "processing": [
             {"stage": "mp3_encoding", "quality": 2},
-            {"stage": "leading_silence_trim", "filter": "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-45dB"},
+            {"stage": "leading_silence_trim", "filter": _LEADING_SILENCE_TRIM},
+            *([{"stage": "pause_compression", "filter": silence_filter}]
+              if silence_filter != _LEADING_SILENCE_TRIM else []),
             *([{"stage": "tempo", "factor": max(0.5, min(2.0, speed))}]
               if speed and abs(speed - 1.0) > 0.01 else []),
         ],

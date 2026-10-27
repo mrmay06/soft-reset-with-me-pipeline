@@ -120,10 +120,91 @@ def _pexels_candidates(query: str, per_page: int = 20) -> list[dict]:
             "height": int(source["height"]),
             "duration": float(video.get("duration") or 0),
             "creator": str((video.get("user") or {}).get("id", "")),
+            "page_url": str(video.get("url") or ""),
             "query": query,
             "rank": rank,
         })
     return candidates
+
+
+# Pexels has no tags in its API; the page slug is its only text description.
+# This catches the obvious cases cheaply; the frame review below is the real check,
+# because a sensitive clip can be described as plainly as "a person wearing leather jacket".
+_SENSITIVE_DESCRIPTION_TERMS = (
+    "shirtless", "topless", "naked", "nude", "nudity", "bare-chest", "bare-chested",
+    "bikini", "lingerie", "underwear", "swimsuit", "bra",
+    "mastectomy", "scar", "surgery", "surgical", "hospital", "patient", "cancer",
+    "chemotherapy", "wound", "injury", "injured", "blood", "bleeding",
+    "funeral", "coffin", "cemetery", "grave",
+    "gun", "rifle", "weapon", "knife", "syringe", "drugs", "cocaine", "smoking", "cigarette",
+    "child", "children", "kid", "kids", "baby", "toddler",
+)
+
+
+def _sensitive_description(candidate: dict) -> str:
+    slug = candidate.get("page_url", "").rstrip("/").rsplit("/", 1)[-1].lower()
+    padded = f"-{slug}-"
+    for term in _SENSITIVE_DESCRIPTION_TERMS:
+        # Whole words only, so "scar" does not match "scarf" or "bra" match "bracelet".
+        if f"-{term}-" in padded:
+            return term
+    return ""
+
+
+_CLIP_REVIEW_PROMPT = """You are checking one stock video clip for a faceless YouTube Short on "Soft Reset With Me", a calm relationship self-improvement channel for adults 18-35.
+The three images are frames from the part of the clip that will play while this line is spoken:
+"{line}"
+The clip was found with the search "{query}".
+
+Answer two questions.
+1. safe: false if ANY frame shows nudity or partial nudity (shirtless, topless, underwear, swimwear), visible surgery, medical scars, illness or hospital settings, injury or blood, weapons, drugs or smoking, sexual content, or a child as the main subject. Otherwise true.
+2. fits: true only if the footage plausibly shows the action, setting or emotion of that line, or a quiet human moment a viewer would read as connected to it. false if it is unrelated (for example moving boxes, food, products, scenery or an office for a line about a person waiting on someone).
+
+Return ONLY JSON: {{"safe": true, "fits": true, "reason": "one short sentence"}}"""
+
+
+def _clip_frames(video_path: str, play_seconds: float, frame_dir: str, label: str) -> list[bytes]:
+    end = max(0.6, play_seconds)
+    frames = []
+    for index, at in enumerate((0.3, end / 2, max(0.3, end - 0.4))):
+        frame_path = os.path.join(frame_dir, f"{label}_review_{index}.jpg")
+        subprocess.run(
+            ["ffmpeg", "-nostdin", "-y", "-ss", f"{at:.2f}", "-i", video_path, "-frames:v", "1",
+             "-vf", "scale=360:-2", frame_path],
+            check=True, capture_output=True, timeout=60,
+        )
+        if os.path.exists(frame_path):
+            with open(frame_path, "rb") as handle:
+                frames.append(handle.read())
+            os.remove(frame_path)
+    return frames
+
+
+def _review_clip(video_path: str, candidate: dict, scene: dict, config: dict, frame_dir: str) -> dict:
+    """Return {"status": pass|unsafe|off_topic|unavailable|disabled, "reason": ...}."""
+    if not config.get("clip_review_enabled", True):
+        return {"status": "disabled", "reason": ""}
+    play_seconds = min(float(candidate.get("duration") or 4.0), float(scene.get("duration_sec") or 4.0))
+    try:
+        from utils.gemini_client import generate_json_with_images
+        frames = _clip_frames(video_path, play_seconds, frame_dir, f"scene_{scene.get('id')}")
+        if not frames:
+            raise RuntimeError("no frames extracted")
+        prompt = _CLIP_REVIEW_PROMPT.format(
+            line=str(scene.get("covers_dialogue") or "").replace('"', "'"),
+            query=candidate.get("query", ""),
+        )
+        verdict = generate_json_with_images(
+            prompt, frames, config.get("clip_review_model", config.get("visual_model", "gemini-3.8-flash"))
+        )
+    except Exception as exc:
+        # A Gemini outage should not stop production; the post-render video audit still runs.
+        return {"status": "unavailable", "reason": f"{type(exc).__name__}: {exc}"[:200]}
+    if not isinstance(verdict, dict) or verdict.get("safe") is not True:
+        return {"status": "unsafe", "reason": str((verdict or {}).get("reason", "unsafe or unreadable verdict"))[:200]}
+    if verdict.get("fits") is not True:
+        return {"status": "off_topic", "reason": str(verdict.get("reason", ""))[:200]}
+    return {"status": "pass", "reason": str(verdict.get("reason", ""))[:200]}
 
 
 def _candidate_score(candidate: dict, used_creators: set[str], soft_recent: set[str]) -> float:
@@ -157,8 +238,60 @@ def _build_pools(scenes: list[dict], memory: list[dict], config: dict) -> dict[i
             if len({item["provider_id"] for item in candidates}) >= 12:
                 break
         deduped = {item["provider_id"]: item for item in candidates if item["provider_id"] not in hard_recent}
-        pools[int(scene["id"])] = list(deduped.values())
+        safe = []
+        for item in deduped.values():
+            term = _sensitive_description(item)
+            if term:
+                print(f"[clip_selector] scene_{scene['id']}: skipped Pexels {item['provider_id']} (description mentions '{term}')")
+                continue
+            safe.append(item)
+        pools[int(scene["id"])] = safe
     return pools
+
+
+def _select_reviewed_clip(scene: dict, candidates: list[dict], output_path: str, assets_dir: str,
+                          config: dict, is_duplicate, skip_ids: set[str], rejected_ids: set[str] | None = None):
+    """Download candidates in order; return (candidate, file_hash, perceptual_hash, review) or None.
+
+    Duplicates and unsafe clips are always skipped. An off-topic but safe clip is kept as a
+    backup and used only when the review budget runs out, so a thin Pexels pool degrades to
+    a loosely related clip rather than a failed run or an unsafe one.
+    """
+    scene_id = int(scene["id"])
+    max_reviews = int(config.get("clip_review_max_checks_per_scene", 5))
+    reviews = 0
+    backup = None
+    for candidate in candidates:
+        if str(candidate["provider_id"]) in skip_ids:
+            continue
+        if reviews >= max_reviews:
+            break
+        file_hash = _download(candidate, output_path)
+        frame_path = os.path.join(assets_dir, f"scene_{scene_id}_preview.jpg")
+        perceptual_hash = _frame_hash(output_path, frame_path)
+        if is_duplicate(file_hash, perceptual_hash):
+            if rejected_ids is not None:
+                rejected_ids.add(str(candidate["provider_id"]))
+            continue
+        reviews += 1
+        review = _review_clip(output_path, candidate, scene, config, assets_dir)
+        if review["status"] in ("pass", "disabled", "unavailable"):
+            if review["status"] == "unavailable":
+                print(f"[clip_selector] scene_{scene_id}: frame review unavailable ({review['reason']}); keeping Pexels {candidate['provider_id']}")
+            return candidate, file_hash, perceptual_hash, review
+        print(f"[clip_selector] scene_{scene_id}: rejected Pexels {candidate['provider_id']} ({review['status']}: {review['reason']})")
+        if rejected_ids is not None:
+            rejected_ids.add(str(candidate["provider_id"]))
+        if review["status"] == "off_topic" and backup is None:
+            backup = (candidate, file_hash, perceptual_hash, review)
+    if backup is not None:
+        candidate = backup[0]
+        print(f"[clip_selector] scene_{scene_id}: no on-topic clip within {max_reviews} reviews; using safe backup Pexels {candidate['provider_id']}")
+        _download(candidate, output_path)
+        if rejected_ids is not None:
+            rejected_ids.discard(str(candidate["provider_id"]))
+        return backup
+    return None
 
 
 def _assign_globally(scenes: list[dict], pools: dict[int, list[dict]], memory: list[dict], config: dict) -> dict[int, list[dict]]:
@@ -243,27 +376,23 @@ def run_image_gen(video_id: str, run_dir: str, config: dict) -> dict:
     for scene in scenes:
         scene_id = int(scene["id"])
         output_path = os.path.join(assets_dir, f"scene_{scene_id}.mp4")
-        selected = None
-        for candidate in ranked[scene_id]:
-            if candidate["provider_id"] in used_provider_ids:
-                continue
-            file_hash = _download(candidate, output_path)
-            frame_path = os.path.join(assets_dir, f"scene_{scene_id}_preview.jpg")
-            perceptual_hash = _frame_hash(output_path, frame_path)
-            if (
+
+        def is_duplicate(file_hash: str, perceptual_hash: str) -> bool:
+            return (
                 file_hash in used_hashes
                 or file_hash in remembered_hashes
                 or any(_hash_distance(perceptual_hash, prior) <= hash_distance for prior in used_frame_hashes)
                 or any(_hash_distance(perceptual_hash, prior) <= hash_distance for prior in remembered_frame_hashes)
-            ):
-                continue
-            selected = candidate
-            used_hashes.add(file_hash)
-            used_frame_hashes.append(perceptual_hash)
-            used_provider_ids.add(candidate["provider_id"])
-            break
-        if selected is None:
-            raise RuntimeError(f"Clip-only selection failed: all candidates for scene {scene_id} were duplicate footage")
+            )
+
+        picked = _select_reviewed_clip(scene, ranked[scene_id], output_path, assets_dir, config,
+                                       is_duplicate, used_provider_ids)
+        if picked is None:
+            raise RuntimeError(f"Clip-only selection failed: no safe, non-duplicate candidate for scene {scene_id}")
+        selected, file_hash, perceptual_hash, review = picked
+        used_hashes.add(file_hash)
+        used_frame_hashes.append(perceptual_hash)
+        used_provider_ids.add(selected["provider_id"])
         rel_path = os.path.relpath(output_path, start=run_dir)
         results[f"scene_{scene_id}"] = {
             "type": "video",
@@ -275,6 +404,8 @@ def run_image_gen(video_id: str, run_dir: str, config: dict) -> dict:
             "file_hash": file_hash,
             "perceptual_hash": perceptual_hash,
             "selection_score": _candidate_score(selected, set(), set()),
+            "page_url": selected.get("page_url", ""),
+            "clip_review": review,
         }
         new_memory.append({
             "provider": selected["provider"],
@@ -369,26 +500,21 @@ def repair_scene_clips(
     for scene in scenes:
         scene_id = int(scene["id"])
         output_path = os.path.join(assets_dir, f"scene_{scene_id}.mp4")
-        selected = None
-        for candidate in ranked[scene_id]:
-            if str(candidate["provider_id"]) in used_provider_ids:
-                continue
-            file_hash = _download(candidate, output_path)
-            frame_path = os.path.join(assets_dir, f"scene_{scene_id}_preview.jpg")
-            perceptual_hash = _frame_hash(output_path, frame_path)
-            if file_hash in used_hashes or file_hash in remembered_hashes or any(
+
+        def is_duplicate(file_hash: str, perceptual_hash: str) -> bool:
+            return file_hash in used_hashes or file_hash in remembered_hashes or any(
                 _hash_distance(perceptual_hash, prior) <= hash_distance
                 for prior in used_frame_hashes + remembered_frame_hashes
-            ):
-                rejected_ids.add(str(candidate["provider_id"]))
-                continue
-            selected = candidate
-            used_provider_ids.add(str(candidate["provider_id"]))
-            used_hashes.add(file_hash)
-            used_frame_hashes.append(perceptual_hash)
-            break
-        if selected is None:
-            raise RuntimeError(f"Visual repair failed: no distinct replacement for scene {scene_id}")
+            )
+
+        picked = _select_reviewed_clip(scene, ranked[scene_id], output_path, assets_dir, config,
+                                       is_duplicate, {str(item) for item in used_provider_ids}, rejected_ids)
+        if picked is None:
+            raise RuntimeError(f"Visual repair failed: no distinct, safe replacement for scene {scene_id}")
+        selected, file_hash, perceptual_hash, review = picked
+        used_provider_ids.add(str(selected["provider_id"]))
+        used_hashes.add(file_hash)
+        used_frame_hashes.append(perceptual_hash)
 
         assets[f"scene_{scene_id}"] = {
             "type": "video",
@@ -400,6 +526,8 @@ def repair_scene_clips(
             "file_hash": file_hash,
             "perceptual_hash": perceptual_hash,
             "selection_score": _candidate_score(selected, set(), set()),
+            "page_url": selected.get("page_url", ""),
+            "clip_review": review,
             "repair_attempt": attempt,
         }
         new_memory.append({
