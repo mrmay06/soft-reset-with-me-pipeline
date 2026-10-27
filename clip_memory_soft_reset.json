@@ -384,5 +384,82 @@
     "video_id": "20261026_205346",
     "scene_id": 8,
     "used_at": "2026-10-26T20:56:38Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6279147",
+    "source_url": "https://videos.pexels.com/video-files/6279147/6279147-hd_1080_1920_30fps.mp4",
+    "file_hash": "e95cab77db3f1e177b884c31ccf3c9367cc2da1eb3106676f8b452c4c04aa663",
+    "perceptual_hash": "e3073f3d3c1c0000",
+    "query": "hands holding phone nighttime",
+    "video_id": "20261027_162449",
+    "scene_id": 1,
+    "used_at": "2026-10-27T16:27:41Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8860236",
+    "source_url": "https://videos.pexels.com/video-files/8860236/8860236-hd_1080_2048_25fps.mp4",
+    "file_hash": "46b2db1a3a20ef3e94f69d78d6972135d7ac6eb611a47bdad900be6dc1d332c9",
+    "perceptual_hash": "00787878f8780000",
+    "query": "person standing dark apartment",
+    "video_id": "20261027_162449",
+    "scene_id": 2,
+    "used_at": "2026-10-27T16:28:07Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "16290229",
+    "source_url": "https://videos.pexels.com/video-files/16290229/16290229-hd_1080_1920_30fps.mp4",
+    "file_hash": "87410f8562de272bcb97b5bd634aaabb4c745d008842490cf74bac47e30e6dda",
+    "perceptual_hash": "fefefefe72606000",
+    "query": "silhouette looking out window",
+    "video_id": "20261027_162449",
+    "scene_id": 3,
+    "used_at": "2026-10-27T16:28:21Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8555739",
+    "source_url": "https://videos.pexels.com/video-files/8555739/8555739-hd_1080_1920_24fps.mp4",
+    "file_hash": "ff2e95801a2c7df28e1d4d6a7686414c3bebaa6eb8df7be8ea03aa85784d2042",
+    "perceptual_hash": "ffe7e20100c0f1f0",
+    "query": "phone face down table",
+    "video_id": "20261027_162449",
+    "scene_id": 4,
+    "used_at": "2026-10-27T16:28:36Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7316029",
+    "source_url": "https://videos.pexels.com/video-files/7316029/7316029-hd_1080_1920_25fps.mp4",
+    "file_hash": "268683a096f1e933024bb1e9a019c8755710682417b909684ed5684084c03407",
+    "perceptual_hash": "fffffff8f8800000",
+    "query": "empty armchair warm light",
+    "video_id": "20261027_162449",
+    "scene_id": 5,
+    "used_at": "2026-10-27T16:28:46Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7252269",
+    "source_url": "https://videos.pexels.com/video-files/7252269/7252269-hd_1080_1920_25fps.mp4",
+    "file_hash": "517e33df1af517f65b2e9434b29f561e5ffa92a919b119023bab3cf0e6480882",
+    "perceptual_hash": "c31d1c02efef0000",
+    "query": "person walking dusk city",
+    "video_id": "20261027_162449",
+    "scene_id": 6,
+    "used_at": "2026-10-27T16:28:53Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "35099181",
+    "source_url": "https://videos.pexels.com/video-files/35099181/14869850_1080_1920_30fps.mp4",
+    "file_hash": "f6a281bab90e6321bb2682d230090d379789f639b8fed4eb5a1959a300091878",
+    "perceptual_hash": "007cfc18fede8c08",
+    "query": "rainy window reflection night",
+    "video_id": "20261027_162449",
+    "scene_id": 7,
+    "used_at": "2026-10-27T16:28:59Z"
   }
 ]

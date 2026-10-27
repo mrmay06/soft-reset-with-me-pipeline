@@ -1,147 +1,5 @@
 [
   {
-    "video_id": "20260520_235208",
-    "published_date": "2026-05-20",
-    "status": "uploaded",
-    "topic": "When your constant effort to 'fix' the relationship is actually avoiding the truth.",
-    "category": "Healing Arcs",
-    "angle_type": "reframe",
-    "total_score": 19,
-    "source_name": "Psychological principles (e.g., CBT, ACT insights on avoidance)",
-    "source_basis": "Avoidance coping mechanisms, cognitive dissonance in relationships, and the distinction between productive effort and futile 'fixing'.",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "reframe",
-    "emotional_trigger": "Feeling exhausted from constantly trying to 'fix' a relationship, realizing it might be futile or one-sided, and dreading a deeper, harder truth.",
-    "psych_concept": "Avoidance coping, cognitive dissonance, relationship maintenance vs. dissolution",
-    "core_claim": "Obsessively trying to 'fix' a struggling relationship can be a form of avoidance, preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone.",
-    "editorial_seed": "We\u2019re taught to fight for relationships, to work on them. But sometimes, that relentless 'fixing' isn't productive work \u2013 it's a way to avoid admitting something deeper isn't right. It\u2019s easier to try and mend a broken vase endlessly than to accept it\u2019s shattered.",
-    "only_soft_reset_line": "You're not fixing the relationship. You're fixing around the truth.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "You think all that effort means you're trying. It might mean you're hiding.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 71,
-    "estimated_duration_sec": 21,
-    "thumbnail_text": "You're not fixing it. You're avoiding it.",
-    "content_fingerprint": "when your constant effort to fix the relationship is actually avoiding the truth you think all that effort means you re trying it might mean you re hiding feeling exhausted from constantly trying to fix a relationship realizing it might be futile or one sided and dreading a deeper harder truth avoidance coping cognitive dissonance relationship maintenance vs dissolution obsessively trying to fix a struggling relationship can be a form of avoidance preventing you from confronting fundamental incompatibilities or the reality that some things are not meant to be fixed by one person alone you re not fixing the relationship you re fixing around the truth",
-    "title": "You're not fixing, you're just HIDING",
-    "youtube_video_id": "QMDWhbyhg3I",
-    "youtube_url": "https://youtube.com/shorts/QMDWhbyhg3I",
-    "fallback_count": 0,
-    "video_count": 8,
-    "total_scenes": 11,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W21",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "declarative",
-      "angle_type": "reframe",
-      "category": "Healing Arcs",
-      "topic_cluster": "When your constant effort to 'fix' the relationship is actua",
-      "visual_style_mix": "stock_heavy",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 11
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "Intriguing premise that challenges a common assumption about effort in relationships."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "The script is concise and directly conveys the core message of the reframe."
-      },
-      "editorial_pov": {
-        "score": 7,
-        "reason": "The POV is clear, offering a new perspective on relationship 'fixing'."
-      },
-      "villain_mechanism_specificity": {
-        "score": 6,
-        "reason": "While the mechanism ('hiding') is named, it could be more specific about what is being hidden."
-      },
-      "cta_quality": {
-        "score": 1,
-        "reason": "There is no call to action present in the provided details."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title accurately reflects the video's core message and hook."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "The description effectively summarizes the video's premise and targets the intended audience."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assuming standard stock video usage, there's potential for good sync, but it relies heavily on execution."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "The brand images should ideally reinforce the message, but their specific impact is unknown without seeing them."
-      },
-      "thumbnail_concept": {
-        "score": 6,
-        "reason": "The concept needs to visually represent 'hiding' versus 'fixing' effectively to be strong."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "The short script suggests it can be delivered with excellent pacing."
-      },
-      "brand_consistency": {
-        "score": 8,
-        "reason": "The reframe angle aligns well with typical Soft Reset With Me content."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "The content is opinion-based and reframes a common behavior, posing no significant factual risk."
-      }
-    },
-    "judge_composite_score": 6.3,
-    "strongest_element": "Script Clarity",
-    "weakest_element": "CTA Quality",
-    "only_soft_reset_score": 8,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short masterfully delivers a poignant reframe about 'fixing' as a form of avoidance, leveraging an exceptionally clear voiceover, precise caption pacing, and a cohesive, melancholic aesthetic. While the initial hook and several visual metaphors are highly impactful, a couple of slightly generic shots and one potentially ambiguous facial expression momentarily dilute the otherwise powerful emotional resonance. The video's strong brand identity and insightful message are consistently maintained throughout.",
-    "video_audit_strengths": [
-      "The creative and strategic use of visual metaphors to translate abstract psychological concepts into relatable imagery (e.g., washing face, drawing lines, rain overlay).",
-      "The consistent, empathetic, and direct voiceover delivery that builds trust and authority.",
-      "The excellent caption pacing and style (word-by-word/phrase-by-phrase) significantly enhance message comprehension and retention in a short format.",
-      "The overall cohesive aesthetic, including the subtle film grain and color grading, contributes to a distinct and thoughtful brand identity."
-    ],
-    "video_audit_dropoff_causes": [
-      "A few slightly generic or less specific visual choices (e.g., empty coffee cup, man looking bored) could momentarily reduce engagement.",
-      "The visual of the stern-faced woman at 0:27, while possibly intended as self-reflection, could be perceived as judgmental by some viewers, potentially causing a brief disconnect from the empathetic tone."
-    ],
-    "video_audit_repeat_next": [
-      "The impactful and emotionally resonant visual hooks in the first few seconds.",
-      "The strategic use of visual metaphors that directly illustrate complex verbal concepts.",
-      "The precise and engaging caption pacing (word-by-word/short phrase).",
-      "The effective use of visual overlays and transitions to add depth to the message (e.g., rain/lights overlay).",
-      "The consistent quality and emotional tone of the voiceover."
-    ],
-    "video_audit_reduce_next": [
-      "Reliance on overly generic stock footage that lacks specific metaphorical connection to the script.",
-      "Visuals that could be ambiguously interpreted as accusatory or judgmental, ensuring all imagery maintains an empathetic and self-reflective tone."
-    ],
-    "video_audit_tags": {
-      "hook_type": "reframe-statement",
-      "thumbnail_type": "emotional-face-closeup",
-      "visual_style_mix": "aesthetic-stock-footage-with-text-overlay",
-      "narrative_format": "reframe",
-      "character_used": "stock-actors"
-    }
-  },
-  {
     "video_id": "20260521_173815",
     "published_date": "2026-05-21",
     "status": "uploaded",
@@ -4193,6 +4051,195 @@
           "start": 32.25,
           "section": "loopback",
           "text": "A plan with no time attached isn't a plan yet, so your weekend is still yours."
+        }
+      ]
+    }
+  },
+  {
+    "video_id": "20261027_162449",
+    "published_date": "2026-10-27",
+    "status": "uploaded",
+    "topic": "The phantom text reflex after walking away",
+    "category": "healing arcs",
+    "angle_type": "reframe",
+    "total_score": 19,
+    "source_name": "",
+    "source_basis": "",
+    "source_url": "",
+    "confidence_level": "observational",
+    "content_format": "reframe",
+    "emotional_trigger": "picking up your phone to share unexpected good news and instantly freezing when you remember they aren't your person anymore",
+    "psych_concept": "relational habituation and involuntary cognitive reflexes",
+    "core_claim": "Grieving the automatic daily habits of a relationship is distinct from wanting the person back.",
+    "editorial_seed": "Reaching for your phone the moment something happens does not mean you made a mistake by walking away. Your nervous system spent months building an automatic shortcut to one person, and neural pathways take time to fade. Miss the routine without reopening the door.",
+    "only_soft_reset_line": "Maybe you're not missing them so much as missing where the news used to go.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "You get the job. Your thumb is already on their name before you remember.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.7",
+    "script_validation": "passed",
+    "script_validation_notes": "word_count outside target 60-90",
+    "word_count": 97,
+    "estimated_duration_sec": 31,
+    "thumbnail_text": "The reach isn't a verdict",
+    "content_fingerprint": "the phantom text reflex after walking away you get the job your thumb is already on their name before you remember picking up your phone to share unexpected good news and instantly freezing when you remember they aren t your person anymore relational habituation and involuntary cognitive reflexes grieving the automatic daily habits of a relationship is distinct from wanting the person back maybe you re not missing them so much as missing where the news used to go",
+    "title": "You STILL reach before you remember",
+    "youtube_video_id": "uVZ23-WJmPE",
+    "youtube_url": "https://youtube.com/shorts/uVZ23-WJmPE",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 7,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W44",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "reframe",
+      "category": "healing arcs",
+      "topic_cluster": "The phantom text reflex after walking away",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 7
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Visceral, ultra-specific physical detail ('thumb is already on their name before you remember') creates instant identification and emotional resonance."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The progression from somatic reflex to false doubt to cognitive reframe is exceptionally clean and well-paced."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Reframes an apparent emotional relapse as merely an unspooling behavioral habit ('The reach may just be old. The decision to leave is new')."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "Accurately targets the cognitive distortion: mistaking an automated neural habit/reflex for a desire to reconcile."
+      },
+      "cta_quality": {
+        "score": 8,
+        "reason": "Both the prompt question and the like CTA ('Like if your thumb has moved before your brain did') directly mirror the central motif."
+      },
+      "title_accuracy": {
+        "score": 8,
+        "reason": "Accurately describes the phenomenon being unpacked without sensationalizing or contradicting the resolution."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Immediately provides the philosophical takeaway and anchors the core distinction between habit and longing."
+      },
+      "visual_dialogue_sync": {
+        "score": 6,
+        "reason": "Relies entirely on 7 stock video clips over 34 seconds; serviceable pacing, but lacks bespoke visual storytelling."
+      },
+      "image_direction_strength": {
+        "score": 5,
+        "reason": "No bespoke visual prompts or distinct visual direction provided beyond generic stock video allocation."
+      },
+      "thumbnail_concept": {
+        "score": 2,
+        "reason": "Thumbnail concepts are completely empty and rendered primary thumbnail is unknown."
+      },
+      "voice_pacing_readiness": {
+        "score": 8,
+        "reason": "At 97 words across 34 seconds (~171 WPM), pacing is brisk but natural, allowing brief pauses around key punchlines."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "Exemplifies the brand's compassionate, analytically grounded approach to heartbreak and personal autonomy."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No medical claims, hate speech, or deceptive practices; entirely safe narrative reflection."
+      }
+    },
+    "judge_composite_score": 7.7,
+    "strongest_element": "The thematic insight ('Maybe you're not missing them so much as missing where the news used to go') and tactile hook.",
+    "weakest_element": "Complete absence of thumbnail concepts and visual asset direction.",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short effectively translates a sharp emotional observation into a validating reframe through excellent voice delivery and atmospheric B-roll pairing. The opening hook immediately grips the viewer with a somatic micro-moment ('thumb is already on their name'), smoothly supported by cinematic b-roll and a resonant closing line, with only minor caption presentation refinements needed.",
+    "video_audit_strengths": [
+      "The empty armchair visual metaphor for 'one place to land' lands with exceptional quiet poetic resonance.",
+      "Strong closing reframe ('missing where the news used to go') provides high share/save utility for anyone in heartbreak recovery."
+    ],
+    "video_audit_dropoff_causes": [
+      "Rapid single-word caption popping can induce visual fatigue during slower emotional reflections.",
+      "Scene 3 (potted plant cutaway) momentarily drops human presence right after a character silhouette before picking back up with the seated woman."
+    ],
+    "video_audit_repeat_next": [
+      "Grounding psychological reframes in specific somatic triggers (e.g., thumb on a phone screen).",
+      "Soft cross-dissolves and natural audio tail lingering on reflective ambient visuals."
+    ],
+    "video_audit_reduce_next": [
+      "Rapid single-word caption animations on tender, low-BPM spoken scripts."
+    ],
+    "video_audit_tags": {
+      "hook_type": "situational_scenario",
+      "thumbnail_type": "phone_in_hand_night",
+      "visual_style_mix": "cinematic_b-roll_warm_melancholy",
+      "narrative_format": "somatic_reframe",
+      "character_used": "unseen_first_person_to_third_person_vignettes"
+    },
+    "spoken_timeline": {
+      "version": 1,
+      "source": "captions",
+      "duration_sec": 34.1,
+      "voice_end_sec": 30.23,
+      "lines": [
+        {
+          "start": 0.0,
+          "section": "hook",
+          "text": "You get the job."
+        },
+        {
+          "start": 1.17,
+          "section": "hook",
+          "text": "Your thumb is already on their name before you remember."
+        },
+        {
+          "start": 4.24,
+          "section": "tension",
+          "text": "Then you stand there, phone in hand, wondering if that reach was a verdict."
+        },
+        {
+          "start": 9.82,
+          "section": "tension",
+          "text": "Like maybe leaving was the mistake."
+        },
+        {
+          "start": 12.03,
+          "section": "insight",
+          "text": "But chances are that wasn't a thought, like \"I want them back.\" It was a reflex."
+        },
+        {
+          "start": 17.71,
+          "section": "insight",
+          "text": "For months, every good thing had one place to land, and that path may still be running on its own."
+        },
+        {
+          "start": 23.33,
+          "section": "insight",
+          "text": "The reach may just be old."
+        },
+        {
+          "start": 25.23,
+          "section": "insight",
+          "text": "The decision to leave is new."
+        },
+        {
+          "start": 26.98,
+          "section": "loopback",
+          "text": "Maybe you're not missing them so much as missing where the news used to go."
         }
       ]
     }

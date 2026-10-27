@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-26T20:53:46Z",
+  "generated_at": "2026-10-27T16:24:50Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-09-10",
-  "end_date": "2026-10-25",
+  "start_date": "2026-09-11",
+  "end_date": "2026-10-26",
   "videos": [
     {
       "video_id": "20261008_190127",
