@@ -1,147 +1,5 @@
 [
   {
-    "video_id": "20260521_173815",
-    "published_date": "2026-05-21",
-    "status": "uploaded",
-    "topic": "The specific ache of being the 'backup' option in a relationship or dating scenario.",
-    "category": "Self-Worth Shifts",
-    "angle_type": "specific_scenario",
-    "total_score": 19,
-    "source_name": "John Bowlby, general psychological principles",
-    "source_basis": "Attachment theory; self-esteem and relational choices.",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "specific_scenario",
-    "emotional_trigger": "The realization that you were never the first choice; receiving a 'check-in' text after a long silence.",
-    "psych_concept": "Insecure attachment, self-worth, scarcity mindset in relationships.",
-    "core_claim": "True connection doesn't feel like an audition you only get if others don't show up; it feels like an invitation based on genuine desire.",
-    "editorial_seed": "It stings when you realize someone only 'chose' you because their other options dried up. This isn't a reflection of your worth, but a clear sign they're operating from a place of scarcity, not genuine desire for you.",
-    "only_soft_reset_line": "You weren't chosen. You were what was left.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If you felt chosen \u2014 until you noticed their silence ended the same night someone else went quiet \u2014 this is for you.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 73,
-    "estimated_duration_sec": 29,
-    "thumbnail_text": "You weren't chosen. You were what was left.",
-    "content_fingerprint": "the specific ache of being the backup option in a relationship or dating scenario if you felt chosen until you noticed their silence ended the same night someone else went quiet this is for you the realization that you were never the first choice receiving a check in text after a long silence insecure attachment self worth scarcity mindset in relationships true connection doesn t feel like an audition you only get if others don t show up it feels like an invitation based on genuine desire you weren t chosen you were what was left",
-    "title": "You were chosen until their OTHER quiet",
-    "youtube_video_id": "tlTUvAm4kS8",
-    "youtube_url": "https://youtube.com/shorts/tlTUvAm4kS8",
-    "fallback_count": 0,
-    "video_count": 7,
-    "total_scenes": 11,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W21",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "specific_scenario",
-      "category": "Self-Worth Shifts",
-      "topic_cluster": "The specific ache of being the 'backup' option in a relation",
-      "visual_style_mix": "balanced",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 11
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "The hook is intriguing and speaks to a very specific, relatable pain point of feeling chosen then discarded, directly addressing the video's core theme."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "The script is concise and clear, effectively conveying the emotional experience of realizing one's temporary status in someone else's life."
-      },
-      "editorial_pov": {
-        "score": 9,
-        "reason": "The POV is distinctly empathetic and validating, focusing on the internal shift in self-worth triggered by external validation (or lack thereof)."
-      },
-      "villain_mechanism_specificity": {
-        "score": 8,
-        "reason": "The 'villain' is the person's inconsistent attention and the silence that reveals a deeper truth about their priorities, which is specific and well-defined."
-      },
-      "cta_quality": {
-        "score": 3,
-        "reason": "There is no visible CTA in the provided details. This needs to be added for channel growth."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "The title accurately reflects the content by highlighting the shift from being 'chosen' to the realization of being the 'other quiet,' implying a backup."
-      },
-      "description_usefulness": {
-        "score": 9,
-        "reason": "The description is evocative and clearly sets the emotional tone, inviting viewers who resonate with the specific feeling of being a temporary choice."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "While not explicitly detailed, the description implies visuals would align with feelings of quietness, realization, and perhaps background scenarios. A stronger sync would be guaranteed with more specific visual direction."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "The 4 brand images need a clear directive to evoke the feeling of being 'chosen' but then realizing the 'backup' status, to reinforce the narrative."
-      },
-      "thumbnail_concept": {
-        "score": 8,
-        "reason": "A thumbnail concept reflecting the duality of 'chosen' versus 'backup' (perhaps a split image or contrasting visuals) would be strong, though not detailed here."
-      },
-      "voice_pacing_readiness": {
-        "score": 9,
-        "reason": "Given the short script and emotional nature, the pacing should be deliberate and empathetic. Readiness is assumed but would be confirmed on review."
-      },
-      "brand_consistency": {
-        "score": 9,
-        "reason": "The theme of self-worth shifts tied to relational dynamics is core to the Soft Reset With Me brand. The specific scenario aligns well."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "No apparent factual claims are made that could be disputed. The content is purely relational and emotional interpretation."
-      }
-    },
-    "judge_composite_score": 8.0,
-    "strongest_element": "script_clarity",
-    "weakest_element": "cta_quality",
-    "only_soft_reset_score": 9,
-    "video_audit_status": "ok",
-    "video_audit_summary": "This Short effectively hooks viewers by validating a specific emotional experience, delivered through a clear, empathetic voiceover and well-timed captions. The audio mix and overall emotional tone are exceptionally well-executed, reinforcing the 'Soft Reset With Me' brand identity. While the atmospheric visuals contribute to the mood, their generic nature occasionally misses the opportunity to specifically illustrate the nuanced aspects of the script, potentially limiting deeper viewer engagement with the visual story. Future content could benefit from more intentional visual specificity to fully match the precision of the script's emotional beats.",
-    "video_audit_strengths": [
-      "The voiceover's consistent empathetic and understanding tone is a strong brand asset.",
-      "The script's ability to articulate a highly specific and often unspoken emotional pain point is a significant strength.",
-      "The impactful 'You weren't chosen. You were what was left.' line serves as a powerful and memorable core claim.",
-      "The music selection is consistently perfect for the mood, enhancing the emotional delivery without being intrusive."
-    ],
-    "video_audit_dropoff_causes": [
-      "The generic nature of some visuals might lead to a slight disconnect for viewers expecting more direct visual storytelling to match the script's specific nuances (e.g., 'someone else went quiet').",
-      "The consistent use of a film grain/scratch overlay, while a stylistic choice, could be perceived as a mild visual distraction by some, slightly obscuring the footage rather than purely enhancing it."
-    ],
-    "video_audit_repeat_next": [
-      "Maintaining the empathetic, clear voiceover and strong brand tone.",
-      "Ensuring excellent alignment between the title, hook, and core message.",
-      "Continuing to use well-paced and legible captions for accessibility and engagement.",
-      "Leveraging atmospheric and mood-setting background music.",
-      "Crafting sharp, impactful core claims or loopback lines that resonate deeply."
-    ],
-    "video_audit_reduce_next": [
-      "Reliance on overly generic stock footage; aim for visuals that more specifically illustrate the unique scenarios described in the script.",
-      "The intensity or continuous presence of the film grain/scratch overlay, considering whether it always enhances or sometimes detracts from visual clarity."
-    ],
-    "video_audit_tags": {
-      "hook_type": "scenario_validation",
-      "thumbnail_type": "text_overlay",
-      "visual_style_mix": "moody_cinematic_stock",
-      "narrative_format": "emotional_diagnosis",
-      "character_used": "none"
-    }
-  },
-  {
     "video_id": "20260522_013246",
     "published_date": "2026-05-22",
     "status": "uploaded",
@@ -4240,6 +4098,201 @@
           "start": 26.98,
           "section": "loopback",
           "text": "Maybe you're not missing them so much as missing where the news used to go."
+        }
+      ]
+    }
+  },
+  {
+    "video_id": "20261029_165114",
+    "published_date": "2026-10-29",
+    "status": "uploaded",
+    "topic": "Punctuation Panic: When a One-Word Text Feels Like an Eviction",
+    "category": "psychology drops",
+    "angle_type": "specific scenario",
+    "total_score": 19,
+    "source_name": "",
+    "source_basis": "",
+    "source_url": "",
+    "confidence_level": "observational",
+    "content_format": "scenario",
+    "emotional_trigger": "Staring at a text that just says 'Sure.' and feeling your stomach drop",
+    "psych_concept": "Relational hypervigilance to neutral cues",
+    "core_claim": "Treating neutral digital brevity as guaranteed catastrophe burns out your nervous system.",
+    "editorial_seed": "When your nervous system is wired for sudden abandonment, a missing exclamation point feels like a breakup. You immediately run background checks on everything you said in the last 48 hours. Most people are just walking to their car or typing while distracted, not plotting your exile.",
+    "only_soft_reset_line": "You've been treating a short text like a verdict, when all you actually have is a short text.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "They text back \"Sure.\" With a period. And you're already scrolling up to find what you did wrong.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.7",
+    "script_validation": "passed",
+    "script_validation_notes": "word_count outside target 60-90",
+    "word_count": 93,
+    "estimated_duration_sec": 28,
+    "thumbnail_text": "\"Sure.\" Not a verdict.",
+    "content_fingerprint": "punctuation panic when a one word text feels like an eviction they text back sure with a period and you re already scrolling up to find what you did wrong staring at a text that just says sure and feeling your stomach drop relational hypervigilance to neutral cues treating neutral digital brevity as guaranteed catastrophe burns out your nervous system you ve been treating a short text like a verdict when all you actually have is a short text",
+    "title": "You're treating a short text like a verdict",
+    "youtube_video_id": "vQ9vddQZ8gc",
+    "youtube_url": "https://youtube.com/shorts/vQ9vddQZ8gc",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 8,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W44",
+    "judge_traits": {
+      "hook_type": "direct_accusation",
+      "title_type": "declarative",
+      "angle_type": "specific scenario",
+      "category": "psychology drops",
+      "topic_cluster": "Punctuation Panic: When a One-Word Text Feels Like an Evicti",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 8
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Instantly recognizable micro-moment ('Sure.' with a period) paired with the immediate hypervigilant reaction makes it compelling and relatable."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Tight, efficient narrative arc moving cleanly from bodily panic to grounded objective reality in under 100 words."
+      },
+      "editorial_pov": {
+        "score": 8,
+        "reason": "Observational and de-escalating; gently highlights projection and hypervigilance without clinical jargon."
+      },
+      "villain_mechanism_specificity": {
+        "score": 8,
+        "reason": "Identifies the exact mental loop ('auditing yourself for a crime you didn't commit' and 'stomach answered anyway') as the real source of distress."
+      },
+      "cta_quality": {
+        "score": 8,
+        "reason": "The CTA is emotionally tailored to the exact behavior unpacked in the video, driving high-relevance engagement."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "The title precisely reflects the core insight and resolution of the script without bait-and-switch or fearmongering."
+      },
+      "description_usefulness": {
+        "score": 7,
+        "reason": "Captures the opening conflict and insight clearly, though metadata shows it truncated mid-sentence."
+      },
+      "visual_dialogue_sync": {
+        "score": 5,
+        "reason": "Relies entirely on generic stock video with no scene-by-scene script synchronization details provided."
+      },
+      "image_direction_strength": {
+        "score": 4,
+        "reason": "Zero brand images and no specific visual prompts or art direction specified."
+      },
+      "thumbnail_concept": {
+        "score": 2,
+        "reason": "Thumbnail concepts array is completely empty and primary thumbnail is unknown."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "93 words over 34 seconds yields a measured ~164 WPM, ideal for reflective shorts."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "Strong alignment with the channel's grounded, de-escalating relationship reflection tone."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No policy, medical, or factual claims at risk; strictly observational everyday psychology."
+      }
+    },
+    "judge_composite_score": 7.1,
+    "strongest_element": "Visceral, highly relatable hook and tight narrative pacing.",
+    "weakest_element": "Total lack of thumbnail concepts and visual asset direction.",
+    "only_soft_reset_score": 7,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short excels on concept and script execution, nailing a universal micro-trigger around digital punctuation anxiety that creates immediate retention and emotional resonance. While the voiceover pacing, mix, and somatic reframe in Scene 7 land effectively, the visual specificity is slightly diluted by unrelated phone screen interfaces and an unexpected corporate office clip mid-video.",
+    "video_audit_strengths": [
+      "The somatic insight ('Your stomach answered anyway') paired with the calming breath visual in Scene 7 creates a tangible nervous system reset.",
+      "The punchy closing reframe ('all you actually have is a short text') delivers immediate psychological relief."
+    ],
+    "video_audit_dropoff_causes": [
+      "Scene 5's sudden shift to a corporate boardroom setting creates a momentary thematic disconnect from the personal relationship context.",
+      "Phone screens displaying photo feeds or creative portfolios rather than messaging interfaces create minor cognitive friction during evidence-hunting lines."
+    ],
+    "video_audit_repeat_next": [
+      "Hyper-specific digital micro-triggers (e.g., punctuation, read receipts, typing bubbles) that spark instant recognition.",
+      "Pairing somatic cues ('stomach', 'chest') with intentional visual grounding and breathing holds."
+    ],
+    "video_audit_reduce_next": [
+      "Corporate or office-themed stress stock footage when describing personal/relational anxiety.",
+      "Phone close-ups where unrelated UI or image galleries distract from messaging narratives."
+    ],
+    "video_audit_tags": {
+      "hook_type": "relatable_micro_scenario",
+      "thumbnail_type": "person_glowing_phone_dark_room",
+      "visual_style_mix": "moody_cinematic_stock",
+      "narrative_format": "second_person_observation",
+      "character_used": "multiple_everyday_relatable"
+    },
+    "spoken_timeline": {
+      "version": 1,
+      "source": "captions",
+      "duration_sec": 33.87,
+      "voice_end_sec": 29.8,
+      "lines": [
+        {
+          "start": 0.0,
+          "section": "hook",
+          "text": "They text back \"Sure.\" With a period."
+        },
+        {
+          "start": 3.1,
+          "section": "hook",
+          "text": "And you're already scrolling up to find what you did wrong."
+        },
+        {
+          "start": 6.13,
+          "section": "tension",
+          "text": "Was the joke too much?"
+        },
+        {
+          "start": 7.71,
+          "section": "tension",
+          "text": "What did you say last night?"
+        },
+        {
+          "start": 9.17,
+          "section": "tension",
+          "text": "You reread two days of messages like evidence."
+        },
+        {
+          "start": 12.0,
+          "section": "tension",
+          "text": "An hour later you're wrung out, and they haven't said one thing that's wrong."
+        },
+        {
+          "start": 16.5,
+          "section": "insight",
+          "text": "That word could be someone walking to their car, typing with one thumb, or just writing short."
+        },
+        {
+          "start": 21.78,
+          "section": "insight",
+          "text": "You can't know."
+        },
+        {
+          "start": 22.87,
+          "section": "insight",
+          "text": "Your stomach answered anyway."
+        },
+        {
+          "start": 24.62,
+          "section": "loopback",
+          "text": "You've been treating a short text like a verdict, when all you actually have is a short text."
         }
       ]
     }

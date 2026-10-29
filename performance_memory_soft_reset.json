@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-28T16:28:39Z",
+  "generated_at": "2026-10-29T16:51:15Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-09-12",
-  "end_date": "2026-10-27",
+  "start_date": "2026-09-13",
+  "end_date": "2026-10-28",
   "videos": [
     {
       "video_id": "20261008_190127",
@@ -365,6 +365,211 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-10-28T16:28:39Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20261027_162449",
+      "published_date": "2026-10-27",
+      "status": "uploaded",
+      "topic": "The phantom text reflex after walking away",
+      "category": "healing arcs",
+      "angle_type": "reframe",
+      "total_score": 19,
+      "source_name": "",
+      "source_basis": "",
+      "source_url": "",
+      "confidence_level": "observational",
+      "content_format": "reframe",
+      "emotional_trigger": "picking up your phone to share unexpected good news and instantly freezing when you remember they aren't your person anymore",
+      "psych_concept": "relational habituation and involuntary cognitive reflexes",
+      "core_claim": "Grieving the automatic daily habits of a relationship is distinct from wanting the person back.",
+      "editorial_seed": "Reaching for your phone the moment something happens does not mean you made a mistake by walking away. Your nervous system spent months building an automatic shortcut to one person, and neural pathways take time to fade. Miss the routine without reopening the door.",
+      "only_soft_reset_line": "Maybe you're not missing them so much as missing where the news used to go.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "You get the job. Your thumb is already on their name before you remember.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.7",
+      "script_validation": "passed",
+      "script_validation_notes": "word_count outside target 60-90",
+      "word_count": 97,
+      "estimated_duration_sec": 31,
+      "thumbnail_text": "The reach isn't a verdict",
+      "content_fingerprint": "the phantom text reflex after walking away you get the job your thumb is already on their name before you remember picking up your phone to share unexpected good news and instantly freezing when you remember they aren t your person anymore relational habituation and involuntary cognitive reflexes grieving the automatic daily habits of a relationship is distinct from wanting the person back maybe you re not missing them so much as missing where the news used to go",
+      "title": "You STILL reach before you remember",
+      "youtube_video_id": "uVZ23-WJmPE",
+      "youtube_url": "https://youtube.com/shorts/uVZ23-WJmPE",
+      "fallback_count": 0,
+      "video_count": 7,
+      "total_scenes": 7,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W44",
+      "judge_traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "The phantom text reflex after walking away",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 7
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Visceral, ultra-specific physical detail ('thumb is already on their name before you remember') creates instant identification and emotional resonance."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "The progression from somatic reflex to false doubt to cognitive reframe is exceptionally clean and well-paced."
+        },
+        "editorial_pov": {
+          "score": 9,
+          "reason": "Reframes an apparent emotional relapse as merely an unspooling behavioral habit ('The reach may just be old. The decision to leave is new')."
+        },
+        "villain_mechanism_specificity": {
+          "score": 9,
+          "reason": "Accurately targets the cognitive distortion: mistaking an automated neural habit/reflex for a desire to reconcile."
+        },
+        "cta_quality": {
+          "score": 8,
+          "reason": "Both the prompt question and the like CTA ('Like if your thumb has moved before your brain did') directly mirror the central motif."
+        },
+        "title_accuracy": {
+          "score": 8,
+          "reason": "Accurately describes the phenomenon being unpacked without sensationalizing or contradicting the resolution."
+        },
+        "description_usefulness": {
+          "score": 8,
+          "reason": "Immediately provides the philosophical takeaway and anchors the core distinction between habit and longing."
+        },
+        "visual_dialogue_sync": {
+          "score": 6,
+          "reason": "Relies entirely on 7 stock video clips over 34 seconds; serviceable pacing, but lacks bespoke visual storytelling."
+        },
+        "image_direction_strength": {
+          "score": 5,
+          "reason": "No bespoke visual prompts or distinct visual direction provided beyond generic stock video allocation."
+        },
+        "thumbnail_concept": {
+          "score": 2,
+          "reason": "Thumbnail concepts are completely empty and rendered primary thumbnail is unknown."
+        },
+        "voice_pacing_readiness": {
+          "score": 8,
+          "reason": "At 97 words across 34 seconds (~171 WPM), pacing is brisk but natural, allowing brief pauses around key punchlines."
+        },
+        "brand_consistency": {
+          "score": 9,
+          "reason": "Exemplifies the brand's compassionate, analytically grounded approach to heartbreak and personal autonomy."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No medical claims, hate speech, or deceptive practices; entirely safe narrative reflection."
+        }
+      },
+      "judge_composite_score": 7.7,
+      "strongest_element": "The thematic insight ('Maybe you're not missing them so much as missing where the news used to go') and tactile hook.",
+      "weakest_element": "Complete absence of thumbnail concepts and visual asset direction.",
+      "only_soft_reset_score": 8,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short effectively translates a sharp emotional observation into a validating reframe through excellent voice delivery and atmospheric B-roll pairing. The opening hook immediately grips the viewer with a somatic micro-moment ('thumb is already on their name'), smoothly supported by cinematic b-roll and a resonant closing line, with only minor caption presentation refinements needed.",
+      "video_audit_strengths": [
+        "The empty armchair visual metaphor for 'one place to land' lands with exceptional quiet poetic resonance.",
+        "Strong closing reframe ('missing where the news used to go') provides high share/save utility for anyone in heartbreak recovery."
+      ],
+      "video_audit_dropoff_causes": [
+        "Rapid single-word caption popping can induce visual fatigue during slower emotional reflections.",
+        "Scene 3 (potted plant cutaway) momentarily drops human presence right after a character silhouette before picking back up with the seated woman."
+      ],
+      "video_audit_repeat_next": [
+        "Grounding psychological reframes in specific somatic triggers (e.g., thumb on a phone screen).",
+        "Soft cross-dissolves and natural audio tail lingering on reflective ambient visuals."
+      ],
+      "video_audit_reduce_next": [
+        "Rapid single-word caption animations on tender, low-BPM spoken scripts."
+      ],
+      "video_audit_tags": {
+        "hook_type": "situational_scenario",
+        "thumbnail_type": "phone_in_hand_night",
+        "visual_style_mix": "cinematic_b-roll_warm_melancholy",
+        "narrative_format": "somatic_reframe",
+        "character_used": "unseen_first_person_to_third_person_vignettes"
+      },
+      "spoken_timeline": {
+        "version": 1,
+        "source": "captions",
+        "duration_sec": 34.1,
+        "voice_end_sec": 30.23,
+        "lines": [
+          {
+            "start": 0.0,
+            "section": "hook",
+            "text": "You get the job."
+          },
+          {
+            "start": 1.17,
+            "section": "hook",
+            "text": "Your thumb is already on their name before you remember."
+          },
+          {
+            "start": 4.24,
+            "section": "tension",
+            "text": "Then you stand there, phone in hand, wondering if that reach was a verdict."
+          },
+          {
+            "start": 9.82,
+            "section": "tension",
+            "text": "Like maybe leaving was the mistake."
+          },
+          {
+            "start": 12.03,
+            "section": "insight",
+            "text": "But chances are that wasn't a thought, like \"I want them back.\" It was a reflex."
+          },
+          {
+            "start": 17.71,
+            "section": "insight",
+            "text": "For months, every good thing had one place to land, and that path may still be running on its own."
+          },
+          {
+            "start": 23.33,
+            "section": "insight",
+            "text": "The reach may just be old."
+          },
+          {
+            "start": 25.23,
+            "section": "insight",
+            "text": "The decision to leave is new."
+          },
+          {
+            "start": 26.98,
+            "section": "loopback",
+            "text": "Maybe you're not missing them so much as missing where the news used to go."
+          }
+        ]
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-10-29T16:51:15Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"

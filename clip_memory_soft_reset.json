@@ -461,5 +461,93 @@
     "video_id": "20261027_162449",
     "scene_id": 7,
     "used_at": "2026-10-27T16:28:59Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6611951",
+    "source_url": "https://videos.pexels.com/video-files/6611951/6611951-hd_1080_1920_25fps.mp4",
+    "file_hash": "14432b04a966963f3d07e9506e448cbdc0a1db95541623e404fff0d94b39741b",
+    "perceptual_hash": "e0fcf07070000030",
+    "query": "phone screen dim room",
+    "video_id": "20261029_165114",
+    "scene_id": 1,
+    "used_at": "2026-10-29T16:53:49Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "10374888",
+    "source_url": "https://videos.pexels.com/video-files/10374888/10374888-hd_1080_1920_24fps.mp4",
+    "file_hash": "adcef568f2e8c8346afe3adbfc61bd143a30be521b63beb1b43c619b992ca1af",
+    "perceptual_hash": "7f707f9f03602008",
+    "query": "hand scrolling phone bed",
+    "video_id": "20261029_165114",
+    "scene_id": 2,
+    "used_at": "2026-10-29T16:54:02Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7670131",
+    "source_url": "https://videos.pexels.com/video-files/7670131/7670131-hd_1080_1920_25fps.mp4",
+    "file_hash": "045937847af0f7a5caaf216745f3556a40b79377aa2a300b353a39f3d8e8b515",
+    "perceptual_hash": "0000b01307f7ffff",
+    "query": "person sitting edge bed",
+    "video_id": "20261029_165114",
+    "scene_id": 3,
+    "used_at": "2026-10-29T16:54:09Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "3625766",
+    "source_url": "https://videos.pexels.com/video-files/3625766/3625766-hd_1080_2048_25fps.mp4",
+    "file_hash": "dbb92df0bcbc3cb52c0ffb3305ea3e824237fc2215ae49b94fbf18a76c2fbc74",
+    "perceptual_hash": "000077e0fc3c0c00",
+    "query": "hands holding glowing phone",
+    "video_id": "20261029_165114",
+    "scene_id": 4,
+    "used_at": "2026-10-29T16:54:30Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "8731296",
+    "source_url": "https://videos.pexels.com/video-files/8731296/8731296-hd_1080_1920_25fps.mp4",
+    "file_hash": "59d6a303e093e4be9bd594d91839bd6960ac7e670fb9d580454091f6c27c1ea6",
+    "perceptual_hash": "ffffffc3c1dbc380",
+    "query": "tired head in hands",
+    "video_id": "20261029_165114",
+    "scene_id": 5,
+    "used_at": "2026-10-29T16:54:37Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "29835054",
+    "source_url": "https://videos.pexels.com/video-files/29835054/12813079_1080_1920_30fps.mp4",
+    "file_hash": "35f0ed1e88c109b5ed22797024b9b5cd741d253a81b620cd33cd94196c5d8e0c",
+    "perceptual_hash": "ffbf8f0747030000",
+    "query": "walking parking lot dusk",
+    "video_id": "20261029_165114",
+    "scene_id": 6,
+    "used_at": "2026-10-29T16:54:57Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6189263",
+    "source_url": "https://videos.pexels.com/video-files/6189263/6189263-hd_1080_1920_25fps.mp4",
+    "file_hash": "c4c2ea98537a57019de60f02f52ba3872059e64c26ad281c63871c722f341af8",
+    "perceptual_hash": "ffffffff1e000000",
+    "query": "person deep breath sitting",
+    "video_id": "20261029_165114",
+    "scene_id": 7,
+    "used_at": "2026-10-29T16:55:02Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6421435",
+    "source_url": "https://videos.pexels.com/video-files/6421435/6421435-hd_1080_1918_30fps.mp4",
+    "file_hash": "67aaf3b493289eb786d5d080e7b06088eddd0e70f24ee1060f31e6fbfca9a049",
+    "perceptual_hash": "0080f8fcb0b07878",
+    "query": "putting phone face down",
+    "video_id": "20261029_165114",
+    "scene_id": 8,
+    "used_at": "2026-10-29T16:55:10Z"
   }
 ]
