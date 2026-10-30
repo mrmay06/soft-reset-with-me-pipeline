@@ -549,5 +549,93 @@
     "video_id": "20261029_165114",
     "scene_id": 8,
     "used_at": "2026-10-29T16:55:10Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6598883",
+    "source_url": "https://videos.pexels.com/video-files/6598883/6598883-hd_1080_1920_30fps.mp4",
+    "file_hash": "39770453cee57bf5e191f289057e3d3bf00d8c771cba558b26a78dd5381f33aa",
+    "perceptual_hash": "0000000303ffbfff",
+    "query": "scrolling phone dark bedroom",
+    "video_id": "20261030_163434",
+    "scene_id": 1,
+    "used_at": "2026-10-30T16:37:30Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "9898435",
+    "source_url": "https://videos.pexels.com/video-files/9898435/9898435-hd_1080_2048_25fps.mp4",
+    "file_hash": "9db16f7820ffd75f015c297fd78620c6cb14d4cd522dc7f1db4f722449578231",
+    "perceptual_hash": "00000f1f1f1f1c00",
+    "query": "fingers typing text message",
+    "video_id": "20261030_163434",
+    "scene_id": 2,
+    "used_at": "2026-10-30T16:37:44Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7942762",
+    "source_url": "https://videos.pexels.com/video-files/7942762/7942762-hd_1080_2048_25fps.mp4",
+    "file_hash": "4cf1f69ab21e632bde5976c9a7b5c38f6febb1f759c95c99b1259cc5026ff382",
+    "perceptual_hash": "05173f7f271e0000",
+    "query": "laptop screen night glow",
+    "video_id": "20261030_163434",
+    "scene_id": 3,
+    "used_at": "2026-10-30T16:37:49Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6382073",
+    "source_url": "https://videos.pexels.com/video-files/6382073/6382073-hd_1080_1920_24fps.mp4",
+    "file_hash": "cecba61eead8721ffcb69a41851773f17264ce6c6fd6664c16a9d4ca8c0ab4ce",
+    "perceptual_hash": "f7e2f20080804080",
+    "query": "person staring rainy window",
+    "video_id": "20261030_163434",
+    "scene_id": 4,
+    "used_at": "2026-10-30T16:37:54Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6374206",
+    "source_url": "https://videos.pexels.com/video-files/6374206/6374206-hd_1080_2048_30fps.mp4",
+    "file_hash": "9344435c78ac184835fd4e6f42de1585a82db6053fe0ab6d6886cbef58ac2051",
+    "perceptual_hash": "7f7f4f05000d0100",
+    "query": "phone face down table",
+    "video_id": "20261030_163434",
+    "scene_id": 5,
+    "used_at": "2026-10-30T16:38:15Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "19076730",
+    "source_url": "https://videos.pexels.com/video-files/19076730/19076730-hd_1080_1920_30fps.mp4",
+    "file_hash": "0c71dc025b94cf243ec0096f4092668e3517dd55c86dba72c50d735ae149e6d1",
+    "perceptual_hash": "86ffff0397ff0000",
+    "query": "hands journaling notebook candle",
+    "video_id": "20261030_163434",
+    "scene_id": 6,
+    "used_at": "2026-10-30T16:38:20Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "37977293",
+    "source_url": "https://videos.pexels.com/video-files/37977293/16115352_1080_1920_30fps.mp4",
+    "file_hash": "6829c24f8778b11f836fcc0ddab2f6b54ed7c38fb1f008a14aa18922f32fe9cc",
+    "perceptual_hash": "7f7f3f3f1f071f00",
+    "query": "holding warm coffee mug",
+    "video_id": "20261030_163434",
+    "scene_id": 7,
+    "used_at": "2026-10-30T16:38:27Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "28337958",
+    "source_url": "https://videos.pexels.com/video-files/28337958/12362251_1080_1920_30fps.mp4",
+    "file_hash": "d6c125989ac86647d567dc8a7b1ba10cdb0ae14b7e1eb258f381f087c7c1d030",
+    "perceptual_hash": "7e7efefe00000000",
+    "query": "walking city evening dusk",
+    "video_id": "20261030_163434",
+    "scene_id": 8,
+    "used_at": "2026-10-30T16:38:34Z"
   }
 ]
