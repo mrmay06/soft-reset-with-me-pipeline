@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-30T16:34:35Z",
+  "generated_at": "2026-10-31T15:31:39Z",
   "lookback_days": 45,
   "min_video_age_days": 2,
   "refresh_interval_days": 7,
-  "start_date": "2026-09-14",
-  "end_date": "2026-10-29",
+  "start_date": "2026-09-15",
+  "end_date": "2026-10-30",
   "videos": [
     {
       "video_id": "20261008_190127",
@@ -570,6 +570,217 @@
       "conversion_rate_per_1k": 0.0,
       "reach_score": 0.0,
       "analytics_fetched_at": "2026-10-29T16:51:15Z",
+      "analytics_days_old": 2,
+      "data_available": false,
+      "data_unavailable_reason": "youtube_analytics_no_row"
+    },
+    {
+      "video_id": "20261029_165114",
+      "published_date": "2026-10-29",
+      "status": "uploaded",
+      "topic": "Punctuation Panic: When a One-Word Text Feels Like an Eviction",
+      "category": "psychology drops",
+      "angle_type": "specific scenario",
+      "total_score": 19,
+      "source_name": "",
+      "source_basis": "",
+      "source_url": "",
+      "confidence_level": "observational",
+      "content_format": "scenario",
+      "emotional_trigger": "Staring at a text that just says 'Sure.' and feeling your stomach drop",
+      "psych_concept": "Relational hypervigilance to neutral cues",
+      "core_claim": "Treating neutral digital brevity as guaranteed catastrophe burns out your nervous system.",
+      "editorial_seed": "When your nervous system is wired for sudden abandonment, a missing exclamation point feels like a breakup. You immediately run background checks on everything you said in the last 48 hours. Most people are just walking to their car or typing while distracted, not plotting your exile.",
+      "only_soft_reset_line": "You've been treating a short text like a verdict, when all you actually have is a short text.",
+      "editorial_quality": "strong",
+      "argument_quality": "strong",
+      "hook": "They text back \"Sure.\" With a period. And you're already scrolling up to find what you did wrong.",
+      "hook_quality": "weak",
+      "script_version": "1",
+      "prompt_version": "soft-reset-script-v2.7",
+      "script_validation": "passed",
+      "script_validation_notes": "word_count outside target 60-90",
+      "word_count": 93,
+      "estimated_duration_sec": 28,
+      "thumbnail_text": "\"Sure.\" Not a verdict.",
+      "content_fingerprint": "punctuation panic when a one word text feels like an eviction they text back sure with a period and you re already scrolling up to find what you did wrong staring at a text that just says sure and feeling your stomach drop relational hypervigilance to neutral cues treating neutral digital brevity as guaranteed catastrophe burns out your nervous system you ve been treating a short text like a verdict when all you actually have is a short text",
+      "title": "You're treating a short text like a verdict",
+      "youtube_video_id": "vQ9vddQZ8gc",
+      "youtube_url": "https://youtube.com/shorts/vQ9vddQZ8gc",
+      "fallback_count": 0,
+      "video_count": 8,
+      "total_scenes": 8,
+      "validation_warnings": [],
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W44",
+      "judge_traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "psychology drops",
+        "topic_cluster": "Punctuation Panic: When a One-Word Text Feels Like an Evicti",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 8
+      },
+      "judge_scores": {
+        "hook_strength": {
+          "score": 9,
+          "reason": "Instantly recognizable micro-moment ('Sure.' with a period) paired with the immediate hypervigilant reaction makes it compelling and relatable."
+        },
+        "script_clarity": {
+          "score": 9,
+          "reason": "Tight, efficient narrative arc moving cleanly from bodily panic to grounded objective reality in under 100 words."
+        },
+        "editorial_pov": {
+          "score": 8,
+          "reason": "Observational and de-escalating; gently highlights projection and hypervigilance without clinical jargon."
+        },
+        "villain_mechanism_specificity": {
+          "score": 8,
+          "reason": "Identifies the exact mental loop ('auditing yourself for a crime you didn't commit' and 'stomach answered anyway') as the real source of distress."
+        },
+        "cta_quality": {
+          "score": 8,
+          "reason": "The CTA is emotionally tailored to the exact behavior unpacked in the video, driving high-relevance engagement."
+        },
+        "title_accuracy": {
+          "score": 9,
+          "reason": "The title precisely reflects the core insight and resolution of the script without bait-and-switch or fearmongering."
+        },
+        "description_usefulness": {
+          "score": 7,
+          "reason": "Captures the opening conflict and insight clearly, though metadata shows it truncated mid-sentence."
+        },
+        "visual_dialogue_sync": {
+          "score": 5,
+          "reason": "Relies entirely on generic stock video with no scene-by-scene script synchronization details provided."
+        },
+        "image_direction_strength": {
+          "score": 4,
+          "reason": "Zero brand images and no specific visual prompts or art direction specified."
+        },
+        "thumbnail_concept": {
+          "score": 2,
+          "reason": "Thumbnail concepts array is completely empty and primary thumbnail is unknown."
+        },
+        "voice_pacing_readiness": {
+          "score": 9,
+          "reason": "93 words over 34 seconds yields a measured ~164 WPM, ideal for reflective shorts."
+        },
+        "brand_consistency": {
+          "score": 8,
+          "reason": "Strong alignment with the channel's grounded, de-escalating relationship reflection tone."
+        },
+        "policy_factual_risk": {
+          "score": 10,
+          "reason": "No policy, medical, or factual claims at risk; strictly observational everyday psychology."
+        }
+      },
+      "judge_composite_score": 7.1,
+      "strongest_element": "Visceral, highly relatable hook and tight narrative pacing.",
+      "weakest_element": "Total lack of thumbnail concepts and visual asset direction.",
+      "only_soft_reset_score": 7,
+      "video_audit_status": "ok",
+      "video_audit_summary": "This Short excels on concept and script execution, nailing a universal micro-trigger around digital punctuation anxiety that creates immediate retention and emotional resonance. While the voiceover pacing, mix, and somatic reframe in Scene 7 land effectively, the visual specificity is slightly diluted by unrelated phone screen interfaces and an unexpected corporate office clip mid-video.",
+      "video_audit_strengths": [
+        "The somatic insight ('Your stomach answered anyway') paired with the calming breath visual in Scene 7 creates a tangible nervous system reset.",
+        "The punchy closing reframe ('all you actually have is a short text') delivers immediate psychological relief."
+      ],
+      "video_audit_dropoff_causes": [
+        "Scene 5's sudden shift to a corporate boardroom setting creates a momentary thematic disconnect from the personal relationship context.",
+        "Phone screens displaying photo feeds or creative portfolios rather than messaging interfaces create minor cognitive friction during evidence-hunting lines."
+      ],
+      "video_audit_repeat_next": [
+        "Hyper-specific digital micro-triggers (e.g., punctuation, read receipts, typing bubbles) that spark instant recognition.",
+        "Pairing somatic cues ('stomach', 'chest') with intentional visual grounding and breathing holds."
+      ],
+      "video_audit_reduce_next": [
+        "Corporate or office-themed stress stock footage when describing personal/relational anxiety.",
+        "Phone close-ups where unrelated UI or image galleries distract from messaging narratives."
+      ],
+      "video_audit_tags": {
+        "hook_type": "relatable_micro_scenario",
+        "thumbnail_type": "person_glowing_phone_dark_room",
+        "visual_style_mix": "moody_cinematic_stock",
+        "narrative_format": "second_person_observation",
+        "character_used": "multiple_everyday_relatable"
+      },
+      "spoken_timeline": {
+        "version": 1,
+        "source": "captions",
+        "duration_sec": 33.87,
+        "voice_end_sec": 29.8,
+        "lines": [
+          {
+            "start": 0.0,
+            "section": "hook",
+            "text": "They text back \"Sure.\" With a period."
+          },
+          {
+            "start": 3.1,
+            "section": "hook",
+            "text": "And you're already scrolling up to find what you did wrong."
+          },
+          {
+            "start": 6.13,
+            "section": "tension",
+            "text": "Was the joke too much?"
+          },
+          {
+            "start": 7.71,
+            "section": "tension",
+            "text": "What did you say last night?"
+          },
+          {
+            "start": 9.17,
+            "section": "tension",
+            "text": "You reread two days of messages like evidence."
+          },
+          {
+            "start": 12.0,
+            "section": "tension",
+            "text": "An hour later you're wrung out, and they haven't said one thing that's wrong."
+          },
+          {
+            "start": 16.5,
+            "section": "insight",
+            "text": "That word could be someone walking to their car, typing with one thumb, or just writing short."
+          },
+          {
+            "start": 21.78,
+            "section": "insight",
+            "text": "You can't know."
+          },
+          {
+            "start": 22.87,
+            "section": "insight",
+            "text": "Your stomach answered anyway."
+          },
+          {
+            "start": 24.62,
+            "section": "loopback",
+            "text": "You've been treating a short text like a verdict, when all you actually have is a short text."
+          }
+        ]
+      },
+      "metrics": {},
+      "composite_score": 0.0,
+      "performance_score": 0.0,
+      "score_version": 1,
+      "hook_score": 0.0,
+      "hold_score": 0.0,
+      "resonance_score": 0.0,
+      "resonance_per_engaged": 0.0,
+      "resonance_per_view": 0.0,
+      "conversion_score": 0.0,
+      "conversion_rate_per_1k": 0.0,
+      "reach_score": 0.0,
+      "analytics_fetched_at": "2026-10-31T15:31:39Z",
       "analytics_days_old": 2,
       "data_available": false,
       "data_unavailable_reason": "youtube_analytics_no_row"

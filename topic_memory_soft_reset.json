@@ -1,124 +1,5 @@
 [
   {
-    "video_id": "20260522_202418",
-    "published_date": "2026-05-22",
-    "status": "uploaded",
-    "topic": "That feeling when a song hits different at 2am",
-    "category": "healing arcs",
-    "angle_type": "specific scenario",
-    "total_score": 20,
-    "source_name": "Cognitive Neuroscience / Psychology (e.g., LeDoux's work on emotional memory)",
-    "source_basis": "The concept of emotional memory and implicit memory, where past experiences and associated emotions are stored and can be triggered outside of conscious recall, often involving physiological responses.",
-    "source_url": "",
-    "confidence_level": "therapist_consensus",
-    "content_format": "specific_scenario",
-    "emotional_trigger": "Listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment.",
-    "psych_concept": "Emotional memory / Somatic memory / Implicit memory",
-    "core_claim": "Some memories return through your body before your logic catches up",
-    "editorial_seed": "We've all been there: a song comes on at 2 AM and suddenly you're back in a moment you thought you'd moved past. It's not just nostalgia; it's your nervous system bringing an emotional memory to the surface.",
-    "only_soft_reset_line": "Your body remembered before your brain had a chance to argue.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "If a song has ever ruined your night, this is for you.",
-    "hook_quality": "strong",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 68,
-    "estimated_duration_sec": 18,
-    "thumbnail_text": "why that song ruins you at 2am",
-    "content_fingerprint": "that feeling when a song hits different at 2am if a song has ever ruined your night this is for you listening to a song late at night that triggers unexpected memories or emotions about a past relationship or significant moment emotional memory somatic memory implicit memory some memories return through your body before your logic catches up your body remembered before your brain had a chance to argue",
-    "title": "The 2am song that quietly unravels you",
-    "youtube_video_id": "ypRLIoZP9O0",
-    "youtube_url": "https://youtube.com/shorts/ypRLIoZP9O0",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 8,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W21",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "declarative",
-      "angle_type": "specific scenario",
-      "category": "healing arcs",
-      "topic_cluster": "That feeling when a song hits different at 2am",
-      "visual_style_mix": "stock_heavy",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 8
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 9,
-        "reason": "Intriguing and relatable, immediately draws in viewers who have experienced this specific emotional reaction to music."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "Concise and evocative, clearly communicates the emotional theme within the word count."
-      },
-      "editorial_pov": {
-        "score": 8,
-        "reason": "Establishes a specific, empathetic viewpoint on how certain music can trigger deep emotional responses."
-      },
-      "villain_mechanism_specificity": {
-        "score": 8,
-        "reason": "Focuses on a 'song' as the specific trigger, which is a unique and tangible 'villain' for the scenario."
-      },
-      "cta_quality": {
-        "score": 1,
-        "reason": "There is no call to action present in the provided details."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Accurately reflects the content and tone, creating intrigue without overpromising."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "Expands on the hook and title, providing a good emotional context for potential viewers."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Assuming stock videos will align with the emotional tone of a 'ruined night' song, sync should be good but not perfect without seeing the edit."
-      },
-      "image_direction_strength": {
-        "score": 7,
-        "reason": "Brand images should reinforce the emotional narrative; their strength depends on execution within the edit."
-      },
-      "thumbnail_concept": {
-        "score": 8,
-        "reason": "A strong concept would likely involve imagery evoking late-night solitude and emotional introspection, fitting the title."
-      },
-      "voice_pacing_readiness": {
-        "score": 9,
-        "reason": "Short script suggests it's easily manageable for a deliberate, reflective pacing suitable for the channel's style."
-      },
-      "brand_consistency": {
-        "score": 9,
-        "reason": "The theme of emotional processing and healing aligns perfectly with the channel's established niche."
-      },
-      "policy_factual_risk": {
-        "score": 10,
-        "reason": "No factual claims are made, focusing entirely on subjective emotional experience. Zero policy risk."
-      }
-    },
-    "judge_composite_score": 73,
-    "strongest_element": "hook_strength",
-    "weakest_element": "cta_quality",
-    "only_soft_reset_score": 9,
-    "video_audit_status": "soft_failed",
-    "video_audit_summary": "",
-    "video_audit_strengths": [],
-    "video_audit_dropoff_causes": [],
-    "video_audit_repeat_next": [],
-    "video_audit_reduce_next": [],
-    "video_audit_tags": {}
-  },
-  {
     "video_id": "20260522_234228",
     "published_date": "2026-05-22",
     "status": "uploaded",
@@ -4350,6 +4231,210 @@
           "start": 29.35,
           "section": "loopback",
           "text": "Only they can tell you what they mean."
+        }
+      ]
+    }
+  },
+  {
+    "video_id": "20261031_153139",
+    "published_date": "2026-10-31",
+    "status": "uploaded",
+    "topic": "The Calculated Delay: Why Matching Text Times Keeps You Hooked",
+    "category": "relationship patterns",
+    "angle_type": "truth drop",
+    "total_score": 19,
+    "source_name": "",
+    "source_basis": "",
+    "source_url": "",
+    "confidence_level": "observational",
+    "content_format": "truth_drop",
+    "emotional_trigger": "staring at the timestamp of their text to calculate the exact minute you are allowed to respond",
+    "psych_concept": "tit-for-tat emotional buffering",
+    "core_claim": "Artificially pacing your replies creates the illusion of control while keeping your focus entirely hostage to their schedule.",
+    "editorial_seed": "Popular dating rules tell you to mirror their disinterest so you do not seem eager. In reality, calculating how long to wait makes you think about them five times more than a quick, natural reply would. You are not holding boundaries; you are letting their pace dictate your mental day.",
+    "only_soft_reset_line": "A quick reply costs you ten seconds; the calculated one costs you the whole afternoon.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "Their text came in at 2:14. You've already decided you can't answer before 2:50.",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.7",
+    "script_validation": "passed",
+    "script_validation_notes": "word_count outside target 60-90",
+    "word_count": 97,
+    "estimated_duration_sec": 30,
+    "thumbnail_text": "The Stopwatch They Started",
+    "content_fingerprint": "the calculated delay why matching text times keeps you hooked their text came in at 2 14 you ve already decided you can t answer before 2 50 staring at the timestamp of their text to calculate the exact minute you are allowed to respond tit for tat emotional buffering artificially pacing your replies creates the illusion of control while keeping your focus entirely hostage to their schedule a quick reply costs you ten seconds the calculated one costs you the whole afternoon",
+    "title": "Timing your reply is not a boundary",
+    "youtube_video_id": "H68sVAclGSI",
+    "youtube_url": "https://youtube.com/shorts/H68sVAclGSI",
+    "fallback_count": 0,
+    "video_count": 8,
+    "total_scenes": 8,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W44",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "declarative",
+      "angle_type": "truth drop",
+      "category": "relationship patterns",
+      "topic_cluster": "The Calculated Delay: Why Matching Text Times Keeps You Hook",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 8
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "The precise timestamps (2:14 and 2:50) create immediate, hyper-relatable immersion into a universal modern dating anxiety."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "Clear narrative arc transitioning seamlessly from external behavior to internal rationalization and finishing with a sharp reframe."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Strong philosophical stance that directly dismantles popular dating advice masquerading as self-respect."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "Pinpoints the exact illusion of control: mistaking reactive delay tactics for emotional boundaries."
+      },
+      "cta_quality": {
+        "score": 8,
+        "reason": "Both the like CTA and question directly reinforce the script's central theme and invite vulnerable self-recognition."
+      },
+      "title_accuracy": {
+        "score": 10,
+        "reason": "The title directly states the script's core resolution and thesis with zero contradiction or clickbait distortion."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Summarizes the insight effectively and front-loads the psychological cost in the first sentence."
+      },
+      "visual_dialogue_sync": {
+        "score": 5,
+        "reason": "Uses 8 stock videos with no bespoke visual cues or shot-by-shot sync notes provided."
+      },
+      "image_direction_strength": {
+        "score": 4,
+        "reason": "No custom brand visual direction; relies entirely on generic stock footage."
+      },
+      "thumbnail_concept": {
+        "score": 2,
+        "reason": "Thumbnail concepts array is empty and rendered thumbnail is unknown, posing a packaging release risk."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "At 97 words for 36 seconds (~161 WPM), the pacing leaves ample room for deliberate, reflective pauses."
+      },
+      "brand_consistency": {
+        "score": 8,
+        "reason": "Firmly matches the channel's calm, insightful exposure of self-defeating relational micro-habits."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No policy violations, medical claims, or sensitive factual risk."
+      }
+    },
+    "judge_composite_score": 7.7,
+    "strongest_element": "Script writing and reframe ('That's not a boundary. It's a stopwatch they started.') paired with a hook that immediately exposes a common behavioral pattern.",
+    "weakest_element": "Packaging visual readiness: thumbnail concepts are completely missing and visual direction relies entirely on stock video.",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short succeeds on the strength of its incisive psychological observation and resonant reframe, hooking viewers immediately with a relatable texting scenario. While the voiceover and audio mix are polished and emotionally grounded, the visual momentum dips slightly mid-video due to generic stock choices\u2014notably an anachronistic landline phone and dancing feet\u2014which momentarily distract from an otherwise airtight script.",
+    "video_audit_strengths": [
+      "Punchy, memorable core reframe ('That\\'s not a boundary. It\\'s a stopwatch they started.').",
+      "Laser-focused observational hook that exposes a universal modern dating micro-behavior.",
+      "Measured closing cadence allowing the final takeaway to settle without rushing."
+    ],
+    "video_audit_dropoff_causes": [
+      "Scene 2's vintage landline telephone creates momentary cognitive disconnect in a scenario about modern smartphone texting.",
+      "Captions rendering timestamps as plain numbers ('214', '250') causes slight comprehension lag.",
+      "Middle visual drift to dancing feet softens the acute tension of texting anxiety."
+    ],
+    "video_audit_repeat_next": [
+      "Hyper-specific timestamp or behavioral numbers in the opening hook to trigger instant self-recognition.",
+      "Aphoristic closing conclusions that contrast emotional effort against real-world cost.",
+      "Warm, low-tempo ambient music that supports contemplative voiceover delivery."
+    ],
+    "video_audit_reduce_next": [
+      "Literal keyword search selections that return off-context props (e.g. landline receiver for texting).",
+      "Displaying times in subtitles without colons.",
+      "Abstract b-roll selections (e.g. rhythmic dancing feet) during scenes describing stress or anxious pacing."
+    ],
+    "video_audit_tags": {
+      "hook_type": "micro_behavior_recognition",
+      "thumbnail_type": "phone_fixation_close_up",
+      "visual_style_mix": "cinematic_moody_stock",
+      "narrative_format": "truth_drop",
+      "character_used": "solo_introspective_actors"
+    },
+    "spoken_timeline": {
+      "version": 1,
+      "source": "captions",
+      "duration_sec": 35.8,
+      "voice_end_sec": 31.82,
+      "lines": [
+        {
+          "start": 0.0,
+          "section": "hook",
+          "text": "Their text came in at 2:14."
+        },
+        {
+          "start": 2.14,
+          "section": "hook",
+          "text": "You've already decided you can't answer before 2:50."
+        },
+        {
+          "start": 5.55,
+          "section": "tension",
+          "text": "So you put the phone down, then pick it up."
+        },
+        {
+          "start": 7.94,
+          "section": "tension",
+          "text": "Is it 2:31 yet?"
+        },
+        {
+          "start": 9.4,
+          "section": "tension",
+          "text": "Would 2:48 look desperate?"
+        },
+        {
+          "start": 11.82,
+          "section": "tension",
+          "text": "You rewrite the reply in your head twice while your actual work sits untouched."
+        },
+        {
+          "start": 16.73,
+          "section": "insight",
+          "text": "You call it protecting yourself."
+        },
+        {
+          "start": 18.3,
+          "section": "insight",
+          "text": "But a rule that says wait exactly as long as they did means their pace is setting yours."
+        },
+        {
+          "start": 23.51,
+          "section": "insight",
+          "text": "That's not a boundary."
+        },
+        {
+          "start": 24.8,
+          "section": "insight",
+          "text": "It's a stopwatch they started."
+        },
+        {
+          "start": 26.73,
+          "section": "loopback",
+          "text": "A quick reply costs you ten seconds; the calculated one costs you the whole afternoon."
         }
       ]
     }

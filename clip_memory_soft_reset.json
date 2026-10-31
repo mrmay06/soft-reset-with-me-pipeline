@@ -637,5 +637,93 @@
     "video_id": "20261030_163434",
     "scene_id": 8,
     "used_at": "2026-10-30T16:38:34Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6032131",
+    "source_url": "https://videos.pexels.com/video-files/6032131/6032131-hd_1080_2048_25fps.mp4",
+    "file_hash": "0efc9d8fcb89a174e71946f1ababe20c9566a0a9b88379502f1707331ce257c9",
+    "perceptual_hash": "3f1f0f03131fffff",
+    "query": "phone face down desk",
+    "video_id": "20261031_153139",
+    "scene_id": 1,
+    "used_at": "2026-10-31T15:34:15Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7592161",
+    "source_url": "https://videos.pexels.com/video-files/7592161/7592161-hd_1080_1872_30fps.mp4",
+    "file_hash": "ba22a1f507137644c6aa01e470e84d05cf044e80bd5c59371541cb11da429474",
+    "perceptual_hash": "c0f0f0f0f0febe00",
+    "query": "hand picking up phone",
+    "video_id": "20261031_153139",
+    "scene_id": 2,
+    "used_at": "2026-10-31T15:34:20Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7593905",
+    "source_url": "https://videos.pexels.com/video-files/7593905/7593905-hd_1080_1920_24fps.mp4",
+    "file_hash": "9cb33f8f7dacf91c2fbee29d99ab150ed83412dbc731a89f10e0b92259e45797",
+    "perceptual_hash": "f1f0effff8e0c000",
+    "query": "digital clock bedside dim",
+    "video_id": "20261031_153139",
+    "scene_id": 3,
+    "used_at": "2026-10-31T15:34:33Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6956646",
+    "source_url": "https://videos.pexels.com/video-files/6956646/6956646-hd_1080_1920_25fps.mp4",
+    "file_hash": "9bee2d5ad97d0b3985bb036189ac0ba158a0e618145abb32636de6e42821d9d5",
+    "perceptual_hash": "70f0ffff8f000000",
+    "query": "open laptop untouched coffee",
+    "video_id": "20261031_153139",
+    "scene_id": 4,
+    "used_at": "2026-10-31T15:34:40Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "31069867",
+    "source_url": "https://videos.pexels.com/video-files/31069867/13277768_1080_1920_50fps.mp4",
+    "file_hash": "a4bd3c433320692855827ac06797be6ec7ef35b6d9a6a12f7144dcf15d207377",
+    "perceptual_hash": "007e3f3f38180000",
+    "query": "woman silhouette rainy window",
+    "video_id": "20261031_153139",
+    "scene_id": 5,
+    "used_at": "2026-10-31T15:34:47Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6446330",
+    "source_url": "https://videos.pexels.com/video-files/6446330/6446330-hd_1080_1920_25fps.mp4",
+    "file_hash": "0f19649a5ff71e58f1eb59f76651f405591446c3ca45633181744a1d7aa4d542",
+    "perceptual_hash": "f8d88001e9ffffff",
+    "query": "feet pacing wooden floor",
+    "video_id": "20261031_153139",
+    "scene_id": 6,
+    "used_at": "2026-10-31T15:34:53Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "6380994",
+    "source_url": "https://videos.pexels.com/video-files/6380994/6380994-hd_1080_1920_24fps.mp4",
+    "file_hash": "74f39c5e7c4be77105896816d3a5b8f6b4aaac9ad3a8ffe3c748e52efeec2add",
+    "perceptual_hash": "00000000f8efffff",
+    "query": "hands resting on table",
+    "video_id": "20261031_153139",
+    "scene_id": 7,
+    "used_at": "2026-10-31T15:34:58Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7236863",
+    "source_url": "https://videos.pexels.com/video-files/7236863/7236863-hd_1080_1920_24fps.mp4",
+    "file_hash": "5086504d6433710ac81110c3a6c70f77e5845aaf9ace7b51c3da5e35bf0a8b3a",
+    "perceptual_hash": "01010101017f07ff",
+    "query": "warm tea cup steam",
+    "video_id": "20261031_153139",
+    "scene_id": 8,
+    "used_at": "2026-10-31T15:35:22Z"
   }
 ]
