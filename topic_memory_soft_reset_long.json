@@ -1577,5 +1577,161 @@
     "strongest_element": "Scriptwriting and mechanism diagnosis\u2014the metaphor of wiping a clean counter and filing a 'case study' instead of feeling hurt is brilliant.",
     "weakest_element": "Visual execution rely solely on 74 stock footage cuts, which can feel disjointed or generic without careful curation.",
     "only_soft_reset_score": 9
+  },
+  {
+    "video_id": "long_20261031_153712",
+    "published_date": "2026-10-31",
+    "status": "uploaded",
+    "topic": "The quiet guilt of letting someone else's certainty choose your relationship",
+    "working_title": "When You Let Their Certainty Choose You",
+    "content_pillar": "relationship patterns",
+    "category": "relationship patterns",
+    "angle_type": "emotional_deep_dive",
+    "longform_format": "emotional_deep_dive",
+    "core_claim": "When we mistake someone else's overwhelming certainty for our own desire, safety eventually curdles into quiet guilt: the realization that we did not choose a partner, we merely surrendered to the relief of being wanted.",
+    "editorial_seed": "In a modern dating landscape defined by hesitation and mixed signals, encountering someone who is completely sure of you feels like an answered prayer. It is easy to confuse the deep relief of not having to chase someone with genuine romantic alignment. But when you allow another person's conviction to drive the relationship forward, you eventually find yourself living inside a future you never actively designed. The resulting guilt is unique and isolating because you are being treated well, which makes your inner detachment feel like an ungrateful secret.",
+    "only_soft_reset_line": "There's a quiet cruelty in letting someone love you just because you were too tired to admit you weren't sure.",
+    "word_count": 1079,
+    "estimated_duration_sec": 417.7,
+    "argument_quality": "strong",
+    "final_duration_sec": 406.07,
+    "render_validation": "passed",
+    "title": "You Didn't Choose Them. You Just Wanted to Be Chosen",
+    "primary_variant_id": "B",
+    "title_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "formula": "specific scenario | specific number | named experience",
+        "title": "Why You Feel Guilty in a Relationship Where Nothing Is Wrong"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "formula": "personal pronoun + viewer's private thought made visible",
+        "title": "You Didn't Choose Them. You Just Wanted to Be Chosen"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
+        "title": "Letting Them Love You When You're Unsure Isn't Kindness"
+      }
+    ],
+    "thumbnail_variants": [
+      {
+        "id": "A",
+        "angle": "seo",
+        "pattern": "pure_typography",
+        "structure": "typography",
+        "line1": "NOTHING IS WRONG",
+        "line2": "so why do you feel trapped",
+        "thumbnail_text": "NOTHING IS WRONG / so why do you feel trapped",
+        "visual_prompt": "Premium minimalist editorial title card, deep midnight charcoal textured background with very subtle paper grain, clean studio lighting, muted cool-neutral color palette, generous negative space across center, sophisticated modern layout, no people, no warm tones, no text elements"
+      },
+      {
+        "id": "B",
+        "angle": "emotional_hook",
+        "pattern": "face_right_text_left",
+        "structure": "face_text",
+        "line1": "YOU NEVER CHOSE",
+        "line2": "you just stopped saying no",
+        "thumbnail_text": "YOU NEVER CHOSE / you just stopped saying no",
+        "visual_prompt": "Cinematic 35mm portrait on right 58% of horizontal frame, young woman with quiet recognition and tired eyes looking down toward left, cool-neutral color grading, desaturated slate and deep charcoal tones, soft diffused overcast window light, authentic skin texture, clean empty dark background on left 42%, no text",
+        "subject_gender": "woman",
+        "portrait_scene": "Single young adult woman in her late twenties sitting on the right side of frame, subtle devastated recognition in eyes, heavy gaze turned slightly toward empty left third, lips gently parted in quiet realization, no smile, soft cool-neutral window light from side, 35mm film still aesthetic, muted slate and deep navy tones, clear dark negative space on left 42% for typography, no text"
+      },
+      {
+        "id": "C",
+        "angle": "counter_intuitive",
+        "pattern": "split_screen",
+        "structure": "split",
+        "line1": "IT ISN'T KINDNESS",
+        "line2": "to stay just because you're tired",
+        "thumbnail_text": "IT ISN'T KINDNESS / to stay just because you're tired",
+        "visual_prompt": "Split screen composite, 16:9 aspect ratio, vertical dividing boundary down center; left plate shows dark moody dining table at night with cold blue dusk light and heavy shadows; right plate shows soft morning light streaming through sheer linen curtains onto quiet wooden chair with cool-neutral slate tones, prestige drama film still, no text",
+        "scene_left": "Left half showing a dimly lit dining table setting at dusk, two wine glasses and cooling food, an unresolved cold atmosphere with heavy shadows and solitary muted blue tones, empty chair in foreground conveying quiet emotional distance",
+        "scene_right": "Right half showing clean cool morning light filtering through sheer curtains onto a solitary wooden chair beside an open journal, steady calm composition, muted sage and soft cream tones, quiet grounded clarity, no text"
+      }
+    ],
+    "thumbnail": "07_longform_thumbnail.png",
+    "youtube_video_id": "A7pAfPXDJmk",
+    "youtube_url": "https://www.youtube.com/watch?v=A7pAfPXDJmk",
+    "privacy_status": "private",
+    "uploaded_at": "2026-10-31T15:55:08Z",
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W44",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "unknown",
+      "category": "unknown",
+      "topic_cluster": "The quiet guilt of letting someone else's certainty choose y",
+      "visual_style_mix": "balanced",
+      "video_length_band": "3_7min",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 86
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Placing the viewer immediately at the dinner table nodding along while planning a future creates instant, recognizable emotional tension."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The progression is logical and lucid, clearly separating the relief of not having to guess from genuine reciprocal desire."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Demonstrates deep empathy for both partners, avoiding villainization while firmly calling out the hidden cruelty of polite passivity."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "The concept of 'borrowed conviction' operating as an emotional anesthetic is exceptionally well-articulated and concrete."
+      },
+      "cta_quality": {
+        "score": 8,
+        "reason": "The save CTA is organic to the video's theme ('the next time you catch yourself nodding along'), and the reflection question invites meaningful self-examination."
+      },
+      "title_accuracy": {
+        "score": 8,
+        "reason": "The title precisely names the psychological dynamic explored throughout the script without resorting to sensational clickbait or contradicting the counterpoint."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "The opening sentence delivers the script's sharpest moral insight directly, framing the stakes before the viewer even clicks."
+      },
+      "visual_dialogue_sync": {
+        "score": 7,
+        "reason": "With 86 stock video cuts over 406 seconds, pacing is brisk, but purely stock footage runs the risk of feeling generic unless visual grading and pacing tightly mirror the voiceover's quiet cadence."
+      },
+      "image_direction_strength": {
+        "score": 8,
+        "reason": "Concept B's visual prompt specifies 35mm film texture, muted cool tones, and clear negative space for typography, aligning with editorial standards."
+      },
+      "thumbnail_concept": {
+        "score": 8,
+        "reason": "Concept B ('YOU NEVER CHOSE / you just stopped saying no') complements the title and triggers personal recognition rather than cheap curiosity."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "The phrasing is written specifically for slow, deliberate audio delivery, with natural sentence fragments and built-in pauses."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "Aligns seamlessly with the channel's identity: quiet, dignified introspection that treats sensitive interpersonal dilemmas with maturity."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "Presents subjective interpersonal reflection without diagnosing clinical conditions or violating community guidelines."
+      }
+    },
+    "judge_composite_score": 8.5,
+    "strongest_element": "The psychological distinction between the relief of being wanted and actual reciprocal desire ('borrowed conviction').",
+    "weakest_element": "Visual dependency on 86 stock video scenes, which demands precise curation to avoid feeling like generic montage b-roll.",
+    "only_soft_reset_score": 9
   }
 ]

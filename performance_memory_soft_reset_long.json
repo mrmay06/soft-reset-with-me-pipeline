@@ -1,216 +1,49 @@
 {
-  "generated_at": "2026-06-29T05:16:42Z",
+  "generated_at": "2026-10-31T15:37:13Z",
   "lookback_days": 90,
   "min_video_age_days": 3,
   "refresh_interval_days": 7,
-  "start_date": "2026-03-30",
-  "end_date": "2026-06-28",
+  "start_date": "2026-08-01",
+  "end_date": "2026-10-30",
   "videos": [
     {
-      "video_id": "long_20260507_164017",
-      "published_date": "2026-05-07",
+      "video_id": "long_20261010_154248",
+      "published_date": "2026-10-10",
       "status": "uploaded",
-      "topic": "The quiet resistance to 'easy' love: Why consistent affection can feel threatening when you're used to chaos.",
-      "working_title": "When 'Easy' Love Feels Unsafe: Why We Resist What's Good For Us",
-      "content_pillar": "healing arcs",
-      "category": "healing arcs",
+      "topic": "The habit of intellectualizing your hurt so well that your partner never realizes you are actually hurting",
+      "working_title": "When Being 'Understanding' Becomes a Way to Hide",
+      "content_pillar": "relationship patterns",
+      "category": "relationship patterns",
       "angle_type": "emotional_deep_dive",
       "longform_format": "emotional_deep_dive",
-      "core_claim": "Many of us, after experiencing chaotic or inconsistent love, unconsciously resist genuine, stable affection because its very consistency feels unfamiliar and therefore, unsafe.",
-      "editorial_seed": "We often mistake peace for boredom, or genuine kindness for a lack of passion. This video explores the subconscious reasons why consistent, healthy love can feel threatening when our nervous systems are wired for drama. It's about understanding that 'easy' isn't inherently weak, and learning to lean into the quiet comfort of stability, not away from it.",
-      "only_soft_reset_line": "You're not broken for flinching at steady hands; you're just unlearning the language of always bracing for impact.",
-      "word_count": 880,
-      "estimated_duration_sec": 340.6,
+      "core_claim": "Explaining away someone's impact with mature logic can look like empathy, but it often functions as a defense mechanism to avoid the vulnerability of simply being hurt.",
+      "editorial_seed": "Many emotionally literate people respond to disappointment by instantly diagnosing it. They list their partner's stressors, excuse the oversight, and present their feelings like a calm, diplomatic case study. The conversation ends peacefully, but they go to sleep feeling completely unseen. This essay explores why we substitute understanding for honesty, and what happens when we finally allow our feelings to exist without a polite disclaimer.",
+      "only_soft_reset_line": "You traded the messy truth of your hurt for the safety of being reasonable, and now you are lonely in a room where no one even raised their voice.",
+      "word_count": 892,
+      "estimated_duration_sec": 345.3,
       "argument_quality": "strong",
-      "final_duration_sec": 327.13,
+      "final_duration_sec": 312.83,
       "render_validation": "passed",
-      "title": "You're addicted to the chaos, not the chase",
-      "primary_variant_id": "C",
+      "title": "You Told Them You Understood, but You're Still Hurting",
+      "primary_variant_id": "B",
       "title_variants": [
         {
           "id": "A",
           "angle": "seo",
           "formula": "specific scenario | specific number | named experience",
-          "title": "Why consistency feels dangerous after chaos"
+          "title": "Why Being the 'Understanding' Partner Leaves You Lonely"
         },
         {
           "id": "B",
           "angle": "emotional_hook",
           "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "Why their kindness makes you want to run"
+          "title": "You Told Them You Understood, but You're Still Hurting"
         },
         {
           "id": "C",
           "angle": "counter_intuitive",
           "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "You're addicted to the chaos, not the chase"
-        }
-      ],
-      "thumbnail_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "pattern": "clean_concept_close_up | highlighted_truth",
-          "thumbnail_text": "EASY LOVE FEELS WRONG",
-          "visual_prompt": "A close-up of a person's hand, mid-20s, with a gentle, consistent hand resting lightly over theirs. The person's eyes, visible in the background, show a subtle, almost imperceptible flinch or tension, not fear, but a quiet apprehension. The scene is softly lit, with the right 40% of the frame slightly darker for text, using Deep Midnight as background base, Warm Terracotta as subtle highlight on hands. Photorealistic cinematic editorial, 1280x720, 16:9."
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "pattern": "digital_anxiety_overlay | emotional_hook",
-          "thumbnail_text": "THE CALM FEELS DANGEROUS",
-          "visual_prompt": "A tight, intimate shot of a person's face (18-35, androgynous or female coded), looking slightly overwhelmed or restless while sitting in a quiet, softly lit room (Deep Midnight tones). Their gaze is distant, suggesting an internal conflict. A subtle, almost imperceptible visual overlay of static or a faint, glowing, unformed 'thought cloud' around their head (Warm Terracotta accent). The left 40% of the frame is dark negative space for text. Photorealistic cinematic editorial, 1280x720, 16:9."
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "pattern": "dichotomy_split | subject_vs_the_void",
-          "thumbnail_text": "YOU MISS THE CHAOS",
-          "visual_prompt": "A profile close-up of a person's face (18-35, male coded or androgynous), softly illuminated on the left, looking contemplatively into a deep, empty void on the right side of the frame. The void, a vast expanse of Deep Midnight, consumes the right 40% of the frame, serving as the text zone. A subtle ripple of unsettled emotion crosses their face. The light catching their features has a Warm Terracotta hue. Photorealistic cinematic editorial, 1280x720, 16:9."
-        }
-      ],
-      "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "tE85wCnMYYI",
-      "youtube_url": "https://www.youtube.com/watch?v=tE85wCnMYYI",
-      "privacy_status": "public",
-      "uploaded_at": "2026-05-07T16:54:50Z",
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W19",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "unknown",
-        "category": "unknown",
-        "topic_cluster": "The quiet resistance to 'easy' love: Why consistent affectio",
-        "visual_style_mix": "unknown",
-        "video_length_band": "3_7min",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "none",
-        "total_scenes": 0
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook uses evocative language ('addicted to chaos,' 'unlearning the language of always bracing for impact') which piques curiosity about the core message."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script effectively explains the concept of seeking chaos due to past experiences, providing clear examples and actionable advice for breaking the cycle."
-        },
-        "editorial_pov": {
-          "score": 9,
-          "reason": "The POV is deeply empathetic and insightful, resonating with viewers who have experienced similar relationship patterns, making it feel like a direct conversation."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "It clearly identifies the 'villain' as the internalized pattern of seeking familiar chaos rather than healthy connection, and explains how this pattern operates."
-        },
-        "cta_quality": {
-          "score": 7,
-          "reason": "The CTA encourages self-reflection and community engagement, which is appropriate for the channel's focus, though it could be slightly more direct."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title perfectly captures the core paradox discussed in the video, immediately drawing in the target audience."
-        },
-        "description_usefulness": {
-          "score": 7,
-          "reason": "The description is intriguing and sets the tone well, but could be more informative about the video's content to encourage clicks."
-        },
-        "visual_dialogue_sync": {
-          "score": 1,
-          "reason": "No visual elements (stock videos, brand images, scenes) were provided, making this score impossible to assess. Assuming a purely audio format, sync is not applicable."
-        },
-        "image_direction_strength": {
-          "score": 1,
-          "reason": "No visual elements were provided, so this cannot be scored."
-        },
-        "thumbnail_concept": {
-          "score": 1,
-          "reason": "No thumbnail concept was provided or implied."
-        },
-        "voice_pacing_readiness": {
-          "score": 9,
-          "reason": "The script is written in a conversational and reflective tone, suggesting excellent pacing for a faceless channel's narration."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The theme of self-growth through understanding relationship patterns aligns perfectly with the channel's known focus."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is psychological and self-reflective, posing no factual risk or violation of policies."
-        }
-      },
-      "judge_composite_score": 6.5,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "Visual Dialogue Sync",
-      "only_soft_reset_score": 9,
-      "metrics": {
-        "views": 6,
-        "engagedViews": 6,
-        "averageViewDuration": 84,
-        "averageViewPercentage": 25.900000000000002,
-        "likes": 1,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 1
-      },
-      "composite_score": 70.47,
-      "performance_score": 70.47,
-      "score_version": 1,
-      "hook_score": 100.0,
-      "hold_score": 25.9,
-      "resonance_score": 100.0,
-      "resonance_per_engaged": 1.5,
-      "resonance_per_view": 1.5,
-      "conversion_score": 100.0,
-      "conversion_rate_per_1k": 166.6667,
-      "reach_score": 28.17,
-      "analytics_fetched_at": "2026-06-29T05:16:42Z",
-      "analytics_days_old": 53,
-      "data_available": true
-    },
-    {
-      "video_id": "long_20260518_045256",
-      "published_date": "2026-05-18",
-      "status": "uploaded",
-      "topic": "The quiet anxiety of having 'nothing to fix' in a healthy relationship.",
-      "working_title": "When Peace Feels Unsafe: The Anxiety of a Relationship Where You Don't Have to Earn Love",
-      "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
-      "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
-      "angle_type": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
-      "longform_format": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
-      "core_claim": "Our nervous systems can be so conditioned by past chaos or conditional love that genuine peace and unconditional acceptance in a relationship can paradoxically trigger anxiety, making us feel like we always need to 'do' something to maintain it, rather than simply receive it.",
-      "editorial_seed": "We often talk about 'red flags,' but what about 'green flags' that feel... wrong? When a relationship is genuinely stable, kind, and asks nothing more than for you to simply *be*, it can paradoxically activate a deep-seated anxiety. This video explores why our minds might try to create problems where none exist, pushing us to 'fix' a perfectly good thing, and how to gently retrain ourselves to trust and receive true peace.",
-      "only_soft_reset_line": "Learning to simply exist \u2014 without performing for love or constantly searching for a problem to solve \u2014 is the most profound act of unlearning conditional affection.",
-      "word_count": 1004,
-      "estimated_duration_sec": 388.6,
-      "argument_quality": "strong",
-      "final_duration_sec": 361.13,
-      "render_validation": "passed",
-      "title": "The Quiet Anxiety of Finally Having Nothing to Fix",
-      "primary_variant_id": "C",
-      "title_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "formula": "specific scenario | specific number | named experience",
-          "title": "Why You Feel Anxious When Your Relationship Is Good"
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "You Still Wait for Something to Go Wrong, Even When It's Good"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "The Quiet Anxiety of Finally Having Nothing to Fix"
+          "title": "Being the Reasonable One Is Quietly Making You Lonely"
         }
       ],
       "thumbnail_variants": [
@@ -219,1018 +52,138 @@
           "angle": "seo",
           "pattern": "pure_typography",
           "structure": "typography",
-          "line1": "THIS CAN'T LAST",
-          "line2": "why peace feels wrong",
-          "thumbnail_text": "THIS CAN'T LAST / why peace feels wrong",
-          "visual_prompt": "Minimalist dark charcoal background, subtle paper texture, premium editorial book cover aesthetic, no text, cool neutral cinematic color. 16:9 aspect ratio."
+          "line1": "THANKS FOR UNDERSTANDING",
+          "line2": "so why does it hurt",
+          "thumbnail_text": "THANKS FOR UNDERSTANDING / so why does it hurt",
+          "visual_prompt": "Minimalist editorial background in deep midnight charcoal, ultra-fine film grain texture, soft diffused cool light gradient, clean negative space designed for elegant typography overlay, no subjects, no graphics, no text"
         },
         {
           "id": "B",
           "angle": "emotional_hook",
           "pattern": "face_right_text_left",
           "structure": "face_text",
-          "line1": "YOU'RE STILL WAITING",
-          "line2": "for something to break",
-          "thumbnail_text": "YOU'RE STILL WAITING / for something to break",
-          "visual_prompt": "A cinematic portrait of a young woman in her late 20s, facing forward but with eyes subtly drawn towards the left. Her expression conveys quiet, devastated recognition and internal thought, not sadness or joy. Heavy, reflective eyes. Soft diffused cool-neutral window light, prestige drama color grade, subtle film grain. Right 58% of the frame features her face and upper body, with the left 42% completely dark and empty, reserved for text overlay. 16:9 aspect ratio, no text.",
+          "line1": "YOU DIDN'T FORGIVE",
+          "line2": "you just stopped saying it",
+          "thumbnail_text": "YOU DIDN'T FORGIVE / you just stopped saying it",
+          "visual_prompt": "Cinematic portrait of a young woman on the right 58% of the frame looking toward the left with quiet restrained recognition, heavy tired eyes, soft natural cool-toned side lighting, authentic skin texture, cinematic 35mm grain, deep midnight dark negative space covering the left 42%, no text",
           "subject_gender": "woman",
-          "portrait_scene": "A young woman (mid-twenties to early thirties) with quiet, devastated recognition in her eyes, looking slightly left. Soft diffused cool-neutral window light. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. The right 58% of the frame is occupied by her face, with the left 42% as a clean, empty dark zone. No text. 16:9 aspect ratio."
+          "portrait_scene": "Young woman in her late twenties positioned on the right 58% of the frame, gazing softly toward the left with quiet devastated recognition, heavy eyes, subtle vulnerability, diffused cool-neutral window illumination, left 42% of the frame is clean dark midnight shadow, prestige drama grade, no text"
         },
         {
           "id": "C",
           "angle": "counter_intuitive",
           "pattern": "split_screen",
           "structure": "split",
-          "line1": "NOTHING TO FIX",
-          "line2": "and why that scares you",
-          "thumbnail_text": "NOTHING TO FIX / and why that scares you",
-          "visual_prompt": "Two-plate split composite: Left side: A solitary figure (gender ambiguous) seen from behind, sitting in a dimly lit, slightly cluttered room, bathed in cold, deep shadows. The atmosphere is unresolved and melancholic. Right side: A separate figure (gender ambiguous) seen from behind, standing at a clean, minimalist window, looking out at a clear, cool-neutral sky. The light is steady and diffused, conveying quiet clarity and peace, not bright happiness. Both sides have a prestige drama color grade and subtle film grain. No text. 16:9 aspect ratio.",
-          "scene_left": "A solitary figure (from behind, gender ambiguous) sitting alone in a dimly lit, slightly chaotic room, bathed in cold, deep shadows. Overcast, melancholic atmosphere. A sense of unrest and yearning. No text. 16:9 aspect ratio.",
-          "scene_right": "A person (from behind, gender ambiguous) standing at a clean, minimalist window, looking out at a cool, clear, steady sky. Soft, diffused cool-neutral light. Sense of quiet contemplation, but not joy or full resolution. No strong warmth. No text. 16:9 aspect ratio."
+          "line1": "REASONABLE ISN'T KIND",
+          "line2": "it's just where you hide",
+          "thumbnail_text": "REASONABLE ISN'T KIND / it's just where you hide",
+          "visual_prompt": "Cinematic 16:9 two-plate horizontal split composite: left side shows an isolated figure wiping down a spotless counter alone in a cold dark twilight kitchen; right side shows a steady figure seated in calm direct dialogue under balanced cool-neutral evening light, desaturated cinematic grade, no text",
+          "scene_left": "Cold dim kitchen at dusk, single figure wiping an already clean counter in silence, isolated body language, heavy shadows and deep midnight tones, no text",
+          "scene_right": "Quiet grounded room, steady individual sitting in still conversation across an evening table, soft cool-neutral ambient lamp light, calm and present atmosphere, no text"
         }
       ],
       "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "Fbf3HUSqXRk",
-      "youtube_url": "https://www.youtube.com/watch?v=Fbf3HUSqXRk",
-      "privacy_status": "public",
-      "uploaded_at": "2026-05-18T05:08:11Z",
+      "youtube_video_id": "E7cHVXW8xfo",
+      "youtube_url": "https://www.youtube.com/watch?v=E7cHVXW8xfo",
+      "privacy_status": "private",
+      "uploaded_at": "2026-10-10T15:56:22Z",
       "experiment_label": "baseline",
       "experiment_id": null,
-      "strategy_version": "2026-W21",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "unknown",
-        "category": "unknown",
-        "topic_cluster": "The quiet anxiety of having 'nothing to fix' in a healthy re",
-        "visual_style_mix": "unknown",
-        "video_length_band": "3_7min",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "none",
-        "total_scenes": 0
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook introduces a relatable emotional state (anxiety) and hints at a counter-intuitive solution (having nothing to fix), sparking curiosity."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script, based on the word count and topic, likely explores a nuanced psychological concept with depth. Assumes clear articulation."
-        },
-        "editorial_pov": {
-          "score": 9,
-          "reason": "The angle of \"quiet anxiety of finally having nothing to fix\" is a deeply introspective and potentially unique perspective aligning with self-growth themes."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' is internal (anxiety, conditioning), and while specific, the mechanism of 'unlearning' needs to be clearly demonstrated in the script."
-        },
-        "cta_quality": {
-          "score": 0,
-          "reason": "No CTA information provided in the prompt."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title is highly accurate to the described concept, capturing a specific, relatable, and intriguing emotional state. It's honest and draws attention."
-        },
-        "description_usefulness": {
-          "score": 9,
-          "reason": "The description is concise, philosophically intriguing, and accurately reflects the core theme of the video, setting expectations well."
-        },
-        "visual_dialogue_sync": {
-          "score": 0,
-          "reason": "No visual information provided for scoring."
-        },
-        "image_direction_strength": {
-          "score": 0,
-          "reason": "No visual information provided for scoring."
-        },
-        "thumbnail_concept": {
-          "score": 0,
-          "reason": "No thumbnail concept provided for scoring."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The script length suggests a need for thoughtful pacing. Assumes a voice that can convey introspection and calm."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The theme of 'unlearning conditioning,' 'performing for love,' and introspection is highly consistent with a relationship/self-growth channel's typical content."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The topic is purely psychological and subjective, posing no factual or policy risk."
-        }
-      },
-      "judge_composite_score": 8.1,
-      "strongest_element": "title_accuracy",
-      "weakest_element": "cta_quality",
-      "only_soft_reset_score": 9,
-      "metrics": {
-        "views": 19,
-        "engagedViews": 19,
-        "averageViewDuration": 98,
-        "averageViewPercentage": 27.089999999999996,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 1
-      },
-      "composite_score": 60.07,
-      "performance_score": 60.07,
-      "score_version": 1,
-      "hook_score": 100.0,
-      "hold_score": 27.09,
-      "resonance_score": 42.11,
-      "resonance_per_engaged": 0.4211,
-      "resonance_per_view": 0.4211,
-      "conversion_score": 100.0,
-      "conversion_rate_per_1k": 52.6316,
-      "reach_score": 43.36,
-      "analytics_fetched_at": "2026-06-29T05:16:42Z",
-      "analytics_days_old": 42,
-      "data_available": true
-    },
-    {
-      "video_id": "long_20260525_050930",
-      "published_date": "2026-05-25",
-      "status": "uploaded",
-      "topic": "The invisible emotional labor of always being the one who initiates relationship repair.",
-      "working_title": "When You're Always the One Drawing the Emotional Map",
-      "content_pillar": "relationship patterns | psychology drops | conversation truths | healing arcs",
-      "category": "relationship patterns | psychology drops | conversation truths | healing arcs",
-      "angle_type": "emotional_deep_dive | pattern_breakdown",
-      "longform_format": "emotional_deep_dive | pattern_breakdown",
-      "core_claim": "Always being the one to initiate deep emotional conversations or repair efforts in a relationship silently erodes connection and can leave you feeling profoundly alone, even when partnered.",
-      "editorial_seed": "Many of us find ourselves in relationships where we're constantly the ones pushing for emotional honesty, vulnerability, or conflict resolution. This isn't about being strong; it's about carrying an unseen burden. We'll explore why this pattern develops, how it impacts your sense of self and the relationship, and how to gently shift or acknowledge this imbalance.",
-      "only_soft_reset_line": "It's not resilience if you're the only one doing the heavy emotional lifting \u2014 it's a quiet isolation disguised as love.",
-      "word_count": 905,
-      "estimated_duration_sec": 350.3,
-      "argument_quality": "strong",
-      "final_duration_sec": 360.4,
-      "render_validation": "passed",
-      "title": "You think you\u2019re fixing it, but you\u2019re just staying alone",
-      "primary_variant_id": "C",
-      "title_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "formula": "specific scenario | specific number | named experience",
-          "title": "Why always initiating repair leaves you feeling so alone"
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "You\u2019re tired of being the only one to break the silence"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "You think you\u2019re fixing it, but you\u2019re just staying alone"
-        }
-      ],
-      "thumbnail_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "pattern": "pure_typography",
-          "structure": "typography",
-          "line1": "YOU START FIRST",
-          "line2": "and it feels heavy",
-          "thumbnail_text": "YOU START FIRST / and it feels heavy",
-          "visual_prompt": "Pure typography on a dark charcoal background, premium editorial book-cover aesthetic, elegant minimalist font, no photo, no text generated. Cool-neutral cinematic color palette, no warm tones. Aspect ratio 16:9, high resolution, no logos, borders, UI, or watermarks."
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "pattern": "face_right_text_left",
-          "structure": "face_text",
-          "line1": "ALWAYS YOUR JOB",
-          "line2": "this is why you're tired",
-          "thumbnail_text": "ALWAYS YOUR JOB / this is why you're tired",
-          "visual_prompt": "A cinematic portrait of a young woman, mid-twenties, on the right 58% of the frame. She has heavy, tired eyes and a quiet expression of devastated recognition, looking subtly towards the empty dark left 42% of the frame. No smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light from the right. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. The left 42% of the frame is a clean, dark charcoal text zone. 16:9 aspect ratio, no text generated, no logos, borders, UI, or watermarks.",
-          "subject_gender": "woman",
-          "portrait_scene": "A young woman, mid-twenties to early thirties, looking slightly to the left with an expression of quiet, knowing devastation and heavy eyes. Her gaze is thoughtful and resigned, not crying or shocked. Soft, diffused cool-neutral window light illuminates her face from the right. Real skin texture, subtle film grain, desaturated prestige drama color grade. The left 42% of the canvas is an empty, dark charcoal zone for text. 16:9 aspect ratio, no text generated."
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "pattern": "split_screen",
-          "structure": "split",
-          "line1": "THAT'S NOT LOVE",
-          "line2": "it's just quiet isolation",
-          "thumbnail_text": "THAT'S NOT LOVE / it's just quiet isolation",
-          "visual_prompt": "A split-screen composite image, 16:9 aspect ratio. The left plate (50%) depicts an unresolved, cold, and dark scene: a dimly lit room, perhaps a silhouette of a person sitting alone, conveying stagnation and tension. Color palette leans towards cool blues and grays, low saturation. The right plate (50%) depicts a clearer, cool-neutral, steady resolution state: an uncluttered, calm space, soft cool light filtering in, a sense of quiet internal clarity and peace. No warmth, no bright happiness, just steady composure. No figures on the right side. No text generated, no logos, borders, UI, or watermarks.",
-          "scene_left": "A dimly lit, slightly messy room, a lone figure (back to camera or indistinct) looking at a phone screen, cold blue light, feeling of stagnation and tension.",
-          "scene_right": "A clear, uncluttered space, gentle cool-neutral light filtering through, perhaps a hand resting calmly on a surface, no figure, feeling of quiet resolve, internal clarity."
-        }
-      ],
-      "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "eP__l295ZLI",
-      "youtube_url": "https://www.youtube.com/watch?v=eP__l295ZLI",
-      "privacy_status": "public",
-      "uploaded_at": "2026-05-25T05:24:40Z",
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W22",
+      "strategy_version": "2026-W41",
       "judge_traits": {
         "hook_type": "statement",
         "title_type": "accusation",
         "angle_type": "unknown",
         "category": "unknown",
-        "topic_cluster": "The invisible emotional labor of always being the one who in",
-        "visual_style_mix": "unknown",
+        "topic_cluster": "The habit of intellectualizing your hurt so well that your p",
+        "visual_style_mix": "balanced",
         "video_length_band": "3_7min",
         "narrative_format": "unknown",
         "thumbnail_type": "text_only",
         "character_used": "none",
-        "total_scenes": 0
+        "total_scenes": 74
       },
       "judge_scores": {
         "hook_strength": {
-          "score": 7,
-          "reason": "The hook sets up a relatable scenario of trying to fix a relationship and hints at a deeper, negative truth, creating intrigue."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script effectively communicates the core message about one-sided emotional effort in relationships and its isolating effect."
-        },
-        "editorial_pov": {
           "score": 9,
-          "reason": "The perspective is clearly defined, offering a specific, insightful take on relationship dynamics that aligns with the channel's likely ethos."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' mechanism (one-sided emotional lifting disguised as love) is clearly identified and explained, though could be even more nuanced."
-        },
-        "cta_quality": {
-          "score": 1,
-          "reason": "There is no CTA provided in the video details. This is a critical omission for a YouTube video."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title is provocative and accurately reflects the script's central theme of self-deception in relationship repair leading to isolation."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description clearly encapsulates the video's theme and draws the viewer in with relatable phrasing and a strong emotional hook."
-        },
-        "visual_dialogue_sync": {
-          "score": 1,
-          "reason": "No visual elements or script are provided to assess sync. Assuming a faceless channel, this score reflects the lack of provided information."
-        },
-        "image_direction_strength": {
-          "score": 1,
-          "reason": "No visual elements or script are provided to assess image direction. Assuming a faceless channel, this score reflects the lack of provided information."
-        },
-        "thumbnail_concept": {
-          "score": 1,
-          "reason": "No thumbnail concept is provided. This is a crucial element for viewer engagement."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "The script's word count suggests a reasonable pace for a 360s video (approx. 150 words/min), likely allowing for clear articulation."
-        },
-        "brand_consistency": {
-          "score": 9,
-          "reason": "The theme of emotional isolation disguised as love aligns strongly with the self-growth and relationship recovery niche implied by the channel name."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content focuses on emotional relationship dynamics and self-perception, posing no apparent factual or policy risks."
-        }
-      },
-      "judge_composite_score": 6.2,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "CTA Quality",
-      "only_soft_reset_score": 8,
-      "metrics": {
-        "views": 24,
-        "engagedViews": 24,
-        "averageViewDuration": 77,
-        "averageViewPercentage": 21.4,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 1
-      },
-      "composite_score": 56.49,
-      "performance_score": 56.49,
-      "score_version": 1,
-      "hook_score": 100.0,
-      "hold_score": 21.4,
-      "resonance_score": 33.33,
-      "resonance_per_engaged": 0.3333,
-      "resonance_per_view": 0.3333,
-      "conversion_score": 100.0,
-      "conversion_rate_per_1k": 41.6667,
-      "reach_score": 46.59,
-      "analytics_fetched_at": "2026-06-29T05:16:42Z",
-      "analytics_days_old": 35,
-      "data_available": true
-    },
-    {
-      "video_id": "long_20260601_052851",
-      "published_date": "2026-06-01",
-      "status": "uploaded",
-      "topic": "The Silent Concession: Why we ask for 'less' than we truly want, before anyone has even said no.",
-      "working_title": "The Silent Concession: Why you ask for 'less' than you truly need (and how to unlearn it).",
-      "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
-      "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | conversation truths | identity and growth",
-      "angle_type": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
-      "longform_format": "emotional_deep_dive | pattern_breakdown | conversation_you_needed",
-      "core_claim": "We often subconsciously dilute our own needs and desires when expressing them in relationships, due to past experiences of rejection or unmet expectations, inadvertently perpetuating a cycle of receiving less than we truly deserve.",
-      "editorial_seed": "Many of us have learned to shrink our desires down before we even voice them. We've been taught, implicitly or explicitly, that our full needs might be 'too much,' inconvenient, or will inevitably lead to disappointment. This video explores the subtle ways we preemptively compromise with ourselves, asking for a watered-down version of what we truly want, and how this quiet self-betrayal affects our relationships. It's time to understand why we do this, and how to start asking for our whole selves.",
-      "only_soft_reset_line": "The real heartbreak isn't being denied what you need. It's realizing you never fully asked for it in the first place.",
-      "word_count": 1039,
-      "estimated_duration_sec": 402.2,
-      "argument_quality": "strong",
-      "final_duration_sec": 372.4,
-      "render_validation": "passed",
-      "title": "That quiet ask for 'less'? You're already saying no to yourself",
-      "primary_variant_id": "C",
-      "title_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "formula": "specific scenario | specific number | named experience",
-          "title": "Why you ask for 70% of what you want from them"
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "You soften your needs before they can even say no"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "That quiet ask for 'less'? You're already saying no to yourself"
-        }
-      ],
-      "thumbnail_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "pattern": "pure_typography",
-          "structure": "typography",
-          "line1": "YOU ASK FOR LESS",
-          "line2": "before anyone says no",
-          "thumbnail_text": "YOU ASK FOR LESS / before anyone says no",
-          "visual_prompt": "16:9 horizontal, 1920x1080. Minimalist, premium editorial book-cover aesthetic. Dark charcoal background with subtle texture. Abstract, elegant, cool-neutral gradient, very subtle film grain. No text, no warm colors, no UI elements. Deep Midnight #1C1C2B dominant with very subtle hints of Soft Cream #F5F0E8. Cinematic light."
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "pattern": "face_right_text_left",
-          "structure": "face_text",
-          "line1": "YOU HELD BACK",
-          "line2": "why you always do this",
-          "thumbnail_text": "YOU HELD BACK / why you always do this",
-          "visual_prompt": "16:9 horizontal, 1920x1080. A woman, mid-twenties to early thirties, positioned on the right 58% of the frame. Her expression conveys quiet, devastated recognition, heavy eyes, gaze slightly to the left. No smile, no open crying, no shocked reaction. Soft diffused cool-neutral window light on her face. Real skin texture, subtle film grain. Slightly desaturated prestige drama color grade. The left 42% of the frame is a clean, dark, empty zone for text. No text in the image. Cool-neutral cinematic color palette only. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks.",
-          "subject_gender": "woman",
-          "portrait_scene": "cool-neutral portrait scene with empty dark left text zone, no text"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "pattern": "split_screen",
-          "structure": "split",
-          "line1": "YOU SAID NO FIRST",
-          "line2": "before anyone else could",
-          "thumbnail_text": "YOU SAID NO FIRST / before anyone else could",
-          "visual_prompt": "16:9 horizontal, 1920x1080. Two-plate split-screen composite. Left side (problem state): A person, indistinct, hunched over a dim phone screen in a cold, dark, sparse room, feeling isolated and unresolved. Dominant cool tones, deep shadows. Right side (resolution state): The same person, now clearer, cool-neutral lighting, looking out a window with a steady, contemplative expression. Calm, cool, diffused light, a sense of quiet clarity. No text in the image. No warm amber, golden hour, candlelight, orange cast, teal cast, logos, borders, UI chrome, watermarks. Subtle film grain.",
-          "scene_left": "problem-state scene, cold dark, no text",
-          "scene_right": "resolution-state scene, cool-neutral clarity, no text"
-        }
-      ],
-      "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "lq1EnufJHSU",
-      "youtube_url": "https://www.youtube.com/watch?v=lq1EnufJHSU",
-      "privacy_status": "public",
-      "uploaded_at": "2026-06-01T05:45:17Z",
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W23",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "unknown",
-        "category": "unknown",
-        "topic_cluster": "The Silent Concession: Why we ask for 'less' than we truly w",
-        "visual_style_mix": "unknown",
-        "video_length_band": "3_7min",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "none",
-        "total_scenes": 0
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 8,
-          "reason": "The hook 'That quiet ask for 'less'?' is intriguing and directly relates to the title, posing a relatable question that invites viewers to explore their own experiences."
+          "reason": "The sensory detail of wiping a clean kitchen counter perfectly grounds the psychological dissonance of being reasonable while internally hurting."
         },
         "script_clarity": {
           "score": 9,
-          "reason": "The script is well-structured, using clear language and relatable examples to explain the concept of self-denial and the importance of assertive communication in relationships."
+          "reason": "The progression from micro-behavior to psychological root, systemic consequence, counterpoint, and practical reframe is exceptionally lucid."
         },
         "editorial_pov": {
-          "score": 8,
-          "reason": "The editorial point of view is consistent, offering a reflective and empowering perspective on personal agency within relationships, aligning with the channel's likely self-growth focus."
+          "score": 9,
+          "reason": "Clear, compassionate, and precise; it identifies the defense mechanism of over-intellectualizing hurt without shaming either partner."
         },
         "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' is identified as the internal mechanism of self-silencing and fear of asking for needs, which is well-explained, though could be slightly more specific in its manifestation."
+          "score": 9,
+          "reason": "Names the exact subtle trap: turning an emotional sting into an intellectual 'case study' to avoid the vulnerability of being rejected."
         },
         "cta_quality": {
-          "score": 5,
-          "reason": "A specific CTA is not present in the provided details, which is a missed opportunity for engagement and guiding viewer action."
+          "score": 8,
+          "reason": "The engagement prompt is unusually sharp and reflective; the subscribe CTA is natural and tonally congruent."
         },
         "title_accuracy": {
-          "score": 9,
-          "reason": "The title accurately reflects the core message of the video, highlighting the internal struggle of not asking for what one needs and the resulting self-denial."
+          "score": 8,
+          "reason": "The title matches the exact emotional dilemma explored in the script without clickbait distortion or advice contradiction."
         },
         "description_usefulness": {
           "score": 8,
-          "reason": "The description is concise, engaging, and accurately previews the video's theme, setting a compelling tone and hinting at the emotional core of the content."
+          "reason": "The opening sentence carries immense emotional punch and cleanly summarizes the core thesis."
         },
         "visual_dialogue_sync": {
-          "score": 1,
-          "reason": "No visual elements (scenes, stock videos, brand images) were provided, making it impossible to assess sync. Assuming a typical faceless format, this will heavily rely on text overlays or abstract visuals."
+          "score": 7,
+          "reason": "Heavy reliance on 74 generic stock clips risks pacing visual drift if literal domestic beats aren't matched precisely to the script's quiet intimacy."
         },
         "image_direction_strength": {
-          "score": 1,
-          "reason": "No visual elements were provided, therefore image direction cannot be assessed."
+          "score": 8,
+          "reason": "Thumbnail prompts are well-directed with clear spatial composition, negative space, and evocative color grading."
         },
         "thumbnail_concept": {
-          "score": 1,
-          "reason": "No thumbnail concept was provided, making assessment impossible."
+          "score": 8,
+          "reason": "Rendered thumbnail B captures vulnerability well, though Thumbnail A's wording ('THANKS FOR UNDERSTANDING / so why does it hurt') mirrors the script vocabulary slightly closer than 'forgive'."
         },
         "voice_pacing_readiness": {
           "score": 9,
-          "reason": "The script is 1039 words, which at a typical narration pace (150 wpm) is under 7 minutes, fitting common YouTube attention spans. The density of the content suggests a thoughtful, deliberate pacing would be appropriate."
+          "reason": "Sentence structure uses varied lengths, natural pauses, and conversational cadence tailored for quiet, intimate voiceover."
         },
         "brand_consistency": {
-          "score": 8,
-          "reason": "The theme of self-growth, introspection, and relationship dynamics strongly aligns with the presumed brand of a channel named 'Soft Reset With Me'."
+          "score": 9,
+          "reason": "Exemplifies the Soft Reset aesthetic: restrained, emotionally perceptive, non-accusatory, and deeply grounded in everyday moments."
         },
         "policy_factual_risk": {
           "score": 10,
-          "reason": "The content discusses psychological and relational concepts in a general, self-reflective manner. There are no claims that carry significant factual risk or violate platform policies."
+          "reason": "No medical claims, no interpersonal toxicity, no policy hazards whatsoever."
         }
       },
-      "judge_composite_score": 7.15,
-      "strongest_element": "script_clarity",
-      "weakest_element": "visual_dialogue_sync",
-      "only_soft_reset_score": 7,
+      "judge_composite_score": 8.6,
+      "strongest_element": "Scriptwriting and mechanism diagnosis\u2014the metaphor of wiping a clean counter and filing a 'case study' instead of feeling hurt is brilliant.",
+      "weakest_element": "Visual execution rely solely on 74 stock footage cuts, which can feel disjointed or generic without careful curation.",
+      "only_soft_reset_score": 9,
       "metrics": {
-        "views": 5,
-        "engagedViews": 5,
-        "averageViewDuration": 175,
-        "averageViewPercentage": 47.01,
+        "views": 1,
+        "engagedViews": 1,
+        "averageViewDuration": 6,
+        "averageViewPercentage": 2.06,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "subscribersGained": 0
       },
-      "composite_score": 42.75,
-      "performance_score": 42.75,
+      "composite_score": 26.22,
+      "performance_score": 26.22,
       "score_version": 1,
       "hook_score": 100.0,
-      "hold_score": 47.01,
+      "hold_score": 2.06,
       "resonance_score": 0.0,
       "resonance_per_engaged": 0.0,
       "resonance_per_view": 0.0,
       "conversion_score": 0.0,
       "conversion_rate_per_1k": 0.0,
-      "reach_score": 25.93,
-      "analytics_fetched_at": "2026-06-29T05:16:42Z",
-      "analytics_days_old": 28,
-      "data_available": true
-    },
-    {
-      "video_id": "long_20260511_122328",
-      "published_date": "2026-05-11",
-      "status": "uploaded",
-      "topic": "The quiet panic when someone actually gives you what you\u2019ve always asked for.",
-      "working_title": "The Gentle Push: Why We Sabotage Love When It Finally Feels Right",
-      "content_pillar": "self-worth shifts",
-      "category": "self-worth shifts",
-      "angle_type": "pattern_breakdown",
-      "longform_format": "pattern_breakdown",
-      "core_claim": "We often subconsciously push away the very love and security we crave when it finally arrives because our nervous system is wired for past patterns, mistaking consistent safety for a new, unfamiliar threat.",
-      "editorial_seed": "We spend years articulating our needs, wishing for a partner who 'gets it,' who is kind, consistent, and truly understands. But what happens when they actually do? Sometimes, the sudden arrival of genuine, stable love can trigger an unexpected sense of panic or resistance. This isn't about them; it's about our deep-seated patterns mistaking genuine safety for a new, unknown threat. This video explores why we subtly sabotage the good things and how to learn to lean into the love we truly deserve.",
-      "only_soft_reset_line": "The real work isn't finding someone who finally gives you everything \u2014 it's learning to quietly let yourself receive it without running.",
-      "word_count": 900,
-      "estimated_duration_sec": 348.4,
-      "argument_quality": "strong",
-      "final_duration_sec": 321.4,
-      "render_validation": "passed",
-      "title": "You're Not Afraid Of Love. You're Afraid Of Safety",
-      "primary_variant_id": "C",
-      "title_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "formula": "specific scenario | specific number | named experience",
-          "title": "Why Quiet Love Feels Wrong When You're Used To Chaos"
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "You Finally Got What You Wanted. Now You Want To Run"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "You're Not Afraid Of Love. You're Afraid Of Safety"
-        }
-      ],
-      "thumbnail_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "pattern": "one_face_right_negative_space_left",
-          "line1": "CALM FEELS WRONG",
-          "line2": "when you expect chaos",
-          "thumbnail_text": "CALM FEELS WRONG / when you expect chaos",
-          "visual_prompt": "Photorealistic cinematic editorial 16:9 horizontal 1280x720 shot of a young adult (mid-twenties to early thirties) with quiet devastated recognition on face, heavy eyes, direct camera contact, lips softly parted. Face occupies right 55-65% of the frame. Left 35-40% is clean dark negative space. Cool-neutral diffused overcast window light. Out-of-focus neutral dark gray background, no identifiable location or objects. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. No important elements in bottom-right 15%. No text in image."
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "pattern": "one_face_right_negative_space_left",
-          "line1": "I SAID I WANTED",
-          "line2": "so why do i feel afraid",
-          "thumbnail_text": "I SAID I WANTED / so why do i feel afraid",
-          "visual_prompt": "Photorealistic cinematic editorial 16:9 horizontal 1280x720 shot of a young adult (mid-twenties to early thirties) with quiet devastated recognition on face, heavy eyes, direct camera contact, lips softly parted. Face occupies right 55-65% of the frame. Left 35-40% is clean dark negative space. Cool-neutral diffused overcast window light. Out-of-focus neutral dark gray background, no identifiable location or objects. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. No important elements in bottom-right 15%. No text in image."
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "pattern": "one_face_right_negative_space_left",
-          "line1": "WHAT AM I DOING",
-          "line2": "they're finally kind",
-          "thumbnail_text": "WHAT AM I DOING / they're finally kind",
-          "visual_prompt": "Photorealistic cinematic editorial 16:9 horizontal 1280x720 shot of a young adult (mid-twenties to early thirties) with quiet devastated recognition on face, heavy eyes, direct camera contact, lips softly parted. Face occupies right 55-65% of the frame. Left 35-40% is clean dark negative space. Cool-neutral diffused overcast window light. Out-of-focus neutral dark gray background, no identifiable location or objects. Real skin texture, subtle film grain, slightly desaturated prestige drama color grade. No important elements in bottom-right 15%. No text in image."
-        }
-      ],
-      "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "vDCTmfqMR2o",
-      "youtube_url": "https://www.youtube.com/watch?v=vDCTmfqMR2o",
-      "privacy_status": "public",
-      "uploaded_at": "2026-05-11T12:39:03Z",
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "unknown",
-        "category": "unknown",
-        "topic_cluster": "The quiet panic when someone actually gives you what you\u2019ve ",
-        "visual_style_mix": "unknown",
-        "video_length_band": "3_7min",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "none",
-        "total_scenes": 0
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook presents a compelling paradox that directly challenges common beliefs about love and fear, immediately engaging the viewer."
-        },
-        "script_clarity": {
-          "score": 8,
-          "reason": "The script explores a nuanced psychological concept effectively, breaking down complex ideas into understandable points for the audience."
-        },
-        "editorial_pov": {
-          "score": 8,
-          "reason": "The perspective on love and safety as an internal challenge, rather than an external one, aligns well with the channel's self-growth focus."
-        },
-        "villain_mechanism_specificity": {
-          "score": 7,
-          "reason": "The 'villain' is identified as the internal fear of safety and vulnerability, which is specific enough to be relatable and actionable."
-        },
-        "cta_quality": {
-          "score": 5,
-          "reason": "No explicit CTA is provided in the given details, which is a missed opportunity for engagement. The description hints at a call to reflection but lacks directness."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title is highly accurate and provocative, perfectly reflecting the script's core message about the underlying fear being safety, not love."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description is concise, intriguing, and accurately summarizes the video's central theme, enticing viewers to learn more."
-        },
-        "visual_dialogue_sync": {
-          "score": 3,
-          "reason": "With 0 scenes and 0 stock videos, there's no basis to evaluate visual-dialogue sync. This is a critical area for a video channel."
-        },
-        "image_direction_strength": {
-          "score": 1,
-          "reason": "No visual elements (scenes, brand images, stock videos) are provided, making it impossible to assess image direction."
-        },
-        "thumbnail_concept": {
-          "score": 3,
-          "reason": "No thumbnail concept is provided. A strong thumbnail is crucial for click-through rate and communicating the video's essence."
-        },
-        "voice_pacing_readiness": {
-          "score": 7,
-          "reason": "Assuming standard narration, the pacing would likely be appropriate for a 321s video on this topic, but requires actual listening to confirm."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The theme of overcoming internal barriers to achieve healthy relationships and self-growth is highly consistent with the channel's presumed brand."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content is psychological advice, which carries inherent subjective risk. However, this specific angle avoids making absolute claims and focuses on self-reflection, minimizing direct factual risk. The advice is presented as insight rather than a definitive diagnostic tool."
-        }
-      },
-      "judge_composite_score": 6.3,
-      "strongest_element": "title_accuracy",
-      "weakest_element": "visual_dialogue_sync",
-      "only_soft_reset_score": 8,
-      "metrics": {
-        "views": 15,
-        "engagedViews": 15,
-        "averageViewDuration": 133,
-        "averageViewPercentage": 41.55,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 41.55,
-      "performance_score": 41.55,
-      "score_version": 1,
-      "hook_score": 100.0,
-      "hold_score": 41.55,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 40.13,
-      "analytics_fetched_at": "2026-06-29T05:16:42Z",
-      "analytics_days_old": 49,
-      "data_available": true
-    },
-    {
-      "video_id": "long_20260608_051657",
-      "published_date": "2026-06-08",
-      "status": "uploaded",
-      "topic": "The exhausting art of trying to be 'enough' for someone else, and how it disconnects you from yourself.",
-      "working_title": "When Connection Becomes a Performance: The Quiet Cost of Chasing Approval",
-      "content_pillar": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
-      "category": "relationship patterns | psychology drops | healing arcs | self-worth shifts | identity and growth",
-      "angle_type": "emotional_deep_dive",
-      "longform_format": "emotional_deep_dive",
-      "core_claim": "Constantly seeking external approval in relationships is an exhausting performance that ultimately prevents true, authentic connection, both with others and with yourself.",
-      "editorial_seed": "This video explores the subtle, often subconscious ways we contort ourselves to fit a partner's perceived expectations, believing this will lead to deeper love. We dissect the specific moment of realization that this effort is actually creating distance, not intimacy. The narrative offers a path to reclaim self-worth not from external validation, but from an internal sense of alignment and truth, fostering relationships where you are loved for who you authentically are, not who you pretend to be.",
-      "only_soft_reset_line": "The move isn't about being less for someone \u2014 it's about bravely becoming more of yourself, even if it costs you the version of the relationship that only existed because you kept making yourself smaller to fit it.",
-      "word_count": 1018,
-      "estimated_duration_sec": 394.1,
-      "argument_quality": "strong",
-      "final_duration_sec": 338.3,
-      "render_validation": "passed",
-      "title": "What if 'enough' isn't something you perform for them?",
-      "primary_variant_id": "C",
-      "title_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "formula": "specific scenario | specific number | named experience",
-          "title": "Why you feel empty after trying to be enough for them"
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "You're not asking if you liked them, just if they liked you"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "What if 'enough' isn't something you perform for them?"
-        }
-      ],
-      "thumbnail_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "pattern": "pure_typography",
-          "structure": "typography",
-          "line1": "YOU'RE ALWAYS PERFORMING",
-          "line2": "and it's making you disappear",
-          "thumbnail_text": "YOU'RE ALWAYS PERFORMING / and it's making you disappear",
-          "visual_prompt": "Dark charcoal background, subtly textured, premium editorial book-cover aesthetic, minimalist, clean, cool-neutral cinematic color palette. No text."
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "pattern": "face_right_text_left",
-          "structure": "face_text",
-          "line1": "ARE YOU LIKED",
-          "line2": "or just playing the part",
-          "thumbnail_text": "ARE YOU LIKED / or just playing the part",
-          "visual_prompt": "Cinematic portrait of a young woman, mid-twenties, on the right 58% of the frame. Her expression shows quiet, devastated recognition, heavy eyes, gaze slightly to the empty dark left 42% text zone. Soft diffused cool-neutral window light, real skin texture, subtle film grain, slightly desaturated prestige drama color grade. Cool-neutral colors only. No text.",
-          "subject_gender": "woman",
-          "portrait_scene": "cool-neutral portrait scene with empty dark left text zone, no text"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "pattern": "split_screen",
-          "structure": "split",
-          "line1": "ENOUGH ISN'T A ROLE",
-          "line2": "it's just who you are",
-          "thumbnail_text": "ENOUGH ISN'T A ROLE / it's just who you are",
-          "visual_prompt": "Split screen composite, 16:9. Left side: a dimly lit, slightly blurred figure in a sterile, impersonal office setting, head slightly bowed, cool tones, conveys emptiness and performance, back to viewer. Right side: A clearer, more grounded shot of the same figure in a calm, cool-neutral, minimalist home environment, looking out a window with a steady, quiet self-assured expression, soft diffused light, sense of gentle presence. Prestige drama color grade, no warm tones. No text.",
-          "scene_left": "problem-state scene, cold dark, no text",
-          "scene_right": "resolution-state scene, cool-neutral clarity, no text"
-        }
-      ],
-      "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "fPGlQff7pvM",
-      "youtube_url": "https://www.youtube.com/watch?v=fPGlQff7pvM",
-      "privacy_status": "public",
-      "uploaded_at": "2026-06-08T05:33:30Z",
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W24",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "question",
-        "angle_type": "unknown",
-        "category": "unknown",
-        "topic_cluster": "The exhausting art of trying to be 'enough' for someone else",
-        "visual_style_mix": "unknown",
-        "video_length_band": "3_7min",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "none",
-        "total_scenes": 0
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook poses a thought-provoking question that directly challenges a common misconception about relationships and self-worth, making viewers curious to find the answer."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script effectively communicates the core message of authentic self-expression over performance, using clear language and relatable examples. The concept of 'enough' is explored with nuance."
-        },
-        "editorial_pov": {
-          "score": 9,
-          "reason": "The channel's perspective on self-growth and authentic relating is consistently present, advocating for internal validation and courage in self-expression, which aligns with the 'soft reset' philosophy."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "The script identifies the 'villain' as the external validation-seeking mindset and the performance-based approach to relationships, explaining how this mechanism leads to a lack of fulfillment."
-        },
-        "cta_quality": {
-          "score": 6,
-          "reason": "While the description implies a soft reset, a direct call-to-action within the video itself (e.g., asking viewers to share their thoughts or subscribe for more) is not specified, which is a missed opportunity for engagement."
-        },
-        "title_accuracy": {
-          "score": 9,
-          "reason": "The title perfectly encapsulates the video's central theme: questioning the need to perform 'enoughness' for others and instead focusing on genuine self-acceptance."
-        },
-        "description_usefulness": {
-          "score": 8,
-          "reason": "The description provides a concise and compelling summary of the video's core message, hinting at the 'soft reset' concept and the idea of embracing one's true self, even with temporary discomfort."
-        },
-        "visual_dialogue_sync": {
-          "score": 1,
-          "reason": "There are no visual elements (scenes, stock videos, brand images) specified, meaning there is no dialogue to sync with visuals. This is a critical missing component for a YouTube video."
-        },
-        "image_direction_strength": {
-          "score": 1,
-          "reason": "No images or brand visuals are mentioned, so their strength cannot be evaluated. This lack of visual strategy is a significant drawback."
-        },
-        "thumbnail_concept": {
-          "score": 3,
-          "reason": "No thumbnail concept is provided. A compelling thumbnail is crucial for click-through rate, and its absence is a major oversight."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "Assuming a typical faceless channel format, the script length (1018 words) is appropriate for a ~5.5-minute video (338s). The pacing would need to be natural and engaging, but the word count is suitable."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The core message of authenticity, self-acceptance, and internal validation aligns perfectly with the 'Soft Reset With Me' brand identity, focusing on personal growth and mindful relationship dynamics."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content discusses psychological and relational concepts in a general self-growth context. There are no claims that appear to be factually risky or violate platform policies."
-        }
-      },
-      "judge_composite_score": 6.1,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "Visual Dialogue Sync",
-      "only_soft_reset_score": 8,
-      "metrics": {
-        "views": 3,
-        "engagedViews": 3,
-        "averageViewDuration": 121,
-        "averageViewPercentage": 35.73,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 38.51,
-      "performance_score": 38.51,
-      "score_version": 1,
-      "hook_score": 100.0,
-      "hold_score": 35.73,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 20.07,
-      "analytics_fetched_at": "2026-06-29T05:16:42Z",
+      "reach_score": 10.03,
+      "analytics_fetched_at": "2026-10-31T15:37:13Z",
       "analytics_days_old": 21,
-      "data_available": true
-    },
-    {
-      "video_id": "long_20260511_044644",
-      "published_date": "2026-05-11",
-      "status": "uploaded",
-      "topic": "The Hidden Comfort of 'Almost': Why We Linger in the Space Between \"Something\" and \"Nothing\"",
-      "working_title": "The Comfort Zone of 'Almost Love': Why You Keep Choosing Ambiguity",
-      "content_pillar": "relationship patterns | psychology drops | self-worth shifts",
-      "category": "relationship patterns | psychology drops | self-worth shifts",
-      "angle_type": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
-      "longform_format": "emotional_deep_dive | pattern_breakdown | one_truth_expanded",
-      "core_claim": "Our subconscious gravitation towards 'almost' relationships offers a false sense of safety, subtly eroding our capacity for genuine intimacy and delaying the self-worth we truly deserve.",
-      "editorial_seed": "There's a peculiar comfort in the 'almost' relationship: the intense connection without the demands, the hope without the vulnerability. We convince ourselves it's safer, a holding pattern before the 'real' thing. But this elusive middle ground often masks a deeper fear of true intimacy, subtly diminishing our self-worth and trapping us in a cycle of emotional deferral, mistaking uncertainty for endless potential.",
-      "only_soft_reset_line": "The 'almost' isn't a waiting room for something real \u2014 it's an agreement you keep renewing because somewhere along the way, you decided that partial was safer than possible.",
-      "word_count": 930,
-      "estimated_duration_sec": 360.0,
-      "argument_quality": "strong",
-      "final_duration_sec": 328.6,
-      "render_validation": "passed",
-      "title": "That 'almost' isn't a stepping stone; it's a quiet stop",
-      "primary_variant_id": "C",
-      "title_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "formula": "specific scenario | specific number | named experience",
-          "title": "Why that 'almost' relationship feels safer than real love"
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "formula": "personal pronoun + viewer's private thought made visible",
-          "title": "Why you secretly prefer the 'almost' over being together"
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "formula": "challenges a belief the viewer holds right now \u2014 uncomfortable but true",
-          "title": "That 'almost' isn't a stepping stone; it's a quiet stop"
-        }
-      ],
-      "thumbnail_variants": [
-        {
-          "id": "A",
-          "angle": "seo",
-          "pattern": "clean_concept_close_up | highlighted_truth",
-          "thumbnail_text": "THE COMFORT OF ALMOST",
-          "visual_prompt": "1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality. A close-up of a person's hand subtly holding a nearly empty coffee cup, knuckles slightly white, resting on a dark, textured surface. Their other hand is just out of frame, implying a shared, but undefined, space. The light is dim, cinematic, focusing on the soft, hesitant grip. Background is Deep Midnight #1C1C2B, cup Warm Terracotta #C4785A. Dark negative space for text on the left 40% of the frame. High contrast, clearly readable in grayscale. No watermarks, no logos, no UI chrome."
-        },
-        {
-          "id": "B",
-          "angle": "emotional_hook",
-          "pattern": "digital_anxiety_overlay | emotional_hook",
-          "thumbnail_text": "I SECRETLY PREFER THIS",
-          "visual_prompt": "1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality. A tight close-up on a person's slightly strained face, illuminated by the soft, cool glow of a phone screen held just out of view. Their eyes are half-closed, a subtle mix of weariness and quiet contemplation. A single tear might be barely visible, or just the glint in a tired eye. The background fades into Deep Midnight #1C1C2B. Dark negative space for text on the top right 40% of the frame, blending with the phone's ambient light. High contrast, clearly readable in grayscale. No watermarks, no logos, no UI chrome."
-        },
-        {
-          "id": "C",
-          "angle": "counter_intuitive",
-          "pattern": "dichotomy_split | subject_vs_the_void",
-          "thumbnail_text": "THIS ISN'T A PHASE",
-          "visual_prompt": "1280x720, 16:9 horizontal. Photorealistic cinematic editorial quality. A split image. On the left, a person's reflection in a slightly smudged window, looking out into a soft, blurry distance, a look of quiet longing. On the right, the reality outside the window is a vast, empty expanse of Deep Midnight #1C1C2B, symbolizing the void or lack of progression. The person's face is framed to occupy the left 50% of the horizontal frame, looking towards the empty right. Dark negative space for text on the right 40% of the frame. Colors: Warm Terracotta #C4785A tones for the person's skin/clothing, Soft Cream #F5F0E8 for subtle light accents. High contrast, clearly readable in grayscale. No watermarks, no logos, no UI chrome."
-        }
-      ],
-      "thumbnail": "07_longform_thumbnail.png",
-      "youtube_video_id": "2dTYLXo3LVg",
-      "youtube_url": "https://www.youtube.com/watch?v=2dTYLXo3LVg",
-      "privacy_status": "public",
-      "uploaded_at": "2026-05-11T05:03:14Z",
-      "experiment_label": "baseline",
-      "experiment_id": null,
-      "strategy_version": "2026-W20",
-      "judge_traits": {
-        "hook_type": "statement",
-        "title_type": "declarative",
-        "angle_type": "unknown",
-        "category": "unknown",
-        "topic_cluster": "The Hidden Comfort of 'Almost': Why We Linger in the Space B",
-        "visual_style_mix": "unknown",
-        "video_length_band": "3_7min",
-        "narrative_format": "unknown",
-        "thumbnail_type": "text_only",
-        "character_used": "none",
-        "total_scenes": 0
-      },
-      "judge_scores": {
-        "hook_strength": {
-          "score": 7,
-          "reason": "The hook is intriguing and poses a question that many viewers experiencing 'almost' relationships will relate to, drawing them in."
-        },
-        "script_clarity": {
-          "score": 9,
-          "reason": "The script effectively communicates the central theme of the 'almost' relationship being a form of self-sabotage and delayed growth, with clear arguments."
-        },
-        "editorial_pov": {
-          "score": 9,
-          "reason": "The channel's perspective is strong and consistent, offering a distinct take on relationship stagnation and the need for decisive action."
-        },
-        "villain_mechanism_specificity": {
-          "score": 8,
-          "reason": "The 'villain' (the 'almost' state) is well-defined as a comfortable but ultimately limiting zone, with clear mechanisms of fear of change and comfort driving it."
-        },
-        "cta_quality": {
-          "score": 5,
-          "reason": "There is no explicit CTA provided in the prompt, making it impossible to score. Assuming a standard channel CTA, it would be average."
-        },
-        "title_accuracy": {
-          "score": 10,
-          "reason": "The title perfectly encapsulates the core message of the video, accurately reflecting the nuanced perspective on 'almost' relationships."
-        },
-        "description_usefulness": {
-          "score": 9,
-          "reason": "The description provides a concise and compelling summary of the video's premise, effectively hooking potential viewers and setting expectations."
-        },
-        "visual_dialogue_sync": {
-          "score": 1,
-          "reason": "The video has 0 scenes, indicating no visual content to sync with the dialogue. This is a critical failure for a video channel."
-        },
-        "image_direction_strength": {
-          "score": 1,
-          "reason": "There are 0 brand images and 0 stock videos, meaning there are no visual elements to assess for strength or direction."
-        },
-        "thumbnail_concept": {
-          "score": 3,
-          "reason": "Without a thumbnail provided, its concept cannot be evaluated. This lack of visual strategy is a significant weakness."
-        },
-        "voice_pacing_readiness": {
-          "score": 8,
-          "reason": "Assuming the script is to be read, the word count (930) is manageable for a ~5.5-minute video (329s), suggesting good pacing potential if delivered well."
-        },
-        "brand_consistency": {
-          "score": 8,
-          "reason": "The theme of self-growth, relationship introspection, and encouraging decisive action aligns well with a 'Soft Reset With Me' channel."
-        },
-        "policy_factual_risk": {
-          "score": 10,
-          "reason": "The content discusses relationship dynamics and personal growth, posing no apparent factual inaccuracies or policy violations."
-        }
-      },
-      "judge_composite_score": 7,
-      "strongest_element": "Title Accuracy",
-      "weakest_element": "Visual Dialogue Sync",
-      "only_soft_reset_score": 8,
-      "metrics": {
-        "views": 7,
-        "engagedViews": 7,
-        "averageViewDuration": 77,
-        "averageViewPercentage": 23.64,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "subscribersGained": 0
-      },
-      "composite_score": 34.78,
-      "performance_score": 34.78,
-      "score_version": 1,
-      "hook_score": 100.0,
-      "hold_score": 23.64,
-      "resonance_score": 0.0,
-      "resonance_per_engaged": 0.0,
-      "resonance_per_view": 0.0,
-      "conversion_score": 0.0,
-      "conversion_rate_per_1k": 0.0,
-      "reach_score": 30.1,
-      "analytics_fetched_at": "2026-06-29T05:16:42Z",
-      "analytics_days_old": 49,
       "data_available": true
     }
   ]
