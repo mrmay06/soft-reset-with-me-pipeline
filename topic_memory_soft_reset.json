@@ -1,124 +1,5 @@
 [
   {
-    "video_id": "20260522_234228",
-    "published_date": "2026-05-22",
-    "status": "uploaded",
-    "topic": "What anxious attachment actually looks like in real life",
-    "category": "psychology drops",
-    "angle_type": "psychology drop",
-    "total_score": 20,
-    "source_name": "John Bowlby, Mary Ainsworth (Attachment Theory); general contemporary psychology consensus",
-    "source_basis": "Anxious Attachment (Attachment Theory), Rumination, Rejection Sensitivity",
-    "source_url": null,
-    "confidence_level": "therapist_consensus",
-    "content_format": "psychology_drop",
-    "emotional_trigger": "Obsessive overthinking of communication in relationships, often triggered by ambiguous messages or silence.",
-    "psych_concept": "Anxious attachment, rumination, hypervigilance, rejection sensitivity.",
-    "core_claim": "Sometimes it looks like rereading one sentence until it hurts",
-    "editorial_seed": "Anxious attachment isn't just about seeking constant reassurance or being 'needy.' Often, it manifests internally as obsessive rumination over small details, searching for hidden meanings or potential rejections. This quiet suffering can be more draining than overt displays.",
-    "only_soft_reset_line": "You read it six times looking for the part where they stopped caring.",
-    "editorial_quality": "strong",
-    "argument_quality": "strong",
-    "hook": "You don't argue. You just go quiet and wait to be left.",
-    "hook_quality": "weak",
-    "script_version": "1",
-    "prompt_version": "soft-reset-script-v2.4",
-    "script_validation": "passed",
-    "script_validation_notes": "",
-    "word_count": 71,
-    "estimated_duration_sec": 28,
-    "thumbnail_text": "anxious attachment is quiet",
-    "content_fingerprint": "what anxious attachment actually looks like in real life you don t argue you just go quiet and wait to be left obsessive overthinking of communication in relationships often triggered by ambiguous messages or silence anxious attachment rumination hypervigilance rejection sensitivity sometimes it looks like rereading one sentence until it hurts you read it six times looking for the part where they stopped caring",
-    "title": "You go quiet and wait to be left",
-    "youtube_video_id": "tvgtuZlTwzk",
-    "youtube_url": "https://youtube.com/shorts/tvgtuZlTwzk",
-    "fallback_count": 0,
-    "video_count": 6,
-    "total_scenes": 8,
-    "validation_warnings": [],
-    "experiment_label": "baseline",
-    "experiment_id": null,
-    "strategy_version": "2026-W21",
-    "judge_traits": {
-      "hook_type": "statement",
-      "title_type": "accusation",
-      "angle_type": "psychology drop",
-      "category": "psychology drops",
-      "topic_cluster": "What anxious attachment actually looks like in real life",
-      "visual_style_mix": "stock_heavy",
-      "video_length_band": "30_45s",
-      "narrative_format": "unknown",
-      "thumbnail_type": "text_only",
-      "character_used": "brand_still",
-      "total_scenes": 8
-    },
-    "judge_scores": {
-      "hook_strength": {
-        "score": 8,
-        "reason": "Direct and intriguing, immediately identifies a common, painful behavior."
-      },
-      "script_clarity": {
-        "score": 9,
-        "reason": "Concise and easy to understand, gets straight to the point about anxious attachment."
-      },
-      "editorial_pov": {
-        "score": 7,
-        "reason": "The POV is clear but could be more distinctive to the channel's specific tone."
-      },
-      "villain_mechanism_specificity": {
-        "score": 8,
-        "reason": "Clearly identifies 'going quiet' as a maladaptive coping mechanism driven by fear of abandonment."
-      },
-      "cta_quality": {
-        "score": 2,
-        "reason": "No clear CTA was provided in the script."
-      },
-      "title_accuracy": {
-        "score": 9,
-        "reason": "Accurately reflects the core behavior discussed in the video."
-      },
-      "description_usefulness": {
-        "score": 8,
-        "reason": "Effectively summarizes the video's topic and connects it to anxious attachment, providing context."
-      },
-      "visual_dialogue_sync": {
-        "score": 7,
-        "reason": "Stock footage needs to be carefully selected to truly enhance the script's emotional weight."
-      },
-      "image_direction_strength": {
-        "score": 6,
-        "reason": "Brand images are present but their strategic placement and impact could be stronger."
-      },
-      "thumbnail_concept": {
-        "score": 7,
-        "reason": "The concept is relevant, but could be more visually striking and attention-grabbing."
-      },
-      "voice_pacing_readiness": {
-        "score": 8,
-        "reason": "The short script allows for deliberate pacing, assuming a good voiceover performance."
-      },
-      "brand_consistency": {
-        "score": 7,
-        "reason": "While the topic fits, the execution needs to ensure it aligns with the channel's established feel."
-      },
-      "policy_factual_risk": {
-        "score": 9,
-        "reason": "General psychological observation, low risk of factual inaccuracy or policy violation."
-      }
-    },
-    "judge_composite_score": 6.8,
-    "strongest_element": "script_clarity",
-    "weakest_element": "cta_quality",
-    "only_soft_reset_score": 6,
-    "video_audit_status": "soft_failed",
-    "video_audit_summary": "",
-    "video_audit_strengths": [],
-    "video_audit_dropoff_causes": [],
-    "video_audit_repeat_next": [],
-    "video_audit_reduce_next": [],
-    "video_audit_tags": {}
-  },
-  {
     "video_id": "20260523_144914",
     "published_date": "2026-05-23",
     "status": "uploaded",
@@ -4435,6 +4316,181 @@
           "start": 26.73,
           "section": "loopback",
           "text": "A quick reply costs you ten seconds; the calculated one costs you the whole afternoon."
+        }
+      ]
+    }
+  },
+  {
+    "video_id": "20261101_165726",
+    "published_date": "2026-11-01",
+    "status": "uploaded",
+    "topic": "The Deflection Question: Asking 'Are You Tired?' Instead of 'Are We Okay?'",
+    "category": "conversation truths",
+    "angle_type": "specific scenario",
+    "total_score": 18,
+    "source_name": "",
+    "source_basis": "",
+    "source_url": "",
+    "confidence_level": "observational",
+    "content_format": "scenario",
+    "emotional_trigger": "asking if they had a long day at work when what your chest actually feels is a three-day emotional distance",
+    "psych_concept": "substitute communication to manage fear of direct rejection",
+    "core_claim": "Asking safe, practical questions keeps you insulated from an answer you are terrified to hear.",
+    "editorial_seed": "When we sense emotional distance, we often reach for logistical explanations to give the other person an easy out. We ask if they are stressed, busy, or exhausted because that protects us from having to ask if they are pulling away. But trading direct truth for comfortable uncertainty keeps you permanently anxious.",
+    "only_soft_reset_line": "You asked the one question built so the answer could never be about you.",
+    "editorial_quality": "strong",
+    "argument_quality": "strong",
+    "hook": "They've felt far away for three days, and what you ask is, \"Are you tired?\"",
+    "hook_quality": "weak",
+    "script_version": "1",
+    "prompt_version": "soft-reset-script-v2.7",
+    "script_validation": "passed",
+    "script_validation_notes": "",
+    "word_count": 83,
+    "estimated_duration_sec": 29,
+    "thumbnail_text": "\"Are you tired?\" isn't what you meant",
+    "content_fingerprint": "the deflection question asking are you tired instead of are we okay they ve felt far away for three days and what you ask is are you tired asking if they had a long day at work when what your chest actually feels is a three day emotional distance substitute communication to manage fear of direct rejection asking safe practical questions keeps you insulated from an answer you are terrified to hear you asked the one question built so the answer could never be about you",
+    "title": "You asked if they were tired to stay safe",
+    "youtube_video_id": "22qoFtgzZK0",
+    "youtube_url": "https://youtube.com/shorts/22qoFtgzZK0",
+    "fallback_count": 0,
+    "video_count": 7,
+    "total_scenes": 7,
+    "validation_warnings": [],
+    "experiment_label": "baseline",
+    "experiment_id": null,
+    "strategy_version": "2026-W44",
+    "judge_traits": {
+      "hook_type": "statement",
+      "title_type": "accusation",
+      "angle_type": "specific scenario",
+      "category": "conversation truths",
+      "topic_cluster": "The Deflection Question: Asking 'Are You Tired?' Instead of ",
+      "visual_style_mix": "stock_heavy",
+      "video_length_band": "30_45s",
+      "narrative_format": "unknown",
+      "thumbnail_type": "text_only",
+      "character_used": "none",
+      "total_scenes": 7
+    },
+    "judge_scores": {
+      "hook_strength": {
+        "score": 9,
+        "reason": "Captures a precise, painfully familiar micro-behavior immediately, drawing the viewer into the psychological scene."
+      },
+      "script_clarity": {
+        "score": 9,
+        "reason": "The progression from evasion to false relief to lingering isolation is razor-sharp and uncluttered."
+      },
+      "editorial_pov": {
+        "score": 9,
+        "reason": "Exposes the self-protective mechanism without judgment, pinpointing how self-sabotaging communication works."
+      },
+      "villain_mechanism_specificity": {
+        "score": 9,
+        "reason": "Identifies the exact mechanism: designing a closed question to force a benign response that protects your ego while deepening disconnection."
+      },
+      "cta_quality": {
+        "score": 8,
+        "reason": "The engagement prompt and like CTA both directly probe the viewer's personal substitute questions, fitting the theme naturally."
+      },
+      "title_accuracy": {
+        "score": 9,
+        "reason": "Directly mirrors the insight and loopback resolution that the question was an act of self-protection."
+      },
+      "description_usefulness": {
+        "score": 8,
+        "reason": "Succinctly articulates the cost of safe questions and bridges the script's core paradox."
+      },
+      "visual_dialogue_sync": {
+        "score": 5,
+        "reason": "Relies entirely on 7 stock video clips with no descriptive scene-by-scene visual mapping provided."
+      },
+      "image_direction_strength": {
+        "score": 4,
+        "reason": "Zero brand images and no specific visual treatment or art direction documented."
+      },
+      "thumbnail_concept": {
+        "score": 2,
+        "reason": "Thumbnail concepts array is empty and primary thumbnail is unknown, presenting a major packaging gap."
+      },
+      "voice_pacing_readiness": {
+        "score": 9,
+        "reason": "At 83 words across 31 seconds, pacing sits comfortably at ~160 WPM with built-in pauses for emotional weight."
+      },
+      "brand_consistency": {
+        "score": 9,
+        "reason": "Signature Soft Reset introspection: quiet, perceptive deconstruction of everyday avoidance in intimacy."
+      },
+      "policy_factual_risk": {
+        "score": 10,
+        "reason": "No policy, medical, or factual claims; purely relatable relational reflection."
+      }
+    },
+    "judge_composite_score": 7.7,
+    "strongest_element": "Psychological accuracy of the hook and insight\u2014pinpoints a micro-interaction almost everyone has committed.",
+    "weakest_element": "Complete absence of thumbnail concepts and visual asset direction.",
+    "only_soft_reset_score": 8,
+    "video_audit_status": "ok",
+    "video_audit_summary": "This Short succeeds through exceptional scriptwriting that pinpoints a universal micro-avoidance tactic in relationships. While the opening shot leans slightly too editorial and fashion-like for an intimate domestic scenario, the rest of the visual sequencing, acoustic mix, and filmic grading reinforce a compelling, melancholic mood that holds emotional attention through the final breath.",
+    "video_audit_strengths": [
+      "Precise observational writing that names an exact conversational micro-habit relatable to anyone dealing with anxious attachment.",
+      "Seamless aesthetic unity achieved through film grain and consistent cool, desaturated nocturnal lighting across varied stock clips."
+    ],
+    "video_audit_dropoff_causes": [
+      "The stylized fashion/studio look of the opening scene feels slightly detached compared to the intimate bedroom setting introduced immediately after.",
+      "Rapid single-word caption flashing creates a subtle pacing friction against the calm, reflective vocal delivery."
+    ],
+    "video_audit_repeat_next": [
+      "Dissecting exact everyday dialogue exchanges that conceal deeper relationship anxieties.",
+      "Cohesive low-light cinematic color grading and ambient nighttime sound beds."
+    ],
+    "video_audit_reduce_next": [
+      "Overly staged or editorial fashion-suit visuals when depicting quiet domestic intimacy.",
+      "Single-word caption flashes; switch to 2-3 word phrase chunks for slower, introspective pieces."
+    ],
+    "video_audit_tags": {
+      "hook_type": "specific conversational scenario",
+      "thumbnail_type": "cinematic moody bedroom",
+      "visual_style_mix": "cinematic low-light stock with film grain",
+      "narrative_format": "second-person psychological analysis",
+      "character_used": "anonymous couples"
+    },
+    "spoken_timeline": {
+      "version": 1,
+      "source": "captions",
+      "duration_sec": 30.7,
+      "voice_end_sec": 26.76,
+      "lines": [
+        {
+          "start": 0.0,
+          "section": "hook",
+          "text": "They've felt far away for three days, and what you ask is, \"Are you tired?\""
+        },
+        {
+          "start": 4.67,
+          "section": "tension",
+          "text": "They say, \"Yeah, long day.\" You say, \"Get some rest.\" Then you lie there next to them, relieved and somehow more scared."
+        },
+        {
+          "start": 13.33,
+          "section": "insight",
+          "text": "Because you handed them an easy out so you wouldn't have to hear a hard answer."
+        },
+        {
+          "start": 17.62,
+          "section": "insight",
+          "text": "Maybe they really are just tired."
+        },
+        {
+          "start": 19.62,
+          "section": "insight",
+          "text": "You can't tell, because the question only allowed one reply."
+        },
+        {
+          "start": 23.17,
+          "section": "loopback",
+          "text": "You asked the one question built so the answer could never be about you."
         }
       ]
     }

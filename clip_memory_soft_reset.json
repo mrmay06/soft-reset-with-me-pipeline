@@ -725,5 +725,82 @@
     "video_id": "20261031_153139",
     "scene_id": 8,
     "used_at": "2026-10-31T15:35:22Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "10620148",
+    "source_url": "https://videos.pexels.com/video-files/10620148/10620148-hd_1080_2048_25fps.mp4",
+    "file_hash": "15b2e05f4b26cd08ce40c02216b1978fe7d8bbfc56451976ff39980ed612c520",
+    "perceptual_hash": "0000007c7effffff",
+    "query": "couple back to back bed",
+    "video_id": "20261101_165726",
+    "scene_id": 1,
+    "used_at": "2026-11-01T16:59:56Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7986749",
+    "source_url": "https://videos.pexels.com/video-files/7986749/7986749-hd_1080_1920_25fps.mp4",
+    "file_hash": "842321eb1a40c829d958fafdf4110e3acbe931ff3ffa0fa31d898dd8f7c6f145",
+    "perceptual_hash": "0000c0c0c4f0ffef",
+    "query": "turning off bedside lamp",
+    "video_id": "20261101_165726",
+    "scene_id": 2,
+    "used_at": "2026-11-01T17:00:02Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "7299413",
+    "source_url": "https://videos.pexels.com/video-files/7299413/7299413-hd_1080_1920_30fps.mp4",
+    "file_hash": "aea69b48131c0fb57747175e925289485c029f1c770af8d6093b6ed5237298c2",
+    "perceptual_hash": "1f1e061c1ef3f7c7",
+    "query": "staring at dark ceiling",
+    "video_id": "20261101_165726",
+    "scene_id": 3,
+    "used_at": "2026-11-01T17:00:06Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "10473217",
+    "source_url": "https://videos.pexels.com/video-files/10473217/10473217-hd_1080_2048_25fps.mp4",
+    "file_hash": "261dac936e04c72cf5181202a49430e4109247dc705f88194eb4a64df168dda2",
+    "perceptual_hash": "000cffff3f013f7f",
+    "query": "anxious hands bed sheet",
+    "video_id": "20261101_165726",
+    "scene_id": 4,
+    "used_at": "2026-11-01T17:00:12Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "13322579",
+    "source_url": "https://videos.pexels.com/video-files/13322579/13322579-hd_1080_1920_24fps.mp4",
+    "file_hash": "25a6f5503c4c3c34ff92dd357732ba12a22f59882634859d0356845a905c83a9",
+    "perceptual_hash": "e0e0800101bfffff",
+    "query": "sleeping partner back turned",
+    "video_id": "20261101_165726",
+    "scene_id": 5,
+    "used_at": "2026-11-01T17:00:19Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "28201504",
+    "source_url": "https://videos.pexels.com/video-files/28201504/12325806_1080_1920_30fps.mp4",
+    "file_hash": "262558af07542309969498cdd52cc78feffcc27794f86dc46e28535d9a20e0dd",
+    "perceptual_hash": "0000ffffe7e7870e",
+    "query": "rainy window bedroom night",
+    "video_id": "20261101_165726",
+    "scene_id": 6,
+    "used_at": "2026-11-01T17:00:26Z"
+  },
+  {
+    "provider": "pexels",
+    "provider_id": "39329852",
+    "source_url": "https://videos.pexels.com/video-files/39329852/16736982_1080_1920_30fps.mp4",
+    "file_hash": "7473455d2e23c38f3352d01b11187bc585ef73c9b539743c77376997a22ee637",
+    "perceptual_hash": "00007e7e7e000000",
+    "query": "lonely bedroom night light",
+    "video_id": "20261101_165726",
+    "scene_id": 7,
+    "used_at": "2026-11-01T17:00:32Z"
   }
 ]
