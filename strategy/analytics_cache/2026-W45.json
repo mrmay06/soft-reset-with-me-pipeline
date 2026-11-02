@@ -1,0 +1,6474 @@
+{
+  "week": "2026-W45",
+  "channel_id": "UCAvyIz8dPBm5s_MQvXlsBng",
+  "fetched_at": "2026-11-02T19:12:46.612614+00:00",
+  "total_videos": 27,
+  "skipped_low_views": 16,
+  "retention_curves_fetched": 9,
+  "videos": [
+    {
+      "video_id": "20260523_144914",
+      "youtube_video_id": "GQU-EIZoTZo",
+      "youtube_url": "https://youtube.com/shorts/GQU-EIZoTZo",
+      "published_at": "2026-05-23",
+      "track": "shorts",
+      "title": "You curate love better than you LIVE it",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "Relationship Patterns",
+        "topic_cluster": "When your 'perfect' relationship on social media feels empty",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 8
+      },
+      "composite_score": 8.4,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a melancholic, introspective tone through its consistent voiceover and carefully chosen music, culminating in a powerful closing visual. While the hook aligns perfectly with the title, the initial visual's impact and the caption pacing are too slow, potentially causing early drop-off. The video excels with symbolic imagery like empty chairs but falters with generic stock footage (like the coffee cup) that lacks specific relevance, briefly disrupting the narrative flow. Focusing on dynamic, highly specific visuals from the outset and maintaining a more consistent, slightly faster caption pace would significantly improve viewer retention.",
+        "strengths": [
+          "The consistently gentle and reflective voiceover delivery, which is a hallmark of the brand's tone.",
+          "The impactful and symbolic visuals (e.g., arms through a wall, empty chairs, mirror reflection) that effectively communicate complex emotional states.",
+          "The cohesive emotional tone fostered by the audio and select visuals, reinforcing the brand's introspective identity.",
+          "The strong final visual and loopback line, which offer a powerful and memorable conclusion."
+        ],
+        "dropoff_causes": [
+          "The slow initial visual and the drawn-out word-by-word captions in the first few seconds of the hook may cause early viewer disengagement.",
+          "The inclusion of generic stock footage, especially the 'coffee time' shot (0:22-0:25), disrupts the narrative immersion and feels irrelevant to the specific message, creating a moment where viewers might swipe away.",
+          "Inconsistent caption pacing, with critical segments feeling too slow, can lead to viewer impatience and a desire to scroll past.",
+          "Some visuals are not specific enough to the nuanced emotional insights (e.g., couple moving boxes for vulnerability vs. presentability), potentially diluting the message's impact."
+        ],
+        "repeat_next": [
+          "The use of highly symbolic and evocative visuals that abstractly but powerfully convey complex emotional concepts (e.g., empty chairs for distance, mirror for self-perception).",
+          "Maintaining the consistent, gentle, and thoughtful voiceover delivery style.",
+          "The strategic use of background music to enhance the emotional atmosphere without competing with the narration.",
+          "Crafting a strong, memorable loopback line and pairing it with a potent closing visual."
+        ],
+        "reduce_next": [
+          "Reliance on generic stock footage that does not directly or uniquely illustrate the specific emotional and psychological points of the script (e.g., the coffee cup, or overly generalized activities like moving boxes).",
+          "Overly slow, word-by-word caption reveals, especially in the critical opening seconds and for short words.",
+          "Initial visuals that are primarily atmospheric but lack an immediate, specific connection to the hook to grab attention more quickly.",
+          "Any moments of visual ambiguity that do not clearly support or enhance the spoken narrative, creating potential for viewer confusion."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Problem/Internal Conflict",
+          "thumbnail_type": "Emotional/Reflective",
+          "visual_style_mix": "Cinematic/Symbolic + Social Media Overlay",
+          "narrative_format": "Truth Drop/Insight",
+          "character_used": "Solitary/Introspective"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 200,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 6,
+        "averageViewDuration": 12,
+        "averageViewPercentage": 37.73,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DGQU-EIZoTZo&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.1111,
+          0.3947
+        ],
+        [
+          0.02,
+          1.1111,
+          0.3623
+        ],
+        [
+          0.03,
+          1.1111,
+          0.3301
+        ],
+        [
+          0.04,
+          1.1111,
+          0.3004
+        ],
+        [
+          0.05,
+          1.0556,
+          0.2747
+        ],
+        [
+          0.06,
+          1.0556,
+          0.2538
+        ],
+        [
+          0.07,
+          1.0556,
+          0.2376
+        ],
+        [
+          0.08,
+          1.0556,
+          0.2255
+        ],
+        [
+          0.09,
+          1.0556,
+          0.2167
+        ],
+        [
+          0.1,
+          1.0556,
+          0.2104
+        ],
+        [
+          0.11,
+          1.0556,
+          0.2061
+        ],
+        [
+          0.12,
+          1.0556,
+          0.2036
+        ],
+        [
+          0.13,
+          1.0556,
+          0.2025
+        ],
+        [
+          0.14,
+          1.0556,
+          0.2025
+        ],
+        [
+          0.15,
+          1.0556,
+          0.2034
+        ],
+        [
+          0.16,
+          1.0556,
+          0.2053
+        ],
+        [
+          0.17,
+          1.0556,
+          0.208
+        ],
+        [
+          0.18,
+          1.0,
+          0.2112
+        ],
+        [
+          0.19,
+          0.8889,
+          0.215
+        ],
+        [
+          0.2,
+          0.8889,
+          0.2192
+        ],
+        [
+          0.21,
+          0.8889,
+          0.2238
+        ],
+        [
+          0.22,
+          0.7778,
+          0.2287
+        ],
+        [
+          0.23,
+          0.7222,
+          0.234
+        ],
+        [
+          0.24,
+          0.6667,
+          0.2396
+        ],
+        [
+          0.25,
+          0.6111,
+          0.2455
+        ],
+        [
+          0.26,
+          0.5,
+          0.2518
+        ],
+        [
+          0.27,
+          0.4444,
+          0.2582
+        ],
+        [
+          0.28,
+          0.4444,
+          0.265
+        ],
+        [
+          0.29,
+          0.4444,
+          0.272
+        ],
+        [
+          0.3,
+          0.4444,
+          0.2791
+        ],
+        [
+          0.31,
+          0.3889,
+          0.2864
+        ],
+        [
+          0.32,
+          0.3889,
+          0.2939
+        ],
+        [
+          0.33,
+          0.3889,
+          0.3014
+        ],
+        [
+          0.34,
+          0.3889,
+          0.309
+        ],
+        [
+          0.35,
+          0.3889,
+          0.3165
+        ],
+        [
+          0.36,
+          0.3889,
+          0.3241
+        ],
+        [
+          0.37,
+          0.3889,
+          0.3317
+        ],
+        [
+          0.38,
+          0.3889,
+          0.3392
+        ],
+        [
+          0.39,
+          0.3889,
+          0.3467
+        ],
+        [
+          0.4,
+          0.3889,
+          0.3538
+        ],
+        [
+          0.41,
+          0.3889,
+          0.3607
+        ],
+        [
+          0.42,
+          0.3333,
+          0.367
+        ],
+        [
+          0.43,
+          0.2778,
+          0.3729
+        ],
+        [
+          0.44,
+          0.2222,
+          0.3778
+        ],
+        [
+          0.45,
+          0.2222,
+          0.3816
+        ],
+        [
+          0.46,
+          0.2222,
+          0.384
+        ],
+        [
+          0.47,
+          0.2222,
+          0.3846
+        ],
+        [
+          0.48,
+          0.2222,
+          0.3832
+        ],
+        [
+          0.49,
+          0.2222,
+          0.3793
+        ],
+        [
+          0.5,
+          0.2222,
+          0.3725
+        ],
+        [
+          0.51,
+          0.2222,
+          0.3625
+        ],
+        [
+          0.52,
+          0.2222,
+          0.3491
+        ],
+        [
+          0.53,
+          0.2222,
+          0.3325
+        ],
+        [
+          0.54,
+          0.1667,
+          0.3129
+        ],
+        [
+          0.55,
+          0.1111,
+          0.2908
+        ],
+        [
+          0.56,
+          0.1111,
+          0.2673
+        ],
+        [
+          0.57,
+          0.1111,
+          0.2433
+        ],
+        [
+          0.58,
+          0.1111,
+          0.2199
+        ],
+        [
+          0.59,
+          0.1111,
+          0.1981
+        ],
+        [
+          0.6,
+          0.1111,
+          0.1788
+        ],
+        [
+          0.61,
+          0.1111,
+          0.1623
+        ],
+        [
+          0.62,
+          0.1111,
+          0.1487
+        ],
+        [
+          0.63,
+          0.1111,
+          0.1381
+        ],
+        [
+          0.64,
+          0.1111,
+          0.1304
+        ],
+        [
+          0.65,
+          0.1111,
+          0.1255
+        ],
+        [
+          0.66,
+          0.1111,
+          0.1234
+        ],
+        [
+          0.67,
+          0.1111,
+          0.1245
+        ],
+        [
+          0.68,
+          0.1111,
+          0.1291
+        ],
+        [
+          0.69,
+          0.1111,
+          0.1376
+        ],
+        [
+          0.7,
+          0.1111,
+          0.1501
+        ],
+        [
+          0.71,
+          0.1111,
+          0.1666
+        ],
+        [
+          0.72,
+          0.1111,
+          0.1868
+        ],
+        [
+          0.73,
+          0.1111,
+          0.2101
+        ],
+        [
+          0.74,
+          0.1111,
+          0.2354
+        ],
+        [
+          0.75,
+          0.1111,
+          0.262
+        ],
+        [
+          0.76,
+          0.1111,
+          0.2887
+        ],
+        [
+          0.77,
+          0.1111,
+          0.3145
+        ],
+        [
+          0.78,
+          0.1111,
+          0.339
+        ],
+        [
+          0.79,
+          0.1111,
+          0.3614
+        ],
+        [
+          0.8,
+          0.1111,
+          0.3817
+        ],
+        [
+          0.81,
+          0.1111,
+          0.3996
+        ],
+        [
+          0.82,
+          0.1111,
+          0.4152
+        ],
+        [
+          0.83,
+          0.1111,
+          0.4285
+        ],
+        [
+          0.84,
+          0.1111,
+          0.4398
+        ],
+        [
+          0.85,
+          0.1111,
+          0.4494
+        ],
+        [
+          0.86,
+          0.1111,
+          0.4574
+        ],
+        [
+          0.87,
+          0.1111,
+          0.464
+        ],
+        [
+          0.88,
+          0.1111,
+          0.4696
+        ],
+        [
+          0.89,
+          0.1111,
+          0.4744
+        ],
+        [
+          0.9,
+          0.1111,
+          0.4787
+        ],
+        [
+          0.91,
+          0.1111,
+          0.4825
+        ],
+        [
+          0.92,
+          0.1111,
+          0.486
+        ],
+        [
+          0.93,
+          0.1111,
+          0.4893
+        ],
+        [
+          0.94,
+          0.1111,
+          0.4921
+        ],
+        [
+          0.95,
+          0.1111,
+          0.4945
+        ],
+        [
+          0.96,
+          0.1111,
+          0.4965
+        ],
+        [
+          0.97,
+          0.1111,
+          0.4979
+        ],
+        [
+          0.98,
+          0.1111,
+          0.4989
+        ],
+        [
+          0.99,
+          0.1111,
+          0.4995
+        ],
+        [
+          1.0,
+          0.1111,
+          0.5
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:30.717643+00:00"
+    },
+    {
+      "video_id": "20260523_222914",
+      "youtube_video_id": "o2dP_RYLNtY",
+      "youtube_url": "https://youtube.com/shorts/o2dP_RYLNtY",
+      "published_at": "2026-05-23",
+      "track": "shorts",
+      "title": "You didn't shut down. Your brain went OFFLINE",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology_drop",
+        "category": "Psychology Drops",
+        "topic_cluster": "They didn't 'shut down.' Their nervous system just went offl",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 14
+      },
+      "composite_score": 7.08,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys its empathetic message through a strong textual hook, clear voiceover, and perfectly chosen background music, all aligning well with the brand's emotional tone. While the audio quality and emotional resonance are exemplary, the visual storytelling could benefit from more cohesive transitions and less generic imagery. Occasional fast caption pacing also presents a minor hurdle to full viewer comprehension. Future videos should aim for a more integrated visual narrative and refined caption timing, building upon the solid foundation of audio and emotional delivery.",
+        "strengths": [
+          "The voiceover delivery is exceptionally calm, empathetic, and engaging, perfectly embodying the brand's intended tone.",
+          "The background music is masterfully selected, subtly enhancing the emotional depth and introspective mood of the content without distraction.",
+          "The strategic use of single-word or short-phrase text overlays effectively highlights key concepts and reinforces the message, even when visuals are varied."
+        ],
+        "dropoff_causes": [
+          "Abrupt visual transitions between disparate stock footage clips can be jarring and may disrupt viewer engagement.",
+          "Occasional fast pacing of multi-word captions might cause some viewers to miss key information or feel rushed.",
+          "The lack of a direct, spoken call to action or a more visually engaging closing segment before the end card could lead to a passive viewer experience at the end."
+        ],
+        "repeat_next": [
+          "Continue to prioritize high-quality voiceover and audio mixing for clear and pleasant listening.",
+          "Maintain the empathetic and understanding emotional tone in both script and delivery.",
+          "Utilize short, impactful text overlays to emphasize core messages and key psychological concepts."
+        ],
+        "reduce_next": [
+          "Minimize abrupt visual cuts between unrelated scenes or individuals to create a more fluid and continuous visual narrative.",
+          "Avoid generic stock footage when more metaphoric or specific imagery could reinforce the message more powerfully.",
+          "Reduce instances of rapid, multi-word caption displays to ensure all text is easily readable by viewers."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe/Intrigue",
+          "thumbnail_type": "Text-on-Image/Conceptual",
+          "visual_style_mix": "Emotional/Abstract/Stock",
+          "narrative_format": "Explainer/Insight",
+          "character_used": "Relatable Everyperson"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 37,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 5,
+        "averageViewDuration": 20,
+        "averageViewPercentage": 51.71,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3Do2dP_RYLNtY&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:30.940049+00:00"
+    },
+    {
+      "video_id": "20260524_154637",
+      "youtube_video_id": "i_Pp76KiYa8",
+      "youtube_url": "https://youtube.com/shorts/i_Pp76KiYa8",
+      "published_at": "2026-05-24",
+      "track": "shorts",
+      "title": "You talk daily but feel ALONE",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "hot take",
+        "category": "conversation truths",
+        "topic_cluster": "Talking every day does not make you close",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 7.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a profound 'hot take' through a perfectly aligned emotional tone, excellent voiceover, and meticulous captioning. While the overall mood is consistently strong, some visuals are too generic or static, particularly in the opening seconds and during longer B-roll segments, which could impact viewer retention. Refining visual specificity and pacing, especially at the start, would elevate an already strong foundation for the Soft Reset With Me brand.",
+        "strengths": [
+          "The clarity and empathetic tone of the voiceover are outstanding and a core strength of the brand.",
+          "The meticulous caption pacing and legibility significantly enhance accessibility and viewer comprehension.",
+          "The consistent emotional atmosphere created through the music and overall visual style effectively lands the brand's tone.",
+          "The script's hook is highly relatable and offers a provocative insight that resonates deeply with the target audience."
+        ],
+        "dropoff_causes": [
+          "Static visual at the very beginning (0:00-0:03) while the hook is being delivered; faster visual changes are usually more engaging for Shorts.",
+          "Extended duration of generic B-roll shots (e.g., cityscape from 0:11-0:16, window silhouette from 0:24-0:29) that don't specifically illustrate the spoken words, potentially causing visual fatigue.",
+          "Lack of direct visual representation for some concepts like 'memes,' 'voice notes about nothing,' or 'what you're actually carrying,' which could lead to viewers feeling a disconnect between the audio and visual narrative."
+        ],
+        "repeat_next": [
+          "The calm, empathetic, and clear voiceover delivery.",
+          "The word-by-word caption style with excellent timing and legibility.",
+          "The ability to create a consistent and intentional emotional atmosphere through audio and visual selection.",
+          "Crafting hooks that challenge common assumptions and tap into subtle emotional truths."
+        ],
+        "reduce_next": [
+          "Initial static visual duration; aim for immediate visual dynamism or a quicker hook delivery over a static shot.",
+          "Reliance on overly generic moody B-roll footage, especially for longer durations; strive for more specific or conceptually illustrative visuals.",
+          "Repetitive visual motifs (e.g., similar window shots); introduce more diverse scenarios to maintain visual interest."
+        ],
+        "tag_suggestions": {
+          "hook_type": "provocative claim",
+          "thumbnail_type": "mood shot",
+          "visual_style_mix": "cinematic B-roll",
+          "narrative_format": "hot take breakdown",
+          "character_used": "narrator voice"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 19,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 7,
+        "averageViewPercentage": 20.3,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3Di_Pp76KiYa8&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:31.156873+00:00"
+    },
+    {
+      "video_id": "20260524_234017",
+      "youtube_video_id": "XiknVG7dX0s",
+      "youtube_url": "https://youtube.com/shorts/XiknVG7dX0s",
+      "published_at": "2026-05-24",
+      "track": "shorts",
+      "title": "You deleted the app. Your body still knows",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "list",
+        "category": "healing arcs",
+        "topic_cluster": "Four signs you are not over them that have nothing to do wit",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "45_60s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "composite_score": 7.8,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W21",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 7,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 5,
+        "averageViewPercentage": 11.95,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DXiknVG7dX0s&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:31.373917+00:00"
+    },
+    {
+      "video_id": "20260525_172136",
+      "youtube_video_id": "HK1vq_qUzAU",
+      "youtube_url": "https://youtube.com/shorts/HK1vq_qUzAU",
+      "published_at": "2026-05-25",
+      "track": "shorts",
+      "title": "Calm only feels boring after chaos",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "psychology drops",
+        "topic_cluster": "If calm feels boring it might be because you are used to anx",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 7
+      },
+      "composite_score": 7.7,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short masterfully delivers its powerful reframe with an consistently calm and empathetic tone, aligning perfectly with the 'Soft Reset With Me' brand. The voiceover and caption pacing are excellent, skillfully guiding viewers through the narrative. While some mid-video visuals could benefit from increased specificity to fully match the emotional nuances of the script, the overall aesthetic, balanced audio mix, and particularly the impactful closing visual create a highly engaging and thought-provoking experience that resonates deeply with the core message.",
+        "strengths": [
+          "Consistent brand aesthetic: The use of film grain, muted color palettes, and reflective imagery establishes a strong, recognizable visual identity for 'Soft Reset With Me.'",
+          "Empathetic voiceover delivery: The narrator's tone is perfectly calibrated to the sensitive subject matter, fostering a sense of understanding and trust.",
+          "Powerful loopback visual: The final shot of the man looking out the window, paired with the 'You were never bored. You were finally safe, and it scared you' line, delivers a profound emotional punch and reinforces the core reframe.",
+          "Effective use of background music: The subtle, ambient soundtrack perfectly complements the narrative without competing for attention, enhancing the contemplative mood."
+        ],
+        "dropoff_causes": [
+          "Inconsistent visual specificity: The visual of hands molding clay (17-21s) doesn't clearly convey the 'anxiety felt like passion' or 'pit in your stomach' concept, potentially causing momentary viewer disconnect.",
+          "Lack of immediate visual progression for the 'waiting' section: The shift from the woman on her phone to the man on his laptop (5-14s) is somewhat generic, and could be made more impactful to specifically illustrate the 'waiting for anxious text' and 'argument that proves they care' if possible."
+        ],
+        "repeat_next": [
+          "Maintain the empathetic and calm voiceover tone and pacing.",
+          "Continue with the consistent brand visual filter and aesthetic (film grain, muted, warm tones).",
+          "Utilize word-by-word/phrase-by-phrase captioning for optimal text engagement.",
+          "Craft strong, emotionally resonant closing visuals that reinforce the core message and 'soft reset' feeling.",
+          "Begin videos with immediate, direct hooks that speak to a specific pain point or experience."
+        ],
+        "reduce_next": [
+          "Avoid generic stock footage that doesn't specifically or abstractly align with the precise emotional or physiological sensations described in the script (e.g., the clay hands). Seek visuals that are more metaphorically or directly linked.",
+          "Minimize rapid shifts between disparate visual subjects in short succession without a very strong thematic or narrative link, especially in the middle section of the video."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Relatable Problem, Direct Address, Reframe Setup",
+          "thumbnail_type": "Symbolic, Text Overlay (Calm feels boring?)",
+          "visual_style_mix": "Aesthetic, Cinematic, Text-Focused, Lifestyle",
+          "narrative_format": "Reframe, Insight-Driven, Problem-Solution",
+          "character_used": "Introspective Seeker, Anxious Individual (implied)"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 51,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 3,
+        "averageViewDuration": 17,
+        "averageViewPercentage": 49.09,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DHK1vq_qUzAU&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.0909,
+          0.4003
+        ],
+        [
+          0.02,
+          1.0909,
+          0.3729
+        ],
+        [
+          0.03,
+          1.0909,
+          0.3465
+        ],
+        [
+          0.04,
+          1.0909,
+          0.3235
+        ],
+        [
+          0.05,
+          1.0909,
+          0.3052
+        ],
+        [
+          0.06,
+          1.0909,
+          0.292
+        ],
+        [
+          0.07,
+          1.0909,
+          0.2834
+        ],
+        [
+          0.08,
+          1.0909,
+          0.2787
+        ],
+        [
+          0.09,
+          1.0909,
+          0.2769
+        ],
+        [
+          0.1,
+          1.0909,
+          0.277
+        ],
+        [
+          0.11,
+          1.0909,
+          0.2783
+        ],
+        [
+          0.12,
+          1.0909,
+          0.2806
+        ],
+        [
+          0.13,
+          1.0909,
+          0.2835
+        ],
+        [
+          0.14,
+          1.0909,
+          0.287
+        ],
+        [
+          0.15,
+          1.0909,
+          0.2908
+        ],
+        [
+          0.16,
+          1.0,
+          0.295
+        ],
+        [
+          0.17,
+          1.0,
+          0.2995
+        ],
+        [
+          0.18,
+          0.9091,
+          0.3043
+        ],
+        [
+          0.19,
+          0.6364,
+          0.3092
+        ],
+        [
+          0.2,
+          0.6364,
+          0.3143
+        ],
+        [
+          0.21,
+          0.5455,
+          0.3195
+        ],
+        [
+          0.22,
+          0.5455,
+          0.3247
+        ],
+        [
+          0.23,
+          0.5455,
+          0.3301
+        ],
+        [
+          0.24,
+          0.5455,
+          0.3356
+        ],
+        [
+          0.25,
+          0.5455,
+          0.3411
+        ],
+        [
+          0.26,
+          0.5455,
+          0.3466
+        ],
+        [
+          0.27,
+          0.5455,
+          0.352
+        ],
+        [
+          0.28,
+          0.5455,
+          0.3575
+        ],
+        [
+          0.29,
+          0.5455,
+          0.3629
+        ],
+        [
+          0.3,
+          0.5455,
+          0.3681
+        ],
+        [
+          0.31,
+          0.5455,
+          0.3732
+        ],
+        [
+          0.32,
+          0.5455,
+          0.3782
+        ],
+        [
+          0.33,
+          0.5455,
+          0.3831
+        ],
+        [
+          0.34,
+          0.5455,
+          0.3877
+        ],
+        [
+          0.35,
+          0.5455,
+          0.3922
+        ],
+        [
+          0.36,
+          0.4545,
+          0.3965
+        ],
+        [
+          0.37,
+          0.4545,
+          0.4006
+        ],
+        [
+          0.38,
+          0.4545,
+          0.4045
+        ],
+        [
+          0.39,
+          0.4545,
+          0.4083
+        ],
+        [
+          0.4,
+          0.4545,
+          0.4118
+        ],
+        [
+          0.41,
+          0.4545,
+          0.4153
+        ],
+        [
+          0.42,
+          0.4545,
+          0.4186
+        ],
+        [
+          0.43,
+          0.4545,
+          0.4218
+        ],
+        [
+          0.44,
+          0.4545,
+          0.4248
+        ],
+        [
+          0.45,
+          0.4545,
+          0.4277
+        ],
+        [
+          0.46,
+          0.4545,
+          0.4305
+        ],
+        [
+          0.47,
+          0.4545,
+          0.4333
+        ],
+        [
+          0.48,
+          0.4545,
+          0.436
+        ],
+        [
+          0.49,
+          0.3636,
+          0.4387
+        ],
+        [
+          0.5,
+          0.3636,
+          0.4415
+        ],
+        [
+          0.51,
+          0.3636,
+          0.4445
+        ],
+        [
+          0.52,
+          0.3636,
+          0.4477
+        ],
+        [
+          0.53,
+          0.3636,
+          0.4511
+        ],
+        [
+          0.54,
+          0.3636,
+          0.4551
+        ],
+        [
+          0.55,
+          0.3636,
+          0.4594
+        ],
+        [
+          0.56,
+          0.3636,
+          0.4642
+        ],
+        [
+          0.57,
+          0.3636,
+          0.4698
+        ],
+        [
+          0.58,
+          0.3636,
+          0.4759
+        ],
+        [
+          0.59,
+          0.3636,
+          0.4829
+        ],
+        [
+          0.6,
+          0.3636,
+          0.4909
+        ],
+        [
+          0.61,
+          0.3636,
+          0.5
+        ],
+        [
+          0.62,
+          0.3636,
+          0.5104
+        ],
+        [
+          0.63,
+          0.3636,
+          0.5223
+        ],
+        [
+          0.64,
+          0.3636,
+          0.5358
+        ],
+        [
+          0.65,
+          0.3636,
+          0.551
+        ],
+        [
+          0.66,
+          0.3636,
+          0.5676
+        ],
+        [
+          0.67,
+          0.3636,
+          0.5857
+        ],
+        [
+          0.68,
+          0.3636,
+          0.6047
+        ],
+        [
+          0.69,
+          0.3636,
+          0.6241
+        ],
+        [
+          0.7,
+          0.3636,
+          0.6434
+        ],
+        [
+          0.71,
+          0.3636,
+          0.6622
+        ],
+        [
+          0.72,
+          0.3636,
+          0.6795
+        ],
+        [
+          0.73,
+          0.3636,
+          0.6952
+        ],
+        [
+          0.74,
+          0.3636,
+          0.7085
+        ],
+        [
+          0.75,
+          0.3636,
+          0.7191
+        ],
+        [
+          0.76,
+          0.3636,
+          0.7267
+        ],
+        [
+          0.77,
+          0.3636,
+          0.7308
+        ],
+        [
+          0.78,
+          0.3636,
+          0.7313
+        ],
+        [
+          0.79,
+          0.3636,
+          0.7277
+        ],
+        [
+          0.8,
+          0.3636,
+          0.7197
+        ],
+        [
+          0.81,
+          0.3636,
+          0.7075
+        ],
+        [
+          0.82,
+          0.2727,
+          0.6911
+        ],
+        [
+          0.83,
+          0.1818,
+          0.6714
+        ],
+        [
+          0.84,
+          0.1818,
+          0.6492
+        ],
+        [
+          0.85,
+          0.1818,
+          0.6257
+        ],
+        [
+          0.86,
+          0.1818,
+          0.6024
+        ],
+        [
+          0.87,
+          0.1818,
+          0.5805
+        ],
+        [
+          0.88,
+          0.1818,
+          0.5611
+        ],
+        [
+          0.89,
+          0.1818,
+          0.5447
+        ],
+        [
+          0.9,
+          0.1818,
+          0.5317
+        ],
+        [
+          0.91,
+          0.1818,
+          0.5219
+        ],
+        [
+          0.92,
+          0.1818,
+          0.5147
+        ],
+        [
+          0.93,
+          0.1818,
+          0.5094
+        ],
+        [
+          0.94,
+          0.1818,
+          0.5056
+        ],
+        [
+          0.95,
+          0.1818,
+          0.5024
+        ],
+        [
+          0.96,
+          0.1818,
+          0.4999
+        ],
+        [
+          0.97,
+          0.1818,
+          0.4975
+        ],
+        [
+          0.98,
+          0.1818,
+          0.4953
+        ],
+        [
+          0.99,
+          0.1818,
+          0.4934
+        ],
+        [
+          1.0,
+          0.1818,
+          0.4917
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:33.752888+00:00"
+    },
+    {
+      "video_id": "20260525_234203",
+      "youtube_video_id": "azezhGIkjvE",
+      "youtube_url": "https://youtube.com/shorts/azezhGIkjvE",
+      "published_at": "2026-05-25",
+      "track": "shorts",
+      "title": "When being heard makes you feel more ALONE",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "specific_scenario",
+        "category": "Conversation Truths",
+        "topic_cluster": "The lonely ache of being 'heard' but not understood.",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "composite_score": 8.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively communicates a nuanced emotional truth about being heard but not understood, leveraging a strong, empathetic voiceover and a well-structured script. The initial visuals and hook immediately draw the viewer into a contemplative mood, reinforced by powerful metaphorical imagery. While the visual of tarot cards slightly deviates from the precise emotional context, the overall execution, especially the clear distinction between attention and contact, makes it a deeply resonant piece for its target audience.",
+        "strengths": [
+          "The brilliant conceptual distinction between 'attention' and 'contact' provides a precise language for a commonly felt but often unnamed emotional experience.",
+          "The voiceover's empathetic and consistent delivery cultivates a strong sense of connection and validation for the viewer.",
+          "The use of metaphorical visuals (like explaining through glass) effectively translates abstract emotions into relatable imagery.",
+          "The 'loopback' line ('They heard every word. They just never felt any of it.') at the end provides powerful emotional closure and reinforces the core message memorably."
+        ],
+        "dropoff_causes": [
+          "The tarot card visual (30-33s) momentarily breaks the focused emotional narrative, potentially causing a slight disconnect for viewers who might be searching for specific advice or deeper introspection rather than a symbolic activity.",
+          "The relatively slow and contemplative pacing, while intentional for the emotional depth, might lead to some viewers scrolling past if they are accustomed to faster-paced, higher-energy Shorts.",
+          "For new viewers, the abstract nature of the content might require a slightly longer engagement to fully grasp, which could be a challenge in the Shorts format."
+        ],
+        "repeat_next": [
+          "Using emotionally resonant, specific hooks that directly name a common, often unarticulated emotional pain point.",
+          "Employing metaphorical visuals that clearly illustrate abstract psychological concepts.",
+          "Maintaining a consistent, empathetic, and reflective voiceover tone.",
+          "Developing clear distinctions between related concepts (e.g., 'attention vs. contact') to provide fresh insights.",
+          "Utilizing a strong 'loopback' sentence to reinforce the core message and create a lasting impact."
+        ],
+        "reduce_next": [
+          "Visuals that introduce elements not directly tied to the core emotional concept of the script (e.g., the tarot cards) to maintain thematic cohesion.",
+          "Any visual sequences that might feel static or overly prolonged for the dynamic Shorts format, unless intentionally used for a dramatic pause."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Emotional Validation Hook",
+          "thumbnail_type": "Text Overlay (Abstract Concept)",
+          "visual_style_mix": "Cinematic Mood; Metaphorical Aesthetic",
+          "narrative_format": "Emotional Diagnosis; Relational Insight",
+          "character_used": "N/A"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 74,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 3,
+        "averageViewDuration": 14,
+        "averageViewPercentage": 36.36,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DazezhGIkjvE&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:36.132806+00:00"
+    },
+    {
+      "video_id": "20260526_181156",
+      "youtube_video_id": "vUi95JsUZH0",
+      "youtube_url": "https://youtube.com/shorts/vUi95JsUZH0",
+      "published_at": "2026-05-26",
+      "track": "shorts",
+      "title": "Your questions feel like a QUIET interrogation",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology_drop",
+        "category": "Conversation Truths",
+        "topic_cluster": "When your attempt to connect feels like an interrogation to ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 7.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short successfully delivers a poignant psychological insight through a beautifully crafted, empathetic voiceover and complementary background music, perfectly aligning with the 'Soft Reset With Me' brand's emotional tone. While the initial hook and overall message are clear and well-paced, some visual choices lean too abstractly into symbolism, occasionally detracting from the direct message. Refining visual specificity to more consistently match the spoken word and slightly adjusting caption pacing in denser segments could further enhance viewer retention and immersion.",
+        "strengths": [
+          "The voiceover's empathetic and gentle delivery is crucial for the brand's tone and makes complex emotional topics highly accessible and non-judgmental.",
+          "The consistent background music effectively sets and maintains a reflective and supportive mood throughout the Short.",
+          "The conciseness and emotional resonance of the script are exceptionally strong, making the message memorable and impactful."
+        ],
+        "dropoff_causes": [
+          "Overly abstract visual choices for specific lines (e.g., the multiple phones visual for explaining anxiety leakage might confuse some viewers who prefer more direct representation).",
+          "Pacing of captions in some denser sentences can feel slightly rushed, potentially frustrating viewers who prefer to read at a slower pace."
+        ],
+        "repeat_next": [
+          "Maintain the empathetic, soft-spoken voiceover style.",
+          "Continue using subtle, mood-enhancing background music.",
+          "Utilize direct, relatable visuals that clearly convey emotional states (e.g., stressed facial expressions, contemplative postures).",
+          "Employ short, punchy caption phrasing for maximum readability in the Short format."
+        ],
+        "reduce_next": [
+          "Minimize the use of highly abstract or ambiguous visuals that require significant interpretation, especially when tied to specific points in the narration.",
+          "Avoid overly rapid flashing of captions for longer phrases; ensure sufficient read time for all text segments.",
+          "Consider slightly reducing the intensity of the film grain overlay in some segments to enhance visual clarity."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Pain-point reframe",
+          "thumbnail_type": "Text overlay",
+          "visual_style_mix": "Stock footage & Symbolic",
+          "narrative_format": "Psychological Insight",
+          "character_used": "Empathic Narrator"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 8,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 8,
+        "averageViewPercentage": 22.89,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DvUi95JsUZH0&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:36.351519+00:00"
+    },
+    {
+      "video_id": "20260529_013405",
+      "youtube_video_id": "5DMe-lOk-UU",
+      "youtube_url": "https://youtube.com/shorts/5DMe-lOk-UU",
+      "published_at": "2026-05-29",
+      "track": "shorts",
+      "title": "Finally calm? It's not WRONG",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "fragment",
+        "angle_type": "truth_drop",
+        "category": "self-worth shifts",
+        "topic_cluster": "Peace as the most radical boundary you can set",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "composite_score": 8.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 41,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 5,
+        "averageViewPercentage": 13.58,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D5DMe-lOk-UU&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:36.573709+00:00"
+    },
+    {
+      "video_id": "20260530_012940",
+      "youtube_video_id": "N-ri5uKLvVU",
+      "youtube_url": "https://youtube.com/shorts/N-ri5uKLvVU",
+      "published_at": "2026-05-30",
+      "track": "shorts",
+      "title": "Still checking? You're STILL waiting for them",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "The \"I'll be back\" fantasy that keeps you stuck",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "composite_score": 8.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "The Short \"Still checking? You're STILL waiting for them\" effectively delivers a truth-drop message through a compelling blend of empathetic voiceover, melancholic music, and highly symbolic visuals. Its strong hook immediately draws in the audience, supported by precise, single-word captions that enhance readability and emotional impact. While most visuals are powerfully resonant, a few moments of abstract imagery could potentially cause minor, momentary disengagement. Overall, the video masterfully maintains a consistent, supportive tone, guiding viewers through a profound reframe of their emotional state towards self-worth.",
+        "strengths": [
+          "The empathetic yet firm delivery of the voiceover that establishes both understanding and authority.",
+          "The effective use of single-word, well-timed captions that enhance comprehension and impact without being distracting.",
+          "The subtle film grain overlay that adds a consistent, melancholic aesthetic throughout the video.",
+          "The powerful visual of hands reaching then retracting, perfectly symbolizing the core conflict."
+        ],
+        "dropoff_causes": [
+          "The abstract visual of stirring coffee (0:23-0:26) might briefly disengage viewers who prefer more direct or emotionally resonant imagery.",
+          "The metaphor of the person tied with red strings, while powerful, could be slightly ambiguous for some in a fast-paced Shorts feed, requiring a moment of interpretation."
+        ],
+        "repeat_next": [
+          "Maintain the high quality and emotional resonance of the voiceover delivery.",
+          "Continue the practice of precise, single-word or short-phrase captioning for maximum impact and readability.",
+          "Replicate the careful audio mixing that allows the music to support the message without overpowering the voice.",
+          "Utilize strong, symbolic visual metaphors that directly align with the script's emotional beats (e.g., the red strings, the hands).",
+          "Ensure the ending call-to-action is concise and clear."
+        ],
+        "reduce_next": [
+          "Minimize reliance on abstract or less directly relevant stock footage (e.g., the coffee stirring shot) unless its metaphorical connection is immediately obvious and integrated.",
+          "Avoid visuals that, while aesthetically pleasing, do not deepen the narrative or emotional connection to the script's specific claims."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Direct Address",
+          "thumbnail_type": "Text Overlay",
+          "visual_style_mix": "Reflective, Melancholic, Symbolic",
+          "narrative_format": "Truth Drop, Reframe",
+          "character_used": "None (Faceless Voiceover)"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 41,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 27.67,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DN-ri5uKLvVU&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:36.781881+00:00"
+    },
+    {
+      "video_id": "20260531_013710",
+      "youtube_video_id": "VteHlarKJjY",
+      "youtube_url": "https://youtube.com/shorts/VteHlarKJjY",
+      "published_at": "2026-05-31",
+      "track": "shorts",
+      "title": "You just miss the person you invented",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth drop",
+        "category": "healing arcs",
+        "topic_cluster": "You did not lose them, you lost who you imagined they would ",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 12
+      },
+      "composite_score": 7.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W22",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a profound reframe of heartbreak by masterfully blending melancholic visuals, an empathetic voiceover, and a well-balanced audio mix. Its standout strength is the consistent emotional tone and the clever use of specific visual metaphors, like the ghostly reflection, which significantly amplify the core message. While some visual choices could be more distinct and the visual pacing slightly smoother, the video successfully establishes a strong brand aesthetic and delivers a powerful, introspective experience for viewers grappling with loss.",
+        "strengths": [
+          "The powerful visual metaphor of the ghostly reflection for 'who you needed them to become' is exceptionally well-executed and memorable.",
+          "The consistent brand aesthetic of thoughtful melancholy and introspection is strongly established through the visual style, voiceover, and music, building a distinct identity.",
+          "The signature line, 'That's not love. That's hope with someone else's face on it,' is delivered with strong emphasis and visual backing, making it highly impactful and quotable.",
+          "The overall cohesion of mood, message, and audio creates a deeply empathetic and resonant viewing experience."
+        ],
+        "dropoff_causes": [
+          "Some viewers might disengage due to the abstract nature of the core message ('grief for a story you wrote'), requiring more cognitive processing than some prefer for a short-form video.",
+          "A few transitions between highly distinct visual scenes (e.g., apartment to corridor to candle) feel slightly abrupt, which could momentarily break immersion.",
+          "The absence of a consistent on-screen presenter (beyond a brief appearance) or a face to connect with the empathetic voice might lead to lower emotional connection for some viewers who prefer a more direct human presence."
+        ],
+        "repeat_next": [
+          "Continue using a calm, empathetic female voiceover for consistent brand identity and emotional connection.",
+          "Prioritize highly specific and creative visual metaphors that directly illustrate abstract concepts (e.g., the ghostly reflection).",
+          "Maintain the consistently melancholic and introspective emotional tone, enhanced by appropriate background music.",
+          "Focus on crafting clear, reframe-oriented hooks that challenge common assumptions, as seen in the opening."
+        ],
+        "reduce_next": [
+          "Reduce reliance on overly generic stock footage that doesn't add unique meaning or specificity to the spoken words (e.g., generic silhouettes, routine objects like a coffee cup).",
+          "Minimize rapid, disjointed transitions between visually distinct scenes; aim for smoother visual storytelling or more deliberate scene pacing."
+        ],
+        "tag_suggestions": {
+          "hook_type": "truth_drop",
+          "thumbnail_type": "text_on_video_still",
+          "visual_style_mix": "emotional_aesthetic",
+          "narrative_format": "monologue_reframe",
+          "character_used": "archetypal_figures"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 77,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 4,
+        "averageViewDuration": 13,
+        "averageViewPercentage": 36.91,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DVteHlarKJjY&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.0667,
+          0.2757
+        ],
+        [
+          0.02,
+          1.0667,
+          0.2449
+        ],
+        [
+          0.03,
+          1.0,
+          0.2145
+        ],
+        [
+          0.04,
+          1.0,
+          0.1868
+        ],
+        [
+          0.05,
+          1.0,
+          0.1635
+        ],
+        [
+          0.06,
+          1.0,
+          0.1451
+        ],
+        [
+          0.07,
+          1.0,
+          0.1312
+        ],
+        [
+          0.08,
+          1.0,
+          0.1212
+        ],
+        [
+          0.09,
+          1.0,
+          0.1141
+        ],
+        [
+          0.1,
+          1.0,
+          0.1091
+        ],
+        [
+          0.11,
+          1.0,
+          0.1056
+        ],
+        [
+          0.12,
+          1.0,
+          0.1033
+        ],
+        [
+          0.13,
+          0.9333,
+          0.1016
+        ],
+        [
+          0.14,
+          0.8667,
+          0.1004
+        ],
+        [
+          0.15,
+          0.8,
+          0.0996
+        ],
+        [
+          0.16,
+          0.8,
+          0.0991
+        ],
+        [
+          0.17,
+          0.6,
+          0.0987
+        ],
+        [
+          0.18,
+          0.6,
+          0.0985
+        ],
+        [
+          0.19,
+          0.5333,
+          0.0983
+        ],
+        [
+          0.2,
+          0.5333,
+          0.098
+        ],
+        [
+          0.21,
+          0.5333,
+          0.0977
+        ],
+        [
+          0.22,
+          0.5333,
+          0.097
+        ],
+        [
+          0.23,
+          0.5333,
+          0.0961
+        ],
+        [
+          0.24,
+          0.4667,
+          0.0947
+        ],
+        [
+          0.25,
+          0.4667,
+          0.0927
+        ],
+        [
+          0.26,
+          0.4667,
+          0.0902
+        ],
+        [
+          0.27,
+          0.4,
+          0.0873
+        ],
+        [
+          0.28,
+          0.4,
+          0.0843
+        ],
+        [
+          0.29,
+          0.4,
+          0.0813
+        ],
+        [
+          0.3,
+          0.4,
+          0.0784
+        ],
+        [
+          0.31,
+          0.4,
+          0.0759
+        ],
+        [
+          0.32,
+          0.4,
+          0.0735
+        ],
+        [
+          0.33,
+          0.3333,
+          0.071
+        ],
+        [
+          0.34,
+          0.3333,
+          0.0685
+        ],
+        [
+          0.35,
+          0.3333,
+          0.0656
+        ],
+        [
+          0.36,
+          0.3333,
+          0.0626
+        ],
+        [
+          0.37,
+          0.3333,
+          0.0596
+        ],
+        [
+          0.38,
+          0.3333,
+          0.0567
+        ],
+        [
+          0.39,
+          0.3333,
+          0.0542
+        ],
+        [
+          0.4,
+          0.3333,
+          0.0523
+        ],
+        [
+          0.41,
+          0.3333,
+          0.0508
+        ],
+        [
+          0.42,
+          0.3333,
+          0.0499
+        ],
+        [
+          0.43,
+          0.3333,
+          0.0493
+        ],
+        [
+          0.44,
+          0.3333,
+          0.049
+        ],
+        [
+          0.45,
+          0.3333,
+          0.0489
+        ],
+        [
+          0.46,
+          0.3333,
+          0.0488
+        ],
+        [
+          0.47,
+          0.3333,
+          0.0488
+        ],
+        [
+          0.48,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.49,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.5,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.51,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.52,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.53,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.54,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.55,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.56,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.57,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.58,
+          0.3333,
+          0.0487
+        ],
+        [
+          0.59,
+          0.2667,
+          0.0488
+        ],
+        [
+          0.6,
+          0.2667,
+          0.0488
+        ],
+        [
+          0.61,
+          0.2667,
+          0.0488
+        ],
+        [
+          0.62,
+          0.2667,
+          0.0488
+        ],
+        [
+          0.63,
+          0.2667,
+          0.0488
+        ],
+        [
+          0.64,
+          0.2667,
+          0.0488
+        ],
+        [
+          0.65,
+          0.2667,
+          0.0488
+        ],
+        [
+          0.66,
+          0.2667,
+          0.0489
+        ],
+        [
+          0.67,
+          0.2667,
+          0.0489
+        ],
+        [
+          0.68,
+          0.2,
+          0.0489
+        ],
+        [
+          0.69,
+          0.2,
+          0.049
+        ],
+        [
+          0.7,
+          0.2,
+          0.049
+        ],
+        [
+          0.71,
+          0.2,
+          0.0491
+        ],
+        [
+          0.72,
+          0.2,
+          0.0491
+        ],
+        [
+          0.73,
+          0.2,
+          0.0492
+        ],
+        [
+          0.74,
+          0.2,
+          0.0494
+        ],
+        [
+          0.75,
+          0.1333,
+          0.0498
+        ],
+        [
+          0.76,
+          0.1333,
+          0.0504
+        ],
+        [
+          0.77,
+          0.1333,
+          0.0514
+        ],
+        [
+          0.78,
+          0.0667,
+          0.053
+        ],
+        [
+          0.79,
+          0.0667,
+          0.0554
+        ],
+        [
+          0.8,
+          0.0667,
+          0.059
+        ],
+        [
+          0.81,
+          0.0667,
+          0.0639
+        ],
+        [
+          0.82,
+          0.0667,
+          0.0702
+        ],
+        [
+          0.83,
+          0.0667,
+          0.0781
+        ],
+        [
+          0.84,
+          0.0667,
+          0.0873
+        ],
+        [
+          0.85,
+          0.0667,
+          0.0977
+        ],
+        [
+          0.86,
+          0.0667,
+          0.1088
+        ],
+        [
+          0.87,
+          0.0667,
+          0.1202
+        ],
+        [
+          0.88,
+          0.0667,
+          0.1317
+        ],
+        [
+          0.89,
+          0.0667,
+          0.1429
+        ],
+        [
+          0.9,
+          0.0667,
+          0.1534
+        ],
+        [
+          0.91,
+          0.0667,
+          0.1633
+        ],
+        [
+          0.92,
+          0.0667,
+          0.1723
+        ],
+        [
+          0.93,
+          0.0667,
+          0.1804
+        ],
+        [
+          0.94,
+          0.0667,
+          0.1876
+        ],
+        [
+          0.95,
+          0.0667,
+          0.1941
+        ],
+        [
+          0.96,
+          0.0667,
+          0.1998
+        ],
+        [
+          0.97,
+          0.0667,
+          0.2047
+        ],
+        [
+          0.98,
+          0.0667,
+          0.2089
+        ],
+        [
+          0.99,
+          0.0667,
+          0.2123
+        ],
+        [
+          1.0,
+          0.0667,
+          0.215
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:37.313657+00:00"
+    },
+    {
+      "video_id": "20260601_014013",
+      "youtube_video_id": "fRxg5HdYGnM",
+      "youtube_url": "https://youtube.com/shorts/fRxg5HdYGnM",
+      "published_at": "2026-06-01",
+      "track": "shorts",
+      "title": "You still miss the one who wasn't good",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "psychology drop",
+        "category": "healing arcs",
+        "topic_cluster": "Why you miss them even when they were not even good for you",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "composite_score": 6.2,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "video_audit": {
+        "status": "ok",
+        "summary": "The Short successfully delivers a highly empathetic and validating message on a relatable psychological topic, consistent with the channel's brand through its tone, music, and strong script. However, the video's excessive length (36.7 seconds) and slow pacing, largely due to a very drawn-out voice-over and generic, slowly transitioning visuals, are significant drawbacks that will likely lead to early audience drop-off. Future videos should focus on drastically shortening the runtime and accelerating the pacing of both voice-over and visual changes to optimize for the Shorts format, while retaining the strong emotional connection and insightful content.",
+        "strengths": [
+          "The core message and script are incredibly insightful, validating, and address a deeply relatable emotional paradox for the target audience.",
+          "The voice-over's empathetic and gentle tone is a strong brand identifier and fosters a deep connection with the viewer.",
+          "The consistent brand aesthetic, including the choice of melancholic music and text style, reinforces the channel's identity.",
+          "The clear and direct call to action ('Save this.') is appropriate for the content's educational and self-help nature."
+        ],
+        "dropoff_causes": [
+          "Excessive video length for a Short (36.7 seconds vs. optimal 15-20 seconds), leading to a high abandonment rate.",
+          "Very slow pacing of both the voice-over delivery and visual transitions, making the video feel drawn out and unoptimized for short-form content.",
+          "Over-reliance on generic stock footage that doesn't consistently add specific visual meaning, causing viewer disengagement over the extended duration."
+        ],
+        "repeat_next": [
+          "The empathetic and validating tone of the voice-over and script.",
+          "Crafting hooks that immediately connect with a specific, painful emotional experience and offer a unique, psychologically-backed perspective.",
+          "The clear and understandable explanation of complex psychological concepts.",
+          "The consistent emotional atmosphere created by the blend of voice, music, and overall visual mood."
+        ],
+        "reduce_next": [
+          "Drastically reduce the overall video duration, aiming for 15-20 seconds to maximize Shorts retention.",
+          "Significantly increase the pacing and speed of the voice-over delivery.",
+          "Minimize the use of generic stock footage, opting for more specific, illustrative, or rapidly changing abstract visuals.",
+          "Accelerate visual transitions to maintain a dynamic flow and keep viewers engaged."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Statement/Psychological Insight",
+          "thumbnail_type": "Emotional/Text Overlay",
+          "visual_style_mix": "Melancholic Aesthetic, Text-Driven",
+          "narrative_format": "Psychology Drop, Explanatory",
+          "character_used": "None"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 116,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 8,
+        "averageViewDuration": 16,
+        "averageViewPercentage": 44.09,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DfRxg5HdYGnM&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.087,
+          0.3077
+        ],
+        [
+          0.02,
+          1.087,
+          0.2742
+        ],
+        [
+          0.03,
+          1.087,
+          0.2408
+        ],
+        [
+          0.04,
+          1.0,
+          0.21
+        ],
+        [
+          0.05,
+          1.0,
+          0.1835
+        ],
+        [
+          0.06,
+          1.0,
+          0.1619
+        ],
+        [
+          0.07,
+          1.0,
+          0.1452
+        ],
+        [
+          0.08,
+          1.0,
+          0.1326
+        ],
+        [
+          0.09,
+          1.0,
+          0.1234
+        ],
+        [
+          0.1,
+          1.0,
+          0.1166
+        ],
+        [
+          0.11,
+          1.0,
+          0.1116
+        ],
+        [
+          0.12,
+          1.0,
+          0.1079
+        ],
+        [
+          0.13,
+          1.0,
+          0.1052
+        ],
+        [
+          0.14,
+          0.7826,
+          0.1033
+        ],
+        [
+          0.15,
+          0.7826,
+          0.1018
+        ],
+        [
+          0.16,
+          0.6957,
+          0.1009
+        ],
+        [
+          0.17,
+          0.6522,
+          0.1003
+        ],
+        [
+          0.18,
+          0.6087,
+          0.0998
+        ],
+        [
+          0.19,
+          0.6087,
+          0.0994
+        ],
+        [
+          0.2,
+          0.6087,
+          0.0991
+        ],
+        [
+          0.21,
+          0.6087,
+          0.0987
+        ],
+        [
+          0.22,
+          0.6087,
+          0.0981
+        ],
+        [
+          0.23,
+          0.5652,
+          0.0971
+        ],
+        [
+          0.24,
+          0.5652,
+          0.0957
+        ],
+        [
+          0.25,
+          0.5652,
+          0.0938
+        ],
+        [
+          0.26,
+          0.5652,
+          0.0913
+        ],
+        [
+          0.27,
+          0.5652,
+          0.0885
+        ],
+        [
+          0.28,
+          0.5217,
+          0.0855
+        ],
+        [
+          0.29,
+          0.5217,
+          0.0826
+        ],
+        [
+          0.3,
+          0.4783,
+          0.0799
+        ],
+        [
+          0.31,
+          0.4348,
+          0.0776
+        ],
+        [
+          0.32,
+          0.4348,
+          0.0755
+        ],
+        [
+          0.33,
+          0.4348,
+          0.0735
+        ],
+        [
+          0.34,
+          0.4348,
+          0.0715
+        ],
+        [
+          0.35,
+          0.4348,
+          0.0691
+        ],
+        [
+          0.36,
+          0.4348,
+          0.0665
+        ],
+        [
+          0.37,
+          0.4348,
+          0.0635
+        ],
+        [
+          0.38,
+          0.4348,
+          0.0605
+        ],
+        [
+          0.39,
+          0.4348,
+          0.0577
+        ],
+        [
+          0.4,
+          0.4348,
+          0.0552
+        ],
+        [
+          0.41,
+          0.3913,
+          0.0533
+        ],
+        [
+          0.42,
+          0.3913,
+          0.0519
+        ],
+        [
+          0.43,
+          0.3478,
+          0.0509
+        ],
+        [
+          0.44,
+          0.3478,
+          0.0503
+        ],
+        [
+          0.45,
+          0.3478,
+          0.0501
+        ],
+        [
+          0.46,
+          0.3478,
+          0.05
+        ],
+        [
+          0.47,
+          0.3478,
+          0.05
+        ],
+        [
+          0.48,
+          0.3478,
+          0.0501
+        ],
+        [
+          0.49,
+          0.3478,
+          0.0503
+        ],
+        [
+          0.5,
+          0.3478,
+          0.0506
+        ],
+        [
+          0.51,
+          0.3478,
+          0.0512
+        ],
+        [
+          0.52,
+          0.3478,
+          0.0519
+        ],
+        [
+          0.53,
+          0.3478,
+          0.0528
+        ],
+        [
+          0.54,
+          0.3478,
+          0.054
+        ],
+        [
+          0.55,
+          0.3478,
+          0.0553
+        ],
+        [
+          0.56,
+          0.3478,
+          0.057
+        ],
+        [
+          0.57,
+          0.3478,
+          0.0587
+        ],
+        [
+          0.58,
+          0.3478,
+          0.0607
+        ],
+        [
+          0.59,
+          0.3478,
+          0.0629
+        ],
+        [
+          0.6,
+          0.3478,
+          0.0653
+        ],
+        [
+          0.61,
+          0.3043,
+          0.068
+        ],
+        [
+          0.62,
+          0.3043,
+          0.071
+        ],
+        [
+          0.63,
+          0.3043,
+          0.0744
+        ],
+        [
+          0.64,
+          0.3043,
+          0.0784
+        ],
+        [
+          0.65,
+          0.3043,
+          0.0829
+        ],
+        [
+          0.66,
+          0.3043,
+          0.0882
+        ],
+        [
+          0.67,
+          0.3043,
+          0.0943
+        ],
+        [
+          0.68,
+          0.3043,
+          0.1013
+        ],
+        [
+          0.69,
+          0.3043,
+          0.1092
+        ],
+        [
+          0.7,
+          0.3043,
+          0.118
+        ],
+        [
+          0.71,
+          0.3043,
+          0.1277
+        ],
+        [
+          0.72,
+          0.3043,
+          0.1381
+        ],
+        [
+          0.73,
+          0.3043,
+          0.1491
+        ],
+        [
+          0.74,
+          0.3043,
+          0.1603
+        ],
+        [
+          0.75,
+          0.3043,
+          0.1716
+        ],
+        [
+          0.76,
+          0.3043,
+          0.1827
+        ],
+        [
+          0.77,
+          0.3043,
+          0.1932
+        ],
+        [
+          0.78,
+          0.3043,
+          0.2031
+        ],
+        [
+          0.79,
+          0.3043,
+          0.2122
+        ],
+        [
+          0.8,
+          0.3043,
+          0.2203
+        ],
+        [
+          0.81,
+          0.3043,
+          0.2277
+        ],
+        [
+          0.82,
+          0.3043,
+          0.2341
+        ],
+        [
+          0.83,
+          0.2609,
+          0.2399
+        ],
+        [
+          0.84,
+          0.2609,
+          0.2451
+        ],
+        [
+          0.85,
+          0.2609,
+          0.2498
+        ],
+        [
+          0.86,
+          0.1739,
+          0.2539
+        ],
+        [
+          0.87,
+          0.1739,
+          0.2576
+        ],
+        [
+          0.88,
+          0.1739,
+          0.2608
+        ],
+        [
+          0.89,
+          0.1739,
+          0.2638
+        ],
+        [
+          0.9,
+          0.1739,
+          0.2663
+        ],
+        [
+          0.91,
+          0.1304,
+          0.2686
+        ],
+        [
+          0.92,
+          0.1304,
+          0.2706
+        ],
+        [
+          0.93,
+          0.1304,
+          0.2723
+        ],
+        [
+          0.94,
+          0.1304,
+          0.2739
+        ],
+        [
+          0.95,
+          0.1304,
+          0.2752
+        ],
+        [
+          0.96,
+          0.1304,
+          0.2762
+        ],
+        [
+          0.97,
+          0.1304,
+          0.2772
+        ],
+        [
+          0.98,
+          0.1304,
+          0.278
+        ],
+        [
+          0.99,
+          0.1304,
+          0.2785
+        ],
+        [
+          1.0,
+          0.1304,
+          0.279
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:37.843226+00:00"
+    },
+    {
+      "video_id": "20260602_020010",
+      "youtube_video_id": "NjmKpIAuHqw",
+      "youtube_url": "https://youtube.com/shorts/NjmKpIAuHqw",
+      "published_at": "2026-06-02",
+      "track": "shorts",
+      "title": "You're still asking for permission to EXIST",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "self-worth shifts",
+        "topic_cluster": "You keep explaining because part of you still wants permissi",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 10
+      },
+      "composite_score": 7.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers a profound truth with exceptional audio clarity and a strong, empathetic voiceover, consistently aligning with the 'Soft Reset With Me' brand through its meditative visual style and introspective emotional tone. While the script's intellectual depth and structured delivery are standout strengths, the initial visuals could benefit from increased dynamism to immediately capture attention in the competitive Shorts feed, where a contemplative opening might lead to early viewer drop-off despite the overall high quality.",
+        "strengths": [
+          "The voiceover quality and consistent delivery are exceptional, lending significant authority and sincerity to the message.",
+          "The script's intellectual depth and its ability to reframe complex psychological concepts into concise, impactful 'truth drops' are a core strength.",
+          "The carefully selected background music consistently establishes and maintains the brand's signature atmospheric and reflective mood.",
+          "The consistent visual aesthetic and subtle color grading across diverse stock footage maintain a unified brand feel despite varying subjects and settings."
+        ],
+        "dropoff_causes": [
+          "The very calm and somewhat generic initial visuals might not be dynamic enough to capture and hold the attention of viewers accustomed to fast-paced, high-energy Shorts, potentially leading to early swipes.",
+          "The contemplative and low-energy pacing, while on-brand, could contribute to lower overall retention compared to videos with more immediate visual stimuli or faster narrative progression.",
+          "Some visual transitions are simple cuts that feel a bit abrupt, rather than seamless or thematically linked, which can momentarily break immersion."
+        ],
+        "repeat_next": [
+          "High-quality, empathetic, and authoritative voiceover delivery.",
+          "The structured 'truth drop' script format, with its clear hook, tension, insight, and loopback.",
+          "The consistent brand aesthetic achieved through visual mood and music selection.",
+          "Direct, thought-provoking hooks that challenge common assumptions.",
+          "Effective use of on-screen captions for accessibility and emphasis."
+        ],
+        "reduce_next": [
+          "Overly static or ambiguous initial visuals that do not immediately convey the hook's intensity or offer strong visual intrigue.",
+          "Potential for slow visual pacing in the very first few seconds; consider a slightly faster cut or more visually engaging opening to combat swipe behavior."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Challenging Statement",
+          "thumbnail_type": "Contemplative Figure with Text Overlay",
+          "visual_style_mix": "Meditative + Intimate",
+          "narrative_format": "Truth Drop / Insightful Revelation",
+          "character_used": "Empathetic Guide"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 68,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 2,
+        "averageViewDuration": 9,
+        "averageViewPercentage": 30.099999999999998,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DNjmKpIAuHqw&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.0,
+          0.1871
+        ],
+        [
+          0.02,
+          1.0,
+          0.1598
+        ],
+        [
+          0.03,
+          1.0,
+          0.1337
+        ],
+        [
+          0.04,
+          1.0,
+          0.1109
+        ],
+        [
+          0.05,
+          1.0,
+          0.0927
+        ],
+        [
+          0.06,
+          1.0,
+          0.0794
+        ],
+        [
+          0.07,
+          1.0,
+          0.0705
+        ],
+        [
+          0.08,
+          1.0,
+          0.0651
+        ],
+        [
+          0.09,
+          1.0,
+          0.062
+        ],
+        [
+          0.1,
+          1.0,
+          0.0605
+        ],
+        [
+          0.11,
+          1.0,
+          0.0598
+        ],
+        [
+          0.12,
+          1.0,
+          0.0595
+        ],
+        [
+          0.13,
+          1.0,
+          0.0593
+        ],
+        [
+          0.14,
+          1.0,
+          0.0592
+        ],
+        [
+          0.15,
+          0.9,
+          0.0592
+        ],
+        [
+          0.16,
+          0.6,
+          0.0591
+        ],
+        [
+          0.17,
+          0.5,
+          0.059
+        ],
+        [
+          0.18,
+          0.5,
+          0.0588
+        ],
+        [
+          0.19,
+          0.5,
+          0.0585
+        ],
+        [
+          0.2,
+          0.5,
+          0.058
+        ],
+        [
+          0.21,
+          0.5,
+          0.0573
+        ],
+        [
+          0.22,
+          0.5,
+          0.0563
+        ],
+        [
+          0.23,
+          0.5,
+          0.055
+        ],
+        [
+          0.24,
+          0.5,
+          0.0535
+        ],
+        [
+          0.25,
+          0.5,
+          0.052
+        ],
+        [
+          0.26,
+          0.5,
+          0.0506
+        ],
+        [
+          0.27,
+          0.4,
+          0.0493
+        ],
+        [
+          0.28,
+          0.3,
+          0.0483
+        ],
+        [
+          0.29,
+          0.3,
+          0.0476
+        ],
+        [
+          0.3,
+          0.3,
+          0.047
+        ],
+        [
+          0.31,
+          0.3,
+          0.0467
+        ],
+        [
+          0.32,
+          0.3,
+          0.0465
+        ],
+        [
+          0.33,
+          0.3,
+          0.0464
+        ],
+        [
+          0.34,
+          0.3,
+          0.0464
+        ],
+        [
+          0.35,
+          0.3,
+          0.0463
+        ],
+        [
+          0.36,
+          0.3,
+          0.0463
+        ],
+        [
+          0.37,
+          0.3,
+          0.0462
+        ],
+        [
+          0.38,
+          0.3,
+          0.0462
+        ],
+        [
+          0.39,
+          0.3,
+          0.0462
+        ],
+        [
+          0.4,
+          0.3,
+          0.0461
+        ],
+        [
+          0.41,
+          0.3,
+          0.046
+        ],
+        [
+          0.42,
+          0.3,
+          0.046
+        ],
+        [
+          0.43,
+          0.3,
+          0.0459
+        ],
+        [
+          0.44,
+          0.3,
+          0.0459
+        ],
+        [
+          0.45,
+          0.3,
+          0.0458
+        ],
+        [
+          0.46,
+          0.3,
+          0.0458
+        ],
+        [
+          0.47,
+          0.3,
+          0.0456
+        ],
+        [
+          0.48,
+          0.3,
+          0.0455
+        ],
+        [
+          0.49,
+          0.3,
+          0.0454
+        ],
+        [
+          0.5,
+          0.3,
+          0.0453
+        ],
+        [
+          0.51,
+          0.3,
+          0.0451
+        ],
+        [
+          0.52,
+          0.2,
+          0.0449
+        ],
+        [
+          0.53,
+          0.2,
+          0.0448
+        ],
+        [
+          0.54,
+          0.2,
+          0.0447
+        ],
+        [
+          0.55,
+          0.2,
+          0.0445
+        ],
+        [
+          0.56,
+          0.2,
+          0.0444
+        ],
+        [
+          0.57,
+          0.2,
+          0.0442
+        ],
+        [
+          0.58,
+          0.2,
+          0.0441
+        ],
+        [
+          0.59,
+          0.2,
+          0.0439
+        ],
+        [
+          0.6,
+          0.2,
+          0.0437
+        ],
+        [
+          0.61,
+          0.2,
+          0.0435
+        ],
+        [
+          0.62,
+          0.1,
+          0.0433
+        ],
+        [
+          0.63,
+          0.1,
+          0.0431
+        ],
+        [
+          0.64,
+          0.1,
+          0.0429
+        ],
+        [
+          0.65,
+          0.1,
+          0.0427
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:38.345430+00:00"
+    },
+    {
+      "video_id": "20260603_021227",
+      "youtube_video_id": "XrphfyNCUR0",
+      "youtube_url": "https://youtube.com/shorts/XrphfyNCUR0",
+      "published_at": "2026-06-03",
+      "track": "shorts",
+      "title": "They were never fully THERE to begin with",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "accusation",
+        "angle_type": "truth_drop",
+        "category": "healing arcs",
+        "topic_cluster": "Some people leave because they were never ready to stay",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "composite_score": 7.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W23",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers an empathetic and profound message through a soothing voiceover and a well-structured script that moves from initial confusion to empowering insight. While the chosen visuals support the emotional arc and the audio mix is excellent, the pacing could be tightened for some less dynamic shots, and integrating an explicit call to action within the video itself would likely enhance viewer engagement, helping to prevent early drop-offs stemming from prolonged visuals or a lack of clear next steps.",
+        "strengths": [
+          "**Voiceover Delivery:** The consistent, gentle, and empathetic delivery of the voiceover is a significant asset, creating a safe and trustworthy space for the viewer to receive the message.",
+          "**Effective Emotional Arc:** The video skillfully guides the viewer through an emotional journey from confusion and self-blame to understanding and self-compassion within a very short timeframe.",
+          "**Concise & Profound Scriptwriting:** The ability to distill complex psychological concepts into clear, impactful, and re-framing statements is a core strength that resonates deeply with the target audience."
+        ],
+        "dropoff_causes": [
+          "**Pacing:** Some of the visual transitions, especially between static shots like the empty coffee shop or the single candle flame, linger slightly too long for the fast-paced Shorts environment, which might cause viewers to swipe away before reaching the core insight.",
+          "**Generic Visuals:** While emotionally relevant, the reliance on generic stock footage throughout the video might prevent a deeper connection for viewers seeking more unique or personal visual storytelling, potentially leading to lower retention.",
+          "**Missing In-Video CTA:** The video ends abruptly with the brand card after the final line, lacking an explicit on-screen call to action (e.g., 'Save it,' 'Follow for more'). This could reduce immediate engagement like saves or follows from viewers who don't read the description."
+        ],
+        "repeat_next": [
+          "Maintain the consistently empathetic and soothing voiceover delivery.",
+          "Continue to craft clear, concise, and emotionally resonant scripts that offer valuable reframes.",
+          "Utilize thematic visuals that align with the emotional beats of the narrative, even if stock footage."
+        ],
+        "reduce_next": [
+          "Reduce the holding time for less dynamic or static visual shots to improve overall pacing for Shorts.",
+          "Lessen reliance on overly generic stock footage by seeking out more unique or subtly branded visual elements.",
+          "Minimize any slight pauses in the voiceover that could slow down the momentum of the Short."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe",
+          "thumbnail_type": "Text Overlay",
+          "visual_style_mix": "Calming, Reflective, Aesthetic Stock",
+          "narrative_format": "Truth Drop, Reframe",
+          "character_used": "Voiceover Only"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 34,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 4,
+        "averageViewPercentage": 14.46,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DXrphfyNCUR0&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:38.539548+00:00"
+    },
+    {
+      "video_id": "20260608_014131",
+      "youtube_video_id": "8Q2XL4EIU5Y",
+      "youtube_url": "https://youtube.com/shorts/8Q2XL4EIU5Y",
+      "published_at": "2026-06-08",
+      "track": "shorts",
+      "title": "Predictable pain can feel like comfort",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "psychology drops",
+        "topic_cluster": "The quiet comfort of predictable disappointment",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 6.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W24",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short excels in delivering a profound psychological insight with exceptional brand consistency. The calm, introspective aesthetic, empathetic voiceover, and well-chosen music create a powerful emotional tone that perfectly aligns with the 'Soft Reset With Me' identity. While the rapid caption pacing and visual repetition could be refined for broader appeal, the video's strong script, metaphorical visuals, and consistent mood make it a highly effective and impactful 'truth drop' for its target audience.",
+        "strengths": [
+          "Exceptional brand consistency: The video's aesthetic, tone, and message are perfectly aligned with the 'Soft Reset With Me' identity, building strong brand recognition and emotional connection.",
+          "Effective use of metaphorical visuals: The visuals, though abstract, deeply resonate with the emotional and psychological themes, enhancing the script's impact without being overtly literal.",
+          "High-quality voiceover delivery: The voice artist's tone, pacing, and emotional nuance significantly elevate the script, making the complex psychological concept accessible and empathetic.",
+          "Strong narrative arc in a short format: The script effectively builds from a relatable hook through tension and insight to a powerful loopback, delivering a complete thought within a brief duration."
+        ],
+        "dropoff_causes": [
+          "The visual repetition of themes (candles, books, solitary figures, windows) might lead to visual fatigue for some viewers, despite the aesthetic quality, especially across multiple videos from the channel.",
+          "The deliberate slow pacing of scene changes, while aligning with the brand's meditative style, might not retain viewers accustomed to faster-cut, more dynamic short-form content.",
+          "The abstract nature of the visuals, while a strength for the brand's mood, could be perceived as too vague or disconnected from the specific psychological claims by viewers looking for more literal or direct visual representations of concepts."
+        ],
+        "repeat_next": [
+          "The soft, introspective visual aesthetic (candles, books, muted lighting, contemplative settings).",
+          "The calm, empathetic, and clear voiceover delivery.",
+          "The use of piano-driven, ambient background music to set a reflective mood.",
+          "The structure of the script, delivering a 'truth drop' insight from a strong hook to a memorable closing statement.",
+          "The consistent brand identity across visual and auditory elements."
+        ],
+        "reduce_next": [
+          "Visual repetition: Explore a slightly wider variety of contemplative or mood-setting shots to maintain visual freshness, while retaining the overall aesthetic.",
+          "Caption speed: Experiment with slightly slower caption delivery for certain segments to allow more comfortable reading and deeper absorption of the words, especially for complex ideas, without sacrificing engagement.",
+          "Length of static shots: Occasionally incorporate subtle movements or slightly more dynamic compositions within the contemplative shots to prevent them from feeling too static for extended periods."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Counter-Intuitive Truth Drop",
+          "thumbnail_type": "Symbolic Text Overlay",
+          "visual_style_mix": "Calmcore Aesthetic; Reflective B-Roll; Mood-Driven Storytelling",
+          "narrative_format": "Psychological Insight; Empathic Monologue",
+          "character_used": "Voiceover Only; Symbolic Human Presence"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 0,
+        "averageViewPercentage": 0,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D8Q2XL4EIU5Y&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:38.855349+00:00"
+    },
+    {
+      "video_id": "20260623_013212",
+      "youtube_video_id": "-2pWeKg6ewI",
+      "youtube_url": "https://youtube.com/shorts/-2pWeKg6ewI",
+      "published_at": "2026-06-23",
+      "track": "shorts",
+      "title": "They Googled you. Now you feel seen *wrong*",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "accusation",
+        "angle_type": "specific scenario",
+        "category": "identity and growth",
+        "topic_cluster": "The pressure of having your 'internet history' analyzed befo",
+        "visual_style_mix": "brand_heavy",
+        "video_length_band": "under_30s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 7
+      },
+      "composite_score": 8.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively addresses a relatable modern dating anxiety using a strong, empathetic script and a consistently calming voiceover, perfectly aligning with the Soft Reset With Me brand. While the audio clarity and the most specific visual metaphors are excellent, the inclusion of some generic stock footage and occasionally static visuals might dilute engagement in a fast-paced Shorts environment, slightly hindering the overall impact despite the powerful message.",
+        "strengths": [
+          "The precise and empathetic scripting, which articulates a common yet often unacknowledged modern anxiety with exceptional clarity and relatability.",
+          "The flawless voiceover delivery, which perfectly matches the brand's empathetic and calm tone, establishing immediate trust and connection with the audience.",
+          "The seamless integration of the 'Soft Reset With Me' branding and outro, reinforcing brand identity and consistency.",
+          "The creative use of specific visual metaphors (search bar on the book, stack of papers as an 'archive') that effectively translate abstract digital concepts into relatable imagery."
+        ],
+        "dropoff_causes": [
+          "Overly generic stock footage in the middle section (e.g., woman at window, pouring coffee) that doesn't add specific visual meaning to the script, potentially leading to visual disinterest.",
+          "The pacing of some visual changes is a bit slow or static, especially the blank book page (0:14-0:17), which can feel less engaging in a rapid-scroll Short format.",
+          "Lack of a consistent human face or direct visual engagement with the narrator, which for an emotionally resonant topic, can sometimes make it harder for viewers to maintain a strong connection throughout the video."
+        ],
+        "repeat_next": [
+          "Continue with the highly specific and empathetic script writing that resonates deeply with target anxieties, paired with a consistent, calming voiceover.",
+          "Maintain the clear, word-by-word captioning, which significantly enhances accessibility and pacing.",
+          "Utilize creative and direct visual metaphors that strongly tie into the spoken message, as seen with the phone typing and the 'archive' imagery.",
+          "Keep the audio mix clean and balanced, ensuring the voiceover is always prominent and the music supportive."
+        ],
+        "reduce_next": [
+          "Minimize the use of generic, mood-setting stock footage that lacks a specific, direct connection to the script's words or concepts.",
+          "Reduce the duration of static or less dynamic visuals, particularly in the middle of the video where viewer attention might naturally wane.",
+          "Avoid relying solely on metaphorical visuals without periodically grounding them in more literal or directly relatable human experiences, especially for emotionally charged topics."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Problem/Pain Point, Direct Statement",
+          "thumbnail_type": "Text-Overlay, Object-Focused",
+          "visual_style_mix": "Melancholic, Reflective, Aesthetic, Cinematic",
+          "narrative_format": "Empathetic Statement, Relatable Scenario, Insight-Driven",
+          "character_used": "Narrator (off-screen, empathetic voice)"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 73,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 2,
+        "averageViewDuration": 9,
+        "averageViewPercentage": 30.92,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D-2pWeKg6ewI&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:39.824263+00:00"
+    },
+    {
+      "video_id": "20260624_012831",
+      "youtube_video_id": "NTJeIOr2pTg",
+      "youtube_url": "https://youtube.com/shorts/NTJeIOr2pTg",
+      "published_at": "2026-06-24",
+      "track": "shorts",
+      "title": "Quiet only feels like an END",
+      "traits": {
+        "hook_type": "question",
+        "title_type": "declarative",
+        "angle_type": "truth drop",
+        "category": "conversation truths",
+        "topic_cluster": "Silence in a relationship is not always neutral",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 6
+      },
+      "composite_score": 7.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys a powerful message about the meaning of silence in relationships, leveraging a strong, empathetic voiceover and atmospheric music to set a reflective tone. The hook is well-aligned with the title, and captions are clear and well-paced. While the video successfully uses diverse visuals to illustrate its points, one scene with a bright, quirky aesthetic briefly disrupts the otherwise consistent melancholic mood. Future content could benefit from ensuring visual consistency and universal relatability to maintain viewer immersion throughout.",
+        "strengths": [
+          "The consistent, empathetic, and clear voiceover performance is a major strength, delivering the core message with authentic feeling.",
+          "The choice of melancholic, atmospheric background music perfectly sets and maintains the emotional mood, enhancing viewer immersion.",
+          "The powerful and re-framing closing line ('Their silence is not a question for you to answer') provides a strong, memorable takeaway.",
+          "The use of diverse illustrative visuals, even with some minor incongruities, successfully avoids a monotonous presentation style."
+        ],
+        "dropoff_causes": [
+          "The sudden shift in visual tone and aesthetic at the 0:15 mark (from dark, contemplative to bright, quirky) could be jarring for some viewers, potentially causing a brief disconnect.",
+          "The visual of writing in a non-English script (0:10-0:15) might subtly disengage or distract English-speaking viewers who expect visual cues to reinforce the textual message.",
+          "The deliberate, contemplative pacing, while appropriate for the topic, might be too slow for some viewers accustomed to faster-cut, high-energy Shorts."
+        ],
+        "repeat_next": [
+          "Empathetic and clear voiceover delivery.",
+          "Atmospheric and mood-setting background music.",
+          "Addressing relatable emotional pain points and offering re-frames.",
+          "Using a strong, memorable closing line to summarize or empower.",
+          "High-quality, easy-to-read captions."
+        ],
+        "reduce_next": [
+          "Visuals that create jarring tonal or aesthetic shifts within the video.",
+          "Visual elements that might not be universally understood or relatable to the target audience (e.g., text in a non-primary language).",
+          "Overly abstract visuals that require significant mental effort to connect to the narrative, unless they are clearly introduced or sustained."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Question-based, Relatable Feeling",
+          "thumbnail_type": "Text Overlay, Moody Visual, Symbolic Visual",
+          "visual_style_mix": "Melancholic Aesthetic, Introspective Visuals, Symbolic Imagery",
+          "narrative_format": "Truth Drop, Reframe, Relational Insight",
+          "character_used": "None (illustrative visuals only)"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 28,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 3,
+        "averageViewDuration": 22,
+        "averageViewPercentage": 58.77,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DNTJeIOr2pTg&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:40.010447+00:00"
+    },
+    {
+      "video_id": "20260625_013214",
+      "youtube_video_id": "E7oz94mCyHc",
+      "youtube_url": "https://youtube.com/shorts/E7oz94mCyHc",
+      "published_at": "2026-06-25",
+      "track": "shorts",
+      "title": "Finally, you stopped lowering your standards",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "Reframe what 'bare minimum' means: it's not demanding more, ",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 11
+      },
+      "composite_score": 6.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short expertly reframes a common concept with a powerful, introspective script, delivered by an empathetic voiceover and supported by a perfectly balanced audio mix and well-timed captions. While the emotional tone is strong and consistent, the visual specificity often falls short, relying on generic stock footage that, despite setting a mood, doesn't always directly enhance the script's nuanced message. Enhancing visual narrative to directly align with the specific emotional beats would further elevate viewer engagement and retention for this impactful content.",
+        "strengths": [
+          "The compelling and empathetic voiceover delivery is a significant asset for connecting with the audience on a sensitive topic.",
+          "The robust and consistent emotional resonance achieved through the synergistic use of music, voiceover, and visual mood.",
+          "The powerful and memorable loopback line, 'You didn't lower your standards because you forgot them. You lowered them because keeping them felt risky,' provides deep insight and encourages re-watching or saving."
+        ],
+        "dropoff_causes": [
+          "Overly generic visual transitions that lack specific narrative connection to the script's emotional beats, making some moments feel less engaging.",
+          "The overall slow, contemplative pace and lack of high-energy visual changes might not retain viewers accustomed to faster-cut Shorts content.",
+          "The initial visual hook, while pleasant, may not be dynamic enough to immediately capture every scroller's attention, leading to early exits."
+        ],
+        "repeat_next": [
+          "Utilize a clear, empathetic, and consistently paced voiceover style for future sensitive topics.",
+          "Employ strong, concise script hooks and loopback statements that reframe perspectives effectively.",
+          "Maintain the high quality and balance of the audio mix between voiceover and background music.",
+          "Continue to use well-timed and easily readable captions to enhance accessibility and message comprehension."
+        ],
+        "reduce_next": [
+          "Minimize the use of overly generic stock footage that does not add specific visual narrative or metaphoric depth to the script.",
+          "Avoid abrupt visual transitions where new scenes lack a clear visual or thematic link to the preceding content, aiming for smoother, more purposeful storytelling.",
+          "Lessen visual repetition of similar pensive or looking-away shots, instead seeking more varied imagery that still conveys introspection."
+        ],
+        "tag_suggestions": {
+          "hook_type": "reframe",
+          "thumbnail_type": "text_overlay",
+          "visual_style_mix": "moody_cinematic",
+          "narrative_format": "personal_reflection",
+          "character_used": "no_presenter"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 111,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 8,
+        "averageViewDuration": 24,
+        "averageViewPercentage": 56.34,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DE7oz94mCyHc&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.1875,
+          0.5517
+        ],
+        [
+          0.02,
+          1.1875,
+          0.5151
+        ],
+        [
+          0.03,
+          1.1875,
+          0.4809
+        ],
+        [
+          0.04,
+          1.1875,
+          0.4536
+        ],
+        [
+          0.05,
+          1.1875,
+          0.4347
+        ],
+        [
+          0.06,
+          1.1875,
+          0.4233
+        ],
+        [
+          0.07,
+          1.1875,
+          0.4169
+        ],
+        [
+          0.08,
+          1.1875,
+          0.4134
+        ],
+        [
+          0.09,
+          1.1875,
+          0.4111
+        ],
+        [
+          0.1,
+          1.1875,
+          0.409
+        ],
+        [
+          0.11,
+          1.125,
+          0.4068
+        ],
+        [
+          0.12,
+          1.125,
+          0.4042
+        ],
+        [
+          0.13,
+          1.0,
+          0.4015
+        ],
+        [
+          0.14,
+          0.9375,
+          0.3988
+        ],
+        [
+          0.15,
+          0.9375,
+          0.3964
+        ],
+        [
+          0.16,
+          0.875,
+          0.3946
+        ],
+        [
+          0.17,
+          0.875,
+          0.3936
+        ],
+        [
+          0.18,
+          0.875,
+          0.3937
+        ],
+        [
+          0.19,
+          0.875,
+          0.3949
+        ],
+        [
+          0.2,
+          0.875,
+          0.3971
+        ],
+        [
+          0.21,
+          0.8125,
+          0.4002
+        ],
+        [
+          0.22,
+          0.75,
+          0.4038
+        ],
+        [
+          0.23,
+          0.75,
+          0.4079
+        ],
+        [
+          0.24,
+          0.75,
+          0.4123
+        ],
+        [
+          0.25,
+          0.6875,
+          0.4166
+        ],
+        [
+          0.26,
+          0.625,
+          0.4209
+        ],
+        [
+          0.27,
+          0.625,
+          0.425
+        ],
+        [
+          0.28,
+          0.625,
+          0.429
+        ],
+        [
+          0.29,
+          0.625,
+          0.4328
+        ],
+        [
+          0.3,
+          0.625,
+          0.4363
+        ],
+        [
+          0.31,
+          0.625,
+          0.4397
+        ],
+        [
+          0.32,
+          0.625,
+          0.4431
+        ],
+        [
+          0.33,
+          0.625,
+          0.4464
+        ],
+        [
+          0.34,
+          0.625,
+          0.4495
+        ],
+        [
+          0.35,
+          0.625,
+          0.4525
+        ],
+        [
+          0.36,
+          0.5625,
+          0.4554
+        ],
+        [
+          0.37,
+          0.5625,
+          0.4582
+        ],
+        [
+          0.38,
+          0.5,
+          0.4609
+        ],
+        [
+          0.39,
+          0.5,
+          0.4637
+        ],
+        [
+          0.4,
+          0.5,
+          0.4664
+        ],
+        [
+          0.41,
+          0.4375,
+          0.469
+        ],
+        [
+          0.42,
+          0.4375,
+          0.4714
+        ],
+        [
+          0.43,
+          0.4375,
+          0.4738
+        ],
+        [
+          0.44,
+          0.4375,
+          0.4758
+        ],
+        [
+          0.45,
+          0.4375,
+          0.4778
+        ],
+        [
+          0.46,
+          0.4375,
+          0.4797
+        ],
+        [
+          0.47,
+          0.4375,
+          0.4815
+        ],
+        [
+          0.48,
+          0.4375,
+          0.4834
+        ],
+        [
+          0.49,
+          0.4375,
+          0.4857
+        ],
+        [
+          0.5,
+          0.4375,
+          0.4883
+        ],
+        [
+          0.51,
+          0.4375,
+          0.4913
+        ],
+        [
+          0.52,
+          0.4375,
+          0.4946
+        ],
+        [
+          0.53,
+          0.4375,
+          0.4982
+        ],
+        [
+          0.54,
+          0.4375,
+          0.502
+        ],
+        [
+          0.55,
+          0.4375,
+          0.506
+        ],
+        [
+          0.56,
+          0.4375,
+          0.5102
+        ],
+        [
+          0.57,
+          0.4375,
+          0.5147
+        ],
+        [
+          0.58,
+          0.4375,
+          0.5195
+        ],
+        [
+          0.59,
+          0.4375,
+          0.5248
+        ],
+        [
+          0.6,
+          0.4375,
+          0.5304
+        ],
+        [
+          0.61,
+          0.4375,
+          0.5364
+        ],
+        [
+          0.62,
+          0.4375,
+          0.543
+        ],
+        [
+          0.63,
+          0.4375,
+          0.55
+        ],
+        [
+          0.64,
+          0.4375,
+          0.5576
+        ],
+        [
+          0.65,
+          0.4375,
+          0.566
+        ],
+        [
+          0.66,
+          0.4375,
+          0.5753
+        ],
+        [
+          0.67,
+          0.4375,
+          0.5857
+        ],
+        [
+          0.68,
+          0.375,
+          0.5974
+        ],
+        [
+          0.69,
+          0.375,
+          0.6102
+        ],
+        [
+          0.7,
+          0.375,
+          0.6244
+        ],
+        [
+          0.71,
+          0.375,
+          0.6397
+        ],
+        [
+          0.72,
+          0.375,
+          0.6558
+        ],
+        [
+          0.73,
+          0.375,
+          0.6725
+        ],
+        [
+          0.74,
+          0.375,
+          0.6894
+        ],
+        [
+          0.75,
+          0.375,
+          0.7061
+        ],
+        [
+          0.76,
+          0.375,
+          0.7222
+        ],
+        [
+          0.77,
+          0.375,
+          0.7373
+        ],
+        [
+          0.78,
+          0.375,
+          0.7514
+        ],
+        [
+          0.79,
+          0.375,
+          0.7643
+        ],
+        [
+          0.8,
+          0.375,
+          0.7762
+        ],
+        [
+          0.81,
+          0.3125,
+          0.7871
+        ],
+        [
+          0.82,
+          0.3125,
+          0.7973
+        ],
+        [
+          0.83,
+          0.3125,
+          0.8068
+        ],
+        [
+          0.84,
+          0.3125,
+          0.8157
+        ],
+        [
+          0.85,
+          0.3125,
+          0.8241
+        ],
+        [
+          0.86,
+          0.3125,
+          0.832
+        ],
+        [
+          0.87,
+          0.3125,
+          0.8396
+        ],
+        [
+          0.88,
+          0.3125,
+          0.8466
+        ],
+        [
+          0.89,
+          0.3125,
+          0.8533
+        ],
+        [
+          0.9,
+          0.3125,
+          0.8596
+        ],
+        [
+          0.91,
+          0.3125,
+          0.8655
+        ],
+        [
+          0.92,
+          0.3125,
+          0.871
+        ],
+        [
+          0.93,
+          0.3125,
+          0.8761
+        ],
+        [
+          0.94,
+          0.3125,
+          0.8809
+        ],
+        [
+          0.95,
+          0.3125,
+          0.8852
+        ],
+        [
+          0.96,
+          0.3125,
+          0.8891
+        ],
+        [
+          0.97,
+          0.3125,
+          0.8927
+        ],
+        [
+          0.98,
+          0.3125,
+          0.8958
+        ],
+        [
+          0.99,
+          0.3125,
+          0.8982
+        ],
+        [
+          1.0,
+          0.3125,
+          0.9002
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:42.481523+00:00"
+    },
+    {
+      "video_id": "20260627_013054",
+      "youtube_video_id": "LBhyKeEmjYo",
+      "youtube_url": "https://youtube.com/shorts/LBhyKeEmjYo",
+      "published_at": "2026-06-27",
+      "track": "shorts",
+      "title": "Moving on fast means you cared QUIETLY",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "Moving on fast does not mean you did not care",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 8.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short successfully delivers a powerful reframe on the common misconception around fast healing, driven by a strong, empathetic voiceover and clear, well-paced on-screen text. While the opening visual and some mid-video imagery lean towards generic or abstract, key visuals like the social media scrolling and the final scene of applause effectively reinforce the script's core message of external judgment and self-reclamation, maintaining a consistent and reassuring emotional tone with excellent audio quality.",
+        "strengths": [
+          "The consistent, calming, and reassuring quality of the voiceover delivery is a major strength, effectively conveying the brand's empathetic tone.",
+          "The meticulous pacing and clear display of on-screen text greatly enhance comprehension and reinforce the spoken message.",
+          "The deliberate positive visual shift at the end (clapping) powerfully punctuates the message of self-acceptance and triumph, creating a strong emotional resolution."
+        ],
+        "dropoff_causes": [
+          "The initial visual, while thematic, lacks a strong, immediate hook to grab attention in a fast-scrolling feed, potentially leading to early swipe-aways.",
+          "Some of the mid-video visuals (e.g., chair in the ocean, padlock) are less directly illustrative of the script's nuanced points, which could cause momentary viewer disengagement if the visual storytelling doesn't feel precise."
+        ],
+        "repeat_next": [
+          "Maintain the high-quality, empathetic voiceover and professional audio mix.",
+          "Continue with the clear, well-paced on-screen captions that reinforce the spoken words.",
+          "Replicate the strong alignment between the script's hook, the video's title, and the opening on-screen text.",
+          "Prioritize visuals that directly and specifically illustrate the emotional or conceptual points being made, especially for moments of tension and resolution."
+        ],
+        "reduce_next": [
+          "Minimize the use of overly generic stock footage, particularly for the opening seconds where a more compelling visual is crucial for hook retention.",
+          "Avoid visuals that are too abstract or require significant mental effort to connect to the specific narrative point being conveyed."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe, Challenge Common Belief",
+          "thumbnail_type": "Emotional Landscape, Text-Driven",
+          "visual_style_mix": "Stock Footage, Evocative Imagery, Text Overlay",
+          "narrative_format": "Reframe, Psychological Insight, Self-Help",
+          "character_used": "Compassionate Narrator, Relatable Persona"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 201,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 21,
+        "averageViewDuration": 31,
+        "averageViewPercentage": 88.67,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DLBhyKeEmjYo&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.5429,
+          0.6254
+        ],
+        [
+          0.02,
+          1.5143,
+          0.5983
+        ],
+        [
+          0.03,
+          1.5143,
+          0.5724
+        ],
+        [
+          0.04,
+          1.4857,
+          0.5498
+        ],
+        [
+          0.05,
+          1.4857,
+          0.5317
+        ],
+        [
+          0.06,
+          1.4857,
+          0.5185
+        ],
+        [
+          0.07,
+          1.4857,
+          0.5098
+        ],
+        [
+          0.08,
+          1.4857,
+          0.5043
+        ],
+        [
+          0.09,
+          1.4857,
+          0.5013
+        ],
+        [
+          0.1,
+          1.4857,
+          0.4999
+        ],
+        [
+          0.11,
+          1.4857,
+          0.4991
+        ],
+        [
+          0.12,
+          1.4857,
+          0.4988
+        ],
+        [
+          0.13,
+          1.4,
+          0.4986
+        ],
+        [
+          0.14,
+          1.3429,
+          0.4986
+        ],
+        [
+          0.15,
+          1.3143,
+          0.4986
+        ],
+        [
+          0.16,
+          1.2571,
+          0.4986
+        ],
+        [
+          0.17,
+          1.1429,
+          0.4986
+        ],
+        [
+          0.18,
+          1.0857,
+          0.4986
+        ],
+        [
+          0.19,
+          1.0857,
+          0.4986
+        ],
+        [
+          0.2,
+          1.0857,
+          0.4986
+        ],
+        [
+          0.21,
+          1.0857,
+          0.4986
+        ],
+        [
+          0.22,
+          1.0857,
+          0.4986
+        ],
+        [
+          0.23,
+          1.0571,
+          0.4986
+        ],
+        [
+          0.24,
+          1.0286,
+          0.4986
+        ],
+        [
+          0.25,
+          1.0,
+          0.4986
+        ],
+        [
+          0.26,
+          1.0,
+          0.4987
+        ],
+        [
+          0.27,
+          1.0,
+          0.4987
+        ],
+        [
+          0.28,
+          0.9714,
+          0.4988
+        ],
+        [
+          0.29,
+          0.9429,
+          0.4988
+        ],
+        [
+          0.3,
+          0.9429,
+          0.4988
+        ],
+        [
+          0.31,
+          0.9429,
+          0.4988
+        ],
+        [
+          0.32,
+          0.9143,
+          0.4989
+        ],
+        [
+          0.33,
+          0.9143,
+          0.4989
+        ],
+        [
+          0.34,
+          0.9143,
+          0.4989
+        ],
+        [
+          0.35,
+          0.9143,
+          0.499
+        ],
+        [
+          0.36,
+          0.8571,
+          0.499
+        ],
+        [
+          0.37,
+          0.8571,
+          0.499
+        ],
+        [
+          0.38,
+          0.8571,
+          0.4991
+        ],
+        [
+          0.39,
+          0.8571,
+          0.4991
+        ],
+        [
+          0.4,
+          0.8571,
+          0.4992
+        ],
+        [
+          0.41,
+          0.8571,
+          0.4993
+        ],
+        [
+          0.42,
+          0.8571,
+          0.4993
+        ],
+        [
+          0.43,
+          0.8571,
+          0.4994
+        ],
+        [
+          0.44,
+          0.8571,
+          0.4994
+        ],
+        [
+          0.45,
+          0.8571,
+          0.4995
+        ],
+        [
+          0.46,
+          0.8,
+          0.4995
+        ],
+        [
+          0.47,
+          0.7429,
+          0.4996
+        ],
+        [
+          0.48,
+          0.7429,
+          0.4998
+        ],
+        [
+          0.49,
+          0.7429,
+          0.5
+        ],
+        [
+          0.5,
+          0.7143,
+          0.5003
+        ],
+        [
+          0.51,
+          0.7143,
+          0.5009
+        ],
+        [
+          0.52,
+          0.7143,
+          0.5017
+        ],
+        [
+          0.53,
+          0.7143,
+          0.503
+        ],
+        [
+          0.54,
+          0.7143,
+          0.5047
+        ],
+        [
+          0.55,
+          0.7143,
+          0.507
+        ],
+        [
+          0.56,
+          0.7143,
+          0.5101
+        ],
+        [
+          0.57,
+          0.7143,
+          0.5139
+        ],
+        [
+          0.58,
+          0.7143,
+          0.5187
+        ],
+        [
+          0.59,
+          0.7143,
+          0.5245
+        ],
+        [
+          0.6,
+          0.7143,
+          0.5315
+        ],
+        [
+          0.61,
+          0.7143,
+          0.54
+        ],
+        [
+          0.62,
+          0.7143,
+          0.5502
+        ],
+        [
+          0.63,
+          0.7143,
+          0.5621
+        ],
+        [
+          0.64,
+          0.7143,
+          0.576
+        ],
+        [
+          0.65,
+          0.7143,
+          0.5918
+        ],
+        [
+          0.66,
+          0.7143,
+          0.6095
+        ],
+        [
+          0.67,
+          0.7143,
+          0.6286
+        ],
+        [
+          0.68,
+          0.7143,
+          0.6487
+        ],
+        [
+          0.69,
+          0.7143,
+          0.6694
+        ],
+        [
+          0.7,
+          0.7143,
+          0.69
+        ],
+        [
+          0.71,
+          0.7143,
+          0.7099
+        ],
+        [
+          0.72,
+          0.7143,
+          0.7289
+        ],
+        [
+          0.73,
+          0.6857,
+          0.7465
+        ],
+        [
+          0.74,
+          0.6857,
+          0.7625
+        ],
+        [
+          0.75,
+          0.6857,
+          0.777
+        ],
+        [
+          0.76,
+          0.6857,
+          0.79
+        ],
+        [
+          0.77,
+          0.6857,
+          0.8016
+        ],
+        [
+          0.78,
+          0.6857,
+          0.8119
+        ],
+        [
+          0.79,
+          0.6857,
+          0.8212
+        ],
+        [
+          0.8,
+          0.6857,
+          0.8295
+        ],
+        [
+          0.81,
+          0.6857,
+          0.837
+        ],
+        [
+          0.82,
+          0.6857,
+          0.8436
+        ],
+        [
+          0.83,
+          0.6857,
+          0.8496
+        ],
+        [
+          0.84,
+          0.6857,
+          0.855
+        ],
+        [
+          0.85,
+          0.6857,
+          0.8599
+        ],
+        [
+          0.86,
+          0.6857,
+          0.8641
+        ],
+        [
+          0.87,
+          0.6857,
+          0.868
+        ],
+        [
+          0.88,
+          0.6857,
+          0.8714
+        ],
+        [
+          0.89,
+          0.6857,
+          0.8743
+        ],
+        [
+          0.9,
+          0.6857,
+          0.8769
+        ],
+        [
+          0.91,
+          0.6857,
+          0.8791
+        ],
+        [
+          0.92,
+          0.6857,
+          0.881
+        ],
+        [
+          0.93,
+          0.6857,
+          0.8826
+        ],
+        [
+          0.94,
+          0.6857,
+          0.884
+        ],
+        [
+          0.95,
+          0.6857,
+          0.8851
+        ],
+        [
+          0.96,
+          0.6571,
+          0.8859
+        ],
+        [
+          0.97,
+          0.6571,
+          0.8865
+        ],
+        [
+          0.98,
+          0.6286,
+          0.8871
+        ],
+        [
+          0.99,
+          0.6286,
+          0.8874
+        ],
+        [
+          1.0,
+          0.6286,
+          0.8876
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:43.114304+00:00"
+    },
+    {
+      "video_id": "20260628_013728",
+      "youtube_video_id": "oclqNHP963E",
+      "youtube_url": "https://youtube.com/shorts/oclqNHP963E",
+      "published_at": "2026-06-28",
+      "track": "shorts",
+      "title": "Checking their location? It\u2019s not busyness, it\u2019s NOT you",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "conversation truths",
+        "topic_cluster": "The difference between someone who is busy and someone who d",
+        "visual_style_mix": "balanced",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 9
+      },
+      "composite_score": 7.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W26",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively delivers a 'truth-drop' message with a strong, specific hook and a consistently empathetic yet firm emotional tone. The voiceover and audio mix are excellent, creating a reliable brand voice. While several visuals are highly impactful, some generic or slightly misaligned footage could be improved to maintain consistent visual specificity and dynamic engagement throughout the video, reducing potential moments of viewer drop-off. Overall, it leverages its strengths effectively for a 'Soft Reset' brand.",
+        "strengths": [
+          "The voiceover's gentle yet firm delivery creates a highly empathetic and trustworthy brand voice.",
+          "The strategic use of background music maintains a consistent emotional atmosphere throughout the video.",
+          "Specific visuals, such as the empty cafe table and the calendar with labels, are exceptionally effective in conveying the core message without needing explicit verbal explanation.",
+          "The punchy signature line ('Their calendar isn't the problem. Their answer is.') is delivered with perfect timing and visual reinforcement."
+        ],
+        "dropoff_causes": [
+          "Some visual transitions feel a bit slow or static, especially when a caption appears and then stays on screen for several seconds with no change in the visual, which can reduce dynamic engagement.",
+          "A few visuals are too generic (e.g., city traffic, person walking) and don't add specific emotional or contextual weight to the spoken words, potentially leading to mild visual disengagement.",
+          "The visual of editing a flower photo while the narrator talks about sending 'one text' is a slight disconnect that could break immersion for some viewers."
+        ],
+        "repeat_next": [
+          "Using highly specific, scenario-based hooks that directly address audience pain points.",
+          "Maintaining the consistent, calming, and empathetic voiceover tone.",
+          "Careful selection of background music that enhances the emotional tone without distracting.",
+          "Leveraging visually metaphorical or directly illustrative scenes (like the empty cafe or calendar) to reinforce key insights.",
+          "The clear, well-paced captioning style."
+        ],
+        "reduce_next": [
+          "Reliance on overly generic stock footage that lacks a direct, specific connection to the spoken words.",
+          "Instances where the visual remains static for too long after a caption change, impacting the dynamic flow of the Short.",
+          "Visuals that are only loosely related to the specific point being made (e.g., phone activity that isn't directly 'texting')."
+        ],
+        "tag_suggestions": {
+          "hook_type": "scenario-based direct address",
+          "thumbnail_type": "text-overlay & illustrative",
+          "visual_style_mix": "melancholic cinematic stock",
+          "narrative_format": "truth-drop",
+          "character_used": "narrator only"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 45,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 5,
+        "averageViewPercentage": 13.84,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DoclqNHP963E&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:43.322476+00:00"
+    },
+    {
+      "video_id": "20260629_013739",
+      "youtube_video_id": "5w4zup_rmOw",
+      "youtube_url": "https://youtube.com/shorts/5w4zup_rmOw",
+      "published_at": "2026-06-29",
+      "track": "shorts",
+      "title": "It's not just money, it's quiet POWER",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "truth_drop",
+        "category": "relationship patterns",
+        "topic_cluster": "The quiet discomfort when your partner makes significantly l",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "brand_still",
+        "total_scenes": 13
+      },
+      "composite_score": 8.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W27",
+      "video_audit": {
+        "status": "soft_failed",
+        "summary": "",
+        "strengths": [],
+        "dropoff_causes": [],
+        "repeat_next": [],
+        "reduce_next": [],
+        "tag_suggestions": {}
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 17,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 1,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 2,
+        "averageViewDuration": 17,
+        "averageViewPercentage": 47.11,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3D5w4zup_rmOw&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:43.521997+00:00"
+    },
+    {
+      "video_id": "20260731_111207",
+      "youtube_video_id": "x1G1-5ywNg0",
+      "youtube_url": "https://youtube.com/shorts/x1G1-5ywNg0",
+      "published_at": "2026-07-31",
+      "track": "shorts",
+      "title": "You thought perfect would make them STAY",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth_drop",
+        "category": "psychology drops",
+        "topic_cluster": "Why your need for perfectionism kills relationships.",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 12
+      },
+      "composite_score": 7.0,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W31",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively conveys its message about perfectionism hindering relationships through a thoughtful script and well-aligned visual metaphors, supported by a strong voiceover and consistent emotional tone. However, the pacing for a Shorts format could be more dynamic, with quicker cuts and less static imagery to minimize potential drop-offs. Leveraging its strengths in visual specificity for key concepts and powerful emotional delivery will be key for future improvements.",
+        "strengths": [
+          "The clarity and emotional resonance of the voiceover narration.",
+          "Highly effective visual metaphors, such as the organized desk and the makeup application, that concretely illustrate abstract concepts.",
+          "The powerful and memorable 'You're afraid of being known' loopback line, strongly supported by the accompanying visual.",
+          "A consistent and recognizable brand aesthetic maintained throughout the video."
+        ],
+        "dropoff_causes": [
+          "Overall slow visual pacing, with some shots lingering too long for a Shorts audience.",
+          "Lack of dynamic visual movement; many shots are static or feature slow camera pans/zooms, which might not hold attention on a scroll-heavy platform.",
+          "Some visuals are conceptually weaker or repetitive (e.g., multiple 'looking out window' shots), which could lead to viewer fatigue."
+        ],
+        "repeat_next": [
+          "The strong script-to-visual metaphorical alignment for key lines (e.g., 'no messy edges', 'polished version').",
+          "The impactful and resonant 'soft reset' core message and loopback.",
+          "The professional quality of the voiceover and audio mix.",
+          "The cohesive emotional tone that aligns with the brand identity."
+        ],
+        "reduce_next": [
+          "The overall visual hold time for individual shots; aim for quicker transitions to maintain momentum.",
+          "Reliance on less dynamic or repetitive visual themes (e.g., limit similar 'looking out window' shots).",
+          "Any visuals that are less directly impactful or feel slightly generic to the specific script point."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Truth Drop",
+          "thumbnail_type": "Introspective Portrait",
+          "visual_style_mix": "Cinematic Metaphor / Aesthetic Voiceover",
+          "narrative_format": "Psychological Insight / Explainer",
+          "character_used": "Symbolic Figures / Anonymous Archetypes"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 1,
+        "averageViewDuration": 78,
+        "averageViewPercentage": 200.14,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3Dx1G1-5ywNg0&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:43.663771+00:00"
+    },
+    {
+      "video_id": "20260731_124546",
+      "youtube_video_id": "hbhNDYOtBKc",
+      "youtube_url": "https://youtube.com/shorts/hbhNDYOtBKc",
+      "published_at": "2026-07-31",
+      "track": "shorts",
+      "title": "You are not too much, they just had TOO little",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "self-worth shifts",
+        "topic_cluster": "You are not too much \u2014 you were just around people with too ",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 5
+      },
+      "composite_score": 6.3,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W31",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This video effectively communicates a validating message through an excellent, empathetic voiceover, clear captions, and strong bookend visual metaphors. The initial 'shrinking' and final 'notebook flip' are particularly powerful in illustrating complex emotional concepts. However, the mid-section's use of generic visuals and the specific 'New Year New Me' prop, despite its effective usage, slightly dilute the core message's specificity, potentially causing minor thematic confusion for viewers. Overall, it's a strong piece that aligns well with the Soft Reset brand's tone.",
+        "strengths": [
+          "The empathetic and calming quality of the voiceover is a significant strength, perfectly aligning with the brand's 'Soft Reset' identity.",
+          "The consistent and clear captioning style, with well-timed single-word appearances, enhances comprehension and viewer engagement.",
+          "The use of a tangible visual metaphor for the hook (shrinking into a chair) and the conclusion (flipping the notebook) provides powerful, memorable imagery for abstract concepts."
+        ],
+        "dropoff_causes": [
+          "The middle section's reliance on generic, albeit emotionally resonant, stock footage might lead to a slight dip in engagement as it doesn't offer specific visual reinforcement for the unique 'too much' reframe.",
+          "The specific 'New Year New Me' prop, while used cleverly, could momentarily disorient viewers who are focused on the 'too much' self-worth topic rather than resolutions, creating a slight thematic disconnect."
+        ],
+        "repeat_next": [
+          "The warm, validating tone and clear delivery of the voiceover.",
+          "The impactful and well-executed opening and closing visual metaphors.",
+          "The style and pacing of the on-screen captions for maximum readability and emotional impact.",
+          "The selection of background music that subtly enhances the emotional tone without distracting from the message."
+        ],
+        "reduce_next": [
+          "Reliance on overly generic stock footage for core conceptual points in the middle of the video; aim for more specific or creative visual metaphors throughout.",
+          "Introducing props or themes (like 'New Year New Me') that, while related to self-improvement, might be too specific and slightly diverge from the primary, broader psychological concept being addressed."
+        ],
+        "tag_suggestions": {
+          "hook_type": "Reframe, Emotional Validation, Direct Statement",
+          "thumbnail_type": "Conceptual Metaphor, Text Overlay, Human Element",
+          "visual_style_mix": "Introspective, Minimalist, Metaphorical, Soft Aesthetic",
+          "narrative_format": "Self-Acceptance, Empowerment, Psychological Insight",
+          "character_used": "Solitary Figure, Reflective Person"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 40,
+        "averageViewPercentage": 116.14999999999999,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DhbhNDYOtBKc&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:43.827762+00:00"
+    },
+    {
+      "video_id": "20261008_190127",
+      "youtube_video_id": "LU2IjmjlJIY",
+      "youtube_url": "https://youtube.com/shorts/LU2IjmjlJIY",
+      "published_at": "2026-10-08",
+      "track": "shorts",
+      "title": "You went quiet hoping they would notice",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "truth drop",
+        "category": "relationship patterns",
+        "topic_cluster": "The Secret Silence Test in Dating",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 9
+      },
+      "composite_score": 7.4,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W41",
+      "video_audit": {
+        "status": "ok",
+        "summary": "The short effectively targets a relatable modern dating habit with a clear psychological takeaway, though mid-video stock choices drift slightly from the interpersonal focus.",
+        "strengths": [
+          "Strong closing line delivers genuine emotional self-accountability.",
+          "Night-time urban aesthetic in the final scene provides a resonant contemplative landing."
+        ],
+        "dropoff_causes": [
+          "Mid-script shift to loosely related B-roll (tape crafting, makeup) softens narrative tension.",
+          "Deliberate, slow voiceover cadence may feel sluggish for fast scrollers."
+        ],
+        "repeat_next": [
+          "Relatable behavioral callouts in opening lines",
+          "Contemplative final lingering shot to let the insight land"
+        ],
+        "reduce_next": [
+          "Overly abstract domestic B-roll that weakens relationship context",
+          "Blank digital mockups lacking authentic visual details"
+        ],
+        "tag_suggestions": {
+          "hook_type": "relatable_behavior",
+          "thumbnail_type": "glowing_screen_minimal",
+          "visual_style_mix": "moody_cinematic_stock",
+          "narrative_format": "truth_drop",
+          "character_used": "multiple_stock"
+        }
+      },
+      "spoken_timeline": {},
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 72,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 10,
+        "averageViewDuration": 20,
+        "averageViewPercentage": 48.8,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DLU2IjmjlJIY&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.2069,
+          0.5128
+        ],
+        [
+          0.02,
+          1.1724,
+          0.4658
+        ],
+        [
+          0.03,
+          1.1379,
+          0.4179
+        ],
+        [
+          0.04,
+          1.1034,
+          0.3738
+        ],
+        [
+          0.05,
+          1.1034,
+          0.3356
+        ],
+        [
+          0.06,
+          1.1034,
+          0.3035
+        ],
+        [
+          0.07,
+          1.069,
+          0.2762
+        ],
+        [
+          0.08,
+          1.069,
+          0.2528
+        ],
+        [
+          0.09,
+          1.069,
+          0.2326
+        ],
+        [
+          0.1,
+          1.0345,
+          0.2157
+        ],
+        [
+          0.11,
+          1.0345,
+          0.202
+        ],
+        [
+          0.12,
+          0.8966,
+          0.1914
+        ],
+        [
+          0.13,
+          0.8276,
+          0.1839
+        ],
+        [
+          0.14,
+          0.8276,
+          0.1789
+        ],
+        [
+          0.15,
+          0.8276,
+          0.1762
+        ],
+        [
+          0.16,
+          0.7586,
+          0.1752
+        ],
+        [
+          0.17,
+          0.6552,
+          0.1755
+        ],
+        [
+          0.18,
+          0.5862,
+          0.177
+        ],
+        [
+          0.19,
+          0.5862,
+          0.1792
+        ],
+        [
+          0.2,
+          0.5862,
+          0.182
+        ],
+        [
+          0.21,
+          0.5517,
+          0.185
+        ],
+        [
+          0.22,
+          0.5517,
+          0.1884
+        ],
+        [
+          0.23,
+          0.5517,
+          0.1918
+        ],
+        [
+          0.24,
+          0.5517,
+          0.1952
+        ],
+        [
+          0.25,
+          0.5517,
+          0.1986
+        ],
+        [
+          0.26,
+          0.5172,
+          0.2017
+        ],
+        [
+          0.27,
+          0.5172,
+          0.2044
+        ],
+        [
+          0.28,
+          0.5172,
+          0.2062
+        ],
+        [
+          0.29,
+          0.4828,
+          0.207
+        ],
+        [
+          0.3,
+          0.4828,
+          0.2064
+        ],
+        [
+          0.31,
+          0.4828,
+          0.2041
+        ],
+        [
+          0.32,
+          0.4828,
+          0.2004
+        ],
+        [
+          0.33,
+          0.4828,
+          0.1951
+        ],
+        [
+          0.34,
+          0.4828,
+          0.189
+        ],
+        [
+          0.35,
+          0.4483,
+          0.1828
+        ],
+        [
+          0.36,
+          0.4138,
+          0.177
+        ],
+        [
+          0.37,
+          0.4138,
+          0.1723
+        ],
+        [
+          0.38,
+          0.4138,
+          0.1689
+        ],
+        [
+          0.39,
+          0.4138,
+          0.1666
+        ],
+        [
+          0.4,
+          0.4138,
+          0.1653
+        ],
+        [
+          0.41,
+          0.4138,
+          0.1648
+        ],
+        [
+          0.42,
+          0.4138,
+          0.1651
+        ],
+        [
+          0.43,
+          0.4138,
+          0.1663
+        ],
+        [
+          0.44,
+          0.4138,
+          0.1689
+        ],
+        [
+          0.45,
+          0.4138,
+          0.1728
+        ],
+        [
+          0.46,
+          0.4138,
+          0.1781
+        ],
+        [
+          0.47,
+          0.4138,
+          0.1846
+        ],
+        [
+          0.48,
+          0.4138,
+          0.1922
+        ],
+        [
+          0.49,
+          0.4138,
+          0.2006
+        ],
+        [
+          0.5,
+          0.4138,
+          0.2097
+        ],
+        [
+          0.51,
+          0.4138,
+          0.2193
+        ],
+        [
+          0.52,
+          0.4138,
+          0.2293
+        ],
+        [
+          0.53,
+          0.4138,
+          0.2396
+        ],
+        [
+          0.54,
+          0.4138,
+          0.2502
+        ],
+        [
+          0.55,
+          0.4138,
+          0.261
+        ],
+        [
+          0.56,
+          0.3793,
+          0.2717
+        ],
+        [
+          0.57,
+          0.3793,
+          0.2823
+        ],
+        [
+          0.58,
+          0.3793,
+          0.2923
+        ],
+        [
+          0.59,
+          0.3793,
+          0.3012
+        ],
+        [
+          0.6,
+          0.3793,
+          0.309
+        ],
+        [
+          0.61,
+          0.3793,
+          0.3159
+        ],
+        [
+          0.62,
+          0.3793,
+          0.3224
+        ],
+        [
+          0.63,
+          0.3793,
+          0.3295
+        ],
+        [
+          0.64,
+          0.3793,
+          0.3376
+        ],
+        [
+          0.65,
+          0.3793,
+          0.347
+        ],
+        [
+          0.66,
+          0.3793,
+          0.3574
+        ],
+        [
+          0.67,
+          0.3448,
+          0.3683
+        ],
+        [
+          0.68,
+          0.3448,
+          0.3791
+        ],
+        [
+          0.69,
+          0.3448,
+          0.3895
+        ],
+        [
+          0.7,
+          0.3448,
+          0.3992
+        ],
+        [
+          0.71,
+          0.3448,
+          0.4082
+        ],
+        [
+          0.72,
+          0.3448,
+          0.4163
+        ],
+        [
+          0.73,
+          0.3448,
+          0.4236
+        ],
+        [
+          0.74,
+          0.3448,
+          0.4301
+        ],
+        [
+          0.75,
+          0.3448,
+          0.4358
+        ],
+        [
+          0.76,
+          0.3448,
+          0.4408
+        ],
+        [
+          0.77,
+          0.3448,
+          0.4453
+        ],
+        [
+          0.78,
+          0.3448,
+          0.4491
+        ],
+        [
+          0.79,
+          0.3448,
+          0.4526
+        ],
+        [
+          0.8,
+          0.3448,
+          0.4558
+        ],
+        [
+          0.81,
+          0.3448,
+          0.4586
+        ],
+        [
+          0.82,
+          0.3448,
+          0.4611
+        ],
+        [
+          0.83,
+          0.3103,
+          0.4632
+        ],
+        [
+          0.84,
+          0.3103,
+          0.4651
+        ],
+        [
+          0.85,
+          0.3103,
+          0.4668
+        ],
+        [
+          0.86,
+          0.3103,
+          0.4682
+        ],
+        [
+          0.87,
+          0.3103,
+          0.4695
+        ],
+        [
+          0.88,
+          0.3103,
+          0.4706
+        ],
+        [
+          0.89,
+          0.3103,
+          0.4714
+        ],
+        [
+          0.9,
+          0.3103,
+          0.4722
+        ],
+        [
+          0.91,
+          0.3103,
+          0.4728
+        ],
+        [
+          0.92,
+          0.3103,
+          0.4733
+        ],
+        [
+          0.93,
+          0.2759,
+          0.4737
+        ],
+        [
+          0.94,
+          0.2759,
+          0.4739
+        ],
+        [
+          0.95,
+          0.2759,
+          0.4741
+        ],
+        [
+          0.96,
+          0.2759,
+          0.4742
+        ],
+        [
+          0.97,
+          0.2759,
+          0.4742
+        ],
+        [
+          0.98,
+          0.2759,
+          0.4741
+        ],
+        [
+          0.99,
+          0.2759,
+          0.474
+        ],
+        [
+          1.0,
+          0.2759,
+          0.4739
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:45.241988+00:00"
+    },
+    {
+      "video_id": "20261026_205346",
+      "youtube_video_id": "tcIJW0WHhYM",
+      "youtube_url": "https://youtube.com/shorts/tcIJW0WHhYM",
+      "published_at": "2026-10-26",
+      "track": "shorts",
+      "title": "You're still waiting on a plan nobody made",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "conversation truths",
+        "topic_cluster": "The Friday Night Standby: Why Ambiguous Plans Are Quietly Co",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 8
+      },
+      "composite_score": 7.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W44",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short features an exceptionally strong, emotionally resonant script anchored in relatable micro-moments of boundary paralysis, elevated by soft and reassuring vocal delivery. However, visual coherence is compromised by stock footage selections that drift from the narrative context\u2014specifically moving boxes in Scene 1, a midday cafe setting in Scene 2, and high-friction personal visuals in Scene 7 that momentarily pull the audience out of the experience.",
+        "strengths": [
+          "The phrase 'all for a sentence with no time in it' is an exceptionally strong, memorable core insight.",
+          "Gentle, non-combative reframing of self-respect that perfectly aligns with channel positioning."
+        ],
+        "dropoff_causes": [
+          "Scene 1 visuals (cardboard moving boxes) create immediate topical ambiguity in the first 2 seconds.",
+          "Scene 2 visually breaks immersion by showing daytime outdoor cafe freelance work while narrating waiting at home for evening plans.",
+          "Scene 7's unexpected medical post-surgery visuals introduce cognitive friction that distracts from the core advice."
+        ],
+        "repeat_next": [
+          "Hyper-relatable micro-scenarios rooted in boundary paralysis and ambiguous communication.",
+          "Warm, low-tempo vocal pacing with an unhurried visual hold at the conclusion."
+        ],
+        "reduce_next": [
+          "Literal keyword queries that pull tangentially related stock clips (e.g., 'empty apartment' yielding moving boxes; 'jacket mirror' yielding medical post-op dressing).",
+          "Incongruent lighting/setting shifts (jumping from evening interior to bright midday cafe)."
+        ],
+        "tag_suggestions": {
+          "hook_type": "specific micro-scenario",
+          "thumbnail_type": "cinematic evening interior",
+          "visual_style_mix": "b-roll lifestyle realism",
+          "narrative_format": "second-person observational reframe",
+          "character_used": "anonymous relatable archetype"
+        }
+      },
+      "spoken_timeline": {
+        "version": 1,
+        "source": "captions",
+        "duration_sec": 41.27,
+        "voice_end_sec": 37.24,
+        "lines": [
+          {
+            "start": 0.0,
+            "section": "hook",
+            "text": "It's 6 PM Friday."
+          },
+          {
+            "start": 2.39,
+            "section": "hook",
+            "text": "You're showered, dressed, phone face up, waiting on a plan nobody actually made."
+          },
+          {
+            "start": 9.09,
+            "section": "tension",
+            "text": "Tuesday they said, \"we should hang this weekend.\" You said \"definitely.\" Since then you've skipped a dinner and a gym class, all for a se..."
+          },
+          {
+            "start": 20.55,
+            "section": "insight",
+            "text": "Maybe they're busy."
+          },
+          {
+            "start": 21.98,
+            "section": "insight",
+            "text": "Maybe they forgot."
+          },
+          {
+            "start": 23.32,
+            "section": "insight",
+            "text": "You can't know."
+          },
+          {
+            "start": 25.1,
+            "section": "insight",
+            "text": "Booking something for yourself isn't a game or an ultimatum, and if they text at eight, you can still decide."
+          },
+          {
+            "start": 32.25,
+            "section": "loopback",
+            "text": "A plan with no time attached isn't a plan yet, so your weekend is still yours."
+          }
+        ]
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 3,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 22,
+        "averageViewPercentage": 53.81,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DtcIJW0WHhYM&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:45.407405+00:00"
+    },
+    {
+      "video_id": "20261027_162449",
+      "youtube_video_id": "uVZ23-WJmPE",
+      "youtube_url": "https://youtube.com/shorts/uVZ23-WJmPE",
+      "published_at": "2026-10-27",
+      "track": "shorts",
+      "title": "You STILL reach before you remember",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "accusation",
+        "angle_type": "reframe",
+        "category": "healing arcs",
+        "topic_cluster": "The phantom text reflex after walking away",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 7
+      },
+      "composite_score": 7.7,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W44",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short effectively translates a sharp emotional observation into a validating reframe through excellent voice delivery and atmospheric B-roll pairing. The opening hook immediately grips the viewer with a somatic micro-moment ('thumb is already on their name'), smoothly supported by cinematic b-roll and a resonant closing line, with only minor caption presentation refinements needed.",
+        "strengths": [
+          "The empty armchair visual metaphor for 'one place to land' lands with exceptional quiet poetic resonance.",
+          "Strong closing reframe ('missing where the news used to go') provides high share/save utility for anyone in heartbreak recovery."
+        ],
+        "dropoff_causes": [
+          "Rapid single-word caption popping can induce visual fatigue during slower emotional reflections.",
+          "Scene 3 (potted plant cutaway) momentarily drops human presence right after a character silhouette before picking back up with the seated woman."
+        ],
+        "repeat_next": [
+          "Grounding psychological reframes in specific somatic triggers (e.g., thumb on a phone screen).",
+          "Soft cross-dissolves and natural audio tail lingering on reflective ambient visuals."
+        ],
+        "reduce_next": [
+          "Rapid single-word caption animations on tender, low-BPM spoken scripts."
+        ],
+        "tag_suggestions": {
+          "hook_type": "situational_scenario",
+          "thumbnail_type": "phone_in_hand_night",
+          "visual_style_mix": "cinematic_b-roll_warm_melancholy",
+          "narrative_format": "somatic_reframe",
+          "character_used": "unseen_first_person_to_third_person_vignettes"
+        }
+      },
+      "spoken_timeline": {
+        "version": 1,
+        "source": "captions",
+        "duration_sec": 34.1,
+        "voice_end_sec": 30.23,
+        "lines": [
+          {
+            "start": 0.0,
+            "section": "hook",
+            "text": "You get the job."
+          },
+          {
+            "start": 1.17,
+            "section": "hook",
+            "text": "Your thumb is already on their name before you remember."
+          },
+          {
+            "start": 4.24,
+            "section": "tension",
+            "text": "Then you stand there, phone in hand, wondering if that reach was a verdict."
+          },
+          {
+            "start": 9.82,
+            "section": "tension",
+            "text": "Like maybe leaving was the mistake."
+          },
+          {
+            "start": 12.03,
+            "section": "insight",
+            "text": "But chances are that wasn't a thought, like \"I want them back.\" It was a reflex."
+          },
+          {
+            "start": 17.71,
+            "section": "insight",
+            "text": "For months, every good thing had one place to land, and that path may still be running on its own."
+          },
+          {
+            "start": 23.33,
+            "section": "insight",
+            "text": "The reach may just be old."
+          },
+          {
+            "start": 25.23,
+            "section": "insight",
+            "text": "The decision to leave is new."
+          },
+          {
+            "start": 26.98,
+            "section": "loopback",
+            "text": "Maybe you're not missing them so much as missing where the news used to go."
+          }
+        ]
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 0,
+        "averageViewPercentage": 0,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DuVZ23-WJmPE&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:45.560296+00:00"
+    },
+    {
+      "video_id": "20261029_165114",
+      "youtube_video_id": "vQ9vddQZ8gc",
+      "youtube_url": "https://youtube.com/shorts/vQ9vddQZ8gc",
+      "published_at": "2026-10-29",
+      "track": "shorts",
+      "title": "You're treating a short text like a verdict",
+      "traits": {
+        "hook_type": "direct_accusation",
+        "title_type": "declarative",
+        "angle_type": "specific scenario",
+        "category": "psychology drops",
+        "topic_cluster": "Punctuation Panic: When a One-Word Text Feels Like an Evicti",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 8
+      },
+      "composite_score": 7.1,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W44",
+      "video_audit": {
+        "status": "ok",
+        "summary": "This Short excels on concept and script execution, nailing a universal micro-trigger around digital punctuation anxiety that creates immediate retention and emotional resonance. While the voiceover pacing, mix, and somatic reframe in Scene 7 land effectively, the visual specificity is slightly diluted by unrelated phone screen interfaces and an unexpected corporate office clip mid-video.",
+        "strengths": [
+          "The somatic insight ('Your stomach answered anyway') paired with the calming breath visual in Scene 7 creates a tangible nervous system reset.",
+          "The punchy closing reframe ('all you actually have is a short text') delivers immediate psychological relief."
+        ],
+        "dropoff_causes": [
+          "Scene 5's sudden shift to a corporate boardroom setting creates a momentary thematic disconnect from the personal relationship context.",
+          "Phone screens displaying photo feeds or creative portfolios rather than messaging interfaces create minor cognitive friction during evidence-hunting lines."
+        ],
+        "repeat_next": [
+          "Hyper-specific digital micro-triggers (e.g., punctuation, read receipts, typing bubbles) that spark instant recognition.",
+          "Pairing somatic cues ('stomach', 'chest') with intentional visual grounding and breathing holds."
+        ],
+        "reduce_next": [
+          "Corporate or office-themed stress stock footage when describing personal/relational anxiety.",
+          "Phone close-ups where unrelated UI or image galleries distract from messaging narratives."
+        ],
+        "tag_suggestions": {
+          "hook_type": "relatable_micro_scenario",
+          "thumbnail_type": "person_glowing_phone_dark_room",
+          "visual_style_mix": "moody_cinematic_stock",
+          "narrative_format": "second_person_observation",
+          "character_used": "multiple_everyday_relatable"
+        }
+      },
+      "spoken_timeline": {
+        "version": 1,
+        "source": "captions",
+        "duration_sec": 33.87,
+        "voice_end_sec": 29.8,
+        "lines": [
+          {
+            "start": 0.0,
+            "section": "hook",
+            "text": "They text back \"Sure.\" With a period."
+          },
+          {
+            "start": 3.1,
+            "section": "hook",
+            "text": "And you're already scrolling up to find what you did wrong."
+          },
+          {
+            "start": 6.13,
+            "section": "tension",
+            "text": "Was the joke too much?"
+          },
+          {
+            "start": 7.71,
+            "section": "tension",
+            "text": "What did you say last night?"
+          },
+          {
+            "start": 9.17,
+            "section": "tension",
+            "text": "You reread two days of messages like evidence."
+          },
+          {
+            "start": 12.0,
+            "section": "tension",
+            "text": "An hour later you're wrung out, and they haven't said one thing that's wrong."
+          },
+          {
+            "start": 16.5,
+            "section": "insight",
+            "text": "That word could be someone walking to their car, typing with one thumb, or just writing short."
+          },
+          {
+            "start": 21.78,
+            "section": "insight",
+            "text": "You can't know."
+          },
+          {
+            "start": 22.87,
+            "section": "insight",
+            "text": "Your stomach answered anyway."
+          },
+          {
+            "start": 24.62,
+            "section": "loopback",
+            "text": "You've been treating a short text like a verdict, when all you actually have is a short text."
+          }
+        ]
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 13,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 0,
+        "averageViewDuration": 14,
+        "averageViewPercentage": 41.42,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DvQ9vddQZ8gc&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": true
+      },
+      "retention_curve": null,
+      "fetched_at": "2026-11-02T19:12:45.725633+00:00"
+    },
+    {
+      "video_id": "20261030_163434",
+      "youtube_video_id": "mfvCLRJS1zM",
+      "youtube_url": "https://youtube.com/shorts/mfvCLRJS1zM",
+      "published_at": "2026-10-30",
+      "track": "shorts",
+      "title": "Studying them feels safer than asking",
+      "traits": {
+        "hook_type": "statement",
+        "title_type": "declarative",
+        "angle_type": "hot take",
+        "category": "identity and growth",
+        "topic_cluster": "Using Attachment Styles to Avoid Hard Conversations",
+        "visual_style_mix": "stock_heavy",
+        "video_length_band": "30_45s",
+        "narrative_format": "unknown",
+        "thumbnail_type": "text_only",
+        "character_used": "none",
+        "total_scenes": 8
+      },
+      "composite_score": 7.5,
+      "experiment_label": "baseline",
+      "experiment_id": null,
+      "strategy_version": "2026-W44",
+      "video_audit": {
+        "status": "ok",
+        "summary": "A highly cohesive and resonant Short that exposes pop-psychology intellectualization with empathy and precision. The visual sequencing\u2014from phone scrolling and text typing to reflective domestic stills\u2014closely tracks the emotional beats of the script, held back only by a slightly upbeat facial expression in the opening hook and rapid single-word caption flickering.",
+        "strengths": [
+          "Scene 2's direct tactile depiction of someone drafting a message immediately tethers the opening premise to a tangible, relatable action.",
+          "The core thesis line ('a thread can't say no to you. They can.') carries exceptional philosophical weight and retention power."
+        ],
+        "dropoff_causes": [
+          "Actor in Scene 1 smiling warmly while scrolling, which mildly clashes with the compulsive angst of researching avoidant partners late at night.",
+          "Rapid single-word caption flicker can cause mild visual fatigue during longer descriptive sentences."
+        ],
+        "repeat_next": [
+          "Ultra-specific behavioural cues ('Six tabs open. A quiz, a podcast clip')",
+          "Grounded close-ups of digital interactions (typing, unsent messages, dark room screen glow)"
+        ],
+        "reduce_next": [
+          "Opening stock footage where the subject's emotional expression (cheerful smiling) contradicts the underlying conflict in the script."
+        ],
+        "tag_suggestions": {
+          "hook_type": "relatable_habit_callout",
+          "thumbnail_type": "cinematic_phone_screen",
+          "visual_style_mix": "b_roll_montage_moody",
+          "narrative_format": "psychological_reframing",
+          "character_used": "anonymous_relatable_subjects"
+        }
+      },
+      "spoken_timeline": {
+        "version": 1,
+        "source": "captions",
+        "duration_sec": 35.53,
+        "voice_end_sec": 31.6,
+        "lines": [
+          {
+            "start": 0.0,
+            "section": "hook",
+            "text": "You've read about avoidant partners for two hours."
+          },
+          {
+            "start": 3.33,
+            "section": "hook",
+            "text": "The question you actually have takes ten seconds to type."
+          },
+          {
+            "start": 6.55,
+            "section": "tension",
+            "text": "Six tabs open."
+          },
+          {
+            "start": 7.94,
+            "section": "tension",
+            "text": "A quiz, a podcast clip, a stranger's story that sounds just like yours."
+          },
+          {
+            "start": 12.67,
+            "section": "tension",
+            "text": "It feels like getting closer to the truth."
+          },
+          {
+            "start": 15.06,
+            "section": "tension",
+            "text": "But the message sits unsent, because a thread can't say no to you."
+          },
+          {
+            "start": 19.32,
+            "section": "tension",
+            "text": "They can."
+          },
+          {
+            "start": 20.21,
+            "section": "insight",
+            "text": "Naming a pattern can be useful context."
+          },
+          {
+            "start": 22.67,
+            "section": "insight",
+            "text": "But studying them feels like control, and asking them feels like risk."
+          },
+          {
+            "start": 27.32,
+            "section": "loopback",
+            "text": "A thread can tell you what people like them do."
+          },
+          {
+            "start": 29.35,
+            "section": "loopback",
+            "text": "Only they can tell you what they mean."
+          }
+        ]
+      },
+      "min_views_for_strategy": 50,
+      "analytics": {
+        "views": 182,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "subscribersGained": 0,
+        "subscribersLost": 0,
+        "estimatedMinutesWatched": 13,
+        "averageViewDuration": 11,
+        "averageViewPercentage": 31.85,
+        "optional_metric_warning": "optional metrics unavailable: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCAvyIz8dPBm5s_MQvXlsBng&startDate=2025-11-02&endDate=2026-11-02&metrics=impressions%2CimpressionClickThroughRate&filters=video%3D%3DmfvCLRJS1zM&dimensions=video&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown identifier (impressions) given in field parameters.metrics.', 'domain': 'global', 'reason': 'invalid'}]\">",
+        "excluded_from_strategy": false
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.0566,
+          0.3271
+        ],
+        [
+          0.02,
+          1.0566,
+          0.2992
+        ],
+        [
+          0.03,
+          1.0566,
+          0.2725
+        ],
+        [
+          0.04,
+          1.0566,
+          0.2492
+        ],
+        [
+          0.05,
+          1.0566,
+          0.2306
+        ],
+        [
+          0.06,
+          1.0566,
+          0.2172
+        ],
+        [
+          0.07,
+          1.0566,
+          0.2086
+        ],
+        [
+          0.08,
+          1.0566,
+          0.2037
+        ],
+        [
+          0.09,
+          1.0566,
+          0.2017
+        ],
+        [
+          0.1,
+          1.0566,
+          0.2018
+        ],
+        [
+          0.11,
+          1.0566,
+          0.2031
+        ],
+        [
+          0.12,
+          1.0566,
+          0.2053
+        ],
+        [
+          0.13,
+          0.9811,
+          0.2084
+        ],
+        [
+          0.14,
+          0.9245,
+          0.2118
+        ],
+        [
+          0.15,
+          0.8679,
+          0.2158
+        ],
+        [
+          0.16,
+          0.8491,
+          0.2203
+        ],
+        [
+          0.17,
+          0.7925,
+          0.2252
+        ],
+        [
+          0.18,
+          0.7358,
+          0.2304
+        ],
+        [
+          0.19,
+          0.6792,
+          0.236
+        ],
+        [
+          0.2,
+          0.6604,
+          0.242
+        ],
+        [
+          0.21,
+          0.6226,
+          0.2484
+        ],
+        [
+          0.22,
+          0.6038,
+          0.2551
+        ],
+        [
+          0.23,
+          0.5283,
+          0.2622
+        ],
+        [
+          0.24,
+          0.5094,
+          0.2697
+        ],
+        [
+          0.25,
+          0.5094,
+          0.2774
+        ],
+        [
+          0.26,
+          0.5094,
+          0.2853
+        ],
+        [
+          0.27,
+          0.434,
+          0.2935
+        ],
+        [
+          0.28,
+          0.3774,
+          0.3018
+        ],
+        [
+          0.29,
+          0.3774,
+          0.3102
+        ],
+        [
+          0.3,
+          0.3585,
+          0.3185
+        ],
+        [
+          0.31,
+          0.3585,
+          0.3266
+        ],
+        [
+          0.32,
+          0.3396,
+          0.3347
+        ],
+        [
+          0.33,
+          0.3396,
+          0.3423
+        ],
+        [
+          0.34,
+          0.3396,
+          0.3496
+        ],
+        [
+          0.35,
+          0.3208,
+          0.3564
+        ],
+        [
+          0.36,
+          0.3208,
+          0.3628
+        ],
+        [
+          0.37,
+          0.283,
+          0.3684
+        ],
+        [
+          0.38,
+          0.2642,
+          0.3735
+        ],
+        [
+          0.39,
+          0.2642,
+          0.3781
+        ],
+        [
+          0.4,
+          0.2264,
+          0.3821
+        ],
+        [
+          0.41,
+          0.2075,
+          0.3855
+        ],
+        [
+          0.42,
+          0.1887,
+          0.3885
+        ],
+        [
+          0.43,
+          0.1509,
+          0.3911
+        ],
+        [
+          0.44,
+          0.1509,
+          0.3933
+        ],
+        [
+          0.45,
+          0.1321,
+          0.3953
+        ],
+        [
+          0.46,
+          0.1321,
+          0.397
+        ],
+        [
+          0.47,
+          0.1321,
+          0.3984
+        ],
+        [
+          0.48,
+          0.1321,
+          0.3995
+        ],
+        [
+          0.49,
+          0.1321,
+          0.4002
+        ],
+        [
+          0.5,
+          0.1321,
+          0.4007
+        ],
+        [
+          0.51,
+          0.1321,
+          0.4007
+        ],
+        [
+          0.52,
+          0.1321,
+          0.4003
+        ],
+        [
+          0.53,
+          0.1321,
+          0.3997
+        ],
+        [
+          0.54,
+          0.1321,
+          0.3987
+        ],
+        [
+          0.55,
+          0.1132,
+          0.3977
+        ],
+        [
+          0.56,
+          0.1132,
+          0.3967
+        ],
+        [
+          0.57,
+          0.1132,
+          0.3959
+        ],
+        [
+          0.58,
+          0.1132,
+          0.3954
+        ],
+        [
+          0.59,
+          0.1132,
+          0.3956
+        ],
+        [
+          0.6,
+          0.1132,
+          0.3963
+        ],
+        [
+          0.61,
+          0.1132,
+          0.3977
+        ],
+        [
+          0.62,
+          0.1132,
+          0.3997
+        ],
+        [
+          0.63,
+          0.0943,
+          0.4024
+        ],
+        [
+          0.64,
+          0.0943,
+          0.4055
+        ],
+        [
+          0.65,
+          0.0943,
+          0.4091
+        ],
+        [
+          0.66,
+          0.0943,
+          0.4128
+        ],
+        [
+          0.67,
+          0.0943,
+          0.4166
+        ],
+        [
+          0.68,
+          0.0943,
+          0.4204
+        ],
+        [
+          0.69,
+          0.0943,
+          0.4242
+        ],
+        [
+          0.7,
+          0.0943,
+          0.428
+        ],
+        [
+          0.71,
+          0.0943,
+          0.4319
+        ],
+        [
+          0.72,
+          0.0943,
+          0.436
+        ],
+        [
+          0.73,
+          0.0943,
+          0.4409
+        ],
+        [
+          0.74,
+          0.0943,
+          0.4466
+        ],
+        [
+          0.75,
+          0.0943,
+          0.4538
+        ],
+        [
+          0.76,
+          0.0943,
+          0.4628
+        ],
+        [
+          0.77,
+          0.0943,
+          0.4737
+        ],
+        [
+          0.78,
+          0.0943,
+          0.4868
+        ],
+        [
+          0.79,
+          0.0943,
+          0.5018
+        ],
+        [
+          0.8,
+          0.0943,
+          0.5184
+        ],
+        [
+          0.81,
+          0.0943,
+          0.5362
+        ],
+        [
+          0.82,
+          0.0943,
+          0.5545
+        ],
+        [
+          0.83,
+          0.0755,
+          0.5727
+        ],
+        [
+          0.84,
+          0.0755,
+          0.5904
+        ],
+        [
+          0.85,
+          0.0755,
+          0.6071
+        ],
+        [
+          0.86,
+          0.0755,
+          0.6228
+        ],
+        [
+          0.87,
+          0.0755,
+          0.6373
+        ],
+        [
+          0.88,
+          0.0755,
+          0.6507
+        ],
+        [
+          0.89,
+          0.0755,
+          0.6631
+        ],
+        [
+          0.9,
+          0.0755,
+          0.6745
+        ],
+        [
+          0.91,
+          0.0755,
+          0.6852
+        ],
+        [
+          0.92,
+          0.0755,
+          0.695
+        ],
+        [
+          0.93,
+          0.0755,
+          0.7042
+        ],
+        [
+          0.94,
+          0.0755,
+          0.7124
+        ],
+        [
+          0.95,
+          0.0566,
+          0.7198
+        ],
+        [
+          0.96,
+          0.0566,
+          0.7261
+        ],
+        [
+          0.97,
+          0.0566,
+          0.7314
+        ],
+        [
+          0.98,
+          0.0566,
+          0.7358
+        ],
+        [
+          0.99,
+          0.0566,
+          0.7391
+        ],
+        [
+          1.0,
+          0.0566,
+          0.7417
+        ]
+      ],
+      "fetched_at": "2026-11-02T19:12:46.493025+00:00"
+    }
+  ]
+}

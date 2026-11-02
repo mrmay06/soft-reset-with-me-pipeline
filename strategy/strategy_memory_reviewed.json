@@ -1,125 +1,119 @@
 {
-  "version": "2026-W42",
-  "generated_at": "2026-10-12T17:15:22.065746+00:00",
-  "analysis_window": "up to 2026-W42",
-  "videos_analyzed": 12,
-  "videos_excluded": 15,
+  "version": "2026-W45",
+  "generated_at": "2026-11-02T19:12:46.791014+00:00",
+  "analysis_window": "up to 2026-W45",
+  "videos_analyzed": 11,
+  "videos_excluded": 16,
   "previous_version_reference": "2026-W19",
   "research": {
     "prioritize": [
-      "Reframe angles that challenge unspoken assumptions (low confidence: small sample, top-performing format so far, heavily influenced by one 88.67% outlier)",
-      "Declarative statement hooks centered on quiet emotional realities (low-to-medium confidence: directional lead over direct accusation hooks, small sample)",
-      "Observations exploring private emotional endurance, quiet grieving, and boundary shifts"
+      "Reframe angles exploring quiet emotional shifts and counterintuitive self-protection mechanisms (low confidence: small sample, n=4, 57.96% avg retention, 140.8 avg views)",
+      "Declarative statement hooks rooted in private internal monologue rather than interpersonal confrontation (directional signal only: n=9, 47.76% avg retention vs. 30.51% for direct accusation; treat as a lean, not a rule)",
+      "Themes exploring internal emotional endurance and unspoken boundary adjustments ('Moving on fast means you cared QUIETLY', 'Finally, you stopped lowering your standards')"
     ],
     "reduce": [
-      "Direct accusation hooks (directional signal only: n=2, ~30.5% retention, early drop-off noted in audit)",
-      "Abstract truth drops lacking concrete situational anchors (small sample, directional only)"
+      "Direct accusation angles that confront the viewer; the current evidence is thin (few videos, low-confidence curves), so reduce rather than ban and re-test with better-anchored examples",
+      "Unanchored truth drops that present abstract behavioral observations without a concrete situational anchor (low confidence: n=3 combined, ~38.6% avg retention)"
     ],
     "cooldowns": [
       {
-        "topic": "direct accusation confronting viewer behavior",
-        "avoid_until": "2026-W45",
-        "reason": "Direct accusation hooks ('You're still asking...', 'They Googled you...') averaged ~30.5% retention on a very small sample with sharp early drop-off. Short cooldown to test the signal, not a permanent ban; also conflicts with the brand rule against judgmental tone toward the viewer."
+        "topic": "direct accusation and second-person behavioral confrontation",
+        "avoid_until": "2026-W48",
+        "reason": "Direct accusation hooks showed early retention drops around seconds 4-5 in several low-confidence curves, and engagement was minimal. Short cooldown while we gather more data; the signal is directional, not conclusive."
       }
     ],
     "strong_angle_types": [
       "reframe"
     ],
-    "notes": "With 12 eligible videos and view counts of roughly 50-200, all findings are directional, not statistically reliable. Reframe and declarative hooks lead so far, but the top result (88.67% on 'Moving on fast means you cared QUIETLY') is a single outlier. Treat as hypotheses to keep testing, not settled rules."
+    "notes": "With 11 videos in the rolling window, declarative reframes look like the retention anchor (57.96% retention vs. channel average ~44%), though samples are small and all retention curves are low confidence. Many videos show a drop in the roughly 4-6 second range as the hook moves into tension; treat this as a pattern to test, not a confirmed cause."
   },
   "script": {
     "prioritize": [
-      "Declarative statement hooks that voice an internal conflict without assigning blame",
-      "Resonant loopback lines in the final 5 seconds to encourage completion and replay value",
-      "Tight 30-45 second narrative structures with clear psychological progression (tension -> reframe -> quiet resolution), ending on empowerment rather than pity"
+      "Smooth bridge sentences between hook line and tension (roughly seconds 4 to 6) to test against the recurring early drop seen across several low-confidence curves",
+      "Declarative opening statements that voice an unsaid thought or silent observation with emotional specificity",
+      "Loopback lines that deliver a quiet cognitive pivot in the final 5 seconds ('You lowered them because keeping them felt risky')"
     ],
     "reduce": [
-      "Confrontational opening lines targeting viewer insecurity directly",
-      "Broad existential statements that fail to introduce an identifiable everyday anchor in the first 3 seconds"
+      "Abrupt tone shifts between the opening hook statement and the supporting narrative",
+      "Second-person accusatory setups that put the viewer on the defensive"
     ],
     "cta_patterns": [
-      "Soft observation loops over aggressive engagement asks; avoid banned phrases and generic self-help reminders"
+      "Understated reflective loop statements or soft saves over explicit calls to action"
     ],
-    "word_count_signal": "Maintain the 55-70 word target (optimizing for 30-45 second run time at deliberate, unhurried pacing)."
+    "word_count_signal": "Aim for roughly 55-68 words (about 30-40 seconds) as a working target to limit mid-roll slide (averaging 27.4% per 10s); adjust if evidence contradicts."
   },
   "visuals": {
     "prioritize": [
-      "Grounded, specific visual metaphors tied directly to the spoken line (e.g., search queries, stacked documents, quiet physical boundaries)",
-      "A more specific, attention-catching opening visual in the first 1.5-2 seconds, while keeping the muted, cinematic brand aesthetic",
-      "Subtle shifts toward warmer or resolving visuals on loopback statements"
+      "Specific, grounded visual metaphors closely mapped to the audio line around seconds 4-6",
+      "Subtle, deliberate narrative visual progression (moving from isolation/tension to quiet grounded resolution)",
+      "Consistent muted, cinematic grading that reinforces the contemplative raccoon mascot aesthetic without distraction"
     ],
     "reduce": [
-      "Overly generic stock b-roll (empty oceanic chairs, padlocks, ambiguous silhouettes gazing out windows) that disconnects from the voiceover",
-      "Static shots held longer than 3 seconds during the mid-video narrative bridge"
+      "Generic ambient stock footage (empty rooms, unanchored nature shots, pouring coffee) during seconds 4-8",
+      "Long static scene holds during narrative tension beats (aim for roughly 3 seconds or less)"
     ],
-    "thumbnail_signal": "Text-driven, minimal imagery prioritizing emotional clarity; follow the primary variant rule (never A, default B, prefer C if thumbnail text passes the non-clinical check) and avoid all banned thumbnail words."
+    "thumbnail_signal": "Primary variant is never A. Default to B, preferring C when thumbnail text passes the non-clinical check. Ensure thumbnail text reflects declarative reframes."
   },
   "metadata": {
-    "title_signal": "Declarative, observation-led titles (e.g. 'Moving on fast means you cared QUIETLY') are leading so far over confrontational curiosity gaps; sample is small, so keep testing.",
-    "description_signal": "Keep descriptions grounded in accurate, searchable reflections of the central reframe without clinical buzzwords or banned phrases.",
+    "title_signal": "Declarative observation titles emphasizing quiet contrast ('Moving on fast means you cared QUIETLY') look promising versus accusatory phrasing; small sample, so keep testing.",
+    "description_signal": "Keep descriptions concise, emotionally grounded, searchable, and strictly free of clinical buzzwords.",
     "prioritize": [
-      "Declarative reframe titles that articulate a recognizable private feeling",
-      "Selective capitalization of a single pivotal word (e.g., QUIETLY) to anchor feed scanning; use sparingly so it does not become a formula"
+      "Observation-led declarative titles that name an internal state accurately",
+      "Single-word capitalized pivots (e.g., QUIETLY) to anchor mobile feed skimming"
     ],
     "reduce": [
-      "Second-person accusatory titles ('They Googled you', 'You're still asking for permission')"
+      "Accusatory title structures that put the viewer on the defensive"
     ]
   },
   "voice": {
     "prioritize": [
-      "Empathetic, steady, contemplative cadence with distinct micro-pauses before reframe revelations",
-      "Consistent audio mix levels with clean separation between voiceover and ambient, understated score"
+      "Unrushed, calm, and contemplative pacing with natural pauses after the hook statement",
+      "Even vocal warmth without dramatic spikes or clinical detachment"
     ],
-    "notes": "Voiceover quality is the channel's strongest audited asset across performance tiers. Ensure pacing is dictated by punctuation in scripts rather than accelerated delivery."
+    "notes": "Keep pacing deliberate but fluid into line two. Avoid overlong pauses right at the hook-to-tension transition, but treat this as a soft guideline rather than a fixed timing rule."
   },
   "thumbnail": {
     "prioritize": [
-      "Variant B default layout with clean typography",
-      "Variant C when text is brief, punchy, and completely free of clinical terminology"
+      "Text-driven compositions with quiet, reflective visual backgrounds",
+      "Variant B default layout with clean contrast; Variant C when text passes the non-clinical check"
     ],
     "reduce": [
-      "Visual clutter or high-saturation backgrounds"
+      "Variant A as primary",
+      "Cluttered overlays or overly abstract visual backdrops"
     ],
     "clinical_word_block": "maintained"
   },
   "experiment_slots": {
     "this_week": [
       {
-        "id": "exp_first_frame_specificity",
-        "hypothesis": "Opening with an immediate physical action or grounded object metaphor (rather than a solitary person gazing) will improve early retention on declarative hooks compared with recent generic openers.",
-        "target_prompt": "visual_generation",
+        "id": "exp_bridge_line_pacing_w45",
+        "hypothesis": "Shortening the bridge sentence at roughly seconds 4.0-5.5 to under 6 words with concrete imagery will reduce the early secondary drop observed in recent videos.",
+        "target_prompt": "script_generator",
         "run_count": 2,
-        "evaluate_after": "2026-W44"
-      },
-      {
-        "id": "exp_loopback_verbatim_hook",
-        "hypothesis": "Ending the script on a close inversion of the opening hook may improve completion and replay; evaluate directionally given the small sample.",
-        "target_prompt": "script_writing",
-        "run_count": 2,
-        "evaluate_after": "2026-W44"
+        "evaluate_after": "2026-W47"
       }
     ],
     "wildcard_slots": [
       {
-        "id": "wildcard_raccoon_observer_scene",
-        "hypothesis": "Featuring the raccoon mascot as a subtle, thoughtful environmental observer (not cute or goofy) in an early and late scene may strengthen brand recognition without compromising the contemplative tone.",
-        "target_prompt": "visual_generation",
+        "id": "wildcard_third_person_vignette_w45",
+        "hypothesis": "Framing the opening line as an observational third-person vignette ('Someone who leaves quietly...') rather than second-person may lower viewer defensiveness and sustain retention past second 10. Must still name a specific behavior and avoid diagnosing anyone.",
+        "target_prompt": "research_and_script",
         "run_count": 1,
-        "evaluate_after": "2026-W44"
+        "evaluate_after": "2026-W47"
       }
     ]
   },
   "brand_bible_override_check": "no conflicts detected",
-  "channel_health_signal": "Retention is in the ~50-58% range in recent releases, with one 88.67% outlier, but view counts remain at early testing volumes (roughly 50-200 views), CTR data is unavailable, and comments per view are 0.0. Health score is not yet computable (insufficient baseline); treat trends as tentative.",
+  "channel_health_signal": "Retention is fluctuating with low weekly publishing volume (31.85% in W44 vs. 48.8% in W41 and 58.6% in W26); hook leak is low (avg 3.8%), but all curves are low confidence, so the seconds 4-6 drop is a hypothesis to test rather than a confirmed cause.",
   "channel_health_score": null,
   "cooldowns": [
     {
-      "topic": "direct accusation confronting viewer behavior",
-      "avoid_until": "2026-W45",
-      "reason": "Direct accusation hooks ('You're still asking...', 'They Googled you...') averaged ~30.5% retention on a very small sample with sharp early drop-off. Short cooldown to test the signal, not a permanent ban; also conflicts with the brand rule against judgmental tone toward the viewer."
+      "topic": "direct accusation and second-person behavioral confrontation",
+      "avoid_until": "2026-W48",
+      "reason": "Direct accusation hooks showed early retention drops around seconds 4-5 in several low-confidence curves, and engagement was minimal. Short cooldown while we gather more data; the signal is directional, not conclusive."
     }
   ],
-  "reviewed_at": "2026-10-12T17:15:57Z",
+  "reviewed_at": "2026-11-02T19:13:30Z",
   "review_model": "claude-sonnet-5-5",
   "review_source": "sonnet"
 }
